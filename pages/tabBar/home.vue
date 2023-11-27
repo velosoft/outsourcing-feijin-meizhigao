@@ -34,7 +34,7 @@
       >
     </view>
     <ClassifyCards class="group_22"></ClassifyCards>
-    <CenterPannel class="group_22"></CenterPannel>
+    <CenterPanel class="group_22"></CenterPanel>
     <GridPanel class="group_8"></GridPanel>
     <view class="flex-col group_28">
       <view class="flex-col section_8">
@@ -43,7 +43,7 @@
         >
           <view class="flex-col items-start">
             <text class="text_23">新会员入会礼包</text>
-            <text class="CenterPannel-mt-8 CenterPannel-font text_24"
+            <text class="CenterPanel-mt-8 CenterPanel-font text_24"
               >你有一份价值100元的新人礼包</text
             >
           </view>
@@ -52,7 +52,7 @@
           >
         </view>
         <view class="self-stretch divider"></view>
-        <text class="self-start CenterPannel-font text_25"
+        <text class="self-start CenterPanel-font text_25"
           >2023.07.6-2023.08.12</text
         >
       </view>
@@ -173,7 +173,7 @@ export default {
           font-weight: 700;
           line-height: 1rem;
         }
-        .CenterPannel-mt-8 {
+        .CenterPanel-mt-8 {
           margin-top: 0.5rem;
         }
         .text_24 {
@@ -206,7 +206,7 @@ export default {
         background-position: -0.063rem 0rem;
         height: 0.063rem;
       }
-      .CenterPannel-font {
+      .CenterPanel-font {
         font-size: 0.63rem;
         font-family: 苹方;
         line-height: 0.63rem;
