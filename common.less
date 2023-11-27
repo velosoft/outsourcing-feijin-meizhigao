@@ -1,0 +1,31 @@
+@primaryBg: #F1F5F8;
+@primaryBlue: #3D7FFF;
+@primaryDisabledBlue: rgba(61, 127, 255, .3);
+@primaryRed: #FF426C;
+@primaryYellow: #FFBF40;
+@primaryBlackBg: #000;
+@primaryGrey: #F7F8FA;
+@primaryGreyColor: #999AAA;
+@primaryBorderColor: #F0F0F0;
+/* 单行省略 */
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+/* 多行省略 */
+.multi-line-omit(@num: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: @num;
+
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+.placeholderClass {
+	color: #C8C9D2;
+}

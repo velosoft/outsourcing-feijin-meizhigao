@@ -1,0 +1,57 @@
+/* /// Pages-Tool: 该文件是pages-tool插件的配置文件，根据pages-config.json的配置,本文件的内容可能合并到pages.json*/
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/tabBar/home",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    }, {
+      "path": "pages/tabBar/cockpit",
+      "style": {
+        "navigationBarTitleText": "驾驶舱",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/tabBar/workbench",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "工作台",
+        "enablePullDownRefresh": true
+      }
+    }, {
+      "path": "pages/tabBar/project",
+      "style": {
+        "navigationBarTitleText": "项目",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/tabBar/personal",
+      "style": {
+        "navigationBarTitleText": "回款",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/security/login/login",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "登录",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/list/list",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "列表",
+        "enablePullDownRefresh": false
+      }
+
+    }
+  ]
+}

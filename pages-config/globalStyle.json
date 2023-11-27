@@ -1,0 +1,10 @@
+/* /// Pages-Tool: 该文件是pages-tool插件的配置文件，根据pages-config.json的配置,本文件的内容可能合并到pages.json*/
+{
+	"globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "飞进",
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#F1F5F8",
+    "backgroundColor": "#F1F5F8"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "easycom": {/*///---- Pages-Tool --  合并自： pages-config/easycom.json ----*/
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [/*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/tabBar/home",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    }, {
+      "path": "pages/tabBar/cockpit",
+      "style": {
+        "navigationBarTitleText": "驾驶舱",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/tabBar/workbench",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "工作台",
+        "enablePullDownRefresh": true
+      }
+    }, {
+      "path": "pages/tabBar/project",
+      "style": {
+        "navigationBarTitleText": "项目",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/tabBar/personal",
+      "style": {
+        "navigationBarTitleText": "回款",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/security/login/login",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "登录",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/list/list",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "列表",
+        "enablePullDownRefresh": false
+      }
+
+    }
+  ],
+  "globalStyle": {/*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "飞进",
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#F1F5F8",
+    "backgroundColor": "#F1F5F8"
+  },
+  "tabBar": {/*///---- Pages-Tool --  合并自： pages-config/tabBar.json ----*/
+    "navigationStyle": "custom",
+    "backgroundColor": "#1C6BFF",
+    "enablePullDownRefresh": true
+  }
+}
