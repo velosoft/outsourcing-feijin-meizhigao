@@ -49,75 +49,7 @@
         <text class="self-start font_7 text_25">2023.07.6-2023.08.12</text>
       </view>
     </view>
-    <view class="flex-col view">
-      <view class="flex-row justify-between items-center self-stretch group_15">
-        <text class="text_26">商品推荐</text>
-        <text class="font_9">服务推荐</text>
-        <text class="font_9">课程推荐</text>
-      </view>
-      <view class="self-start section_9"></view>
-      <view class="flex-row self-stretch group_16">
-        <view class="flex-col section_10">
-          <view
-            class="flex-col justify-start items-center a-i-background-image-wrapper_6"
-          >
-            <image
-              class="a-i-background-image_2"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=69f26c588c4040c0a2ae6b1d6c407546.png"
-            />
-          </view>
-          <text class="self-start font_10 text_29 mt-15">厨房定制收纳服务</text>
-          <view class="flex-row self-stretch equal-division_2 mt-15">
-            <view class="flex-col justify-start items-center text-wrapper_3">
-              <text class="font_7 text_31">新品上市</text>
-            </view>
-            <view
-              class="flex-col justify-start items-center text-wrapper_3 ml-5"
-            >
-              <text class="font_7 text_31">好评推荐</text>
-            </view>
-            <view
-              class="flex-col justify-start items-center text-wrapper_3 ml-5"
-            >
-              <text class="font_7 text_31">新客优选</text>
-            </view>
-          </view>
-          <view class="flex-row items-center self-stretch group_19 mt-15">
-            <text class="font_7">秒杀价</text>
-            <text class="font_13 text_40">200</text>
-            <text class="font_12 text_39">￥</text>
-            <text class="font_14 text_41">.00</text>
-            <text class="font_15 text_42">100人购买</text>
-          </view>
-        </view>
-        <view
-          class="ml-16 flex-col justify-start items-center a-i-background-image-wrapper group_17"
-        >
-          <image
-            class="a-i-background-image_6"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=1fe6dd1ef410d3f49fa1ec58d8026298.png"
-          />
-          <image
-            class="image_14 a-i-background-image_2"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=69f26c588c4040c0a2ae6b1d6c407546.png"
-          />
-          <text class="font_10 text_30 pos_13">厨房定制收纳服务</text>
-          <view class="flex-col justify-start text-wrapper_4 pos_14">
-            <text class="font_11 text_31 text_35">新品上市</text>
-          </view>
-          <view class="flex-col justify-start text-wrapper_5 pos_15">
-            <text class="font_11 text_31 text_36">好评推荐</text>
-          </view>
-          <view class="flex-col justify-start text-wrapper_6 pos_16">
-            <text class="font_11 text_31 text_37">新客优选</text>
-          </view>
-          <text class="font_13 text_44 pos_18">200</text>
-          <text class="font_12 text_43 pos_17">￥</text>
-          <text class="font_14 text_45 pos_19">.00</text>
-          <text class="font_15 pos_20">100人购买</text>
-        </view>
-      </view>
-    </view>
+    <RecommendedList class="section_12" />
   </view>
 </template>
 
@@ -125,9 +57,10 @@
 import ClassifyCards from "../../components/ClassifyCards.vue";
 import CenterPanel from "../../components/CenterPanel.vue";
 import GridPanel from "../../components/GridPanel.vue";
+import RecommendedList from "../../components/RecommendedList.vue";
 
 export default {
-  components: { ClassifyCards, CenterPanel, GridPanel },
+  components: { ClassifyCards, CenterPanel, GridPanel, RecommendedList },
   props: {},
   data() {
     return {};
