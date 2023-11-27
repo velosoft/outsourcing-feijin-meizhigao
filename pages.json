@@ -49,39 +49,38 @@
   "tabBar": {
     /*///---- Pages-Tool --  合并自： pages-config/tabBar.json ----*/
     "navigationStyle": "custom",
-    "backgroundColor": "#1C6BFF",
-    "enablePullDownRefresh": true,
-    "color": "#bbbbbb",
-    "selectedColor": "#000000",
-    "borderStyle": "white",
     "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "color": "#030305",
+    "selectedColor": "#B09053",
+    "borderStyle": "white",
     "height": "60px",
-    "fontSize": "12px",
-    "iconWidth": "12px",
+    "fontSize": "10px",
+    "iconWidth": "28px",
     "spacing": "3px",
     "list": [
       {
         "pagePath": "pages/tabBar/home",
-        "iconPath": "",
-        "selectedIconPath": "",
+        "iconPath": "static/images/icon_tab_02.png",
+        "selectedIconPath": "static/images/icon_tab_01.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/tabBar/shop",
-        "iconPath": "",
-        "selectedIconPath": "",
+        "iconPath": "static/images/icon_tab_04.png",
+        "selectedIconPath": "static/images/icon_tab_03.png",
         "text": "商城"
       },
       {
         "pagePath": "pages/tabBar/cart",
-        "iconPath": "",
-        "selectedIconPath": "",
+        "iconPath": "static/images/icon_tab_06.png",
+        "selectedIconPath": "static/images/icon_tab_06.png",
         "text": "购物车"
       },
       {
         "pagePath": "pages/tabBar/personal",
-        "iconPath": "",
-        "selectedIconPath": "",
+        "iconPath": "static/images/icon_tab_08.png",
+        "selectedIconPath": "static/images/icon_tab_08.png",
         "text": "我的"
       }
     ]
