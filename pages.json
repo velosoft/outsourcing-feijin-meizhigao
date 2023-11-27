@@ -8,36 +8,32 @@
       "style": {
         "navigationStyle": "custom",
         "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    }, {
-      "path": "pages/tabBar/cockpit",
-      "style": {
-        "navigationBarTitleText": "驾驶舱",
         "enablePullDownRefresh": false
       }
-
-    }, {
-      "path": "pages/tabBar/workbench",
+    }, 
+    {
+      "path": "pages/tabBar/shop",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": "工作台",
-        "enablePullDownRefresh": true
-      }
-    }, {
-      "path": "pages/tabBar/project",
-      "style": {
-        "navigationBarTitleText": "项目",
+        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
-
-    }, {
+    }, 
+    {
+      "path": "pages/tabBar/cart",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    }, 
+    {
       "path": "pages/tabBar/personal",
       "style": {
-        "navigationBarTitleText": "回款",
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
-
     }, {
       "path": "pages/security/login/login",
       "style": {
@@ -66,6 +62,35 @@
   "tabBar": {/*///---- Pages-Tool --  合并自： pages-config/tabBar.json ----*/
     "navigationStyle": "custom",
     "backgroundColor": "#1C6BFF",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+  	"color": "#bbbbbb",
+  	"selectedColor": "#000000",
+  	"borderStyle": "white",
+  	"backgroundColor": "#ffffff",
+  	"height": "60px",
+  	"fontSize": "12px",
+  	"iconWidth": "12px",
+  	"spacing": "3px",
+  	"list": [{
+  	  "pagePath": "pages/tabBar/home",
+  	  "iconPath": "",
+  	  "selectedIconPath": "",
+  	  "text": "首页"
+  	},{
+  	  "pagePath": "pages/tabBar/shop",
+  	  "iconPath": "",
+  	  "selectedIconPath": "",
+  	  "text": "商城"
+  	},{
+  	  "pagePath": "pages/tabBar/cart",
+  	  "iconPath": "",
+  	  "selectedIconPath": "",
+  	  "text": "购物车"
+  	},{
+  	  "pagePath": "pages/tabBar/personal",
+  	  "iconPath": "",
+  	  "selectedIconPath": "",
+  	  "text": "我的"
+  	}]
   }
 }
