@@ -2,28 +2,19 @@
   <view class="flex-col page">
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
-        <view class="flex-row items-center flex-1 section_2">
-          <image
-            class="image_7"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=search.png"
-          />
+        <view class="flex-row items-center flex-1 searech-wrap">
+          <image class="search-image" src="../../static/images/search.png" />
           <input
             class="uni-input"
-            placeholder-class="text_4"
+            placeholder-class="placeholder-text"
             focus
             placeholder="搜索"
           />
         </view>
         <view class="ml-8 flex-col items-center shrink-0 relative search-right">
-          <image
-            class="message"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=message.png"
-          />
+          <image class="message" src="../../static/images/message.png" />
           <view class="flex-col justify-start items-center dot-wrap dot-pos">
-            <image
-              class="notify-image"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=70dabafc7502ff82bf3a590f5eb4c3cf.png"
-            />
+            <image class="notify-image" src="../../static/images/dot_bg.png" />
             <text class="home-font_03 dot-text dot-pos-text">1</text>
           </view>
         </view>
@@ -108,7 +99,7 @@ export default {
     overflow-y: auto;
     .search-box {
       padding: 24rpx 28rpx 40rpx;
-      .section_2 {
+      .searech-wrap {
         padding: 16rpx 32rpx;
         background-color: #f0f0f0;
         border-radius: 100rpx;
@@ -117,11 +108,11 @@ export default {
           margin-left: 12rpx;
         }
 
-        .image_7 {
-          width: 32.68rpx;
-          height: 30.7rpx;
+        .search-image {
+          width: 32rpx;
+          height: 30rpx;
         }
-        .text_4 {
+        .placeholder-text {
           color: #a7a7a7;
           font-size: 26rpx;
           font-family: PingFang SC Bold;
