@@ -10,12 +10,12 @@
       </view>
       <view class="self-start section_9"></view>
     </view>
-    <view class="flex-col justify-start group_2">
+    <view class="flex-col justify-start double-list-view">
       <view class="flex-row">
-        <view class="flex-col justify-start group_3">
+        <view class="flex-col justify-start left-list">
           <ShopItem v-for="(item, index) in items" :key="index"></ShopItem>
         </view>
-        <view class="flex-col justify-start group_4 ml-15">
+        <view class="flex-col justify-start right-list ml-15">
           <ShopItem
             class="a-i-background-image-wrapper_2"
             v-for="(item, index) in items_1"
@@ -83,12 +83,12 @@ export default {
     width: 20rpx;
     height: 6rpx;
   }
-  .group_2 {
+  .double-list-view {
     padding: 24rpx 0 24rpx;
-    .group_3 {
+    .left-list {
       flex: 1 1 330rpx;
     }
-    .group_4 {
+    .right-list {
       flex: 1 1 330rpx;
       .a-i-background-image-wrapper_2 {
         position: relative;
