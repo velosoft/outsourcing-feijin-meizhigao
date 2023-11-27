@@ -19,10 +19,22 @@
           </view>
         </view>
       </view>
-      <view class="flex-row justify-end swiper-box">
-        <view class="section_4"></view>
-        <view class="ml-4 section_5"></view>
-        <view class="ml-4 section_5"></view>
+      <view class="flex-row swiper-box">
+        <view class="uni-margin-wrap">
+          <swiper class="swiper" circular :autoplay="true">
+            <swiper-item v-for="(item, index) in items" :key="index">
+              <image
+                class="swiper-images"
+                src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=fc726dc031e684bc3430d7da9a9eef75.png"
+                mode="aspectFit|aspectFill|widthFix"
+                lazy-load="false"
+                binderror=""
+                bindload=""
+              >
+              </image>
+            </swiper-item>
+          </swiper>
+        </view>
       </view>
       <view class="flex-row items-center notify-box">
         <image
@@ -81,6 +93,7 @@ export default {
   data() {
     return {
       keyword: "搜索",
+      items: [null, null, null],
     };
   },
 
@@ -155,10 +168,25 @@ export default {
       }
     }
     .swiper-box {
-      padding: 488rpx 20rpx 24rpx;
-      background-image: url("https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=fc726dc031e684bc3430d7da9a9eef75.png");
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
+      width: 100%;
+      height: 516rpx;
+      .uni-margin-wrap {
+        width: 100%;
+      }
+      .swiper {
+        width: 100%;
+      }
+      uni-swiper {
+        width: 750rpx !important;
+        height: 516rpx !important;
+      }
+      uni-image {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .swiper-images {
+        width: 750rpx;
+      }
       .section_4 {
         background-color: #ffffff;
         border-radius: 20rpx;
