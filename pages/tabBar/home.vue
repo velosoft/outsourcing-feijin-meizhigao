@@ -7,7 +7,12 @@
             class="image_7"
             src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=search.png"
           />
-          <text class="ml-6 text_4">搜索</text>
+          <input
+            class="uni-input"
+            placeholder-class="text_4"
+            focus
+            placeholder="搜索"
+          />
         </view>
         <view class="ml-8 flex-col items-center shrink-0 relative search-right">
           <image
@@ -83,7 +88,9 @@ export default {
   components: { CenterPanel, ClassifyCards, GridPanel, RecommendedList },
   props: {},
   data() {
-    return {};
+    return {
+      keyword: "搜索",
+    };
   },
 
   methods: {},
@@ -106,6 +113,10 @@ export default {
         background-color: #f0f0f0;
         border-radius: 100rpx;
         height: 68rpx;
+        .uni-input {
+          margin-left: 12rpx;
+        }
+
         .image_7 {
           width: 32.68rpx;
           height: 30.7rpx;
