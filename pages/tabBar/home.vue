@@ -5,7 +5,7 @@
         <view class="flex-row items-center flex-1 searech-wrap">
           <image class="search-image" src="../../static/images/search.png" />
           <input
-            class="uni-input"
+            class="uni-input flex-1"
             placeholder-class="placeholder-text"
             focus
             placeholder="搜索"
@@ -21,7 +21,13 @@
       </view>
       <view class="flex-row swiper-box">
         <view class="uni-margin-wrap">
-          <swiper class="swiper" circular :autoplay="true">
+          <swiper
+            class="banner-swiper"
+            style="height: 516rpx; width: 750rpx"
+            circular
+            :autoplay="true"
+            indicator-dots="true"
+          >
             <swiper-item v-for="(item, index) in items" :key="index">
               <image
                 class="swiper-images"
@@ -37,17 +43,14 @@
         </view>
       </view>
       <view class="flex-row items-center notify-box">
-        <image
-          class="notify-image"
-          src="../../static/images/notify.png"
-        />
+        <image class="notify-image" src="../../static/images/notify.png" />
         <text class="ml-10 home-font_02 notify-text"
           >显示最新一条系统公告的标题，系统公告的标题…</text
         >
       </view>
-      <ClassifyCards class="group_22"></ClassifyCards>
-      <CenterPanel class="group_22"></CenterPanel>
-      <GridPanel class="group_8"></GridPanel>
+      <ClassifyCards class="box-top"></ClassifyCards>
+      <CenterPanel class="box-top"></CenterPanel>
+      <GridPanel class="box-top"></GridPanel>
       <view class="flex-col member-box">
         <view class="flex-col justify-start relative member-section">
           <image
@@ -61,7 +64,7 @@
               <view class="flex-col items-start">
                 <text class="member-text">新会员入会礼包</text>
                 <text
-                  class="CenterPannel-mt-8 CenterPannel-font member-describe"
+                  class="CenterPannel-mt-8 home-font_04 member-describe"
                   >你有一份价值100元的新人礼包</text
                 >
               </view>
@@ -70,7 +73,7 @@
               >
             </view>
             <view class="self-stretch member-divider"></view>
-            <text class="self-start CenterPannel-font member-time"
+            <text class="self-start home-font_04 member-time"
               >2023.07.6-2023.08.12</text
             >
           </view>
@@ -119,6 +122,12 @@ export default {
         height: 68rpx;
         .uni-input {
           margin-left: 12rpx;
+          /deep/ .uni-input-input {
+            font-size: 26rpx;
+            font-family: PingFang SC Bold;
+            font-weight: 700;
+            line-height: 26rpx;
+          }
         }
 
         .search-image {
@@ -173,32 +182,35 @@ export default {
       .uni-margin-wrap {
         width: 100%;
       }
-      .swiper {
+      .banner-swiper {
         width: 100%;
       }
-      uni-swiper {
-        width: 750rpx !important;
-        height: 516rpx !important;
+      .banner-swiper {
+        /deep/ .uni-swiper-dots {
+          // 指示点整个区域
+          bottom: 26rpx;
+          right: 20rpx;
+          left: unset !important;
+        }
+        /deep/ .uni-swiper-dot {
+          // 指示点元素默认样式
+          width: 36rpx !important;
+          height: 4rpx !important;
+          border-radius: 20rpx;
+          background-color: #ffffff80;
+        }
+        /deep/ .uni-swiper-dot-active {
+          // 指示点元素激活（当前选中）状态样式
+          background-color: #ffffff;
+        }
       }
       uni-image {
         width: 100% !important;
         height: 100% !important;
       }
-      .swiper-images {
-        width: 750rpx;
-      }
-      .section_4 {
-        background-color: #ffffff;
-        border-radius: 20rpx;
-        width: 36rpx;
-        height: 4rpx;
-      }
-      .section_5 {
-        background-color: #ffffff80;
-        border-radius: 20rpx;
-        width: 36rpx;
-        height: 4rpx;
-      }
+      // .swiper-images {
+      //   width: 750rpx;
+      // }
     }
     .notify-box {
       padding: 24rpx 32rpx;
@@ -217,11 +229,8 @@ export default {
       width: 30rpx;
       height: 30rpx;
     }
-    .group_22 {
+    .box-top {
       margin: 56rpx 32rpx 0;
-    }
-    .group_8 {
-      margin: 64rpx 32rpx 0;
     }
     .member-box {
       margin: 40rpx 32rpx 0;
@@ -281,15 +290,14 @@ export default {
           background-position: -2rpx 0rpx;
           height: 2rpx;
         }
-        .CenterPannel-font {
+        .home-font_04 {
           font-size: 20rpx;
           font-family: 苹方;
           line-height: 20rpx;
           color: #bb3e0c;
         }
         .member-time {
-          margin-left: 48rpx;
-          margin-top: 24rpx;
+          margin: 16rpx 0 8rpx 40rpx;
           line-height: 24rpx;
           text-align: center;
           word-break: break-all;
