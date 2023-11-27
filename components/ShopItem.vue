@@ -1,29 +1,27 @@
 <template>
-  <view class="flex-col section_10">
-    <view class="flex-col items-center a-i-background-image-wrapper_6">
-      <image
-        class="a-i-background-image_2"
-        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=69f26c588c4040c0a2ae6b1d6c407546.png"
-      />
-    </view>
-    <text class="self-start font_10 text_29">厨房定制收纳服务</text>
-    <view class="flex-row self-stretch equal-division_2">
-      <view class="flex-col items-center text-wrapper_1"
-        ><text class="CenterPannel-font text_31">新品上市</text></view
-      >
-      <view class="flex-col items-center text-wrapper_2 ml-5">
-        <text class="CenterPannel-font text_31">好评推荐</text>
+  <view class="flex-col shop-item">
+    <image
+      class="a-i-background-image shop-a-i-background-image"
+      src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=69f26c588c4040c0a2ae6b1d6c407546.png"
+    />
+    <text class="self-start shop-text">厨房定制收纳服务</text>
+    <view class="flex-row self-stretch shop-equal-division">
+      <view class="flex-col items-center shop-text-wrapper">
+        <text class="shop-CenterPannel-font shop-text_1">新品上市</text>
       </view>
-      <view class="flex-col items-center text-wrapper_1 view_1 ml-5">
-        <text class="CenterPannel-font text_31">新客优选</text>
+      <view class="flex-col items-center shop-text-wrapper_1 shop-ml-5">
+        <text class="shop-CenterPannel-font shop-text_1">好评推荐</text>
+      </view>
+      <view class="flex-col items-center shop-text-wrapper shop-view shop-ml-5">
+        <text class="shop-CenterPannel-font shop-text_1">新客优选</text>
       </view>
     </view>
-    <view class="flex-row self-stretch relative group_19">
-      <text class="self-start CenterPannel-font">秒杀价</text>
-      <text class="self-center font_13 text_40">200</text>
-      <text class="font_12 text_39 pos_7">￥</text>
-      <text class="self-start relative font_14 text_41">.00</text>
-      <text class="self-center relative font_15 text_42">100人购买</text>
+    <view class="flex-row self-stretch relative shop-group">
+      <text class="self-start shop-CenterPannel-font">秒杀价</text>
+      <text class="self-center shop-text_2">200</text>
+      <text class="shop-text_3 shop-pos">￥</text>
+      <text class="self-start relative shop-text_4">.00</text>
+      <text class="self-center relative shop-text_5">100人购买</text>
     </view>
   </view>
 </template>
@@ -41,108 +39,96 @@ export default {
 </script>
 
 <style scoped lang="less">
-.ml-5 {
-  margin-left: 10rpx;
-}
-.section_10 {
+.shop-item {
   padding-bottom: 34.48rpx;
   background-image: url("https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=1fe6dd1ef410d3f49fa1ec58d8026298.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 530rpx;
-  .a-i-background-image-wrapper_6 {
+  .a-i-background-image {
+    flex-shrink: 0;
     align-self: stretch;
-    .a-i-background-image_2 {
-      width: 330rpx;
-      height: 330rpx;
-    }
   }
-  .font_10 {
-    font-size: 30rpx;
-    font-family: PingFang SC;
-    line-height: 30rpx;
-    color: #111111;
+  .shop-a-i-background-image {
+    width: 330rpx;
+    height: 330rpx;
   }
-  .text_29 {
+  .shop-text {
     margin-left: 11rpx;
     margin-top: 30rpx;
+    color: #111111;
     font-size: 28rpx;
+    font-family: PingFang SC;
     line-height: 28rpx;
   }
-  .equal-division_2 {
+  .shop-equal-division {
     margin-top: 23.26rpx;
     padding: 0 10rpx;
-    .text-wrapper_1 {
+    .shop-text-wrapper {
       flex: 1 1 96rpx;
       padding: 3.44rpx 0 5.96rpx;
       background-color: #fff1ed;
       border-radius: 4rpx;
       height: 28rpx;
     }
-    .text-wrapper_2 {
+    .shop-text-wrapper_1 {
       padding: 3.44rpx 0 5.98rpx;
       flex: 1 1 96rpx;
       background-color: #fff1ed;
       border-radius: 4rpx;
       height: 28rpx;
     }
-    .text_31 {
+    .shop-ml-5 {
+      margin-left: 10rpx;
+    }
+    .shop-text_1 {
       text-transform: uppercase;
     }
-    .view_1 {
+    .shop-view {
       margin-right: 2rpx;
     }
   }
-  .group_19 {
+  .shop-group {
     margin-top: 33.74rpx;
     padding-left: 10.78rpx;
     padding-right: 1.16rpx;
-    .font_13 {
-      font-size: 30rpx;
-      font-family: HarmonyOSSans;
-      letter-spacing: -1.16rpx;
-      line-height: 30rpx;
-      font-weight: 700;
-    }
-    .text_40 {
+    .shop-text_2 {
       margin-left: 14.6rpx;
       color: #bb3e0c;
+      font-size: 30rpx;
+      font-family: HarmonyOSSans;
+      font-weight: 700;
+      line-height: 30rpx;
+      letter-spacing: -1.16rpx;
     }
-    .font_12 {
+    .shop-text_3 {
+      color: #bb3e0c;
       font-size: 20rpx;
       font-family: PingFang SC;
       line-height: 20rpx;
     }
-    .text_39 {
-      color: #bb3e0c;
-    }
-    .pos_7 {
+    .shop-pos {
       position: absolute;
       left: 74.22rpx;
-      top: 0.8rpx;
+      top: 0;
     }
-    .font_14 {
-      font-size: 20rpx;
-      font-family: HarmonyOSSansSC;
-      line-height: 20rpx;
-      font-weight: 700;
-    }
-    .text_41 {
+    .shop-text_4 {
       margin-left: 1.6rpx;
       margin-top: 1.34rpx;
       color: #bb3e0c;
+      font-size: 20rpx;
+      font-family: HarmonyOSSansSC;
+      font-weight: 700;
+      line-height: 20rpx;
     }
-    .font_15 {
+    .shop-text_5 {
+      margin-left: 39.86rpx;
+      color: #a7a7a7;
       font-size: 24rpx;
       font-family: 苹方;
       line-height: 24rpx;
-      color: #a7a7a7;
-    }
-    .text_42 {
-      margin-left: 39.86rpx;
     }
   }
-  .CenterPannel-font {
+  .shop-CenterPannel-font {
     font-size: 20rpx;
     font-family: 苹方;
     line-height: 20rpx;
