@@ -1,8 +1,10 @@
 {
-  "easycom": {/*///---- Pages-Tool --  合并自： pages-config/easycom.json ----*/
+  "easycom": {
+    /*///---- Pages-Tool --  合并自： pages-config/easycom.json ----*/
     "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
   },
-  "pages": [/*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+  "pages": [
+    /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/tabBar/home",
       "style": {
@@ -10,7 +12,7 @@
         "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
-    }, 
+    },
     {
       "path": "pages/tabBar/shop",
       "style": {
@@ -18,7 +20,7 @@
         "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
-    }, 
+    },
     {
       "path": "pages/tabBar/cart",
       "style": {
@@ -26,7 +28,7 @@
         "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
-    }, 
+    },
     {
       "path": "pages/tabBar/personal",
       "style": {
@@ -34,63 +36,54 @@
         "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
-    }, {
-      "path": "pages/security/login/login",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "登录",
-        "enablePullDownRefresh": false
-      }
-
-    }, {
-      "path": "pages/list/list",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "列表",
-        "enablePullDownRefresh": false
-      }
-
     }
   ],
-  "globalStyle": {/*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/
+  "globalStyle": {
+    /*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "飞进",
     "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#F1F5F8",
     "backgroundColor": "#F1F5F8"
   },
-  "tabBar": {/*///---- Pages-Tool --  合并自： pages-config/tabBar.json ----*/
+  "tabBar": {
+    /*///---- Pages-Tool --  合并自： pages-config/tabBar.json ----*/
     "navigationStyle": "custom",
     "backgroundColor": "#1C6BFF",
     "enablePullDownRefresh": true,
-  	"color": "#bbbbbb",
-  	"selectedColor": "#000000",
-  	"borderStyle": "white",
-  	"backgroundColor": "#ffffff",
-  	"height": "60px",
-  	"fontSize": "12px",
-  	"iconWidth": "12px",
-  	"spacing": "3px",
-  	"list": [{
-  	  "pagePath": "pages/tabBar/home",
-  	  "iconPath": "",
-  	  "selectedIconPath": "",
-  	  "text": "首页"
-  	},{
-  	  "pagePath": "pages/tabBar/shop",
-  	  "iconPath": "",
-  	  "selectedIconPath": "",
-  	  "text": "商城"
-  	},{
-  	  "pagePath": "pages/tabBar/cart",
-  	  "iconPath": "",
-  	  "selectedIconPath": "",
-  	  "text": "购物车"
-  	},{
-  	  "pagePath": "pages/tabBar/personal",
-  	  "iconPath": "",
-  	  "selectedIconPath": "",
-  	  "text": "我的"
-  	}]
+    "color": "#bbbbbb",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "height": "60px",
+    "fontSize": "12px",
+    "iconWidth": "12px",
+    "spacing": "3px",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/home",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/shop",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/tabBar/cart",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/tabBar/personal",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "我的"
+      }
+    ]
   }
 }
