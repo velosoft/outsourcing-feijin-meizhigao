@@ -1,14 +1,26 @@
 <template>
   <view class="flex-col view">
-    <view class="flex-col">
-      <view
-        class="flex-row justify-center items-center self-stretch relative group_15"
-      >
-        <text class="text_26 pos">商品推荐</text>
-        <text class="font_9">服务推荐</text>
-        <text class="font_9 pos_2">课程推荐</text>
-      </view>
-      <view class="self-start section_9"></view>
+    <view class="flex-col tabs-top">
+      <u-tabs
+      :list="tabList"
+      lineWidth="20"
+      lineHeight="6"
+      lineColor="#b09053"
+      :activeStyle="{
+        color: '#030305',
+        fontFamily: 'PingFangSC-Medium',
+        // fontSize: '32rpx',
+        transform: 'scale(1.05)'
+      }"
+      :inactiveStyle="{
+        color: '#bcbcbc',
+        fontFamily: '苹方',
+        // fontSize: '30rpx',
+        transform: 'scale(1)'
+      }"
+      itemStyle="padding-left: 26.5px; padding-right: 26.5px; height: 36px;"
+      @click="click"
+    ></u-tabs>
     </view>
     <view class="flex-col justify-start double-list-view">
       <view class="flex-row">
@@ -37,6 +49,17 @@ export default {
     return {
       items: [null],
       items_1: [null],
+      tabList: [
+        {
+          name: "商品推荐",
+        },
+        {
+          name: "服务推荐",
+        },
+        {
+          name: "课程推荐",
+        },
+      ],
     };
   },
 
@@ -51,6 +74,9 @@ export default {
 .view {
   padding: 0 30rpx 8rpx 30rpx;
   background-color: #f8f8f8;
+  .tabs-top{
+    margin-top: 16rpx
+  }
   .group_15 {
     padding: 28.46rpx 52.68rpx 14rpx 53.96rpx;
     .text_26 {
