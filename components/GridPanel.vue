@@ -1,49 +1,27 @@
 <template>
-  <view class="flex-col group_8">
-    <view class="flex-row items-baseline group_9">
-      <text class="font_4 text_11">从收纳开始,</text>
-      <text class="ml-4 font_5 text_17">探索家具灵感</text>
+  <view class="flex-col">
+    <view class="flex-row items-baseline title-wrap">
+      <text class="title-font">从收纳开始,</text>
+      <text class="ml-4 title-text">探索家具灵感</text>
     </view>
-    <view class="mt-12 flex-row equal-division_2">
-      <view class="flex-col items-center equal-division-item_1">
-        <image
-          class="image_12"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=6087d03087f61aefa21604e8a8260437.png"
-        />
-        <text class="mt-8 font_2">客厅收纳</text>
-      </view>
-      <view class="flex-col items-start equal-division-item_1 group_23">
-        <image
-          class="image_12"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=61bc2017b76d4955d49230334853d186.png"
-        />
-        <text class="mt-8 font_2">衣柜收纳</text>
-      </view>
-      <view class="flex-col items-center equal-division-item_4">
-        <image
-          class="shrink-0 image_12"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=3824feb130eaa18a0145cbe83a7076df.png"
-        />
-        <text class="mt-10 font_2">厨房收纳</text>
-        <image
-          class="mt-10 shrink-0 image_13"
-          src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/c4e8c8d415dd690090db099c3f917af8.png"
-        />
-      </view>
-      <view class="flex-col items-center group_10 group_29">
-        <image
-          class="image_12"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=b5dd0a42660421740bd5ff8e89a49f51.png"
-        />
-        <text class="mt-8 font_2">卧室收纳</text>
-      </view>
-      <view class="flex-col items-center group_10 group_1">
-        <image
-          class="image_12"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=e20217164f231e0999467a2457261afb.png"
-        />
-        <text class="mt-8 font_8 text_22">杂物房收纳</text>
-      </view>
+    <view class="mt-12 flex-col">
+      <swiper class="nav-swiper" style="height: 184rpx" autoplay="true" indicator-dots="true">
+        <swiper-item v-for="(item, index) in swiperItems" :key="index">
+          <view class="flex-row items-center equal-division">
+            <view
+              class="flex-col items-center equal-division-item"
+              v-for="(item, index) in items"
+              :key="index"
+            >
+              <image
+                class="item-image"
+                src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=6087d03087f61aefa21604e8a8260437.png"
+              />
+              <text class="item-text">客厅收纳</text>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
     </view>
   </view>
 </template>
@@ -53,7 +31,10 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      swiperItems: [null, null],
+      items: [null, null, null, null, null],
+    };
   },
 
   methods: {},
@@ -61,77 +42,72 @@ export default {
 </script>
 
 <style scoped lang="less">
-.group_8 {
-  .group_9 {
-    padding: 0 0;
-    .font_4 {
-      font-size: 30rpx;
-      font-family: PingFang SC;
-      line-height: 30rpx;
-      color: #000000;
-    }
-    .text_11 {
-      line-height: 30.24rpx;
-    }
-    .font_5 {
-      font-size: 30rpx;
-      font-family: PingFang SC;
-      line-height: 30rpx;
-      color: #a7a7a7;
-    }
-    .text_17 {
-      font-size: 28rpx;
-      line-height: 28rpx;
-    }
+.title-wrap {
+  padding: 0 32rpx;
+  .title-font {
+    color: #000000;
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    line-height: 30.24rpx;
   }
-  .equal-division_2 {
-    padding: 0 8rpx;
-    .equal-division-item_1 {
-      flex: 1 1 146.78rpx;
-      align-self: center;
-    }
-    .group_23 {
-      padding: 0 16rpx;
-    }
-    .equal-division-item_4 {
-      flex: 1 1 146.78rpx;
-      align-self: flex-start;
-      margin-top: 32rpx;
-      .image_13 {
-        border-radius: 4rpx;
-        width: 60rpx;
-        height: 8rpx;
-      }
-    }
-    .image_12 {
+  .title-text {
+    color: #a7a7a7;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    line-height: 28rpx;
+  }
+}
+.nav-swiper {
+  /deep/ .uni-swiper-dots {
+    // 指示点整个区域
+    height: 8rpx;
+    width: 60rpx !important;
+    bottom: 0;
+    background-color: #f6f6f6;
+  }
+  /deep/ .uni-swiper-dot {
+    // 指示点元素默认样式
+    background-color: #f6f6f6;
+    width: 30rpx;
+    height: 8rpx;
+    border-radius: 4rpx;
+    margin-right: unset !important;
+  }
+  /deep/ .uni-swiper-dot-active {
+    // 指示点元素激活（当前选中）状态样式
+    background-color: #b09053;
+    width: 30rpx;
+    height: 8rpx;
+    border-radius: 4rpx;
+  }
+}
+.equal-division {
+  padding: 24rpx 8rpx;
+  .equal-division-item {
+    flex: 1 1 146.8rpx;
+    .item-image {
       width: 96rpx;
       height: 96rpx;
     }
-    .font_2 {
+    .item-text {
+      margin-top: 16rpx;
       font-size: 24rpx;
       font-family: 苹方;
       line-height: 24rpx;
       color: #030305;
     }
-    .group_10 {
-      flex: 1 1 146.78rpx;
-      .font_8 {
-        font-size: 20rpx;
-        font-family: 苹方;
-        line-height: 20rpx;
-        color: #030305;
-      }
-      .text_22 {
-        font-size: 22rpx;
-        line-height: 22rpx;
-      }
-    }
-    .group_29 {
-      padding: 24rpx 0;
-    }
-    .group_1 {
-      padding: 32rpx 0;
-    }
+  }
+}
+.section {
+  margin-top: -8rpx;
+  background-color: #f6f6f6;
+  border-radius: 4rpx;
+  width: 60rpx;
+  .section_2 {
+    background-color: #b09053;
+    border-radius: 4rpx;
+    width: 30rpx;
+    height: 8rpx;
   }
 }
 </style>
