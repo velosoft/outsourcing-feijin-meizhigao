@@ -1,28 +1,32 @@
 <template>
-<view class="flex-row">
-  <view class="flex-col justify-start items-center group_3 equal-division-item">
-    <image
-      class="a-i-background-image"
-      src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=29f3c3885f96835d8335b04969854655.png"
-    />
-    <text class="font_3 text_1 pos_2">服务分类</text>
-    <image
-      class="image_8 pos_4"
-      src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=df525343176bc7b3e6b09594229fe5ad.png"
-    />
+  <view class="flex-row">
+    <view
+      class="flex-col justify-start items-center group_3 equal-division-item"
+    >
+      <image
+        class="a-i-background-image"
+        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=29f3c3885f96835d8335b04969854655.png"
+      />
+      <text class="font_3 text_1 pos_2">服务分类</text>
+      <image
+        class="image_8 pos_4"
+        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=df525343176bc7b3e6b09594229fe5ad.png"
+      />
+    </view>
+    <view
+      class="ml-12 flex-col justify-start items-center group_3 equal-division-item"
+    >
+      <image
+        class="a-i-background-image"
+        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=a228359c073e6b7334bb5c96d86eb4d8.png"
+      />
+      <text class="font_3 text_1 pos_3">商品分类</text>
+      <image
+        class="image_8 pos_5"
+        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=df525343176bc7b3e6b09594229fe5ad.png"
+      />
+    </view>
   </view>
-  <view class="ml-12 flex-col justify-start items-center group_3 equal-division-item">
-    <image
-      class="a-i-background-image"
-      src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=a228359c073e6b7334bb5c96d86eb4d8.png"
-    />
-    <text class="font_3 text_1 pos_3">商品分类</text>
-    <image
-      class="image_8 pos_5"
-      src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=df525343176bc7b3e6b09594229fe5ad.png"
-    />
-  </view>
-</view>
 </template>
 
 <script>
