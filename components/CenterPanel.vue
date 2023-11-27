@@ -1,62 +1,54 @@
 <template>
-  <view class="flex-col group_27">
-    <view class="flex-row items-baseline group_9">
-      <text class="font_4 text_7">空间收纳设计,</text>
-      <text class="ml-4 font_5 text_8">一对一服务</text>
+  <view class="flex-col storage-group">
+    <view class="flex-row items-baseline storage-group_1">
+      <text class="storage-font storage-text">空间收纳设计,</text>
+      <text class="storage-ml-4 storage-font_1 storage-text_1">一对一服务</text>
     </view>
-    <view class="mt-22 flex-row group_9">
-      <view
-        class="flex-col justify-start items-center a-i-background-image-wrapper group_6"
-      >
+    <view class="storage-mt-22 flex-row storage-group_1">
+      <view class="flex-col justify-start items-center storage-a-i-background-image-wrapper storage-group_2">
         <image
-          class="a-i-background-image_2"
+          class="storage-a-i-background-image"
           src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=00b8c5611dba52e10023fcd5dbe624ac.png"
         />
-        <view class="flex-row items-center section_7 pos_6">
-          <text class="text_9">去秒杀</text>
+        <view class="flex-row items-center storage-section storage-pos">
+          <text class="storage-text_2">去秒杀</text>
           <image
-            class="shrink-0 image_10"
+            class="shrink-0 storage-image"
             src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=e56414bb4c3681ef25dbdff757e574e4.png"
           />
         </view>
-        <text class="font_3 text_14 pos_10">秒杀活动</text>
-        <text class="font_7 text_16 pos_12">让你购物省心又省钱！</text>
+        <text class="storage-font_2 storage-text_3 storage-pos_1">秒杀活动</text>
+        <text class="storage-font_3 storage-text_4 storage-pos_2">让你购物省心又省钱！</text>
       </view>
-      <view class="ml-14 flex-col group_7">
-        <view class="flex-col justify-start a-i-background-image-wrapper_3">
-          <view
-            class="flex-col justify-start items-center a-i-background-image-wrapper_2"
-          >
+      <view class="storage-ml-14 flex-col storage-group_3">
+        <view class="flex-col justify-start storage-a-i-background-image-wrapper_1">
+          <view class="flex-col justify-start items-center storage-a-i-background-image-wrapper_2">
             <image
-              class="a-i-background-image_3"
+              class="storage-a-i-background-image_1"
               src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=999893ddfc14ffc0eca7255cc6cbfd79.png"
             />
-            <text class="font_6 pos_8">完整收纳体系课</text>
-            <view class="flex-col justify-start text-wrapper pos_7"
-              ><text class="font_3 text_10">课程中心</text></view
-            >
+            <text class="storage-font_4 storage-pos_3">完整收纳体系课</text>
+            <view class="flex-col justify-start storage-text-wrapper storage-pos_4">
+              <text class="storage-font_2 storage-text_5">课程中心</text>
+            </view>
             <image
-              class="a-i-background-image_4 image_9"
+              class="storage-a-i-background-image_2 storage-image_1"
               src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=f0fb9653b4f3901c8a7ccdac3fa7e5a2.png"
             />
           </view>
         </view>
-        <view
-          class="mt-16 flex-col justify-start a-i-background-image-wrapper_4"
-        >
-          <view
-            class="flex-col justify-start items-center a-i-background-image-wrapper_2"
-          >
+        <view class="storage-mt-16 flex-col justify-start storage-a-i-background-image-wrapper_3">
+          <view class="flex-col justify-start items-center storage-a-i-background-image-wrapper_2">
             <image
-              class="a-i-background-image_3"
+              class="storage-a-i-background-image_1"
               src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=793d07350f962788cbbf505295bd232c.png"
             />
-            <text class="font_6 pos_11">领券下单更优惠</text>
-            <view class="flex-col justify-start text-wrapper pos_9"
-              ><text class="font_3 text_10">领券中心</text></view
-            >
+            <text class="storage-font_4 storage-pos_5">领券下单更优惠</text>
+            <view class="flex-col justify-start storage-text-wrapper storage-pos_6">
+              <text class="storage-font_2 storage-text_5">领券中心</text>
+            </view>
             <image
-              class="a-i-background-image_5 image_11"
+              class="storage-a-i-background-image_3 storage-image_2"
               src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=9e4416ee0af75a3abe74f315e03f1fe8.png"
             />
           </view>
@@ -64,173 +56,185 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
-export default {
-  components: {},
-  props: {},
-  data() {
-    return {};
-  },
-
-  methods: {},
-};
-</script>
-
-<style scoped lang="less">
-.group_27 {
-  .group_9 {
-    padding: 0 1rem;
-    .font_4 {
-      font-size: 0.94rem;
-      font-family: PingFang SC;
-      line-height: 0.94rem;
-      color: #000000;
-    }
-    .text_7 {
-      line-height: 0.95rem;
-    }
-    .font_5 {
-      font-size: 0.94rem;
-      font-family: PingFang SC;
-      line-height: 0.94rem;
-      color: #a7a7a7;
-    }
-    .text_8 {
-      font-size: 0.88rem;
-      line-height: 0.88rem;
-    }
-    .a-i-background-image-wrapper {
-      position: relative;
-      flex: 1 1 10.31rem;
-      .a-i-background-image_2 {
-        width: 10.31rem;
-        height: 10.31rem;
+  </template>
+  
+  <script>
+  export default {
+    components: {},
+    props: {},
+    data() {
+      return {};
+    },
+  
+    methods: {},
+  };
+  </script>
+  
+  <style scoped lang="less">
+  .storage-group {
+    .storage-group_1 {
+      padding: 0 0;
+      .storage-font {
+        font-size: 30rpx;
+        font-family: PingFang SC;
+        line-height: 30rpx;
+        color: #000000;
       }
-      .section_7 {
-        padding: 0.25rem 0 0.25rem 0.5rem;
-        background-color: #bb3e0c;
-        .text_9 {
-          color: #ffffff;
-          font-size: 0.75rem;
-          font-family: PingFang SC;
-          line-height: 0.75rem;
-        }
-        .image_10 {
-          width: 0.81rem;
-          height: 0.63rem;
-        }
+      .storage-text {
+        line-height: 30.36rpx;
       }
-      .pos_6 {
-        position: absolute;
-        left: 0.75rem;
-        top: 0.64rem;
+      .storage-ml-4 {
+        margin-left: 8rpx;
       }
-      .text_14 {
-        font-size: 0.81rem;
-        line-height: 0.81rem;
+      .storage-font_1 {
+        font-size: 30rpx;
+        font-family: PingFang SC;
+        line-height: 30rpx;
+        color: #a7a7a7;
       }
-      .pos_10 {
-        position: absolute;
-        left: 0.77rem;
-        bottom: 2.31rem;
-      }
-      .font_7 {
-        font-size: 0.63rem;
-        font-family: 苹方;
-        line-height: 0.63rem;
-        color: #bb3e0c;
-      }
-      .text_16 {
-        color: #ffffff;
-      }
-      .pos_12 {
-        position: absolute;
-        left: 0.78rem;
-        bottom: 1.31rem;
+      .storage-text_1 {
+        font-size: 28rpx;
+        line-height: 28rpx;
       }
     }
-    .group_6 {
-      height: 10.31rem;
-    }
-    .group_7 {
-      flex: 1 1 10.31rem;
-      .a-i-background-image-wrapper_3 {
-        background-color: #ececec66;
-        border-radius: 0.25rem;
-      }
-      .a-i-background-image-wrapper_4 {
-        background-color: #d6d6d666;
-        border-radius: 0.25rem;
-      }
-      .a-i-background-image-wrapper_2 {
+    .storage-mt-22 {
+      margin-top: 44rpx;
+      .storage-a-i-background-image-wrapper {
         position: relative;
-        .a-i-background-image_3 {
-          width: 10.38rem;
-          height: 4.69rem;
+        flex: 1 1 330rpx;
+        .storage-a-i-background-image {
+          width: 330rpx;
+          height: 330rpx;
         }
-        .font_6 {
-          font-size: 0.63rem;
-          font-family: 苹方;
-          line-height: 0.63rem;
-          color: #6c6c6c;
-        }
-        .pos_8 {
-          position: absolute;
-          left: 0.53rem;
-          bottom: 1.87rem;
-        }
-        .text-wrapper {
-          padding: 0.25rem 0;
-          background-color: #b09053;
-          .text_10 {
-            margin: 0 0.25rem;
+        .storage-section {
+          padding: 8rpx 0 8rpx 16rpx;
+          background-color: #bb3e0c;
+          .storage-text_2 {
+            color: #ffffff;
+            font-size: 24rpx;
+            font-family: PingFang SC;
+            line-height: 24rpx;
+          }
+          .storage-image {
+            width: 26rpx;
+            height: 20rpx;
           }
         }
-        .pos_7 {
+        .storage-pos {
           position: absolute;
-          left: 0.5rem;
-          top: 0.64rem;
+          left: 24rpx;
+          top: 20.5rpx;
         }
-        .a-i-background-image_4 {
+        .storage-text_3 {
+          font-size: 26rpx;
+          line-height: 26rpx;
+        }
+        .storage-pos_1 {
           position: absolute;
-          right: 0.75rem;
-          bottom: 0.63rem;
+          left: 24.78rpx;
+          bottom: 73.92rpx;
         }
-        .image_9 {
-          filter: drop-shadow(0rem 0.13rem 0.13rem #86868629);
-          width: 3.13rem;
-          height: 3.13rem;
+        .storage-font_3 {
+          font-size: 20rpx;
+          font-family: 苹方;
+          line-height: 20rpx;
+          color: #bb3e0c;
         }
-        .pos_11 {
+        .storage-text_4 {
+          color: #ffffff;
+        }
+        .storage-pos_2 {
           position: absolute;
-          left: 0.52rem;
-          bottom: 1.62rem;
-        }
-        .pos_9 {
-          position: absolute;
-          left: 0.5rem;
-          top: 0.71rem;
-        }
-        .a-i-background-image_5 {
-          position: absolute;
-          right: 0.31rem;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-        .image_11 {
-          width: 4.06rem;
-          height: 4.06rem;
+          left: 24.94rpx;
+          bottom: 42.04rpx;
         }
       }
-    }
-    .font_3 {
-      font-size: 0.75rem;
-      font-family: PingFangSC-Medium;
-      line-height: 0.75rem;
-      color: #ffffff;
+      .storage-group_2 {
+        height: 330rpx;
+      }
+      .storage-ml-14 {
+        margin-left: 28rpx;
+        .storage-a-i-background-image-wrapper_1 {
+          background-color: #ececec66;
+          border-radius: 8rpx;
+        }
+        .storage-mt-16 {
+          margin-top: 32rpx;
+        }
+        .storage-a-i-background-image-wrapper_3 {
+          background-color: #d6d6d666;
+          border-radius: 8rpx;
+        }
+        .storage-a-i-background-image-wrapper_2 {
+          position: relative;
+          .storage-a-i-background-image_1 {
+            width: 332rpx;
+            height: 150rpx;
+          }
+          .storage-font_4 {
+            font-size: 20rpx;
+            font-family: 苹方;
+            line-height: 20rpx;
+            color: #6c6c6c;
+          }
+          .storage-pos_3 {
+            position: absolute;
+            left: 17.04rpx;
+            bottom: 59.96rpx;
+          }
+          .storage-text-wrapper {
+            padding: 8rpx 0;
+            background-color: #b09053;
+            .storage-text_5 {
+              margin: 0 8rpx;
+            }
+          }
+          .storage-pos_4 {
+            position: absolute;
+            left: 16rpx;
+            top: 20.5rpx;
+          }
+          .storage-a-i-background-image_2 {
+            position: absolute;
+            right: 24rpx;
+            bottom: 20rpx;
+          }
+          .storage-image_1 {
+            filter: drop-shadow(0rpx 4rpx 4rpx #86868629);
+            width: 100rpx;
+            height: 100rpx;
+          }
+          .storage-pos_5 {
+            position: absolute;
+            left: 16.72rpx;
+            bottom: 51.98rpx;
+          }
+          .storage-pos_6 {
+            position: absolute;
+            left: 16rpx;
+            top: 22.8rpx;
+          }
+          .storage-a-i-background-image_3 {
+            position: absolute;
+            right: 10rpx;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          .storage-image_2 {
+            width: 130rpx;
+            height: 130rpx;
+          }
+        }
+      }
+      .storage-group_3 {
+        flex: 1 1 330rpx;
+      }
+      .storage-font_2 {
+        font-size: 24rpx;
+        font-family: PingFangSC-Medium;
+        line-height: 24rpx;
+        color: #ffffff;
+      }
     }
   }
-}
-</style>
+  </style>

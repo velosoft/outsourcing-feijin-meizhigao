@@ -27,7 +27,7 @@
         <text class="mt-10 font_2">厨房收纳</text>
         <image
           class="mt-10 shrink-0 image_13"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=c4e8c8d415dd690090db099c3f917af8.png"
+          src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/c4e8c8d415dd690090db099c3f917af8.png"
         />
       </view>
       <view class="flex-col items-center group_10 group_29">
@@ -63,74 +63,74 @@ export default {
 <style scoped lang="less">
 .group_8 {
   .group_9 {
-    padding: 0 1rem;
+    padding: 0 0;
     .font_4 {
-      font-size: 0.94rem;
+      font-size: 30rpx;
       font-family: PingFang SC;
-      line-height: 0.94rem;
+      line-height: 30rpx;
       color: #000000;
     }
     .text_11 {
-      line-height: 0.94rem;
+      line-height: 30.24rpx;
     }
     .font_5 {
-      font-size: 0.94rem;
+      font-size: 30rpx;
       font-family: PingFang SC;
-      line-height: 0.94rem;
+      line-height: 30rpx;
       color: #a7a7a7;
     }
     .text_17 {
-      font-size: 0.88rem;
-      line-height: 0.88rem;
+      font-size: 28rpx;
+      line-height: 28rpx;
     }
   }
   .equal-division_2 {
-    padding: 0 0.25rem;
+    padding: 0 8rpx;
     .equal-division-item_1 {
-      flex: 1 1 4.59rem;
+      flex: 1 1 146.78rpx;
       align-self: center;
     }
     .group_23 {
-      padding: 0 0.5rem;
+      padding: 0 16rpx;
     }
     .equal-division-item_4 {
-      flex: 1 1 4.59rem;
+      flex: 1 1 146.78rpx;
       align-self: flex-start;
-      margin-top: 1rem;
+      margin-top: 32rpx;
       .image_13 {
-        border-radius: 0.13rem;
-        width: 1.88rem;
-        height: 0.25rem;
+        border-radius: 4rpx;
+        width: 60rpx;
+        height: 8rpx;
       }
     }
     .image_12 {
-      width: 3rem;
-      height: 3rem;
+      width: 96rpx;
+      height: 96rpx;
     }
     .font_2 {
-      font-size: 0.75rem;
+      font-size: 24rpx;
       font-family: 苹方;
-      line-height: 0.75rem;
+      line-height: 24rpx;
       color: #030305;
     }
     .group_10 {
-      flex: 1 1 4.59rem;
+      flex: 1 1 146.78rpx;
       .font_8 {
-        font-size: 0.63rem;
+        font-size: 20rpx;
         font-family: 苹方;
-        line-height: 0.63rem;
+        line-height: 20rpx;
         color: #030305;
       }
       .text_22 {
-        font-size: 0.69rem;
-        line-height: 0.69rem;
+        font-size: 22rpx;
+        line-height: 22rpx;
       }
     }
     .group_29 {
-      padding: 0.75rem 0;
+      padding: 24rpx 0;
     }
     .group_1 {
-      padding: 1rem 0;
+      padding: 32rpx 0;
     }
   }
 }
