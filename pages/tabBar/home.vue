@@ -1,61 +1,71 @@
 <template>
   <view class="flex-col page">
-    <view class="flex-col flex-1 group_2">
-      <view class="flex-row items-center group_24">
+    <view class="flex-col flex-1 home-con">
+      <view class="flex-row items-center search-box">
         <view class="flex-row items-center flex-1 section_2">
           <image
             class="image_7"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=5fcc6916a5ab113d1b3ddcc34f70cac3.png"
+            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=search.png"
           />
           <text class="ml-6 text_4">搜索</text>
         </view>
-        <view class="ml-8 flex-col items-center shrink-0 relative group">
+        <view class="ml-8 flex-col items-center shrink-0 relative search-right">
           <image
-            class="image_6"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=ffeac1ccce1af8bba808c53471f46788.png"
+            class="message"
+            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=message.png"
           />
-          <image
-            class="image_5 pos"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=4500ef7a4d5e93d0a4af0516550ee7bd.png"
-          />
+          <view class="flex-col justify-start items-center dot-wrap dot-pos">
+            <image
+              class="notify-image"
+              src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=70dabafc7502ff82bf3a590f5eb4c3cf.png"
+            />
+            <text class="home-font_03 dot-text dot-pos-text">1</text>
+          </view>
         </view>
       </view>
-      <view class="flex-row justify-end section_3">
+      <view class="flex-row justify-end swiper-box">
         <view class="section_4"></view>
         <view class="ml-4 section_5"></view>
         <view class="ml-4 section_5"></view>
       </view>
-      <view class="flex-row items-center section_6">
+      <view class="flex-row items-center notify-box">
         <image
-          class="image_5"
+          class="notify-image"
           src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=747a5f574dd1d31f41e2124c80439bc9.png"
         />
-        <text class="ml-10 font_2 text_5"
+        <text class="ml-10 home-font_02 notify-text"
           >显示最新一条系统公告的标题，系统公告的标题…</text
         >
       </view>
       <ClassifyCards class="group_22"></ClassifyCards>
       <CenterPanel class="group_22"></CenterPanel>
       <GridPanel class="group_8"></GridPanel>
-      <view class="flex-col group_28">
-        <view class="flex-col section_8">
-          <view
-            class="flex-row justify-between items-center self-stretch group_13"
-          >
-            <view class="flex-col items-start">
-              <text class="text_23">新会员入会礼包</text>
-              <text class="CenterPannel-mt-8 CenterPannel-font text_24"
-                >你有一份价值100元的新人礼包</text
+      <view class="flex-col member-box">
+        <view class="flex-col justify-start relative member-section">
+          <image
+            class="member-bg member-pos"
+            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=member-bg.png"
+          />
+          <view class="flex-col relative">
+            <view
+              class="flex-row justify-between items-center self-stretch member-group"
+            >
+              <view class="flex-col items-start">
+                <text class="member-text">新会员入会礼包</text>
+                <text
+                  class="CenterPannel-mt-8 CenterPannel-font member-describe"
+                  >你有一份价值100元的新人礼包</text
+                >
+              </view>
+              <view class="flex-col items-center member-text-wrapper"
+                ><text class="btn-member">待领取</text></view
               >
             </view>
-            <view class="flex-col items-center text-wrapper_2"
-              ><text class="a-i-outflow">待领取</text></view
+            <view class="self-stretch member-divider"></view>
+            <text class="self-start CenterPannel-font member-time"
+              >2023.07.6-2023.08.12</text
             >
           </view>
-          <view class="self-stretch divider"></view>
-          <text class="self-start CenterPannel-font text_25"
-            >2023.07.6-2023.08.12</text
-          >
         </view>
       </view>
       <RecommendedList class="section_13"></RecommendedList>
@@ -87,9 +97,9 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
-  .group_2 {
+  .home-con {
     overflow-y: auto;
-    .group_24 {
+    .search-box {
       padding: 24rpx 28rpx 40rpx;
       .section_2 {
         padding: 16rpx 32rpx;
@@ -108,22 +118,41 @@ export default {
           line-height: 26rpx;
         }
       }
-      .group {
+      .search-right {
         padding-top: 8rpx;
         width: 76rpx;
-        .image_6 {
+        .message {
           border-radius: 50%;
           width: 68rpx;
           height: 68rpx;
         }
-        .pos {
+        .dot-wrap {
+          background-color: #ffffff00;
+          width: 30rpx;
+          .home-font_03 {
+            font-size: 20rpx;
+            font-family: PingFang SC;
+            line-height: 20rpx;
+          }
+          .dot-text {
+            color: #ffffff;
+            line-height: 14.28rpx;
+          }
+          .dot-pos-text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .dot-pos {
           position: absolute;
           right: 0;
           top: 0;
         }
       }
     }
-    .section_3 {
+    .swiper-box {
       padding: 488rpx 20rpx 24rpx;
       background-image: url("https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=fc726dc031e684bc3430d7da9a9eef75.png");
       background-size: 100% 100%;
@@ -141,20 +170,20 @@ export default {
         height: 4rpx;
       }
     }
-    .section_6 {
+    .notify-box {
       padding: 24rpx 32rpx;
       background-color: #f7f7f799;
-      .font_2 {
+      .home-font_02 {
         font-size: 24rpx;
         font-family: 苹方;
         line-height: 24rpx;
         color: #030305;
       }
-      .text_5 {
+      .notify-text {
         color: #6c6c6c;
       }
     }
-    .image_5 {
+    .notify-image {
       width: 30rpx;
       height: 30rpx;
     }
@@ -164,17 +193,25 @@ export default {
     .group_8 {
       margin: 64rpx 32rpx 0;
     }
-    .group_28 {
+    .member-box {
       margin: 40rpx 32rpx 0;
-      .section_8 {
+      .member-section {
         padding-bottom: 8rpx;
-        background-image: url("https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=484db8f69476ecb8a61eb74c858fcdd9.png");
-        background-position: 0% 0%;
-        background-size: 690rpx 186rpx;
-        background-repeat: no-repeat;
-        .group_13 {
+        height: 186rpx;
+        .member-bg {
+          width: 92vw;
+          height: 24.8vw;
+        }
+        .member-pos {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+        .member-group {
           padding: 32rpx 24rpx 32rpx 40rpx;
-          .text_23 {
+          .member-text {
             color: #bb3e0c;
             font-size: 32rpx;
             font-family: HarmonyOSSansSC;
@@ -184,17 +221,17 @@ export default {
           .CenterPannel-mt-8 {
             margin-top: 16rpx;
           }
-          .text_24 {
+          .member-describe {
             font-size: 22rpx;
             line-height: 22rpx;
           }
-          .text-wrapper_2 {
+          .member-text-wrapper {
             padding: 16rpx 0;
             background-color: #bb3e0c;
             border-radius: 8rpx;
             width: 120rpx;
             height: 52rpx;
-            .a-i-outflow {
+            .btn-member {
               color: #ffffff;
               font-size: 24rpx;
               font-family: HarmonyOSSansSC;
@@ -203,7 +240,7 @@ export default {
             }
           }
         }
-        .divider {
+        .member-divider {
           background-image: repeating-linear-gradient(
             90deg,
             #ead2ca,
@@ -220,7 +257,7 @@ export default {
           line-height: 20rpx;
           color: #bb3e0c;
         }
-        .text_25 {
+        .member-time {
           margin-left: 48rpx;
           margin-top: 24rpx;
           line-height: 24rpx;
