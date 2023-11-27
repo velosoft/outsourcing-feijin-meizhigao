@@ -52,7 +52,7 @@
         <view class="flex-col justify-start relative member-section">
           <image
             class="member-bg member-pos"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=member-bg.png"
+            src="../../static/images/member_bg.png"
           />
           <view class="flex-col relative">
             <view
