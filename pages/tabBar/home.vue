@@ -39,7 +39,7 @@
       <view class="flex-row items-center notify-box">
         <image
           class="notify-image"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=747a5f574dd1d31f41e2124c80439bc9.png"
+          src="../../static/images/notify.png"
         />
         <text class="ml-10 home-font_02 notify-text"
           >显示最新一条系统公告的标题，系统公告的标题…</text
