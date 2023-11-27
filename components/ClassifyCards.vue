@@ -5,12 +5,12 @@
     >
       <image
         class="a-i-background-image"
-        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=29f3c3885f96835d8335b04969854655.png"
+        src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692420408547664.png"
       />
       <text class="font_3 text_1 pos_2">服务分类</text>
       <image
         class="image_8 pos_4"
-        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=df525343176bc7b3e6b09594229fe5ad.png"
+        src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/df525343176bc7b3e6b09594229fe5ad.png"
       />
     </view>
     <view
@@ -18,12 +18,12 @@
     >
       <image
         class="a-i-background-image"
-        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=a228359c073e6b7334bb5c96d86eb4d8.png"
+        src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692420887214705.png"
       />
       <text class="font_3 text_1 pos_3">商品分类</text>
       <image
         class="image_8 pos_5"
-        src="https://dev.ft.velosoft.cn/api/image?token=6564447bcc0204001240f5d1&name=df525343176bc7b3e6b09594229fe5ad.png"
+        src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/df525343176bc7b3e6b09594229fe5ad.png"
       />
     </view>
   </view>
