@@ -41,21 +41,23 @@
           </swiper-item>
         </swiper>
       </view>
-      <view class="mt-16 flex-row tabs-wrap">
-        <view
-          class="u-page__tag-item"
-          v-for="(item, index) in radios"
-          :key="index"
-        >
-          <u-tag
-            :text="item.value"
-            :plain="!item.checked"
-            :name="index"
-            @click="radioClick"
+	  <scroll-view class="scroll-view_H" scroll-x="true">
+      	<view class="mt-16 flex-row tabs-wrap">
+          <view
+            class="u-page__tag-item"
+            v-for="(item, index) in radios"
+            :key="index"
           >
-          </u-tag>
-        </view>
-      </view>
+            <u-tag
+              :text="item.value"
+              :plain="!item.checked"
+              :name="index"
+              @click="radioClick"
+            >
+            </u-tag>
+          </view>
+      	</view>
+	  </scroll-view>
       <view class="mt-16 flex-col list-wrap">
         <view
           class="flex-row mt-16 list-item"
@@ -220,8 +222,14 @@ export default {
       height: 10rpx;
     }
   }
+  .scroll-view_H {
+    white-space: nowrap;
+    width: 100%;
+  }
   .tabs-wrap {
-    overflow-x: hidden;
+    /deep/ .u-page__tag-item {
+      margin-right: 12rpx;
+    }
     /deep/ .u-tag {
       border: unset !important;
 
@@ -243,9 +251,6 @@ export default {
       font-family: 苹方;
       line-height: 24rpx;
       color: #6c6c6c;
-    }
-    /deep/ .u-page__tag-item {
-      margin-right: 12rpx;
     }
   }
   .list-wrap {
