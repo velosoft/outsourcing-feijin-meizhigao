@@ -99,8 +99,10 @@
         :itemsRight="itemsRight"
       ></RecommendedList>
       <view class="flex-col justify-start items-center loading-wrapper">
-        <text v-if="status === 'loading'" class="font_10 text_35">加载中~</text>
-        <text v-else class="font_10 text_35">没有更多数据啦</text>
+        <text v-if="status === 'loading'" class="load-more-font load-more-text"
+          >加载中~</text
+        >
+        <text v-else class="load-more-font load-more-text">没有更多数据啦</text>
       </view>
     </view>
   </view>
@@ -303,7 +305,7 @@ const items_1 = [
         height: 516rpx;
       }
       .indicator-wrapper {
-        position:absolute;
+        position: absolute;
         bottom: 26rpx;
         right: 20rpx;
 
@@ -416,13 +418,13 @@ const items_1 = [
     }
     .loading-wrapper {
       padding: 40rpx 0;
-      .font_10 {
+      .load-more-font {
         font-size: 24rpx;
         font-family: 苹方;
         line-height: 24rpx;
         color: #a7a7a7;
       }
-      .text_35 {
+      .load-more-text {
         font-size: 26rpx;
         line-height: 26rpx;
       }
