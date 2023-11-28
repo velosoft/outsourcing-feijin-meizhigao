@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col shop-item">
     <image
-      class="a-i-background-image shop-a-i-background-image"
+      class="shop-images"
       :src="image"
     />
     <text class="self-start shop-title">{{ title }}</text>
@@ -11,19 +11,19 @@
         v-for="(item, index) in tags"
         :key="index"
       >
-        <text class="shop-CenterPannel-font shop-text_1">{{ item }}</text>
+        <text class="shop-font_01 shop-tag">{{ item }}</text>
       </view>
     </view>
     <view class="flex-row justify-between items-center self-stretch shop-group">
       <view class="flex-row items-center self-stretch shop-price-wrapper">
-        <text class="shop-CenterPannel-font">秒杀价</text>
-        <view class="flex-row items-center shrink-0 relative group_4 ml-1">
-          <text class="shop-text_3">￥</text>
-          <text class="shop-text_2 pos">{{ price }}</text>
-          <text class="relative shop-text_4">.00</text>
+        <text class="shop-font_01">秒杀价</text>
+        <view class="flex-row items-center shrink-0 price-wrap ml-1">
+          <text class="price-symbol">￥</text>
+          <text class="price-number">{{ price }}</text>
+          <text class="price-decimal">.00</text>
         </view>
       </view>
-      <text class="shop-text_5">{{ buyers + "人购买" }}</text>
+      <text class="buyers-text">{{ buyers + "人购买" }}</text>
     </view>
   </view>
 </template>
@@ -56,13 +56,10 @@ export default {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.a-i-background-image {
-  flex-shrink: 0;
-  align-self: stretch;
-}
-.shop-a-i-background-image {
+.shop-images {
   width: 330rpx;
   height: 330rpx;
+  flex-shrink: 0;
 }
 .shop-title {
   margin-left: 11rpx;
@@ -76,62 +73,61 @@ export default {
   margin-top: 23.26rpx;
   padding: 0 10rpx;
 }
+
+.shop-equal-division > .shop-text-wrapper:not(:first-child){
+  margin-left: 16rpx;
+}
 .shop-text-wrapper {
   flex: 1 1 96rpx;
-  padding: 3.44rpx 0 5.96rpx;
+  padding: 4rpx 0 6rpx;
   background-color: #fff1ed;
   border-radius: 4rpx;
   height: 28rpx;
 }
-.shop-CenterPannel-font {
+.shop-font_01 {
   font-size: 20rpx;
   font-family: 苹方;
   line-height: 20rpx;
   color: #bb3e0c;
 }
-.shop-text_1 {
+.shop-tag {
   text-transform: uppercase;
 }
 .shop-group {
-  margin-top: 33.74rpx;
-  padding-left: 10.78rpx;
-  padding-right: 1.16rpx;
+  margin-top: 34rpx;
+  padding-left: 10rpx;
+  padding-right: 1rpx;
 }
 .shop-price-wrapper {
   margin-bottom: 2rpx;
   padding-bottom: 5rpx;
 }
-.group_4 {
-  padding-bottom: 6.9rpx;
+.price-wrap {
+  padding-bottom: 7rpx;
 }
-.shop-text_3 {
+.price-symbol {
   color: #bb3e0c;
   font-size: 20rpx;
   font-family: PingFang SC;
   line-height: 20rpx;
 }
-.shop-text_2 {
+.price-number {
+  margin-left: -4rpx;
   color: #bb3e0c;
   font-size: 30rpx;
   font-family: HarmonyOSSans;
   font-weight: 700;
   line-height: 30rpx;
-  letter-spacing: -1.16rpx;
+  letter-spacing: -1rpx;
 }
-.pos {
-  position: absolute;
-  left: 13.16rpx;
-  bottom: 0;
-}
-.shop-text_4 {
-  margin-left: 44.76rpx;
+.price-decimal {
   color: #bb3e0c;
   font-size: 20rpx;
   font-family: HarmonyOSSansSC;
   font-weight: 700;
   line-height: 20rpx;
 }
-.shop-text_5 {
+.buyers-text {
   color: #a7a7a7;
   font-size: 24rpx;
   font-family: 苹方;
