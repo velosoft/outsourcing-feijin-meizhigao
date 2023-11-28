@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "uview-ui": "^2.0.36"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "sass-loader": "^10.4.1"
   }
 }
