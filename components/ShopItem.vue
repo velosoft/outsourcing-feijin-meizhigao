@@ -51,10 +51,9 @@ export default {
   margin-left: 2rpx;
 }
 .shop-item {
-  padding-bottom: 34.48rpx;
-  background-image: url("https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692422784410573.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  padding-bottom: 34rpx;
+  margin-bottom: 24rpx;
+  background-color: #ffffff;
 }
 .shop-images {
   width: 330rpx;
