@@ -3,6 +3,7 @@
     <uni-nav-bar
       :fixed="true"
       :border="false"
+      :status-bar="true"
       backgroundColor="#ffffff00"
       class="nav-bar"
       height="88rpx"
