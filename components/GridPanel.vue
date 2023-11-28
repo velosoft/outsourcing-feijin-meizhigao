@@ -37,23 +37,23 @@ export default {
       swiperItems: [null, null],
       items: [
         {
-          icon: "https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=6087d03087f61aefa21604e8a8260437.png",
+          icon: "/static/mock/6087d03087f61aefa21604e8a8260437.png",
           text: "客厅收纳",
         },
         {
-          icon: "https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=61bc2017b76d4955d49230334853d186.png",
+          icon: "/static/mock/61bc2017b76d4955d49230334853d186.png",
           text: "衣柜收纳",
         },
         {
-          icon: "https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=3824feb130eaa18a0145cbe83a7076df.png",
+          icon: "/static/mock/3824feb130eaa18a0145cbe83a7076df.png",
           text: "厨房收纳",
         },
         {
-          icon: "https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=b5dd0a42660421740bd5ff8e89a49f51.png",
+          icon: "/static/mock/b5dd0a42660421740bd5ff8e89a49f51.png",
           text: "卧室收纳",
         },
         {
-          icon: "https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=e20217164f231e0999467a2457261afb.png",
+          icon: "/static/mock/e20217164f231e0999467a2457261afb.png",
           text: "杂物房收纳",
         },
       ],
