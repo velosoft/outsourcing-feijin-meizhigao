@@ -144,7 +144,6 @@ export default {
   methods: {
     change(e) {
       this.current = e.detail.current;
-      console.log("轮播图", e.detail.current);
     },
   },
 };
@@ -310,14 +309,14 @@ const items_1 = [
         right: 20rpx;
 
         .indicator-dots {
-          background-color: #ffffff;
+          background-color: #ffffff80;
           border-radius: 20rpx;
           width: 36rpx;
           height: 4rpx;
           margin-left: 10rpx;
         }
         .active {
-          background-color: #ffffff80;
+          background-color: #ffffff;
         }
       }
     }
