@@ -17,7 +17,6 @@
           transform: 'scale(1)',
         }"
         itemStyle="padding-left: 26.5px; padding-right: 26.5px; height: 36px;"
-        @click="click"
       ></u-tabs>
     </view>
     <view class="flex-col justify-start double-list-view">
