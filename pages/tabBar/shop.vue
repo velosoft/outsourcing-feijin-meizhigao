@@ -34,7 +34,7 @@
             class="right-swiper"
             style="height: 154rpx; width: 480rpx"
             autoplay="true"
-            indicator-dots="true"
+            @change="swiperChange"
           >
             <swiper-item v-for="(item, index) in Swiperitems" :key="index">
               <image
@@ -43,9 +43,17 @@
               />
             </swiper-item>
           </swiper>
+          <view class="flex-row swiper-indicator">
+            <view
+              class="indicator-dots"
+              :class="{ active: index == current }"
+              v-for="(item, index) in Swiperitems"
+              :key="index"
+            ></view>
+          </view>
         </view>
         <scroll-view class="scroll-view_H" scroll-x="true">
-          <view class="mt-16 flex-row tabs-wrap">
+          <view class="flex-row tabs-wrap">
             <view
               class="u-page__tag-item"
               v-for="(item, index) in radios"
@@ -95,8 +103,6 @@
             </view>
           </view>
         </view>
-        <!-- </scroll-view> -->
-        <!-- </scroll-view> -->
       </view>
     </view>
   </view>
@@ -190,10 +196,14 @@ export default {
           value: "小物件收纳盒",
         },
       ],
+      current: 0,
     };
   },
 
   methods: {
+    swiperChange(e) {
+      this.current = e.detail.current;
+    },
     checked(index) {
       this.isActive = index;
     },
@@ -266,32 +276,27 @@ export default {
       width: 480rpx;
       height: 154rpx;
     }
-  }
-  .right-swiper {
-    width: unset !important;
-    /deep/ .uni-swiper-dots {
-      // 指示点整个区域
-      bottom: 8rpx;
-    }
-    /deep/ .uni-swiper-dot {
-      // 指示点元素默认样式
-      background-color: #ffffff;
-      border-radius: 8rpx;
-      width: 10rpx;
-      height: 10rpx;
-      margin-right: 8rpx;
-    }
-    /deep/ .uni-swiper-dot-active {
-      // 指示点元素激活（当前选中）状态样式
-      background-color: #ffffff;
-      border-radius: 8rpx;
-      width: 34rpx;
-      height: 10rpx;
+    .swiper-indicator {
+      position: absolute;
+      left: 50%;
+      top: 136rpx;
+      transform: translateX(-50%);
+      .indicator-dots {
+        background-color: #ffffff;
+        border-radius: 8rpx;
+        width: 10rpx;
+        height: 10rpx;
+        margin-left: 8rpx;
+      }
+      .active{
+        width: 34rpx;
+      }
     }
   }
   .scroll-view_H {
     white-space: nowrap;
     width: 100%;
+    margin-top: 32rpx;
   }
   .tabs-wrap {
     /deep/ .u-page__tag-item {
