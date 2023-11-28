@@ -1,30 +1,29 @@
 <template>
   <view class="flex-col shop-item">
-    <image
-      class="shop-images"
-      :src="image"
-    />
-    <text class="self-start shop-title">{{ title }}</text>
-    <view class="flex-row self-stretch shop-equal-division">
-      <view
-        class="flex-col items-center shop-text-wrapper"
-        :class="{ 'shop-ml-5': index !== 0 }"
-        v-for="(item, index) in tags"
-        :key="index"
-      >
-        <text class="shop-font_01 shop-tag">{{ item }}</text>
-      </view>
-    </view>
-    <view class="flex-row justify-between items-center self-stretch shop-group">
-      <view class="flex-row items-center self-stretch shop-price-wrapper">
-        <text class="shop-font_01">秒杀价</text>
-        <view class="flex-row items-center shrink-0 price-wrap ml-1">
-          <text class="price-symbol">￥</text>
-          <text class="price-number">{{ price }}</text>
-          <text class="price-decimal">.00</text>
+    <image class="shop-images" :src="image" />
+    <view class="flex-col shop-con">
+      <text class="self-start shop-title line-two">{{ title }}</text>
+      <view class="flex-row self-stretch shop-equal-division">
+        <view
+          class="flex-col items-center shop-text-wrapper"
+          v-for="(item, index) in tags"
+          :key="index"
+        >
+          <text class="shop-font_01 shop-tag">{{ item }}</text>
         </view>
       </view>
-      <text class="buyers-text">{{ buyers + "人购买" }}</text>
+      <view
+        class="flex-row justify-between items-center self-stretch shop-group">
+        <view class="flex-row items-center self-stretch shop-price-wrapper">
+          <text class="shop-font_01">秒杀价</text>
+          <view class="flex-row items-center shrink-0 price-wrap ml-1">
+            <text class="price-symbol">￥</text>
+            <text class="price-number">{{ price }}</text>
+            <text class="price-decimal">.00</text>
+          </view>
+        </view>
+        <text class="buyers-text">{{ buyers + "人购买" }}</text>
+      </view>
     </view>
   </view>
 </template>
@@ -62,20 +61,28 @@ export default {
   height: 330rpx;
   flex-shrink: 0;
 }
+.shop-con {
+  padding: 0 10rpx;
+}
 .shop-title {
-  margin-left: 11rpx;
   margin-top: 30rpx;
   color: #111111;
   font-size: 28rpx;
   font-family: PingFang SC;
   line-height: 28rpx;
 }
+.line-two{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
 .shop-equal-division {
-  margin-top: 23.26rpx;
-  padding: 0 10rpx;
+  margin-top: 20rpx;
 }
 
-.shop-equal-division > .shop-text-wrapper:not(:first-child){
+.shop-equal-division > .shop-text-wrapper:not(:first-child) {
   margin-left: 16rpx;
 }
 .shop-text-wrapper {
@@ -96,8 +103,6 @@ export default {
 }
 .shop-group {
   margin-top: 34rpx;
-  padding-left: 10rpx;
-  padding-right: 1rpx;
 }
 .shop-price-wrapper {
   margin-bottom: 2rpx;

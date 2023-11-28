@@ -3,7 +3,6 @@
     <uni-nav-bar
       :fixed="true"
       :border="false"
-      shadow
       height="88rpx"
       left-icon="left"
       title="服务分类"
@@ -12,7 +11,7 @@
     <view class="flex-col flex-1 body">
       <view class="flex-col justify-start carousel">
         <view
-          class="flex-col justify-start items-center a-i-background-image-wrapper_1"
+          class="flex-col justify-start items-center banner-image"
         >
           <image
             class="a-i-background-image"
@@ -38,7 +37,7 @@
             lineHeight: '24rpx',
             color: '#6c6c6c',
           }"
-          itemStyle="padding-left: 34rpx; padding-right: 34rpx;height:72rpx"
+          itemStyle="padding-left: 25rpx; padding-right: 25rpx;height:72rpx"
           :list="list"
         ></u-tabs>
         <view class="mt-12 flex-row tabs_content">
@@ -217,19 +216,21 @@ export default {
 }
 
 .carousel {
+  padding-top: 16rpx;
   background-color: #ffffff;
 }
 
-.a-i-background-image-wrapper_1 {
+.banner-image {
   margin: 0 32rpx;
 }
 
 .a-i-background-image {
   width: 92vw;
-  height: 26.4vw;
+  height: 26vw;
 }
 
 .tabs-header {
+  padding: 0 30rpx;
   background-color: #ffffff;
 }
 
