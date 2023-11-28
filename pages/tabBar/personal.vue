@@ -38,6 +38,7 @@
             lineHeight: '24rpx',
             color: '#6c6c6c',
           }"
+          itemStyle="padding-left: 34rpx; padding-right: 34rpx;height:72rpx"
           :list="list"
         ></u-tabs>
         <view class="mt-12 flex-row tabs_content">
@@ -68,7 +69,8 @@
         </view>
       </view>
       <view class="flex-col justify-start items-center loading-wrapper">
-        <text class="font_10 text_35">加载中~</text>
+        <text v-if="status === 'loading'" class="font_10 text_35">加载中~</text>
+        <text v-else class="font_10 text_35">没有更多数据啦</text>
       </view>
     </view>
   </view>
@@ -76,6 +78,75 @@
 
 <script>
 import ShopItem from "../../components/ShopItem.vue";
+const items = [
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+];
+const items_1 = [
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+  {
+    image:
+      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
+    title: "厨房定制收纳服务厨房定制收纳服务",
+    tags: ["新品上市", "好评推荐", "新客优选"],
+    price: 200,
+    buyers: 100,
+  },
+];
 
 export default {
   components: {
@@ -84,6 +155,8 @@ export default {
   props: {},
   data() {
     return {
+      status: "loadmore",
+      page: 0,
       list: [
         {
           name: "全部",
@@ -101,77 +174,22 @@ export default {
           name: "衣柜收纳",
         },
       ],
-      items: [
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-      ],
-      items_1: [
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-
-        {
-          image:
-            "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-          title: "厨房定制收纳服务",
-          tags: ["新品上市", "好评推荐", "新客优选"],
-          price: 200,
-          buyers: 100,
-        },
-      ],
+      items: [...items],
+      items_1: [...items_1],
     };
+  },
+  onReachBottom() {
+    if (this.page >= 3) return;
+    this.status = "loading";
+    this.page = ++this.page;
+
+    setTimeout(() => {
+      this.items = [...this.items, ...items];
+      this.items_1 = [...this.items_1, ...items_1];
+
+      if (this.page >= 3) this.status = "nomore";
+      else this.status = "loading";
+    }, 1500);
   },
 
   methods: {
