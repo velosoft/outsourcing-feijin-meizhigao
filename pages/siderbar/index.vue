@@ -12,7 +12,7 @@
         <view class="flex-col justify-start items-center banner-image-wrapper">
           <image
             class="banner-image"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=9e679835f4a2e239875a79bfc773b941.png"
+            src="../../static/mock/9e679835f4a2e239875a79bfc773b941.png"
           />
         </view>
       </view>
