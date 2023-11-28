@@ -2,6 +2,7 @@
   <view class="page flex-col">
     <uni-nav-bar
       :border="false"
+      :status-bar="true"
       shadow
       height="88rpx"
       status-bar
@@ -218,10 +219,11 @@ export default {
 
 <style scoped lang="less">
 .page {
-  height: calc(100vh - 60px);
+  height: 100vh;
+  overflow: hidden;
 }
 .siderbar-container {
-  height: 100%;
+  height: calc(100% - 100rpx);
 }
 
 .sider-bar {
@@ -292,6 +294,7 @@ export default {
   .scroll-view_H {
     white-space: nowrap;
     width: 100%;
+    height: 100rpx;
   }
   .tabs-wrap {
     /deep/ .u-page__tag-item {
