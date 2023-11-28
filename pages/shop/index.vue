@@ -2,18 +2,22 @@
   <view class="flex-col page">
     <view class="flex-col flex-1 shop-detail">
       <view class="flex-col relative">
-        <view class="flex-col justify-start items-center relative">
-          <image
-            class="a-i-background-image_2"
-            src="../../static/images/iamge_video.png"
-          />
-          <image
-            class="a-i-outflow image_5"
-            src="../../static/images/icon_video_01.png"
-          />
-        </view>
+        <swiper class="header-swiper" style="width: 750rpx; height: 750rpx;" current="indicatorId" circular @change="swiperChange">
+          <swiper-item v-for="(item, index) in headerSwiper" :key="index">
+            <view class="flex-col justify-start items-center relative">
+              <image
+                class="a-i-background-image_2"
+                src="../../static/images/iamge_video.png"
+              />
+              <image
+                class="a-i-outflow image_5"
+                src="../../static/images/icon_video_01.png"
+              />
+            </view>
+          </swiper-item>
+        </swiper>
         <view class="flex-col items-center header-indicator text-wrapper">
-          <text class="coupon-text text_4">1/6</text>
+          <text class="coupon-text text_4">{{swiperCurrent}}/{{ headerSwiper.length }}</text>
         </view>
       </view>
       <view class="mt-10 flex-col body">
@@ -151,7 +155,7 @@
           </view>
         </view>
         <view class="mt-10 flex-col detail-info">
-          <view class="flex-col group_9">
+          <view class="flex-col detial-top">
             <text class="self-start detial-title">详情</text>
             <text class="mt-20 self-stretch font-com-samll detial-con">
               2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。
@@ -182,12 +186,12 @@
         </view>
       </view>
       <view class="flex-row">
-        <button class="flex-col items-center btn-wrapper-left">
+        <view class="flex-col items-center btn-wrapper-left">
           <text class="reserve-tag-text">加入购物车</text>
-        </button>
-        <button class="ml-10 flex-col items-center btn-wrapper-right">
+        </view>
+        <view class="ml-10 flex-col items-center btn-wrapper-right">
           <text class="font-com-shop btn-wrapper-right-text">预约服务</text>
-        </button>
+        </view>
       </view>
     </view>
   </view>
@@ -199,13 +203,19 @@ export default {
   props: {},
   data() {
     return {
+      headerSwiper: [null, null, null, null, null, null],
+      swiperCurrent: 0,
       items: [null, null, null],
       items_1: [null, null, null],
       items_2: [null, null],
     };
   },
 
-  methods: {},
+  methods: {
+    swiperChange(e){
+      this.swiperCurrent = e.detail.current + 1
+    }
+  },
 };
 </script>
 
@@ -429,7 +439,7 @@ export default {
         padding: 40rpx 28rpx 0;
         background-color: #ffffff;
         border-radius: 8rpx 8rpx 0rpx 0rpx;
-        .group_9 {
+        .detial-top {
           margin-right: 8rpx;
           .detial-title {
             color: #030305;
@@ -459,9 +469,6 @@ export default {
       line-height: 22rpx;
       color: #bb3e0c;
     }
-  }
-  button{
-    border: unset;
   }
   .btn-footer {
     width: 750rpx;
