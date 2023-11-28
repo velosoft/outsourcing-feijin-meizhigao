@@ -44,8 +44,6 @@
               src="../../static/mock/home-swiper-image.png"
               mode="aspectFit|aspectFill|widthFix"
               lazy-load="false"
-              binderror=""
-              bindload=""
             >
             </image>
           </swiper-item>
