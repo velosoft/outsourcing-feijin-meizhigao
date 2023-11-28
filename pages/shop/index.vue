@@ -32,7 +32,7 @@
           </swiper-item>
         </swiper>
         <view class="flex-col items-center header-indicator text-wrapper">
-          <text class="coupon-text text_4"
+          <text class="coupon-text indicator-wrapper"
             >{{ swiperCurrent }}/{{ headerSwiper.length }}</text
           >
         </view>
@@ -75,10 +75,10 @@
                 <text class="coupon-text">满329包邮</text>
               </view>
             </view>
-            <view class="ml-20 flex-row items-center shrink-0 group_5">
+            <view class="ml-20 flex-row items-center  coupon-wrapper">
               <text class="coupon-text">领取</text>
               <image
-                class="ml-4 image_7"
+                class="ml-4 arrow-right"
                 src="../../static/images/icon_arrow_02.png"
               />
             </view>
@@ -278,7 +278,7 @@ export default {
       position: absolute;
       right: 32rpx;
       top: 670rpx;
-      .text_4 {
+      .indicator-wrapper {
         color: #ffffff;
         font-size: 24rpx;
         line-height: 24rpx;
@@ -358,9 +358,9 @@ export default {
           border-radius: 4rpx;
           background-color: #fdeee9;
         }
-        .group_5 {
+        .coupon-wrapper {
           margin-right: 8rpx;
-          .image_7 {
+          .arrow-right {
             width: 16rpx;
             height: 16rpx;
           }
