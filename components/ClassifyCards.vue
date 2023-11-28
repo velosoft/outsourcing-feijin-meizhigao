@@ -1,14 +1,14 @@
 <template>
-<view class="flex-row">
-  <view class="flex-col items-center classify-card" @click="goto">
-    <image class="classify-bg" src="../static/images/bg_shop_01.png" />
-    <text class="classify-title classify-pos">服务分类</text>
+  <view class="flex-row">
+    <view class="flex-col items-center classify-card" @click="goto">
+      <image class="classify-bg" src="../static/images/bg_shop_01.png" />
+      <text class="classify-title classify-pos">服务分类</text>
+    </view>
+    <view class="ml-12 flex-col items-center classify-card">
+      <image class="classify-bg" src="../static/images/bg_service_01.png" />
+      <text class="classify-title classify-pos">商品分类</text>
+    </view>
   </view>
-  <view class="ml-12 flex-col items-center classify-card">
-    <image class="classify-bg" src="../static/images/bg_service_01.png" />
-    <text class="classify-title classify-pos">商品分类</text>
-  </view>
-</view>
 </template>
 
 <script>
@@ -20,11 +20,11 @@ export default {
   },
 
   methods: {
-	  goto(url) {
-	    uni.navigateTo({
-	      url: "/pages/home/index",
-	    });
-	  },
+    goto(url) {
+      uni.navigateTo({
+        url: "/pages/siderbar/index",
+      });
+    },
   },
 };
 </script>

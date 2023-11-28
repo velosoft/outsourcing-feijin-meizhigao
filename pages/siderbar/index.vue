@@ -1,7 +1,6 @@
 <template>
   <view class="flex-col page">
     <uni-nav-bar
-      :fixed="true"
       :border="false"
       height="88rpx"
       left-icon="left"
@@ -10,11 +9,9 @@
     />
     <view class="flex-col flex-1 body">
       <view class="flex-col justify-start carousel">
-        <view
-          class="flex-col justify-start items-center banner-image"
-        >
+        <view class="flex-col justify-start items-center banner-image-wrapper">
           <image
-            class="a-i-background-image"
+            class="banner-image"
             src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=9e679835f4a2e239875a79bfc773b941.png"
           />
         </view>
@@ -40,36 +37,44 @@
           itemStyle="padding-left: 25rpx; padding-right: 25rpx;height:72rpx"
           :list="list"
         ></u-tabs>
-        <view class="mt-12 flex-row tabs_content">
-          <view class="flex-col self-start relative group_6">
-            <ShopItem
-              class="mt-12 list-item"
-              v-for="(item, index) in items"
-              :key="index"
-              :image="item.image"
-              :title="item.title"
-              :tags="item.tags"
-              :price="item.price"
-              :buyer="item.buyer"
-            ></ShopItem>
+        <view class="scroll-view">
+          <view class="mt-12 flex-row tabs-content">
+            <view class="flex-col self-start relative left-list">
+              <ShopItem
+                class="mt-12 list-item"
+                v-for="(item, index) in items"
+                :key="index"
+                :image="item.image"
+                :title="item.title"
+                :tags="item.tags"
+                :price="item.price"
+                :buyer="item.buyer"
+              ></ShopItem>
+            </view>
+            <view class="ml-16 flex-col right-list">
+              <ShopItem
+                class="mt-12 list-item"
+                v-for="(item, index) in items_1"
+                :key="index"
+                :image="item.image"
+                :title="item.title"
+                :tags="item.tags"
+                :price="item.price"
+                :buyer="item.buyer"
+              ></ShopItem>
+            </view>
           </view>
-          <view class="ml-16 flex-col group_7">
-            <ShopItem
-              class="mt-12 list-item"
-              v-for="(item, index) in items_1"
-              :key="index"
-              :image="item.image"
-              :title="item.title"
-              :tags="item.tags"
-              :price="item.price"
-              :buyer="item.buyer"
-            ></ShopItem>
+          <view class="flex-col justify-start items-center loading-wrapper">
+            <text
+              v-if="status === 'loading'"
+              class="load-more-font load-more-text"
+              >加载中~</text
+            >
+            <text v-else class="load-more-font load-more-text"
+              >没有更多数据啦</text
+            >
           </view>
         </view>
-      </view>
-      <view class="flex-col justify-start items-center loading-wrapper">
-        <text v-if="status === 'loading'" class="font_10 text_35">加载中~</text>
-        <text v-else class="font_10 text_35">没有更多数据啦</text>
       </view>
     </view>
   </view>
@@ -212,7 +217,8 @@ export default {
 
 .body {
   padding-bottom: 8rpx;
-  overflow-y: auto;
+  max-height: calc(100vh - 92rpx);
+  overflow-y: hidden;
 }
 
 .carousel {
@@ -220,11 +226,11 @@ export default {
   background-color: #ffffff;
 }
 
-.banner-image {
+.banner-image-wrapper {
   margin: 0 32rpx;
 }
 
-.a-i-background-image {
+.banner-image {
   width: 92vw;
   height: 26vw;
 }
@@ -234,11 +240,16 @@ export default {
   background-color: #ffffff;
 }
 
-.tabs_content {
+.scroll-view {
+  height: calc(100vh - 350rpx);
+  overflow-y: scroll;
+}
+
+.tabs-content {
   padding: 0 32rpx;
 }
 
-.group_6 {
+.left-list {
   flex: 1 1 330rpx;
 }
 
@@ -250,14 +261,14 @@ export default {
   margin-top: 0;
 }
 
-.font_10 {
+.load-more-font {
   font-size: 24rpx;
   font-family: 苹方;
   line-height: 24rpx;
   color: #a7a7a7;
 }
 
-.group_7 {
+.right-list {
   flex: 1 1 330rpx;
 }
 
@@ -265,7 +276,7 @@ export default {
   padding: 40rpx 0;
 }
 
-.text_35 {
+.load-more-text {
   font-size: 26rpx;
   line-height: 26rpx;
 }
