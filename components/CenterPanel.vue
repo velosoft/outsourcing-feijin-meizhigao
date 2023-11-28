@@ -6,15 +6,12 @@
     </view>
     <view class="panel-mt-22 flex-row justify-center box-group">
       <view class="flex-col justify-start items-center left-box-pos left-box">
-        <image
-          class="left-box"
-          src="/static/mock/00b8c5611dba52e10023fcd5dbe624ac.png"
-        />
+        <image class="left-box" src="/static/mock/left-box.png" />
         <view class="flex-row left-box-tips left-box-tips-pos">
           <text class="self-center left-box-tips-text">去秒杀</text>
           <image
             class="shrink-0 self-start left-box-tips-icon ml-1"
-            src="/static/mock/e56414bb4c3681ef25dbdff757e574e4.png"
+            src="/static/mock/left-box-icon.png"
           />
         </view>
         <text class="left-box-title-font left-box-title left-box-title-pos"
@@ -28,10 +25,7 @@
         <view
           class="flex-col justify-start items-start right-box-pos right-top-box"
         >
-          <image
-            class="right-box-bg"
-            src="/static/mock/999893ddfc14ffc0eca7255cc6cbfd79.png"
-          />
+          <image class="right-box-bg" src="/static/mock/right-box.png" />
           <text class="left-box-font right-box-text-pos">完整收纳体系课</text>
           <view
             class="flex-col justify-start right-box-title right-box-title-pos"
@@ -42,16 +36,13 @@
           </view>
           <image
             class="right-top-image-pos right-top-image"
-            src="/static/mock/f0fb9653b4f3901c8a7ccdac3fa7e5a2.png"
+            src="/static/mock/right-top-image.png"
           />
         </view>
         <view
           class="flex-col justify-start items-center right-bottom-box mt-15 right-box-pos"
         >
-          <image
-            class="right-box-bg"
-            src="/static/mock/793d07350f962788cbbf505295bd232c.png"
-          />
+          <image class="right-box-bg" src="/static/mock/right-box-bg.png" />
           <text class="left-box-font right-box-text-pos">领券下单更优惠</text>
           <view
             class="flex-col justify-start right-box-title right-box-title-pos"
@@ -62,7 +53,7 @@
           </view>
           <image
             class="right-bottom-image-pos right-bottom-image"
-            src="/static/mock/9e4416ee0af75a3abe74f315e03f1fe8.png"
+            src="/static/mock/right-bottom-image.png"
           />
         </view>
       </view>
