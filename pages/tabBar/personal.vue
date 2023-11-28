@@ -1,5 +1,14 @@
 <template>
   <view class="flex-col page">
+    <uni-nav-bar
+      :fixed="true"
+      :border="false"
+      shadow
+      height="88rpx"
+      left-icon="left"
+      title="服务分类"
+      @clickLeft="back"
+    />
     <view class="flex-col flex-1 body">
       <view class="flex-col justify-start carousel">
         <view
@@ -165,7 +174,13 @@ export default {
     };
   },
 
-  methods: {},
+  methods: {
+    back() {
+      uni.navigateBack({
+        delta: 1,
+      });
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,16 @@
 <template>
   <view class="flex-col page">
+    <uni-nav-bar
+      :fixed="true"
+      shadow
+      height="88rpx"
+      :status-bar="true"
+      :border="false"
+    >
+      <block slot="left">
+        <image class="logo" src="../../static/images/logo.png" />
+      </block>
+    </uni-nav-bar>
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
         <view class="flex-row items-center flex-1 searech-wrap">
@@ -63,8 +74,7 @@
             >
               <view class="flex-col items-start">
                 <text class="member-text">新会员入会礼包</text>
-                <text
-                  class="CenterPannel-mt-8 home-font_04 member-describe"
+                <text class="CenterPannel-mt-8 home-font_04 member-describe"
                   >你有一份价值100元的新人礼包</text
                 >
               </view>
@@ -111,6 +121,11 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+
+  .logo {
+    width: 154rpx;
+    height: 54rpx;
+  }
   .home-con {
     overflow-y: auto;
     .search-box {

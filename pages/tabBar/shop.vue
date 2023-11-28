@@ -1,5 +1,13 @@
 <template>
   <view class="flex-row">
+    <uni-nav-bar
+      :fixed="true"
+      :border="false"
+      shadow
+      height="88rpx"
+      status-bar
+      title="商城"
+    />
     <view class="flex-col">
       <view class="sider-bar">
         <view class="pics">
@@ -103,7 +111,20 @@ export default {
   data() {
     return {
       items_1: [null, null],
-      items: [null, null, null, null],
+      items: [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+      ],
       isActive: 0,
       navLeft: [
         { index: 0, tit: "卧室场景" },
@@ -111,7 +132,14 @@ export default {
         { index: 2, tit: "客厅场景" },
         { index: 3, tit: "卧室场景" },
         { index: 4, tit: "卧室场景" },
-        { index: 5, tit: "客厅场景" },
+        { index: 6, tit: "客厅场景" },
+        { index: 7, tit: "客厅场景" },
+        { index: 8, tit: "客厅场景" },
+        { index: 9, tit: "客厅场景" },
+        { index: 10, tit: "客厅场景" },
+        { index: 11, tit: "客厅场景" },
+        { index: 12, tit: "客厅场景" },
+        { index: 13, tit: "客厅场景" },
       ],
       Swiperitems: [null, null, null, null],
       radios: [
@@ -126,6 +154,22 @@ export default {
         {
           checked: false,
           value: "铁质收纳盒",
+        },
+        {
+          checked: false,
+          value: "小物件收纳盒",
+        },
+        {
+          checked: false,
+          value: "小物件收纳盒",
+        },
+        {
+          checked: false,
+          value: "小物件收纳盒",
+        },
+        {
+          checked: false,
+          value: "小物件收纳盒",
         },
         {
           checked: false,
@@ -147,6 +191,11 @@ export default {
     goto(url) {
       uni.navigateTo({
         url: url,
+      });
+    },
+    back() {
+      uni.navigateBack({
+        delta: 1,
       });
     },
   },
@@ -283,9 +332,9 @@ export default {
             }
           }
         }
-		.tag > .tag-wrap:not(:first-child){
-			margin-left: 16rpx;
-		}
+        .tag > .tag-wrap:not(:first-child) {
+          margin-left: 16rpx;
+        }
         .shop-con-bottom {
           margin-top: 40rpx;
           .font-con_01 {

@@ -2,13 +2,11 @@
   <view class="flex-col page">
     <uni-nav-bar
       :fixed="true"
-      shadow
-      background-color="#007AFF"
+      :border="false"
+      backgroundColor="#ffffff00"
+      class="nav-bar"
       height="88rpx"
-      status-bar
       left-icon="left"
-      left-text="返回"
-      title="自定义导航栏"
       @clickLeft="back"
     />
     <view class="flex-col flex-1 shop-detail">
@@ -234,6 +232,11 @@ export default {
     swiperChange(e) {
       this.swiperCurrent = e.detail.current + 1;
     },
+    back() {
+      uni.navigateBack({
+        delta: 1,
+      });
+    },
   },
 };
 </script>
@@ -251,6 +254,9 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  .nav-bar {
+    position: absolute;
+  }
   .shop-detail {
     overflow-y: auto;
     .header-swiper-image {
