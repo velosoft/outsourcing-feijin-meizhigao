@@ -8,13 +8,13 @@
       <view class="flex-col justify-start items-center left-box-pos left-box">
         <image
           class="left-box"
-          src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=00b8c5611dba52e10023fcd5dbe624ac.png"
+          src="/static/mock/00b8c5611dba52e10023fcd5dbe624ac.png"
         />
         <view class="flex-row left-box-tips left-box-tips-pos">
           <text class="self-center left-box-tips-text">去秒杀</text>
           <image
             class="shrink-0 self-start left-box-tips-icon ml-1"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=e56414bb4c3681ef25dbdff757e574e4.png"
+            src="/static/mock/e56414bb4c3681ef25dbdff757e574e4.png"
           />
         </view>
         <text class="left-box-title-font left-box-title left-box-title-pos"
@@ -30,7 +30,7 @@
         >
           <image
             class="right-box-bg"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=999893ddfc14ffc0eca7255cc6cbfd79.png"
+            src="/static/mock/999893ddfc14ffc0eca7255cc6cbfd79.png"
           />
           <text class="left-box-font right-box-text-pos">完整收纳体系课</text>
           <view
@@ -42,7 +42,7 @@
           </view>
           <image
             class="right-top-image-pos right-top-image"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=f0fb9653b4f3901c8a7ccdac3fa7e5a2.png"
+            src="/static/mock/f0fb9653b4f3901c8a7ccdac3fa7e5a2.png"
           />
         </view>
         <view
@@ -50,7 +50,7 @@
         >
           <image
             class="right-box-bg"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=793d07350f962788cbbf505295bd232c.png"
+            src="/static/mock/793d07350f962788cbbf505295bd232c.png"
           />
           <text class="left-box-font right-box-text-pos">领券下单更优惠</text>
           <view
@@ -62,7 +62,7 @@
           </view>
           <image
             class="right-bottom-image-pos right-bottom-image"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=9e4416ee0af75a3abe74f315e03f1fe8.png"
+            src="/static/mock/9e4416ee0af75a3abe74f315e03f1fe8.png"
           />
         </view>
       </view>
