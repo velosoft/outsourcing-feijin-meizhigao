@@ -19,7 +19,6 @@
       </view>
       <view class="flex-col">
         <u-tabs
-          class="tabs-header"
           lineColor="#b09053"
           lineWidth="52rpx"
           lineHeight="4rpx"
@@ -27,15 +26,16 @@
             color: '#030305',
             fontSize: '24rpx',
             fontFamily: 'PingFang SC',
-            lineHeight: '24rpx',
+            lineHeight: '34rpx',
           }"
           :inactiveStyle="{
             fontSize: '24rpx',
             fontFamily: '苹方',
-            lineHeight: '24rpx',
+            lineHeight: '34rpx',
             color: '#6c6c6c',
           }"
-          itemStyle="padding-left: 25rpx; padding-right: 25rpx;height:72rpx"
+          itemStyle="padding-left: 0; padding-right: 0; height:72rpx"
+          :scrollable="false"
           :list="list"
         ></u-tabs>
         <view class="scroll-view">
@@ -233,11 +233,6 @@ export default {
 .banner-image {
   width: 92vw;
   height: 26vw;
-}
-
-.tabs-header {
-  padding: 0 30rpx;
-  background-color: #ffffff;
 }
 
 .scroll-view {

@@ -68,9 +68,9 @@ export default {
   color: #111111;
   font-size: 28rpx;
   font-family: PingFang SC;
-  line-height: 28rpx;
+  line-height: 39rpx;
 }
-.line-two{
+.line-two {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
