@@ -1,5 +1,5 @@
 <template>
-  <view class="flex-row">
+  <view class="page flex-col">
     <uni-nav-bar
       :fixed="true"
       :border="false"
@@ -8,10 +8,10 @@
       status-bar
       title="商城"
     />
-    <view class="flex-col">
+    <view class="flex-row flex-1">
       <view class="sider-bar">
         <view class="pics">
-          <scroll-view
+          <view
             class="gundong"
             scroll-y
             v-for="(item, index) in navLeft"
@@ -29,76 +29,78 @@
                 >{{ item.tit }}</text
               >
             </view>
-          </scroll-view>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="flex-col flex-1 right-panel">
-      <view class="flex-col justify-start swiper-wrap">
-        <swiper
-          class="right-swiper"
-          style="height: 154rpx; width: 480rpx"
-          autoplay="true"
-          indicator-dots="true"
-        >
-          <swiper-item v-for="(item, index) in Swiperitems" :key="index">
-            <image
-              class="swiper-image"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=b707d6e23925649ad73479dac900e0e5.png"
-            />
-          </swiper-item>
-        </swiper>
-      </view>
-      <scroll-view class="scroll-view_H" scroll-x="true">
-        <view class="mt-16 flex-row tabs-wrap">
-          <view
-            class="u-page__tag-item"
-            v-for="(item, index) in radios"
-            :key="index"
+      <view class="flex-col flex-1 right-panel">
+        <view class="flex-col justify-start swiper-wrap">
+          <swiper
+            class="right-swiper"
+            style="height: 154rpx; width: 480rpx"
+            autoplay="true"
+            indicator-dots="true"
           >
-            <u-tag
-              :text="item.value"
-              :plain="!item.checked"
-              :name="index"
-              @click="radioClick"
+            <swiper-item v-for="(item, index) in Swiperitems" :key="index">
+              <image
+                class="swiper-image"
+                src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=b707d6e23925649ad73479dac900e0e5.png"
+              />
+            </swiper-item>
+          </swiper>
+        </view>
+        <scroll-view class="scroll-view_H" scroll-x="true">
+          <view class="mt-16 flex-row tabs-wrap">
+            <view
+              class="u-page__tag-item"
+              v-for="(item, index) in radios"
+              :key="index"
             >
-            </u-tag>
-          </view>
-        </view>
-      </scroll-view>
-      <view class="mt-16 flex-col list-wrap">
-        <view
-          class="flex-row mt-16 list-item"
-          v-for="(item, index) in items"
-          :key="index"
-          @click="goto('/pages/shop/index')"
-        >
-          <image
-            class="shrink-0 shop-image"
-            src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=06a1cbdae6865f4cfc1d807007dcb9f6.png"
-          />
-          <view class="ml-12 flex-col shop-con">
-            <text class="title">衣架防滑无痕围巾架丝</text>
-            <view class="flex-row tag items-center">
-              <view
-                class="tag-wrap items-center flex-row"
-                v-for="(item, index) in items_1"
-                :key="index"
+              <u-tag
+                :text="item.value"
+                :plain="!item.checked"
+                :name="index"
+                @click="radioClick"
               >
-                <text class="tag-text">新品上市</text>
-              </view>
+              </u-tag>
             </view>
-            <view class="flex-row items-center shop-con-bottom">
-              <text class="font-con_01 deposit-text">定金</text>
-              <view class="flex-row shrink-0">
-                <text class="self-start price-symbol">￥</text>
-                <text class="price-number">200</text>
-                <text class="self-center decimal-font">.00</text>
+          </view>
+        </scroll-view>
+        <view class="flex-col list-wrap mt-16">
+          <view
+            class="flex-row mt-16 list-item"
+            v-for="(item, index) in items"
+            :key="index"
+            @click="goto('/pages/shop/index')"
+          >
+            <image
+              class="shrink-0 shop-image"
+              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=06a1cbdae6865f4cfc1d807007dcb9f6.png"
+            />
+            <view class="ml-12 flex-col shop-con">
+              <text class="title">衣架防滑无痕围巾架丝</text>
+              <view class="flex-row tag items-center">
+                <view
+                  class="tag-wrap items-center flex-row"
+                  v-for="(item, index) in items_1"
+                  :key="index"
+                >
+                  <text class="tag-text">新品上市</text>
+                </view>
               </view>
-              <text class="font-con_01 pre-book">100人预约</text>
+              <view class="flex-row items-center shop-con-bottom">
+                <text class="font-con_01 deposit-text">定金</text>
+                <view class="flex-row shrink-0">
+                  <text class="self-start price-symbol">￥</text>
+                  <text class="price-number">200</text>
+                  <text class="self-center decimal-font">.00</text>
+                </view>
+                <text class="font-con_01 pre-book">100人预约</text>
+              </view>
             </view>
           </view>
         </view>
+        <!-- </scroll-view> -->
+        <!-- </scroll-view> -->
       </view>
     </view>
   </view>
@@ -125,13 +127,13 @@ export default {
         null,
         null,
       ],
+      items: [null, null, null, null, null, null, null],
       isActive: 0,
       navLeft: [
         { index: 0, tit: "卧室场景" },
         { index: 1, tit: "厨房场景" },
         { index: 2, tit: "客厅场景" },
         { index: 3, tit: "卧室场景" },
-        { index: 4, tit: "卧室场景" },
         { index: 6, tit: "客厅场景" },
         { index: 7, tit: "客厅场景" },
         { index: 8, tit: "客厅场景" },
@@ -203,10 +205,20 @@ export default {
 </script>
 
 <style scoped lang="less">
+.page {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: calc( 100vh - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+}
+.detial-body {
+}
 .sider-bar {
   width: 206rpx;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
   background-color: #f8f8f8;
 }
 .pics {
@@ -218,7 +230,6 @@ export default {
   height: 108rpx;
 }
 .sider-bar-text {
-  height: 108rpx;
   font-size: 28rpx;
   font-family: 苹方;
   line-height: 28rpx;
@@ -239,10 +250,12 @@ export default {
   }
 }
 .right-panel {
+  width: 100% !important;
   padding: 32rpx 32rpx 0;
-  height: 1216rpx;
+  height: 100%;
   overflow-y: auto;
   .swiper-wrap {
+    overflow-y: auto;
     position: relative;
     align-self: stretch;
     .swiper-image {
@@ -251,6 +264,7 @@ export default {
     }
   }
   .right-swiper {
+    width: unset !important;
     /deep/ .uni-swiper-dots {
       // 指示点整个区域
       bottom: 8rpx;
@@ -303,6 +317,8 @@ export default {
     }
   }
   .list-wrap {
+    height: calc( 100% - 282rpx );
+    overflow-y: hidden;
     width: 474rpx;
     .list-item {
       &:first-child {
