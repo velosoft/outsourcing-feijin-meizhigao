@@ -66,7 +66,6 @@ export default {
 
 <style scoped lang="less">
 .title-wrap {
-  padding: 0 32rpx;
   .title-font {
     color: #000000;
     font-size: 30rpx;
@@ -105,9 +104,9 @@ export default {
   }
 }
 .equal-division {
-  padding: 24rpx 8rpx;
+  padding: 24rpx 0;
   .equal-division-item {
-    flex: 1 1 146.8rpx;
+    flex: 1 1 146rpx;
     .item-image {
       width: 96rpx;
       height: 96rpx;
