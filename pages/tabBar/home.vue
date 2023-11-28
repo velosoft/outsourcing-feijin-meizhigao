@@ -30,27 +30,33 @@
           </view>
         </view>
       </view>
-      <view class="flex-row swiper-box">
-        <view class="uni-margin-wrap">
-          <swiper
-            class="banner-swiper"
-            style="height: 516rpx; width: 750rpx"
-            circular
-            :autoplay="true"
-            indicator-dots="true"
-          >
-            <swiper-item v-for="(item, index) in items" :key="index">
-              <image
-                class="swiper-images"
-                src="../../static/mock/fc726dc031e684bc3430d7da9a9eef75.png"
-                mode="aspectFit|aspectFill|widthFix"
-                lazy-load="false"
-                binderror=""
-                bindload=""
-              >
-              </image>
-            </swiper-item>
-          </swiper>
+      <view class="flex-row relative swiper-box">
+        <swiper
+          class="banner-swiper"
+          style="height: 516rpx; width: 750rpx"
+          circular
+          :autoplay="true"
+          @change="change"
+        >
+          <swiper-item v-for="(item, index) in items" :key="index">
+            <image
+              class="swiper-images"
+              src="../../static/mock/fc726dc031e684bc3430d7da9a9eef75.png"
+              mode="aspectFit|aspectFill|widthFix"
+              lazy-load="false"
+              binderror=""
+              bindload=""
+            >
+            </image>
+          </swiper-item>
+        </swiper>
+        <view class="flex-row indicator-wrapper">
+          <view
+            class="indicator-dots"
+            :class="{ active: index == current }"
+            v-for="(item, index) in items"
+            :key="index"
+          ></view>
         </view>
       </view>
       <view class="flex-row items-center notify-box">
@@ -119,6 +125,7 @@ export default {
       items: [null, null, null],
       itemsLeft: [...items],
       itemsRight: [...items_1],
+      current: 0,
     };
   },
   onReachBottom() {
@@ -134,7 +141,12 @@ export default {
       else this.status = "loading";
     }, 1500);
   },
-  methods: {},
+  methods: {
+    change(e) {
+      this.current = e.detail.current;
+      console.log("轮播图", e.detail.current);
+    },
+  },
 };
 
 const items = [
@@ -288,38 +300,26 @@ const items_1 = [
     .swiper-box {
       width: 100%;
       height: 516rpx;
-      .uni-margin-wrap {
-        width: 100%;
+      .swiper-images {
+        width: 750rpx;
+        height: 516rpx;
       }
-      .banner-swiper {
-        width: 100%;
-      }
-      .banner-swiper {
-        /deep/ .uni-swiper-dots {
-          // 指示点整个区域
-          bottom: 26rpx;
-          right: 20rpx;
-          left: unset !important;
-        }
-        /deep/ .uni-swiper-dot {
-          // 指示点元素默认样式
-          width: 36rpx !important;
-          height: 4rpx !important;
+      .indicator-wrapper {
+        position:absolute;
+        bottom: 26rpx;
+        right: 20rpx;
+
+        .indicator-dots {
+          background-color: #ffffff;
           border-radius: 20rpx;
+          width: 36rpx;
+          height: 4rpx;
+          margin-left: 10rpx;
+        }
+        .active {
           background-color: #ffffff80;
         }
-        /deep/ .uni-swiper-dot-active {
-          // 指示点元素激活（当前选中）状态样式
-          background-color: #ffffff;
-        }
       }
-      uni-image {
-        width: 100% !important;
-        height: 100% !important;
-      }
-      // .swiper-images {
-      //   width: 750rpx;
-      // }
     }
     .notify-box {
       padding: 24rpx 32rpx;

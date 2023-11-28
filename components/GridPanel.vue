@@ -4,12 +4,12 @@
       <text class="title-font">从收纳开始,</text>
       <text class="ml-4 title-text">探索家具灵感</text>
     </view>
-    <view class="mt-12 flex-col">
+    <view class="mt-12 flex-col relative">
       <swiper
         class="nav-swiper"
         style="height: 184rpx"
         autoplay="true"
-        indicator-dots="true"
+        @change="change"
       >
         <swiper-item v-for="(item, index) in swiperItems" :key="index">
           <view class="flex-row items-center equal-division">
@@ -24,6 +24,14 @@
           </view>
         </swiper-item>
       </swiper>
+      <view class="flex-row grid-swiper">
+        <view
+          class="indicator-dots"
+          :class="{ active: index == current }"
+          v-for="(item, index) in swiperItems"
+          :key="index"
+        ></view>
+      </view>
     </view>
   </view>
 </template>
@@ -35,6 +43,7 @@ export default {
   data() {
     return {
       swiperItems: [null, null],
+      current: 0,
       items: [
         {
           icon: "/static/mock/6087d03087f61aefa21604e8a8260437.png",
@@ -60,7 +69,11 @@ export default {
     };
   },
 
-  methods: {},
+  methods: {
+    change(e) {
+      this.current = e.detail.current;
+    },
+  },
 };
 </script>
 
@@ -79,28 +92,22 @@ export default {
     line-height: 28rpx;
   }
 }
-.nav-swiper {
-  /deep/ .uni-swiper-dots {
-    // 指示点整个区域
-    height: 8rpx;
-    width: 60rpx !important;
-    bottom: 0;
-    background-color: #f6f6f6;
-  }
-  /deep/ .uni-swiper-dot {
-    // 指示点元素默认样式
-    background-color: #f6f6f6;
+.grid-swiper {
+  position:absolute;
+  bottom: 0;
+  right: 50%;
+  margin-right: -30rpx;
+  background-color: #f6f6f6;
+  border-radius: 4rpx;
+  width: 60rpx;
+  height: 8rpx;
+  .indicator-dots {
+    border-radius: 4rpx;
     width: 30rpx;
     height: 8rpx;
-    border-radius: 4rpx;
-    margin-right: unset !important;
   }
-  /deep/ .uni-swiper-dot-active {
-    // 指示点元素激活（当前选中）状态样式
+  .active {
     background-color: #b09053;
-    width: 30rpx;
-    height: 8rpx;
-    border-radius: 4rpx;
   }
 }
 .equal-division {
