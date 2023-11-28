@@ -40,7 +40,7 @@
             <swiper-item v-for="(item, index) in Swiperitems" :key="index">
               <image
                 class="swiper-image"
-                src="../../static/mock/b707d6e23925649ad73479dac900e0e5.png"
+                src="../../static/mock/shop-swiper-image.png"
               />
             </swiper-item>
           </swiper>
@@ -71,7 +71,7 @@
           >
             <image
               class="shrink-0 shop-image"
-              src="../../static/mock/06a1cbdae6865f4cfc1d807007dcb9f6.png"
+              src="../../static/mock/shop-image.png"
             />
             <view class="ml-12 flex-col shop-con">
               <text class="title">衣架防滑无痕围巾架丝</text>

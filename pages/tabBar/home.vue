@@ -41,7 +41,7 @@
           <swiper-item v-for="(item, index) in items" :key="index">
             <image
               class="swiper-images"
-              src="../../static/mock/fc726dc031e684bc3430d7da9a9eef75.png"
+              src="../../static/mock/home-swiper-image.png"
               mode="aspectFit|aspectFill|widthFix"
               lazy-load="false"
               binderror=""

@@ -46,23 +46,23 @@ export default {
       current: 0,
       items: [
         {
-          icon: "/static/mock/6087d03087f61aefa21604e8a8260437.png",
+          icon: "/static/mock/grid-panel-icon_0.png",
           text: "客厅收纳",
         },
         {
-          icon: "/static/mock/61bc2017b76d4955d49230334853d186.png",
+          icon: "/static/mock/grid-panel-icon_1.png",
           text: "衣柜收纳",
         },
         {
-          icon: "/static/mock/3824feb130eaa18a0145cbe83a7076df.png",
+          icon: "/static/mock/grid-panel-icon_2.png",
           text: "厨房收纳",
         },
         {
-          icon: "/static/mock/b5dd0a42660421740bd5ff8e89a49f51.png",
+          icon: "/static/mock/grid-panel-icon_3.png",
           text: "卧室收纳",
         },
         {
-          icon: "/static/mock/e20217164f231e0999467a2457261afb.png",
+          icon: "/static/mock/grid-panel-icon_4.png",
           text: "杂物房收纳",
         },
       ],
@@ -93,7 +93,7 @@ export default {
   }
 }
 .grid-swiper {
-  position:absolute;
+  position: absolute;
   bottom: 0;
   right: 50%;
   margin-right: -30rpx;

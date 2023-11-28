@@ -13,7 +13,7 @@
         <view class="flex-col justify-start items-center banner-image-wrapper">
           <image
             class="banner-image"
-            src="../../static/mock/9e679835f4a2e239875a79bfc773b941.png"
+            src="../../static/mock/list-page-banner.png"
           />
         </view>
       </view>
