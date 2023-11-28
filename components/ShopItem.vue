@@ -8,6 +8,7 @@
     <view class="flex-row self-stretch shop-equal-division">
       <view
         class="flex-col items-center shop-text-wrapper"
+        :class="{ 'shop-ml-5': index !== 0 }"
         v-for="(item, index) in tags"
         :key="index"
       >
@@ -132,5 +133,8 @@ export default {
   font-size: 24rpx;
   font-family: 苹方;
   line-height: 24rpx;
+}
+.shop-ml-5 {
+  margin-left: 10rpx;
 }
 </style>
