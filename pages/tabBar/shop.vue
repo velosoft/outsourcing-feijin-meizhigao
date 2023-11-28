@@ -39,7 +39,7 @@
             <swiper-item v-for="(item, index) in Swiperitems" :key="index">
               <image
                 class="swiper-image"
-                src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=b707d6e23925649ad73479dac900e0e5.png"
+                src="../../static/mock/b707d6e23925649ad73479dac900e0e5.png"
               />
             </swiper-item>
           </swiper>
@@ -70,7 +70,7 @@
           >
             <image
               class="shrink-0 shop-image"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=06a1cbdae6865f4cfc1d807007dcb9f6.png"
+              src="../../static/mock/06a1cbdae6865f4cfc1d807007dcb9f6.png"
             />
             <view class="ml-12 flex-col shop-con">
               <text class="title">衣架防滑无痕围巾架丝</text>
@@ -341,10 +341,8 @@ export default {
 
           .tag-wrap {
             padding: 0 8rpx;
-            background-image: url("https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=9a3b9a726ef2d84aeb76065d090ea380.png");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
             height: 32rpx;
+            background-color: rgba(255, 172, 77, 0.08);
             .tag-text {
               margin: 0 8rpx;
               font-size: 20rpx;
