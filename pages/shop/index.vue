@@ -1,23 +1,32 @@
 <template>
   <view class="flex-col page">
+    <uni-nav-bar left-icon="left" height="88rpx" fixed/>
     <view class="flex-col flex-1 shop-detail">
       <view class="flex-col relative">
-        <swiper class="header-swiper" style="width: 750rpx; height: 750rpx;" current="indicatorId" circular @change="swiperChange">
+        <swiper
+          class="header-swiper"
+          style="width: 750rpx; height: 750rpx"
+          current="indicatorId"
+          circular
+          @change="swiperChange"
+        >
           <swiper-item v-for="(item, index) in headerSwiper" :key="index">
             <view class="flex-col justify-start items-center relative">
               <image
-                class="a-i-background-image_2"
+                class="header-swiper-image"
                 src="../../static/images/iamge_video.png"
               />
               <image
-                class="a-i-outflow image_5"
+                class="outflow video-open-btn"
                 src="../../static/images/icon_video_01.png"
               />
             </view>
           </swiper-item>
         </swiper>
         <view class="flex-col items-center header-indicator text-wrapper">
-          <text class="coupon-text text_4">{{swiperCurrent}}/{{ headerSwiper.length }}</text>
+          <text class="coupon-text text_4"
+            >{{ swiperCurrent }}/{{ headerSwiper.length }}</text
+          >
         </view>
       </view>
       <view class="mt-10 flex-col body">
@@ -212,9 +221,9 @@ export default {
   },
 
   methods: {
-    swiperChange(e){
-      this.swiperCurrent = e.detail.current + 1
-    }
+    swiperChange(e) {
+      this.swiperCurrent = e.detail.current + 1;
+    },
   },
 };
 </script>
@@ -234,17 +243,17 @@ export default {
   height: 100%;
   .shop-detail {
     overflow-y: auto;
-    .a-i-background-image_2 {
+    .header-swiper-image {
       width: 100vw;
       height: 100vw;
     }
-    .a-i-outflow {
+    .outflow {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
     }
-    .image_5 {
+    .video-open-btn {
       opacity: 0.3;
       width: 116rpx;
       height: 116rpx;
