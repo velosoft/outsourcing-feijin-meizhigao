@@ -1,22 +1,16 @@
 <template>
   <view class="page flex-col">
     <uni-nav-bar
-      :fixed="true"
       :border="false"
       shadow
       height="88rpx"
       status-bar
       title="商城"
     />
-    <view class="flex-row flex-1">
+    <view class="flex-row siderbar-container">
       <view class="sider-bar">
         <view class="pics">
-          <view
-            class="gundong"
-            scroll-y
-            v-for="(item, index) in navLeft"
-            :key="index"
-          >
+          <view class="gundong" v-for="(item, index) in navLeft" :key="index">
             <view
               class="flex-row sider-bar-mar"
               :class="{ active: isActive === index }"
@@ -26,7 +20,7 @@
               <text
                 class="ml-20 sider-bar-text"
                 :class="{ active: isActive === index }"
-                >{{ item.tit }}</text
+                >{{ item.text }}</text
               >
             </view>
           </view>
@@ -126,22 +120,38 @@ export default {
         null,
         null,
         null,
+        null,
+        null,
+        null,
       ],
-      items: [null, null, null, null, null, null, null],
       isActive: 0,
       navLeft: [
-        { index: 0, tit: "卧室场景" },
-        { index: 1, tit: "厨房场景" },
-        { index: 2, tit: "客厅场景" },
-        { index: 3, tit: "卧室场景" },
-        { index: 6, tit: "客厅场景" },
-        { index: 7, tit: "客厅场景" },
-        { index: 8, tit: "客厅场景" },
-        { index: 9, tit: "客厅场景" },
-        { index: 10, tit: "客厅场景" },
-        { index: 11, tit: "客厅场景" },
-        { index: 12, tit: "客厅场景" },
-        { index: 13, tit: "客厅场景" },
+        { index: 0, text: "卧室场景" },
+        { index: 1, text: "厨房场景" },
+        { index: 2, text: "客厅场景" },
+        { index: 3, text: "卧室场景" },
+        { index: 4, text: "卧室场景" },
+        { index: 6, text: "客厅场景" },
+        { index: 7, text: "客厅场景" },
+        { index: 8, text: "客厅场景" },
+        { index: 9, text: "客厅场景" },
+        { index: 10, text: "客厅场景" },
+        { index: 11, text: "客厅场景" },
+        { index: 12, text: "客厅场景" },
+        { index: 13, text: "客厅场景" },
+        { index: 20, text: "卧室场景" },
+        { index: 21, text: "厨房场景" },
+        { index: 22, text: "客厅场景" },
+        { index: 23, text: "卧室场景" },
+        { index: 24, text: "卧室场景" },
+        { index: 26, text: "客厅场景" },
+        { index: 27, text: "客厅场景" },
+        { index: 28, text: "客厅场景" },
+        { index: 29, text: "客厅场景" },
+        { index: 30, text: "客厅场景" },
+        { index: 31, text: "客厅场景" },
+        { index: 32, text: "客厅场景" },
+        { index: 33, text: "客厅场景" },
       ],
       Swiperitems: [null, null, null, null],
       radios: [
@@ -206,15 +216,12 @@ export default {
 
 <style scoped lang="less">
 .page {
-  background-color: #f8f8f8;
-  width: 100%;
-  height: calc( 100vh - 60px);
-  overflow-y: auto;
-  overflow-x: hidden;
-  
+  height: calc(100vh - 60px);
 }
-.detial-body {
+.siderbar-container {
+  height: 100%;
 }
+
 .sider-bar {
   width: 206rpx;
   height: 100%;
@@ -253,7 +260,7 @@ export default {
   width: 100% !important;
   padding: 32rpx 32rpx 0;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   .swiper-wrap {
     overflow-y: auto;
     position: relative;
@@ -317,9 +324,11 @@ export default {
     }
   }
   .list-wrap {
-    height: calc( 100% - 282rpx );
-    overflow-y: hidden;
+    height: calc(100% - 360rpx);
+    overflow-y: scroll;
     width: 474rpx;
+    padding-bottom: 40rpx;
+
     .list-item {
       &:first-child {
         margin-top: 0;
