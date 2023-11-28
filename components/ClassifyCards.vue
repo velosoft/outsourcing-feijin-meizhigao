@@ -1,6 +1,6 @@
 <template>
 <view class="flex-row">
-  <view class="flex-col items-center classify-card">
+  <view class="flex-col items-center classify-card" @click="goto">
     <image class="classify-bg" src="../static/images/bg_shop_01.png" />
     <text class="classify-title classify-pos">服务分类</text>
   </view>
@@ -19,7 +19,13 @@ export default {
     return {};
   },
 
-  methods: {},
+  methods: {
+	  goto(url) {
+	    uni.navigateTo({
+	      url: "/pages/home/index",
+	    });
+	  },
+  },
 };
 </script>
 
