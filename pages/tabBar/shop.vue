@@ -41,8 +41,8 @@
           </swiper-item>
         </swiper>
       </view>
-	  <scroll-view class="scroll-view_H" scroll-x="true">
-      	<view class="mt-16 flex-row tabs-wrap">
+      <scroll-view class="scroll-view_H" scroll-x="true">
+        <view class="mt-16 flex-row tabs-wrap">
           <view
             class="u-page__tag-item"
             v-for="(item, index) in radios"
@@ -56,8 +56,8 @@
             >
             </u-tag>
           </view>
-      	</view>
-	  </scroll-view>
+        </view>
+      </scroll-view>
       <view class="mt-16 flex-col list-wrap">
         <view
           class="flex-row mt-16 list-item"

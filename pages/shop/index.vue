@@ -5,11 +5,11 @@
           <view class="flex-col justify-start items-center relative">
             <image
               class="a-i-background-image_2"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=iamge_video.png"
+              src="../../static/images/iamge_video.png"
             />
             <image
               class="a-i-outflow image_5"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_video_01.png"
+              src="../../static/images/icon_video_01.png"
             />
           </view>
           <view class="flex-col items-center header-indicator text-wrapper">
@@ -22,7 +22,7 @@
               <view class="flex-col"><text class="title">厨房收纳服务厨房收纳服务</text></view>
               <image
                 class="share-image"
-                src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_share_01.png"
+                src="../../static/images/icon_share_01.png"
               />
             </view>
             <view class="flex-col mt-17"><text class="describe-text">烹饪也能从容优雅享受美好食光</text></view>
@@ -48,7 +48,7 @@
                 <text class="coupon-text">领取</text>
                 <image
                   class="ml-4 image_7"
-                  src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_arrow_02.png"
+                  src="../../static/images/icon_arrow_02.png"
                 />
               </view>
             </view>
@@ -78,7 +78,7 @@
               </view>
               <image
                 class="icon-arrow_02"
-                src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_arrow_03.png"
+                src="../../static/images/icon_arrow_03.png"
               />
             </view>
             <view class="flex-row items-center reserve-top">
@@ -87,14 +87,14 @@
                 <view class="flex-row items-center reserve-tag">
                   <image
                     class="shrink-0 icon-office"
-                    src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_radio_01.png"
+                    src="../../static/images/icon_radio_01.png"
                   />
                   <text class="ml-12 reserve-tag-text">官方自营</text>
                 </view>
                 <view class="flex-row items-center reserve-tag">
                   <image
                     class="shrink-0 icon-office"
-                    src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_radio_01.png"
+                    src="../../static/images/icon_radio_01.png"
                   />
                   <text class="ml-8 reserve-tag-text">支持退换</text>
                 </view>
@@ -108,7 +108,7 @@
                 <text class="font-com-shop">查看全部</text>
                 <image
                   class="ml-4 shrink-0 icon-arrow_02"
-                  src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_arrow_01.png"
+                  src="../../static/images/icon_arrow_01.png"
                 />
               </view>
             </view>
@@ -117,7 +117,7 @@
                 <view class="flex-row items-center self-stretch">
                   <image
                     class="icon-avator"
-                    src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_avator.png"
+                    src="../../static/images/icon_avator.png"
                   />
                   <text class="ml-12 font-com-symbol">朱**</text>
                 </view>
@@ -137,7 +137,7 @@
             </view>
             <image
               class="mt-56 detial-imag"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=images_detial.png"
+              src="../../static/images/images_detial.png"
             />
           </view>
         </view>
@@ -147,11 +147,11 @@
           <view class="flex-row">
             <image
               class="image_11"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_collect.png"
+              src="../../static/images/icon_collect.png"
             />
             <image
               class="ml-20 image_11"
-              src="https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=icon_cart_01.png"
+              src="../../static/images/icon_cart_01.png"
             />
           </view>
           <view class="mt-4 flex-row group_14">
