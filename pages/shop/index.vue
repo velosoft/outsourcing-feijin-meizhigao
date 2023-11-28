@@ -1,6 +1,16 @@
 <template>
   <view class="flex-col page">
-    <uni-nav-bar left-icon="left" height="88rpx" fixed/>
+    <uni-nav-bar
+      :fixed="true"
+      shadow
+      background-color="#007AFF"
+      height="88rpx"
+      status-bar
+      left-icon="left"
+      left-text="返回"
+      title="自定义导航栏"
+      @clickLeft="back"
+    />
     <view class="flex-col flex-1 shop-detail">
       <view class="flex-col relative">
         <swiper
