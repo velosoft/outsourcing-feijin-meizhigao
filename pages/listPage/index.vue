@@ -2,12 +2,13 @@
   <view class="flex-col page">
     <uni-nav-bar
       :border="false"
+      :status-bar="true"
       height="88rpx"
       left-icon="left"
       title="服务分类"
       @clickLeft="back"
     />
-    <view class="flex-col flex-1 body">
+    <view class="flex-col flex-1 content">
       <view class="flex-col justify-start carousel">
         <view class="flex-col justify-start items-center banner-image-wrapper">
           <image
@@ -210,14 +211,13 @@ export default {
 .page {
   background-color: #f8f8f8;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 100%;
+  overflow: hidden;
+  height: 100vh;
 }
 
-.body {
+.content {
   padding-bottom: 8rpx;
-  max-height: calc(100vh - 92rpx);
+  max-height: calc(100% - 88rpx);
   overflow-y: hidden;
 }
 
@@ -241,7 +241,7 @@ export default {
 }
 
 .scroll-view {
-  height: calc(100vh - 350rpx);
+  height: calc(100vh - 500rpx);
   overflow-y: scroll;
 }
 

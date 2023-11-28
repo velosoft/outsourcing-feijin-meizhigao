@@ -47,7 +47,7 @@
       }
     },
     {
-      "path": "pages/siderbar/index",
+      "path": "pages/listPage/index",
       "style": {
         "navigationStyle": "custom",
         "backgroundColor": "#1C6BFF",

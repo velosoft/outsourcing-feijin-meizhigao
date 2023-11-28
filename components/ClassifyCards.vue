@@ -22,7 +22,7 @@ export default {
   methods: {
     goto(url) {
       uni.navigateTo({
-        url: "/pages/siderbar/index",
+        url: "/pages/listPage/index",
       });
     },
   },
