@@ -1,6 +1,6 @@
 {
     "name" : "美之高",
-    "appid" : "__UNI__A4E8E59",
+    "appid" : "__UNI__E5E652F",
     "description" : "美之高用户端",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -50,7 +50,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxad3c7e9af2bb5cc1",
+        "appid" : "wx90dddf457d125a9b",
         "setting" : {
             "urlCheck" : false,
             "es6" : true,
