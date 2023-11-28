@@ -61,6 +61,7 @@
           class="flex-row mt-16 list-item"
           v-for="(item, index) in items"
           :key="index"
+          @click="goto('/pages/shop/index')"
         >
           <image
             class="shrink-0 shop-image"
@@ -139,6 +140,11 @@ export default {
     radioClick(name) {
       this.radios.map((item, index) => {
         item.checked = index === name ? true : false;
+      });
+    },
+    goto(url) {
+      uni.navigateTo({
+        url: url,
       });
     },
   },
@@ -263,7 +269,7 @@ export default {
             background-repeat: no-repeat;
             height: 32rpx;
             .tag-text {
-			  margin: 0 8rpx;
+              margin: 0 8rpx;
               font-size: 20rpx;
               font-family: PingFangSC-Regular;
               line-height: 20rpx;
