@@ -258,6 +258,7 @@ export default {
     position: absolute;
   }
   .shop-detail {
+    padding-bottom: 136rpx;
     overflow-y: auto;
     .header-swiper-image {
       width: 100vw;
@@ -461,7 +462,7 @@ export default {
         color: #a7a7a7;
       }
       .detail-info {
-        padding: 40rpx 28rpx 0;
+        padding: 40rpx 28rpx;
         background-color: #ffffff;
         border-radius: 8rpx 8rpx 0rpx 0rpx;
         .detial-top {
