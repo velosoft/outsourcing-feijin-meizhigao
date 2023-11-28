@@ -39,7 +39,7 @@
               <text class="self-start font-com-shop reserve-text">100人预约</text>
             </view>
             <view class="flex-row items-center mt-17 justify-between">
-              <view class="flex-row justify-center">
+              <view class="flex-row justify-center item-space">
                 <view class="list-item items-center flex-row" v-for="(item, index) in items" :key="index">
                   <text class="coupon-text">满329包邮</text>
                 </view>
@@ -53,8 +53,8 @@
               </view>
             </view>
             <view class="flex-col mt-17">
-              <view class="flex-row">
-                <view class="text-wrapper_5 flex-row" v-for="(item, index) in items_1" :key="index">
+              <view class="flex-row tag-list">
+                <view class="tag-item flex-row" v-for="(item, index) in items_1" :key="index">
                   <text class="font_6">新客优选</text>
                 </view>
               </view>
@@ -67,7 +67,7 @@
             </view>
             <view class="flex-row items-center active-top">
               <text class="font-com-shop">活动</text>
-              <view class="ml-16 flex-col active-coupon">
+              <view class="ml-16 flex-col justify-center active-coupon">
                 <text class="coupon-text active-coupion-text">每满200减20元</text>
               </view>
             </view>
@@ -160,10 +160,10 @@
           </view>
         </view>
         <view class="flex-row">
-          <view class="flex-col items-center btn-wrapper-left"><text class="reserve-tag-text">加入购物车</text></view>
-          <view class="ml-10 flex-col items-center btn-wrapper-right">
+          <button class="flex-col items-center btn-wrapper-left"><text class="reserve-tag-text">加入购物车</text></button>
+          <button class="ml-10 flex-col items-center btn-wrapper-right">
             <text class="font-com-shop btn-wrapper-right-text">预约服务</text>
-          </view>
+          </button>
         </view>
       </view>
     </view>
@@ -265,12 +265,12 @@
               color: #bb3e0c;
             }
             .price-number {
-              margin-left: -16rpx;
+              margin-left: -6rpx;
               color: #bb3e0c;
               font-size: 48rpx;
               font-family: HarmonyOSSans;
               font-weight: 700;
-              line-height: 48rpx;
+              line-height: 36rpx;
               letter-spacing: -1.86rpx;
             }
             .decimal-text {
@@ -290,6 +290,9 @@
               font-size: 26rpx;
               line-height: 26rpx;
             }
+            .item-space > .list-item:not(:first-child){
+              margin-left: 16rpx;
+            }
             .list-item {
               padding: 0 12rpx;
               height: 44rpx;
@@ -303,7 +306,10 @@
                 height: 16rpx;
               }
             }
-            .text-wrapper_5 {
+            .tag-list > .tag-item:not(:first-child){
+              margin-left: 16rpx;
+            }
+            .tag-item {
               padding: 8rpx 12rpx;
               height: 44rpx;
               align-items: center;
@@ -327,10 +333,7 @@
                 padding: 8rpx 0;
                 border-radius: 4rpx;
                 height: 46rpx;
-                border-left: solid 1rpx #bb3e0c;
-                border-right: solid 1rpx #bb3e0c;
-                border-top: solid 1rpx #bb3e0c;
-                border-bottom: solid 1rpx #bb3e0c;
+                border: solid 1rpx #bb3e0c;
                 .active-coupion-text {
                   margin: 0 8rpx;
                   font-size: 24rpx;
@@ -463,10 +466,7 @@
           border-radius: 40rpx;
           width: 206rpx;
           height: 80rpx;
-          border-left: solid 2rpx #b09053;
-          border-right: solid 2rpx #b09053;
-          border-top: solid 2rpx #b09053;
-          border-bottom: solid 2rpx #b09053;
+          border: solid 2rpx #b09053;
         }
         .btn-wrapper-right {
           padding: 24rpx 0;

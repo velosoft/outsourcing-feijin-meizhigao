@@ -267,6 +267,7 @@ export default {
         margin: 8rpx 0 8rpx 24rpx;
         .tag {
           margin-top: 16rpx;
+
           .tag-wrap {
             padding: 0 8rpx;
             background-image: url("https://dev.ft.velosoft.cn/api/image?token=6564c3e6cc0204001241016e&name=9a3b9a726ef2d84aeb76065d090ea380.png");
@@ -282,6 +283,9 @@ export default {
             }
           }
         }
+		.tag > .tag-wrap:not(:first-child){
+			margin-left: 16rpx;
+		}
         .shop-con-bottom {
           margin-top: 40rpx;
           .font-con_01 {
@@ -300,7 +304,7 @@ export default {
             line-height: 20rpx;
           }
           .price-number {
-            margin-left: -8rpx;
+            margin-left: -4rpx;
             color: #bb3e0c;
             font-size: 32rpx;
             font-family: HarmonyOSSans;
