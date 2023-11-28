@@ -9,20 +9,22 @@
     />
     <view class="flex-row siderbar-container">
       <view class="sider-bar">
-        <view class="pics">
-          <view class="gundong" v-for="(item, index) in navLeft" :key="index">
-            <view
-              class="flex-row sider-bar-mar"
+        <view
+          class="sider-bar-item"
+          v-for="(item, index) in navLeft"
+          :key="index"
+        >
+          <view
+            class="flex-row sider-bar-mar"
+            :class="{ active: isActive === index }"
+            @click="checked(index)"
+          >
+            <view :class="{ line: isActive === index }"></view>
+            <text
+              class="ml-20 sider-bar-text"
               :class="{ active: isActive === index }"
-              @click="checked(index)"
+              >{{ item.text }}</text
             >
-              <view :class="{ line: isActive === index }"></view>
-              <text
-                class="ml-20 sider-bar-text"
-                :class="{ active: isActive === index }"
-                >{{ item.text }}</text
-              >
-            </view>
           </view>
         </view>
       </view>
@@ -75,10 +77,10 @@
               <view class="flex-row tag items-center">
                 <view
                   class="tag-wrap items-center flex-row"
-                  v-for="(item, index) in items_1"
+                  v-for="(item, index) in prodTags"
                   :key="index"
                 >
-                  <text class="tag-text">新品上市</text>
+                  <text class="tag-text">{{ item }}</text>
                 </view>
               </view>
               <view class="flex-row items-center shop-con-bottom">
@@ -106,7 +108,7 @@ export default {
   props: {},
   data() {
     return {
-      items_1: [null, null],
+      prodTags: ["新品上市", "好评推荐"],
       items: [
         null,
         null,
@@ -228,11 +230,7 @@ export default {
   overflow-y: auto;
   background-color: #f8f8f8;
 }
-.pics {
-  width: 100%;
-  height: auto;
-}
-.gundong {
+.sider-bar-item {
   width: 206rpx;
   height: 108rpx;
 }
@@ -247,7 +245,6 @@ export default {
   font-family: PingFangSC-Medium;
   color: #030305;
 }
-
 .sider-bar-mar {
   padding: 40rpx 0;
   .line {
