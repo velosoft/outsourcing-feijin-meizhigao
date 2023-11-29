@@ -76,7 +76,7 @@
                 <text class="coupon-text">满329包邮</text>
               </view>
             </view>
-            <view class="ml-20 flex-row items-center  coupon-wrapper">
+            <view class="ml-20 flex-row items-center coupon-wrapper">
               <text class="coupon-text">领取</text>
               <image
                 class="ml-4 arrow-right"
@@ -97,17 +97,19 @@
           </view>
         </view>
         <view class="mt-10 flex-col logistics-info">
-          <view class="flex-row">
+          <view class="flex-row logistics-row">
             <text class="font-com-shop">运费</text>
             <text class="ml-16 font-com-samll">免运费</text>
           </view>
-          <view class="flex-row items-center active-top">
+          <view class="h-divider" />
+          <view class="flex-row items-center active-top logistics-row">
             <text class="font-com-shop">活动</text>
             <view class="ml-16 flex-col justify-center active-coupon">
               <text class="coupon-text active-coupion-text">每满200减20元</text>
             </view>
           </view>
-          <view class="flex-row justify-between items-center mt-41">
+          <view class="h-divider" />
+          <view class="flex-row justify-between items-center logistics-row">
             <view class="flex-row">
               <text class="font-com-shop">选择</text>
               <text class="ml-16 font-com-samll">请选择服务规格</text>
@@ -117,7 +119,8 @@
               src="../../static/images/icon_arrow_03.png"
             />
           </view>
-          <view class="flex-row items-center reserve-top">
+          <view class="h-divider" />
+          <view class="flex-row items-center logistics-row">
             <text class="font-com-shop">服务</text>
             <view class="ml-4 flex-row">
               <view class="flex-row items-center reserve-tag">
@@ -150,7 +153,7 @@
           </view>
           <view class="mt-16 flex-col evaluate-list">
             <view
-              class="flex-col mt-28 evaluate-list"
+              class="flex-col mt-28"
               v-for="(item, index) in items_2"
               :key="index"
             >
@@ -245,9 +248,6 @@ export default {
 <style scoped lang="less">
 .mt-17 {
   margin-top: 34rpx;
-}
-.mt-41 {
-  margin-top: 80rpx;
 }
 .page {
   background-color: #f8f8f8;
@@ -385,31 +385,35 @@ export default {
         }
       }
       .logistics-info {
-        padding: 40rpx 28rpx 24rpx;
+        padding: 0 28rpx 0;
         background-color: #ffffff;
         border-radius: 12rpx;
-        .active-top {
-          margin-top: 88rpx;
-          .active-coupon {
-            padding: 8rpx 0;
-            border-radius: 4rpx;
-            height: 46rpx;
-            border: solid 1rpx #bb3e0c;
-            .active-coupion-text {
-              margin: 0 8rpx;
-              font-size: 24rpx;
-              line-height: 24rpx;
-            }
+        .logistics-row {
+          height: 120rpx;
+          align-items: center;
+        }
+        .h-divider {
+          height: 0;
+          width: 656rpx;
+          border-top: 0.5px solid rgba(239, 239, 239, 1);
+        }
+        .active-coupon {
+          padding: 8rpx 0;
+          border-radius: 4rpx;
+          height: 46rpx;
+          border: solid 1rpx #bb3e0c;
+          .active-coupion-text {
+            margin: 0 8rpx;
+            font-size: 24rpx;
+            line-height: 24rpx;
           }
         }
-        .reserve-top {
-          margin-top: 72rpx;
-          .reserve-tag {
-            padding: 8rpx 16rpx;
-            .icon-office {
-              width: 30rpx;
-              height: 30rpx;
-            }
+
+        .reserve-tag {
+          padding: 8rpx 16rpx;
+          .icon-office {
+            width: 30rpx;
+            height: 30rpx;
           }
         }
       }
@@ -504,6 +508,7 @@ export default {
     padding: 16rpx 32rpx 16rpx 40rpx;
     background-color: #ffffff;
     box-shadow: 0rpx 0rpx 20rpx #0000000f;
+    padding-bottom: env(safe-area-inset-bottom);
     .btn-wrapper-left {
       padding: 24rpx 0;
       border-radius: 40rpx;
