@@ -24,6 +24,7 @@
               <image
                 class="header-swiper-image"
                 src="../../static/images/iamge_video.png"
+                mode="aspectFill"
               />
               <image
                 class="outflow video-open-btn"
