@@ -2,7 +2,7 @@
   <view class="flex-col page">
     <uni-nav-bar
       :fixed="true"
-      shadow
+      :shadow="false"
       height="88rpx"
       :status-bar="true"
       :border="false"

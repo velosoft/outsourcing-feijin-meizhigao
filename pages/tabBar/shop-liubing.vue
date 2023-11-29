@@ -39,7 +39,7 @@
             <swiper-item v-for="(item, index) in Swiperitems" :key="index">
               <image
                 class="swiper-image"
-                src="../../static/mock/shop-swiper-image.png"
+                src="../../static/mock/b707d6e23925649ad73479dac900e0e5.png"
               />
             </swiper-item>
           </swiper>
@@ -78,7 +78,7 @@
           >
             <image
               class="shrink-0 shop-image"
-              src="../../static/mock/shop-image.png"
+              src="../../static/mock/06a1cbdae6865f4cfc1d807007dcb9f6.png"
             />
             <view class="ml-12 flex-col shop-con">
               <text class="title">衣架防滑无痕围巾架丝</text>
@@ -138,7 +138,28 @@ export default {
         { index: 1, text: "厨房场景" },
         { index: 2, text: "客厅场景" },
         { index: 3, text: "卧室场景" },
-        { index: 4, text: "客厅场景" },
+        { index: 4, text: "卧室场景" },
+        { index: 6, text: "客厅场景" },
+        { index: 7, text: "客厅场景" },
+        { index: 8, text: "客厅场景" },
+        { index: 9, text: "客厅场景" },
+        { index: 10, text: "客厅场景" },
+        { index: 11, text: "客厅场景" },
+        { index: 12, text: "客厅场景" },
+        { index: 13, text: "客厅场景" },
+        { index: 20, text: "卧室场景" },
+        { index: 21, text: "厨房场景" },
+        { index: 22, text: "客厅场景" },
+        { index: 23, text: "卧室场景" },
+        { index: 24, text: "卧室场景" },
+        { index: 26, text: "客厅场景" },
+        { index: 27, text: "客厅场景" },
+        { index: 28, text: "客厅场景" },
+        { index: 29, text: "客厅场景" },
+        { index: 30, text: "客厅场景" },
+        { index: 31, text: "客厅场景" },
+        { index: 32, text: "客厅场景" },
+        { index: 33, text: "客厅场景" },
       ],
       Swiperitems: [null, null, null, null],
       radios: [
@@ -207,11 +228,10 @@ export default {
 
 <style scoped lang="less">
 .page {
-  height: 100vh;
-  overflow: hidden;
+  height: calc(100vh - 60px);
 }
 .siderbar-container {
-  height: calc(100% - 100rpx);
+  height: 100%;
 }
 
 .sider-bar {
