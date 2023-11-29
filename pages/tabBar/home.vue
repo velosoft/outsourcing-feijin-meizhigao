@@ -42,7 +42,7 @@
             <image
               class="swiper-images"
               src="../../static/mock/home-swiper-image.png"
-              mode="aspectFit|aspectFill|widthFix"
+              mode="aspectFill"
               lazy-load="false"
             >
             </image>
@@ -234,7 +234,7 @@ const items_1 = [
   .home-con {
     overflow-y: auto;
     .search-box {
-      padding: 24rpx 28rpx 40rpx;
+      padding: 20rpx 32rpx 20rpx;
       .searech-wrap {
         padding: 16rpx 32rpx;
         background-color: #f0f0f0;
@@ -242,12 +242,10 @@ const items_1 = [
         height: 68rpx;
         .uni-input {
           margin-left: 12rpx;
-          /deep/ .uni-input-input {
-            font-size: 26rpx;
-            font-family: PingFang SC Bold;
-            font-weight: 700;
-            line-height: 26rpx;
-          }
+          font-size: 26rpx;
+          font-family: PingFang SC Bold;
+          font-weight: 700;
+          line-height: 26rpx;
         }
 
         .search-image {
@@ -298,10 +296,10 @@ const items_1 = [
     }
     .swiper-box {
       width: 100%;
-      height: 516rpx;
+      height: 520rpx;
       .swiper-images {
         width: 750rpx;
-        height: 516rpx;
+        height: 520rpx;
       }
       .indicator-wrapper {
         position: absolute;
@@ -341,7 +339,7 @@ const items_1 = [
       margin: 56rpx 32rpx 0;
     }
     .member-box {
-      margin: 40rpx 32rpx 0;
+      margin: 40rpx 30rpx 0;
       .member-section {
         padding-bottom: 8rpx;
         height: 186rpx;

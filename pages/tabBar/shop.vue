@@ -40,6 +40,7 @@
               <image
                 class="swiper-image"
                 src="../../static/mock/shop-swiper-image.png"
+                mode="aspectFill"
               />
             </swiper-item>
           </swiper>
@@ -79,6 +80,7 @@
             <image
               class="shrink-0 shop-image"
               src="../../static/mock/shop-image.png"
+              mode="aspectFill"
             />
             <view class="ml-12 flex-col shop-con">
               <text class="title">衣架防滑无痕围巾架丝</text>

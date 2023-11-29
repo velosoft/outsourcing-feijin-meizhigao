@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col shop-item">
-    <image class="shop-images" :src="image" />
+    <image class="shop-images" :src="image" mode="aspectFill" />
     <view class="flex-col shop-con">
       <text class="self-start shop-title line-two">{{ title }}</text>
       <view class="flex-row self-stretch shop-equal-division">
@@ -13,7 +13,8 @@
         </view>
       </view>
       <view
-        class="flex-row justify-between items-center self-stretch shop-group">
+        class="flex-row justify-between items-center self-stretch shop-group"
+      >
         <view class="flex-row items-center self-stretch shop-price-wrapper">
           <text class="shop-font_01">秒杀价</text>
           <view class="flex-row items-center shrink-0 price-wrap ml-1">
@@ -54,6 +55,7 @@ export default {
   padding-bottom: 34rpx;
   margin-bottom: 24rpx;
   background-color: #ffffff;
+  border-radius: 10px;
 }
 .shop-images {
   width: 330rpx;

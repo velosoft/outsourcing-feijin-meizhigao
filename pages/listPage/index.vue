@@ -14,6 +14,7 @@
           <image
             class="banner-image"
             src="../../static/mock/list-page-banner.png"
+            mode="aspectFill"
           />
         </view>
       </view>
