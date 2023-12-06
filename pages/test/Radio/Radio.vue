@@ -29,10 +29,10 @@
     <view class="radio-wrap--group">
       <view class="flex-row items-center radio-wrap" v-for="(item, index) in items" :key="index" @click="radioChange(item.value)">
         <view class="icon-wrap">
-          <image class="icon-radio" src="../../../static/images/icon_radio_01.png" mode="aspectFit|aspectFill|widthFix"
+          <image class="icon-radio" src="../../../static/image/icon_radio_01.png" mode="aspectFit|aspectFill|widthFix"
             lazy-load="false" binderror="" bindload="" v-if="index === current">
           </image>
-          <image class="icon-radio" src="../../../static/images/icon_radio_02.png" mode="aspectFit|aspectFill|widthFix"
+          <image class="icon-radio" src="../../../static/image/icon_radio_02.png" mode="aspectFit|aspectFill|widthFix"
             lazy-load="false" binderror="" bindload="" v-else></image>
         </view>
         <view class="right-con">
