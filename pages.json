@@ -7,6 +7,59 @@
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/test/Search/Search",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/test/ToggleBtn/ToggleBtn",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/test/Swiper/Swiper",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/test/Badge/Badge",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/test/Checkbox/Checkbox",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/test/Radio/Radio",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/test/Button/Button",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
       "path": "pages/tabBar/home",
       "style": {
         "navigationStyle": "custom",
