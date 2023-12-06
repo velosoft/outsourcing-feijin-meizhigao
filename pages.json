@@ -7,6 +7,14 @@
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/test-2/primaryButton/case1",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
       "path": "pages/test/Search/Search",
       "style": {
         "navigationBarTitleText": "",

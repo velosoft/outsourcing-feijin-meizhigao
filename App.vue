@@ -553,4 +553,23 @@ text {
 .mt-100 {
   margin-top: 6.25rem;
 }
+
+.page-bottom-save {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.primary-btn {
+  flex: 1;
+}
+
+.primary-btn .u-button {
+  background-color: #b1a76e !important;
+  border-radius: 44rpx !important;
+  padding: 27rpx 40rpx !important;
+  font-size: 28rpx !important;
+  font-family: 苹方 !important;
+  color: #ffffff !important;
+  font-size: 30rpx !important;
+  line-height: 26rpx !important;
+}
 </style>
