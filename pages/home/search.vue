@@ -20,7 +20,6 @@
           @custom="onCustom"
           @search="onSearch"
           @focus="onFocus"
-          @handler="openHistory"
         ></Search>
       </template>
     </NavBar>
@@ -135,11 +134,7 @@ export default {
       this.isSearch = false;
     },
     onFocus(){
-        console.log("打开历史记录")
-        this.isSearch = true;
-    },
-    openHistory(){
-        console.log("打开历史记录")
+        console.log("聚焦事件")
         this.isSearch = true;
     },
     onCustom(keyword) {
