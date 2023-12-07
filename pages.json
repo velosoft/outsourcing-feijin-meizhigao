@@ -118,6 +118,17 @@
       }
     },
     {
+      "path": "pages/home/search",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      },
+      "navigationBarRightButton": {
+        "hide": true
+      }
+    },
+    {
       "path": "pages/tabBar/home",
       "style": {
         "navigationStyle": "custom",
