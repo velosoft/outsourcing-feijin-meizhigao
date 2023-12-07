@@ -13,13 +13,14 @@
     </uni-nav-bar>
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
-        <view class="flex-row items-center flex-1 searech-wrap">
+        <view class="flex-row items-center flex-1 searech-wrap"  @tap="goSearch">
           <image class="search-image" src="../../static/images/search.png" />
           <input
             class="uni-input flex-1"
             placeholder-class="placeholder-text"
             focus
             placeholder="搜索"
+            :disabled="false"
           />
         </view>
         <view class="ml-8 flex-col items-center shrink-0 relative search-right">
@@ -144,6 +145,11 @@ export default {
   methods: {
     change(e) {
       this.current = e.detail.current;
+    },
+    goSearch() {
+      uni.navigateTo({
+					url:'../home/search'
+				})
     },
   },
 };

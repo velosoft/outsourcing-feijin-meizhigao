@@ -13,7 +13,7 @@
         </image>
       </template>
       <template #right>
-        <Search class="search-wrap"></Search>
+        <Search class="search-wrap" :showAction="true" @custom="onCustom" @search="onSearch"></Search>
       </template>
     </NavBar>
     <view class="flex-col flex-1">
@@ -43,7 +43,12 @@
         </ListContainer>
       </view>
     </view>
-    <DialogBtn :isShow="showDialog" :isnormal="false" @cancel="onCancel" @confirm="onConfirm"></DialogBtn>
+    <DialogBtn
+      :isShow="showDialog"
+      :isnormal="false"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    ></DialogBtn>
   </view>
 </template>
 
@@ -93,6 +98,7 @@ export default {
       itemsRight: [...items_1],
       current: 0,
       showDialog: false,
+      historyList: []
     };
   },
   onReachBottom() {
@@ -115,17 +121,23 @@ export default {
     tabChange(e) {
       this.tabCur = e;
     },
-    clearHistory(){
-        console.log("清除")
-        this.showDialog= true;
-        console.log(this.showDialog)
+    clearHistory() {
+      this.showDialog = true;
     },
-    onCancel(){
-        this.showDialog= false;
+    onCancel() {
+      this.showDialog = false;
     },
-    onConfirm(){
-        this.showDialog= false;
+    onConfirm() {
+      this.showDialog = false;
     },
+    onSearch(keyword){
+        console.log(keyword)
+        this.isSearch=false;
+    },
+    onCustom(keyword){
+       console.log(keyword)
+       this.isSearch=false;
+    }
   },
 };
 const items = [
