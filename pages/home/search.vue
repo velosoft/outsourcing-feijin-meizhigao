@@ -133,9 +133,9 @@ export default {
       console.log(keyword);
       this.isSearch = false;
     },
-    onFocus(){
-        console.log("聚焦事件")
-        this.isSearch = true;
+    onFocus() {
+      console.log("聚焦事件");
+      this.isSearch = true;
     },
     onCustom(keyword) {
       console.log(keyword);
@@ -143,11 +143,13 @@ export default {
     },
     onClick(val) {
       console.log("打开标签" + val.label);
-      this.keywords = val.label
+      this.keywords = val.label;
     },
     onClose(val) {
       console.log("关闭标签" + val.label);
-      this.tabsArray.filter(item => item !== val)
+      this.tabsArray = this.tabsArray.filter(
+        (item) => item.label !== val.label
+      );
     },
     change(e) {
       this.current = e.detail.current;
@@ -162,6 +164,7 @@ export default {
       this.showDialog = false;
     },
     onConfirm() {
+      this.tabsArray = [];
       this.showDialog = false;
     },
   },
