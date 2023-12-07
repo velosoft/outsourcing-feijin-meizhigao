@@ -1,19 +1,34 @@
 <template>
-  <view style="padding: 200rpx 0">
-    <view class="flex-col items-start tab-wrap">
-      <view class="flex-row tab-con">
-        <view
-          class="flex-col justify-center items-center tab-btn"
-          :class="[index == current ? 'btn--active' : '']"
-          v-for="(item, index) in tabsArray"
-          :key="index"
-          @click="onChange(item, index)"
+  <view class="flex-col items-start tog-wrap">
+    <view class="flex-row tog-con">
+      <view
+        class="flex-row justify-center items-center tog-btn"
+        :class="[index == current ? 'btn--active' : '']"
+        v-for="(item, index) in tabsArray"
+        :key="index"
+        @click="clickHandler(item, index)"
+      >
+        <text
+          class="btn-text"
+          :class="[index == current ? 'btn-text--active' : '']"
+          >{{ item.label }}</text
         >
-          <text
-            class="btn-text"
-            :class="[index == current ? 'btn-text--active' : '']"
-            >{{ item.label }}</text
-          >
+        <view
+          class="btn-close"
+          v-if="closable"
+          @tap.stop="closeHandler(item, index)"
+        >
+          <slot name="close">
+            <image
+              class="close-icon"
+              src="../static/images/icon_del_02.png"
+              mode="aspectFit|aspectFill|widthFix"
+              lazy-load="false"
+              binderror=""
+              bindload=""
+            >
+            </image>
+          </slot>
         </view>
       </view>
     </view>
@@ -23,17 +38,30 @@
 <script>
 export default {
   name: "toggleBtn",
-  props: {},
+  props: {
+    tabsArray: {
+      type: Array,
+      default: [{ label: "标签1" }, { label: "标签2" }, { label: "标签3" }],
+    },
+    closable: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
-      tabsArray: [{ label: "标签1" }, { label: "标签2" }, { label: "标签3" }],
       current: 0,
     };
   },
   methods: {
-    onChange(v, i) {
-      console.log("切换按钮" + i);
+    // 点击标签
+    clickHandler(v, i) {
       this.current = i;
+      this.$emit("onClick", v);
+    },
+    // 点击关闭按钮
+    closeHandler(v, i) {
+      this.$emit("onClose", v);
     },
   },
 };
@@ -45,43 +73,39 @@ export default {
   padding: 30rpx 0;
 }
 
-.tab-con > view:not(:first-child) {
+.tog-con > view:not(:first-child) {
   margin-left: 12rpx;
 }
 
-.tab-btn {
+.tog-btn {
   height: 48rpx;
-  padding: 0 22rpx;
-  border-radius: 24rpx;
+  padding: 32rpx;
+  border-radius: 30rpx;
   transition: all 0.3s linear;
+  background-color: #f8f8f8;
 }
 
 .btn--active {
-  background-color: #c30d23;
+  // background-color: #c30d23;
 }
 
 .btn-text {
-  font-size: 24rpx;
+  font-size: 26rpx;
   font-family: PingFang SC;
-  line-height: 24rpx;
-  color: #666666;
+  line-height: 26rpx;
+  color: #A7A7A7;
 }
 
 .btn-text--active {
-  color: #f7f7f7;
+  // color: #f7f7f7;
 }
 
-.tab-btn--bg {
-  width: 234rpx;
-  min-height: 150rpx;
-  padding: 0 22rpx;
-  border-radius: 24rpx;
-  transition: all 0.3s linear;
-}
-.btn-image {
-  width: 234rpx;
-  height: 150rpx;
-  position: absolute;
-  z-index: -1;
+.btn-close {
+  margin-left: 20rpx;
+
+  .close-icon {
+    height: 28rpx;
+    width: 28rpx;
+  }
 }
 </style>
