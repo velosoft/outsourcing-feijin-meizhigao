@@ -234,7 +234,7 @@ const items_1 = [
   .home-con {
     overflow-y: auto;
     .search-box {
-      padding: 20rpx 32rpx 20rpx;
+      padding: 20rpx 30rpx 20rpx;
       .searech-wrap {
         padding: 16rpx 32rpx;
         background-color: #f0f0f0;
@@ -319,7 +319,7 @@ const items_1 = [
       }
     }
     .notify-box {
-      padding: 24rpx 32rpx;
+      padding: 24rpx 30rpx;
       background-color: #f7f7f799;
       .home-font_02 {
         font-size: 24rpx;
@@ -336,7 +336,7 @@ const items_1 = [
       height: 30rpx;
     }
     .box-top {
-      margin: 56rpx 32rpx 0;
+      margin: 56rpx 30rpx 0;
     }
     .member-box {
       margin: 40rpx 30rpx 0;
