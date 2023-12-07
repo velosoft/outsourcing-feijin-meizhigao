@@ -21,13 +21,16 @@
       <view class="flex-col flex-1 search-input-wrap">
         <input
           class="search-input"
-          focus
-          :placeholder="placeholder"
-          placeholder-class="input-placeholder"
+          @blur="blur"
           :value="value"
           @confirm="search"
           @input="inputChange"
           :disabled="disabled"
+          @focus="getFocus"
+          :focus="focus"
+          :placeholder="placeholder"
+          placeholder-class="input-placeholder"
+          type="text"
         />
       </view>
     </view>
@@ -54,6 +57,10 @@ export default {
       type: String,
       default: "搜索你想要的内容",
     },
+    focus: {
+      type: Boolean,
+      defalut: false,
+    },
     showAction: {
       type: Boolean,
       defalut: false,
@@ -70,6 +77,7 @@ export default {
   data() {
     return {
       keyword: "",
+      focused: this.focus,
     };
   },
   watch: {
@@ -107,9 +115,29 @@ export default {
         uni.hideKeyboard();
       } catch (e) {}
     },
+    // 获取焦点
+    getFocus() {
+      this.focused = true;
+      // 开启右侧搜索按钮展开的动画效果
+      this.$emit("focus", this.keyword);
+    },
+    // 失去焦点
+    blur() {
+      // 最开始使用的是监听图标@touchstart事件，自从hx2.8.4后，此方法在微信小程序出错
+      // 这里改为监听点击事件，手点击清除图标时，同时也发生了@blur事件，导致图标消失而无法点击，这里做一个延时
+      setTimeout(() => {
+        this.focused = false;
+      }, 100);
+      this.show = false;
+      this.$emit("blur", this.keyword);
+    },
     // 点击搜索框，只有disabled=true时才发出事件，因为禁止了输入，意味着是想跳转真正的搜索页
     clickHandler() {
-      if (this.disabled) this.$emit("click");
+      if (this.disabled) {
+        this.$emit("click");
+      }else{
+        this.$emit("handler");
+      }
     },
   },
 };
