@@ -20,12 +20,12 @@
         :style="{ paddingRight: paddingRight + 'px' }"
       >
         <view class="navbar-left">
-          <!-- <view
+          <view
             @click="onClickLeft"
             class="navbar-btns navbar-btns-left"
             v-if="hasBack"
           >
-            <view class="navbar-item-content">
+            <!-- <view class="navbar-item-content">
               <u-icon
                 class="icon"
                 :color="iconColor"
@@ -33,9 +33,9 @@
                 :name="hasCurrentPages ? 'arrow-leftNavBar' : 'home'"
               ></u-icon>
               <view class="txt" v-if="leftText">{{ leftText }}</view>
-            </view>
+            </view> -->
             <slot name="left" />
-          </view> -->
+          </view>
           <slot name="left" />
         </view>
         <view
