@@ -13,7 +13,15 @@
         </image>
       </template>
       <template #right>
-        <Search class="search-wrap" :showAction="true" @custom="onCustom" @search="onSearch"></Search>
+        <Search
+          class="search-wrap"
+          :showAction="true"
+          :value="keywords"
+          @custom="onCustom"
+          @search="onSearch"
+          @focus="onFocus"
+          @handler="openHistory"
+        ></Search>
       </template>
     </NavBar>
     <view class="flex-col flex-1">
@@ -27,7 +35,12 @@
               @click="clearHistory"
             />
           </view>
-          <ToggleBtn class="equal-division mt-14"></ToggleBtn>
+          <ToggleBtn
+            class="equal-division mt-14"
+            :tabsArray="tabsArray"
+            @onClick="onClick"
+            @onClose="onClose"
+          ></ToggleBtn>
         </view>
       </view>
       <view class="flex-col" v-else>
@@ -75,6 +88,8 @@ export default {
   data() {
     return {
       isSearch: true,
+      keywords: "",
+      tabsArray: [{ label: "标签3" }, { label: "标签4" }, { label: "标签5" }],
       tabCur: 1,
       tabList: [
         {
@@ -98,7 +113,7 @@ export default {
       itemsRight: [...items_1],
       current: 0,
       showDialog: false,
-      historyList: []
+      historyList: [],
     };
   },
   onReachBottom() {
@@ -115,6 +130,30 @@ export default {
     }, 1500);
   },
   methods: {
+    onSearch(keyword) {
+      console.log(keyword);
+      this.isSearch = false;
+    },
+    onFocus(){
+        console.log("打开历史记录")
+        this.isSearch = true;
+    },
+    openHistory(){
+        console.log("打开历史记录")
+        this.isSearch = true;
+    },
+    onCustom(keyword) {
+      console.log(keyword);
+      this.isSearch = false;
+    },
+    onClick(val) {
+      console.log("打开标签" + val.label);
+      this.keywords = val.label
+    },
+    onClose(val) {
+      console.log("关闭标签" + val.label);
+      this.tabsArray.filter(item => item !== val)
+    },
     change(e) {
       this.current = e.detail.current;
     },
@@ -130,14 +169,6 @@ export default {
     onConfirm() {
       this.showDialog = false;
     },
-    onSearch(keyword){
-        console.log(keyword)
-        this.isSearch=false;
-    },
-    onCustom(keyword){
-       console.log(keyword)
-       this.isSearch=false;
-    }
   },
 };
 const items = [
