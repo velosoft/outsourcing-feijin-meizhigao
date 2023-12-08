@@ -572,4 +572,17 @@ text {
   font-size: 30rpx !important;
   line-height: 26rpx !important;
 }
+
+.normal-input .u-input {
+  background-color: #f8f8f8 !important;
+  border-radius: 100rpx !important;
+  border: unset !important;
+  padding: 24rpx 0 24rpx 33rpx !important;
+}
+
+.normal-input input {
+  font-size: 28rpx !important;
+  font-family: 苹方 !important;
+  line-height: 28rpx !important;
+}
 </style>
