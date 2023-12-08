@@ -58,7 +58,7 @@
           ></view>
         </view>
       </view>
-      <view class="flex-row items-center notify-box">
+      <view class="flex-row items-center notify-box" @click="goNotify">
         <image class="notify-image" src="../../static/images/notify.png" />
         <text class="ml-10 home-font_02 notify-text"
           >显示最新一条系统公告的标题，系统公告的标题…</text
@@ -189,6 +189,11 @@ export default {
     goSearch() {
       uni.navigateTo({
         url: "../home/search",
+      });
+    },
+    goNotify(){
+      uni.navigateTo({
+        url: "../home/notify",
       });
     },
     openPopu() {

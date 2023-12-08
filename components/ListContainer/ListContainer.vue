@@ -49,5 +49,7 @@
 </script>
 
 <style lang="less" scoped>
-
+  .listContainerComp{
+    background-color: #F8F8F8;
+}
 </style>
