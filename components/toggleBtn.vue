@@ -4,6 +4,11 @@
       <view
         class="flex-row justify-center items-center tog-btn"
         :class="[index == current ? 'btn--active' : '']"
+        :style="{
+          padding,
+          background: current == index ? activeBgColor : bgColor,
+          border: current == index && border ? activeBorder : border,
+        }"
         v-for="(item, index) in tabsArray"
         :key="index"
         @click="clickHandler(item, index)"
@@ -11,6 +16,13 @@
         <text
           class="btn-text"
           :class="[index == current ? 'btn-text--active' : '']"
+          :style="{
+            color: current == index ? activeColor : color,
+            fontSize:
+              current == index && activeFontSize ? activeFontSize : fontSize,
+            fontWeight:
+              bold || (activeBold && current == index) ? 'bold' : fontWeight,
+          }"
           >{{ item.label }}</text
         >
         <view
@@ -46,6 +58,46 @@ export default {
     closable: {
       type: Boolean,
       default: true,
+    },
+    bgColor: {
+      type: String,
+      default: "",
+    },
+    activeBgColor: {
+      type: String,
+      default: "",
+    },
+    border: {
+      type: String,
+      default: "",
+    },
+    activeBorder: {
+      type: String,
+      default: "",
+    },
+    padding: {
+      type: String,
+      default: "",
+    },
+    color: {
+      type: String,
+      default: "",
+    },
+    activeColor: {
+      type: String,
+      default: "",
+    },
+    fontsize: {
+      type: String,
+      default: "",
+    },
+    activeFontSize: {
+      type: String,
+      default: "",
+    },
+    fontWeight: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -93,7 +145,7 @@ export default {
   font-size: 26rpx;
   font-family: PingFang SC;
   line-height: 26rpx;
-  color: #A7A7A7;
+  color: #a7a7a7;
 }
 
 .btn-text--active {

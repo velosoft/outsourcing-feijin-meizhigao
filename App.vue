@@ -52,6 +52,14 @@ text {
   line-height: 36rpx;
 }
 
+.border-tabs .u-tabs__wrapper__nav {
+  border-bottom: 1rpx solid #D3D3D3 !important;
+}
+
+.border-tabs .u-tabs__wrapper__nav__line {
+  bottom: 0 !important;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

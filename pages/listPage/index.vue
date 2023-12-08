@@ -1,13 +1,6 @@
 <template>
   <view class="flex-col page">
-    <uni-nav-bar
-      :border="false"
-      :status-bar="true"
-      height="88rpx"
-      left-icon="left"
-      title="服务分类"
-      @clickLeft="back"
-    />
+    <NavBar :hasBack="true" :title="title"></NavBar>
     <view class="flex-col flex-1 content">
       <view class="flex-col justify-start carousel">
         <view class="flex-col justify-start items-center banner-image-wrapper">
@@ -20,6 +13,7 @@
       </view>
       <view class="flex-col">
         <u-tabs
+          class="border-tabs"
           lineColor="#b09053"
           lineWidth="52rpx"
           lineHeight="4rpx"
@@ -35,47 +29,29 @@
             lineHeight: '34rpx',
             color: '#6c6c6c',
           }"
-          itemStyle="padding-left: 0; padding-right: 0; height:72rpx"
-          :scrollable="false"
+          itemStyle="padding-left: 30rpx; padding-right: 30rpx; height:72rpx"
+          :scrollable="true"
           :list="list"
+          @click="onTabClick"
         ></u-tabs>
         <view class="scroll-view">
-          <view class="mt-12 flex-row tabs-content">
-            <view class="flex-col self-start relative left-list">
-              <ShopItem
-                class="mt-12 list-item"
-                v-for="(item, index) in items"
-                :key="index"
-                :image="item.image"
-                :title="item.title"
-                :tags="item.tags"
-                :price="item.price"
-                :buyer="item.buyer"
-              ></ShopItem>
-            </view>
-            <view class="ml-16 flex-col right-list">
-              <ShopItem
-                class="mt-12 list-item"
-                v-for="(item, index) in items_1"
-                :key="index"
-                :image="item.image"
-                :title="item.title"
-                :tags="item.tags"
-                :price="item.price"
-                :buyer="item.buyer"
-              ></ShopItem>
-            </view>
-          </view>
-          <view class="flex-col justify-start items-center loading-wrapper">
-            <text
-              v-if="status === 'loading'"
-              class="load-more-font load-more-text"
-              >加载中~</text
-            >
-            <text v-else class="load-more-font load-more-text"
-              >没有更多数据啦</text
-            >
-          </view>
+          <scroll-view
+            :scroll-top="scrollTop"
+            scroll-y="true"
+            class="scroll-Y"
+            @scrolltoupper="upper"
+            @scrolltolower="lower"
+            @scroll="scroll"
+          >
+            <ListContainer :showEmpty="isShowEmpty" :showLoading="showLoading">
+              <view>
+                <DoublueList
+                  class="section_13"
+                  :items="itemsProduct"
+                ></DoublueList>
+              </view>
+            </ListContainer>
+          </scroll-view>
         </view>
       </view>
     </view>
@@ -84,83 +60,23 @@
 
 <script>
 import ShopItem from "../../components/ShopItem.vue";
-const items = [
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
+import NavBar from "../../components/NavBar/NavBar.vue";
+import ListContainer from "../../components/ListContainer/ListContainer.vue";
+import DoublueList from "../../components/DoublueList.vue";
 
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-];
-const items_1 = [
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-];
+import { shopList } from "../../mock/shopList/shopList";
 
 export default {
   components: {
+    NavBar,
+    ListContainer,
+    DoublueList,
     ShopItem,
   },
   props: {},
   data() {
     return {
+      title: "",
       status: "loadmore",
       page: 0,
       list: [
@@ -180,9 +96,38 @@ export default {
           name: "衣柜收纳",
         },
       ],
-      items: [...items],
-      items_1: [...items_1],
+      list1: [
+        {
+          name: "全部",
+        },
+        {
+          name: "体验课程",
+        },
+        {
+          name: "职业课程",
+        },
+        {
+          name: "创业课程",
+        },
+      ],
+      isShowEmpty: false,
+      showLoading: false,
+      itemsProduct: shopList,
+      scrollTop: 0,
+      old: {
+        scrollTop: 0,
+      },
     };
+  },
+  onLoad: function (option) {
+    if (option.title == 0) {
+      this.title = "";
+    } else if (option.title == 1) {
+      this.title = "课程中心";
+      this.list = this.list1;
+    } else if (option.title == 2) {
+      this.title = "服务分类";
+    }
   },
   onReachBottom() {
     if (this.page >= 3) return;
@@ -190,8 +135,7 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.items = [...this.items, ...items];
-      this.items_1 = [...this.items_1, ...items_1];
+      this.itemsProduct = [...this.itemsProduct, ...shopList];
 
       if (this.page >= 3) this.status = "nomore";
       else this.status = "loading";
@@ -199,18 +143,30 @@ export default {
   },
 
   methods: {
-    back() {
-      uni.navigateBack({
-        delta: 1,
-      });
+    onTabClick(val) {
+      console.log("tabs", val.index);
+      if (val.index >= 1) {
+        this.isShowEmpty = true;
+        console.log(this.isShowEmpty)
+      }
+    },
+    upper: function (e) {
+      console.log(e);
+    },
+    lower: function (e) {
+      console.log(e);
+    },
+    scroll: function (e) {
+      console.log(e);
+      this.old.scrollTop = e.detail.scrollTop;
     },
   },
 };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
 .page {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   width: 100%;
   overflow: hidden;
   height: 100vh;
@@ -238,7 +194,11 @@ export default {
 
 .scroll-view {
   height: calc(100vh - 500rpx);
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+
+  .scroll-Y {
+    height: 100%;
+  }
 }
 
 .tabs-content {

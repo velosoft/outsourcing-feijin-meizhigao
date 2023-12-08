@@ -1,66 +1,78 @@
 <template>
   <view class="flex-col page">
     <NavBar :hasBack="true" title="消息"></NavBar>
-    <Tabs class="section_5" :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></Tabs>
+    <Tabs
+      class="section_5"
+      :tabList="tabList"
+      :TabCur="tabCur"
+      @tabChange="onTabChange"
+    ></Tabs>
     <ListContainer :showEmpty="showEmpty" :showLoading="showLoading">
       <view class="flex-col justify-start content">
-      <view class="flex-col list">
-        <view
-          class="flex-col list-item mt-20"
-          v-for="(item, index) in items"
-          :key="index"
-        >
-          <text class="self-center time">2020年03月03日 12:54</text>
-          <view class="flex-col mt-12">
-            <view class="flex-col notify-con" v-if="tabCur == 0">
-              <view class="flex-col header">
-                <text class="self-start title">国庆放假通知</text>
-                <text class="describe mt-12"
-                  >亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！</text
+        <view class="flex-col list">
+          <view
+            class="flex-col list-item mt-20"
+            v-for="(item, index) in items"
+            :key="index"
+          >
+            <text class="self-center time">2020年03月03日 12:54</text>
+            <view class="flex-col mt-12">
+              <view class="flex-col notify-con" v-if="tabCur == 0">
+                <view class="flex-col header">
+                  <text class="self-start title">国庆放假通知</text>
+                  <text class="describe mt-12"
+                    >亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！</text
+                  >
+                </view>
+                <view
+                  class="flex-row justify-between items-center bottom"
+                  @click="goNotifyDetial"
                 >
+                  <text class="detial">查看详情</text>
+                  <image
+                    class="arrow-right"
+                    src="../../static/images/icon_arrow_05.png"
+                  />
+                </view>
               </view>
-              <view class="flex-row justify-between items-center bottom" @click="goNotifyDetial">
-                <text class="detial">查看详情</text>
-                <image
-                  class="arrow-right"
-                  src="../../static/images/icon_arrow_05.png"
-                />
-              </view>
-            </view>
-            <view class="flex-col notify-con" v-else>
-              <view class="flex-row self-start header">
-                <view class="shrink-0 self-start dot"></view>
-                <text class="flex-1 title double-line"
-                  >您有一笔待付款的商品订单（SP23051600001），请尽快支付</text
+              <view class="flex-col notify-con" v-else>
+                <view class="flex-row self-start header">
+                  <view class="shrink-0 self-start dot"></view>
+                  <text class="flex-1 title double-line"
+                    >您有一笔待付款的商品订单（SP23051600001），请尽快支付</text
+                  >
+                </view>
+                <view
+                  class="flex-row justify-between items-center bottom"
+                  @click="goNotifyDetial"
                 >
-              </view>
-              <view class="flex-row justify-between items-center bottom" @click="goNotifyDetial">
-                <text class="detial">查看详情</text>
-                <image
-                  class="arrow-right"
-                  src="../../static/images/icon_arrow_05.png"
-                />
+                  <text class="detial">查看详情</text>
+                  <image
+                    class="arrow-right"
+                    src="../../static/images/icon_arrow_05.png"
+                  />
+                </view>
               </view>
             </view>
           </view>
         </view>
       </view>
-    </view>
-        </ListContainer>
+    </ListContainer>
   </view>
 </template>
 
 <script>
 import NavBar from "../../components/NavBar/NavBar.vue";
 import Tabs from "../../components/Tabs.vue";
+import ListContainer from "../../components/ListContainer/ListContainer.vue";
 
 export default {
-  components: { NavBar, Tabs },
+  components: { NavBar, Tabs, ListContainer },
   props: {},
   data() {
     return {
-      showEmpty: true,
-      showLoading: true,
+      showEmpty: false,
+      showLoading: false,
       tabList: [
         {
           name: "系统公告",
@@ -73,19 +85,22 @@ export default {
         },
       ],
       tabCur: 1,
-      items: [null, null,null, null,null, null],
+      items: [null, null, null, null, null, null],
     };
   },
 
   methods: {
-    tabChange(e) {
-      this.tabCur = e;
+    onTabChange(val) {
+      this.tabCur = val;
+      if (val >= 1) {
+        this.showEmpty = true;
+      }
     },
-    goNotifyDetial(){
+    goNotifyDetial() {
       uni.navigateTo({
         url: "./notifyDetial",
       });
-    }
+    },
   },
 };
 </script>
@@ -154,7 +169,7 @@ export default {
           }
           .bottom {
             padding: 30rpx 0;
-            border-top: 1rpx solid #F0F0F0;
+            border-top: 1rpx solid #f0f0f0;
             .detial {
               font-size: 28rpx;
               font-family: 苹方;

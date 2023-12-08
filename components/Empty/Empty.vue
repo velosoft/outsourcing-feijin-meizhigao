@@ -26,7 +26,7 @@
 			},
 			paddingBottom: {
 				type: Number,
-				default: 120
+				default: 104
 			},
 			position: {
 				type: String,

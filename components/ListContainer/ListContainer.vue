@@ -45,7 +45,7 @@ export default {
     },
     emptyPaddingTop: {
       type: Number,
-      default: 204, // 单位rpx
+      default: 0, // 单位rpx
     },
     emptyHint: {
       type: String,
