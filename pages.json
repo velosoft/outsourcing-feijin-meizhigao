@@ -118,14 +118,6 @@
       }
     },
     {
-      "path": "pages/home/notify",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/tabBar/home",
       "style": {
         "navigationStyle": "custom",
@@ -159,6 +151,14 @@
     },
     {
       "path": "pages/home/search",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/home/notify",
       "style": {
         "navigationStyle": "custom",
         "backgroundColor": "#1C6BFF",
