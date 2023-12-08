@@ -37,8 +37,7 @@
           <view>
             <DoublueList
               class="section_13"
-              :itemsLeft="itemsLeft"
-              :itemsRight="itemsRight"
+              :items="itemsProduct"
             ></DoublueList>
           </view>
         </ListContainer>
@@ -61,6 +60,8 @@ import ListContainer from "../../components/ListContainer/ListContainer.vue";
 import DoublueList from "../../components/DoublueList.vue";
 import DialogBtn from "../../components/DialogBtn.vue";
 import ToggleBtn from "../../components/toggleBtn.vue";
+
+import { shopList } from "../../mock/shopList/shopList";
 
 export default {
   components: {
@@ -99,11 +100,14 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
-      itemsProduct: items1,
+      itemsProduct: shopList,
       current: 0,
       showDialog: false,
       historyList: [],
     };
+  },
+  created() {
+    
   },
   onReachBottom() {
     if (this.page >= 2) return;
@@ -111,16 +115,13 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsProduct = [...this.itemsProduct, ...items1];
-      this.spliceData();
+      this.itemsProduct = [...this.itemsProduct, ...shopList];
 
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
     }, 1500);
   },
-  created() {
-    this.spliceData();
-  },
+
   methods: {
     onSearch(keyword) {
       console.log(keyword);
@@ -160,85 +161,9 @@ export default {
     onConfirm() {
       this.tabsArray = [];
       this.showDialog = false;
-    },
-    spliceData() {
-      this.itemsProduct.forEach((item, index) => {
-        if (index % 2 == 1) {
-          this.itemsLeft.push(item);
-        } else {
-          this.itemsRight.push(item);
-        }
-      });
-    },
+    }
   },
 };
-const items1 = [
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-];
 </script>
 
 <style scoped lang="less">

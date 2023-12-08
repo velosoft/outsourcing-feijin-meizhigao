@@ -154,6 +154,8 @@ import CenterPanel from "../../components/CenterPanel.vue";
 import GridPanel from "../../components/GridPanel.vue";
 import RecommendedList from "../../components/RecommendedList.vue";
 
+import { shopList } from "../../mock/shopList/shopList";
+
 export default {
   components: { CenterPanel, ClassifyCards, GridPanel, RecommendedList },
   props: {},
@@ -163,8 +165,8 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
-      itemsLeft: [...items],
-      itemsRight: [...items_1],
+      itemsLeft: [...shopList],
+      itemsRight: [...shopList],
       current: 0,
       showPopu: true,
     };
@@ -175,8 +177,7 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsLeft = [...this.itemsLeft, ...items];
-      this.itemsRight = [...this.itemsRight, ...items_1];
+      this.itemsProduct = [...this.itemsProduct, ...shopList];
 
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
@@ -206,75 +207,6 @@ export default {
   },
 };
 
-const items = [
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-];
-const items_1 = [
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-  {
-    image:
-      "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
-    title: "厨房定制收纳服务厨房定制收纳服务",
-    tags: ["新品上市", "好评推荐", "新客优选"],
-    price: 200,
-    buyers: 100,
-  },
-];
 </script>
 
 <style scoped lang="less">
