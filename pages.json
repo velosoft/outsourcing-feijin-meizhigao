@@ -5,7 +5,57 @@
     "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
   },
   "pages": [
-    /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/test-2/tabs/case11",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+
+    {
+      "path": "pages/test-2/tabs/case10",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+
+    {
+      "path": "pages/test-2/tabs/case1",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/test-2/tabs/case2",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/test-2/tabs/case3",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
+
+    {
+      "path": "pages/test-2/input/case1",
+      "style": {
+        "navigationBarTitleText": "",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": true
+      }
+    },
     {
       "path": "pages/test-2/primaryButton/case1",
       "style": {
