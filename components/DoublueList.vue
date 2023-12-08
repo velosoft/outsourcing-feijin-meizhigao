@@ -36,14 +36,40 @@ import ShopItem from "./ShopItem.vue";
 export default {
   components: { ShopItem },
   props: {
-    itemsLeft: { type: Array, default: () => [] },
-    itemsRight: { type: Array, default: () => [] },
+    items: { type: Array, default: () => [] },
   },
   data() {
-    return {};
+    return {
+      itemsLeft: [],
+      itemsRight: [],
+    };
   },
 
-  methods: {},
+  watch: {
+    items: {
+      immediata: true,
+      handler(newVal, olderVal) {
+        this.spliceData(newVal);
+      },
+      deep: true,
+    },
+  },
+
+  created(){
+    this.spliceData(this.items)
+  },
+
+  methods: {
+    spliceData(val) {
+      val.forEach((item, index) => {
+        if (index % 2 == 1) {
+          this.itemsLeft.push(item);
+        } else {
+          this.itemsRight.push(item);
+        }
+      });
+    },
+  },
 };
 </script>
 

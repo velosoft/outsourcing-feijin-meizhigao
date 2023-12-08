@@ -12,18 +12,29 @@
         </view>
       </view>
       <view class="flex-col menu-right ml-12">
-        <view class="flex-col justify-start relative">
-          <image class="course-bg pos" src="../static/images/course-bg.png" />
-          <view class="flex-col justify-start items-start relative course-con">
-            <text class="menu-font menu-text">课程中心</text>
+        <navigator url="/pages/home/courseCenter">
+          <view class="flex-col justify-start relative">
+            <image class="course-bg pos" src="../static/images/course-bg.png" />
+            <view
+              class="flex-col justify-start items-start relative course-con"
+            >
+              <text class="menu-font menu-text">课程中心</text>
+            </view>
           </view>
-        </view>
-        <view class="flex-col justify-start relative mt-10">
-          <image class="course-bg pos" src="../static/images/product-bg.png" />
-          <view class="flex-col justify-start items-start relative course-con">
-            <text class="menu-font menu-text">服务中心</text>
+        </navigator>
+        <navigator url="/pages/home/notify">
+          <view class="flex-col justify-start relative mt-10">
+            <image
+              class="course-bg pos"
+              src="../static/images/product-bg.png"
+            />
+            <view
+              class="flex-col justify-start items-start relative course-con"
+            >
+              <text class="menu-font menu-text">服务中心</text>
+            </view>
           </view>
-        </view>
+        </navigator>
       </view>
     </view>
   </view>
@@ -73,12 +84,12 @@ export default {
 .menu-wrap {
   margin-top: 54rpx;
   .pos {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-    }
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
   .menu-left {
     flex: 1 1 332rpx;
     height: 344rpx;
