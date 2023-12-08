@@ -1,17 +1,6 @@
 <template>
   <view class="flex-col page">
     <NavBar :hasBack="true" fixed="true" isShow="true">
-      <template #left>
-        <image
-          class="header-left-arrow"
-          src="../../static/images/icon_arrow_04.png"
-          mode="aspectFit|aspectFill|widthFix"
-          lazy-load="false"
-          binderror=""
-          bindload=""
-        >
-        </image>
-      </template>
       <template #right>
         <Search
           class="search-wrap"
@@ -89,7 +78,8 @@ export default {
       isSearch: true,
       keywords: "",
       tabsArray: [{ label: "标签3" }, { label: "标签4" }, { label: "标签5" }],
-      tabCur: 1,
+      showEmpty: true,
+      showLoading: true,
       tabList: [
         {
           name: "服务",
@@ -101,10 +91,9 @@ export default {
           name: "课程",
         },
       ],
+      tabCur: 1,
       itemsLeft: [],
       itemsRight: [],
-      showEmpty: true,
-      showLoading: true,
       finished: false,
       status: "loadmore",
       page: 0,

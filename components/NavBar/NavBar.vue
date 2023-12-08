@@ -34,6 +34,15 @@
               ></u-icon>
               <view class="txt" v-if="leftText">{{ leftText }}</view>
             </view> -->
+            <image
+              class="navbar-left-arrow"
+              src="../../static/images/icon_arrow_04.png"
+              mode="aspectFit|aspectFill|widthFix"
+              lazy-load="false"
+              binderror=""
+              bindload=""
+            >
+            </image>
             <slot name="left" />
           </view>
           <slot name="left" />
@@ -196,7 +205,8 @@ $nav-height: 88upx;
   //   width: calc(100% - #{$nav-height} - #{$nav-height});
   flex: 1;
   height: 100%;
-  font-size: 34upx;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
   color: #242422;
   font-weight: bold;
   padding-right: 10rpx;
@@ -228,6 +238,10 @@ $nav-height: 88upx;
 }
 
 .navbar-btns-left {
+  .navbar-left-arrow {
+    height: 44rpx;
+    width: 44rpx;
+  }
   .navbar-item-content {
     display: flex;
     align-items: center;
