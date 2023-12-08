@@ -101,6 +101,8 @@ export default {
           name: "课程",
         },
       ],
+      itemsLeft: [],
+      itemsRight: [],
       showEmpty: true,
       showLoading: true,
       finished: false,
@@ -108,8 +110,7 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
-      itemsLeft: [...items],
-      itemsRight: [...items_1],
+      itemsProduct: items1,
       current: 0,
       showDialog: false,
       historyList: [],
@@ -121,17 +122,21 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsLeft = [...this.itemsLeft, ...items];
-      this.itemsRight = [...this.itemsRight, ...items_1];
+      this.itemsProduct = [...this.itemsProduct, ...items1];
+      this.spliceData();
 
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
     }, 1500);
   },
+  created() {
+    this.spliceData();
+  },
   methods: {
     onSearch(keyword) {
       console.log(keyword);
       this.isSearch = false;
+      console.log(this.itemsProduct);
     },
     onFocus() {
       console.log("聚焦事件");
@@ -167,9 +172,18 @@ export default {
       this.tabsArray = [];
       this.showDialog = false;
     },
+    spliceData() {
+      this.itemsProduct.forEach((item, index) => {
+        if (index % 2 == 1) {
+          this.itemsLeft.push(item);
+        } else {
+          this.itemsRight.push(item);
+        }
+      });
+    },
   },
 };
-const items = [
+const items1 = [
   {
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
@@ -203,8 +217,6 @@ const items = [
     price: 200,
     buyers: 100,
   },
-];
-const items_1 = [
   {
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
