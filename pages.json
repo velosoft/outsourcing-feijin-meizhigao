@@ -118,6 +118,14 @@
       }
     },
     {
+      "path": "pages/personal/myCoins",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/personal/personalDetail",
       "style": {
         "navigationStyle": "custom",
