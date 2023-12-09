@@ -7,6 +7,30 @@
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/personal/personalDetail",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/memberCenter",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/tabBar/personal",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/tabBar/home",
       "style": {
         "navigationStyle": "custom",
@@ -30,14 +54,7 @@
         "enablePullDownRefresh": false
       }
     },
-    {
-      "path": "pages/tabBar/personal",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": false
-      }
-    },
+
     {
       "path": "pages/home/search",
       "style": {
@@ -86,7 +103,7 @@
         "enablePullDownRefresh": false
       }
     }
-    ],
+  ],
   "globalStyle": {
     /*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/
     "navigationBarTextStyle": "black",
