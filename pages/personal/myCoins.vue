@@ -80,7 +80,7 @@ export default {
     return {
       activeTab: "",
       tabs: ["收入明细", "支出明细", "日期筛选"],
-      coin_list: [],
+      coin_list: ["123"],
       title: "我的收纳币",
       showEmpty: true,
       showLoading: "false",

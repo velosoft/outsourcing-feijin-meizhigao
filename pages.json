@@ -6,6 +6,14 @@
   },
   "pages": [
     {
+      "path": "pages/personal/myCoins",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/test-2/tabs/case11",
       "style": {
         "navigationBarTitleText": "",
@@ -14,117 +22,6 @@
       }
     },
 
-    {
-      "path": "pages/test-2/tabs/case10",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-
-    {
-      "path": "pages/test-2/tabs/case1",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test-2/tabs/case2",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test-2/tabs/case3",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-
-    {
-      "path": "pages/test-2/input/case1",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test-2/primaryButton/case1",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test/Search/Search",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/test/ToggleBtn/ToggleBtn",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/test/Swiper/Swiper",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/test/Badge/Badge",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test/Checkbox/Checkbox",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test/Radio/Radio",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/test/Button/Button",
-      "style": {
-        "navigationBarTitleText": "",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/personal/myCoins",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
-        "enablePullDownRefresh": false
-      }
-    },
     {
       "path": "pages/personal/personalDetail",
       "style": {
