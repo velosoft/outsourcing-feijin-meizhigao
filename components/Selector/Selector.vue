@@ -7,7 +7,9 @@
         :key="index"
         @click="onChange(index)"
       >
-        <text>{{ item }}</text>
+        <slot :item="item">
+          <text>{{ item }}</text>
+        </slot>
       </view>
     </view>
   </view>
@@ -44,8 +46,6 @@ export default {
 
 <style scoped lang="css">
 .selector-wrapper {
-  padding: 4rpx 0;
-  border-radius: 100rpx;
 }
 .items-layout {
   display: flex;
