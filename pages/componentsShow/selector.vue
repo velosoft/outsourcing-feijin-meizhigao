@@ -161,13 +161,7 @@ export default {
 }
 
 .page {
-  background-color: #f8f8f8;
-  width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 100%;
-  padding: 200rpx 32rpx;
-  background-color: #ffffff;
+  padding: 32rpx 32rpx;
 }
 
 .status-tabs {
