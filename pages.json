@@ -6,7 +6,6 @@
   },
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
     {
       "path": "pages/tabBar/comps",
       "style": {
@@ -27,6 +26,13 @@
       "style": {
         "navigationStyle": "default",
         "navigationBarTitleText": "按钮 Button"
+      }
+    },
+    {
+      "path": "pages/componentsShow/radio",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "Radio"
       }
     },
     {
@@ -69,7 +75,6 @@
         "enablePullDownRefresh": false
       }
     },
-    
     {
       "path": "pages/home/search",
       "style": {
@@ -110,7 +115,7 @@
         "enablePullDownRefresh": false
       }
     }
-    ],
+  ],
   "globalStyle": {
     /*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/
     "navigationBarTextStyle": "black",

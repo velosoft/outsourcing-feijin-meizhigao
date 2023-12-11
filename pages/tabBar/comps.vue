@@ -1,9 +1,21 @@
 <template>
   <view class="flex-col page">
     <u-cell-group>
-      <u-cell title="选择器 Selector" isLink url="/pages/componentsShow/selector"></u-cell>
-      <u-cell title="按钮 Button" isLink url="/pages/componentsShow/button"></u-cell>
-      <u-cell title="单选 Radio" isLink url="/pages/componentsShow/button"></u-cell>
+      <u-cell
+        title="选择器 Selector"
+        isLink
+        url="/pages/componentsShow/selector"
+      ></u-cell>
+      <u-cell
+        title="按钮 Button"
+        isLink
+        url="/pages/componentsShow/button"
+      ></u-cell>
+      <u-cell
+        title="单选 Radio"
+        isLink
+        url="/pages/componentsShow/radio"
+      ></u-cell>
     </u-cell-group>
   </view>
 </template>
@@ -48,6 +60,4 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
-
-</style>
+<style scoped lang="less"></style>
