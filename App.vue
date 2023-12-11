@@ -91,6 +91,15 @@ text {
   color: #B09053 !important;
 }
 
+// 单行文本超出省略
+.line-clamp-one {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
