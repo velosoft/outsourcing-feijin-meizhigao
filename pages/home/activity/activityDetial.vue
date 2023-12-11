@@ -15,10 +15,10 @@
           indicatorStyle="right: 20px"
         >
           <view
-            class="flex-col items-center text-wrapper view_5"
+            class="flex-col items-center indicator-wrapper"
             slot="indicator"
           >
-            <text class="font_1 text_4"
+            <text class="indicator-font indicator-text"
               >{{ currentNum + 1 }}/{{ list.length }}</text
             >
           </view>
@@ -27,13 +27,13 @@
           <ActivityCard></ActivityCard>
           <view class="flex-col relative container">
             <ProductHeader @onShare="onShare"></ProductHeader>
-            <ProductBenefit class="group_15"></ProductBenefit>
-            <ProductEvaluate class="group_15"></ProductEvaluate>
-            <ProdutDetial class="group_15"></ProdutDetial>
+            <ProductBenefit class="wraper-top"></ProductBenefit>
+            <ProductEvaluate class="wraper-top"></ProductEvaluate>
+            <ProdutDetial class="wraper-top"></ProdutDetial>
           </view>
         </view>
       </scroll-view>
-      <FooterBtn class="section_8"></FooterBtn>
+      <FooterBtn ></FooterBtn>
     </view>
     <PopShareTabs
       ref="popShareTabs"
@@ -79,9 +79,16 @@ export default {
     return {
       title: "",
       list: [
-        "https://dev.ft.velosoft.cn/api/image?token=6575d705740f740012ac3726&name=5d9bdfc11721ad48076565939b4b77dd.png",
-        "https://dev.ft.velosoft.cn/api/image?token=6575d705740f740012ac3726&name=5d9bdfc11721ad48076565939b4b77dd.png",
-        "https://dev.ft.velosoft.cn/api/image?token=6575d705740f740012ac3726&name=5d9bdfc11721ad48076565939b4b77dd.png",
+        {
+          url: "https://cdn.uviewui.com/uview/resources/video.mp4",
+          poster: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
+        },
+        {
+          url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+        },
+        {
+          url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+        },
       ],
       currentNum: 0,
       detail: {},
@@ -116,39 +123,31 @@ export default {
   height: 100%;
   .scroll-height {
     height: 100%;
-    .text-wrapper {
+    .indicator-wrapper {
       align-self: flex-end;
-      .font_1 {
+      padding: 8rpx 0;
+      background-color: #0000004d;
+      border-radius: 24rpx;
+      width: 80rpx;
+      .indicator-font {
         font-size: 24rpx;
         font-family: 苹方;
         line-height: 22rpx;
         color: #ffffff;
       }
-      .text_4 {
+      .indicator-text {
         line-height: 24rpx;
       }
-    }
-    .view_5 {
-      padding: 8rpx 0;
-      background-color: #0000004d;
-      border-radius: 24rpx;
-      width: 80rpx;
     }
     .info {
       padding: 16rpx 20rpx 0;
       .container {
         margin-top: -28rpx;
-        .group_15 {
+        .wraper-top {
           margin-top: 20rpx;
         }
       }
     }
-  }
-  .section_8 {
-    position: absolute;
-    left: 12rpx;
-    right: 32rpx;
-    top: 2758rpx;
   }
 }
 </style>

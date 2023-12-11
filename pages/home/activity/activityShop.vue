@@ -5,7 +5,7 @@
       <image class="banner" src="../../../static/images/banner_01.png" />
       <view class="flex-col line-tabs">
         <MultCardTabs
-          class="section_8"
+          class="card-tabs-wrap"
           :value="multValue"
           :tabs="multTabs"
           @change="onMultCardTabs"
@@ -50,7 +50,7 @@
                   class="flex-col items-center number-box ml-2 justify-center"
                 >
                   <text class="time-font time-text">{{
-                    timeData.minutes
+                    timeData.minutes > 10 ? timeData.minutes : "0" + timeData.minutes
                   }}</text>
                 </view>
                 <text class="colon ml-2">:</text>
@@ -58,7 +58,7 @@
                   class="flex-col items-center number-box ml-2 justify-center"
                 >
                   <text class="time-font time-text">{{
-                    timeData.seconds
+                    timeData.seconds > 10 ? timeData.seconds : "0" + timeData.seconds
                   }}</text>
                 </view>
               </view>
@@ -66,7 +66,7 @@
           </view>
         </view>
         <CardTabs
-          class="group_22"
+          class="tabs-wraper"
           :value="value"
           :tabs="tabs"
           @change="onCardTabs"
@@ -91,7 +91,7 @@
                     />
                     <view class="flex-col flex-1 right ml-10">
                       <view class="flex-col">
-                        <text class="self-stretch font_7 title"
+                        <text class="self-stretch product-title title"
                           >衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮...</text
                         >
                         <view class="flex-row self-stretch mt-6 tag-wraper">
@@ -103,7 +103,7 @@
                             <text class="tag-font">新品上市</text>
                           </view>
                         </view>
-                        <text class="font_4 text_23 price-through mt-6"
+                        <text class="product-price-font price-through mt-6"
                           >￥545.00</text
                         >
                       </view>
@@ -293,7 +293,7 @@ export default {
     }
     .line-tabs {
       padding: 0 20rpx 56rpx;
-      .section_8 {
+      .card-tabs-wrap {
         position: relative;
       }
       .btn-tips {
@@ -346,7 +346,7 @@ export default {
           }
         }
       }
-      .group_22 {
+      .tabs-wraper {
         position: relative;
         margin-top: 48rpx;
       }
@@ -368,7 +368,7 @@ export default {
           }
           .right {
             margin-top: 8rpx;
-            .font_7 {
+            .product-title {
               font-size: 28rpx;
               font-family: PingFangSC-Medium;
               line-height: 34rpx;
@@ -395,16 +395,14 @@ export default {
                 color: #ff6800;
               }
             }
-            .font_4 {
+            .product-price-font {
               font-size: 24rpx;
               font-family: 苹方;
               line-height: 24rpx;
               color: #d3d3d3;
             }
-            .text_23 {
-              text-decoration: line-through;
-            }
             .price-through {
+              text-decoration: line-through;
               margin-left: 8rpx;
             }
             .bottom-top {
