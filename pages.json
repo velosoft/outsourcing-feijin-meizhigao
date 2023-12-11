@@ -43,6 +43,30 @@
       }
     },
     {
+      "path": "pages/showcase/numberbox/index",
+      "style": {
+        "navigationStyle": "default",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/showcase/numberbox/case1",
+      "style": {
+        "navigationStyle": "default",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/showcase/numberbox/case2",
+      "style": {
+        "navigationStyle": "default",
+        "backgroundColor": "#1C6BFF",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/home/secKill/activeShop",
       "style": {
         "navigationStyle": "custom",
