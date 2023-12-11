@@ -271,7 +271,7 @@ export default {
     },
     goActivityDetial(val) {
       uni.navigateTo({
-        url: "./activityDetial?type=",
+        url: "./activityDetial?id=1&name=1",
       });
     },
   },
