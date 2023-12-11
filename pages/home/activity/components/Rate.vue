@@ -9,7 +9,7 @@
       activeColor="#eab81c"
       size="36"
     ></u-rate>
-    <text class="self-start side-font ml-6">{{count}}分</text>
+    <text class="self-start side-font ml-6">{{value}}分</text>
   </view>
 </template>
 
