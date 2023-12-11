@@ -195,7 +195,7 @@
         <view class="flex-col items-center">
           <image
             class="footer-image"
-            src="../../static/images/icon_collect.png"
+            src="../../static/images/icon_collect_01.png"
           />
           <text class="mt-4 footer-font footer-text">收藏</text>
         </view>
