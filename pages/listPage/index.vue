@@ -45,10 +45,10 @@
           >
             <ListContainer :showEmpty="isShowEmpty" :showLoading="showLoading">
               <view>
-                <DoublueList
+                <DoubleList
                   class="section_13"
                   :items="itemsProduct"
-                ></DoublueList>
+                ></DoubleList>
               </view>
             </ListContainer>
           </scroll-view>
@@ -59,10 +59,9 @@
 </template>
 
 <script>
-import ShopItem from "../../components/ShopItem.vue";
 import NavBar from "../../components/NavBar/NavBar.vue";
 import ListContainer from "../../components/ListContainer/ListContainer.vue";
-import DoublueList from "../../components/DoublueList.vue";
+import DoubleList from "../home/components/DoubleList.vue";
 
 import { shopList } from "../../mock/shopList/shopList";
 
@@ -70,8 +69,7 @@ export default {
   components: {
     NavBar,
     ListContainer,
-    DoublueList,
-    ShopItem,
+    DoubleList,
   },
   props: {},
   data() {

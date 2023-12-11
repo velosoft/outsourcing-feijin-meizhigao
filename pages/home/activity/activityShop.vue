@@ -2,26 +2,42 @@
   <view class="flex-col page">
     <NavBar :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col flex-1 container">
-      <image
-        class="banner"
-        src="../../../static/images/banner_01.png"
-      />
+      <image class="banner" src="../../../static/images/banner_01.png" />
       <view class="flex-col line-tabs">
-        <MultCardTabs class="section_8" :value="multValue" :tabs="multTabs" @change="onMultCardTabs"></MultCardTabs>
-        <view class="flex-row justify-between items-center btn-tips">
+        <MultCardTabs
+          class="section_8"
+          :value="multValue"
+          :tabs="multTabs"
+          @change="onMultCardTabs"
+        ></MultCardTabs>
+        <view
+          class="flex-row justify-between items-center self-center btn-tips"
+          :style="{
+            width: activityStatus !== 1? '362rpx':'',
+            justifyContent: activityStatus !== 1? 'center':'space-between',
+          }"
+        >
           <image
             class="tips-text"
             src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=btn_seccount_01.png"
-            v-if="true"
+            v-if="activityStatus == 1"
           />
           <view class="flex-row items-center count-down-wrap">
-            <text class="count-down-label">距离结束还有</text>
+            <text class="count-down-label" v-if="activityStatus == 0"
+              >距离开始还有</text
+            >
+            <text class="count-down-label" v-if="activityStatus == 1"
+              >距离结束还有</text
+            >
+            <text class="count-down-label" v-if="activityStatus == 2"
+              >本次秒杀已结束</text
+            >
             <u-count-down
               class="count-down-con ml-4"
               :time="time"
               format="HH:mm:ss"
               @change="onTimeChange"
-              v-if="true"
+              v-if="activityStatus !== 2"
             >
               <view class="flex-row items-center">
                 <view class="flex-col items-center number-box justify-center">
@@ -49,7 +65,12 @@
             </u-count-down>
           </view>
         </view>
-        <CardTabs class="group_22" :value="value" :tabs="tabs" @change="onCardTabs"></CardTabs>
+        <CardTabs
+          class="group_22"
+          :value="value"
+          :tabs="tabs"
+          @change="onCardTabs"
+        ></CardTabs>
         <view class="flex-col">
           <scroll-view :scroll-y="true">
             <list-container
@@ -73,7 +94,7 @@
                         <text class="self-stretch font_7 title"
                           >衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮...</text
                         >
-                        <view class="flex-row self-stretch mt-6">
+                        <view class="flex-row self-stretch mt-6 tag-wraper">
                           <view
                             class="flex-col tag"
                             v-for="(item, index) in items_1"
@@ -89,7 +110,7 @@
                       <view class="flex-col mt-8">
                         <view
                           class="bottom-top flex-row justify-between"
-                          v-if=" activityStatus== 2"
+                          v-if="activityStatus == 2"
                         >
                           <view class="flex-row justify-center price-wraper">
                             <view class="flex-row items-center price-left">
@@ -100,20 +121,23 @@
                               >.00</text
                             >
                           </view>
-                          <view class="flex-col items-center btn"
+                          <view class="flex-col items-center btn " @click="goActivityDetial"
                             ><text class="btn-font btn-text"
                               >原价购买</text
                             ></view
                           >
                         </view>
-                        <view class="flex-row items-center" v-if="activityStatus== 1">
+                        <view
+                          class="flex-row items-center"
+                          v-if="activityStatus == 1"
+                        >
                           <u-line-progress
                             :percentage="percentage"
                             :showText="false"
                             :height="16"
-                            activeColor="#f71f21" 
+                            activeColor="#f71f21"
                             inactiveColor="#ffdedc"
-                            style="width: 180rpx;"
+                            style="width: 180rpx"
                           ></u-line-progress>
                           <text class="remainder-font numder-ramainder ml-4"
                             >仅剩50份</text
@@ -121,18 +145,32 @@
                         </view>
                         <view
                           class="flex-row justify-between items-center relative btn-buy"
-                          v-if="activityStatus== 1"
+                          v-if="activityStatus !== 2"
+                          @click="goActivityDetial"
                         >
-                          <view class="btn-bg btn-bg-pos"></view>
+                          <view
+                            class="flex-col items-center btn-bg-wraper btn-bg-pos"
+                          >
+                            <image
+                              class="btn-bg"
+                              src="../../../static/images/btn_bg_01.png"
+                              v-if="activityStatus == 0"
+                            />
+                            <image
+                              class="btn-bg"
+                              src="../../../static/images/btn_bg_02.png"
+                              v-if="activityStatus == 1"
+                            />
+                          </view>
                           <view class="flex-row items-center relative btn-left">
                             <text class="btn-price-label">秒杀价</text>
-                            <view class="flex-row">
-                              <text class="price-font btn-price-number"
-                                >200</text
-                              >
+                            <view class="flex-row btn-price">
                               <text
                                 class="self-center price-symbol btn-psice-symbol"
                                 >￥</text
+                              >
+                              <text class="price-font btn-price-number"
+                                >200</text
                               >
                               <text
                                 class="self-center price-last btn-price-last"
@@ -140,26 +178,15 @@
                               >
                             </view>
                           </view>
-                          <view class="flex-col btn-right">
-                            <view
-                              class="flex-col items-center btn-right-bg-wraper btn-right-pos"
+                          <view class="btn-right">
+                            <text
+                              class="relative btn-font"
+                              v-if="activityStatus == 0"
+                              >即将开始</text
                             >
-                              <image
-                                class="btn-right-bg"
-                                src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=btn_right_01.png"
-                                v-if="activityStatus== 1"
-                              />
-                              <image
-                                class="btn-right-bg"
-                                src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=btn_right_01.png"
-                                v-if="activityStatus== 0"
-                              />
-                            </view>
-                            <image
-                              class="btn-center-bg btn-center-pos"
-                              src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=icon_btn_tips_01.png"
-                            />
-                            <text class="relative btn-font">立即抢购</text>
+                            <text class="relative btn-font" v-else
+                              >立即抢购</text
+                            >
                           </view>
                         </view>
                       </view>
@@ -176,10 +203,10 @@
 </template>
 
 <script>
-import CardTabs from "../../../components/cardTabs/cardTabs.vue";
-import ListContainer from "../../../components/ListContainer/ListContainer.vue";
-import MultCardTabs from "../../../components/cardTabs/multCardTabs.vue";
 import NavBar from "../../../components/NavBar/NavBar.vue";
+import ListContainer from "../../../components/ListContainer/ListContainer.vue";
+import MultCardTabs from "./components/cardTabs/multCardTabs.vue";
+import CardTabs from "./components/cardTabs/cardTabs.vue";
 
 export default {
   components: { NavBar, CardTabs, MultCardTabs, ListContainer },
@@ -187,7 +214,35 @@ export default {
   data() {
     return {
       timeData: {},
-      activityStatus: 1,
+      multTabs: [
+        {
+          status: 2,
+          time: "10:00",
+          label: "已结束",
+        },
+        {
+          status: 1,
+          time: "11:00",
+          label: "抢购中",
+        },
+        {
+          status: 0,
+          time: "12:00",
+          label: "即将开始",
+        },
+        {
+          status: 0,
+          time: "13:00",
+          label: "即将开始",
+        },
+        {
+          status: 0,
+          time: "14:00",
+          label: "即将开始",
+        },
+      ],
+      multValue: 0,
+      activityStatus: 2,
       title: "秒杀活动",
       time: 108000000,
       showEmpty: false,
@@ -198,40 +253,26 @@ export default {
       items: [null, null, null, null],
       value: 0,
       tabs: ["活动商品", "活动服务", "活动课程"],
-      multValue: 0,
-      multTabs: [{
-            time: "10:00",
-            label: "已结束",
-          },
-          {
-            time: "11:00",
-            label: "抢购中",
-          },
-          {
-            time: "12:00",
-            label: "即将开始",
-          },
-          {
-            time: "13:00",
-            label: "即将开始",
-          },
-          {
-            time: "14:00",
-            label: "即将开始",
-          },]
-
     };
   },
 
   methods: {
     onMultCardTabs(args) {
       // 事件处理方法
+      console.log(args);
+      this.activityStatus = args.item.status;
     },
     onTimeChange(e) {
       this.timeData = e;
     },
-    onCardTabs(args) {
+    onCardTabs(index) {
       // 事件处理方法
+      this.value=index;
+    },
+    goActivityDetial(val) {
+      uni.navigateTo({
+        url: "./activityDetial?type=",
+      });
     },
   },
 };
@@ -314,13 +355,10 @@ export default {
         background-image: linear-gradient(86.8deg, #fbebbc 4.9%, #fefde2 95.3%);
         border-radius: 0rpx 0rpx 16rpx 16rpx;
         .list-item {
-          padding: 24rpx 16rpx;
+          padding: 24rpx;
           background-color: #ffffff;
           border-radius: 20rpx;
-          border-left: solid 1rpx #f4ba70;
-          border-right: solid 1rpx #f4ba70;
-          border-top: solid 1rpx #f4ba70;
-          border-bottom: solid 1rpx #f4ba70;
+          border: solid 1rpx #f4ba70;
           &:first-child {
             margin-top: 0;
           }
@@ -343,14 +381,17 @@ export default {
               text-overflow: ellipsis;
               -webkit-line-clamp: 2;
             }
+            .tag-wraper > .tag:not(:first-child){
+              margin-left: 12rpx;
+            }
             .tag {
-              padding: 8rpx;
+              padding: 0 8rpx;
               height: 32rpx;
               background: #ffac4d14;
               .tag-font {
                 font-size: 20rpx;
                 font-family: 苹方;
-                line-height: 20rpx;
+                line-height: 32rpx;
                 color: #ff6800;
               }
             }
@@ -408,71 +449,39 @@ export default {
               line-height: 22rpx;
             }
             .btn-buy {
-              padding: 24rpx 0 16rpx;
-              .btn-bg {
-                opacity: 0.44;
-                background-image: linear-gradient(
-                  180deg,
-                  #ffcb4f 0%,
-                  #ff9c27 100%
-                );
-                border-radius: 100rpx;
-                width: 388rpx;
-                height: 54rpx;
-              }
+              width: 100%;
+              height: 64rpx;
+              padding: 24rpx 0;
+              margin-top: 20rpx;
               .btn-bg-pos {
                 position: absolute;
                 left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                margin-top: 6rpx;
+                top: 0;
               }
+              .btn-bg {
+                width: 378rpx;
+                height: 64rpx;
+              }
+
               .btn-left {
+                margin-top: 10rpx;
                 margin-left: 24rpx;
                 .btn-price-label {
+                  margin-top: 10rpx;
                   font-size: 24rpx;
                   font-family: PingFangSC-Medium;
                   line-height: 24rpx;
                   color: #bb3e0c;
                 }
-                .btn-price-number {
-                  margin-left: 16rpx;
-                  line-height: 32rpx;
-                }
-                .btn-psice-symbol {
-                  margin-left: -80rpx;
-                }
-                .btn-price-last {
-                  margin-left: 56rpx;
+                .btn-price {
+                  margin-bottom: 10rpx;
+                  .btn-price-number {
+                    line-height: 32rpx;
+                  }
                 }
               }
               .btn-right {
-                position: relative;
-                margin-right: 40rpx;
-                .btn-right-bg-wraper {
-                  width: 146rpx;
-                  .btn-right-bg {
-                    width: 146rpx;
-                    height: 54rpx;
-                  }
-                }
-                .btn-right-pos {
-                  position: absolute;
-                  left: -14rpx;
-                  right: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
-                }
-                .btn-center-bg {
-                  width: 44rpx;
-                  height: 64rpx;
-                }
-                .btn-center-pos {
-                  position: absolute;
-                  left: -42rpx;
-                  top: 50%;
-                  transform: translateY(-50%);
-                }
+                margin-right: 12rpx;
               }
             }
             .price-font {

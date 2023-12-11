@@ -1,8 +1,8 @@
 <template>
   <view class="flex-row">
-    <view
+    <navigator url="../home/activity/activityShop">
+      <view
       class="flex-row items-center classify-card classify-card-left"
-      @click="goto"
     >
       <view class="classify-con">
         <view class="tag tag-left">
@@ -12,13 +12,14 @@
       </view>
       <image
         class="classify-bg-left"
-        src="../static/images/classify_left.png"
+        src="../../../static/images/classify_left.png"
       />
     </view>
+    </navigator>
 
-    <view
-      class="flex-row items-center ml-8 classify-card classify-card-right"
-      @click="goto"
+    <navigator url="../home/activity/activityShop" class="ml-8">
+      <view
+      class="flex-row items-center classify-card classify-card-right"
     >
       <view class="classify-con">
         <view class="tag tag-right">
@@ -28,9 +29,10 @@
       </view>
       <image
         class="classify-bg-right"
-        src="../static/images/classify_right.png"
+        src="../../../static/images/classify_right.png"
       />
     </view>
+    </navigator>
   </view>
 </template>
 

@@ -35,10 +35,10 @@
         <Tabs :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></Tabs>
         <ListContainer :showEmpty="showEmpty" :showLoading="showLoading">
           <view>
-            <DoublueList
+            <DoubleList
               class="section_13"
               :items="itemsProduct"
-            ></DoublueList>
+            ></DoubleList>
           </view>
         </ListContainer>
       </view>
@@ -57,7 +57,7 @@ import NavBar from "../../components/NavBar/NavBar.vue";
 import Tabs from "../../components/Tabs.vue";
 import Search from "../../components/Search.vue";
 import ListContainer from "../../components/ListContainer/ListContainer.vue";
-import DoublueList from "../../components/DoublueList.vue";
+import DoubleList from "./components/DoubleList.vue";
 import DialogBtn from "../../components/DialogBtn.vue";
 import ToggleBtn from "../../components/toggleBtn.vue";
 
@@ -69,7 +69,7 @@ export default {
     Tabs,
     Search,
     ListContainer,
-    DoublueList,
+    DoubleList,
     DialogBtn,
     ToggleBtn,
   },
@@ -79,7 +79,7 @@ export default {
       isSearch: true,
       keywords: "",
       tabsArray: [{ label: "标签3" }, { label: "标签4" }, { label: "标签5" }],
-      showEmpty: true,
+      showEmpty: false,
       showLoading: true,
       tabList: [
         {
@@ -151,6 +151,9 @@ export default {
     },
     tabChange(e) {
       this.tabCur = e;
+      if(e >= 1){
+        this.showEmpty = true;
+      }
     },
     clearHistory() {
       this.showDialog = true;

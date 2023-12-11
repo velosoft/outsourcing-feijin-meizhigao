@@ -150,7 +150,6 @@ export default {
   border-radius: 16rpx 16rpx 0rpx 0rpx;
   width: 236rpx;
   border: solid 1rpx #ffffff;
-  transition: all 0.2s linear;
 }
 .pos {
   position: absolute;

@@ -149,10 +149,10 @@
 </template>
 
 <script>
-import ClassifyCards from "../../components/ClassifyCards.vue";
-import CenterPanel from "../../components/CenterPanel.vue";
-import GridPanel from "../../components/GridPanel.vue";
-import RecommendedList from "../../components/RecommendedList.vue";
+import ClassifyCards from "../home/components/ClassifyCards";
+import CenterPanel from "../home/components/CenterPanel";
+import GridPanel from "../home/components/GridPanel";
+import RecommendedList from "../home/components/RecommendedList";
 
 import { shopList } from "../../mock/shopList/shopList";
 

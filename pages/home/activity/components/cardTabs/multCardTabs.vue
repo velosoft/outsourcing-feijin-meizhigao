@@ -8,7 +8,7 @@
         :style="{
           flex: 1,
         }"
-        @click="change(i)"
+        @click="change(i, v)"
       >
         <text class="item-font item-time">{{ v.time }}</text>
         <text class="item-font">{{ v.label }}</text>
@@ -109,10 +109,10 @@ export default {
 
   methods: {
     // 切换事件
-    change(index) {
+    change(index, item) {
       if (this.active !== index) {
         this.active = index;
-        this.$emit("change", index);
+        this.$emit("change", {index, item});
       }
     },
     // 获取左移位置
