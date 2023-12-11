@@ -13,7 +13,7 @@ export default {
 /* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 @import "uview-ui/index.scss";
 </style>
-<style>
+<style lang="less">
 /************************************************************
   ** 请将全局样式拷贝到项目的全局 CSS 文件或者当前页面的顶部 **
   ** 否则页面将无法正常显示                                  **
@@ -584,5 +584,42 @@ text {
   font-size: 28rpx !important;
   font-family: 苹方 !important;
   line-height: 28rpx !important;
+}
+
+.u-number-box {
+  /deep/ .u-number-box__minus {
+    margin-right: 8rpx !important;
+    width: 48rpx !important;
+    height: 48rpx !important;
+    background-color: unset !important;
+    background-image: url(static/images/number-box-minus.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /deep/ .u-icon {
+    display: none !important;
+  }
+
+  /deep/ .u-number-box__plus {
+    margin-left: 8rpx !important;
+    width: 48rpx !important;
+    height: 48rpx !important;
+    background-color: unset !important;
+    background-image: url(static/images/number-box-plus.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /deep/ .u-number-box__input {
+    padding: 6rpx 12rpx !important;
+    margin: 0 !important;
+    background-color: #f4f4f4 !important;
+    font-size: 28rpx !important;
+    line-height: 24rpx !important;
+    font-family: 苹方 !important;
+    color: #030305 !important;
+  }
 }
 </style>
