@@ -31,6 +31,23 @@
 
       <view class="service-content"></view>
     </view>
+
+    <view class="yellow-line-box mt-20">
+      <u-tabs
+        class="yellow-line-tabs"
+        :activeStyle="{
+          color: '#030305',
+          fontWeight: '700',
+        }"
+        :inactiveStyle="{
+          color: '#a7a7a7',
+        }"
+        :list="yellowItems"
+      >
+      </u-tabs>
+
+      <view class="service-content"></view>
+    </view>
   </view>
 </template>
 
@@ -68,6 +85,17 @@ export default {
         },
         {
           name: "衣柜收纳",
+        },
+      ],
+      yellowItems: [
+        {
+          name: "全部",
+        },
+        {
+          name: "满减券",
+        },
+        {
+          name: "无门槛优惠券",
         },
       ],
       list4: [
@@ -165,5 +193,40 @@ export default {
 }
 .service-content {
   height: 100px;
+}
+
+.yellow-line-tabs {
+  /deep/ .u-tabs {
+    background-color: #ffffff;
+  }
+
+  /deep/ .u-tabs__wrapper__nav__item {
+    // align-items: start !important;
+    justify-content: flex-start !important;
+    // padding-top: 20rpx !important;
+    padding-left: 0;
+    padding-right: 30rpx; 
+    height: unset !important;
+
+    .u-tabs__wrapper__nav__item__text {
+      font-size: 32rpx !important;
+      line-height: 32rpx !important;
+    }
+  }
+
+  /deep/ .u-tabs__wrapper__nav__line {
+    opacity: 0.7 !important;
+    background-image: linear-gradient(
+      90deg,
+      #e9b81b 0%,
+      #e9b81b00 97.2%
+    ) !important;
+    border-radius: 14rpx !important;
+    height: 20rpx !important;
+    width: 64rpx !important;
+    bottom: 0 !important;
+    // transform: unset!important;
+    background-color: unset !important;
+  }
 }
 </style>
