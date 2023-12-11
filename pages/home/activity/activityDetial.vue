@@ -27,7 +27,7 @@
           <ActivityCard></ActivityCard>
           <view class="flex-col relative container">
             <ProductHeader @onShare="onShare"></ProductHeader>
-            <ProductBenefit class="wraper-top"></ProductBenefit>
+            <ProductBenefit class="wraper-top" @onSelectService="onSelectService"></ProductBenefit>
             <ProductEvaluate class="wraper-top"></ProductEvaluate>
             <ProdutDetial class="wraper-top"></ProdutDetial>
           </view>
@@ -104,6 +104,9 @@ export default {
     },
     onShare() {
       this.$refs.popShareTabs.open();
+    },
+    onSelectService(){
+
     },
     close() {},
     saveImg() {},

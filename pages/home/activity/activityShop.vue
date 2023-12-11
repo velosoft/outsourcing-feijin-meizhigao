@@ -257,10 +257,9 @@ export default {
   },
 
   methods: {
-    onMultCardTabs(args) {
+    onMultCardTabs(val) {
       // 事件处理方法
-      console.log(args);
-      this.activityStatus = args.item.status;
+      this.activityStatus = val.item.status;
     },
     onTimeChange(e) {
       this.timeData = e;

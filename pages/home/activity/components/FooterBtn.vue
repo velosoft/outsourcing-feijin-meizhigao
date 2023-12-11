@@ -5,13 +5,13 @@
         <view class="flex-col items-center" @click="onCollect">
           <image
             class="icon"
-            src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=icon_collect_01.png"
+            src="/static/images/icon_collect_01.png"
             mode="aspectFit"
             v-if="true"
           />
           <image
             class="icon"
-            src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=0079fd007bab581bc70b7296b5560288.png"
+            src="/static/images/icon_collect_02.png"
             mode="aspectFit"
             v-if="false"
           />
@@ -21,7 +21,7 @@
       <view class="flex-col items-center ml-16" @click="addCart">
         <image
           class="icon"
-          src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=97f8690ad1dfe8af38980b144f191b6e.png"
+          src="/static/images/icon_cart_01.png"
         />
         <text class="text">购物车</text>
       </view>
@@ -54,6 +54,15 @@ export default {
   },
 
   methods: {
+    onCollect(){
+
+    },
+    addCart(){
+
+    },
+    addBuy(){
+
+    },
     handleClick() {
       this.$emit("confirm");
     },
