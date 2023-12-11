@@ -20,7 +20,7 @@
         <view class="flex-row tag-item" v-for="(item, index) in items" :key="index">
           <image
             class="shrink-0 self-center icon-radio"
-            src="/static/imagesicon_radio_03.png"
+            src="/static/images/icon_radio_03.png"
           />
           <text class="self-start tag-text ml-8">官方自营</text>
         </view>

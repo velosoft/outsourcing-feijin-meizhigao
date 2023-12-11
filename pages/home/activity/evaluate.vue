@@ -17,9 +17,9 @@
                     </view>
                     <text class="self-start side-font time-text">2023-07-18</text>
                   </view>
-                  <view class="flex-row evaluate">
+                  <view class="flex-row items-center evaluate">
                     <text class="self-start title-font">综合评分:</text>
-                    <Rate class="image_1 justify-center"></Rate>
+                    <Rate class="justify-center"></Rate>
                   </view>
                   <view class="flex-col justify-start items-center evaluate">
                     <text class="evaluate-text">
@@ -31,7 +31,7 @@
                   <text class="self-start title-font">服务评价</text>
                   <view class="flex-col self-stretch mt-20">
                     <view
-                      class="flex-row justify-between list-item_2 evaluate"
+                      class="flex-row items-center justify-between evaluate"
                       v-for="(item, i) in items_1"
                       :key="i"
                     >
@@ -130,8 +130,6 @@
               line-height: 48rpx;
               color: #030305;
             }
-          }
-          .list-item_2 {
             &:first-child {
               margin-top: 0;
             }

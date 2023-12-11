@@ -102,7 +102,7 @@ export default {
       // 事件处理方法
       this.currentNum = e.current;
     },
-    onShare() {
+    onShare(uid) {
       this.$refs.popShareTabs.open();
     },
     onSelectService(){
