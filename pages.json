@@ -15,21 +15,28 @@
       }
     },
     {
-      "path": "pages/componentsShow/selector",
+      "path": "pages/showcase/tabs",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "标签页 Tabs"
+      }
+    },
+    {
+      "path": "pages/showcase/selector",
       "style": {
         "navigationStyle": "default",
         "navigationBarTitleText": "选择器 Selector"
       }
     },
     {
-      "path": "pages/componentsShow/button",
+      "path": "pages/showcase/button",
       "style": {
         "navigationStyle": "default",
         "navigationBarTitleText": "按钮 Button"
       }
     },
     {
-      "path": "pages/componentsShow/radio",
+      "path": "pages/showcase/radio",
       "style": {
         "navigationStyle": "default",
         "navigationBarTitleText": "Radio"

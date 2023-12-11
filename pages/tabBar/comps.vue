@@ -2,19 +2,25 @@
   <view class="flex-col page">
     <u-cell-group>
       <u-cell
+        title="标签页 Tabs"
+        isLink
+        url="/pages/showcase/tabs"
+      ></u-cell>
+
+      <u-cell
         title="选择器 Selector"
         isLink
-        url="/pages/componentsShow/selector"
+        url="/pages/showcase/selector"
       ></u-cell>
       <u-cell
         title="按钮 Button"
         isLink
-        url="/pages/componentsShow/button"
+        url="/pages/showcase/button"
       ></u-cell>
       <u-cell
         title="单选 Radio"
         isLink
-        url="/pages/componentsShow/radio"
+        url="/pages/showcase/radio"
       ></u-cell>
     </u-cell-group>
   </view>
