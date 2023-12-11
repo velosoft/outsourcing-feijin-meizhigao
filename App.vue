@@ -621,5 +621,13 @@ text {
     font-family: 苹方 !important;
     color: #030305 !important;
   }
+
+  /deep/ .u-number-box__plus--hover {
+    background-color: unset !important;
+  }
+
+  /deep/ .u-number-box__minus--hover {
+    background-color: unset !important;
+  }
 }
 </style>
