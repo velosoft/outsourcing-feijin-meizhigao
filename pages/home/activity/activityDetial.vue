@@ -6,7 +6,7 @@
       :isShow="false"
       background="rgba(255,255,255,0)"
     ></NavBar>
-    <view class="flex-col flex-1">
+    <view class="flex-col flex-1 footer">
       <scroll-view class="scroll-height" :scroll-y="true">
         <u-swiper
           :list="list"
