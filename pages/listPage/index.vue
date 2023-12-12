@@ -80,6 +80,7 @@ export default {
       old: {
         scrollTop: 0,
       },
+      tabs: [],
     };
   },
   onLoad: function (option) {
@@ -135,12 +136,9 @@ export default {
   },
 
   methods: {
-    onTabClick(val) {
-    },
-    upper: function (e) {
-    },
-    lower: function (e) {
-    },
+    onTabClick(val) {},
+    upper: function (e) {},
+    lower: function (e) {},
     scroll: function (e) {
       this.old.scrollTop = e.detail.scrollTop;
     },
