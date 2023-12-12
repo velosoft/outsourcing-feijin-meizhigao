@@ -7,7 +7,7 @@
       :TabCur="tabCur"
       @tabChange="onTabChange"
     ></Tabs>
-    <ListContainer :showEmpty="showEmpty" :showLoading="showLoading">
+    <ListContainer :showEmpty="!items.length" :showLoading="showLoading">
       <view class="flex-col justify-start content">
         <view class="flex-col list">
           <view
@@ -15,14 +15,14 @@
             v-for="(item, index) in items"
             :key="index"
           >
-            <text class="self-center time">2020年03月03日 12:54</text>
+            <text class="self-center time">{{ item.time }}</text>
             <view class="flex-col mt-12">
               <view class="flex-col notify-con" v-if="tabCur == 0">
                 <view class="flex-col header">
-                  <text class="self-start title">国庆放假通知</text>
-                  <text class="describe line-clamp-two mt-12"
-                    >亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！</text
-                  >
+                  <text class="self-start title">{{ item.title }}</text>
+                  <text class="describe line-clamp-two mt-12">{{
+                    item.content
+                  }}</text>
                 </view>
                 <view
                   class="flex-row justify-between items-center bottom"
@@ -38,9 +38,7 @@
               <view class="flex-col notify-con" v-else>
                 <view class="flex-row self-start header">
                   <view class="shrink-0 self-start dot"></view>
-                  <text class="flex-1 title double-line"
-                    >您有一笔待付款的商品订单（SP23051600001），请尽快支付</text
-                  >
+                  <text class="flex-1 title double-line">{{ item.title }}</text>
                 </view>
                 <view
                   class="flex-row justify-between items-center bottom"
@@ -71,7 +69,6 @@ export default {
   props: {},
   data() {
     return {
-      showEmpty: false,
       showLoading: false,
       tabList: [
         {
@@ -84,16 +81,103 @@ export default {
           name: "服务通知",
         },
       ],
-      tabCur: 1,
-      items: [null, null, null, null, null, null,null, null, null, null, null, null,null, null, null, null, null, null,null, null, null, null, null, null,null, null, null, null, null, null],
+      tabCur: 0,
+      items: [],
+      systemAnnouncementList: [
+        {
+          time: "2020年03月03日 12:54",
+          title: "国庆放假通知",
+          content:
+            "亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！",
+        },
+        {
+          time: "2021年05月15日 09:30",
+          title: "系统维护通知 - 本周六进行系统升级维护作业",
+          content:
+            "尊敬的用户，为了提供更好的服务体验，我们计划在本周六进行系统升级维护。在此期间，部分服务可能无法正常使用。我们将尽快完成维护工作，并恢复正常服务。感谢您的理解与支持！",
+        },
+        {
+          time: "2021年08月21日 16:45",
+          title: "关于最近网络钓鱼邮件的安全提醒",
+          content:
+            "近期，我们注意到有增加的网络钓鱼活动。请用户不要点击来历不明的邮件中的链接，并确保您的账户安全。如有任何疑问，请及时与我们的客户服务团队联系。",
+        },
+        {
+          time: "2022年01月10日 08:20",
+          title: "新年特别优惠活动开始啦！",
+          content:
+            "新年快乐！我们为您准备了一系列新年特别优惠。快来看看吧，不要错过这些令人兴奋的优惠和特别活动！详情请访问我们的官网或联系客服。",
+        },
+        {
+          time: "2022年04月18日 14:00",
+          title: "客户满意度调查 - 我们需要您的宝贵意见",
+          content:
+            "为了不断提升我们的服务质量，我们诚邀您参加我们的客户满意度调查。您的意见对我们至关重要，将帮助我们更好地了解您的需求并改进我们的服务。调查链接已发送至您的注册邮箱，感谢您的参与！",
+        },
+      ],
+      orderNotificationList: [
+        {
+          time: "2020年03月03日 12:54",
+          title: "您有一笔待付款的商品订单（SP23051600001），请尽快支付",
+        },
+        {
+          time: "2020年04月15日 09:30",
+          title: "订单更新通知：您的订单（SP23051600002）已经发货，请注意查收",
+        },
+        {
+          time: "2020年05月21日 15:20",
+          title: "特价促销活动开始了！不要错过我们的限时优惠",
+        },
+        {
+          time: "2020年06月10日 08:15",
+          title: "感谢您的购买，您的订单（SP23051600003）已成功签收",
+        },
+        {
+          time: "2020年07月02日 18:45",
+          title: "重要通知：关于最近物流延迟的情况说明及客户服务调整",
+        },
+      ],
+      serviceNotificationList: [
+        {
+          time: "2020年03月03日 12:54",
+          title:
+            "您的意向订单（YX23051600001）测量时间已调整为2024-05-14 12:00:00",
+        },
+        {
+          time: "2020年04月10日 09:30",
+          title: "系统维护通知：计划于2020年04月12日进行系统升级维护",
+        },
+        {
+          time: "2020年05月22日 15:20",
+          title: "新功能上线通知：我们新增了个性化推荐功能",
+        },
+        {
+          time: "2020年06月08日 18:45",
+          title: "账户安全提醒：请定期更换您的账户密码以保证账户安全",
+        },
+        {
+          time: "2020年07月16日 11:00",
+          title: "特惠活动通知：夏季促销活动即将开始，敬请关注！",
+        },
+      ],
     };
   },
 
   methods: {
     onTabChange(val) {
+      // mock_data
+      if (this.tabCur == val) {
+        this.items = [];
+        return;
+      }
+
       this.tabCur = val;
-      if (val >= 1) {
-        this.showEmpty = true;
+      if (val == 0) {
+        this.items = this.systemAnnouncementList;
+      } else if (val == 1) {
+        this.items = this.orderNotificationList;
+      } else {
+        this.items = this.serviceNotificationList;
       }
     },
     goNotifyDetial() {

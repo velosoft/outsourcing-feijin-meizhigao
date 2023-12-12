@@ -31,7 +31,7 @@
           }"
           itemStyle="padding-left: 30rpx; padding-right: 30rpx; height:72rpx"
           :scrollable="true"
-          :list="list"
+          :list="tabs"
           @click="onTabClick"
         ></u-tabs>
         <view class="scroll-view">
@@ -43,12 +43,9 @@
             @scrolltolower="lower"
             @scroll="scroll"
           >
-            <ListContainer :showEmpty="isShowEmpty" :showLoading="showLoading">
+            <ListContainer :showEmpty="!list.length" :showLoading="showLoading">
               <view>
-                <DoubleList
-                  class="section_13"
-                  :items="itemsProduct"
-                ></DoubleList>
+                <DoubleList class="section_13" :items="list"></DoubleList>
               </view>
             </ListContainer>
           </scroll-view>
@@ -63,7 +60,7 @@ import NavBar from "../../components/NavBar/NavBar.vue";
 import ListContainer from "../../components/ListContainer/ListContainer.vue";
 import DoubleList from "../home/components/DoubleList.vue";
 
-import { shopList } from "../../mock/shopList/shopList";
+import { serviceList, courseList } from "../../mock/shopList/shopList";
 
 export default {
   components: {
@@ -77,7 +74,34 @@ export default {
       title: "",
       status: "loadmore",
       page: 0,
-      list: [
+      showLoading: false,
+      list: [],
+      scrollTop: 0,
+      old: {
+        scrollTop: 0,
+      },
+    };
+  },
+  onLoad: function (option) {
+    this.title = option.title;
+    if (this.title == "课程中心") {
+      this.tabs = [
+        {
+          name: "全部",
+        },
+        {
+          name: "体验课程",
+        },
+        {
+          name: "职业课程",
+        },
+        {
+          name: "创业课程",
+        },
+      ];
+      this.list = courseList;
+    } else if (this.title == "服务中心") {
+      this.tabs = [
         {
           name: "全部",
         },
@@ -93,38 +117,8 @@ export default {
         {
           name: "衣柜收纳",
         },
-      ],
-      list1: [
-        {
-          name: "全部",
-        },
-        {
-          name: "体验课程",
-        },
-        {
-          name: "职业课程",
-        },
-        {
-          name: "创业课程",
-        },
-      ],
-      isShowEmpty: false,
-      showLoading: false,
-      itemsProduct: shopList,
-      scrollTop: 0,
-      old: {
-        scrollTop: 0,
-      },
-    };
-  },
-  onLoad: function (option) {
-    if (option.title == 0) {
-      this.title = "";
-    } else if (option.title == 1) {
-      this.title = "课程中心";
-      this.list = this.list1;
-    } else if (option.title == 2) {
-      this.title = "服务分类";
+      ];
+      this.list = serviceList;
     }
   },
   onReachBottom() {
@@ -133,7 +127,7 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsProduct = [...this.itemsProduct, ...shopList];
+      this.list = [...this.this, ...this.list];
 
       if (this.page >= 3) this.status = "nomore";
       else this.status = "loading";
@@ -142,20 +136,12 @@ export default {
 
   methods: {
     onTabClick(val) {
-      console.log("tabs", val.index);
-      if (val.index >= 1) {
-        this.isShowEmpty = true;
-        console.log(this.isShowEmpty)
-      }
     },
     upper: function (e) {
-      console.log(e);
     },
     lower: function (e) {
-      console.log(e);
     },
     scroll: function (e) {
-      console.log(e);
       this.old.scrollTop = e.detail.scrollTop;
     },
   },

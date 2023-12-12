@@ -35,10 +35,7 @@
         <Tabs :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></Tabs>
         <ListContainer :showEmpty="showEmpty" :showLoading="showLoading">
           <view>
-            <DoubleList
-              class="section_13"
-              :items="itemsProduct"
-            ></DoubleList>
+            <DoubleList class="section_13" :items="list"></DoubleList>
           </view>
         </ListContainer>
       </view>
@@ -61,7 +58,7 @@ import DoubleList from "./components/DoubleList.vue";
 import DialogBtn from "../../components/DialogBtn.vue";
 import ToggleBtn from "../../components/toggleBtn.vue";
 
-import { shopList } from "../../mock/shopList/shopList";
+import { serviceList } from "../../mock/shopList/shopList";
 
 export default {
   components: {
@@ -100,22 +97,20 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
-      itemsProduct: shopList,
+      list: serviceList,
       current: 0,
       showDialog: false,
       historyList: [],
     };
   },
-  created() {
-    
-  },
+  created() {},
   onReachBottom() {
     if (this.page >= 2) return;
     this.status = "loading";
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsProduct = [...this.itemsProduct, ...shopList];
+      this.list = [...this.list, ...serviceList];
 
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
@@ -124,24 +119,18 @@ export default {
 
   methods: {
     onSearch(keyword) {
-      console.log(keyword);
       this.isSearch = false;
-      console.log(this.itemsProduct);
     },
     onFocus() {
-      console.log("聚焦事件");
       this.isSearch = true;
     },
     onCustom(keyword) {
-      console.log(keyword);
       this.isSearch = false;
     },
     onClick(val) {
-      console.log("打开标签" + val.label);
       this.keywords = val.label;
     },
     onClose(val) {
-      console.log("关闭标签" + val.label);
       this.tabsArray = this.tabsArray.filter(
         (item) => item.label !== val.label
       );
@@ -151,7 +140,7 @@ export default {
     },
     tabChange(e) {
       this.tabCur = e;
-      if(e >= 1){
+      if (e >= 1) {
         this.showEmpty = true;
       }
     },
@@ -164,7 +153,7 @@ export default {
     onConfirm() {
       this.tabsArray = [];
       this.showDialog = false;
-    }
+    },
   },
 };
 </script>

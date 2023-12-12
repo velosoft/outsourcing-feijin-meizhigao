@@ -60,9 +60,7 @@
       </view>
       <view class="flex-row items-center notify-box" @click="goNotify">
         <image class="notify-image" src="../../static/images/notify.png" />
-        <text class="ml-10 home-font_02 notify-text"
-          >显示最新一条系统公告的标题，系统公告的标题…</text
-        >
+        <text class="ml-10 home-font_02 notify-text">{{ notifyContent }}</text>
       </view>
       <ClassifyCards class="box-top"></ClassifyCards>
       <CenterPanel class="box-top"></CenterPanel>
@@ -126,9 +124,7 @@
                 </text>
                 <text class="popu-font">被系统冻结</text>
               </view>
-              <view
-                class="flex-col items-center bottom"
-              >
+              <view class="flex-col items-center bottom">
                 <text class="popu-font btn-text">联系平台客服</text>
               </view>
             </view>
@@ -154,7 +150,7 @@ import CenterPanel from "../home/components/CenterPanel";
 import GridPanel from "../home/components/GridPanel";
 import RecommendedList from "../home/components/RecommendedList";
 
-import { shopList } from "../../mock/shopList/shopList";
+import { serviceList } from "../../mock/shopList/shopList";
 
 export default {
   components: { CenterPanel, ClassifyCards, GridPanel, RecommendedList },
@@ -165,15 +161,15 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
-      itemsProduct:[],
-      itemsLeft: [...shopList],
-      itemsRight: [...shopList],
+      itemsLeft: [...serviceList],
+      itemsRight: [...serviceList],
       current: 0,
       showPopu: true,
+      notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
     };
   },
-  onshow(){
-    this.spliceData(shopList) 
+  onshow() {
+    this.spliceData(shopList);
   },
   onReachBottom() {
     if (this.page >= 2) return;
@@ -181,9 +177,8 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsProduct = [...this.itemsProduct, ...shopList];
-      this.spliceData(this.itemsProduct);
-
+      this.list = [...this.list, ...serviceList];
+      this.spliceData(this.list);
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
     }, 1500);
@@ -198,17 +193,14 @@ export default {
         url: "../home/search",
       });
     },
-    goNotify(){
+    goNotify() {
       uni.navigateTo({
         url: "../home/notify",
       });
     },
-    openPopu() {
-      // console.log('open');
-    },
+    openPopu() {},
     closePopu() {
       this.showPopu = false;
-      // console.log('close');
     },
     spliceData(val) {
       val.forEach((item, index) => {
@@ -221,7 +213,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped lang="less">
