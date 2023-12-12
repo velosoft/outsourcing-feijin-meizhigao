@@ -476,7 +476,8 @@ export default {
                 }
               }
               .btn-right {
-                margin-right: 12rpx;
+                margin-top: 10rpx;
+                margin-right: 14rpx;
               }
             }
             .price-font {
