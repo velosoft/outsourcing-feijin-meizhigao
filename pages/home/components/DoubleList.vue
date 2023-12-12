@@ -9,6 +9,7 @@
             :image="item.image"
             :title="item.title"
             :tags="item.tags"
+            :discount="item.discount"
             :price="item.price"
             :buyer="item.buyer"
           ></ShopItem>
@@ -21,6 +22,7 @@
             :image="item.image"
             :title="item.title"
             :tags="item.tags"
+            :discount="item.discount"
             :price="item.price"
             :buyer="item.buyer"
           ></ShopItem>
@@ -55,8 +57,8 @@ export default {
     },
   },
 
-  created(){
-    this.spliceData(this.items)
+  created() {
+    this.spliceData(this.items);
   },
 
   methods: {

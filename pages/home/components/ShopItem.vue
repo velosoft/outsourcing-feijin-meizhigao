@@ -16,11 +16,11 @@
         class="flex-row justify-between items-center self-stretch shop-group"
       >
         <view class="flex-row items-start self-stretch">
-          <text class="shop-font_01">秒杀价</text>
+          <text class="shop-font_01">{{ discount }}</text>
           <view class="flex-row items-start ml-1">
             <text class="price-symbol">￥</text>
-            <text class="price-number">{{ price }}</text>
-            <text class="price-decimal">.00</text>
+            <text class="price-number">{{ priceIntergetPart }}</text>
+            <text class="price-decimal">.{{ priceDecimalPart }}</text>
           </view>
         </view>
         <text class="self-stretch buyers-text">{{ buyers + "人购买" }}</text>
@@ -36,14 +36,23 @@ export default {
     image: { type: String, default: `` },
     title: { type: String, default: `` },
     tags: { type: Array, default: () => [] },
+    discount: { type: String, default: `` },
     price: { type: Number, default: 0 },
     buyers: { type: Number, default: 0 },
   },
   data() {
     return {};
   },
-
-  methods: {},
+  computed: {
+    priceIntergetPart() {
+      let val = Math.floor(this.price).toString();
+      return val;
+    },
+    priceDecimalPart() {
+      let val = this.price.toFixed(2).split(".")[1];
+      return val;
+    },
+  },
 };
 </script>
 
