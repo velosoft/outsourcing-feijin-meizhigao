@@ -24,16 +24,25 @@
           </view>
         </u-swiper>
         <view class="flex-col flex-1 info">
-          <ActivityCard></ActivityCard>
+          <ActivityCard
+            :price="getPriceIntergetPart(pageData.activityCard.price)"
+            :decimalPrice="getPriceDecimalPart(pageData.activityCard.price)"
+            :originPrice="pageData.activityCard.originPrice"
+            :time="pageData.activityCard.time"
+            :buyer="pageData.activityCard.buyer"
+          ></ActivityCard>
           <view class="flex-col relative container">
             <ProductHeader @onShare="onShare"></ProductHeader>
-            <ProductBenefit class="wraper-top" @onSelectService="onSelectService"></ProductBenefit>
+            <ProductBenefit
+              class="wraper-top"
+              @onSelectService="onSelectService"
+            ></ProductBenefit>
             <ProductEvaluate class="wraper-top"></ProductEvaluate>
             <ProdutDetial class="wraper-top"></ProdutDetial>
           </view>
         </view>
       </scroll-view>
-      <FooterBtn ></FooterBtn>
+      <FooterBtn></FooterBtn>
     </view>
     <PopShareTabs
       ref="popShareTabs"
@@ -41,9 +50,12 @@
       @close="close"
       @saveImg="saveImg"
     ></PopShareTabs>
-    <u-popup :show="showPop" :round="16"  @close="closePop" @open="openPop">
+    <u-popup :show="showPop" :round="16" @close="closePop" @open="openPop">
       <PopEnsure v-if="showPopEnsure" @isKnow="isKnow"></PopEnsure>
-      <PopSpecification v-if="showPopSpecification" @goNext="goNext"></PopSpecification>
+      <PopSpecification
+        v-if="showPopSpecification"
+        @goNext="goNext"
+      ></PopSpecification>
     </u-popup>
   </view>
 </template>
@@ -78,6 +90,14 @@ export default {
   data() {
     return {
       title: "",
+      pageData: {
+        activityCard: {
+          price: 200.12,
+          originPrice: 388.88,
+          time: 108000000,
+          buyer: 100,
+        },
+      },
       list: [
         {
           url: "https://cdn.uviewui.com/uview/resources/video.mp4",
@@ -108,29 +128,34 @@ export default {
     },
     close() {},
     saveImg() {},
-    onSelectService(){
-      this.showPop=true;
-      this.showPopSpecification=true;
+    onSelectService() {
+      this.showPop = true;
+      this.showPopSpecification = true;
     },
-    goNext(){
-      console.log("下一步")
+    goNext() {
+      console.log("下一步");
 
-      this.showPopSpecification=false;
-      this.showPopEnsure=true;
+      this.showPopSpecification = false;
+      this.showPopEnsure = true;
     },
-    isKnow(){
-      this.showPopEnsure=false;
-      this.showPop=false;
+    isKnow() {
+      this.showPopEnsure = false;
+      this.showPop = false;
     },
     closePop() {
-      this.showPop=false;
-      this.showPopSpecification=false;
-      this.showPopEnsure=false;
+      this.showPop = false;
+      this.showPopSpecification = false;
+      this.showPopEnsure = false;
     },
-    openPop() {
-
+    openPop() {},
+    getPriceIntergetPart(price) {
+      let val = Math.floor(price).toString();
+      return val;
     },
-
+    getPriceDecimalPart(price) {
+      let val = price.toFixed(2).split(".")[1];
+      return val;
+    },
   },
 };
 </script>
