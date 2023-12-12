@@ -82,17 +82,17 @@ export default {
 .shop-equal-division {
   width: 100%;
   flex-wrap: wrap;
-  margin-top: 20rpx;
+  margin-top: 8rpx;
+  margin-left: -16rpx;
 }
 
-.shop-equal-division > .shop-text-wrapper:not(:first-child) {
-  margin-left: 16rpx;
-}
 .shop-text-wrapper {
   padding: 0 12rpx;
   background-color: #fff1ed;
   border-radius: 4rpx;
   height: 28rpx;
+  margin-top: 12rpx;
+  margin-left: 16rpx;
 }
 .shop-font_01 {
   font-size: 20rpx;
