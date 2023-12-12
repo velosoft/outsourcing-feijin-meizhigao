@@ -6,7 +6,7 @@
         <view class="flex-col justify-start items-center banner-image-wrapper">
           <image
             class="banner-image"
-            src="../../static/mock/list-page-banner.png"
+            src="/static/mock/list-page-banner.png"
             mode="aspectFill"
           />
         </view>
@@ -56,11 +56,11 @@
 </template>
 
 <script>
-import NavBar from "../../components/NavBar/NavBar.vue";
-import ListContainer from "../../components/ListContainer/ListContainer.vue";
-import DoubleList from "../home/components/DoubleList.vue";
+import NavBar from "../../../components/NavBar/NavBar.vue";
+import ListContainer from "../../../components/ListContainer/ListContainer.vue";
+import DoubleList from "../components/DoubleList.vue";
 
-import { serviceList, courseList } from "../../mock/shopList/shopList";
+import { serviceList, courseList } from "../../../mock/shopList/shopList";
 
 export default {
   components: {

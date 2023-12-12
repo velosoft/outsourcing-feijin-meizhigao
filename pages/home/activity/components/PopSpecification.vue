@@ -21,7 +21,7 @@
       </view>
       <view class="flex-col spec-select">
         <text class="self-start spec-font spec-text">请选择规格</text>
-        <Selector class="variant-selector price-unit mt-19" :items="timelineItems" @change="onChange"></Selector>
+        <Selector class="variant-selector price-unit mt-18" :items="timelineItems" @change="onChange"></Selector>
       </view>
       <view class="flex-row justify-between buy-number">
         <text class="self-start price-symbol buy-number-label">购买数量</text>
@@ -118,9 +118,6 @@
         font-size: 28rpx;
         line-height: 28rpx;
       }
-      .group_3 {
-        align-self: stretch;
-      }
     }
     .buy-number {
       margin-top: 120rpx;
@@ -139,4 +136,34 @@
       line-height: 32rpx;
     }
   }
+
+  .variant-selector {
+  /deep/ .items-layout {
+    gap: 20rpx;
+  }
+
+  /deep/ .item {
+    padding: 16rpx 32rpx;
+    border-radius: 32rpx;
+    border: solid 2rpx #e1e4eb;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    color: #6c6c6c;
+  }
+
+  /deep/ .item__active {
+    border: solid 2rpx #b09053;
+    background-color: unset;
+    color: #b09053;
+  }
+}
+
+.price-unit {
+  /deep/ .items-layout {
+    flex-wrap: wrap;
+  }
+  /deep/ .item {
+    flex: unset;
+  }
+}
   </style>

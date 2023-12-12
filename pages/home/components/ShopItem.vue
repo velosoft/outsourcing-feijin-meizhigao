@@ -1,31 +1,37 @@
 <template>
-  <view class="flex-col shop-item">
-    <image class="shop-images" :src="image" mode="aspectFill" />
-    <view class="flex-col shop-con">
-      <text class="self-start shop-title line-two">{{ title }}</text>
-      <view class="flex-row shop-equal-division">
-        <view
-          class="flex-col items-center justify-center shop-text-wrapper"
-          v-for="(item, index) in tags"
-          :key="index"
-        >
-          <text class="shop-font_01 shop-tag">{{ item }}</text>
-        </view>
-      </view>
-      <view
-        class="flex-row justify-between items-center self-stretch shop-group"
-      >
-        <view class="flex-row items-start self-stretch">
-          <text class="shop-font_01">{{ discount }}</text>
-          <view class="flex-row items-start ml-1">
-            <text class="price-symbol">￥</text>
-            <text class="price-number">{{ priceIntergetPart }}</text>
-            <text class="price-decimal">.{{ priceDecimalPart }}</text>
+  <view>
+    <navigator url="/pages/home/activity/activityDetial?uid=0" hover-class="none">
+      <view class="flex-col shop-item">
+        <image class="shop-images" :src="image" mode="aspectFill" />
+        <view class="flex-col shop-con">
+          <text class="self-start shop-title line-two">{{ title }}</text>
+          <view class="flex-row shop-equal-division">
+            <view
+              class="flex-col items-center justify-center shop-text-wrapper"
+              v-for="(item, index) in tags"
+              :key="index"
+            >
+              <text class="shop-font_01 shop-tag">{{ item }}</text>
+            </view>
+          </view>
+          <view
+            class="flex-row justify-between items-center self-stretch shop-group"
+          >
+            <view class="flex-row items-start self-stretch">
+              <text class="shop-font_01">{{ discount }}</text>
+              <view class="flex-row items-start ml-1">
+                <text class="price-symbol">￥</text>
+                <text class="price-number">{{ priceIntergetPart }}</text>
+                <text class="price-decimal">.{{ priceDecimalPart }}</text>
+              </view>
+            </view>
+            <text class="self-stretch buyers-text">{{
+              buyers + "人购买"
+            }}</text>
           </view>
         </view>
-        <text class="self-stretch buyers-text">{{ buyers + "人购买" }}</text>
       </view>
-    </view>
+    </navigator>
   </view>
 </template>
 

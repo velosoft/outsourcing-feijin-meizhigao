@@ -109,6 +109,36 @@ text {
   -webkit-line-clamp: 2;
 }
 
+.variant-selector {
+  /deep/ .items-layout {
+    gap: 20rpx;
+  }
+
+  /deep/ .item {
+    padding: 16rpx 32rpx;
+    border-radius: 32rpx;
+    border: solid 2rpx #e1e4eb;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    color: #6c6c6c;
+  }
+
+  /deep/ .item__active {
+    border: solid 2rpx #b09053;
+    background-color: unset;
+    color: #b09053;
+  }
+}
+
+.price-unit {
+  /deep/ .items-layout {
+    flex-wrap: wrap;
+  }
+  /deep/ .item {
+    flex: unset;
+  }
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
