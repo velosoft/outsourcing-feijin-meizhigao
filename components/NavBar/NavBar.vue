@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { StatusBar } from "../StatusBar/StatusBar.vue";
+import StatusBar from "../StatusBar/StatusBar.vue";
 export default {
   name: "NavBar",
   components: { StatusBar },
