@@ -7,9 +7,9 @@
       :disabled="false"
       inactiveColor="#f0f0f0"
       activeColor="#eab81c"
-      size="36"
+      size="18"
     ></u-rate>
-    <text class="self-start side-font ml-6">{{value}}分</text>
+    <text class="side-font ml-6">{{value}}分</text>
   </view>
 </template>
 
