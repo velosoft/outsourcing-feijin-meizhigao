@@ -11,11 +11,11 @@
           @change="onMultCardTabs"
         ></MultCardTabs>
         <view
-          class="flex-row justify-between items-center btn-tips"
+          class="flex-row items-center btn-tips"
           :style="{
-            width: activityStatus !== 1 ? '362rpx' : '',
-            alignSelf: tivityStatus !== 1 ? 'center' : '',
-            justifyContent: activityStatus !== 1 ? 'center' : 'space-between',
+            width: activityStatus !== 1 ? '362rpx' : '100%',
+            alignSelf: ativityStatus !== 1 ? 'center' : '',
+            justifyContent: activityStatus == 1 ? 'space-between':'center' ,
           }"
         >
           <image
@@ -266,6 +266,7 @@ export default {
     onMultCardTabs(val) {
       // 事件处理方法
       this.activityStatus = val.item.status;
+      console.log(this.activityStatus)
     },
     onTimeChange(e) {
       this.timeData = e;

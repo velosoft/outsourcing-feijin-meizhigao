@@ -1,5 +1,5 @@
 <template>
-  <view class="flex-row self-center justify-center">
+  <view class="flex-row self-center justify-center items-center">
     <u-rate
       class="evalute-rate"
       v-model="value"

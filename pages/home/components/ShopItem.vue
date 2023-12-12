@@ -80,6 +80,8 @@ export default {
   -webkit-line-clamp: 2;
 }
 .shop-equal-division {
+  width: 100%;
+  flex-wrap: wrap;
   margin-top: 20rpx;
 }
 
