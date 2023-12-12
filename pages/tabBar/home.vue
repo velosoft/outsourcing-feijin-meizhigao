@@ -60,9 +60,7 @@
       </view>
       <view class="flex-row items-center notify-box" @click="goNotify">
         <image class="notify-image" src="../../static/images/notify.png" />
-        <text class="ml-10 home-font_02 notify-text"
-          >显示最新一条系统公告的标题，系统公告的标题…</text
-        >
+        <text class="ml-10 home-font_02 notify-text">{{ notifyContent }}</text>
       </view>
       <ClassifyCards class="box-top"></ClassifyCards>
       <CenterPanel class="box-top"></CenterPanel>
@@ -126,9 +124,7 @@
                 </text>
                 <text class="popu-font">被系统冻结</text>
               </view>
-              <view
-                class="flex-col items-center bottom"
-              >
+              <view class="flex-col items-center bottom">
                 <text class="popu-font btn-text">联系平台客服</text>
               </view>
             </view>
@@ -170,6 +166,7 @@ export default {
       itemsRight: [...shopList],
       current: 0,
       showPopu: true,
+      notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
     };
   },
   onshow(){
@@ -198,7 +195,7 @@ export default {
         url: "../home/search",
       });
     },
-    goNotify(){
+    goNotify() {
       uni.navigateTo({
         url: "../home/notify",
       });
@@ -221,7 +218,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped lang="less">
