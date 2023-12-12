@@ -15,15 +15,15 @@
       <view
         class="flex-row justify-between items-center self-stretch shop-group"
       >
-        <view class="flex-row items-center self-stretch shop-price-wrapper">
+        <view class="flex-row items-start self-stretch">
           <text class="shop-font_01">秒杀价</text>
-          <view class="flex-row items-start price-wrap ml-1">
+          <view class="flex-row items-start ml-1">
             <text class="price-symbol">￥</text>
             <text class="price-number">{{ price }}</text>
             <text class="price-decimal">.00</text>
           </view>
         </view>
-        <text class="buyers-text">{{ buyers + "人购买" }}</text>
+        <text class="self-stretch buyers-text">{{ buyers + "人购买" }}</text>
       </view>
     </view>
   </view>
@@ -105,13 +105,6 @@ export default {
 }
 .shop-group {
   margin-top: 34rpx;
-}
-.shop-price-wrapper {
-  margin-bottom: 2rpx;
-  padding-bottom: 5rpx;
-}
-.price-wrap {
-  padding-bottom: 7rpx;
 }
 .price-symbol {
   color: #bb3e0c;
