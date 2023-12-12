@@ -14,8 +14,8 @@
           class="flex-row items-center btn-tips"
           :style="{
             width: activityStatus !== 1 ? '362rpx' : '100%',
-            alignSelf: ativityStatus !== 1 ? 'center' : '',
-            justifyContent: activityStatus == 1 ? 'space-between':'center' ,
+            alignSelf: activityStatus !== 1 ? 'center' : '',
+            justifyContent: activityStatus == 1 ? 'space-between' : 'center',
           }"
         >
           <image
@@ -87,7 +87,7 @@
                 <view class="flex-col list">
                   <view
                     class="flex-row list-item mt-8"
-                    v-for="(item, index) in items"
+                    v-for="(item, index) in list"
                     :key="index"
                   >
                     <image
@@ -96,36 +96,37 @@
                     />
                     <view class="flex-col flex-1 right ml-10">
                       <view class="flex-col">
-                        <text class="self-stretch product-title line-clamp-two"
-                          >衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮...</text
+                        <text
+                          class="self-stretch product-title line-clamp-two"
+                          >{{ item.title }}</text
                         >
                         <view class="flex-row self-stretch mt-6 tag-wraper">
                           <view
                             class="flex-col tag"
-                            v-for="(item, index) in items_1"
+                            v-for="(tag, index) in item.tags || []"
                             :key="index"
                           >
-                            <text class="tag-font">新品上市</text>
+                            <text class="tag-font">{{ tag }}</text>
                           </view>
                         </view>
-                        <text class="product-price-font price-through mt-6"
-                          >￥545.00</text
-                        >
+                        <text class="product-price-font price-through mt-6">{{
+                          item.originPrice
+                        }}</text>
                       </view>
                       <view class="flex-col">
                         <view
                           class="bottom-top flex-row justify-between items-center"
                           v-if="activityStatus == 2"
                         >
-                          <view
-                            class="flex-row items-start price-wraper"
-                          >
+                          <view class="flex-row items-start price-wraper">
                             <view class="flex-row price-left">
                               <text class="price-symbol symbol-text">￥</text>
-                              <text class="price-font price-text">200</text>
+                              <text class="price-font price-text">{{
+                                getPriceIntergetPart(item.price)
+                              }}</text>
                             </view>
                             <text class="price-last price-last-text"
-                              >.00</text
+                              >.{{ getPriceDecimalPart(item.price) }}</text
                             >
                           </view>
                           <view
@@ -141,7 +142,7 @@
                           v-if="activityStatus == 1"
                         >
                           <u-line-progress
-                            :percentage="percentage"
+                            :percentage="getPercentage(item)"
                             :showText="false"
                             :height="8"
                             activeColor="#f71f21"
@@ -149,7 +150,7 @@
                             style="width: 180rpx"
                           ></u-line-progress>
                           <text class="remainder-font numder-ramainder ml-4"
-                            >仅剩50份</text
+                            >仅剩{{ item.invertory || 0 }}份</text
                           >
                         </view>
                         <view
@@ -178,10 +179,12 @@
                                 class="self-center price-symbol btn-psice-symbol"
                                 >￥</text
                               >
-                              <text class="price-font btn-price-number"
-                                >200</text
+                              <text class="price-font btn-price-number">{{
+                                getPriceIntergetPart(item.price)
+                              }}</text>
+                              <text class="price-last btn-price-last"
+                                >.{{ getPriceDecimalPart(item.price) }}</text
                               >
-                              <text class="price-last btn-price-last">.00</text>
                             </view>
                           </view>
                           <view class="btn-right">
@@ -213,6 +216,11 @@ import NavBar from "../../../components/NavBar/NavBar.vue";
 import ListContainer from "../../../components/ListContainer/ListContainer.vue";
 import MultCardTabs from "./components/cardTabs/multCardTabs.vue";
 import CardTabs from "./components/cardTabs/cardTabs.vue";
+import {
+  productList,
+  serviceList,
+  courseList,
+} from "../../../mock/shopList/shopList.js";
 
 export default {
   components: { NavBar, CardTabs, MultCardTabs, ListContainer },
@@ -254,9 +262,8 @@ export default {
       showEmpty: false,
       showLoading: false,
       finished: false,
-      items_1: [null, null],
       percentage: 40,
-      items: [null, null, null, null],
+      list: [],
       value: 0,
       tabs: ["活动商品", "活动服务", "活动课程"],
     };
@@ -266,7 +273,6 @@ export default {
     onMultCardTabs(val) {
       // 事件处理方法
       this.activityStatus = val.item.status;
-      console.log(this.activityStatus)
     },
     onTimeChange(e) {
       this.timeData = e;
@@ -274,12 +280,36 @@ export default {
     onCardTabs(index) {
       // 事件处理方法
       this.value = index;
+      if (this.value == 0) {
+        this.list = productList;
+      } else if (this.value == 1) {
+        this.list = serviceList;
+      } else {
+        this.list = courseList;
+      }
     },
     goActivityDetial(val) {
       uni.navigateTo({
         url: "./activityDetial?id=1&name=1",
       });
     },
+    getPriceIntergetPart(price) {
+      let val = Math.floor(price).toString();
+      return val;
+    },
+    getPriceDecimalPart(price) {
+      let val = price.toFixed(2).split(".")[1];
+      return val;
+    },
+    getPercentage(item) {
+      let val = (item.invertory / (item.maxInvertory || 1)) * 100;
+      if (val > 100) val = 100;
+      if (val < 0) val = 0;
+      return val;
+    },
+  },
+  mounted() {
+    this.list = productList;
   },
 };
 </script>
@@ -432,7 +462,7 @@ export default {
                 }
               }
             }
-            .line-progress{
+            .line-progress {
               margin-top: 12rpx;
               margin-bottom: 20rpx;
             }

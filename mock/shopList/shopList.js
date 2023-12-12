@@ -6,6 +6,9 @@ export const serviceList = [
     tags: ["新品上市", "好评推荐", "新客优选"],
     price: 200,
     buyers: 100,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -14,6 +17,9 @@ export const serviceList = [
     tags: ["高效率", "环保材料"],
     price: 150,
     buyers: 80,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -22,6 +28,9 @@ export const serviceList = [
     tags: ["快速响应", "安全保障"],
     price: 300,
     buyers: 50,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -30,6 +39,9 @@ export const serviceList = [
     tags: ["专业护理", "爱心寄养"],
     price: 120,
     buyers: 70,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -46,6 +58,9 @@ export const serviceList = [
     tags: ["园艺设计", "定期维护"],
     price: 250,
     buyers: 60,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -54,6 +69,9 @@ export const serviceList = [
     tags: ["专业团队", "原厂配件", "快速服务"],
     price: 180,
     buyers: 90,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -62,6 +80,9 @@ export const serviceList = [
     tags: ["全面检测", "性价比高"],
     price: 400,
     buyers: 30,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
 ];
 
@@ -71,8 +92,11 @@ export const productList = [
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "衣架防滑无痕围巾架丝",
     tags: ["新品上市", "好评推荐"],
-    price: 200,
+    price: 200.23,
     buyers: 100,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -81,6 +105,9 @@ export const productList = [
     tags: ["热销"],
     price: 150,
     buyers: 80,
+    originPrice: 288.12,
+    invertory: 18,
+    maxInvertory: 66,
   },
   {
     image:
@@ -89,6 +116,9 @@ export const productList = [
     tags: ["新品", "智能家居"],
     price: 300,
     buyers: 60,
+    originPrice: 550.34,
+    invertory: 9,
+    maxInvertory: 20,
   },
   {
     image:
@@ -97,6 +127,9 @@ export const productList = [
     tags: ["畅销", "科技"],
     price: 500,
     buyers: 200,
+    originPrice: 550.34,
+    invertory: 9,
+    maxInvertory: 20,
   },
   {
     image:
@@ -105,6 +138,9 @@ export const productList = [
     tags: ["宠物爱好者"],
     price: 250,
     buyers: 150,
+    originPrice: 550.34,
+    invertory: 9,
+    maxInvertory: 20,
   },
   {
     image:
@@ -113,6 +149,9 @@ export const productList = [
     tags: ["学习必备", "护眼"],
     price: 120,
     buyers: 90,
+    originPrice: 550.34,
+    invertory: 9,
+    maxInvertory: 20,
   },
   {
     image:
@@ -121,6 +160,9 @@ export const productList = [
     tags: ["户外", "便携"],
     price: 100,
     buyers: 50,
+    originPrice: 550.34,
+    invertory: 9,
+    maxInvertory: 20,
   },
   {
     image:
@@ -129,6 +171,9 @@ export const productList = [
     tags: ["智能家电", "清洁"],
     price: 800,
     buyers: 300,
+    originPrice: 1099.12,
+    invertory: 888,
+    maxInvertory: 8888,
   },
 ];
 
@@ -141,6 +186,9 @@ export const courseList = [
     discount: "秒杀价",
     price: 999.78,
     buyers: 100,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -149,6 +197,9 @@ export const courseList = [
     tags: ["编程", "技术", "入门"],
     price: 499.12,
     buyers: 150,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -158,6 +209,9 @@ export const courseList = [
     discount: "折扣价",
     price: 799,
     buyers: 200,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -167,6 +221,9 @@ export const courseList = [
     discount: "早鸟价",
     price: 650,
     buyers: 85,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -175,6 +232,9 @@ export const courseList = [
     tags: ["摄影", "艺术"],
     price: 300,
     buyers: 120,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -183,6 +243,9 @@ export const courseList = [
     tags: ["编程", "数据"],
     price: 550,
     buyers: 180,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -191,6 +254,9 @@ export const courseList = [
     tags: ["园艺", "户外"],
     price: 400,
     buyers: 90,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
   {
     image:
@@ -199,5 +265,8 @@ export const courseList = [
     tags: ["财务", "投资", "理财"],
     price: 350,
     buyers: 75,
+    originPrice: 545.12,
+    invertory: 50,
+    maxInvertory: 188,
   },
 ];
