@@ -1,6 +1,11 @@
 <template>
   <view class="popShareTabsComp">
-    <uni-popup class="pop pop-share" ref="popShare" type="bottom" :safe-area="false">
+    <uni-popup
+      class="pop pop-share"
+      ref="popShare"
+      type="bottom"
+      :safe-area="false"
+    >
       <view class="pop-container">
         <image
           v-if="autoLoad && src"
@@ -48,16 +53,16 @@
         <view class="btn" @click="saveImg"><text>点击保存至相册</text></view>
       </view>
     </uni-popup>
-    <l-painter
+    <!-- <l-painter
       ref="painter"
       custom-style="position: fixed; left: 200%; opacity: 0;"
-    />
+    /> -->
   </view>
 </template>
 
 <script>
 export default {
-  name: "PopShareTabsComp",
+  name: "PopShareTabs",
   props: {
     detail: {
       type: Object,
@@ -591,7 +596,7 @@ export default {
         line-height: 80rpx;
         color: #666666;
         text-align: center;
-        background-color: #F8F8F8;
+        background-color: #f8f8f8;
         border-radius: 40rpx;
       }
     }
