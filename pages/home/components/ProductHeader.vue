@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col container">
     <view class="flex-row justify-between">
-      <text class="title line-clamp-one">厨房收纳服务厨房收纳服务</text>
+      <text class="title line-clamp-one">{{ title }}</text>
       <image
         class="share-icon"
         src="https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=icon_share_01.png"
@@ -9,27 +9,25 @@
       />
     </view>
     <view class="flex-col describe-wraper">
-      <text class="mini-font describe-text line-clamp-one"
-        >烹饪也能从容优雅享受美好食光</text
-      >
+      <text class="mini-font describe-text line-clamp-one">{{ content }}</text>
     </view>
     <view class="flex-row justify-between price-wraper items-center">
       <view class="flex-row items-center price-left">
         <view class="flex-row items-start">
           <text class="price-symbol">￥</text>
-          <text class="price">200</text>
-          <text class="point">.00</text>
+          <text class="price">{{ price }}</text>
+          <text class="point">.{{ decimalPrice }}</text>
         </view>
-        <text class="mini-font pre-price">￥54.00</text>
+        <text class="mini-font pre-price">￥{{ originPrice }}</text>
       </view>
-      <text class="book-number">100人预约</text>
+      <text class="book-number">{{ buyer }}人预约</text>
     </view>
     <view class="flex-row coupon-wraper items-center">
       <view class="flex-row flex-1 tag-gap">
         <u-tag
           class="tag-coupon"
-          text="满329包邮"
-          v-for="(item, index) in items"
+          :text="item"
+          v-for="(item, index) in discountTags"
           :key="index"
         ></u-tag>
       </view>
@@ -45,8 +43,8 @@
       <view class="flex-row tag-gap tag-feature">
         <u-tag
           class="tag-feature"
-          text="新客优选"
-          v-for="(item, index) in items_1"
+          :text="item"
+          v-for="(item, index) in tags"
           :key="index"
         ></u-tag>
       </view>
@@ -57,12 +55,29 @@
 <script>
 export default {
   components: {},
-  props: {},
+  props: {
+    title: { type: String, default: "" },
+    content: { type: String, default: "" },
+    price: { type: String, default: "" },
+    decimalPrice: { type: String, default: "" },
+    originPrice: { type: Number, default: 0 },
+    buyer: { type: Number, default: 0 },
+    discountTags: {
+      type: Array,
+      default: function () {
+        return []; // 正确的写法
+      },
+    },
+    tags: {
+      type: Array,
+      default: function () {
+        return []; // 正确的写法
+      },
+    },
+  },
   data() {
     return {
       uid: "",
-      items: [null, null, null],
-      items_1: [null, null, null],
     };
   },
 
@@ -176,7 +191,7 @@ export default {
       }
     }
   }
-  .tag-gap > u-tag:not(:first-child){
+  .tag-gap > u-tag:not(:first-child) {
     margin-left: 16rpx;
   }
   .feature-wraper {

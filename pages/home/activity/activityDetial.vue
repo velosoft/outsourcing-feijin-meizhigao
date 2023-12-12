@@ -9,9 +9,9 @@
     <view class="flex-col flex-1 footer">
       <scroll-view class="scroll-height" :scroll-y="true">
         <u-swiper
-          :list="list"
+          :list="swiperList"
           @change="onChange"
-          height="750"
+          :height="swiperHeight"
           indicatorStyle="right: 20px"
         >
           <view
@@ -19,20 +19,30 @@
             slot="indicator"
           >
             <text class="indicator-font indicator-text"
-              >{{ currentNum + 1 }}/{{ list.length }}</text
+              >{{ currentNum + 1 }}/{{ swiperList.length }}</text
             >
           </view>
         </u-swiper>
         <view class="flex-col flex-1 info">
           <ActivityCard
-            :price="getPriceIntergetPart(pageData.activityCard.price)"
-            :decimalPrice="getPriceDecimalPart(pageData.activityCard.price)"
-            :originPrice="pageData.activityCard.originPrice"
-            :time="pageData.activityCard.time"
-            :buyer="pageData.activityCard.buyer"
+            :price="getPriceIntergetPart(pageData.product.price)"
+            :decimalPrice="getPriceDecimalPart(pageData.product.price)"
+            :originPrice="pageData.product.originPrice"
+            :time="pageData.activity.time"
+            :buyer="pageData.activity.buyer"
           ></ActivityCard>
           <view class="flex-col relative container">
-            <ProductHeader @onShare="onShare"></ProductHeader>
+            <ProductHeader
+              :title="pageData.product.title"
+              :content="pageData.product.content"
+              :price="getPriceIntergetPart(pageData.product.price)"
+              :decimalPrice="getPriceDecimalPart(pageData.product.price)"
+              :originPrice="pageData.product.originPrice"
+              :discountTags="pageData.product.discountTags"
+              :tags="pageData.product.tags"
+              :buyer="pageData.product.buyer"
+              @onShare="onShare"
+            ></ProductHeader>
             <ProductBenefit
               class="wraper-top"
               @onSelectService="onSelectService"
@@ -90,18 +100,25 @@ export default {
   data() {
     return {
       title: "",
+      swiperHeight: 0,
       pageData: {
-        activityCard: {
+        product: {
+          title: "美之高简易衣柜思想者系列",
+          content: "烹饪也能从容优雅  享受美好食光",
           price: 200.12,
           originPrice: 388.88,
+          discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
+          tags: ["新客优惠", "新品上市", "好评推荐"],
+          buyer: 100,
+        },
+        activity: {
           time: 108000000,
           buyer: 100,
         },
       },
-      list: [
+      swiperList: [
         {
-          url: "https://cdn.uviewui.com/uview/resources/video.mp4",
-          poster: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
+          url: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
         },
         {
           url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
@@ -156,6 +173,9 @@ export default {
       let val = price.toFixed(2).split(".")[1];
       return val;
     },
+  },
+  mounted() {
+    this.swiperHeight = uni.upx2px(750);
   },
 };
 </script>
