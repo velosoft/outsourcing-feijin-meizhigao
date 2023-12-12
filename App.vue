@@ -130,6 +130,25 @@ text {
   }
 }
 
+.default-tabs {
+  background-color: #ffffff;
+  /deep/ .u-tabs__wrapper__nav__item {
+    align-items: start !important;
+    padding-top: 22rpx !important;
+
+    .u-tabs__wrapper__nav__item__text {
+      font-size: 28rpx !important;
+      line-height: 28rpx !important;
+    }
+  }
+
+  /deep/ .u-tabs__wrapper__nav__line {
+    width: 44rpx !important;
+    bottom: 0 !important;
+    background-color: #b09053 !important;
+  }
+}
+
 .price-unit {
   /deep/ .items-layout {
     flex-wrap: wrap;

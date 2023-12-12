@@ -32,6 +32,7 @@
             :buyer="pageData.activity.buyer"
           ></ActivityCard>
           <view class="flex-col relative container">
+            
             <ProductHeader
               :title="pageData.product.title"
               :content="pageData.product.content"
@@ -45,10 +46,12 @@
             ></ProductHeader>
             <ProductBenefit
               class="wraper-top"
+              v-if="pageType==0"
               @onSelectService="onSelectService"
             ></ProductBenefit>
-            <ProductEvaluate class="wraper-top"></ProductEvaluate>
-            <ProdutDetial class="wraper-top"></ProdutDetial>
+            <ProductEvaluate class="wraper-top" v-if="pageType==0"></ProductEvaluate>
+            <ProdutDetial class="wraper-top" v-if="pageType==0"></ProdutDetial>
+            <CourseIntro v-if="pageType==2"></CourseIntro>
           </view>
         </view>
       </scroll-view>
@@ -77,9 +80,9 @@ import ProductHeader from "../components/ProductHeader.vue";
 import ProductBenefit from "./components/ProductBenefit.vue";
 import ProductEvaluate from "./components/ProductEvaluate.vue";
 import ProdutDetial from "./components/ProdutDetial.vue";
+import CourseIntro from "./components/CourseIntro.vue";
 import FooterBtn from "./components/FooterBtn.vue";
 import PopShareTabs from "../../../components/PopShareTabs.vue";
-import PopupConfirm from "../../../components/PopupConfirm.vue";
 import PopEnsure from "./components/PopEnsure.vue";
 import PopSpecification from "./components/PopSpecification.vue";
 
@@ -91,14 +94,15 @@ export default {
     ProductEvaluate,
     ProductHeader,
     ProdutDetial,
+    CourseIntro,
     PopShareTabs,
-    PopupConfirm,
     PopEnsure,
     PopSpecification,
   },
   props: {},
   data() {
     return {
+      pageType: 0,
       title: "",
       swiperHeight: 0,
       pageData: {
@@ -134,7 +138,11 @@ export default {
       showPopSpecification: true,
     };
   },
-
+  onLoad(option) {
+			// 页面启动的生命周期，这里编写页面加载时的逻辑
+      console.log(option)
+      this.pageType=option.id
+	},
   methods: {
     onChange(e) {
       // 事件处理方法

@@ -277,7 +277,7 @@ export default {
     onTimeChange(e) {
       this.timeData = e;
     },
-    onCardTabs(index) {
+    onCardTabs(val) {
       // 事件处理方法
       this.value = index;
       if (this.value == 0) {
@@ -288,9 +288,11 @@ export default {
         this.list = courseList;
       }
     },
-    goActivityDetial(val) {
+    goActivityDetial() {
+      let pageUrl= './activityDetial?id=' + this.value +'&name=1'
+      console.log("目标页面", pageUrl)
       uni.navigateTo({
-        url: "./activityDetial?id=1&name=1",
+        url: pageUrl,
       });
     },
     getPriceIntergetPart(price) {
