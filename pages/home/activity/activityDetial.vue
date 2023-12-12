@@ -41,10 +41,10 @@
       @close="close"
       @saveImg="saveImg"
     ></PopShareTabs>
-    <PopupConfirm>
-      <PopEnsure v-if="showPopEnsure"></PopEnsure>
-      <PopSpecification v-if="showPopSpecification"></PopSpecification>
-    </PopupConfirm>
+    <u-popup :show="showPop" :round="16"  @close="closePop" @open="openPop">
+      <PopEnsure v-if="showPopEnsure" @isKnow="isKnow"></PopEnsure>
+      <PopSpecification v-if="showPopSpecification" @goNext="goNext"></PopSpecification>
+    </u-popup>
   </view>
 </template>
 
@@ -92,8 +92,9 @@ export default {
       ],
       currentNum: 0,
       detail: {},
+      showPop: false,
       showPopEnsure: false,
-      showPopSpecification: false,
+      showPopSpecification: true,
     };
   },
 
@@ -105,11 +106,31 @@ export default {
     onShare(uid) {
       this.$refs.popShareTabs.open();
     },
-    onSelectService(){
-
-    },
     close() {},
     saveImg() {},
+    onSelectService(){
+      this.showPop=true;
+      this.showPopSpecification=true;
+    },
+    goNext(){
+      console.log("下一步")
+
+      this.showPopSpecification=false;
+      this.showPopEnsure=true;
+    },
+    isKnow(){
+      this.showPopEnsure=false;
+      this.showPop=false;
+    },
+    closePop() {
+      this.showPop=false;
+      this.showPopSpecification=false;
+      this.showPopEnsure=false;
+    },
+    openPop() {
+
+    },
+
   },
 };
 </script>

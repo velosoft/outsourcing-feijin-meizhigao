@@ -1,180 +1,142 @@
 <template>
+  <view class="flex-col container">
     <view class="flex-col">
       <view class="flex-row items-center">
         <image
-          class="shrink-0 image_7"
-          src="https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=b23f4993357ee315653debdff8758408.png"
+          class="shrink-0 product-image"
+          src="https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=b23f4993357ee315653debdff8758408.png"
         />
-        <view class="flex-col flex-1 group_3 ml-12">
+        <view class="flex-col flex-1 product-right ml-12">
           <view class="flex-col">
             <view class="flex-row items-center self-stretch">
-              <text class="font_2 text_4">￥</text>
-              <text class="font_4 text_7">秒杀价</text>
-              <text class="font_3 text_5">200</text>
-              <text class="font_3 text_6">.00</text>
+              <text class="com-font price-label-text">秒杀价</text>
+              <text class="price-symbol price-symbol-text">￥</text>
+              <text class="price">200</text>
+              <text class="price">.00</text>
             </view>
-            <text class="self-start font_4 text_8 mt-15">库存：999件</text>
+            <text class="self-start com-font stock-text mt-16">库存：999件</text>
           </view>
-          <text class="font_4 text_9 mt-22">请选择规格 / 已选：3层80长*40宽*170高</text>
+          <text class="com-font speci-text mt-24">请选择规格 / 已选：3层80长*40宽*170高</text>
         </view>
       </view>
-      <view class="flex-col group_4">
-        <text class="self-start font_4 text_10">请选择规格</text>
-        <view class="flex-col items-start self-stretch mt-18">
-          <view class="flex-col justify-start text-wrapper">
-            <text class="font_4 text_11">3层60长*40宽*170高可加高加层</text>
-          </view>
-          <view class="flex-col justify-start text-wrapper_2 mt-9">
-            <text class="font_4 text_12">3层80长*40宽*170高可加高加层</text>
-          </view>
-          <view class="flex-col justify-start text-wrapper_2 mt-9">
-            <text class="font_4 text_12">3层80长*40宽*170高可加高加层</text>
-          </view>
-        </view>
+      <view class="flex-col spec-select">
+        <text class="self-start spec-font spec-text">请选择规格</text>
+        <Selector class="variant-selector price-unit mt-19" :items="timelineItems" @change="onChange"></Selector>
       </view>
-      <view class="flex-row justify-between group_5">
-        <text class="self-start font_2 text_13">购买数量</text>
-        <u-number-box class="group_6" v-model="v_model"></u-number-box>
+      <view class="flex-row justify-between buy-number">
+        <text class="self-start price-symbol buy-number-label">购买数量</text>
+        <u-number-box v-model="count"></u-number-box>
       </view>
     </view>
-    </template>
-    
-    <script>
-    export default {
-      components: {},
-      props: {},
-      data() {
-        return {
-          v_model: '',
-        };
+    <u-button class="mt-54" text="下一步" type="primary" @click="goNext"></u-button>
+  </view>
+  </template>
+  
+  <script>
+  import Selector from '../../../../components/Selector/Selector';
+  
+  export default {
+    components: { Selector },
+    props: {
+      productSpec: {
+        type: Object,
+        default: () => ({ imgUrl: '', price: 100, stock: 100, tag: ['apple', 'orange', 'banana'] }),
       },
-    
-      methods: {},
-    };
-    </script>
-    
-    <style scoped lang="less">
-    .mt-15 {
-      margin-top: 30rpx;
-    }
-    .mt-9 {
-      margin-top: 18rpx;
-    }
-    .image_7 {
+    },
+    data() {
+      return {
+        timelineItems: [
+          "3层60长*40宽*170高可加高加层",
+          "3层80长*40宽*170高可加高加层",
+          "3层80长*40宽*170高可加高加层",
+        ],
+        count: 2,
+      };
+    },
+  
+    methods: {
+      onChange(index) {
+        // 事件处理方法
+        console.log('outter:' + index);
+      },
+      goNext(){
+        this.$emit("goNext")
+      }
+    },
+  };
+  </script>
+  
+  <style scoped lang="less">
+  .container {
+    padding: 16rpx 32rpx 40rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx 16rpx 0rpx 0rpx;
+    .product-image {
       width: 180rpx;
       height: 180rpx;
     }
-    .group_3 {
-      margin-right: 22rpx;
-      .text_4 {
-        margin-left: 76rpx;
-        color: #bb3e0c;
-        line-height: 22.86rpx;
+    .product-right {
+      margin-right: 24rpx;
+      .com-font {
+        font-size: 26rpx;
+        font-family: 苹方;
+        line-height: 26rpx;
+        color: #6c6c6c;
       }
-      .text_7 {
-        margin-left: -110rpx;
+      .price-label-text {
         color: #bb3e0c;
-        line-height: 24.2rpx;
       }
-      .font_3 {
+      .price-symbol-text {
+        color: #bb3e0c;
+      }
+      .price {
         font-size: 32rpx;
         font-family: HarmonyOS Sans SC;
-        line-height: 24.18rpx;
+        line-height: 32rpx;
         font-weight: 700;
         color: #bb3e0c;
       }
-      .text_5 {
-        margin-left: 28rpx;
-        line-height: 24.26rpx;
-      }
-      .text_6 {
-        margin-left: 2rpx;
-        line-height: 24.32rpx;
-      }
-      .text_8 {
+      .stock-text {
         font-size: 28rpx;
-        line-height: 25.92rpx;
+        line-height: 28rpx;
       }
-      .text_9 {
+      .speci-text {
         color: #a7a7a7;
         font-size: 24rpx;
-        line-height: 22.32rpx;
+        line-height: 24rpx;
       }
     }
-    .group_4 {
-      margin-top: 57.52rpx;
-      .text_10 {
+    .spec-select {
+      margin-top: 56rpx;
+      .spec-font {
+        font-size: 26rpx;
+        font-family: 苹方;
+        line-height: 26rpx;
         color: #030305;
+      }
+      .spec-text {
         font-size: 28rpx;
-        line-height: 26.06rpx;
+        line-height: 28rpx;
       }
-      .text-wrapper {
-        padding: 9.84rpx 0 25.98rpx;
-        border-radius: 32rpx;
-        width: 450rpx;
-        height: 64rpx;
-        border-left: solid 2rpx #b09053;
-        border-right: solid 2rpx #b09053;
-        border-top: solid 2rpx #b09053;
-        border-bottom: solid 2rpx #b09053;
-        .text_11 {
-          margin-left: 30rpx;
-          margin-right: 20rpx;
-          color: #b09053;
-        }
-      }
-      .text-wrapper_2 {
-        padding: 9.84rpx 0 25.98rpx;
-        border-radius: 32rpx;
-        width: 450rpx;
-        height: 64rpx;
-        border-left: solid 2rpx #e1e4eb;
-        border-right: solid 2rpx #e1e4eb;
-        border-top: solid 2rpx #e1e4eb;
-        border-bottom: solid 2rpx #e1e4eb;
-        .text_12 {
-          margin-left: 30rpx;
-          margin-right: 20rpx;
-        }
+      .group_3 {
+        align-self: stretch;
       }
     }
-    .font_4 {
-      font-size: 26rpx;
-      font-family: 苹方;
-      line-height: 24.18rpx;
-      color: #6c6c6c;
-    }
-    .font_4 {
-      font-size: 26rpx;
-      font-family: 苹方;
-      line-height: 24.18rpx;
-      color: #6c6c6c;
-    }
-    .font_4 {
-      font-size: 26rpx;
-      font-family: 苹方;
-      line-height: 24.18rpx;
-      color: #6c6c6c;
-    }
-    .font_4 {
-      font-size: 26rpx;
-      font-family: 苹方;
-      line-height: 24.18rpx;
-      color: #6c6c6c;
-    }
-    .group_5 {
+    .buy-number {
       margin-top: 120rpx;
-      .text_13 {
+      .buy-number-label {
         color: #030305;
         font-size: 30rpx;
-        line-height: 27.96rpx;
+        line-height: 30rpx;
       }
       .group_6 {
-        margin-right: 15rpx;
+        margin-right: 16rpx;
       }
     }
-    .font_2 {
+    .price-symbol {
       font-size: 32rpx;
       font-family: 苹方;
+      line-height: 32rpx;
     }
-    </style>
+  }
+  </style>
