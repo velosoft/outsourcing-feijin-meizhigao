@@ -11,10 +11,11 @@
           @change="onMultCardTabs"
         ></MultCardTabs>
         <view
-          class="flex-row justify-between items-center self-center btn-tips"
+          class="flex-row justify-between items-center btn-tips"
           :style="{
-            width: activityStatus !== 1? '362rpx':'',
-            justifyContent: activityStatus !== 1? 'center':'space-between',
+            width: activityStatus !== 1 ? '362rpx' : '',
+            alignSelf: tivityStatus !== 1 ? 'center' : '',
+            justifyContent: activityStatus !== 1 ? 'center' : 'space-between',
           }"
         >
           <image
@@ -50,7 +51,9 @@
                   class="flex-col items-center number-box ml-2 justify-center"
                 >
                   <text class="time-font time-text">{{
-                    timeData.minutes > 10 ? timeData.minutes : "0" + timeData.minutes
+                    timeData.minutes > 10
+                      ? timeData.minutes
+                      : "0" + timeData.minutes
                   }}</text>
                 </view>
                 <text class="colon ml-2">:</text>
@@ -58,7 +61,9 @@
                   class="flex-col items-center number-box ml-2 justify-center"
                 >
                   <text class="time-font time-text">{{
-                    timeData.seconds > 10 ? timeData.seconds : "0" + timeData.seconds
+                    timeData.seconds > 10
+                      ? timeData.seconds
+                      : "0" + timeData.seconds
                   }}</text>
                 </view>
               </view>
@@ -86,13 +91,13 @@
                     :key="index"
                   >
                     <image
-                      class="self-center left"
+                      class="left"
                       src="../../../static/images/image_shop_01.png"
                     />
                     <view class="flex-col flex-1 right ml-10">
                       <view class="flex-col">
-                        <text class="self-stretch product-title title"
-                          >衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮...</text
+                        <text class="self-stretch product-title line-clamp-two"
+                          >衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮衣架防滑无痕围巾架丝巾领带架家用鹅形裤架皮...</text
                         >
                         <view class="flex-row self-stretch mt-6 tag-wraper">
                           <view
@@ -107,34 +112,38 @@
                           >￥545.00</text
                         >
                       </view>
-                      <view class="flex-col mt-8">
+                      <view class="flex-col">
                         <view
-                          class="bottom-top flex-row justify-between"
+                          class="bottom-top flex-row justify-between items-center"
                           v-if="activityStatus == 2"
                         >
-                          <view class="flex-row justify-center price-wraper">
-                            <view class="flex-row items-center price-left">
-                              <text class="price-font price-text">200</text>
+                          <view
+                            class="flex-row items-start price-wraper"
+                          >
+                            <view class="flex-row price-left">
                               <text class="price-symbol symbol-text">￥</text>
+                              <text class="price-font price-text">200</text>
                             </view>
-                            <text class="self-center price-last price-last-text"
+                            <text class="price-last price-last-text"
                               >.00</text
                             >
                           </view>
-                          <view class="flex-col items-center btn " @click="goActivityDetial"
+                          <view
+                            class="flex-col items-center btn"
+                            @click="goActivityDetial"
                             ><text class="btn-font btn-text"
                               >原价购买</text
                             ></view
                           >
                         </view>
                         <view
-                          class="flex-row items-center"
+                          class="flex-row items-center line-progress"
                           v-if="activityStatus == 1"
                         >
                           <u-line-progress
                             :percentage="percentage"
                             :showText="false"
-                            :height="16"
+                            :height="8"
                             activeColor="#f71f21"
                             inactiveColor="#ffdedc"
                             style="width: 180rpx"
@@ -164,7 +173,7 @@
                           </view>
                           <view class="flex-row items-center relative btn-left">
                             <text class="btn-price-label">秒杀价</text>
-                            <view class="flex-row btn-price">
+                            <view class="flex-row items-start btn-price">
                               <text
                                 class="self-center price-symbol btn-psice-symbol"
                                 >￥</text
@@ -172,10 +181,7 @@
                               <text class="price-font btn-price-number"
                                 >200</text
                               >
-                              <text
-                                class="self-center price-last btn-price-last"
-                                >.00</text
-                              >
+                              <text class="price-last btn-price-last">.00</text>
                             </view>
                           </view>
                           <view class="btn-right">
@@ -266,7 +272,7 @@ export default {
     },
     onCardTabs(index) {
       // 事件处理方法
-      this.value=index;
+      this.value = index;
     },
     goActivityDetial(val) {
       uni.navigateTo({
@@ -305,7 +311,6 @@ export default {
           height: 24.04rpx;
         }
         .count-down-wrap {
-          margin-right: 8rpx;
           .count-down-label {
             font-size: 24rpx;
             font-family: 苹方;
@@ -368,19 +373,13 @@ export default {
           .right {
             margin-top: 8rpx;
             .product-title {
+              // width: 187rpx;
               font-size: 28rpx;
               font-family: PingFangSC-Medium;
               line-height: 34rpx;
               color: #030305;
             }
-            .title {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              text-overflow: ellipsis;
-              -webkit-line-clamp: 2;
-            }
-            .tag-wraper > .tag:not(:first-child){
+            .tag-wraper > .tag:not(:first-child) {
               margin-left: 12rpx;
             }
             .tag {
@@ -409,14 +408,11 @@ export default {
               .price-wraper {
                 margin-right: 16rpx;
                 .price-left {
-                  width: 73.76rpx;
                   .price-text {
-                    margin-left: 16rpx;
                     color: #030305;
                     line-height: 32rpx;
                   }
                   .symbol-text {
-                    margin-left: -80rpx;
                     color: #030305;
                   }
                 }
@@ -435,6 +431,10 @@ export default {
                 }
               }
             }
+            .line-progress{
+              margin-top: 12rpx;
+              margin-bottom: 20rpx;
+            }
             .remainder-font {
               font-size: 20rpx;
               font-family: 苹方;
@@ -449,10 +449,10 @@ export default {
               width: 100%;
               height: 64rpx;
               padding: 24rpx 0;
-              margin-top: 20rpx;
               .btn-bg-pos {
                 position: absolute;
                 left: 0;
+                right: 0;
                 top: 0;
               }
               .btn-bg {
@@ -464,14 +464,12 @@ export default {
                 margin-top: 10rpx;
                 margin-left: 24rpx;
                 .btn-price-label {
-                  margin-top: 10rpx;
                   font-size: 24rpx;
                   font-family: PingFangSC-Medium;
                   line-height: 24rpx;
                   color: #bb3e0c;
                 }
                 .btn-price {
-                  margin-bottom: 10rpx;
                   .btn-price-number {
                     line-height: 32rpx;
                   }
@@ -495,6 +493,7 @@ export default {
               color: #bb3e0c;
             }
             .price-last {
+              margin-left: 2rpx;
               font-size: 20rpx;
               font-family: HarmonyOSSansSC;
               line-height: 20rpx;

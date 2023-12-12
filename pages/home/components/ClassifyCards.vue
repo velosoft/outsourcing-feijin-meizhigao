@@ -1,11 +1,11 @@
 <template>
-  <view class="flex-row">
-    <navigator url="../home/activity/activityShop">
+  <view class="flex-row justify-between">
+    <navigator url="../home/activity/activityShop" hover-class="none">
       <view
       class="flex-row items-center classify-card classify-card-left"
     >
       <view class="classify-con">
-        <view class="tag tag-left">
+        <view class="flex-col justify-center items-center tag tag-left">
           <text class="tag-text">秒杀活动</text>
         </view>
         <text class="tag-down">让你购物省心又省钱</text>
@@ -17,12 +17,12 @@
     </view>
     </navigator>
 
-    <navigator url="../home/activity/activityShop" class="ml-8">
+    <navigator url="../home/activity/activityShop" class="ml-8" hover-class="none">
       <view
       class="flex-row items-center classify-card classify-card-right"
     >
       <view class="classify-con">
-        <view class="tag tag-right">
+        <view class="flex-col justify-center items-center tag tag-right">
           <text class="tag-text">领券中心</text>
         </view>
         <text class="tag-down">领券下单更优惠</text>
@@ -63,10 +63,10 @@ export default {
   border-radius: 3px;
 
   &-left {
-    background: rgba(193, 179, 172, 0.4);
+    background: rgba(236, 236, 236, 0.4);
   }
   &-right {
-    background: rgba(239, 227, 221, 0.4);
+    background: rgba(214, 214, 214, 0.4);
   }
   .classify-bg-left {
     position: absolute;
@@ -87,7 +87,6 @@ export default {
   .tag {
     width: 116rpx;
     height: 40rpx;
-
     padding: 0 10rpx;
 
     &-left {
@@ -101,7 +100,7 @@ export default {
       font-family: PingFangSC;
       font-size: 24rpx;
       font-weight: 500;
-      line-height: 36rpx;
+      line-height: 40rpx;
       color: rgba(255, 255, 255, 1);
     }
   }

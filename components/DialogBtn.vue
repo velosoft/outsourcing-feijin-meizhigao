@@ -204,7 +204,7 @@ export default {
       }
 
       .btn-cancel {
-        border: solid 1rpx #b09053;
+        border: solid 2rpx #b09053;
         .btn-text--cancel {
           color: #b09053;
         }

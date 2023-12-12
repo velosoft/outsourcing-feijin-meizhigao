@@ -91,13 +91,22 @@ text {
   color: #B09053 !important;
 }
 
-// 单行文本超出省略
+// 单行文本超出显示省略
 .line-clamp-one {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
+}
+
+// 文本超出两行显示省略
+.line-clamp-two {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
 }
 
 .flex-row {

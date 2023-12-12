@@ -14,16 +14,18 @@
       >
     </view>
     <view class="flex-row justify-between price-wraper items-center">
-      <view class="flex-row items-baseline price-left">
-        <text class="price-symbol">￥</text>
-        <text class="price">200</text>
-        <text class="point">.00</text>
+      <view class="flex-row items-center price-left">
+        <view class="flex-row items-start">
+          <text class="price-symbol">￥</text>
+          <text class="price">200</text>
+          <text class="point">.00</text>
+        </view>
         <text class="mini-font pre-price">￥54.00</text>
       </view>
       <text class="book-number">100人预约</text>
     </view>
     <view class="flex-row coupon-wraper items-center">
-      <view class="flex-row flex-1">
+      <view class="flex-row flex-1 tag-gap">
         <u-tag
           class="tag-coupon"
           text="满329包邮"
@@ -40,7 +42,7 @@
       </view>
     </view>
     <view class="flex-col feature-wraper">
-      <view class="flex-row tag-feature">
+      <view class="flex-row tag-gap tag-feature">
         <u-tag
           class="tag-feature"
           text="新客优选"
@@ -173,6 +175,9 @@ export default {
         height: 16rpx;
       }
     }
+  }
+  .tag-gap > u-tag:not(:first-child){
+    margin-left: 16rpx;
   }
   .feature-wraper {
     margin-top: 24rpx;

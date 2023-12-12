@@ -10,7 +10,6 @@
       "path": "pages/tabBar/comps",
       "style": {
         "navigationStyle": "default",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -46,7 +45,6 @@
       "path": "pages/showcase/numberbox/index",
       "style": {
         "navigationStyle": "default",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -54,7 +52,6 @@
       "path": "pages/showcase/numberbox/case1",
       "style": {
         "navigationStyle": "default",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -62,7 +59,6 @@
       "path": "pages/showcase/numberbox/case2",
       "style": {
         "navigationStyle": "default",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -70,7 +66,6 @@
       "path": "pages/tabBar/home",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -78,7 +73,6 @@
       "path": "pages/tabBar/shop",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -86,7 +80,6 @@
       "path": "pages/tabBar/cart",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -94,7 +87,6 @@
       "path": "pages/tabBar/personal",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -102,7 +94,6 @@
       "path": "pages/home/search",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -110,7 +101,6 @@
       "path": "pages/home/notify",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -118,7 +108,6 @@
       "path": "pages/home/notifyDetial",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -126,7 +115,6 @@
       "path": "pages/home/activity/activityShop",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -134,7 +122,6 @@
       "path": "pages/home/activity/activityDetial",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -142,7 +129,6 @@
       "path": "pages/home/activity/evaluate",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -150,7 +136,6 @@
       "path": "pages/shop/index",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     },
@@ -158,7 +143,6 @@
       "path": "pages/listPage/index",
       "style": {
         "navigationStyle": "custom",
-        "backgroundColor": "#1C6BFF",
         "enablePullDownRefresh": false
       }
     }
@@ -169,7 +153,7 @@
     "navigationBarTitleText": "飞进",
     "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#F1F5F8",
-    "backgroundColor": "#F1F5F8"
+    "backgroundColor": "#ffffff"
   },
   "tabBar": {
     /*///---- Pages-Tool --  合并自： pages-config/tabBar.json ----*/

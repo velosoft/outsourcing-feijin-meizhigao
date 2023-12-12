@@ -165,11 +165,15 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
+      itemsProduct:[],
       itemsLeft: [...shopList],
       itemsRight: [...shopList],
       current: 0,
       showPopu: true,
     };
+  },
+  onshow(){
+    this.spliceData(shopList) 
   },
   onReachBottom() {
     if (this.page >= 2) return;
@@ -178,11 +182,13 @@ export default {
 
     setTimeout(() => {
       this.itemsProduct = [...this.itemsProduct, ...shopList];
+      this.spliceData(this.itemsProduct);
 
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
     }, 1500);
   },
+
   methods: {
     change(e) {
       this.current = e.detail.current;
@@ -203,6 +209,15 @@ export default {
     closePopu() {
       this.showPopu = false;
       // console.log('close');
+    },
+    spliceData(val) {
+      val.forEach((item, index) => {
+        if (index % 2 == 1) {
+          this.itemsLeft.push(item);
+        } else {
+          this.itemsRight.push(item);
+        }
+      });
     },
   },
 };

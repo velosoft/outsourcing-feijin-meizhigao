@@ -1,5 +1,6 @@
 <template>
-  <view class="flex-row footer pos items-center justify-between iPhoneX">
+  <view class="footer-con iPhoneX">
+    <view class="flex-row footer pos items-center justify-between iPhoneX">
     <view class="flex-row">
       <view class="flex-col">
         <view class="flex-col items-center" @click="onCollect">
@@ -43,6 +44,7 @@
       </view>
     </view>
   </view>
+  </view>
 </template>
 
 <script>
@@ -71,6 +73,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+.footer-con{
+  padding-top: 128rpx;
+}
 .footer {
   padding: 32rpx;
   background-color: #ffffff;

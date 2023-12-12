@@ -17,7 +17,7 @@
       >
         <view class="flex-row items-center self-stretch shop-price-wrapper">
           <text class="shop-font_01">秒杀价</text>
-          <view class="flex-row items-center shrink-0 price-wrap ml-1">
+          <view class="flex-row items-start price-wrap ml-1">
             <text class="price-symbol">￥</text>
             <text class="price-number">{{ price }}</text>
             <text class="price-decimal">.00</text>
@@ -128,6 +128,7 @@ export default {
   letter-spacing: -1rpx;
 }
 .price-decimal {
+  margin-left: 4rpx;
   color: #bb3e0c;
   font-size: 20rpx;
   font-family: HarmonyOSSansSC;

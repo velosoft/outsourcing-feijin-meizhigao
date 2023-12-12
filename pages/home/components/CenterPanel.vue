@@ -12,7 +12,7 @@
         </view>
       </view>
       <view class="flex-col menu-right ml-12">
-        <navigator url="/pages/listPage/index?title=1">
+        <navigator url="/pages/listPage/index?title=1" hover-class="none">
           <view class="flex-col justify-start relative">
             <image class="course-bg pos" src="../../../static/images/course-bg.png" />
             <view
@@ -22,7 +22,7 @@
             </view>
           </view>
         </navigator>
-        <navigator url="/pages/listPage/index?title=2">
+        <navigator url="/pages/listPage/index?title=2" hover-class="none">
           <view class="flex-col justify-start relative mt-10">
             <image
               class="course-bg pos"

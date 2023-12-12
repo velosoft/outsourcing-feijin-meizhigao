@@ -20,8 +20,8 @@
               <view class="flex-col notify-con" v-if="tabCur == 0">
                 <view class="flex-col header">
                   <text class="self-start title">国庆放假通知</text>
-                  <text class="describe mt-12"
-                    >亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！</text
+                  <text class="describe line-clamp-two mt-12"
+                    >亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！亲爱的用户，本公司于9月29号开始放假，望周知，后续服务也会暂停！</text
                   >
                 </view>
                 <view
@@ -85,7 +85,7 @@ export default {
         },
       ],
       tabCur: 1,
-      items: [null, null, null, null, null, null],
+      items: [null, null, null, null, null, null,null, null, null, null, null, null,null, null, null, null, null, null,null, null, null, null, null, null,null, null, null, null, null, null],
     };
   },
 
@@ -144,6 +144,7 @@ export default {
               color: #030305;
             }
             .describe {
+              width: 650rpx;
               font-size: 24rpx;
               font-family: 苹方;
               line-height: 28rpx;

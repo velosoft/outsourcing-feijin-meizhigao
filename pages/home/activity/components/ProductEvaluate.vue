@@ -20,7 +20,7 @@
           <text class="com-font nick-name ml-8">朱**</text>
         </view>
         <view class="flex-col">
-          <text class="evaluate-text">不错，真的特别好，服务很到位施工效果也很不错，妥妥的五星好评，还会回购</text>
+          <text class="evaluate-text line-clamp-two">不错，真的特别好，服务很到位施工效果也很不错，妥妥的五星好评，还会回购</text>
         </view>
         <text class="product-type product-type-text">厨房定制收纳服务：按小时核算（元/m）</text>
       </view>
@@ -85,6 +85,7 @@
           margin-top: 8rpx;
         }
         .evaluate-text {
+          width: 650rpx;
           font-size: 24rpx;
           font-family: 苹方;
           line-height: 46rpx;

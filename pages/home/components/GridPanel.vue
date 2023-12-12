@@ -18,7 +18,9 @@
               v-for="(item, index) in items"
               :key="index"
             >
+            <view class="flex-col items-center justify-center item-image-wraper">
               <image class="item-image" :src="item.icon" />
+            </view>
               <text class="item-text">{{ item.text }}</text>
             </view>
           </view>
@@ -114,9 +116,15 @@ export default {
   padding: 24rpx 0;
   .equal-division-item {
     flex: 1 1 146rpx;
+    .item-image-wraper{
+      width: 100rpx;
+      height: 100rpx;
+      border-radius: 50%;
+      background-color: #EFE3DD;
+    }
     .item-image {
-      width: 96rpx;
-      height: 96rpx;
+      max-width: 100rpx;
+      max-height: 100rpx;
     }
     .item-text {
       margin-top: 16rpx;

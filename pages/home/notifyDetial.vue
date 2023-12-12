@@ -43,7 +43,6 @@
           line-height: 32rpx;
         }
         .time {
-          margin-left: 8rpx;
           color: #a7a7a7;
           font-size: 24rpx;
           font-family: 苹方;
