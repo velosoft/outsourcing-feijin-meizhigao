@@ -3,9 +3,9 @@
     <image class="shop-images" :src="image" mode="aspectFill" />
     <view class="flex-col shop-con">
       <text class="self-start shop-title line-two">{{ title }}</text>
-      <view class="flex-row self-stretch shop-equal-division">
+      <view class="flex-row shop-equal-division">
         <view
-          class="flex-col items-center shop-text-wrapper"
+          class="flex-col items-center justify-center shop-text-wrapper"
           v-for="(item, index) in tags"
           :key="index"
         >
@@ -87,8 +87,7 @@ export default {
   margin-left: 16rpx;
 }
 .shop-text-wrapper {
-  flex: 1 1 96rpx;
-  padding: 4rpx 0 6rpx;
+  padding: 0 12rpx;
   background-color: #fff1ed;
   border-radius: 4rpx;
   height: 28rpx;
@@ -96,7 +95,7 @@ export default {
 .shop-font_01 {
   font-size: 20rpx;
   font-family: 苹方;
-  line-height: 20rpx;
+  line-height: 24rpx;
   color: #bb3e0c;
 }
 .shop-tag {
