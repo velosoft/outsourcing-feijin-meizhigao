@@ -150,7 +150,7 @@ import CenterPanel from "../home/components/CenterPanel";
 import GridPanel from "../home/components/GridPanel";
 import RecommendedList from "../home/components/RecommendedList";
 
-import { shopList } from "../../mock/shopList/shopList";
+import { serviceList } from "../../mock/shopList/shopList";
 
 export default {
   components: { CenterPanel, ClassifyCards, GridPanel, RecommendedList },
@@ -161,16 +161,15 @@ export default {
       page: 0,
       keyword: "搜索",
       items: [null, null, null],
-      itemsProduct:[],
-      itemsLeft: [...shopList],
-      itemsRight: [...shopList],
+      itemsLeft: [...serviceList],
+      itemsRight: [...serviceList],
       current: 0,
       showPopu: true,
       notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
     };
   },
-  onshow(){
-    this.spliceData(shopList) 
+  onshow() {
+    this.spliceData(shopList);
   },
   onReachBottom() {
     if (this.page >= 2) return;
@@ -178,9 +177,8 @@ export default {
     this.page = ++this.page;
 
     setTimeout(() => {
-      this.itemsProduct = [...this.itemsProduct, ...shopList];
-      this.spliceData(this.itemsProduct);
-
+      this.list = [...this.list, ...serviceList];
+      this.spliceData(this.list);
       if (this.page >= 2) this.status = "nomore";
       else this.status = "loading";
     }, 1500);
@@ -200,12 +198,9 @@ export default {
         url: "../home/notify",
       });
     },
-    openPopu() {
-      // console.log('open');
-    },
+    openPopu() {},
     closePopu() {
       this.showPopu = false;
-      // console.log('close');
     },
     spliceData(val) {
       val.forEach((item, index) => {

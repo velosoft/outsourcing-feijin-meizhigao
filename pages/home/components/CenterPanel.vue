@@ -6,15 +6,24 @@
     </view>
     <view class="flex-row menu-wrap panel-mt-22">
       <view class="flex-col justify-start relative menu-left">
-        <image class="product-bg pos" src="../../../static/images/service-bg.png" />
+        <image
+          class="product-bg pos"
+          src="../../../static/images/service-bg.png"
+        />
         <view class="flex-col justify-start items-start relative product-con">
           <text class="product-text">商品中心</text>
         </view>
       </view>
       <view class="flex-col menu-right ml-12">
-        <navigator url="/pages/listPage/index?title=1" hover-class="none">
+        <navigator
+          url="/pages/listPage/index?title=课程中心"
+          hover-class="none"
+        >
           <view class="flex-col justify-start relative">
-            <image class="course-bg pos" src="../../../static/images/course-bg.png" />
+            <image
+              class="course-bg pos"
+              src="../../../static/images/course-bg.png"
+            />
             <view
               class="flex-col justify-start items-start relative course-con"
             >
@@ -22,7 +31,10 @@
             </view>
           </view>
         </navigator>
-        <navigator url="/pages/listPage/index?title=2" hover-class="none">
+        <navigator
+          url="/pages/listPage/index?title=服务中心"
+          hover-class="none"
+        >
           <view class="flex-col justify-start relative mt-10">
             <image
               class="course-bg pos"
