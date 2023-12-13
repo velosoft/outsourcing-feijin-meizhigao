@@ -60,7 +60,7 @@ text {
   bottom: 0 !important;
 }
 
-.tag-coupon ::v-deep .u-tag {
+.tag-coupon /deep/ .u-tag {
   height: 44rpx !important;
   line-height: 44rpx !important;
   padding: 0 12rpx !important;
@@ -69,13 +69,13 @@ text {
   border-radius: 6rpx;
 }
 
-.tag-coupon ::v-deep .u-tag__text {
+.tag-coupon /deep/ .u-tag__text {
   font-size: 22rpx !important;
   font-family: 苹方 !important;
   color: #bb3e0c !important;
 }
 
-.tag-feature ::v-deep .u-tag {
+.tag-feature /deep/ .u-tag {
   height: 44rpx !important;
   line-height: 44rpx !important;
   padding: 0 12rpx !important;
@@ -84,7 +84,7 @@ text {
   border-radius: 6rpx;
 }
 
-.tag-feature ::v-deep .u-tag__text {
+.tag-feature /deep/ .u-tag__text {
   font-size: 22rpx !important;
   font-family: 苹方 !important;
   color: #b09053 !important;
