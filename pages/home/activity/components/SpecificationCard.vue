@@ -6,7 +6,7 @@
     </view>
     <view class="flex-row justify-between group" @click="onSpecificationClick">
       <view class="flex-row self-center cell-row">
-        <text class="label">活动</text>
+        <text class="label activity-label">活动</text>
         <view class="flex-row ml-16 tag-gap tag-wrap">
           <u-tag
             class="discount-tag"
@@ -119,6 +119,10 @@ export default {
     gap: 16rpx;
     display: flex;
     flex: 1;
+  }
+  .activity-label {
+    line-height: 48rpx;;
+
   }
 }
 </style>
