@@ -33,7 +33,7 @@
         :nomore="nomore"
         @change="onChangeType"
       ></RecommendedList>
-      <FreezeWarning />
+      <!-- <FreezeWarning /> -->
     </view>
   </view>
 </template>
