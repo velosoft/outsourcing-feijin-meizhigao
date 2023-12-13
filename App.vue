@@ -14,6 +14,10 @@ export default {
 @import "uview-ui/index.scss";
 </style>
 <style lang="less">
+/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
+@import "globalStyle.less";
+</style>
+<style lang="less">
 /************************************************************
   ** 请将全局样式拷贝到项目的全局 CSS 文件或者当前页面的顶部 **
   ** 否则页面将无法正常显示                                  **
@@ -42,152 +46,6 @@ text {
 #app {
   width: 100vw;
   height: 100vh;
-}
-
-.uni-nav-bar-text {
-  color: #030305;
-  font-size: 36rpx;
-  font-family: PingFang SC Bold;
-  font-weight: 700;
-  line-height: 36rpx;
-}
-
-.border-tabs {
-  /deep/ .u-tabs__wrapper__nav {
-    border-bottom: 1rpx solid #d3d3d3 !important;
-  }
-  /deep/ .u-tabs__wrapper__nav__line {
-    bottom: 0 !important;
-  }
-}
-
-.tag-coupon {
-  /deep/ .u-tag {
-    height: 44rpx !important;
-    line-height: 44rpx !important;
-    padding: 0 12rpx !important;
-    background-color: #fdeee9 !important;
-    border: unset !important;
-    border-radius: 6rpx;
-  }
-
-  /deep/ .u-tag__text {
-    font-size: 22rpx !important;
-    font-family: 苹方 !important;
-    color: #bb3e0c !important;
-  }
-}
-
-.tag-feature {
-  /deep/ .u-tag {
-    height: 44rpx !important;
-    line-height: 44rpx !important;
-    padding: 0 12rpx !important;
-    background-color: #fff5de !important;
-    border: unset !important;
-    border-radius: 6rpx;
-  }
-  /deep/ .u-tag__text {
-    font-size: 22rpx !important;
-    font-family: 苹方 !important;
-    color: #b09053 !important;
-  }
-}
-
-.discount-tag {
-  /deep/ .u-tag--primary {
-    padding: 1rpx 10rpx;
-    border: solid 1rpx #bb3e0c;
-    background-color: unset !important;
-    border-radius: 6rpx !important;
-    margin-left: unset;
-  }
-
-  /deep/ .u-tag--medium {
-    height: 42rpx;
-  }
-
-  /deep/ .u-tag__text--primary {
-    font-size: 24rpx !important;
-    font-family: 苹方;
-    color: #bb3e0c !important;
-  }
-}
-
-// 单行文本超出显示省略
-.line-clamp-one {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-}
-
-// 文本超出两行显示省略
-.line-clamp-two {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-}
-
-.variant-selector {
-  /deep/ .items-layout {
-    gap: 20rpx;
-  }
-
-  /deep/ .item {
-    padding: 16rpx 32rpx !important;
-    border-radius: 32rpx !important;
-    border: solid 2rpx #e1e4eb !important;
-    font-size: 26rpx !important;
-    line-height: 26rpx !important;
-    color: #6c6c6c !important;
-  }
-
-  /deep/ .item__active {
-    border: solid 2rpx #b09053 !important;
-    background-color: unset !important;
-    color: #b09053 !important;
-  }
-}
-
-.service-varaint {
-  /deep/ .items-layout {
-    flex-wrap: wrap !important;
-  }
-  /deep/ .item {
-    flex: unset !important;
-  }
-}
-
-.default-tabs {
-  background-color: #ffffff;
-  /deep/ .u-tabs__wrapper__nav__item {
-    align-items: start !important;
-    padding-top: 22rpx !important;
-
-    .u-tabs__wrapper__nav__item__text {
-      font-size: 28rpx !important;
-      line-height: 28rpx !important;
-    }
-  }
-
-  /deep/ .u-tabs__wrapper__nav__line {
-    width: 44rpx !important;
-    bottom: 0 !important;
-    background-color: #b09053 !important;
-  }
-}
-
-.price-unit {
-  /deep/ .items-layout {
-    flex-wrap: wrap;
-  }
-  /deep/ .item {
-    flex: unset;
-  }
 }
 
 .flex-row {
@@ -690,6 +548,24 @@ text {
 
 .mt-100 {
   margin-top: 200rpx;
+}
+
+// 单行文本超出显示省略
+.line-clamp-one {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
+// 文本超出两行显示省略
+.line-clamp-two {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
 }
 
 /*每个页面公共css */
