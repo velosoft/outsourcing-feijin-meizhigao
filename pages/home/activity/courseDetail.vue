@@ -133,7 +133,7 @@ export default {
       },
       specificationData: {
         deliverPayment: "免运费",
-        specification: "请选择服务器规格",
+        specification: "请选择服务规格",
         tags: ["官方自营", "支持退换"],
       },
 

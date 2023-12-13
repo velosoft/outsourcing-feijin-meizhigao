@@ -8,13 +8,13 @@
               class="icon"
               src="/static/images/icon_collect_01.png"
               mode="aspectFit"
-              v-if="true"
+              v-if="isFav"
             />
             <image
               class="icon"
               src="/static/images/icon_collect_02.png"
               mode="aspectFit"
-              v-if="false"
+              v-else
             />
           </view>
           <text class="self-center text">收藏</text>
@@ -70,11 +70,15 @@ export default {
     activityStarted: Boolean,
   },
   data() {
-    return {};
+    return {
+      isFav: false,
+    };
   },
 
   methods: {
-    onCollect() {},
+    onCollect() {
+      this.isFav = !this.isFav;
+    },
     addCart() {},
     addBuy() {},
     handleClick() {
