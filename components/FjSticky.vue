@@ -172,7 +172,6 @@
           // 判断是否出于吸顶条件范围
           const fixed = top <= stickyTop
           this.fixed = fixed;
-          console.log('fixed----', fixed, top, stickyTop);
           this.$emit('change', {fixed, index: this.index});
         });
         this.contentObserver = contentObserver

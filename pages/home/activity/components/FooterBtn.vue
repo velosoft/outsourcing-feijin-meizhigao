@@ -1,70 +1,82 @@
 <template>
   <view class="footer-con iPhoneX">
     <view class="flex-row footer pos items-center justify-between iPhoneX">
-    <view class="flex-row">
-      <view class="flex-col">
-        <view class="flex-col items-center" @click="onCollect">
-          <image
-            class="icon"
-            src="/static/images/icon_collect_01.png"
-            mode="aspectFit"
-            v-if="true"
-          />
-          <image
-            class="icon"
-            src="/static/images/icon_collect_02.png"
-            mode="aspectFit"
-            v-if="false"
-          />
+      <view class="flex-row">
+        <view class="flex-col">
+          <view class="flex-col items-center" @click="onCollect">
+            <image
+              class="icon"
+              src="/static/images/icon_collect_01.png"
+              mode="aspectFit"
+              v-if="true"
+            />
+            <image
+              class="icon"
+              src="/static/images/icon_collect_02.png"
+              mode="aspectFit"
+              v-if="false"
+            />
+          </view>
+          <text class="self-center text">收藏</text>
         </view>
-        <text class="self-center text">收藏</text>
+        <view class="flex-col items-center ml-16" @click="addCart">
+          <image class="icon" src="/static/images/icon_cart_01.png" />
+          <text class="text">购物车</text>
+        </view>
       </view>
-      <view class="flex-col items-center ml-16" @click="addCart">
-        <image
-          class="icon"
-          src="/static/images/icon_cart_01.png"
-        />
-        <text class="text">购物车</text>
+      <view class="flex-col flex-1 self-center ml-16">
+        <view class="flex-row" v-if="hasActivity">
+          <u-button
+            v-if="activityStarted"
+            type="primary"
+            text="立即秒杀商品"
+            class="flex-1"
+            @click="addBuy"
+          ></u-button>
+          <u-button
+            v-else
+            disabled
+            type="primary"
+            text="15天21时00分开始秒杀"
+            class="flex-1"
+            @click="addBuy"
+          ></u-button>
+        </view>
+        <view class="flex-row" v-else>
+          <u-button
+            type="primary"
+            plain
+            text="加入购物车"
+            class="flex-1"
+            @click="addCart"
+          ></u-button>
+          <u-button
+            type="primary"
+            text="预约服务"
+            class="flex-1 ml-20"
+            @click="handleClick"
+          ></u-button>
+        </view>
       </view>
     </view>
-    <view class="flex-col flex-1 self-center ml-16">
-      <view class="flex-col justify-center items-center button text-wrapper" v-if="true" @click="addBuy">
-        <text class="btn-font btn-text-block">立即秒杀商品</text>
-      </view>
-      <view class="flex-row" v-if="false" @click="addCart">
-        <view class="flex-col ustify-center items-center btn-double btn-left">
-          <text class="btn-font btn-text-plain">加入购物车</text>
-        </view>
-        <view
-          class="flex-col ustify-center items-center btn-double btn-right ml-8"
-          @click="handleClick"
-        >
-          <text class="btn-font">预约服务</text>
-        </view>
-      </view>
-    </view>
-  </view>
   </view>
 </template>
 
 <script>
 export default {
   components: {},
-  props: {},
+  props: {
+    hasActivity: Boolean,
+    activityStarted: Boolean,
+  },
   data() {
     return {};
   },
 
   methods: {
-    onCollect(){
-
-    },
-    addCart(){
-
-    },
-    addBuy(){
-
-    },
+    onCollect() {},
+    addCart() {},
+    addBuy() {},
     handleClick() {
       this.$emit("confirm");
     },
@@ -73,7 +85,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.footer-con{
+.footer-con {
   padding-top: 128rpx;
 }
 .footer {
@@ -90,40 +102,10 @@ export default {
     line-height: 20rpx;
     color: #030305;
   }
-  .button {
-    align-self: stretch;
-    .btn-text-block {
-      font-size: 30rpx;
-      line-height: 30rpx;
-    }
-  }
-  .text-wrapper {
-    background-color: #b09053;
-    border-radius: 40rpx;
-    height: 80rpx;
-  }
-  .btn-double {
-    flex: 1 1 206rpx;
-    .btn-text-plain {
-      color: #b09053;
-    }
-  }
-  .btn-left {
-    border-radius: 40rpx;
-    height: 80rpx;
-    border-left: solid 2rpx #b09053;
-  }
-  .btn-font {
-    font-size: 28rpx;
-    font-family: 苹方;
-    line-height: 28rpx;
-    color: #ffffff;
-  }
-  .btn-right {
-    padding: 16rpx 0 40rpx;
-    background-color: #b09053;
-    border-radius: 40rpx;
-    height: 80rpx;
+  /deep/ .u-button--disabled {
+    background-color: #d3d3d3;
+    opacity: 1;
+    border-width: 0;
   }
 }
 .pos {

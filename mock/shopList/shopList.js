@@ -1,5 +1,6 @@
 export const serviceList = [
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "厨房定制收纳服务厨房定制收纳服务厨房定制收纳服务厨房定制收纳服务",
@@ -11,6 +12,7 @@ export const serviceList = [
     maxInvertory: 188,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "家庭全面清洁服务",
@@ -22,6 +24,7 @@ export const serviceList = [
     maxInvertory: 188,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "专业搬家服务，安全快捷",
@@ -33,6 +36,7 @@ export const serviceList = [
     maxInvertory: 188,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "宠物美容及寄养服务",
@@ -44,6 +48,7 @@ export const serviceList = [
     maxInvertory: 188,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "个性化家居装饰设计",
@@ -52,6 +57,7 @@ export const serviceList = [
     buyers: 40,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "专业园艺设计与维护服务",
@@ -63,6 +69,7 @@ export const serviceList = [
     maxInvertory: 188,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "高端家电维修和保养服务",
@@ -74,6 +81,7 @@ export const serviceList = [
     maxInvertory: 188,
   },
   {
+    type: "service",
     image:
       "https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6564419acc0204001240f4ec/17010692430820111285.png",
     title: "全方位汽车保养和维修服务",
@@ -88,6 +96,7 @@ export const serviceList = [
 
 export const productList = [
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "衣架防滑无痕围巾架丝",
@@ -99,6 +108,7 @@ export const productList = [
     maxInvertory: 188,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "多功能厨房刀架",
@@ -110,6 +120,7 @@ export const productList = [
     maxInvertory: 66,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "智能温度控制电热水壶",
@@ -121,6 +132,7 @@ export const productList = [
     maxInvertory: 20,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "无线蓝牙耳机，降噪高清通话",
@@ -132,6 +144,7 @@ export const productList = [
     maxInvertory: 20,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "宠物自动喂食器，智能定时定量",
@@ -143,6 +156,7 @@ export const productList = [
     maxInvertory: 20,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "LED护眼台灯，三档调光触控开关",
@@ -154,6 +168,7 @@ export const productList = [
     maxInvertory: 20,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "户外便携式折叠椅，轻便耐用",
@@ -165,6 +180,7 @@ export const productList = [
     maxInvertory: 20,
   },
   {
+    type: "product",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "全自动智能扫地机器人，低噪音大吸力",
@@ -179,6 +195,7 @@ export const productList = [
 
 export const courseList = [
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "收纳整理师中级认证课（含服务奖励）",
@@ -191,6 +208,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "全面的JavaScript编程基础课程，适合所有水平，包括初学者",
@@ -202,6 +220,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "高级烹饪技巧：从初学者到大师",
@@ -214,6 +233,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "室内设计基础与实践",
@@ -226,6 +246,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "摄影课程：初学者指南",
@@ -237,6 +258,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "学习Python：零基础到数据分析",
@@ -248,6 +270,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "园艺课程：打造你的家庭花园",
@@ -259,6 +282,7 @@ export const courseList = [
     maxInvertory: 188,
   },
   {
+    type: "course",
     image:
       "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
     title: "个人财务管理：理财与投资基础",

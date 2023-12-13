@@ -1,37 +1,26 @@
 <template>
   <view class="flex-col page">
     <NavBar
-      :title="title"
       :fixed="true"
       :isShow="false"
       background="rgba(255,255,255,0)"
     ></NavBar>
     <view class="flex-col flex-1">
       <view class="scroll-height">
-        <u-swiper
-          :list="swiperList"
-          @change="onChange"
-          :height="swiperHeight"
-          indicatorStyle="right: 20px"
-        >
-          <view
-            class="flex-col items-center indicator-wrapper"
-            slot="indicator"
-          >
-            <text class="indicator-font indicator-text"
-              >{{ currentNum + 1 }}/{{ swiperList.length }}</text
-            >
-          </view>
-        </u-swiper>
+        <DetailSwiper />
         <view class="flex-col flex-1 info">
           <ActivityCard
+            v-if="pageData.activity"
             :price="getPriceIntergetPart(pageData.product.price)"
             :decimalPrice="getPriceDecimalPart(pageData.product.price)"
             :originPrice="pageData.product.originPrice"
             :time="pageData.activity.time"
             :buyer="pageData.activity.buyer"
           ></ActivityCard>
-          <view class="flex-col relative container">
+          <view
+            class="flex-col relative container"
+            :style="{ marginTop: pageData.activity ? '-28rpx' : '' }"
+          >
             <ProductHeader
               :title="pageData.product.title"
               :content="pageData.product.content"
@@ -45,25 +34,27 @@
             ></ProductHeader>
             <specification-card
               class="wraper-top"
-              :deliverPayment="pageData.productspecificationData.deliverPayment"
-              :specification="pageData.productspecificationData.specification"
-              :tags="pageData.productspecificationData.tags"
+              :deliverPayment="specificationData.deliverPayment"
+              :specification="specificationData.specification"
+              :tags="specificationData.tags"
               :discountTags="pageData.product.discountTags"
               @onSpecificationClick="onSpecificationClick"
             ></specification-card>
             <comment-card
               class="wraper-top"
-              :comments="pageData.product.comments.slice(0, 2)"
+              :comments="pageData.comments.slice(0, 2)"
             ></comment-card>
-            <product-detail
+            <detail-card
               class="wraper-top"
               :content="pageData.product.detail"
-            ></product-detail>
-            <course-intro v-if="pageType == 2"></course-intro>
+            ></detail-card>
           </view>
         </view>
       </view>
-      <FooterBtn></FooterBtn>
+      <FooterBtn
+        :hasActivity="!!pageData.activity"
+        :activityStarted="true"
+      ></FooterBtn>
     </view>
     <PopShareTabs
       ref="popShareTabs"
@@ -92,12 +83,12 @@ import ActivityCard from "./components/ActivityCard.vue";
 import ProductHeader from "../components/ProductHeader.vue";
 import SpecificationCard from "./components/SpecificationCard.vue";
 import CommentCard from "./components/CommentCard.vue";
-import ProductDetail from "./components/ProductDetail.vue";
-import CourseIntro from "./components/CourseIntro.vue";
+import DetailCard from "./components/DetailCard.vue";
 import FooterBtn from "./components/FooterBtn.vue";
 import PopShareTabs from "../../../components/PopShareTabs.vue";
 import PopEnsure from "./components/PopEnsure.vue";
 import PopSpecification from "./components/PopSpecification.vue";
+import DetailSwiper from "./components/DetailSwiper.vue";
 import { commentList } from "../../../mock/commentList.js";
 
 export default {
@@ -108,18 +99,16 @@ export default {
     SpecificationCard,
     CommentCard,
     ProductHeader,
-    ProductDetail,
-    CourseIntro,
+    DetailCard,
     PopShareTabs,
     PopEnsure,
     PopSpecification,
+    DetailSwiper,
   },
   props: {},
   data() {
     return {
-      pageType: 0,
-      title: "",
-      swiperHeight: 0,
+      id: 0,
       pageData: {
         product: {
           title: "美之高简易衣柜思想者系列",
@@ -129,11 +118,6 @@ export default {
           discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
           tags: ["新客优惠", "新品上市", "好评推荐"],
           buyer: 100,
-          specificationData: {
-            deliverPayment: "免运费",
-            specification: "请选择服务器规格",
-            tags: ["官方自营", "支持退换"],
-          },
           detail:
             "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
         },
@@ -143,19 +127,12 @@ export default {
         },
         comments: [],
       },
+      specificationData: {
+        deliverPayment: "免运费",
+        specification: "请选择服务器规格",
+        tags: ["官方自营", "支持退换"],
+      },
 
-      swiperList: [
-        {
-          url: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-        },
-        {
-          url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
-        },
-        {
-          url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
-        },
-      ],
-      currentNum: 0,
       detail: {},
       showPopEnsure: false,
       showPopSpecification: false,
@@ -163,14 +140,9 @@ export default {
   },
   onLoad(option) {
     // 页面启动的生命周期，这里编写页面加载时的逻辑
-    console.log(option);
-    this.pageType = option.id;
+    this.id = option.id;
   },
   methods: {
-    onChange(e) {
-      // 事件处理方法
-      this.currentNum = e.current;
-    },
     onShare(uid) {
       this.$refs.popShareTabs.open();
     },
@@ -201,8 +173,7 @@ export default {
     },
   },
   mounted() {
-    this.swiperHeight = uni.upx2px(750);
-    this.pageData.product.comments = commentList;
+    this.pageData.comments = commentList;
   },
 };
 </script>
@@ -219,26 +190,9 @@ export default {
   height: 100%;
   .scroll-height {
     height: 100%;
-    .indicator-wrapper {
-      align-self: flex-end;
-      padding: 8rpx 0;
-      background-color: #0000004d;
-      border-radius: 24rpx;
-      width: 80rpx;
-      .indicator-font {
-        font-size: 24rpx;
-        font-family: 苹方;
-        line-height: 22rpx;
-        color: #ffffff;
-      }
-      .indicator-text {
-        line-height: 24rpx;
-      }
-    }
     .info {
       padding: 16rpx 20rpx 0;
       .container {
-        margin-top: -28rpx;
         .wraper-top {
           margin-top: 20rpx;
         }

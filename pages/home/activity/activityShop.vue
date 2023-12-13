@@ -183,13 +183,6 @@ export default {
         this.list = courseList;
       }
     },
-    goActivityDetail() {
-      let pageUrl = "./activityDetail?id=" + this.value + "&name=1";
-      console.log("目标页面", pageUrl);
-      uni.navigateTo({
-        url: pageUrl,
-      });
-    },
   },
   mounted() {
     this.list = productList;

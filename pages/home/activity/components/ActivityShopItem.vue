@@ -35,7 +35,7 @@
               >.{{ getPriceDecimalPart(item.price) }}</text
             >
           </view>
-          <view class="flex-col items-center btn" @click="goActivityDetail"
+          <view class="flex-col items-center btn" @click="goDetail"
             ><text class="btn-font btn-text">原价购买</text></view
           >
         </view>
@@ -58,7 +58,7 @@
         <view
           class="flex-row justify-between items-center relative btn-buy"
           v-if="activityStatus !== 2"
-          @click="goActivityDetail"
+          @click="goDetail"
         >
           <view class="flex-col items-center btn-bg-wraper btn-bg-pos">
             <image
@@ -102,6 +102,20 @@ export default {
     item: { type: Object },
     activityStatus: { type: Number },
   },
+  computed: {
+    detailUrl() {
+      switch (this.item.type) {
+        case "product":
+          return `/pages/home/activity/productDetail?id=${this.item.id || ""}`;
+        case "service":
+          return `/pages/home/activity/serviceDetail?id=${this.item.id || ""}`;
+        case "course":
+          return `/pages/home/activity/courseDetail?id=${this.item.id || ""}`;
+        default:
+          return "";
+      }
+    },
+  },
   methods: {
     getPriceIntergetPart(price) {
       let val = Math.floor(price).toString();
@@ -116,6 +130,9 @@ export default {
       if (val > 100) val = 100;
       if (val < 0) val = 0;
       return val;
+    },
+    goDetail() {
+      uni.navigateTo({ url: this.detailUrl });
     },
   },
 };

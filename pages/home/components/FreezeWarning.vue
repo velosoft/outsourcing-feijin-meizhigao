@@ -26,12 +26,12 @@
         </view>
         <image
           class="icon-tip pos-tip"
-          src="../../static/images/icon_tip_01.png"
+          src="/static/images/icon_tip_01.png"
         />
       </view>
       <image
         class="self-center close mt-24"
-        src="../../static/images/icon_close_04.png"
+        src="/static/images/icon_close_04.png"
         @click="closePopu"
       />
     </view>

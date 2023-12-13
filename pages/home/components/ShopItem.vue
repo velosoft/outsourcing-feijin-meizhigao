@@ -1,44 +1,42 @@
 <template>
-  <view>
-    <navigator url="/pages/home/activity/activityDetail?uid=0" hover-class="none">
-      <view class="flex-col shop-item">
-        <image class="shop-images" :src="image" mode="aspectFill" />
-        <view class="flex-col shop-con">
-          <text class="self-start shop-title line-two">{{ title }}</text>
-          <view class="flex-row shop-equal-division">
-            <view
-              class="flex-col items-center justify-center shop-text-wrapper"
-              v-for="(item, index) in tags"
-              :key="index"
-            >
-              <text class="shop-font_01 shop-tag">{{ item }}</text>
-            </view>
-          </view>
+  <navigator :url="detailUrl" hover-class="none">
+    <view class="flex-col shop-item">
+      <image class="shop-images" :src="image" mode="aspectFill" />
+      <view class="flex-col shop-con">
+        <text class="self-start shop-title line-two">{{ title }}</text>
+        <view class="flex-row shop-equal-division">
           <view
-            class="flex-row justify-between items-center self-stretch shop-group"
+            class="flex-col items-center justify-center shop-text-wrapper"
+            v-for="(item, index) in tags"
+            :key="index"
           >
-            <view class="flex-row items-start self-stretch">
-              <text class="shop-font_01">{{ discount }}</text>
-              <view class="flex-row items-start ml-1">
-                <text class="price-symbol">￥</text>
-                <text class="price-number">{{ priceIntergetPart }}</text>
-                <text class="price-decimal">.{{ priceDecimalPart }}</text>
-              </view>
-            </view>
-            <text class="self-stretch buyers-text">{{
-              buyers + "人购买"
-            }}</text>
+            <text class="shop-font_01 shop-tag">{{ item }}</text>
           </view>
         </view>
+        <view
+          class="flex-row justify-between items-center self-stretch shop-group"
+        >
+          <view class="flex-row items-start self-stretch">
+            <text class="shop-font_01">{{ discount }}</text>
+            <view class="flex-row items-start ml-1">
+              <text class="price-symbol">￥</text>
+              <text class="price-number">{{ priceIntergetPart }}</text>
+              <text class="price-decimal">.{{ priceDecimalPart }}</text>
+            </view>
+          </view>
+          <text class="self-stretch buyers-text">{{ buyers + "人购买" }}</text>
+        </view>
       </view>
-    </navigator>
-  </view>
+    </view>
+  </navigator>
 </template>
 
 <script>
 export default {
   components: {},
   props: {
+    itemId: String,
+    type: String,
     image: { type: String, default: `` },
     title: { type: String, default: `` },
     tags: { type: Array, default: () => [] },
@@ -58,7 +56,20 @@ export default {
       let val = this.price.toFixed(2).split(".")[1];
       return val;
     },
+    detailUrl() {
+      switch (this.type) {
+        case "product":
+          return `/pages/home/activity/productDetail?id=${this.itemId || ""}`;
+        case "service":
+          return `/pages/home/activity/serviceDetail?id=${this.itemId || ""}`;
+        case "course":
+          return `/pages/home/activity/courseDetail?id=${this.itemId || ""}`;
+        default:
+          return "";
+      }
+    },
   },
+  methods: {},
 };
 </script>
 

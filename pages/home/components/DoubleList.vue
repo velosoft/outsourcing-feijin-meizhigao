@@ -6,6 +6,8 @@
           <ShopItem
             v-for="(item, index) in itemsLeft"
             :key="index"
+            :itemId="item.id"
+            :type="item.type"
             :image="item.image"
             :title="item.title"
             :tags="item.tags"
@@ -19,6 +21,8 @@
             class="shop-relative"
             v-for="(item, index) in itemsRight"
             :key="index"
+            :itemId="item.id"
+            :type="item.type"
             :image="item.image"
             :title="item.title"
             :tags="item.tags"
@@ -51,6 +55,8 @@ export default {
     items: {
       immediata: true,
       handler(newVal, olderVal) {
+        this.itemsLeft = [];
+        this.itemsRight = [];
         this.spliceData(newVal);
       },
       deep: true,

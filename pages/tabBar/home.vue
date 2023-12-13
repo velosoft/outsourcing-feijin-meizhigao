@@ -23,16 +23,12 @@
       <CenterPanel class="box-top"></CenterPanel>
       <GridPanel class="box-top"></GridPanel>
       <MemberBox />
-      <ListContainer
-        :showEmpty="!itemsLeft.length && !itemsRight.length"
-        :showLoading="true"
-      >
-        <RecommendedList
-          class="section_13"
-          :itemsLeft="itemsLeft"
-          :itemsRight="itemsRight"
-        ></RecommendedList>
-      </ListContainer>
+      <RecommendedList
+        class="section_13"
+        :list="list"
+        :nomore="nomore"
+        @change="onChangeType"
+      ></RecommendedList>
       <FreezeWarning />
     </view>
   </view>
@@ -43,13 +39,16 @@ import ClassifyCards from "../home/components/ClassifyCards";
 import CenterPanel from "../home/components/CenterPanel";
 import GridPanel from "../home/components/GridPanel";
 import RecommendedList from "../home/components/RecommendedList";
-import { serviceList } from "../../mock/shopList/shopList";
 import NavBar from "../../components/NavBar/NavBar.vue";
 import GoSearch from "../../components/GoSearch/GoSearch.vue";
-import BannerSwiper from "../../components/BannerSwiper/BannerSwiper.vue";
+import BannerSwiper from "../home/components/BannerSwiper.vue";
 import MemberBox from "../../components/MemberBox/MemberBox.vue";
-import FreezeWarning from "../../components/FreezeWarning/FreezeWarning.vue";
-import ListContainer from "../../components/ListContainer/ListContainer.vue";
+import FreezeWarning from "../home/components/FreezeWarning.vue";
+import {
+  productList,
+  serviceList,
+  courseList,
+} from "../../mock/shopList/shopList";
 
 export default {
   components: {
@@ -62,49 +61,52 @@ export default {
     BannerSwiper,
     MemberBox,
     FreezeWarning,
-    ListContainer,
   },
   props: {},
   data() {
     return {
-      status: "loadmore",
-      page: 0,
-      keyword: "搜索",
-      itemsLeft: [...serviceList],
-      itemsRight: [...serviceList],
       notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
+      list: productList,
+      type: 0,
+      page: 1,
+      nomore: false,
     };
   },
-  onshow() {
-    this.spliceData(shopList);
-  },
   onReachBottom() {
-    if (this.page >= 2) return;
-    this.status = "loading";
-    this.page = ++this.page;
+    if (this.page >= 2) {
+      this.nomore = true;
+      return;
+    }
+    this.nomore = false;
 
     setTimeout(() => {
-      this.list = [...this.list, ...serviceList];
-      this.spliceData(this.list);
-      if (this.page >= 2) this.status = "nomore";
-      else this.status = "loading";
+      this.list = this.list.concat(this.getNextPage());
     }, 1500);
   },
-
   methods: {
     goNotify() {
       uni.navigateTo({
         url: "../home/notify",
       });
     },
-    spliceData(val) {
-      val.forEach((item, index) => {
-        if (index % 2 == 1) {
-          this.itemsLeft.push(item);
-        } else {
-          this.itemsRight.push(item);
-        }
-      });
+    onChangeType(type) {
+      this.type = type;
+      this.page = 0;
+      this.list = this.getNextPage();
+    },
+    getNextPage() {
+      this.page++;
+
+      switch (this.type) {
+        case 0:
+          return productList;
+        case 1:
+          return serviceList;
+        case 2:
+          return courseList;
+        default:
+          return [];
+      }
     },
   },
 };
@@ -114,8 +116,6 @@ export default {
 .page {
   background-color: #ffffff;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   height: 100%;
 
   .logo {
@@ -123,7 +123,6 @@ export default {
     height: 54rpx;
   }
   .home-con {
-    overflow-y: auto;
     .search-box {
       padding: 20rpx 30rpx 20rpx;
       .search-right {

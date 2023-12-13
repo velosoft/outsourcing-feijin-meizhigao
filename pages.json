@@ -20,7 +20,7 @@
         "navigationBarTitleText": "标签页 Tabs"
       }
     },
-    
+
     {
       "path": "pages/showcase/selector",
       "style": {
@@ -133,7 +133,21 @@
       }
     },
     {
-      "path": "pages/home/activity/activityDetail",
+      "path": "pages/home/activity/productDetail",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/home/activity/serviceDetail",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/home/activity/courseDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

@@ -10,7 +10,7 @@
       <swiper-item v-for="(item, index) in items" :key="index">
         <image
           class="swiper-images"
-          src="../../static/mock/home-swiper-image.png"
+          src="/static/mock/home-swiper-image.png"
           mode="aspectFill"
           lazy-load="false"
         >
