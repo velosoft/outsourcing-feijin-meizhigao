@@ -3,7 +3,8 @@
     <NavBar
       :fixed="true"
       :isShow="false"
-      background="rgba(255,255,255,0)"
+      :background="navBarColor"
+      :title="pageTitle"
     ></NavBar>
     <view class="flex-col flex-1">
       <view class="scroll-height">
@@ -112,6 +113,9 @@ export default {
   data() {
     return {
       id: 0,
+      isShowNavbar: false,
+      navBarColor: "transparent",
+      pageTitle: "",
       pageData: {
         product: {
           title: "美之高简易衣柜思想者系列",
@@ -147,6 +151,22 @@ export default {
         time: 108000000,
         buyer: 100,
       };
+    }
+  },
+  onPageScroll(e) {
+    // 页面滚动时执行
+    if (e.scrollTop > 10) {
+      if (!this.isShowNavbar) {
+        this.isShowNavbar = true;
+        this.pageTitle = "详情页";
+        this.navBarColor = "#ffffff";
+      }
+    } else {
+      if (this.isShowNavbar) {
+        this.isShowNavbar = false;
+        this.pageTitle = "";
+        this.navBarColor = "transparent";
+      }
     }
   },
   methods: {
