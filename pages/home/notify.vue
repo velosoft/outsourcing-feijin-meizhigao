@@ -1,13 +1,13 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" title="消息"></NavBar>
-    <Tabs
+    <nav-bar :hasBack="true" title="消息"></nav-bar>
+    <tabs
       class="section_5"
       :tabList="tabList"
       :TabCur="tabCur"
       @tabChange="onTabChange"
-    ></Tabs>
-    <ListContainer :showEmpty="!items.length" :showLoading="showLoading">
+    ></tabs>
+    <list-container :showEmpty="!items.length" :showLoading="showLoading">
       <view class="flex-col justify-start content">
         <view class="flex-col list">
           <view
@@ -55,7 +55,7 @@
           </view>
         </view>
       </view>
-    </ListContainer>
+    </list-container>
   </view>
 </template>
 
