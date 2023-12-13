@@ -20,6 +20,7 @@
         "navigationBarTitleText": "标签页 Tabs"
       }
     },
+    
     {
       "path": "pages/showcase/selector",
       "style": {
@@ -59,6 +60,19 @@
       "path": "pages/showcase/numberbox/case2",
       "style": {
         "navigationStyle": "default",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/showcase/sticky/index",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "吸顶布局 Sticky"
+      }
+    },
+    {
+      "path": "pages/showcase/sticky/case1",
+      "style": {
         "enablePullDownRefresh": false
       }
     },

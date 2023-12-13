@@ -11,9 +11,15 @@
       <u-cell title="按钮 Button" isLink url="/pages/showcase/button"></u-cell>
       <u-cell title="单选 Radio" isLink url="/pages/showcase/radio"></u-cell>
       <u-cell
-        title="Number Box"
+        title="数字加减 Number Box"
         isLink
         url="/pages/showcase/numberbox/index"
+      ></u-cell>
+
+      <u-cell
+        title="吸顶布局 Sticky"
+        isLink
+        url="/pages/showcase/sticky/index"
       ></u-cell>
     </u-cell-group>
   </view>
