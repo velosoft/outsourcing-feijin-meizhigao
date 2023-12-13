@@ -2,11 +2,11 @@
   <view class="flex-row list-item mt-8">
     <image class="left" src="/static/images/image_shop_01.png" />
     <view class="flex-col flex-1 right ml-10">
-      <view class="flex-col">
+      <view class="flex-col title-wrapper">
         <text class="self-stretch product-title line-clamp-two">{{
           item.title
         }}</text>
-        <view class="flex-row self-stretch mt-6 tag-wraper">
+        <view class="flex-row self-stretch mt-4 tag-wraper">
           <view
             class="flex-col tag"
             v-for="(tag, index) in item.tags || []"
@@ -15,11 +15,11 @@
             <text class="tag-font">{{ tag }}</text>
           </view>
         </view>
-        <text class="product-price-font price-through mt-6">{{
-          item.originPrice
-        }}</text>
       </view>
       <view class="flex-col">
+        <text class="product-price-font price-through mt-4">{{
+          item.originPrice
+        }}</text>
         <view
           class="bottom-top flex-row justify-between items-center"
           v-if="activityStatus == 2"
@@ -159,6 +159,10 @@ export default {
   }
   .right {
     margin-top: 8rpx;
+
+    .title-wrapper {
+      min-height: 120rpx;
+    }
     .product-title {
       // width: 187rpx;
       font-size: 28rpx;
@@ -263,8 +267,8 @@ export default {
         }
       }
       .btn-right {
-        margin-top: 10rpx;
-        margin-right: 14rpx;
+        margin-top: 6rpx;
+        margin-right: 18rpx;
       }
     }
     .price-font {

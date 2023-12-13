@@ -28,6 +28,7 @@
             <view class="flex-col">
               <view class="flex-col list">
                 <ActivityShopItem
+                  class="list-item"
                   v-for="(item, index) in list"
                   :key="index"
                   :item="item"
@@ -223,6 +224,14 @@ export default {
         padding: 20rpx;
         background-image: linear-gradient(86.8deg, #fbebbc 4.9%, #fefde2 95.3%);
         border-radius: 0rpx 0rpx 16rpx 16rpx;
+
+        .list-item {
+          margin-top: 16rpx;
+        }
+
+        .list-item:first-child {
+          margin-top: 0;
+        }
       }
     }
   }
