@@ -13,7 +13,7 @@
         :finished="finished"
       >
         <view class="flex-col">
-          <EvaluateItem
+          <CommentItem
             v-for="(item, index) in comments"
             class="list-item"
             :key="index"
@@ -36,11 +36,11 @@
 <script>
 import ListContainer from "../../../components/ListContainer/ListContainer.vue";
 import NavBar from "../../../components/NavBar/NavBar.vue";
-import EvaluateItem from "./components/EvaluateItem.vue";
+import CommentItem from "./components/CommentItem.vue";
 import { commentList } from "../../../mock/commentList";
 
 export default {
-  components: { ListContainer, NavBar, EvaluateItem },
+  components: { ListContainer, NavBar, CommentItem },
   props: {},
   data() {
     return {

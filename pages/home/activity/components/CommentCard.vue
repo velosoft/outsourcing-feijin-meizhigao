@@ -40,7 +40,7 @@ export default {
     goEvaluate(args) {
       // 事件处理方法
       uni.navigateTo({
-        url: "/pages/home/activity/evaluate",
+        url: "/pages/home/activity/comment",
       });
     },
   },
