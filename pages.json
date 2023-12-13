@@ -119,7 +119,7 @@
       }
     },
     {
-      "path": "pages/home/activity/activityDetial",
+      "path": "pages/home/activity/activityDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

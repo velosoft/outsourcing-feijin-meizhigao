@@ -2,8 +2,8 @@
   <view class="loadingComp">
     <view class="loading-box">
       <u-loadmore
-        :fontSize="28"
-        :iconSize="30"
+        :fontSize="14"
+        :iconSize="16"
         :status="status"
         :loadingText="loadingText"
         :nomoreText="nomoreText"

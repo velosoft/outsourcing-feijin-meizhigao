@@ -1,12 +1,6 @@
 <template>
   <view class="page flex-col">
-    <uni-nav-bar
-      :border="false"
-      :shadow="false"
-      height="88rpx"
-      status-bar
-      title="商城"
-    />
+    <NavBar title="商城"></NavBar>
     <view class="flex-row siderbar-container">
       <view class="sider-bar">
         <view
@@ -196,11 +190,6 @@ export default {
     goto(url) {
       uni.navigateTo({
         url: url,
-      });
-    },
-    back() {
-      uni.navigateBack({
-        delta: 1,
       });
     },
   },

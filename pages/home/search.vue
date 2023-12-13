@@ -23,29 +23,29 @@
               @click="clearHistory"
             />
           </view>
-          <ToggleBtn
+          <ToggleList
             class="equal-division mt-14"
             :tabsArray="tabsArray"
             @onClick="onClick"
             @onClose="onClose"
-          ></ToggleBtn>
+          />
         </view>
       </view>
       <view class="flex-col" v-else>
         <Tabs :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></Tabs>
         <ListContainer :showEmpty="showEmpty" :showLoading="showLoading">
           <view>
-            <DoubleList class="section_13" :items="list"></DoubleList>
+            <DoubleList :items="list"></DoubleList>
           </view>
         </ListContainer>
       </view>
     </view>
-    <DialogBtn
+    <ConfirmPanel
       :isShow="showDialog"
       :isnormal="false"
       @cancel="onCancel"
       @confirm="onConfirm"
-    ></DialogBtn>
+    ></ConfirmPanel>
   </view>
 </template>
 
@@ -55,9 +55,8 @@ import Tabs from "../../components/Tabs.vue";
 import Search from "../../components/Search.vue";
 import ListContainer from "../../components/ListContainer/ListContainer.vue";
 import DoubleList from "./components/DoubleList.vue";
-import DialogBtn from "../../components/DialogBtn.vue";
-import ToggleBtn from "../../components/toggleBtn.vue";
-
+import ConfirmPanel from "../../components/ConfirmPanel.vue";
+import ToggleList from "../../components/ToggleList.vue";
 import { serviceList } from "../../mock/shopList/shopList";
 
 export default {
@@ -67,8 +66,8 @@ export default {
     Search,
     ListContainer,
     DoubleList,
-    DialogBtn,
-    ToggleBtn,
+    ConfirmPanel,
+    ToggleList,
   },
   props: {},
   data() {

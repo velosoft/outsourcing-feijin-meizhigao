@@ -1,6 +1,6 @@
 <template>
   <view>
-    <navigator url="/pages/home/activity/activityDetial?uid=0" hover-class="none">
+    <navigator url="/pages/home/activity/activityDetail?uid=0" hover-class="none">
       <view class="flex-col shop-item">
         <image class="shop-images" :src="image" mode="aspectFill" />
         <view class="flex-col shop-con">

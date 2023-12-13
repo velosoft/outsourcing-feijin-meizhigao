@@ -43,7 +43,6 @@
               bindload=""
             >
             </image>
-            <slot name="left" />
           </view>
           <slot name="left" />
         </view>

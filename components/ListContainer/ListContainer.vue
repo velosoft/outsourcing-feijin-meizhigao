@@ -1,5 +1,5 @@
 <template>
-  <view class="listContainerComp">
+  <view class="listContainerComp relative">
     <Empty
       class="flex-1"
       width="408"

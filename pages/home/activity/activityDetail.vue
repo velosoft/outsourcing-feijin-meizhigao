@@ -6,8 +6,8 @@
       :isShow="false"
       background="rgba(255,255,255,0)"
     ></NavBar>
-    <view class="flex-col flex-1 footer">
-      <scroll-view class="scroll-height" :scroll-y="true">
+    <view class="flex-col flex-1">
+      <view class="scroll-height">
         <u-swiper
           :list="swiperList"
           @change="onChange"
@@ -32,7 +32,6 @@
             :buyer="pageData.activity.buyer"
           ></ActivityCard>
           <view class="flex-col relative container">
-            
             <ProductHeader
               :title="pageData.product.title"
               :content="pageData.product.content"
@@ -46,15 +45,21 @@
             ></ProductHeader>
             <ProductBenefit
               class="wraper-top"
-              v-if="pageType==0"
+              v-if="pageType == 0"
               @onSelectService="onSelectService"
             ></ProductBenefit>
-            <ProductEvaluate class="wraper-top" v-if="pageType==0"></ProductEvaluate>
-            <ProdutDetial class="wraper-top" v-if="pageType==0"></ProdutDetial>
-            <CourseIntro v-if="pageType==2"></CourseIntro>
+            <ProductEvaluate
+              class="wraper-top"
+              v-if="pageType == 0"
+            ></ProductEvaluate>
+            <ProdutDetial
+              class="wraper-top"
+              v-if="pageType == 0"
+            ></ProdutDetial>
+            <CourseIntro v-if="pageType == 2"></CourseIntro>
           </view>
         </view>
-      </scroll-view>
+      </view>
       <FooterBtn></FooterBtn>
     </view>
     <PopShareTabs
@@ -88,6 +93,7 @@ import PopSpecification from "./components/PopSpecification.vue";
 
 export default {
   components: {
+    NavBar,
     ActivityCard,
     FooterBtn,
     ProductBenefit,
@@ -139,10 +145,10 @@ export default {
     };
   },
   onLoad(option) {
-			// 页面启动的生命周期，这里编写页面加载时的逻辑
-      console.log(option)
-      this.pageType=option.id
-	},
+    // 页面启动的生命周期，这里编写页面加载时的逻辑
+    console.log(option);
+    this.pageType = option.id;
+  },
   methods: {
     onChange(e) {
       // 事件处理方法

@@ -1,15 +1,6 @@
 <template>
   <view class="flex-col page">
-    <uni-nav-bar
-      :fixed="true"
-      :border="false"
-      :status-bar="true"
-      backgroundColor="#ffffff00"
-      class="nav-bar"
-      height="88rpx"
-      left-icon="left"
-      @clickLeft="back"
-    />
+    <NavBar></NavBar>
     <view class="flex-col flex-1 shop-detail">
       <view class="flex-col relative">
         <swiper
@@ -220,8 +211,9 @@
 </template>
 
 <script>
+import NavBar from "../../components/NavBar/NavBar.vue";
 export default {
-  components: {},
+  components: { NavBar },
   props: {},
   data() {
     return {
@@ -236,11 +228,6 @@ export default {
   methods: {
     swiperChange(e) {
       this.swiperCurrent = e.detail.current + 1;
-    },
-    back() {
-      uni.navigateBack({
-        delta: 1,
-      });
     },
   },
 };
