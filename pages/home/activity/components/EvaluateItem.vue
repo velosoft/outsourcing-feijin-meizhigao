@@ -3,34 +3,35 @@
     <view class="flex-col">
       <view class="flex-row justify-between">
         <view class="flex-row">
-          <image
-            class="shrink-0 avatar"
-            src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=icon_avatar.png"
-          />
-          <text class="self-start title-font nickname ml-6">朱**</text>
+          <image class="shrink-0 avatar" :src="avatar" />
+          <text class="self-start title-font nickname ml-6">{{ name }}</text>
         </view>
-        <text class="self-start side-font time-text">2023-07-18</text>
+        <text class="self-start side-font time-text">{{ date }}</text>
       </view>
       <view class="flex-row items-center evaluate">
         <text class="self-start title-font">综合评分:</text>
-        <Rate class="justify-center"></Rate>
+        <rate class="justify-center" :rating="overallRating"></rate>
       </view>
       <view class="flex-col justify-start items-center evaluate">
         <text class="evaluate-text">
-          商品收纳位置大，质量妥妥商品收纳位置大，质量妥妥商品收纳位置大，质量妥妥
+          {{ content }}
         </text>
       </view>
     </view>
     <view class="flex-col mt-20">
       <text class="self-start title-font">服务评价</text>
       <view class="flex-col self-stretch mt-20">
-        <view
-          class="flex-row items-center justify-between evaluate"
-          v-for="(item, i) in items_1"
-          :key="i"
-        >
+        <view class="flex-row items-center justify-between evaluate">
           <text class="self-start evaluate-label">整体满意度</text>
-          <Rate></Rate>
+          <rate :rating="satisfactionLevelRating"></rate>
+        </view>
+        <view class="flex-row items-center justify-between evaluate">
+          <text class="self-start evaluate-label">人员专业素养</text>
+          <rate :rating="professionalSkillRating"></rate>
+        </view>
+        <view class="flex-row items-center justify-between evaluate">
+          <text class="self-start evaluate-label">服务态度</text>
+          <rate :rating="serviceAttitudeRating"></rate>
         </view>
       </view>
       <view class="flex-col justify-start items-center self-stretch mt-20">
@@ -48,14 +49,44 @@ import Rate from "./Rate.vue";
 export default {
   components: { Rate },
   props: {
-    item: { type: Object },
+    avatar: {
+      type: String,
+      default: "",
+    },
+    name: {
+      type: String,
+      default: "",
+    },
+    date: {
+      type: String,
+      default: "",
+    },
+    overallRating: {
+      type: Number,
+      default: 0,
+    },
+    satisfactionLevelRating: {
+      type: Number,
+      default: 0,
+    },
+    professionalSkillRating: {
+      type: Number,
+      default: 0,
+    },
+    serviceAttitudeRating: {
+      type: Number,
+      default: 0,
+    },
+    content: {
+      type: String,
+      default: "",
+    },
   },
   data() {
-    return {
-      items_1: [null, null, null],
-    };
+    return {};
   },
   methods: {},
+  mounted() {},
 };
 </script>
 

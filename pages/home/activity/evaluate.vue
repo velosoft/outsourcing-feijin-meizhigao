@@ -8,15 +8,22 @@
     ></NavBar>
     <view class="flex-col flex-1 container">
       <list-container
-        :showEmpty="showEmpty"
+        :showEmpty="!comments.length"
         :showLoading="showLoading"
         :finished="finished"
       >
         <view class="flex-col">
           <EvaluateItem
-            v-for="(item, index) in items"
+            v-for="(item, index) in comments"
             :key="index"
-            :item="item"
+            :avatar="item.avatar"
+            :name="item.name"
+            :date="item.date"
+            :overallRating="item.overallRating"
+            :satisfactionLevelRating="item.satisfactionLevelRating"
+            :professionalSkillRating="item.professionalSkillRating"
+            :serviceAttitudeRating="item.serviceAttitudeRating"
+            :content="item.content"
           />
         </view>
       </list-container>
@@ -28,6 +35,7 @@
 import ListContainer from "../../../components/ListContainer/ListContainer.vue";
 import NavBar from "../../../components/NavBar/NavBar.vue";
 import EvaluateItem from "./components/EvaluateItem.vue";
+import { commentList } from "../../../mock/commentList";
 
 export default {
   components: { ListContainer, NavBar, EvaluateItem },
@@ -38,11 +46,14 @@ export default {
       showEmpty: false,
       showLoading: false,
       finished: false,
-      items: [null, null],
+      comments: [],
     };
   },
 
   methods: {},
+  mounted() {
+    this.comments = commentList;
+  },
 };
 </script>
 
