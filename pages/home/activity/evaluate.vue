@@ -15,6 +15,7 @@
         <view class="flex-col">
           <EvaluateItem
             v-for="(item, index) in comments"
+            class="list-item"
             :key="index"
             :avatar="item.avatar"
             :name="item.name"
@@ -75,6 +76,13 @@ export default {
   height: 100%;
   .container {
     padding: 24rpx 20rpx 48rpx;
+  }
+
+  .list-item {
+    margin-top: 20rpx;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 </style>
