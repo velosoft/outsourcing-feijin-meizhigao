@@ -152,6 +152,9 @@ export default {
   /deep/ .u-tabs {
     background-color: #ffffff;
   }
+  /deep/ .u-tabs__wrapper__nav__item {
+    height: 80rpx !important;
+  }
 }
 
 .left-list {
