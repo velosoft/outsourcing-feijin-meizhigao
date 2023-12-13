@@ -10,6 +10,12 @@ export const commentList = [
     satisfactionLevelRating: 4,
     professionalSkillRating: 5,
     serviceAttitudeRating: 5,
+    imageList: [
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+    ],
   },
   {
     avatar: "/static/images/avatar.png",
@@ -27,6 +33,9 @@ export const commentList = [
     satisfactionLevelRating: 1,
     professionalSkillRating: 1,
     serviceAttitudeRating: 1,
+    imageList: [
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+    ],
   },
   {
     avatar: "/static/images/avatar.png",
@@ -49,6 +58,13 @@ export const commentList = [
     satisfactionLevelRating: 3,
     professionalSkillRating: 2,
     serviceAttitudeRating: 1,
+    imageList: [
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+    ],
   },
   {
     avatar: "/static/images/avatar.png",
@@ -60,6 +76,7 @@ export const commentList = [
     satisfactionLevelRating: 3,
     professionalSkillRating: 2,
     serviceAttitudeRating: 1,
+    imageList: [],
   },
   {
     avatar: "/static/images/avatar.png",
@@ -71,6 +88,9 @@ export const commentList = [
     satisfactionLevelRating: 3,
     professionalSkillRating: 2,
     serviceAttitudeRating: 1,
+    imageList: [
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+    ],
   },
   {
     avatar: "/static/images/avatar.png",
@@ -82,6 +102,10 @@ export const commentList = [
     satisfactionLevelRating: 3,
     professionalSkillRating: 2,
     serviceAttitudeRating: 1,
+    imageList: [
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+    ],
   },
   {
     avatar: "/static/images/avatar.png",
@@ -93,5 +117,9 @@ export const commentList = [
     satisfactionLevelRating: 3,
     professionalSkillRating: 2,
     serviceAttitudeRating: 1,
+    imageList: [
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+      "https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png",
+    ],
   },
 ];

@@ -8,11 +8,11 @@
         </view>
         <text class="self-start side-font time-text">{{ date }}</text>
       </view>
-      <view class="flex-row items-center evaluate">
-        <text class="self-start title-font">综合评分:</text>
-        <rate class="justify-center" :rating="overallRating"></rate>
+      <view class="flex-row items-center mt-12">
+        <text class="self-center title-font">综合评分:</text>
+        <rate class="justify-center ml-6" :rating="overallRating"></rate>
       </view>
-      <view class="flex-col justify-start items-center evaluate">
+      <view class="flex-col justify-start items-center mt-12">
         <text class="evaluate-text">
           {{ content }}
         </text>
@@ -21,23 +21,25 @@
     <view class="flex-col mt-20">
       <text class="self-start title-font">服务评价</text>
       <view class="flex-col self-stretch mt-20">
-        <view class="flex-row items-center justify-between evaluate">
+        <view class="flex-row items-center justify-between">
           <text class="self-start evaluate-label">整体满意度</text>
           <rate :rating="satisfactionLevelRating"></rate>
         </view>
-        <view class="flex-row items-center justify-between evaluate">
+        <view class="flex-row items-center justify-between mt-12">
           <text class="self-start evaluate-label">人员专业素养</text>
           <rate :rating="professionalSkillRating"></rate>
         </view>
-        <view class="flex-row items-center justify-between evaluate">
+        <view class="flex-row items-center justify-between mt-12">
           <text class="self-start evaluate-label">服务态度</text>
           <rate :rating="serviceAttitudeRating"></rate>
         </view>
       </view>
-      <view class="flex-col justify-start items-center self-stretch mt-20">
+      <view class="flex-row mt-20 image-wrap">
         <image
-          class="ai-background-image"
-          src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=ee395177d17a63a7161859408151544f.png"
+          v-for="(src, index) in imageList"
+          :key="index"
+          class="content-image"
+          :src="src"
         />
       </view>
     </view>
@@ -80,6 +82,10 @@ export default {
     content: {
       type: String,
       default: "",
+    },
+    imageList: {
+      type: Array,
+      default: () => [],
     },
   },
   data() {
@@ -124,30 +130,33 @@ export default {
     font-size: 24rpx;
     line-height: 24rpx;
   }
-  .evaluate {
-    margin-top: 24rpx;
-    .image_1 {
-      margin-left: 8rpx;
-    }
-    .evaluate-text {
-      font-size: 28rpx;
-      font-family: 苹方;
-      line-height: 48rpx;
-      color: #030305;
-    }
-    &:first-child {
-      margin-top: 0;
-    }
-    .evaluate-label {
-      font-size: 28rpx;
-      font-family: 苹方;
-      line-height: 28rpx;
-      color: #6c6c6c;
-    }
+  .evaluate-text {
+    font-size: 28rpx;
+    font-family: 苹方;
+    line-height: 48rpx;
+    color: #030305;
   }
-  .ai-background-image {
-    width: 654rpx;
+  &:first-child {
+    margin-top: 0;
+  }
+  .evaluate-label {
+    font-size: 28rpx;
+    font-family: 苹方;
+    line-height: 28rpx;
+    color: #6c6c6c;
+  }
+
+  .image-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 14rpx;
+  }
+
+  .content-image {
+    width: 152rpx;
     height: 152rpx;
+    border-radius: 10rpx;
   }
 }
 </style>

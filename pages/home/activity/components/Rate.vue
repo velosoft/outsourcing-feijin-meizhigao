@@ -10,7 +10,7 @@
       inactiveColor="#f0f0f0"
       size="18"
     ></u-rate>
-    <text class="side-font ml-6">{{ rating }}分</text>
+    <text class="side-font ml-4">{{ rating }}分</text>
   </view>
 </template>
 

@@ -24,6 +24,7 @@
             :professionalSkillRating="item.professionalSkillRating"
             :serviceAttitudeRating="item.serviceAttitudeRating"
             :content="item.content"
+            :imageList="item.imageList"
           />
         </view>
       </list-container>
