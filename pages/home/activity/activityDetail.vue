@@ -45,15 +45,15 @@
             ></ProductHeader>
             <specification-card
               class="wraper-top"
-              :deliverPayment="specificationData.deliverPayment"
-              :specification="specificationData.specification"
-              :tags="specificationData.tags"
+              :deliverPayment="pageData.productspecificationData.deliverPayment"
+              :specification="pageData.productspecificationData.specification"
+              :tags="pageData.productspecificationData.tags"
               :discountTags="pageData.product.discountTags"
               @onSpecificationClick="onSpecificationClick"
             ></specification-card>
             <comment-card
               class="wraper-top"
-              :comments="pageData.comments.slice(0, 2)"
+              :comments="pageData.product.comments.slice(0, 2)"
             ></comment-card>
             <product-detail
               class="wraper-top"
@@ -129,6 +129,11 @@ export default {
           discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
           tags: ["新客优惠", "新品上市", "好评推荐"],
           buyer: 100,
+          specificationData: {
+            deliverPayment: "免运费",
+            specification: "请选择服务器规格",
+            tags: ["官方自营", "支持退换"],
+          },
           detail:
             "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
         },
@@ -136,13 +141,8 @@ export default {
           time: 108000000,
           buyer: 100,
         },
+        comments: [],
       },
-      specificationData: {
-        deliverPayment: "免运费",
-        specification: "请选择服务器规格",
-        tags: ["官方自营", "支持退换"],
-      },
-      comments: [],
 
       swiperList: [
         {
@@ -202,7 +202,7 @@ export default {
   },
   mounted() {
     this.swiperHeight = uni.upx2px(750);
-    this.pageData.comments = commentList;
+    this.pageData.product.comments = commentList;
   },
 };
 </script>
