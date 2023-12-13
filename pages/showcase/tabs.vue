@@ -147,7 +147,10 @@ export default {
 }
 
 .default-tabs {
-  background-color: #ffffff;
+  /deep/ .u-tabs {
+    background-color: #ffffff;
+  }
+
   /deep/ .u-tabs__wrapper__nav__item {
     align-items: start !important;
     padding-top: 22rpx !important;
@@ -205,7 +208,7 @@ export default {
     justify-content: flex-start !important;
     // padding-top: 20rpx !important;
     padding-left: 0;
-    padding-right: 30rpx; 
+    padding-right: 30rpx;
     height: unset !important;
 
     .u-tabs__wrapper__nav__item__text {

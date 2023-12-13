@@ -1,17 +1,17 @@
 <template>
   <view class="flex-col page">
     <NavBar :hasBack="true" :title="title"></NavBar>
-    <view class="flex-col flex-1 content">
-      <view class="flex-col justify-start carousel">
-        <view class="flex-col justify-start items-center banner-image-wrapper">
-          <image
-            class="banner-image"
-            src="/static/mock/list-page-banner.png"
-            mode="aspectFill"
-          />
-        </view>
+    <view class="flex-col justify-start carousel">
+      <view class="flex-col justify-start items-center banner-image-wrapper">
+        <image
+          class="banner-image"
+          src="/static/mock/list-page-banner.png"
+          mode="aspectFill"
+        />
       </view>
-      <view class="flex-col">
+    </view>
+    <view class="flex-col">
+      <FjSticky :customNavHeight="80">
         <u-tabs
           class="border-tabs"
           lineColor="#b09053"
@@ -34,29 +34,19 @@
           :list="tabs"
           @click="onTabClick"
         ></u-tabs>
-        <view class="scroll-view">
-          <scroll-view
-            :scroll-top="scrollTop"
-            scroll-y="true"
-            class="scroll-Y"
-            @scrolltoupper="upper"
-            @scrolltolower="lower"
-            @scroll="scroll"
-          >
-            <ListContainer :showEmpty="!list.length" :showLoading="showLoading">
-              <view>
-                <DoubleList class="section_13" :items="list"></DoubleList>
-              </view>
-            </ListContainer>
-          </scroll-view>
+      </FjSticky>
+      <ListContainer :showEmpty="!list.length" :showLoading="showLoading">
+        <view>
+          <DoubleList class="section_13" :items="list"></DoubleList>
         </view>
-      </view>
+      </ListContainer>
     </view>
   </view>
 </template>
 
 <script>
 import NavBar from "../../../components/NavBar/NavBar.vue";
+import FjSticky from "../../../components/FjSticky.vue";
 import ListContainer from "../../../components/ListContainer/ListContainer.vue";
 import DoubleList from "../components/DoubleList.vue";
 
@@ -65,6 +55,7 @@ import { serviceList, courseList } from "../../../mock/shopList/shopList";
 export default {
   components: {
     NavBar,
+    FjSticky,
     ListContainer,
     DoubleList,
   },
@@ -147,18 +138,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-.page {
-  background-color: #ffffff;
-  width: 100%;
-  overflow: hidden;
-  height: 100vh;
-}
-
-.content {
-  padding-bottom: 8rpx;
-  max-height: calc(100% - 88rpx);
-  overflow-y: hidden;
-}
 
 .carousel {
   padding-top: 16rpx;
@@ -174,48 +153,17 @@ export default {
   height: 26vw;
 }
 
-.scroll-view {
-  height: calc(100vh - 500rpx);
-  /* overflow-y: scroll; */
-
-  .scroll-Y {
-    height: 100%;
+.border-tabs {
+  /deep/ .u-tabs {
+    background-color: #ffffff;
   }
-}
-
-.tabs-content {
-  padding: 0 32rpx;
 }
 
 .left-list {
   flex: 1 1 330rpx;
 }
 
-.list-item {
-  position: relative;
-}
-
-.list-item:first-child {
-  margin-top: 0;
-}
-
-.load-more-font {
-  font-size: 24rpx;
-  font-family: 苹方;
-  line-height: 24rpx;
-  color: #a7a7a7;
-}
-
 .right-list {
   flex: 1 1 330rpx;
-}
-
-.loading-wrapper {
-  padding: 40rpx 0;
-}
-
-.load-more-text {
-  font-size: 26rpx;
-  line-height: 26rpx;
 }
 </style>

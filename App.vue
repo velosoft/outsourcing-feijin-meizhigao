@@ -132,18 +132,27 @@ text {
   }
 
   /deep/ .item {
-    padding: 16rpx 32rpx;
-    border-radius: 32rpx;
-    border: solid 2rpx #e1e4eb;
-    font-size: 26rpx;
-    line-height: 26rpx;
-    color: #6c6c6c;
+    padding: 16rpx 32rpx !important;
+    border-radius: 32rpx !important;
+    border: solid 2rpx #e1e4eb !important;
+    font-size: 26rpx !important;
+    line-height: 26rpx !important;
+    color: #6c6c6c !important;
   }
 
   /deep/ .item__active {
-    border: solid 2rpx #b09053;
-    background-color: unset;
-    color: #b09053;
+    border: solid 2rpx #b09053 !important;
+    background-color: unset !important;
+    color: #b09053 !important;
+  }
+}
+
+.service-varaint {
+  /deep/ .items-layout {
+    flex-wrap: wrap !important;
+  }
+  /deep/ .item {
+    flex: unset !important;
   }
 }
 
