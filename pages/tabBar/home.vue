@@ -9,16 +9,20 @@
         <view class="ml-8 flex-col items-center shrink-0 relative search-right">
           <image class="message" src="../../static/images/message.png" />
           <view class="flex-col justify-start items-center dot-wrap dot-pos">
-            <image class="notify-image" src="../../static/images/dot_bg.png" />
+            <image class="icon-size" src="../../static/images/dot_bg.png" />
             <text class="home-font_03 dot-text dot-pos-text">1</text>
           </view>
         </view>
       </view>
       <BannerSwiper />
-      <view class="flex-row items-center notify-box" @click="goNotify">
-        <image class="notify-image" src="../../static/images/notify.png" />
-        <text class="ml-10 home-font_02 notify-text">{{ notifyContent }}</text>
-      </view>
+      <u-notice-bar
+        class="notify-bar"
+        :text="notifyContent"
+        bgColor="#f7f7f7"
+        color="#6c6c6c"
+        font-size="24rpx"
+        @click="goNotify"
+      ></u-notice-bar>
       <ClassifyCards class="box-top"></ClassifyCards>
       <CenterPanel class="box-top"></CenterPanel>
       <GridPanel class="box-top"></GridPanel>
@@ -86,7 +90,7 @@ export default {
   methods: {
     goNotify() {
       uni.navigateTo({
-        url: "../home/notify",
+        url: "/pages/home/notify",
       });
     },
     onChangeType(type) {
@@ -159,20 +163,25 @@ export default {
         }
       }
     }
-    .notify-box {
-      padding: 24rpx 30rpx;
-      background-color: #f7f7f799;
-      .home-font_02 {
-        font-size: 24rpx;
-        font-family: 苹方;
-        line-height: 24rpx;
-        color: #030305;
-      }
-      .notify-text {
-        color: #6c6c6c;
+
+    .notify-bar {
+      height: 80rpx;
+      /deep/ .u-notice__left-icon {
+        background-image: url("/static/images/notify.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 30rpx;
+        height: 30rpx;
+        margin-right: 18rpx;
+
+        u-icon {
+          display: none;
+        }
       }
     }
-    .notify-image {
+
+    .icon-size {
       width: 30rpx;
       height: 30rpx;
     }
