@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col container">
     <text class="title">详情</text>
-    <mp-html class="mt-16" :content="content"></mp-html>
+    <mp-html class="content mt-16" :content="content"></mp-html>
   </view>
 </template>
 
@@ -32,6 +32,13 @@ export default {
     font-family: 苹方;
     font-weight: 700;
     line-height: 36rpx;
+  }
+  .content {
+    font-size: 28rpx;
+    line-height: 39rpx;
+    font-family: 苹方;
+    line-height: 48rpx;
+    color: #030305;
   }
 }
 </style>
