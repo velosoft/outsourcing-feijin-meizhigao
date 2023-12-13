@@ -4,8 +4,8 @@
       <view class="flex-row justify-between">
         <view class="flex-row">
           <image
-            class="shrink-0 avator"
-            src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=icon_avator.png"
+            class="shrink-0 avatar"
+            src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=icon_avatar.png"
           />
           <text class="self-start title-font nickname ml-6">朱**</text>
         </view>
@@ -67,7 +67,7 @@ export default {
   &:first-child {
     margin-top: 0;
   }
-  .avator {
+  .avatar {
     border-radius: 28rpx;
     width: 56rpx;
     height: 56rpx;

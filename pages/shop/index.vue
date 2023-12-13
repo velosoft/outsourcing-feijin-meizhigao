@@ -151,8 +151,8 @@
             >
               <view class="flex-row items-center self-stretch">
                 <image
-                  class="icon-avator"
-                  src="../../static/images/icon_avator.png"
+                  class="icon-avatar"
+                  src="../../static/images/icon_avatar.png"
                 />
                 <text class="ml-12 font-com-symbol">朱**</text>
               </view>
@@ -421,7 +421,7 @@ export default {
         }
         .evaluate-list {
           padding: 0 28rpx;
-          .icon-avator {
+          .icon-avatar {
             border-radius: 200rpx;
             width: 60rpx;
             height: 60rpx;

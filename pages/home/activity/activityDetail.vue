@@ -43,20 +43,23 @@
               :buyer="pageData.product.buyer"
               @onShare="onShare"
             ></ProductHeader>
-            <ProductBenefit
+            <specification-card
               class="wraper-top"
-              v-if="pageType == 0"
-              @onSelectService="onSelectService"
-            ></ProductBenefit>
-            <ProductEvaluate
+              :deliverPayment="specificationData.deliverPayment"
+              :specification="specificationData.specification"
+              :tags="specificationData.tags"
+              :discountTags="pageData.product.discountTags"
+              @onSpecificationClick="onSpecificationClick"
+            ></specification-card>
+            <comment-card
               class="wraper-top"
-              v-if="pageType == 0"
-            ></ProductEvaluate>
-            <ProdutDetial
+              :comments="pageData.comments.slice(0, 2)"
+            ></comment-card>
+            <product-detail
               class="wraper-top"
-              v-if="pageType == 0"
-            ></ProdutDetial>
-            <CourseIntro v-if="pageType == 2"></CourseIntro>
+              :content="pageData.product.detail"
+            ></product-detail>
+            <course-intro v-if="pageType == 2"></course-intro>
           </view>
         </view>
       </view>
@@ -68,7 +71,12 @@
       @close="close"
       @saveImg="saveImg"
     ></PopShareTabs>
-    <u-popup :show="showPop" :round="16" @close="closePop" @open="openPop">
+    <u-popup
+      :show="showPopEnsure || showPopSpecification"
+      :round="16"
+      @close="closePop"
+      @open="openPop"
+    >
       <PopEnsure v-if="showPopEnsure" @isKnow="isKnow"></PopEnsure>
       <PopSpecification
         v-if="showPopSpecification"
@@ -82,24 +90,25 @@
 import NavBar from "../../../components/NavBar/NavBar.vue";
 import ActivityCard from "./components/ActivityCard.vue";
 import ProductHeader from "../components/ProductHeader.vue";
-import ProductBenefit from "./components/ProductBenefit.vue";
-import ProductEvaluate from "./components/ProductEvaluate.vue";
-import ProdutDetial from "./components/ProdutDetial.vue";
+import SpecificationCard from "./components/SpecificationCard.vue";
+import CommentCard from "./components/CommentCard.vue";
+import ProductDetail from "./components/ProductDetail.vue";
 import CourseIntro from "./components/CourseIntro.vue";
 import FooterBtn from "./components/FooterBtn.vue";
 import PopShareTabs from "../../../components/PopShareTabs.vue";
 import PopEnsure from "./components/PopEnsure.vue";
 import PopSpecification from "./components/PopSpecification.vue";
+import { commentList } from "../../../mock/commentList.js";
 
 export default {
   components: {
     NavBar,
     ActivityCard,
     FooterBtn,
-    ProductBenefit,
-    ProductEvaluate,
+    SpecificationCard,
+    CommentCard,
     ProductHeader,
-    ProdutDetial,
+    ProductDetail,
     CourseIntro,
     PopShareTabs,
     PopEnsure,
@@ -120,12 +129,21 @@ export default {
           discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
           tags: ["新客优惠", "新品上市", "好评推荐"],
           buyer: 100,
+          detail:
+            "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
         },
         activity: {
           time: 108000000,
           buyer: 100,
         },
       },
+      specificationData: {
+        deliverPayment: "免运费",
+        specification: "请选择服务器规格",
+        tags: ["官方自营", "支持退换"],
+      },
+      comments: [],
+
       swiperList: [
         {
           url: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
@@ -139,9 +157,8 @@ export default {
       ],
       currentNum: 0,
       detail: {},
-      showPop: false,
       showPopEnsure: false,
-      showPopSpecification: true,
+      showPopSpecification: false,
     };
   },
   onLoad(option) {
@@ -159,22 +176,17 @@ export default {
     },
     close() {},
     saveImg() {},
-    onSelectService() {
-      this.showPop = true;
+    onSpecificationClick() {
       this.showPopSpecification = true;
     },
     goNext() {
-      console.log("下一步");
-
       this.showPopSpecification = false;
       this.showPopEnsure = true;
     },
     isKnow() {
       this.showPopEnsure = false;
-      this.showPop = false;
     },
     closePop() {
-      this.showPop = false;
       this.showPopSpecification = false;
       this.showPopEnsure = false;
     },
@@ -190,6 +202,7 @@ export default {
   },
   mounted() {
     this.swiperHeight = uni.upx2px(750);
+    this.pageData.comments = commentList;
   },
 };
 </script>

@@ -75,12 +75,11 @@ text {
   color: #bb3e0c !important;
 }
 
-
 .tag-feature ::v-deep .u-tag {
   height: 44rpx !important;
   line-height: 44rpx !important;
   padding: 0 12rpx !important;
-  background-color: #FFF5DE !important;
+  background-color: #fff5de !important;
   border: unset !important;
   border-radius: 6rpx;
 }
@@ -88,7 +87,25 @@ text {
 .tag-feature ::v-deep .u-tag__text {
   font-size: 22rpx !important;
   font-family: 苹方 !important;
-  color: #B09053 !important;
+  color: #b09053 !important;
+}
+
+.discount-tag /deep/ .u-tag--primary {
+  padding: 1rpx 10rpx;
+  border: solid 1rpx #bb3e0c;
+  background-color: unset !important;
+  border-radius: 6rpx !important;
+  margin-left: unset;
+}
+
+.discount-tag /deep/ .u-tag--medium {
+  height: 42rpx;
+}
+
+.discount-tag /deep/ .u-tag__text--primary {
+  font-size: 24rpx !important;
+  font-family: 苹方;
+  color: #bb3e0c !important;
 }
 
 // 单行文本超出显示省略
