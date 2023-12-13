@@ -119,7 +119,7 @@
       }
     },
     {
-      "path": "pages/home/notifyDetial",
+      "path": "pages/home/notifyDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

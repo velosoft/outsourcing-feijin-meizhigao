@@ -26,7 +26,7 @@
                 </view>
                 <view
                   class="flex-row justify-between items-center bottom"
-                  @click="goNotifyDetial"
+                  @click="goNotifyDetail"
                 >
                   <text class="detial">查看详情</text>
                   <image
@@ -42,7 +42,7 @@
                 </view>
                 <view
                   class="flex-row justify-between items-center bottom"
-                  @click="goNotifyDetial"
+                  @click="goNotifyDetail"
                 >
                   <text class="detial">查看详情</text>
                   <image
@@ -180,9 +180,9 @@ export default {
         this.items = this.serviceNotificationList;
       }
     },
-    goNotifyDetial() {
+    goNotifyDetail() {
       uni.navigateTo({
-        url: "./notifyDetial",
+        url: "/pages/home/notifyDetail",
       });
     },
   },
