@@ -106,11 +106,17 @@ export default {
     detailUrl() {
       switch (this.item.type) {
         case "product":
-          return `/pages/home/activity/productDetail?id=${this.item.id || ""}`;
+          return `/pages/home/activity/productDetail?id=${
+            this.item.id || ""
+          }&type=activity`;
         case "service":
-          return `/pages/home/activity/serviceDetail?id=${this.item.id || ""}`;
+          return `/pages/home/activity/serviceDetail?id=${
+            this.item.id || ""
+          }&type=activity`;
         case "course":
-          return `/pages/home/activity/courseDetail?id=${this.item.id || ""}`;
+          return `/pages/home/activity/courseDetail?id=${
+            this.item.id || ""
+          }type=activity`;
         default:
           return "";
       }

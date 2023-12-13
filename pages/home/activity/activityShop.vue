@@ -10,66 +10,9 @@
           :tabs="multTabs"
           @change="onMultCardTabs"
         ></MultCardTabs>
-        <view
-          class="flex-row items-center btn-tips"
-          :style="{
-            width: activityStatus !== 1 ? '362rpx' : '100%',
-            alignSelf: activityStatus !== 1 ? 'center' : '',
-            justifyContent: activityStatus == 1 ? 'space-between' : 'center',
-          }"
-        >
-          <image
-            class="tips-text"
-            src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=btn_seccount_01.png"
-            v-if="activityStatus == 1"
-          />
-          <view class="flex-row items-center count-down-wrap">
-            <text class="count-down-label" v-if="activityStatus == 0"
-              >距离开始还有</text
-            >
-            <text class="count-down-label" v-if="activityStatus == 1"
-              >距离结束还有</text
-            >
-            <text class="count-down-label" v-if="activityStatus == 2"
-              >本次秒杀已结束</text
-            >
-            <u-count-down
-              class="count-down-con ml-4"
-              :time="time"
-              format="HH:mm:ss"
-              @change="onTimeChange"
-              v-if="activityStatus !== 2"
-            >
-              <view class="flex-row items-center">
-                <view class="flex-col items-center number-box justify-center">
-                  <text class="time-font time-text">{{
-                    timeData.hours > 10 ? timeData.hours : "0" + timeData.hours
-                  }}</text>
-                </view>
-                <text class="colon ml-2">:</text>
-                <view
-                  class="flex-col items-center number-box ml-2 justify-center"
-                >
-                  <text class="time-font time-text">{{
-                    timeData.minutes > 10
-                      ? timeData.minutes
-                      : "0" + timeData.minutes
-                  }}</text>
-                </view>
-                <text class="colon ml-2">:</text>
-                <view
-                  class="flex-col items-center number-box ml-2 justify-center"
-                >
-                  <text class="time-font time-text">{{
-                    timeData.seconds > 10
-                      ? timeData.seconds
-                      : "0" + timeData.seconds
-                  }}</text>
-                </view>
-              </view>
-            </u-count-down>
-          </view>
-        </view>
+        <ActivityStatus0 v-if="activityStatus === 0" class="self-center" />
+        <ActivityStatus1 v-if="activityStatus === 1" />
+        <ActivityStatus2 v-if="activityStatus === 2" class="self-center" />
         <CardTabs
           class="tabs-wraper"
           :value="value"
@@ -78,7 +21,7 @@
         ></CardTabs>
         <view class="flex-col">
           <list-container
-            :showEmpty="showEmpty"
+            :showEmpty="!list.length"
             :showLoading="showLoading"
             :finished="finished"
           >
@@ -105,6 +48,9 @@ import ListContainer from "../../../components/ListContainer/ListContainer.vue";
 import MultCardTabs from "./components/cardTabs/multCardTabs.vue";
 import CardTabs from "./components/cardTabs/cardTabs.vue";
 import ActivityShopItem from "./components/ActivityShopItem.vue";
+import ActivityStatus0 from "./components/ActivityStatus0.vue";
+import ActivityStatus1 from "./components/ActivityStatus1.vue";
+import ActivityStatus2 from "./components/ActivityStatus2.vue";
 import {
   productList,
   serviceList,
@@ -118,11 +64,13 @@ export default {
     MultCardTabs,
     ListContainer,
     ActivityShopItem,
+    ActivityStatus0,
+    ActivityStatus1,
+    ActivityStatus2,
   },
   props: {},
   data() {
     return {
-      timeData: {},
       multTabs: [
         {
           status: 2,
@@ -153,39 +101,49 @@ export default {
       multValue: 0,
       activityStatus: 2,
       title: "秒杀活动",
-      time: 108000000,
-      showEmpty: false,
-      showLoading: false,
-      finished: false,
       percentage: 40,
-      list: [],
       value: 0,
       tabs: ["活动商品", "活动服务", "活动课程"],
+      page: 1,
+      showLoading: true,
+      finished: false,
+      list: productList,
     };
   },
+  onReachBottom() {
+    if (this.page >= 2) {
+      this.finished = true;
+      return;
+    }
+    this.finished = false;
 
+    setTimeout(() => {
+      this.list = this.list.concat(this.list);
+      this.page++;
+    }, 1500);
+  },
   methods: {
     onMultCardTabs(val) {
       // 事件处理方法
       this.activityStatus = val.item.status;
     },
-    onTimeChange(e) {
-      this.timeData = e;
-    },
     onCardTabs(val) {
       // 事件处理方法
-      this.value = index;
-      if (this.value == 0) {
-        this.list = productList;
-      } else if (this.value == 1) {
-        this.list = serviceList;
-      } else {
-        this.list = courseList;
+      this.value = val.index;
+      this.page = 1;
+
+      switch (this.value) {
+        case 0:
+          this.list = productList;
+          break;
+        case 1:
+          this.list = serviceList;
+          break;
+        case 2:
+          this.list = courseList;
+          break;
       }
     },
-  },
-  mounted() {
-    this.list = productList;
   },
 };
 </script>

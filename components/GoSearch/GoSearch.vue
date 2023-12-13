@@ -1,5 +1,5 @@
 <template>
-  <view class="flex-row items-center flex-1 search-wrap" @tap="goSearch">
+  <view class="flex-row items-center search-wrap" @tap="goSearch">
     <image class="search-image" src="../../static/images/search.png" />
     <input
       class="uni-input flex-1"

@@ -125,10 +125,7 @@ export default {
           detail:
             "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
         },
-        activity: {
-          time: 108000000,
-          buyer: 100,
-        },
+        activity: null,
         comments: [],
       },
       specificationData: {
@@ -145,6 +142,13 @@ export default {
   onLoad(option) {
     // 页面启动的生命周期，这里编写页面加载时的逻辑
     this.id = option.id;
+
+    if (option.type === "activity") {
+      this.pageData.activity = {
+        time: 108000000,
+        buyer: 100,
+      };
+    }
   },
   onPageScroll(e) {
     // 页面滚动时执行

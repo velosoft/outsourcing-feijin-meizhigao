@@ -4,6 +4,7 @@
       <view class="flex-col tabs-top">
         <u-tabs
           class="default-tabs"
+          :scrollable="false"
           :list="tabList"
           lineWidth="20"
           lineHeight="6"

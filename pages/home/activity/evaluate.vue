@@ -44,17 +44,25 @@ export default {
   data() {
     return {
       title: "评价列表",
-      showEmpty: false,
-      showLoading: false,
+      page: 1,
+      comments: commentList,
+      showLoading: true,
       finished: false,
-      comments: [],
     };
   },
+  onReachBottom() {
+    if (this.page >= 2) {
+      this.finished = true;
+      return;
+    }
+    this.finished = false;
 
-  methods: {},
-  mounted() {
-    this.comments = commentList;
+    setTimeout(() => {
+      this.comments = this.comments.concat(this.comments);
+      this.page++;
+    }, 1500);
   },
+  methods: {},
 };
 </script>
 

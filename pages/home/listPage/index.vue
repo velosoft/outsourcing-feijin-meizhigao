@@ -35,7 +35,11 @@
           @click="onTabClick"
         ></u-tabs>
       </FjSticky>
-      <ListContainer :showEmpty="!list.length" :showLoading="showLoading">
+      <ListContainer
+        :showEmpty="!list.length"
+        :showLoading="showLoading"
+        :finished="finished"
+      >
         <view>
           <DoubleList class="section_13" :items="list"></DoubleList>
         </view>
@@ -64,13 +68,10 @@ export default {
     return {
       title: "",
       status: "loadmore",
-      page: 0,
-      showLoading: false,
+      page: 1,
       list: [],
-      scrollTop: 0,
-      old: {
-        scrollTop: 0,
-      },
+      showLoading: true,
+      finished: false,
       tabs: [],
     };
   },
@@ -114,31 +115,25 @@ export default {
     }
   },
   onReachBottom() {
-    if (this.page >= 3) return;
-    this.status = "loading";
-    this.page = ++this.page;
+    if (this.page >= 2) {
+      this.finished = true;
+      return;
+    }
+    this.finished = false;
 
     setTimeout(() => {
-      this.list = [...this.this, ...this.list];
-
-      if (this.page >= 3) this.status = "nomore";
-      else this.status = "loading";
+      this.list = this.list.concat(this.list);
+      this.page++;
     }, 1500);
   },
 
   methods: {
     onTabClick(val) {},
-    upper: function (e) {},
-    lower: function (e) {},
-    scroll: function (e) {
-      this.old.scrollTop = e.detail.scrollTop;
-    },
   },
 };
 </script>
 
 <style scoped lang="less">
-
 .carousel {
   padding-top: 16rpx;
   background-color: #ffffff;
