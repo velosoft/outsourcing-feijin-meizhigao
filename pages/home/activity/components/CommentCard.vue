@@ -1,16 +1,16 @@
 <template>
   <view class="flex-col container">
     <view class="flex-row items-center header justify-between">
-      <text class="title">商品评价（{{ comments.length }}）</text>
-      <view class="flex-row items-center" @click="goEvaluate">
+      <text class="title">{{ title }}（{{ comments.length }}）</text>
+      <view class="flex-row items-center" @click="goComment">
         <text class="self-center com-font more-text">查看全部</text>
         <image class="icon-arrow ml-4" src="/static/images/icon_arrow_05.png" />
       </view>
     </view>
-    <view class="flex-col evaluate-group">
+    <view class="flex-col comment-group">
       <view
         class="flex-col list-item mt-28"
-        v-for="(item, index) in comments"
+        v-for="(item, index) in comments.slice(0, 2)"
         :key="index"
       >
         <view class="flex-row">
@@ -18,7 +18,7 @@
           <text class="com-font nick-name ml-8">{{ item.name }}</text>
         </view>
         <view class="flex-col">
-          <text class="evaluate-text line-clamp-two">{{ item.content }}</text>
+          <text class="comment-text line-clamp-two">{{ item.content }}</text>
         </view>
         <text class="product-type product-type-text">{{ item.payRule }}</text>
       </view>
@@ -30,6 +30,7 @@
 export default {
   components: {},
   props: {
+    title: { type: String, default: "" },
     comments: { type: Array, default: () => [] },
   },
   data() {
@@ -37,7 +38,7 @@ export default {
   },
 
   methods: {
-    goEvaluate(args) {
+    goComment(args) {
       // 事件处理方法
       uni.navigateTo({
         url: "/pages/home/activity/comment",
@@ -68,7 +69,7 @@ export default {
       height: 24rpx;
     }
   }
-  .evaluate-group {
+  .comment-group {
     padding: 30rpx 30rpx;
     .list-item {
       &:first-child {
@@ -82,7 +83,7 @@ export default {
       .nick-name {
         margin-top: 8rpx;
       }
-      .evaluate-text {
+      .comment-text {
         width: 650rpx;
         font-size: 24rpx;
         font-family: 苹方;

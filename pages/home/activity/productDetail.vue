@@ -43,7 +43,8 @@
             ></specification-card>
             <comment-card
               class="wraper-top"
-              :comments="pageData.comments.slice(0, 2)"
+              title="商品评价"
+              :comments="pageData.comments"
             ></comment-card>
             <detail-card
               class="wraper-top"
