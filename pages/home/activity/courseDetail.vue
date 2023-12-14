@@ -42,23 +42,23 @@
         :activityStarted="true"
       ></footer-btn>
     </view>
-    <ShareTabs
+    <share-tabs
       ref="popShareTabs"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
-    ></ShareTabs>
+    ></share-tabs>
     <u-popup
       :show="showPopEnsure || showPopSpecification"
       :round="16"
       @close="closePop"
       @open="openPop"
     >
-      <PopEnsure v-if="showPopEnsure" @isKnow="isKnow"></PopEnsure>
-      <PopSpecification
+      <pop-ensure v-if="showPopEnsure" @isKnow="isKnow"></pop-ensure>
+      <pop-specification
         v-if="showPopSpecification"
         @goNext="goNext"
-      ></PopSpecification>
+      ></pop-specification>
     </u-popup>
   </view>
 </template>

@@ -3,7 +3,7 @@
     <view class="flex-col justify-start double-list-view">
       <view class="flex-row">
         <view class="flex-col justify-start left-list">
-          <ShopItem
+          <shop-item
             v-for="(item, index) in itemsLeft"
             :key="index"
             :itemId="item.id"
@@ -14,7 +14,7 @@
             :discount="item.discount"
             :price="item.price"
             :buyer="item.buyer"
-          ></ShopItem>
+          ></shop-item>
         </view>
         <view class="flex-col justify-start right-list ml-15">
           <ShopItem

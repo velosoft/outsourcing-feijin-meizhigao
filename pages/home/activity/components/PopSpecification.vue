@@ -25,11 +25,11 @@
       </view>
       <view class="flex-col spec-select">
         <text class="self-start spec-font spec-text">请选择规格</text>
-        <Selector
+        <selector
           class="variant-selector service-varaint mt-18"
           :items="timelineItems"
           @change="onChange"
-        ></Selector>
+        ></selector>
       </view>
       <view class="flex-row justify-between buy-number">
         <text class="self-start price-symbol buy-number-label">购买数量</text>

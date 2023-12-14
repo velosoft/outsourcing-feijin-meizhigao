@@ -1,12 +1,15 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="false">
+    <nav-bar :hasBack="false">
       <image slot="left" class="logo" src="../../static/images/logo.png" />
-    </NavBar>
+    </nav-bar>
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
-        <GoSearch class="flex-1" />
-        <view class="ml-8 flex-col items-center shrink-0 relative search-right" @tap="goNotify">
+        <go-search class="flex-1" />
+        <view
+          class="ml-8 flex-col items-center shrink-0 relative search-right"
+          @tap="goNotify"
+        >
           <image class="message" src="../../static/images/message.png" />
           <view class="flex-col justify-start items-center dot-wrap dot-pos">
             <image class="icon-size" src="../../static/images/dot_bg.png" />
@@ -14,7 +17,7 @@
           </view>
         </view>
       </view>
-      <BannerSwiper />
+      <banner-swiper />
       <u-notice-bar
         class="notify-bar"
         :text="notifyContent"
@@ -23,16 +26,16 @@
         font-size="24rpx"
         @click="goNotify"
       ></u-notice-bar>
-      <ClassifyCards class="box-top"></ClassifyCards>
-      <CenterPanel class="box-top"></CenterPanel>
-      <GridPanel class="box-top"></GridPanel>
-      <MemberBox />
-      <RecommendedList
-        class="section_13"
+      <classify-cards class="box-top"></classify-cards>
+      <center-panel class="box-top"></center-panel>
+      <grid-panel class="box-top"></grid-panel>
+      <member-box />
+      <recommended-list
+        class="recommended-list"
         :list="list"
         :nomore="nomore"
         @change="onChangeType"
-      ></RecommendedList>
+      ></recommended-list>
       <!-- <FreezeWarning /> -->
     </view>
   </view>
@@ -186,7 +189,7 @@ export default {
     .box-top {
       margin: 56rpx 30rpx 0;
     }
-    .section_13 {
+    .recommended-list {
       margin-top: 44rpx;
     }
   }

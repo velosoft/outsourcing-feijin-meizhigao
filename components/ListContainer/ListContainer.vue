@@ -1,6 +1,6 @@
 <template>
   <view class="listContainerComp">
-    <Empty
+    <empty
       class="flex-1"
       width="408"
       height="286"
@@ -8,7 +8,7 @@
       :hint="emptyHint"
       :paddingTop="emptyPaddingTop"
       v-if="showEmpty"
-    ></Empty>
+    ></empty>
     <template v-else>
       <slot />
       <Loading :finished="finished" v-if="showLoading" />

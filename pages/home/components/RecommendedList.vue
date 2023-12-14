@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col recommended-list relative">
-    <FjSticky :customNavHeight="80">
+    <fj-sticky :customNavHeight="80">
       <view class="flex-col tabs-top">
         <u-tabs
           class="default-tabs"
@@ -22,15 +22,15 @@
           @change="onChange"
         ></u-tabs>
       </view>
-    </FjSticky>
+    </fj-sticky>
 
-    <ListContainer
+    <list-container
       :showEmpty="!list.length"
       :showLoading="true"
       :finished="nomore"
     >
-      <DoubleList :items="list"></DoubleList>
-    </ListContainer>
+      <double-list :items="list"></double-list>
+    </list-container>
   </view>
 </template>
 

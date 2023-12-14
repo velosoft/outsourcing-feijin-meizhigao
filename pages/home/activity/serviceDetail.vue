@@ -1,28 +1,28 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :fixed="true"
       :isShow="false"
       :background="navBarColor"
       :title="pageTitle"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col flex-1">
       <view class="scroll-height">
-        <DetailSwiper />
+        <detail-swiper />
         <view class="flex-col flex-1 info">
-          <ActivityCard
+          <activity-card
             v-if="pageData.activity"
             :price="getPriceIntergetPart(pageData.product.price)"
             :decimalPrice="getPriceDecimalPart(pageData.product.price)"
             :originPrice="pageData.product.originPrice"
             :time="pageData.activity.time"
             :buyer="pageData.activity.buyer"
-          ></ActivityCard>
+          ></activity-card>
           <view
             class="flex-col relative container"
             :style="{ marginTop: pageData.activity ? '-28rpx' : '' }"
           >
-            <ProductHeader
+            <product-header
               :title="pageData.product.title"
               :content="pageData.product.content"
               :price="getPriceIntergetPart(pageData.product.price)"
@@ -32,7 +32,7 @@
               :tags="pageData.product.tags"
               :buyer="pageData.product.buyer"
               @onShare="onShare"
-            ></ProductHeader>
+            ></product-header>
             <specification-card
               class="wraper-top"
               :enables="specificationRows"
@@ -54,28 +54,28 @@
           </view>
         </view>
       </view>
-      <FooterBtn
+      <footer-btn
         :hasActivity="!!pageData.activity"
         :activityStarted="false"
-      ></FooterBtn>
+      ></footer-btn>
     </view>
-    <PopShareTabs
+    <pop-share-tabs
       ref="popShareTabs"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
-    ></PopShareTabs>
+    ></pop-share-tabs>
     <u-popup
       :show="showPopEnsure || showPopSpecification"
       :round="16"
       @close="closePop"
       @open="openPop"
     >
-      <PopEnsure v-if="showPopEnsure" @isKnow="isKnow"></PopEnsure>
-      <PopSpecification
+      <pop-ensure v-if="showPopEnsure" @isKnow="isKnow"></pop-ensure>
+      <pop-specification
         v-if="showPopSpecification"
         @goNext="goNext"
-      ></PopSpecification>
+      ></pop-specification>
     </u-popup>
   </view>
 </template>

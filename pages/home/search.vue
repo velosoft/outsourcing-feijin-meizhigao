@@ -1,17 +1,17 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" fixed="true" isShow="true">
+    <nav-bar :hasBack="true" fixed="true" isShow="true">
       <template #right>
-        <Search
+        <search
           class="search-wrap"
           :showAction="true"
           :value="keywords"
           @custom="onCustom"
           @search="onSearch"
           @focus="onFocus"
-        ></Search>
+        ></search>
       </template>
-    </NavBar>
+    </nav-bar>
     <view class="flex-col flex-1">
       <view class="flex-col justify-start history-search" v-if="isSearch">
         <view class="flex-col history-con">
@@ -23,7 +23,7 @@
               @click="clearHistory"
             />
           </view>
-          <ToggleList
+          <toggle-list
             class="equal-division mt-14"
             :tabsArray="tabsArray"
             @onClick="onClick"
@@ -32,20 +32,20 @@
         </view>
       </view>
       <view class="flex-col" v-else>
-        <Tabs :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></Tabs>
-        <ListContainer :showEmpty="showEmpty" :showLoading="showLoading">
+        <tabs :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></tabs>
+        <list-container :showEmpty="showEmpty" :showLoading="showLoading">
           <view>
-            <DoubleList :items="list"></DoubleList>
+            <double-list :items="list"></double-list>
           </view>
-        </ListContainer>
+        </list-container>
       </view>
     </view>
-    <ConfirmPanel
+    <confirm-panel
       :isShow="showDialog"
       :isnormal="false"
       @cancel="onCancel"
       @confirm="onConfirm"
-    ></ConfirmPanel>
+    ></confirm-panel>
   </view>
 </template>
 

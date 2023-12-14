@@ -1,11 +1,11 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :title="title"
       :fixed="true"
       :isShow="true"
       background="#ffffff"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col flex-1 container">
       <list-container
         :showEmpty="!comments.length"
@@ -13,7 +13,7 @@
         :finished="finished"
       >
         <view class="flex-col">
-          <CommentItem
+          <comment-item
             v-for="(item, index) in comments"
             class="list-item"
             :key="index"

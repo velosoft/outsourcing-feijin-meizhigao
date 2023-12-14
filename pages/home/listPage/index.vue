@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title"></NavBar>
+    <nav-bar :hasBack="true" :title="title"></nav-bar>
     <view class="flex-col justify-start carousel">
       <view class="flex-col justify-start items-center banner-image-wrapper">
         <image
@@ -11,7 +11,7 @@
       </view>
     </view>
     <view class="flex-col">
-      <FjSticky :customNavHeight="80">
+      <fj-sticky :customNavHeight="80">
         <u-tabs
           class="border-tabs"
           lineColor="#b09053"
@@ -34,16 +34,16 @@
           :list="tabs"
           @click="onTabClick"
         ></u-tabs>
-      </FjSticky>
-      <ListContainer
+      </fj-sticky>
+      <list-container
         :showEmpty="!list.length"
         :showLoading="showLoading"
         :finished="finished"
       >
         <view>
-          <DoubleList class="section_13" :items="list"></DoubleList>
+          <double-list :items="list"></double-list>
         </view>
-      </ListContainer>
+      </list-container>
     </view>
   </view>
 </template>

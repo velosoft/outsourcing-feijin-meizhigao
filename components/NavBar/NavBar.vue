@@ -13,7 +13,7 @@
       }"
       class="navbar-content"
     >
-      <StatusBar v-if="statusBar" />
+      <status-bar v-if="statusBar" />
       <image v-if="bgSrc" class="bg" :src="bgSrc" mode="widthFix"></image>
       <view
         class="navbar-header"
