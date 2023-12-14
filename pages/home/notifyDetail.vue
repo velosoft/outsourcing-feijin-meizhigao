@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import MpHtml from "../../components/mp-html/mp-html.vue";
+import MpHtml from "../../components/MpHtml/MpHtml.vue";
 import NavBar from "../../components/NavBar/NavBar.vue";
 
 export default {

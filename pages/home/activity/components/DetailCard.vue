@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import mpHtml from "../../../../components/mp-html/mp-html.vue";
+import mpHtml from "../../../../components/MpHtml/MpHtml.vue";
 
 export default {
   components: { mpHtml },
