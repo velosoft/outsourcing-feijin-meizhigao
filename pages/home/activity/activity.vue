@@ -4,12 +4,12 @@
     <view class="flex-col flex-1 container">
       <image class="banner" src="/static/mock/activity_banner.png" />
       <view class="flex-col line-tabs">
-        <mult-card-tabs
+        <multi-card-tabs
           class="card-tabs-wrap"
           :value="multValue"
           :tabs="multTabs"
-          @change="onMultCardTabs"
-        ></mult-card-tabs>
+          @change="onMultiCardTabs"
+        ></multi-card-tabs>
         <activity-status-waiting
           v-if="activityStatus === 0"
           class="self-center"
@@ -52,8 +52,8 @@
 <script>
 import NavBar from "@/components/NavBar/NavBar.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
-import MultCardTabs from "./components/cardTabs/multCardTabs.vue";
-import CardTabs from "./components/cardTabs/cardTabs.vue";
+import MultiCardTabs from "./components/MultiCardTabs.vue";
+import CardTabs from "./components/CardTabs.vue";
 import ActivityShopItem from "./components/ActivityShopItem.vue";
 import ActivityStatusWaiting from "./components/ActivityStatusWaiting.vue";
 import ActivityStatusRunning from "./components/ActivityStatusRunning.vue";
@@ -64,7 +64,7 @@ export default {
   components: {
     NavBar,
     CardTabs,
-    MultCardTabs,
+    MultiCardTabs,
     ListContainer,
     ActivityShopItem,
     ActivityStatusWaiting,
@@ -126,7 +126,7 @@ export default {
     }, 1500);
   },
   methods: {
-    onMultCardTabs(val) {
+    onMultiCardTabs(val) {
       // 事件处理方法
       this.activityStatus = val.item.status;
     },
