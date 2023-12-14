@@ -1,13 +1,13 @@
 <template>
   <u-swiper
-    :list="swiperList"
+    :list="list"
     @change="onChange"
     :height="swiperHeight"
     indicatorStyle="right: 20px"
   >
     <view class="flex-col items-center indicator-wrapper" slot="indicator">
       <text class="indicator-font indicator-text"
-        >{{ currentNum + 1 }}/{{ swiperList.length }}</text
+        >{{ currentNum + 1 }}/{{ list.length }}</text
       >
     </view>
   </u-swiper>
@@ -16,24 +16,12 @@
 <script>
 export default {
   props: {
-    item: { type: Object },
-    activityStatus: { type: Number },
+    list: { type: Array, default: () => [] },
   },
   data() {
     return {
       currentNum: 0,
       swiperHeight: 0,
-      swiperList: [
-        {
-          url: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-        },
-        {
-          url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
-        },
-        {
-          url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
-        },
-      ],
     };
   },
   mounted() {

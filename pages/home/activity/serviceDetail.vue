@@ -8,7 +8,7 @@
     ></nav-bar>
     <view class="flex-col flex-1">
       <view class="scroll-height">
-        <detail-swiper />
+        <detail-swiper :list="pageData.swiperList" />
         <view class="flex-col flex-1 info">
           <activity-card
             v-if="pageData.activity"
@@ -129,6 +129,18 @@ export default {
         },
         activity: null,
         comments: [],
+
+        swiperList: [
+          {
+            url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+          },
+          {
+            url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+          },
+          {
+            url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+          },
+        ],
       },
       specificationData: {
         deliverPayment: "免运费",
