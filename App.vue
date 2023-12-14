@@ -795,7 +795,7 @@ rich-text {
     width: 48rpx;
     height: 48rpx !important;
     background-color: unset !important;
-    background-image: url(static/images/number-box-minus.png);
+    background-image: url(static/images/number_box_minus.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -809,7 +809,7 @@ rich-text {
     width: 48rpx;
     height: 48rpx !important;
     background-color: unset !important;
-    background-image: url(static/images/number-box-plus.png);
+    background-image: url(static/images/number_box_plus.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

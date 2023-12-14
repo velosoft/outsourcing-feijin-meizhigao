@@ -6,10 +6,7 @@
     </view>
     <view class="flex-row menu-wrap panel-mt-22">
       <view class="flex-col justify-start relative menu-left">
-        <image
-          class="product-bg pos"
-          src="/static/images/service-bg.png"
-        />
+        <image class="product-bg pos" src="/static/images/service_bg.png" />
         <view class="flex-col justify-start items-start relative product-con">
           <text class="product-text">商品中心</text>
         </view>
@@ -20,10 +17,7 @@
           hover-class="none"
         >
           <view class="flex-col justify-start relative">
-            <image
-              class="course-bg pos"
-              src="/static/images/course-bg.png"
-            />
+            <image class="course-bg pos" src="/static/images/course-bg.png" />
             <view
               class="flex-col justify-start items-start relative course-con"
             >
@@ -36,10 +30,7 @@
           hover-class="none"
         >
           <view class="flex-col justify-start relative mt-10">
-            <image
-              class="course-bg pos"
-              src="/static/images/product-bg.png"
-            />
+            <image class="course-bg pos" src="/static/images/product_bg.png" />
             <view
               class="flex-col justify-start items-start relative course-con"
             >
