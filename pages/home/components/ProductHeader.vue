@@ -4,7 +4,7 @@
       <text class="title line-clamp-one">{{ title }}</text>
       <image
         class="share-icon"
-        src="h/static/images/icon_share.png"
+        src="/static/images/icon_share.png"
         @click="onShare"
       />
     </view>
