@@ -58,11 +58,7 @@ import ActivityShopItem from "./components/ActivityShopItem.vue";
 import ActivityStatusWaiting from "./components/ActivityStatusWaiting.vue";
 import ActivityStatusRunning from "./components/ActivityStatusRunning.vue";
 import ActivityStatusExpired from "./components/ActivityStatusExpired.vue";
-import {
-  productList,
-  serviceList,
-  courseList,
-} from "@/mock/shopList/shopList.js";
+import { productList, serviceList, courseList } from "@/mock/shopList";
 
 export default {
   components: {

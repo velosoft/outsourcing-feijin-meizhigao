@@ -57,7 +57,7 @@ import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "./components/DoubleList.vue";
 import ConfirmPanel from "@/components/ConfirmPanel.vue";
 import ToggleList from "@/components/ToggleList.vue";
-import { serviceList } from "@/mock/shopList/shopList";
+import { serviceList } from "@/mock/shopList";
 
 export default {
   components: {

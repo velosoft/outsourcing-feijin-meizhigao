@@ -54,7 +54,7 @@ import FjSticky from "@/components/FjSticky.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "../components/DoubleList.vue";
 
-import { serviceList, courseList } from "@/mock/shopList/shopList";
+import { serviceList, courseList } from "@/mock/shopList";
 
 export default {
   components: {

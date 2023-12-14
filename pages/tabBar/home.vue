@@ -50,7 +50,7 @@ import GoSearch from "@/components/GoSearch/GoSearch.vue";
 import BannerSwiper from "../home/components/BannerSwiper.vue";
 import MemberBox from "../home/components/MemberBox.vue";
 import FreezeWarning from "../home/components/FreezeWarning.vue";
-import { productList, serviceList, courseList } from "@/mock/shopList/shopList";
+import { productList, serviceList, courseList } from "@/mock/shopList";
 
 export default {
   components: {
