@@ -1,26 +1,23 @@
 <template>
-  <view class="flex-col justify-start relative card-wraper">
+  <view class="flex-col justify-start relative card">
     <image class="card-bg pos" src="/static/images/bg_kill_01.png" />
-    <view class="flex-row justify-between items-end relative group">
-      <view class="flex-col left">
-        <view class="flex-row items-start">
+    <view class="flex-row justify-between items-center relative card-wrapper">
+      <view class="flex-col self-stretch justify-between left">
+        <view class="flex-row items-center">
           <text class="time price-symbol">￥</text>
           <text class="price">{{ price }}</text>
           <text class="point">.{{ decimalPrice }}</text>
-          <image
-            class="button skill-btn"
-            src="/static/images/btn_kill_01.png"
-          />
+          <image class="ml-14 skill-btn" src="/static/images/btn_kill_01.png" />
         </view>
-        <view class="flex-row mt-8">
+        <view class="flex-row">
           <text class="com-font line-through">原价：￥{{ originPrice }}</text>
-          <text class="com-font ml-8">{{ buyer }}人购买</text>
+          <text class="com-font ml-14">{{ buyer }}人购买</text>
         </view>
       </view>
-      <view class="flex-col right">
+      <view class="flex-col self-stretch justify-center right">
         <text class="self-center com-font count-down-text">距秒杀活动结束</text>
         <u-count-down
-          class="mt-8"
+          class="mt-6"
           :time="time"
           format="DD:HH:mm:ss"
           :autoStart="true"
@@ -65,11 +62,11 @@
 export default {
   components: {},
   props: {
-    price: { type: String, default: '' },
-    decimalPrice: { type: String, default: '' },
-    originPrice:{ type: Number, default: 0 },
-    time:{type:Number, default:0 },
-    buyer:{type:Number, default:0 }
+    price: { type: String, default: "" },
+    decimalPrice: { type: String, default: "" },
+    originPrice: { type: Number, default: 0 },
+    time: { type: Number, default: 0 },
+    buyer: { type: Number, default: 0 },
   },
   data() {
     return {
@@ -86,8 +83,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.card-wraper {
-  padding: 8rpx 0 48rpx;
+.card {
   height: 148rpx;
   .card-bg {
     width: 710rpx;
@@ -100,10 +96,12 @@ export default {
     top: 0;
     bottom: 0;
   }
-  .group {
-    margin: 0 24rpx;
+  .card-wrapper {
+    flex: 1;
+    padding: 20rpx 24rpx 48rpx;
     .left {
-      margin-bottom: 8rpx;
+      justify-content: space-between;
+      align-self: stretch;
       .price-symbol {
         margin-top: 8rpx;
         font-size: 24rpx;
@@ -125,11 +123,6 @@ export default {
         font-weight: 700;
         line-height: 28rpx;
       }
-      .button {
-        flex-shrink: 0;
-        margin-left: 24rpx;
-        margin-top: 16rpx;
-      }
       .skill-btn {
         width: 90rpx;
         height: 36rpx;
@@ -140,7 +133,6 @@ export default {
       }
     }
     .right {
-      width: 236rpx;
       .count-down-text {
         color: #5e4a08;
         font-size: 22rpx;
