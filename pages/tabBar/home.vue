@@ -95,7 +95,7 @@ export default {
   methods: {
     goNotify() {
       uni.navigateTo({
-        url: "/pages/home/notifyList",
+        url: "/pages/notifyPages/notifyList",
       });
     },
     onChangeType(type) {

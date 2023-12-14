@@ -182,7 +182,7 @@ export default {
     },
     goNotifyDetail() {
       uni.navigateTo({
-        url: "/pages/home/notifyDetail",
+        url: "/pages/notifyPages/notifyDetail",
       });
     },
   },
