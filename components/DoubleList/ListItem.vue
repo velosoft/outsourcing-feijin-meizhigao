@@ -59,15 +59,11 @@ export default {
     detailUrl() {
       switch (this.type) {
         case "product":
-          return `/pages/home/detailPages/productDetail?id=${
-            this.itemId || ""
-          }`;
+          return `/pages/detailPages/productDetail?id=${this.itemId || ""}`;
         case "service":
-          return `/pages/home/detailPages/serviceDetail?id=${
-            this.itemId || ""
-          }`;
+          return `/pages/detailPages/serviceDetail?id=${this.itemId || ""}`;
         case "course":
-          return `/pages/home/detailPages/courseDetail?id=${this.itemId || ""}`;
+          return `/pages/detailPages/courseDetail?id=${this.itemId || ""}`;
         default:
           return "";
       }

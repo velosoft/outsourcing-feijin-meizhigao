@@ -105,7 +105,7 @@
       }
     },
     {
-      "path": "pages/home/searchPage",
+      "path": "pages/searchPage/searchPage",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
@@ -126,35 +126,35 @@
       }
     },
     {
-      "path": "pages/home/activity/activity",
+      "path": "pages/activity/activity",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/detailPages/productDetail",
+      "path": "pages/detailPages/productDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/detailPages/serviceDetail",
+      "path": "pages/detailPages/serviceDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/detailPages/courseDetail",
+      "path": "pages/detailPages/courseDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/commentList/commentList",
+      "path": "pages/commentList/commentList",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
@@ -168,7 +168,7 @@
       }
     },
     {
-      "path": "pages/home/listPage",
+      "path": "pages/shopList/shopList",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

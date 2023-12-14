@@ -12,7 +12,10 @@
         </view>
       </view>
       <view class="flex-col menu-right ml-12">
-        <navigator url="/pages/home/listPage?title=课程中心" hover-class="none">
+        <navigator
+          url="/pages/shopList/shopList?title=课程中心"
+          hover-class="none"
+        >
           <view class="flex-col justify-start relative">
             <image class="course-bg pos" src="/static/images/course_bg.png" />
             <view
@@ -22,7 +25,10 @@
             </view>
           </view>
         </navigator>
-        <navigator url="/pages/home/listPage?title=服务中心" hover-class="none">
+        <navigator
+          url="/pages/shopList/shopList?title=服务中心"
+          hover-class="none"
+        >
           <view class="flex-col justify-start relative mt-10">
             <image class="course-bg pos" src="/static/images/product_bg.png" />
             <view
