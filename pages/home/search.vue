@@ -2,14 +2,14 @@
   <view class="flex-col page">
     <nav-bar :hasBack="true" fixed="true" isShow="true">
       <template #right>
-        <search
+        <search-bar
           class="search-wrap"
           :showAction="true"
           :value="keywords"
           @custom="onCustom"
           @search="onSearch"
           @focus="onFocus"
-        ></search>
+        ></search-bar>
       </template>
     </nav-bar>
     <view class="flex-col flex-1">
@@ -52,7 +52,7 @@
 <script>
 import NavBar from "@/components/NavBar/NavBar.vue";
 import Tabs from "@/components/Tabs.vue";
-import Search from "@/components/Search.vue";
+import SearchBar from "@/components/SearchBar.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "./components/DoubleList.vue";
 import ConfirmPanel from "@/components/ConfirmPanel.vue";
@@ -63,7 +63,7 @@ export default {
   components: {
     NavBar,
     Tabs,
-    Search,
+    SearchBar,
     ListContainer,
     DoubleList,
     ConfirmPanel,
