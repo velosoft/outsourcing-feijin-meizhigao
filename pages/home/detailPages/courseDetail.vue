@@ -33,30 +33,13 @@
               :buyer="pageData.product.buyer"
               @onShare="onShare"
             ></product-header>
-            <specification-card
-              class="wraper-top"
-              :enables="specificationRows"
-              :deliverPayment="specificationData.deliverPayment"
-              :specification="specificationData.specification"
-              :tags="specificationData.tags"
-              :discountTags="pageData.product.discountTags"
-              @onSpecificationClick="onSpecificationClick"
-            ></specification-card>
-            <comment-card
-              class="wraper-top"
-              title="服务评价"
-              :comments="pageData.comments"
-            ></comment-card>
-            <detail-card
-              class="wraper-top"
-              :content="pageData.product.detail"
-            ></detail-card>
+            <course-intro :imageList="pageData.product.detail"></course-intro>
           </view>
         </view>
       </view>
       <footer-bar
         :hasActivity="!!pageData.activity"
-        :activityStarted="false"
+        :activityStarted="true"
       ></footer-bar>
     </view>
     <share-popup
@@ -85,17 +68,18 @@
 
 <script>
 import NavBar from "@/components/NavBar/NavBar.vue";
+import { commentList } from "@/mock/commentList.js";
 import ActivityCard from "./components/ActivityCard.vue";
-import ProductHeader from "../components/ProductHeader.vue";
+import ProductHeader from "./components/ProductHeader.vue";
 import SpecificationCard from "./components/SpecificationCard.vue";
 import CommentCard from "./components/CommentCard.vue";
 import DetailCard from "./components/DetailCard.vue";
+import CourseIntro from "./components/CourseIntro.vue";
+import DetailSwiper from "./components/DetailSwiper.vue";
 import FooterBar from "./components/FooterBar.vue";
 import SharePopup from "./popup/SharePopup.vue";
 import AftersalePopup from "./popup/AftersalePopup.vue";
 import SpecificationPopup from "./popup/SpecificationPopup.vue";
-import DetailSwiper from "./components/DetailSwiper.vue";
-import { commentList } from "@/mock/commentList.js";
 
 export default {
   components: {
@@ -106,6 +90,7 @@ export default {
     CommentCard,
     ProductHeader,
     DetailCard,
+    CourseIntro,
     SharePopup,
     AftersalePopup,
     SpecificationPopup,
@@ -127,12 +112,13 @@ export default {
           discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
           tags: ["新客优惠", "新品上市", "好评推荐"],
           buyer: 100,
-          detail:
-            "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
+          detail: [
+            "/static/mock/course_detail_image.png",
+            "/static/mock/course_detail_image.png",
+          ],
         },
         activity: null,
         comments: [],
-
         swiperList: [
           {
             url: "/static/mock/detail_swiper_image.png",
@@ -145,16 +131,9 @@ export default {
           },
         ],
       },
-      specificationData: {
-        deliverPayment: "免运费",
-        specification: "请选择服务规格",
-        tags: ["官方自营", "支持退换"],
-      },
-
       detail: {},
       showAftersalePopup: false,
       showSpecPopup: false,
-      specificationRows: ["specification", "service"],
     };
   },
   onLoad(option) {
@@ -166,7 +145,6 @@ export default {
         time: 108000000,
         buyer: 100,
       };
-      this.specificationRows = ["deliverPayment", "specification", "service"];
     }
   },
   onPageScroll(e) {

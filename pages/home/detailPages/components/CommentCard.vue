@@ -41,7 +41,7 @@ export default {
     goComment(args) {
       // 事件处理方法
       uni.navigateTo({
-        url: "/pages/home/activity/comment",
+        url: "/pages/home/commentList/commentList",
       });
     },
   },

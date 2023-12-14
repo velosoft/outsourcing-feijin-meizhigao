@@ -1,6 +1,6 @@
 <template>
   <view class="flex-row justify-between">
-    <navigator url="../home/activity/activityShop" hover-class="none">
+    <navigator url="/pages/home/activity/activity" hover-class="none">
       <view class="flex-row items-center classify-card classify-card-left">
         <view class="classify-con">
           <view class="flex-col justify-center items-center tag tag-left">
@@ -15,11 +15,7 @@
       </view>
     </navigator>
 
-    <navigator
-      url="../home/activity/activityShop"
-      class="ml-8"
-      hover-class="none"
-    >
+    <navigator url="../home/activity/activity" class="ml-8" hover-class="none">
       <view class="flex-row items-center classify-card classify-card-right">
         <view class="classify-con">
           <view class="flex-col justify-center items-center tag tag-right">
@@ -47,7 +43,7 @@ export default {
   methods: {
     goto(url) {
       uni.navigateTo({
-        url: "/pages/listPage/index",
+        url: "/pages/home/listPage",
       });
     },
   },

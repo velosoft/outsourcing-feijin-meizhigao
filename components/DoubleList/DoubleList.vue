@@ -3,7 +3,7 @@
     <view class="flex-col justify-start double-list-view">
       <view class="flex-row">
         <view class="flex-col justify-start left-list">
-          <shop-item
+          <list-item
             v-for="(item, index) in itemsLeft"
             :key="index"
             :itemId="item.id"
@@ -14,10 +14,10 @@
             :discount="item.discount"
             :price="item.price"
             :buyer="item.buyer"
-          ></shop-item>
+          ></list-item>
         </view>
         <view class="flex-col justify-start right-list ml-15">
-          <shop-item
+          <list-item
             class="shop-relative"
             v-for="(item, index) in itemsRight"
             :key="index"
@@ -29,7 +29,7 @@
             :discount="item.discount"
             :price="item.price"
             :buyer="item.buyer"
-          ></shop-item>
+          ></list-item>
         </view>
       </view>
     </view>
@@ -37,10 +37,10 @@
 </template>
 
 <script>
-import ShopItem from "./ShopItem.vue";
+import ListItem from "./ListItem.vue";
 
 export default {
-  components: { ShopItem },
+  components: { ListItem },
   props: {
     items: { type: Array, default: () => [] },
   },

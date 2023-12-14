@@ -14,7 +14,7 @@
 export default {
   methods: {
     goSearch() {
-      uni.navigateTo({ url: "/pages/home/search" });
+      uni.navigateTo({ url: "/pages/home/searchPage" });
     },
   },
 };

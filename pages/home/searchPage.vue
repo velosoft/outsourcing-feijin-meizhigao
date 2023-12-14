@@ -54,7 +54,7 @@ import NavBar from "@/components/NavBar/NavBar.vue";
 import Tabs from "@/components/Tabs.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
-import DoubleList from "./components/DoubleList.vue";
+import DoubleList from "@/components/DoubleList.vue";
 import ConfirmPanel from "@/components/ConfirmPanel.vue";
 import ToggleList from "@/components/ToggleList.vue";
 import { serviceList } from "@/mock/shopList";

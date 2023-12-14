@@ -106,15 +106,15 @@ export default {
     detailUrl() {
       switch (this.item.type) {
         case "product":
-          return `/pages/home/activity/productDetail?id=${
+          return `/pages/home/detailPages/productDetail?id=${
             this.item.id || ""
           }&type=activity`;
         case "service":
-          return `/pages/home/activity/serviceDetail?id=${
+          return `/pages/home/detailPages/serviceDetail?id=${
             this.item.id || ""
           }&type=activity`;
         case "course":
-          return `/pages/home/activity/courseDetail?id=${
+          return `/pages/home/detailPages/courseDetail?id=${
             this.item.id || ""
           }type=activity`;
         default:

@@ -105,14 +105,14 @@
       }
     },
     {
-      "path": "pages/home/search",
+      "path": "pages/home/searchPage",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/notify",
+      "path": "pages/home/notifyList",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
@@ -126,35 +126,35 @@
       }
     },
     {
-      "path": "pages/home/activity/activityShop",
+      "path": "pages/home/activity/activity",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/activity/productDetail",
+      "path": "pages/home/detailPages/productDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/activity/serviceDetail",
+      "path": "pages/home/detailPages/serviceDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/activity/courseDetail",
+      "path": "pages/home/detailPages/courseDetail",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/home/activity/comment",
+      "path": "pages/home/commentList/commentList",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
@@ -168,7 +168,7 @@
       }
     },
     {
-      "path": "pages/home/listPage/index",
+      "path": "pages/home/listPage",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
@@ -219,7 +219,7 @@
         "iconPath": "static/images/icon_tab_08.png",
         "selectedIconPath": "static/images/icon_tab_08.png",
         "text": "我的"
-      }/*,
+      } /*,
       {
         "pagePath": "pages/tabBar/comps",
         "iconPath": "static/images/icon_tab_08.png",
