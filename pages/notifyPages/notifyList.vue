@@ -2,7 +2,7 @@
   <view class="flex-col page">
     <nav-bar :hasBack="true" title="消息"></nav-bar>
     <tabs
-      class="section_5"
+      class="tabs-wrap"
       :tabList="tabList"
       :TabCur="tabCur"
       @tabChange="onTabChange"
@@ -196,7 +196,7 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
-  .section_5 {
+  .tabs-wrap {
     position: relative;
   }
   .content {

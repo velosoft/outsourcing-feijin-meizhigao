@@ -6,8 +6,8 @@
           class="default-tabs"
           :scrollable="false"
           :list="tabList"
-          lineWidth="20"
-          lineHeight="6"
+          lineWidth="10rpx"
+          lineHeight="6rpx"
           lineColor="#b09053"
           :activeStyle="{
             color: '#030305',

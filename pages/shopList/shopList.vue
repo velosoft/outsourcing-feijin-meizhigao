@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col page">
     <nav-bar :hasBack="true" :title="title"></nav-bar>
-    <view class="flex-col justify-start carousel">
+    <view class="flex-col justify-start banner">
       <view class="flex-col justify-start items-center banner-image-wrapper">
         <image
           class="banner-image"
@@ -134,7 +134,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.carousel {
+.banner {
   padding-top: 16rpx;
   background-color: #ffffff;
 }
