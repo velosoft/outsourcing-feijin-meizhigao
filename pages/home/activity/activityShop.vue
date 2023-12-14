@@ -1,24 +1,30 @@
 <template>
   <view class="flex-col page">
-    <NavBar :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 container">
       <image class="banner" src="../../../static/images/banner_01.png" />
       <view class="flex-col line-tabs">
-        <MultCardTabs
+        <mult-card-tabs
           class="card-tabs-wrap"
           :value="multValue"
           :tabs="multTabs"
           @change="onMultCardTabs"
-        ></MultCardTabs>
-        <ActivityStatus0 v-if="activityStatus === 0" class="self-center" />
-        <ActivityStatus1 v-if="activityStatus === 1" />
-        <ActivityStatus2 v-if="activityStatus === 2" class="self-center" />
-        <CardTabs
+        ></mult-card-tabs>
+        <activity-status-waiting
+          v-if="activityStatus === 0"
+          class="self-center"
+        />
+        <activity-status-running v-if="activityStatus === 1" />
+        <activity-status-expired
+          v-if="activityStatus === 2"
+          class="self-center"
+        />
+        <card-tabs
           class="tabs-wraper"
           :value="value"
           :tabs="tabs"
           @change="onCardTabs"
-        ></CardTabs>
+        ></card-tabs>
         <view class="flex-col">
           <list-container
             :showEmpty="!list.length"
@@ -27,7 +33,7 @@
           >
             <view class="flex-col">
               <view class="flex-col list">
-                <ActivityShopItem
+                <activity-shop-item
                   class="list-item"
                   v-for="(item, index) in list"
                   :key="index"
@@ -49,9 +55,9 @@ import ListContainer from "../../../components/ListContainer/ListContainer.vue";
 import MultCardTabs from "./components/cardTabs/multCardTabs.vue";
 import CardTabs from "./components/cardTabs/cardTabs.vue";
 import ActivityShopItem from "./components/ActivityShopItem.vue";
-import ActivityStatus0 from "./components/ActivityStatus0.vue";
-import ActivityStatus1 from "./components/ActivityStatus1.vue";
-import ActivityStatus2 from "./components/ActivityStatus2.vue";
+import ActivityStatusWaiting from "./components/ActivityStatusWaiting.vue";
+import ActivityStatusRunning from "./components/ActivityStatusRunning.vue";
+import ActivityStatusExpired from "./components/ActivityStatusExpired.vue";
 import {
   productList,
   serviceList,
@@ -65,9 +71,9 @@ export default {
     MultCardTabs,
     ListContainer,
     ActivityShopItem,
-    ActivityStatus0,
-    ActivityStatus1,
-    ActivityStatus2,
+    ActivityStatusWaiting,
+    ActivityStatusRunning,
+    ActivityStatusExpired,
   },
   props: {},
   data() {
