@@ -5,7 +5,7 @@
   >
     <image
       class="tips-text"
-      src="https://dev.ft.velosoft.cn/api/image?token=6573ca17740f740012ac1d46&name=btn_seccount_01.png"
+      src="/static/images/activity_status_running_tips.png"
     />
     <view class="flex-row items-center count-down-wrap">
       <text class="count-down-label">距离结束还有</text>

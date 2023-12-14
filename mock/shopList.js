@@ -97,8 +97,7 @@ export const serviceList = [
 export const productList = [
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "衣架防滑无痕围巾架丝",
     tags: ["新品上市", "好评推荐"],
     price: 200.23,
@@ -109,8 +108,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "多功能厨房刀架",
     tags: ["热销"],
     price: 150,
@@ -121,8 +119,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "智能温度控制电热水壶",
     tags: ["新品", "智能家居"],
     price: 300,
@@ -133,8 +130,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "无线蓝牙耳机，降噪高清通话",
     tags: ["畅销", "科技"],
     price: 500,
@@ -145,8 +141,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "宠物自动喂食器，智能定时定量",
     tags: ["宠物爱好者"],
     price: 250,
@@ -157,8 +152,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "LED护眼台灯，三档调光触控开关",
     tags: ["学习必备", "护眼"],
     price: 120,
@@ -169,8 +163,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "户外便携式折叠椅，轻便耐用",
     tags: ["户外", "便携"],
     price: 100,
@@ -181,8 +174,7 @@ export const productList = [
   },
   {
     type: "product",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "全自动智能扫地机器人，低噪音大吸力",
     tags: ["智能家电", "清洁"],
     price: 800,
@@ -196,8 +188,7 @@ export const productList = [
 export const courseList = [
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "收纳整理师中级认证课（含服务奖励）",
     tags: ["新品上市", "好评推荐"],
     discount: "秒杀价",
@@ -209,8 +200,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "全面的JavaScript编程基础课程，适合所有水平，包括初学者",
     tags: ["编程", "技术", "入门"],
     price: 499.12,
@@ -221,8 +211,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "高级烹饪技巧：从初学者到大师",
     tags: ["烹饪", "美食"],
     discount: "折扣价",
@@ -234,8 +223,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "室内设计基础与实践",
     tags: ["设计", "家居"],
     discount: "早鸟价",
@@ -247,8 +235,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "摄影课程：初学者指南",
     tags: ["摄影", "艺术"],
     price: 300,
@@ -259,8 +246,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "学习Python：零基础到数据分析",
     tags: ["编程", "数据"],
     price: 550,
@@ -271,8 +257,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "园艺课程：打造你的家庭花园",
     tags: ["园艺", "户外"],
     price: 400,
@@ -283,8 +268,7 @@ export const courseList = [
   },
   {
     type: "course",
-    image:
-      "https://dev.ft.velosoft.cn/api/image?token=6577f1d1740f740012ac41b0&name=fefeafe12fb59fff3247f436593cd081.png",
+    image: "/static/mock/product_image.png",
     title: "个人财务管理：理财与投资基础",
     tags: ["财务", "投资", "理财"],
     price: 350,

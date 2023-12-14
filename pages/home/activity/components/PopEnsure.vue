@@ -7,10 +7,7 @@
         :key="index"
       >
         <view class="flex-row items-start self-stretch">
-          <image
-            class="icon"
-            src="https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=icon_ensure_01.png"
-          />
+          <image class="icon" src="/static/images/popup_ensure_icon.png" />
           <text class="label ml-8">{{ item.title }}</text>
         </view>
         <text class="self-start describe describe-text mt-8">{{

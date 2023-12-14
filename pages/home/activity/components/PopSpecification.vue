@@ -4,7 +4,7 @@
       <view class="flex-row items-center">
         <image
           class="shrink-0 product-image"
-          src="https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=b23f4993357ee315653debdff8758408.png"
+          src="/static/mock/popup_product_image.png"
         />
         <view class="flex-col flex-1 product-right ml-12">
           <view class="flex-col">

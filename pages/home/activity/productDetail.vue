@@ -132,13 +132,13 @@ export default {
 
         swiperList: [
           {
-            url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+            url: "/static/mock/detail_swiper_image.png",
           },
           {
-            url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+            url: "/static/mock/detail_swiper_image.png",
           },
           {
-            url: "https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=5d9bdfc11721ad48076565939b4b77dd.png",
+            url: "/static/mock/detail_swiper_image.png",
           },
         ],
       },

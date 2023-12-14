@@ -29,8 +29,7 @@ export default {
           name: "课程目录",
         },
       ],
-      detail:
-        "https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=24c665e377d488a8cff4c95c7f75fc74.png",
+      detail: "/static/mock/course_detail_image.png",
     };
   },
 

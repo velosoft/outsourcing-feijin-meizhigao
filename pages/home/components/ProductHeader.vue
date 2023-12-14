@@ -4,7 +4,7 @@
       <text class="title line-clamp-one">{{ title }}</text>
       <image
         class="share-icon"
-        src="https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=icon_share_01.png"
+        src="h/static/images/icon_share.png"
         @click="onShare"
       />
     </view>
@@ -35,7 +35,7 @@
         <text class="self-center receive">领取</text>
         <image
           class="icon_arrow ml-3"
-          src="https://dev.ft.velosoft.cn/api/image?token=6575e348740f740012ac372e&name=icon_arrow_06.png"
+          src="/static/images/icon_right_arrow.png"
         />
       </view>
     </view>
