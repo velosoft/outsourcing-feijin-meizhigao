@@ -221,7 +221,7 @@ export default {
         margin-top: 48rpx;
       }
       .list {
-        padding: 20rpx;
+        padding: 20rpx 20rpx 88rpx;
         background-image: linear-gradient(86.8deg, #fbebbc 4.9%, #fefde2 95.3%);
         border-radius: 0rpx 0rpx 16rpx 16rpx;
 
@@ -235,5 +235,9 @@ export default {
       }
     }
   }
+}
+
+/deep/ .listContainerComp .loadingComp {
+  margin-top: -44px;
 }
 </style>

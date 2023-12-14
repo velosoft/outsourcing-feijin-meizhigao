@@ -6,7 +6,7 @@
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
         <GoSearch class="flex-1" />
-        <view class="ml-8 flex-col items-center shrink-0 relative search-right">
+        <view class="ml-8 flex-col items-center shrink-0 relative search-right" @tap="goNotify">
           <image class="message" src="../../static/images/message.png" />
           <view class="flex-col justify-start items-center dot-wrap dot-pos">
             <image class="icon-size" src="../../static/images/dot_bg.png" />

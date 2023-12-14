@@ -4,7 +4,6 @@
     <input
       class="uni-input flex-1"
       placeholder-class="placeholder-text"
-      focus
       placeholder="搜索"
       :disabled="false"
     />
@@ -15,9 +14,7 @@
 export default {
   methods: {
     goSearch() {
-      uni.navigateTo({
-        url: "/pages/home/search",
-      });
+      uni.navigateTo({ url: "/pages/home/search" });
     },
   },
 };
