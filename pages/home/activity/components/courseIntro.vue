@@ -36,7 +36,7 @@ export default {
 
   methods: {
     onChange(idx) {
-      this.detail = imageList[idx];
+      this.detail = this.imageList[idx];
     },
   },
 };
