@@ -140,7 +140,7 @@ export default {
     // 页面启动的生命周期，这里编写页面加载时的逻辑
     this.id = option.id;
 
-    if (option.type === "activity") {
+    if (option.from === "activity") {
       this.pageData.activity = {
         time: 108000000,
         buyer: 100,

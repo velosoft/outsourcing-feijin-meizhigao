@@ -108,15 +108,15 @@ export default {
         case "product":
           return `/pages/detailPages/productDetail?id=${
             this.item.id || ""
-          }&type=activity`;
+          }&from=activity`;
         case "service":
           return `/pages/detailPages/serviceDetail?id=${
             this.item.id || ""
-          }&type=activity`;
+          }&from=activity`;
         case "course":
           return `/pages/detailPages/courseDetail?id=${
             this.item.id || ""
-          }type=activity`;
+          }&from=activity`;
         default:
           return "";
       }
