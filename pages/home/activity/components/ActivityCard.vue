@@ -7,7 +7,7 @@
           <text class="self-start price-symbol">￥</text>
           <text class="price">{{ price }}</text>
           <text class="self-start point">.{{ decimalPrice }}</text>
-          <image class="ml-14 skill-btn" src="/static/images/btn_kill_01.png" />
+          <image class="ml-14 skill-btn" src="/static/images/btn_kill.png" />
         </view>
         <view class="flex-row">
           <text class="com-font line-through">原价：￥{{ originPrice }}</text>

@@ -17,7 +17,7 @@
           hover-class="none"
         >
           <view class="flex-col justify-start relative">
-            <image class="course-bg pos" src="/static/images/course-bg.png" />
+            <image class="course-bg pos" src="/static/images/course_bg.png" />
             <view
               class="flex-col justify-start items-start relative course-con"
             >

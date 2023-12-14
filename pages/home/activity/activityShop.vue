@@ -2,7 +2,7 @@
   <view class="flex-col page">
     <nav-bar :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 container">
-      <image class="banner" src="/static/images/banner_01.png" />
+      <image class="banner" src="/static/mock/activity_banner.png" />
       <view class="flex-col line-tabs">
         <mult-card-tabs
           class="card-tabs-wrap"

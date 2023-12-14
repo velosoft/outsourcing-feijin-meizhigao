@@ -147,10 +147,7 @@
               :key="index"
             >
               <view class="flex-row items-center self-stretch">
-                <image
-                  class="icon-avatar"
-                  src="/static/images/icon_avatar.png"
-                />
+                <image class="avatar" src="/static/mock/avatar.png" />
                 <text class="ml-12 font-com-symbol">朱**</text>
               </view>
               <view class="mt-10 flex-col self-center">
@@ -415,7 +412,7 @@ export default {
         }
         .comment-list {
           padding: 0 28rpx;
-          .icon-avatar {
+          .avatar {
             border-radius: 200rpx;
             width: 60rpx;
             height: 60rpx;
