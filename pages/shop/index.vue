@@ -14,12 +14,12 @@
             <view class="flex-col justify-start items-center relative">
               <image
                 class="header-swiper-image"
-                src="../../static/images/iamge_video.png"
+                src="/static/images/iamge_video.png"
                 mode="aspectFill"
               />
               <image
                 class="outflow video-open-btn"
-                src="../../static/images/icon_video_01.png"
+                src="/static/images/icon_video_01.png"
               />
             </view>
           </swiper-item>
@@ -36,10 +36,7 @@
             <view class="flex-col"
               ><text class="title">厨房收纳服务厨房收纳服务</text></view
             >
-            <image
-              class="share-image"
-              src="../../static/images/icon_share_01.png"
-            />
+            <image class="share-image" src="/static/images/icon_share_01.png" />
           </view>
           <view class="flex-col mt-17"
             ><text class="describe-text"
@@ -72,7 +69,7 @@
               <text class="coupon-text">领取</text>
               <image
                 class="ml-4 arrow-right"
-                src="../../static/images/icon_arrow_02.png"
+                src="/static/images/icon_arrow_02.png"
               />
             </view>
           </view>
@@ -108,7 +105,7 @@
             </view>
             <image
               class="icon-arrow_02"
-              src="../../static/images/icon_arrow_03.png"
+              src="/static/images/icon_arrow_03.png"
             />
           </view>
           <view class="h-divider" />
@@ -118,14 +115,14 @@
               <view class="flex-row items-center reserve-tag">
                 <image
                   class="shrink-0 icon-office"
-                  src="../../static/images/icon_radio_01.png"
+                  src="/static/images/icon_radio_01.png"
                 />
                 <text class="ml-12 reserve-tag-text">官方自营</text>
               </view>
               <view class="flex-row items-center reserve-tag">
                 <image
                   class="shrink-0 icon-office"
-                  src="../../static/images/icon_radio_01.png"
+                  src="/static/images/icon_radio_01.png"
                 />
                 <text class="ml-8 reserve-tag-text">支持退换</text>
               </view>
@@ -139,7 +136,7 @@
               <text class="font-com-shop">查看全部</text>
               <image
                 class="ml-4 shrink-0 icon-arrow_02"
-                src="../../static/images/icon_arrow_01.png"
+                src="/static/images/icon_arrow_01.png"
               />
             </view>
           </view>
@@ -152,7 +149,7 @@
               <view class="flex-row items-center self-stretch">
                 <image
                   class="icon-avatar"
-                  src="../../static/images/icon_avatar.png"
+                  src="/static/images/icon_avatar.png"
                 />
                 <text class="ml-12 font-com-symbol">朱**</text>
               </view>
@@ -176,7 +173,7 @@
           </view>
           <image
             class="mt-56 detial-imag"
-            src="../../static/images/images_detial.png"
+            src="/static/images/images_detial.png"
           />
         </view>
       </view>
@@ -186,15 +183,12 @@
         <view class="flex-col items-center">
           <image
             class="footer-image"
-            src="../../static/images/icon_collect_01.png"
+            src="/static/images/icon_collect_01.png"
           />
           <text class="mt-4 footer-font footer-text">收藏</text>
         </view>
         <view class="ml-18 flex-col items-center">
-          <image
-            class="footer-image"
-            src="../../static/images/icon_cart_01.png"
-          />
+          <image class="footer-image" src="/static/images/icon_cart_01.png" />
           <text class="mt-4 footer-font footer-text">购物车</text>
         </view>
       </view>

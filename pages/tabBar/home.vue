@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col page">
     <nav-bar :hasBack="false">
-      <image slot="left" class="logo" src="../../static/images/logo.png" />
+      <image slot="left" class="logo" src="/static/images/logo.png" />
     </nav-bar>
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">

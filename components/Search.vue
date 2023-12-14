@@ -10,7 +10,7 @@
         <slot name="search-icon">
           <image
             class="search-image"
-            src="../static/images/icon_search_01.png"
+            src="/static/images/icon_search_01.png"
             mode="aspectFit|aspectFill|widthFix"
             lazy-load="false"
             binderror=""
@@ -135,7 +135,7 @@ export default {
     clickHandler() {
       if (this.disabled) {
         this.$emit("click");
-      }else{
+      } else {
         this.$emit("handler");
       }
     },

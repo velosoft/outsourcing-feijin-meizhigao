@@ -99,16 +99,16 @@ export default {
     const setImgUrl = this.$setImgUrl;
     return {
       src: "",
-      bg_03: setImgUrl("../static/images/bg_03.jpg"),
+      bg_03: setImgUrl("/static/images/bg_03.jpg"),
       // shareImg: [
       //   setImgUrl("/images/icon_shareWechat_01.png"),
       //   setImgUrl("/images/icon_sharePic_01.png"),
       //   setImgUrl("/images/icon_shareWechat_01.png"),
       // ],
       shareImg: [
-        "../static/images/icon_shareWechat_01.png",
-        "../static/images/icon_sharePic_01.png",
-        "../static/images/icon_shareWechat_01.png",
+        "/static/images/icon_shareWechat_01.png",
+        "/static/images/icon_sharePic_01.png",
+        "/static/images/icon_shareWechat_01.png",
       ],
       show: false,
     };

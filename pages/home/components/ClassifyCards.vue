@@ -1,37 +1,37 @@
 <template>
   <view class="flex-row justify-between">
     <navigator url="../home/activity/activityShop" hover-class="none">
-      <view
-      class="flex-row items-center classify-card classify-card-left"
-    >
-      <view class="classify-con">
-        <view class="flex-col justify-center items-center tag tag-left">
-          <text class="tag-text">秒杀活动</text>
+      <view class="flex-row items-center classify-card classify-card-left">
+        <view class="classify-con">
+          <view class="flex-col justify-center items-center tag tag-left">
+            <text class="tag-text">秒杀活动</text>
+          </view>
+          <text class="tag-down">让你购物省心又省钱</text>
         </view>
-        <text class="tag-down">让你购物省心又省钱</text>
+        <image
+          class="classify-bg-left"
+          src="/static/images/classify_left.png"
+        />
       </view>
-      <image
-        class="classify-bg-left"
-        src="../../../static/images/classify_left.png"
-      />
-    </view>
     </navigator>
 
-    <navigator url="../home/activity/activityShop" class="ml-8" hover-class="none">
-      <view
-      class="flex-row items-center classify-card classify-card-right"
+    <navigator
+      url="../home/activity/activityShop"
+      class="ml-8"
+      hover-class="none"
     >
-      <view class="classify-con">
-        <view class="flex-col justify-center items-center tag tag-right">
-          <text class="tag-text">领券中心</text>
+      <view class="flex-row items-center classify-card classify-card-right">
+        <view class="classify-con">
+          <view class="flex-col justify-center items-center tag tag-right">
+            <text class="tag-text">领券中心</text>
+          </view>
+          <text class="tag-down">领券下单更优惠</text>
         </view>
-        <text class="tag-down">领券下单更优惠</text>
+        <image
+          class="classify-bg-right"
+          src="/static/images/classify_right.png"
+        />
       </view>
-      <image
-        class="classify-bg-right"
-        src="../../../static/images/classify_right.png"
-      />
-    </view>
     </navigator>
   </view>
 </template>
@@ -70,7 +70,7 @@ export default {
   }
   .classify-bg-left {
     position: absolute;
-    bottom:8rpx;
+    bottom: 8rpx;
     right: 16rpx;
     width: 100rpx;
     height: 100rpx;

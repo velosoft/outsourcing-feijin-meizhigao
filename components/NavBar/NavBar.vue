@@ -36,7 +36,7 @@
             </view> -->
             <image
               class="navbar-left-arrow"
-              src="../../static/images/icon_arrow_04.png"
+              src="/static/images/icon_arrow_04.png"
               mode="aspectFit|aspectFill|widthFix"
               lazy-load="false"
               binderror=""

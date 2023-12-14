@@ -19,7 +19,7 @@
             <text class="title">历史搜索</text>
             <image
               class="icon-delete"
-              src="../../static/images/icon_del_01.png"
+              src="/static/images/icon_del_01.png"
               @click="clearHistory"
             />
           </view>

@@ -33,7 +33,7 @@
           <slot name="close">
             <image
               class="close-icon"
-              src="../static/images/icon_del_02.png"
+              src="/static/images/icon_del_02.png"
               mode="aspectFit|aspectFill|widthFix"
               lazy-load="false"
               binderror=""

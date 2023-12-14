@@ -1,10 +1,7 @@
 <template>
   <view class="flex-col member-box">
     <view class="flex-col justify-start relative member-section">
-      <image
-        class="member-bg member-pos"
-        src="../../static/images/member_bg.png"
-      />
+      <image class="member-bg member-pos" src="/static/images/member_bg.png" />
       <view class="flex-col relative">
         <view
           class="flex-row justify-between items-center self-stretch member-group"
