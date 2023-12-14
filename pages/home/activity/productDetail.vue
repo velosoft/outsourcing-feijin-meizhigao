@@ -35,6 +35,7 @@
             ></ProductHeader>
             <specification-card
               class="wraper-top"
+              :enables="specificationRows"
               :deliverPayment="specificationData.deliverPayment"
               :specification="specificationData.specification"
               :tags="specificationData.tags"
@@ -138,6 +139,12 @@ export default {
       detail: {},
       showPopEnsure: false,
       showPopSpecification: false,
+      specificationRows: [
+        "deliverPayment",
+        "activity",
+        "specification",
+        "service",
+      ],
     };
   },
   onLoad(option) {
@@ -149,6 +156,7 @@ export default {
         time: 108000000,
         buyer: 100,
       };
+      this.specificationRows = ["deliverPayment", "specification", "service"];
     }
   },
   onPageScroll(e) {

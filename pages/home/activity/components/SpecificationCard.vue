@@ -1,10 +1,14 @@
 <template>
   <view class="flex-col container">
-    <view class="flex-row group">
+    <view v-if="enables.includes('deliverPayment')" class="flex-row group">
       <text class="label">运费</text>
       <text class="value ml-16">{{ deliverPayment }}</text>
     </view>
-    <view class="flex-row justify-between group" @click="onSpecificationClick">
+    <view
+      v-if="enables.includes('activity')"
+      class="flex-row justify-between group"
+      @click="onSpecificationClick"
+    >
       <view class="flex-row self-center cell-row">
         <text class="label activity-label">活动</text>
         <view class="flex-row ml-16 tag-gap tag-wrap">
@@ -17,14 +21,21 @@
         </view>
       </view>
     </view>
-    <view class="flex-row justify-between group" @click="onSpecificationClick">
+    <view
+      v-if="enables.includes('specification')"
+      class="flex-row justify-between group"
+      @click="onSpecificationClick"
+    >
       <view class="flex-row self-center">
         <text class="label">选择</text>
         <text class="value ml-16">{{ specification }}</text>
       </view>
       <image class="icon-arrow" src="/static/images/icon_arrow_05.png" />
     </view>
-    <view class="flex-row items-center group-last">
+    <view
+      v-if="enables.includes('service')"
+      class="flex-row items-center group-last"
+    >
       <text class="label">服务</text>
       <view class="flex-row ml-4">
         <view
@@ -47,6 +58,7 @@
 export default {
   components: {},
   props: {
+    enables: { type: String, default: () => [] },
     deliverPayment: { type: String, default: "" },
     specification: { type: String, default: "请选择服务规格" },
     tags: { type: Array, default: () => [] },
@@ -121,8 +133,7 @@ export default {
     flex: 1;
   }
   .activity-label {
-    line-height: 48rpx;;
-
+    line-height: 48rpx;
   }
 }
 </style>
