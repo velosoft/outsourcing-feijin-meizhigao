@@ -52,7 +52,7 @@
 import NavBar from "@/components/NavBar/NavBar.vue";
 import FjSticky from "@/components/FjSticky.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
-import DoubleList from "@/components/DoubleList.vue";
+import DoubleList from "@/components/DoubleList/DoubleList.vue";
 
 import { serviceList, courseList } from "@/mock/shopList";
 

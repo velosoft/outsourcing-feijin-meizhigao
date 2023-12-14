@@ -36,7 +36,7 @@
 
 <script>
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
-import DoubleList from "@/components/DoubleList.vue";
+import DoubleList from "@/components/DoubleList/DoubleList.vue";
 import FjSticky from "@/components/FjSticky.vue";
 
 export default {
