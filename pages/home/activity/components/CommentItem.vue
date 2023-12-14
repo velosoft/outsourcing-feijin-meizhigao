@@ -13,7 +13,7 @@
         <rate class="justify-center ml-6" :rating="overallRating"></rate>
       </view>
       <view class="flex-col justify-start items-center mt-12">
-        <text class="evaluate-text">
+        <text class="comment-text">
           {{ content }}
         </text>
       </view>
@@ -22,15 +22,15 @@
       <text class="self-start title-font">服务评价</text>
       <view class="flex-col self-stretch mt-20">
         <view class="flex-row items-center justify-between">
-          <text class="self-start evaluate-label">整体满意度</text>
+          <text class="self-start comment-label">整体满意度</text>
           <rate :rating="satisfactionLevelRating"></rate>
         </view>
         <view class="flex-row items-center justify-between mt-12">
-          <text class="self-start evaluate-label">人员专业素养</text>
+          <text class="self-start comment-label">人员专业素养</text>
           <rate :rating="professionalSkillRating"></rate>
         </view>
         <view class="flex-row items-center justify-between mt-12">
-          <text class="self-start evaluate-label">服务态度</text>
+          <text class="self-start comment-label">服务态度</text>
           <rate :rating="serviceAttitudeRating"></rate>
         </view>
       </view>
@@ -130,7 +130,7 @@ export default {
     font-size: 24rpx;
     line-height: 24rpx;
   }
-  .evaluate-text {
+  .comment-text {
     font-size: 28rpx;
     font-family: 苹方;
     line-height: 48rpx;
@@ -139,7 +139,7 @@ export default {
   &:first-child {
     margin-top: 0;
   }
-  .evaluate-label {
+  .comment-label {
     font-size: 28rpx;
     font-family: 苹方;
     line-height: 28rpx;

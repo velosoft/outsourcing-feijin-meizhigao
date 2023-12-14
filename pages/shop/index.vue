@@ -132,9 +132,9 @@
             </view>
           </view>
         </view>
-        <view class="mt-10 flex-col evaluate-info">
-          <view class="flex-row justify-between items-center evaluate-header">
-            <text class="evaluate-title">商品评价（20）</text>
+        <view class="mt-10 flex-col comment-info">
+          <view class="flex-row justify-between items-center comment-header">
+            <text class="comment-title">商品评价（20）</text>
             <view class="flex-row items-center">
               <text class="font-com-shop">查看全部</text>
               <image
@@ -143,7 +143,7 @@
               />
             </view>
           </view>
-          <view class="mt-16 flex-col evaluate-list">
+          <view class="mt-16 flex-col comment-list">
             <view
               class="flex-col mt-28"
               v-for="(item, index) in items_2"
@@ -157,11 +157,11 @@
                 <text class="ml-12 font-com-symbol">朱**</text>
               </view>
               <view class="mt-10 flex-col self-center">
-                <text class="font-evaluate"
+                <text class="comment-font"
                   >不错，真的特别好，服务很到位施工效果也很不错，妥妥的五星好评，还会回购</text
                 >
               </view>
-              <text class="mt-10 self-start font-com evaluate-describe"
+              <text class="mt-10 self-start font-com comment-describe"
                 >厨房定制收纳服务：按小时核算（元/m）</text
               >
             </view>
@@ -405,34 +405,34 @@ export default {
           }
         }
       }
-      .evaluate-info {
+      .comment-info {
         padding-bottom: 32rpx;
         background-color: #ffffff;
         border-radius: 12rpx;
-        .evaluate-header {
+        .comment-header {
           padding: 32rpx 28rpx;
           border-bottom: solid 1.6rpx #efefef;
-          .evaluate-title {
+          .comment-title {
             color: #030305;
             font-size: 32rpx;
             font-family: PingFangSC-Medium;
             line-height: 32rpx;
           }
         }
-        .evaluate-list {
+        .comment-list {
           padding: 0 28rpx;
           .icon-avatar {
             border-radius: 200rpx;
             width: 60rpx;
             height: 60rpx;
           }
-          .font-evaluate {
+          .comment-font {
             font-size: 22rpx;
             font-family: 苹方;
             line-height: 28rpx;
             color: #030305;
           }
-          .evaluate-describe {
+          .comment-describe {
             font-size: 20rpx;
             line-height: 20rpx;
           }

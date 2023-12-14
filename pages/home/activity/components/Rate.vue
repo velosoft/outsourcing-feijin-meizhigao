@@ -1,7 +1,6 @@
 <template>
   <view class="flex-row self-center justify-center items-center">
     <u-rate
-      class="evalute-rate"
       v-model="rating"
       :count="5"
       :readonly="readonly"
