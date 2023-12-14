@@ -196,7 +196,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/tabBar/cart",
+        "pagePath": "pages/tabBar/shop",
         "iconPath": "static/images/icon_tab_shop_deactive.png",
         "selectedIconPath": "static/images/icon_tab_shop_active.png",
         "text": "商城"
