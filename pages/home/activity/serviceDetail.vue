@@ -59,21 +59,21 @@
         :activityStarted="false"
       ></footer-bar>
     </view>
-    <pop-share-tabs
-      ref="popShareTabs"
+    <share-tabs
+      ref="share-popup"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
-    ></pop-share-tabs>
+    ></share-tabs>
     <u-popup
-      :show="showPopEnsure || showPopSpecification"
+      :show="showAftersalePopup || showSpecPopup"
       :round="16"
       @close="closePop"
       @open="openPop"
     >
-      <pop-ensure v-if="showPopEnsure" @isKnow="isKnow"></pop-ensure>
+      <pop-ensure v-if="showAftersalePopup" @isKnow="isKnow"></pop-ensure>
       <pop-specification
-        v-if="showPopSpecification"
+        v-if="showSpecPopup"
         @goNext="goNext"
       ></pop-specification>
     </u-popup>
@@ -88,9 +88,9 @@ import SpecificationCard from "./components/SpecificationCard.vue";
 import CommentCard from "./components/CommentCard.vue";
 import DetailCard from "./components/DetailCard.vue";
 import FooterBar from "./components/FooterBar.vue";
-import PopShareTabs from "@/components/PopShareTabs.vue";
-import PopEnsure from "./components/PopEnsure.vue";
-import PopSpecification from "./components/PopSpecification.vue";
+import SharePopup from "./popup/SharePopup.vue";
+import AftersalePopup from "./popup/AftersalePopup.vue";
+import SpecificationPopup from "./popup/SpecificationPopup.vue";
 import DetailSwiper from "./components/DetailSwiper.vue";
 import { commentList } from "@/mock/commentList.js";
 
@@ -103,9 +103,9 @@ export default {
     CommentCard,
     ProductHeader,
     DetailCard,
-    PopShareTabs,
-    PopEnsure,
-    PopSpecification,
+    SharePopup,
+    AftersalePopup,
+    SpecificationPopup,
     DetailSwiper,
   },
   props: {},
@@ -149,8 +149,8 @@ export default {
       },
 
       detail: {},
-      showPopEnsure: false,
-      showPopSpecification: false,
+      showAftersalePopup: false,
+      showSpecPopup: false,
       specificationRows: ["specification", "service"],
     };
   },
@@ -184,23 +184,23 @@ export default {
   },
   methods: {
     onShare(uid) {
-      this.$refs.popShareTabs.open();
+      this.$refs.sharePopup.open();
     },
     close() {},
     saveImg() {},
     onSpecificationClick() {
-      this.showPopSpecification = true;
+      this.showSpecPopup = true;
     },
     goNext() {
-      this.showPopSpecification = false;
-      this.showPopEnsure = true;
+      this.showSpecPopup = false;
+      this.showAftersalePopup = true;
     },
     isKnow() {
-      this.showPopEnsure = false;
+      this.showAftersalePopup = false;
     },
     closePop() {
-      this.showPopSpecification = false;
-      this.showPopEnsure = false;
+      this.showSpecPopup = false;
+      this.showAftersalePopup = false;
     },
     openPop() {},
     getPriceIntergetPart(price) {

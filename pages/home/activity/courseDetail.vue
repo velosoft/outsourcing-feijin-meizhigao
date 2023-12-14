@@ -43,40 +43,43 @@
       ></footer-bar>
     </view>
     <share-tabs
-      ref="popShareTabs"
+      ref="share-popup"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
     ></share-tabs>
     <u-popup
-      :show="showPopEnsure || showPopSpecification"
+      :show="showAftersalePopup || showSpecPopup"
       :round="16"
       @close="closePop"
       @open="openPop"
     >
-      <pop-ensure v-if="showPopEnsure" @isKnow="isKnow"></pop-ensure>
-      <pop-specification
-        v-if="showPopSpecification"
+      <aftersale-popup
+        v-if="showAftersalePopup"
+        @isKnow="isKnow"
+      ></aftersale-popup>
+      <specification-popup
+        v-if="showSpecPopup"
         @goNext="goNext"
-      ></pop-specification>
+      ></specification-popup>
     </u-popup>
   </view>
 </template>
 
 <script>
 import NavBar from "@/components/NavBar/NavBar.vue";
+import { commentList } from "@/mock/commentList.js";
 import ActivityCard from "./components/ActivityCard.vue";
 import ProductHeader from "../components/ProductHeader.vue";
 import SpecificationCard from "./components/SpecificationCard.vue";
 import CommentCard from "./components/CommentCard.vue";
 import DetailCard from "./components/DetailCard.vue";
 import CourseIntro from "./components/CourseIntro.vue";
-import FooterBar from "./components/FooterBar.vue";
-import PopShareTabs from "@/components/PopShareTabs.vue";
-import PopEnsure from "./components/PopEnsure.vue";
-import PopSpecification from "./components/PopSpecification.vue";
 import DetailSwiper from "./components/DetailSwiper.vue";
-import { commentList } from "@/mock/commentList.js";
+import FooterBar from "./components/FooterBar.vue";
+import SharePopup from "./popup/SharePopup.vue";
+import AftersalePopup from "./popup/AftersalePopup.vue";
+import SpecificationPopup from "./popup/SpecificationPopup.vue";
 
 export default {
   components: {
@@ -88,9 +91,9 @@ export default {
     ProductHeader,
     DetailCard,
     CourseIntro,
-    PopShareTabs,
-    PopEnsure,
-    PopSpecification,
+    SharePopup,
+    AftersalePopup,
+    SpecificationPopup,
     DetailSwiper,
   },
   props: {},
@@ -129,8 +132,8 @@ export default {
         ],
       },
       detail: {},
-      showPopEnsure: false,
-      showPopSpecification: false,
+      showAftersalePopup: false,
+      showSpecPopup: false,
     };
   },
   onLoad(option) {
@@ -162,23 +165,23 @@ export default {
   },
   methods: {
     onShare(uid) {
-      this.$refs.popShareTabs.open();
+      this.$refs.sharePopup.open();
     },
     close() {},
     saveImg() {},
     onSpecificationClick() {
-      this.showPopSpecification = true;
+      this.showSpecPopup = true;
     },
     goNext() {
-      this.showPopSpecification = false;
-      this.showPopEnsure = true;
+      this.showSpecPopup = false;
+      this.showAftersalePopup = true;
     },
     isKnow() {
-      this.showPopEnsure = false;
+      this.showAftersalePopup = false;
     },
     closePop() {
-      this.showPopSpecification = false;
-      this.showPopEnsure = false;
+      this.showSpecPopup = false;
+      this.showAftersalePopup = false;
     },
     openPop() {},
     getPriceIntergetPart(price) {

@@ -1,5 +1,5 @@
 <template>
-  <view class="popShareTabsComp">
+  <view class="share-popup">
     <uni-popup
       class="pop pop-share"
       ref="popShare"
@@ -62,7 +62,7 @@
 
 <script>
 export default {
-  name: "PopShareTabs",
+  name: "SharePopup",
   props: {
     detail: {
       type: Object,
@@ -539,7 +539,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.popShareTabsComp {
+.share-popup {
   position: relative;
   z-index: 99999;
   .poster {
