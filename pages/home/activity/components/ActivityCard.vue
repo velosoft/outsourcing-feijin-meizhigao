@@ -4,9 +4,9 @@
     <view class="flex-row justify-between items-center relative card-wrapper">
       <view class="flex-col self-stretch justify-between left">
         <view class="flex-row items-center">
-          <text class="time price-symbol">￥</text>
+          <text class="self-start price-symbol">￥</text>
           <text class="price">{{ price }}</text>
-          <text class="point">.{{ decimalPrice }}</text>
+          <text class="self-start point">.{{ decimalPrice }}</text>
           <image class="ml-14 skill-btn" src="/static/images/btn_kill_01.png" />
         </view>
         <view class="flex-row">
@@ -102,14 +102,15 @@ export default {
     .left {
       justify-content: space-between;
       align-self: stretch;
+      color: #ffffff;
+
       .price-symbol {
         margin-top: 8rpx;
         font-size: 24rpx;
+        font-family: 苹方;
         line-height: 24rpx;
-        font-weight: unset;
       }
       .price {
-        color: #ffffff;
         font-size: 44rpx;
         font-family: HarmonyOS Sans SC;
         font-weight: 700;
@@ -117,7 +118,6 @@ export default {
       }
       .point {
         margin-top: 8rpx;
-        color: #ffffff;
         font-size: 28rpx;
         font-family: HarmonyOS Sans SC;
         font-weight: 700;
