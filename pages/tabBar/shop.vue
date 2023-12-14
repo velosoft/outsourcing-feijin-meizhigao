@@ -33,7 +33,7 @@
             <swiper-item v-for="(item, index) in Swiperitems" :key="index">
               <image
                 class="swiper-image"
-                src="/static/mock/shop-swiper-image.png"
+                src="/static/mock/shop_swiper_image.png"
                 mode="aspectFill"
               />
             </swiper-item>
@@ -73,7 +73,7 @@
           >
             <image
               class="shrink-0 shop-image"
-              src="/static/mock/shop-image.png"
+              src="/static/mock/shop_image.png"
               mode="aspectFill"
             />
             <view class="ml-12 flex-col shop-con">

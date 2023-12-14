@@ -7,7 +7,10 @@
         :key="index"
       >
         <view class="flex-row items-start self-stretch">
-          <image class="icon" src="/static/images/popup_ensure_icon.png" />
+          <image
+            class="icon"
+            src="/static/images/icon_popup_aftersale_check.png"
+          />
           <text class="label ml-8">{{ item.title }}</text>
         </view>
         <text class="self-start describe describe-text mt-8">{{

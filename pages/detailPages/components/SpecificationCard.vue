@@ -30,7 +30,7 @@
         <text class="label">选择</text>
         <text class="value ml-16">{{ specification }}</text>
       </view>
-      <image class="icon-arrow" src="/static/images/icon_arrow_05.png" />
+      <image class="icon-arrow" src="/static/images/icon_right_arrow_01.png" />
     </view>
     <view
       v-if="enables.includes('service')"
@@ -45,7 +45,7 @@
         >
           <image
             class="shrink-0 self-center icon-radio"
-            src="/static/images/icon_radio_03.png"
+            src="/static/images/icon_radio.png"
           />
           <text class="self-start tag-text ml-8">{{ item }}</text>
         </view>

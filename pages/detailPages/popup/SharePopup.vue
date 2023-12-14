@@ -101,14 +101,14 @@ export default {
       src: "",
       bg_03: setImgUrl("/static/images/bg_03.jpg"),
       // shareImg: [
-      //   setImgUrl("/images/icon_shareWechat_01.png"),
-      //   setImgUrl("/images/icon_sharePic_01.png"),
-      //   setImgUrl("/images/icon_shareWechat_01.png"),
+      //   setImgUrl("/images/icon_share_popup_wechat.png"),
+      //   setImgUrl("/images/icon_share_popup_save_pic.png"),
+      //   setImgUrl("/images/icon_share_popup_wechat.png"),
       // ],
       shareImg: [
-        "/static/images/icon_shareWechat_01.png",
-        "/static/images/icon_sharePic_01.png",
-        "/static/images/icon_shareWechat_01.png",
+        "/static/images/icon_share_popup_wechat.png",
+        "/static/images/icon_share_popup_save_pic.png",
+        "/static/images/icon_share_popup_wechat.png",
       ],
       show: false,
     };

@@ -4,7 +4,10 @@
       <text class="title">{{ title }}（{{ comments.length }}）</text>
       <view class="flex-row items-center" @click="goComment">
         <text class="self-center com-font more-text">查看全部</text>
-        <image class="icon-arrow ml-4" src="/static/images/icon_arrow_05.png" />
+        <image
+          class="icon-arrow ml-4"
+          src="/static/images/icon_right_arrow_01.png"
+        />
       </view>
     </view>
     <view class="flex-col comment-group">

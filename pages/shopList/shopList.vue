@@ -5,7 +5,7 @@
       <view class="flex-col justify-start items-center banner-image-wrapper">
         <image
           class="banner-image"
-          src="/static/mock/list-page-banner.png"
+          src="/static/mock/shop_list_banner.png"
           mode="aspectFill"
         />
       </view>

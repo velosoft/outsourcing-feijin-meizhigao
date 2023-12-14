@@ -13,7 +13,10 @@
           size="small"
           @tap="goNotify"
         >
-          <image class="ml-8 notify-icon" src="/static/images/message.png" />
+          <image
+            class="ml-8 notify-icon"
+            src="/static/images/icon_message.png"
+          />
         </uni-badge>
       </view>
       <banner-swiper :items="bannerImages" />
@@ -74,9 +77,9 @@ export default {
       page: 1,
       nomore: false,
       bannerImages: [
-        "/static/mock/home-swiper-image.png",
-        "/static/mock/home-swiper-image.png",
-        "/static/mock/home-swiper-image.png",
+        "/static/mock/home_swiper_image.png",
+        "/static/mock/home_swiper_image.png",
+        "/static/mock/home_swiper_image.png",
       ],
     };
   },
@@ -145,7 +148,7 @@ export default {
     .notify-bar {
       height: 80rpx;
       /deep/ .u-notice__left-icon {
-        background-image: url("/static/images/notify.png");
+        background-image: url("/static/images/icon_notify.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

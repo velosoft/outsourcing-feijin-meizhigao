@@ -35,7 +35,7 @@
         <text class="self-center receive">领取</text>
         <image
           class="icon_arrow ml-3"
-          src="/static/images/icon_right_arrow.png"
+          src="/static/images/icon_right_arrow_02.png"
         />
       </view>
     </view>

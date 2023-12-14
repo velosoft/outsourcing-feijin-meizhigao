@@ -1,6 +1,6 @@
 <template>
   <view class="flex-row items-center search-wrap" @tap="goSearch">
-    <image class="search-image" src="/static/images/search.png" />
+    <image class="search-image" src="/static/images/icon_search_02.png" />
     <input
       class="uni-input flex-1"
       placeholder-class="placeholder-text"

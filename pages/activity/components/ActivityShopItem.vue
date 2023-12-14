@@ -1,6 +1,6 @@
 <template>
   <view class="flex-row list-item mt-8">
-    <image class="left" src="/static/images/image_shop_01.png" />
+    <image class="left" src="/static/images/image_shop.png" />
     <view class="flex-col flex-1 right ml-10">
       <view class="flex-col title-wrapper">
         <text class="self-stretch product-title line-clamp-two">{{

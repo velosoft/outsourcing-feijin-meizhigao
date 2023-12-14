@@ -18,9 +18,11 @@
               v-for="(item, index) in items"
               :key="index"
             >
-            <view class="flex-col items-center justify-center item-image-wraper">
-              <image class="item-image" :src="item.icon" />
-            </view>
+              <view
+                class="flex-col items-center justify-center item-image-wraper"
+              >
+                <image class="item-image" :src="item.icon" />
+              </view>
               <text class="item-text">{{ item.text }}</text>
             </view>
           </view>
@@ -48,23 +50,23 @@ export default {
       current: 0,
       items: [
         {
-          icon: "/static/mock/grid-panel-icon_0.png",
+          icon: "/static/mock/grid_panel_icon_0.png",
           text: "客厅收纳",
         },
         {
-          icon: "/static/mock/grid-panel-icon_1.png",
+          icon: "/static/mock/grid_panel_icon_1.png",
           text: "衣柜收纳",
         },
         {
-          icon: "/static/mock/grid-panel-icon_2.png",
+          icon: "/static/mock/grid_panel_icon_2.png",
           text: "厨房收纳",
         },
         {
-          icon: "/static/mock/grid-panel-icon_3.png",
+          icon: "/static/mock/grid_panel_icon_3.png",
           text: "卧室收纳",
         },
         {
-          icon: "/static/mock/grid-panel-icon_4.png",
+          icon: "/static/mock/grid_panel_icon_4.png",
           text: "杂物房收纳",
         },
       ],
@@ -116,11 +118,11 @@ export default {
   padding: 24rpx 0;
   .equal-division-item {
     flex: 1 1 146rpx;
-    .item-image-wraper{
+    .item-image-wraper {
       width: 100rpx;
       height: 100rpx;
       border-radius: 50%;
-      background-color: #EFE3DD;
+      background-color: #efe3dd;
     }
     .item-image {
       max-width: 100rpx;

@@ -161,13 +161,6 @@
       }
     },
     {
-      "path": "pages/shop/index",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/shopList/shopList",
       "style": {
         "navigationStyle": "custom",
@@ -198,32 +191,32 @@
     "list": [
       {
         "pagePath": "pages/tabBar/home",
-        "iconPath": "static/images/icon_tab_02.png",
-        "selectedIconPath": "static/images/icon_tab_01.png",
+        "iconPath": "static/images/icon_tab_home_deactive.png",
+        "selectedIconPath": "static/images/icon_tab_home_active.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/tabBar/shop",
-        "iconPath": "static/images/icon_tab_04.png",
-        "selectedIconPath": "static/images/icon_tab_03.png",
+        "pagePath": "pages/tabBar/cart",
+        "iconPath": "static/images/icon_tab_shop_deactive.png",
+        "selectedIconPath": "static/images/icon_tab_shop_active.png",
         "text": "商城"
       },
       {
         "pagePath": "pages/tabBar/cart",
-        "iconPath": "static/images/icon_tab_06.png",
-        "selectedIconPath": "static/images/icon_tab_06.png",
+        "iconPath": "static/images/icon_tab_cart_deactive.png",
+        "selectedIconPath": "static/images/icon_tab_cart_deactive.png",
         "text": "购物车"
       },
       {
         "pagePath": "pages/tabBar/personal",
-        "iconPath": "static/images/icon_tab_08.png",
-        "selectedIconPath": "static/images/icon_tab_08.png",
+        "iconPath": "static/images/icon_tab_person_deactive.png",
+        "selectedIconPath": "static/images/icon_tab_person_deactive.png",
         "text": "我的"
       } /*,
       {
         "pagePath": "pages/tabBar/comps",
-        "iconPath": "static/images/icon_tab_08.png",
-        "selectedIconPath": "static/images/icon_tab_08.png",
+        "iconPath": "static/images/icon_tab_person_deactive.png",
+        "selectedIconPath": "static/images/icon_tab_person_deactive.png",
         "text": "组件"
       }*/
     ]

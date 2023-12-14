@@ -31,7 +31,7 @@
                   <text class="detial">查看详情</text>
                   <image
                     class="arrow-right"
-                    src="/static/images/icon_arrow_05.png"
+                    src="/static/images/icon_right_arrow_01.png"
                   />
                 </view>
               </view>
@@ -47,7 +47,7 @@
                   <text class="detial">查看详情</text>
                   <image
                     class="arrow-right"
-                    src="/static/images/icon_arrow_05.png"
+                    src="/static/images/icon_right_arrow_01.png"
                   />
                 </view>
               </view>

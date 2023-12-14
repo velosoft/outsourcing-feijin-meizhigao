@@ -20,7 +20,7 @@
           <text class="self-center text">收藏</text>
         </view>
         <view class="flex-col items-center ml-16" @click="addCart">
-          <image class="icon" src="/static/images/icon_cart_01.png" />
+          <image class="icon" src="/static/images/icon_cart.png" />
           <text class="text">购物车</text>
         </view>
       </view>

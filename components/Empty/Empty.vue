@@ -48,7 +48,7 @@ export default {
     },
     imgSrc: {
       type: String,
-      default: "/static/images/icon_empty_01.png",
+      default: "/static/images/icon_empty.png",
     },
     width: {
       type: Number,

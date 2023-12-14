@@ -24,14 +24,11 @@
             <text class="popu-font btn-text">联系平台客服</text>
           </view>
         </view>
-        <image
-          class="icon-tip pos-tip"
-          src="/static/images/icon_tip_01.png"
-        />
+        <image class="icon-tip pos-tip" src="/static/images/icon_bell.png" />
       </view>
       <image
         class="self-center close mt-24"
-        src="/static/images/icon_close_04.png"
+        src="/static/images/icon_close_02.png"
         @click="closePopu"
       />
     </view>

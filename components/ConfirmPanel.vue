@@ -104,11 +104,11 @@ export default {
       this.$emit("confirm");
     },
   },
-  watch:{
-    isShow(news){
-      this.show = news
-    }
-  }
+  watch: {
+    isShow(news) {
+      this.show = news;
+    },
+  },
 };
 </script>
 
@@ -200,7 +200,7 @@ export default {
 
         &:not(:last-child) {
           margin-right: 32rpx;
-      }
+        }
       }
 
       .btn-cancel {
