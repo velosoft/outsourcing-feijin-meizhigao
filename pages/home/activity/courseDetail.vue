@@ -37,10 +37,10 @@
           </view>
         </view>
       </view>
-      <footer-btn
+      <footer-bar
         :hasActivity="!!pageData.activity"
         :activityStarted="true"
-      ></footer-btn>
+      ></footer-bar>
     </view>
     <share-tabs
       ref="popShareTabs"
@@ -70,8 +70,8 @@ import ProductHeader from "../components/ProductHeader.vue";
 import SpecificationCard from "./components/SpecificationCard.vue";
 import CommentCard from "./components/CommentCard.vue";
 import DetailCard from "./components/DetailCard.vue";
-import CourseIntro from "./components/courseIntro.vue";
-import FooterBtn from "./components/FooterBtn.vue";
+import CourseIntro from "./components/CourseIntro.vue";
+import FooterBar from "./components/FooterBar.vue";
 import PopShareTabs from "../../../components/PopShareTabs.vue";
 import PopEnsure from "./components/PopEnsure.vue";
 import PopSpecification from "./components/PopSpecification.vue";
@@ -82,7 +82,7 @@ export default {
   components: {
     NavBar,
     ActivityCard,
-    FooterBtn,
+    FooterBar,
     SpecificationCard,
     CommentCard,
     ProductHeader,
