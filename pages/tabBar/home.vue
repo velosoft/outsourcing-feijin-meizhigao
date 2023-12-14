@@ -16,7 +16,7 @@
           <image class="ml-8 notify-icon" src="/static/images/message.png" />
         </uni-badge>
       </view>
-      <banner-swiper />
+      <banner-swiper :items="bannerImages" />
       <u-notice-bar
         class="notify-bar"
         :text="notifyContent"
@@ -71,12 +71,17 @@ export default {
   props: {},
   data() {
     return {
-      notifyCount: 1,
+      notifyCount: 5,
       notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
       list: productList,
       type: 0,
       page: 1,
       nomore: false,
+      bannerImages: [
+        "/static/mock/home-swiper-image.png",
+        "/static/mock/home-swiper-image.png",
+        "/static/mock/home-swiper-image.png",
+      ],
     };
   },
   onReachBottom() {

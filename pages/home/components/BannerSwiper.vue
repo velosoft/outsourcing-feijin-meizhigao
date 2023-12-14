@@ -10,7 +10,7 @@
       <swiper-item v-for="(item, index) in items" :key="index">
         <image
           class="swiper-images"
-          src="/static/mock/home-swiper-image.png"
+          :src="item"
           mode="aspectFill"
           lazy-load="false"
         >
@@ -30,9 +30,11 @@
 
 <script>
 export default {
+  props: {
+    items: { type: Array, default: () => [] },
+  },
   data() {
     return {
-      items: [null, null, null],
       current: 0,
     };
   },
