@@ -1,6 +1,6 @@
 <template>
   <view class="page flex-col">
-    <NavBar title="商城"></NavBar>
+    <nav-bar title="商城"></nav-bar>
     <view class="flex-row siderbar-container">
       <view class="sider-bar">
         <view
@@ -188,9 +188,9 @@ export default {
       });
     },
     goto(url) {
-      uni.navigateTo({
-        url: url,
-      });
+      // uni.navigateTo({
+      //   url: url,
+      // });
     },
   },
 };
