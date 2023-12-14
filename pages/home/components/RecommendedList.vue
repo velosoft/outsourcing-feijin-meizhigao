@@ -35,9 +35,9 @@
 </template>
 
 <script>
-import ListContainer from "../../../components/ListContainer/ListContainer.vue";
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "./DoubleList.vue";
-import FjSticky from "../../../components/FjSticky.vue";
+import FjSticky from "@/components/FjSticky.vue";
 
 export default {
   components: { ListContainer, DoubleList, FjSticky },

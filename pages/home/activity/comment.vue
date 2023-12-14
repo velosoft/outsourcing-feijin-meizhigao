@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import ListContainer from "../../../components/ListContainer/ListContainer.vue";
-import NavBar from "../../../components/NavBar/NavBar.vue";
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
 import CommentItem from "./components/CommentItem.vue";
-import { commentList } from "../../../mock/commentList";
+import { commentList } from "@/mock/commentList";
 
 export default {
   components: { ListContainer, NavBar, CommentItem },

@@ -48,7 +48,7 @@ import RecommendedList from "../home/components/RecommendedList";
 import NavBar from "../../components/NavBar/NavBar.vue";
 import GoSearch from "../../components/GoSearch/GoSearch.vue";
 import BannerSwiper from "../home/components/BannerSwiper.vue";
-import MemberBox from "../../components/MemberBox/MemberBox.vue";
+import MemberBox from "../home/components/MemberBox.vue";
 import FreezeWarning from "../home/components/FreezeWarning.vue";
 import {
   productList,

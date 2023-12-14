@@ -49,12 +49,12 @@
 </template>
 
 <script>
-import NavBar from "../../../components/NavBar/NavBar.vue";
-import FjSticky from "../../../components/FjSticky.vue";
-import ListContainer from "../../../components/ListContainer/ListContainer.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import FjSticky from "@/components/FjSticky.vue";
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "../components/DoubleList.vue";
 
-import { serviceList, courseList } from "../../../mock/shopList/shopList";
+import { serviceList, courseList } from "@/mock/shopList/shopList";
 
 export default {
   components: {

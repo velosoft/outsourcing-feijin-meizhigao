@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import NavBar from "../../../components/NavBar/NavBar.vue";
-import ListContainer from "../../../components/ListContainer/ListContainer.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import MultCardTabs from "./components/cardTabs/multCardTabs.vue";
 import CardTabs from "./components/cardTabs/cardTabs.vue";
 import ActivityShopItem from "./components/ActivityShopItem.vue";
@@ -62,7 +62,7 @@ import {
   productList,
   serviceList,
   courseList,
-} from "../../../mock/shopList/shopList.js";
+} from "@/mock/shopList/shopList.js";
 
 export default {
   components: {

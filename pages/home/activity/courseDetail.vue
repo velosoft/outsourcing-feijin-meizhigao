@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import NavBar from "../../../components/NavBar/NavBar.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
 import ActivityCard from "./components/ActivityCard.vue";
 import ProductHeader from "../components/ProductHeader.vue";
 import SpecificationCard from "./components/SpecificationCard.vue";
@@ -72,11 +72,11 @@ import CommentCard from "./components/CommentCard.vue";
 import DetailCard from "./components/DetailCard.vue";
 import CourseIntro from "./components/CourseIntro.vue";
 import FooterBar from "./components/FooterBar.vue";
-import PopShareTabs from "../../../components/PopShareTabs.vue";
+import PopShareTabs from "@/components/PopShareTabs.vue";
 import PopEnsure from "./components/PopEnsure.vue";
 import PopSpecification from "./components/PopSpecification.vue";
 import DetailSwiper from "./components/DetailSwiper.vue";
-import { commentList } from "../../../mock/commentList.js";
+import { commentList } from "@/mock/commentList.js";
 
 export default {
   components: {
