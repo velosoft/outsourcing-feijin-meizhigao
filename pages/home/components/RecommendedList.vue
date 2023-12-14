@@ -78,7 +78,6 @@ export default {
   background-color: #f8f8f8;
 
   .tabs-top {
-    margin-top: 16rpx;
     padding: 0 30rpx;
   }
 }
