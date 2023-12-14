@@ -50,14 +50,14 @@
 </template>
 
 <script>
-import NavBar from "../../components/NavBar/NavBar.vue";
-import Tabs from "../../components/Tabs.vue";
-import Search from "../../components/Search.vue";
-import ListContainer from "../../components/ListContainer/ListContainer.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import Tabs from "@/components/Tabs.vue";
+import Search from "@/components/Search.vue";
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "./components/DoubleList.vue";
-import ConfirmPanel from "../../components/ConfirmPanel.vue";
-import ToggleList from "../../components/ToggleList.vue";
-import { serviceList } from "../../mock/shopList/shopList";
+import ConfirmPanel from "@/components/ConfirmPanel.vue";
+import ToggleList from "@/components/ToggleList.vue";
+import { serviceList } from "@/mock/shopList/shopList";
 
 export default {
   components: {

@@ -45,16 +45,12 @@ import ClassifyCards from "../home/components/ClassifyCards";
 import CenterPanel from "../home/components/CenterPanel";
 import GridPanel from "../home/components/GridPanel";
 import RecommendedList from "../home/components/RecommendedList";
-import NavBar from "../../components/NavBar/NavBar.vue";
-import GoSearch from "../../components/GoSearch/GoSearch.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import GoSearch from "@/components/GoSearch/GoSearch.vue";
 import BannerSwiper from "../home/components/BannerSwiper.vue";
 import MemberBox from "../home/components/MemberBox.vue";
 import FreezeWarning from "../home/components/FreezeWarning.vue";
-import {
-  productList,
-  serviceList,
-  courseList,
-} from "../../mock/shopList/shopList";
+import { productList, serviceList, courseList } from "@/mock/shopList/shopList";
 
 export default {
   components: {

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import MpHtml from "../../components/MpHtml/MpHtml.vue";
-import NavBar from "../../components/NavBar/NavBar.vue";
+import MpHtml from "@/components/MpHtml/MpHtml.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
 
 export default {
   components: { MpHtml, NavBar },

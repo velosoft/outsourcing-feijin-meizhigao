@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Selector from "../../components/Selector/Selector";
+import Selector from "@/components/Selector/Selector";
 
 export default {
   components: { Selector },

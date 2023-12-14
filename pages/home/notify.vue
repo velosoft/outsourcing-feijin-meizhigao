@@ -60,9 +60,9 @@
 </template>
 
 <script>
-import NavBar from "../../components/NavBar/NavBar.vue";
-import Tabs from "../../components/Tabs.vue";
-import ListContainer from "../../components/ListContainer/ListContainer.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import Tabs from "@/components/Tabs.vue";
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
 
 export default {
   components: { NavBar, Tabs, ListContainer },
