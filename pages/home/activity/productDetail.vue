@@ -59,23 +59,26 @@
         :activityStarted="true"
       ></footer-bar>
     </view>
-    <share-tabs
-      ref="share-popup"
+    <share-popup
+      ref="sharePopup"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
-    ></share-tabs>
+    ></share-popup>
     <u-popup
       :show="showAftersalePopup || showSpecPopup"
       :round="16"
       @close="closePop"
       @open="openPop"
     >
-      <pop-ensure v-if="showAftersalePopup" @isKnow="isKnow"></pop-ensure>
-      <pop-specification
+      <aftersale-popup
+        v-if="showAftersalePopup"
+        @isKnow="isKnow"
+      ></aftersale-popup>
+      <specification-popup
         v-if="showSpecPopup"
         @goNext="goNext"
-      ></pop-specification>
+      ></specification-popup>
     </u-popup>
   </view>
 </template>

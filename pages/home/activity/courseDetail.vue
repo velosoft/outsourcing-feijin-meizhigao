@@ -42,12 +42,12 @@
         :activityStarted="true"
       ></footer-bar>
     </view>
-    <share-tabs
-      ref="share-popup"
+    <share-popup
+      ref="sharePopup"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
-    ></share-tabs>
+    ></share-popup>
     <u-popup
       :show="showAftersalePopup || showSpecPopup"
       :round="16"
