@@ -6,16 +6,15 @@
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
         <go-search class="flex-1" />
-        <view
-          class="ml-8 flex-col items-center shrink-0 relative search-right"
+        <uni-badge
+          :text="notifyCount"
+          absolute="rightTop"
+          :offset="[2, 2]"
+          size="small"
           @tap="goNotify"
         >
-          <image class="message" src="../../static/images/message.png" />
-          <view class="flex-col justify-start items-center dot-wrap dot-pos">
-            <image class="icon-size" src="../../static/images/dot_bg.png" />
-            <text class="home-font_03 dot-text dot-pos-text">1</text>
-          </view>
-        </view>
+          <image class="ml-8 notify-icon" src="/static/images/message.png" />
+        </uni-badge>
       </view>
       <banner-swiper />
       <u-notice-bar
@@ -72,6 +71,7 @@ export default {
   props: {},
   data() {
     return {
+      notifyCount: 1,
       notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
       list: productList,
       type: 0,
@@ -130,38 +130,14 @@ export default {
   .home-con {
     .search-box {
       padding: 20rpx 30rpx 20rpx;
-      .search-right {
-        padding-top: 8rpx;
-        width: 76rpx;
-        .message {
-          border-radius: 50%;
-          width: 68rpx;
-          height: 68rpx;
-        }
-        .dot-wrap {
-          background-color: #ffffff00;
-          width: 30rpx;
-          .home-font_03 {
-            font-size: 20rpx;
-            font-family: PingFang SC;
-            line-height: 20rpx;
-          }
-          .dot-text {
-            color: #ffffff;
-            line-height: 14.28rpx;
-          }
-          .dot-pos-text {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-          }
-        }
-        .dot-pos {
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
+
+      .notify-icon {
+        width: 68rpx;
+        height: 68rpx;
+        border-radius: 50%;
+      }
+      /deep/ .uni-badge--error {
+        background-color: #ff4d1d;
       }
     }
 

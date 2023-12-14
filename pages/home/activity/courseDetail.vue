@@ -70,7 +70,7 @@ import ProductHeader from "../components/ProductHeader.vue";
 import SpecificationCard from "./components/SpecificationCard.vue";
 import CommentCard from "./components/CommentCard.vue";
 import DetailCard from "./components/DetailCard.vue";
-import CourseIntro from "./components/CourseIntro.vue";
+import CourseIntro from "./components/courseIntro.vue";
 import FooterBtn from "./components/FooterBtn.vue";
 import PopShareTabs from "../../../components/PopShareTabs.vue";
 import PopEnsure from "./components/PopEnsure.vue";
