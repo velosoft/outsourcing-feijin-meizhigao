@@ -2,25 +2,26 @@
   <view class="flex-col container"
     ><u-tabs
       class="default-tabs"
-      :list="list"
+      :list="tabs"
       :activeStyle="{ color: '#030305', fontWeight: '700' }"
       :inactiveStyle="{ color: '#a7a7a7' }"
       :scrollable="false"
+      @change="onChange"
     ></u-tabs
     ><view class="flex-col items-center image-wrapper"
-      ><image
-        class="intro-images"
-        src="https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=24c665e377d488a8cff4c95c7f75fc74.png" /></view
+      ><image class="intro-images" :src="detail" /></view
   ></view>
 </template>
 
 <script>
 export default {
   components: {},
-  props: {},
+  props: {
+    imageList: { type: String, default: () => {} },
+  },
   data() {
     return {
-      list: [
+      tabs: [
         {
           name: "课程介绍",
         },
@@ -28,10 +29,16 @@ export default {
           name: "课程目录",
         },
       ],
+      detail:
+        "https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=24c665e377d488a8cff4c95c7f75fc74.png",
     };
   },
 
-  methods: {},
+  methods: {
+    onChange(idx) {
+      this.detail = imageList[idx];
+    },
+  },
 };
 </script>
 

@@ -1,28 +1,28 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :fixed="true"
       :isShow="false"
       :background="navBarColor"
       :title="pageTitle"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col flex-1">
       <view class="scroll-height">
-        <DetailSwiper />
+        <detail-swiper />
         <view class="flex-col flex-1 info">
-          <ActivityCard
+          <activity-card
             v-if="pageData.activity"
             :price="getPriceIntergetPart(pageData.product.price)"
             :decimalPrice="getPriceDecimalPart(pageData.product.price)"
             :originPrice="pageData.product.originPrice"
             :time="pageData.activity.time"
             :buyer="pageData.activity.buyer"
-          ></ActivityCard>
+          ></activity-card>
           <view
             class="flex-col relative container"
             :style="{ marginTop: pageData.activity ? '-28rpx' : '' }"
           >
-            <ProductHeader
+            <product-header
               :title="pageData.product.title"
               :content="pageData.product.content"
               :price="getPriceIntergetPart(pageData.product.price)"
@@ -32,38 +32,22 @@
               :tags="pageData.product.tags"
               :buyer="pageData.product.buyer"
               @onShare="onShare"
-            ></ProductHeader>
-            <specification-card
-              class="wraper-top"
-              :deliverPayment="specificationData.deliverPayment"
-              :specification="specificationData.specification"
-              :tags="specificationData.tags"
-              :discountTags="pageData.product.discountTags"
-              @onSpecificationClick="onSpecificationClick"
-            ></specification-card>
-            <comment-card
-              class="wraper-top"
-              :comments="pageData.comments.slice(0, 2)"
-            ></comment-card>
-            <detail-card
-              class="wraper-top"
-              :content="pageData.product.detail"
-            ></detail-card>
-            <course-intro></course-intro>
+            ></product-header>
+            <course-intro :imageList="pageData.product.detail"></course-intro>
           </view>
         </view>
       </view>
-      <FooterBtn
+      <footer-btn
         :hasActivity="!!pageData.activity"
         :activityStarted="true"
-      ></FooterBtn>
+      ></footer-btn>
     </view>
-    <PopShareTabs
+    <ShareTabs
       ref="popShareTabs"
       :detail="detail"
       @close="close"
       @saveImg="saveImg"
-    ></PopShareTabs>
+    ></ShareTabs>
     <u-popup
       :show="showPopEnsure || showPopSpecification"
       :round="16"
@@ -125,18 +109,14 @@ export default {
           discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
           tags: ["新客优惠", "新品上市", "好评推荐"],
           buyer: 100,
-          detail:
-            "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
+          detail: [
+            "https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=24c665e377d488a8cff4c95c7f75fc74.png",
+            "https://dev.ft.velosoft.cn/api/image?token=6577372b740f740012ac401b&name=24c665e377d488a8cff4c95c7f75fc74.png",
+          ],
         },
         activity: null,
         comments: [],
       },
-      specificationData: {
-        deliverPayment: "免运费",
-        specification: "请选择服务规格",
-        tags: ["官方自营", "支持退换"],
-      },
-
       detail: {},
       showPopEnsure: false,
       showPopSpecification: false,
