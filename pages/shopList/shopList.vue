@@ -36,6 +36,7 @@
         ></u-tabs>
       </fj-sticky>
       <list-container
+        class="list-container-bg"
         :showEmpty="!list.length"
         :showLoading="showLoading"
         :finished="finished"
@@ -163,5 +164,8 @@ export default {
 
 .right-list {
   flex: 1 1 330rpx;
+}
+.list-container-bg {
+  background-color: #f8f8f8;
 }
 </style>

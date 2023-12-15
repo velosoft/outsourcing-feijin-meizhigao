@@ -27,6 +27,7 @@
         ></card-tabs>
         <view class="flex-col">
           <list-container
+            class="list-container-bg"
             :showEmpty="!list.length"
             :showLoading="showLoading"
             :finished="finished"
@@ -223,8 +224,7 @@ export default {
         margin-top: 48rpx;
       }
       .list {
-        padding: 20rpx 20rpx 88rpx;
-        background-image: linear-gradient(86.8deg, #fbebbc 4.9%, #fefde2 95.3%);
+        padding: 20rpx 20rpx 0;
         border-radius: 0rpx 0rpx 16rpx 16rpx;
 
         .list-item {
@@ -235,11 +235,10 @@ export default {
           margin-top: 0;
         }
       }
+      .list-container-bg {
+        background-image: linear-gradient(86.8deg, #fbebbc 4.9%, #fefde2 95.3%);
+      }
     }
   }
-}
-
-/deep/ .listContainerComp .loadingComp {
-  margin-top: -44px;
 }
 </style>
