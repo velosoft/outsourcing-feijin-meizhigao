@@ -1,13 +1,19 @@
 <template>
   <view class="flex-col page">
     <nav-bar :hasBack="true" title="消息"></nav-bar>
-    <tabs
-      class="tabs-wrap"
-      :tabList="tabList"
-      :TabCur="tabCur"
-      @tabChange="onTabChange"
-    ></tabs>
-    <list-container :showEmpty="!items.length" :showLoading="showLoading">
+    <fj-sticky :customNavHeight="80">
+      <tabs
+        class="tabs-wrap"
+        :tabList="tabList"
+        :TabCur="tabCur"
+        @tabChange="onTabChange"
+      ></tabs>
+    </fj-sticky>
+    <list-container
+      :showEmpty="!items.length"
+      :showLoading="showLoading"
+      :finished="finished"
+    >
       <view class="flex-col justify-start content">
         <view class="flex-col list">
           <view
@@ -63,13 +69,13 @@
 import NavBar from "@/components/NavBar/NavBar.vue";
 import Tabs from "@/components/Tabs.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
+import FjSticky from "@/components/FjSticky.vue";
 
 export default {
-  components: { NavBar, Tabs, ListContainer },
+  components: { NavBar, Tabs, ListContainer, FjSticky },
   props: {},
   data() {
     return {
-      showLoading: false,
       tabList: [
         {
           name: "系统公告",
@@ -81,6 +87,9 @@ export default {
           name: "服务通知",
         },
       ],
+      pages: [1, 1, 1],
+      showLoading: false,
+      finished: false,
       tabCur: 0,
       items: [],
       systemAnnouncementList: [
@@ -162,9 +171,25 @@ export default {
       ],
     };
   },
+  onReachBottom() {
+    this.showLoading = true;
+    this.finished = false;
 
+    if (this.pages[this.tabCur] >= 2) {
+      this.finished = true;
+      return;
+    }
+
+    setTimeout(() => {
+      this.items = this.items.concat(this.items);
+      this.pages[this.tabCur]++;
+    }, 1500);
+  },
   methods: {
     onTabChange(val) {
+      this.showLoading = false;
+      this.finished = false;
+
       // mock_data
       if (this.tabCur == val) {
         this.items = [];
@@ -193,8 +218,6 @@ export default {
 .page {
   background-color: #f8f8f8;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   height: 100%;
   .tabs-wrap {
     position: relative;
