@@ -5,7 +5,7 @@
         class="line"
         :style="{
           width: `${100 / tabList.length}%`,
-          left: `${(100 / tabList.length) * TabCur}%`,
+          left: `${(100 / tabList.length) * tabCur}%`,
         }"
       ></view>
       <view
@@ -14,7 +14,7 @@
         :key="index"
         @click="tabChange(index)"
       >
-        <view class="label" :class="{ active: index === TabCur }">{{
+        <view class="label" :class="{ active: index === tabCur }">{{
           item.name
         }}</view>
         <view class="count" v-if="item.count">{{ item.count }}</view>
@@ -36,7 +36,7 @@
             :key="index"
             @click="tabChange(index)"
           >
-            <view class="label" :class="{ active: index === TabCur }">{{
+            <view class="label" :class="{ active: index === tabCur }">{{
               item.name
             }}</view>
             <view class="count" v-if="item.count">{{ item.count }}</view>
@@ -51,7 +51,7 @@
 export default {
   props: {
     tabList: Array,
-    TabCur: Number,
+    tabCur: Number,
     max: {
       type: Number,
       default: 5,
@@ -71,7 +71,7 @@ export default {
   },
   mounted() {
     if (this.tabList.length > this.max || this.hasScroll) {
-      this.computedLeft(this.TabCur);
+      this.computedLeft(this.tabCur);
     }
   },
   data() {
@@ -80,7 +80,7 @@ export default {
     };
   },
   watch: {
-    TabCur(v) {
+    tabCur(v) {
       this.computedLeft(v);
     },
   },

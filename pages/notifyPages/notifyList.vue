@@ -5,7 +5,7 @@
       <tabs
         class="tabs-wrap"
         :tabList="tabList"
-        :TabCur="tabCur"
+        :tabCur="tabCur"
         @tabChange="onTabChange"
       ></tabs>
     </fj-sticky>

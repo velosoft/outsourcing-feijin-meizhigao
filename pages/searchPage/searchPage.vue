@@ -35,7 +35,7 @@
         <fj-sticky :customNavHeight="80">
           <tabs
             :tabList="tabList"
-            :TabCur="tabCur"
+            :tabCur="tabCur"
             @tabChange="onTabChange"
           ></tabs>
         </fj-sticky>
