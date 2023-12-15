@@ -86,9 +86,9 @@ export default {
   margin-left: 30rpx;
 }
 .view {
-  padding: 0 30rpx 8rpx 30rpx;
+  padding: 0 30rpx 0 30rpx;
   .double-list-view {
-    padding: 24rpx 0 24rpx;
+    padding: 24rpx 0 0;
     .left-list {
       flex: 1 1 330rpx;
     }
