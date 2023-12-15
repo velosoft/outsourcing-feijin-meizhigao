@@ -87,7 +87,6 @@ export default {
 }
 .view {
   padding: 0 30rpx 8rpx 30rpx;
-  background-color: #f8f8f8;
   .double-list-view {
     padding: 24rpx 0 24rpx;
     .left-list {
