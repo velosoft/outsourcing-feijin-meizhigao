@@ -15,7 +15,7 @@
       </view>
     </navigator>
 
-    <navigator url="" class="ml-8" hover-class="none">
+    <navigator url="/pages/coupon/couponCenter" class="ml-8" hover-class="none">
       <view class="flex-row items-center classify-card classify-card-right">
         <view class="classify-con">
           <view class="flex-col justify-center items-center tag tag-right">
