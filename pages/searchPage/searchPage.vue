@@ -32,11 +32,20 @@
         </view>
       </view>
       <view class="flex-col" v-else>
-        <tabs :tabList="tabList" :TabCur="tabCur" @tabChange="tabChange"></tabs>
-        <list-container :showEmpty="showEmpty" :showLoading="showLoading">
-          <view>
-            <double-list :items="list"></double-list>
-          </view>
+        <fj-sticky :customNavHeight="80">
+          <tabs
+            :tabList="tabList"
+            :TabCur="tabCur"
+            @tabChange="onTabChange"
+          ></tabs>
+        </fj-sticky>
+        <list-container
+          class="list-container-bg"
+          :showEmpty="!list.length"
+          :showLoading="showLoading"
+          :finished="finished"
+        >
+          <double-list :items="list"></double-list>
         </list-container>
       </view>
     </view>
@@ -57,7 +66,8 @@ import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import DoubleList from "@/components/DoubleList/DoubleList.vue";
 import ConfirmPanel from "@/components/ConfirmPanel.vue";
 import ToggleList from "@/components/ToggleList.vue";
-import { serviceList } from "@/mock/shopList";
+import FjSticky from "@/components/FjSticky.vue";
+import { serviceList, productList, courseList } from "@/mock/shopList";
 
 export default {
   components: {
@@ -68,6 +78,7 @@ export default {
     DoubleList,
     ConfirmPanel,
     ToggleList,
+    FjSticky,
   },
   props: {},
   data() {
@@ -75,8 +86,6 @@ export default {
       isSearch: true,
       keywords: "",
       tabsArray: [{ label: "标签3" }, { label: "标签4" }, { label: "标签5" }],
-      showEmpty: false,
-      showLoading: true,
       tabList: [
         {
           name: "服务",
@@ -88,31 +97,30 @@ export default {
           name: "课程",
         },
       ],
-      tabCur: 1,
-      itemsLeft: [],
-      itemsRight: [],
+      tabCur: 0,
       finished: false,
-      status: "loadmore",
-      page: 0,
+      pages: [1, 1, 1],
+      showLoading: true,
+      finished: false,
       keyword: "搜索",
-      items: [null, null, null],
-      list: serviceList,
-      current: 0,
+      list: [],
       showDialog: false,
       historyList: [],
     };
   },
   created() {},
   onReachBottom() {
-    if (this.page >= 2) return;
-    this.status = "loading";
-    this.page = ++this.page;
+    this.finished = false;
+    this.showLoading = true;
+
+    if (this.pages[this.tabCur] >= 2) {
+      this.finished = true;
+      return;
+    }
+    this.pages[this.tabCur]++;
 
     setTimeout(() => {
-      this.list = [...this.list, ...serviceList];
-
-      if (this.page >= 2) this.status = "nomore";
-      else this.status = "loading";
+      this.list = this.list.concat(this.list);
     }, 1500);
   },
 
@@ -134,13 +142,18 @@ export default {
         (item) => item.label !== val.label
       );
     },
-    change(e) {
-      this.current = e.detail.current;
-    },
-    tabChange(e) {
-      this.tabCur = e;
-      if (e >= 1) {
-        this.showEmpty = true;
+
+    onTabChange(newTab) {
+      this.finished = false;
+      this.showLoading = false;
+
+      this.tabCur = newTab;
+      if (newTab == 0) {
+        this.list = serviceList;
+      } else if (newTab == 1) {
+        this.list = productList;
+      } else {
+        this.list = courseList;
       }
     },
     clearHistory() {
@@ -161,8 +174,6 @@ export default {
 .page {
   background-color: #ffffff;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   height: 100%;
   .header-left-arrow {
     height: 44rpx;
@@ -173,7 +184,6 @@ export default {
   }
   .history-search {
     padding-top: 56rpx;
-    overflow-y: auto;
     .history-con {
       margin: 0 32rpx;
       .title {
@@ -192,8 +202,8 @@ export default {
       }
     }
   }
-  .group_5 {
-    position: relative;
+  .list-container-bg {
+    background-color: #f8f8f8;
   }
 }
 </style>
