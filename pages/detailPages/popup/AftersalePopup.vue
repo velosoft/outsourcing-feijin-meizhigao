@@ -53,7 +53,7 @@ export default {
 
   methods: {
     onClose() {
-      this.$emit("isKnow");
+      this.$emit("close");
     },
   },
 };

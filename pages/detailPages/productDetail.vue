@@ -11,16 +11,16 @@
         <detail-swiper :list="pageData.swiperList" />
         <view class="flex-col flex-1 info">
           <activity-card
-            v-if="pageData.activity"
+            v-if="pageData.product.activity"
             :price="getPriceIntergetPart(pageData.product.price)"
             :decimalPrice="getPriceDecimalPart(pageData.product.price)"
             :originPrice="pageData.product.originPrice"
-            :time="pageData.activity.time"
-            :buyer="pageData.activity.buyer"
+            :time="pageData.product.activity.time"
+            :buyer="pageData.product.activity.buyer"
           ></activity-card>
           <view
             class="flex-col relative container"
-            :style="{ marginTop: pageData.activity ? '-28rpx' : '' }"
+            :style="{ marginTop: pageData.product.activity ? '-28rpx' : '' }"
           >
             <product-header
               :title="pageData.product.title"
@@ -55,7 +55,7 @@
         </view>
       </view>
       <footer-bar
-        :hasActivity="!!pageData.activity"
+        :hasActivity="!!pageData.product.activity"
         :activityStarted="true"
       ></footer-bar>
     </view>
@@ -73,11 +73,13 @@
     >
       <aftersale-popup
         v-if="showAftersalePopup"
-        @isKnow="isKnow"
+        @close="onAftersaleClose"
       ></aftersale-popup>
       <specification-popup
         v-if="showSpecPopup"
+        :spec="pageData.product"
         @goNext="goNext"
+        @close="closePop"
       ></specification-popup>
     </u-popup>
   </view>
@@ -122,15 +124,50 @@ export default {
         product: {
           title: "美之高简易衣柜思想者系列",
           content: "烹饪也能从容优雅  享受美好食光",
+          imgUrl: "/static/mock/popup_product_image.png",
           price: 200.12,
+          priceRange: [200, 800],
+          invertory: 88,
           originPrice: 388.88,
           discountTags: ["满329包邮", "券 | 满99减5元", "券 | 满100减20元"],
           tags: ["新客优惠", "新品上市", "好评推荐"],
           buyer: 100,
+          activity: null,
           detail:
             "<view><text>2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。</text></view>",
+          specs: [
+            // {
+            //   title: "请选择规格",
+            //   options: [
+            //     "3层60长*40宽*170高可加高加层",
+            //     "3层80长*40宽*170高可加高加层",
+            //     "3层80长*40宽*170高可加高加层",
+            //   ],
+            // },
+            // {
+            //   title: "尺寸",
+            //   options: ["小号", "中号", "大号", "特大"],
+            // },
+            {
+              title: "类型",
+              options: [
+                "按延米核算（元/m)",
+                "按面积核算（元/m)",
+                "按小时核算（元/人/h)",
+              ],
+            },
+            {
+              title: "颜色",
+              options: ["黄色", "红色", "黑色", "蓝色"],
+            },
+          ],
+          specialSpecs: [
+            // {
+            //   title: "附加服务",
+            //   options: ["安装服务  ￥88.00", "安装服务  ￥99.00"],
+            // },
+          ],
         },
-        activity: null,
         comments: [],
 
         swiperList: [
@@ -147,7 +184,7 @@ export default {
       },
       specificationData: {
         deliverPayment: "免运费",
-        specification: "请选择服务器规格",
+        specification: "请选择服务规格",
         tags: ["官方自营", "支持退换"],
       },
 
@@ -167,7 +204,7 @@ export default {
     this.id = option.id;
 
     if (option.from === "activity") {
-      this.pageData.activity = {
+      this.pageData.product.activity = {
         time: 108000000,
         buyer: 100,
       };
@@ -203,7 +240,7 @@ export default {
       this.showSpecPopup = false;
       this.showAftersalePopup = true;
     },
-    isKnow() {
+    onAftersaleClose() {
       this.showAftersalePopup = false;
     },
     closePop() {

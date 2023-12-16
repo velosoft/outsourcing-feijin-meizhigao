@@ -48,21 +48,6 @@
       @close="close"
       @saveImg="saveImg"
     ></share-popup>
-    <u-popup
-      :show="showAftersalePopup || showSpecPopup"
-      :round="16"
-      @close="closePop"
-      @open="openPop"
-    >
-      <aftersale-popup
-        v-if="showAftersalePopup"
-        @isKnow="isKnow"
-      ></aftersale-popup>
-      <specification-popup
-        v-if="showSpecPopup"
-        @goNext="goNext"
-      ></specification-popup>
-    </u-popup>
   </view>
 </template>
 
@@ -169,20 +154,7 @@ export default {
     },
     close() {},
     saveImg() {},
-    onSpecificationClick() {
-      this.showSpecPopup = true;
-    },
-    goNext() {
-      this.showSpecPopup = false;
-      this.showAftersalePopup = true;
-    },
-    isKnow() {
-      this.showAftersalePopup = false;
-    },
-    closePop() {
-      this.showSpecPopup = false;
-      this.showAftersalePopup = false;
-    },
+    goNext() {},
     openPop() {},
     getPriceIntergetPart(price) {
       let val = Math.floor(price).toString();
