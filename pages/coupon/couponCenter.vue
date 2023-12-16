@@ -1,12 +1,12 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :hasBack="true"
       :title="title"
       :fixed="true"
       :isShow="true"
       background="#ffffff"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col flex-1 relative group_11">
       <view class="flex-col justify-start items-center ai-background-image_2">
         <image
@@ -14,7 +14,7 @@
           src="/static/images/17021047433209292544.png"
         />
       </view>
-      <FjSticky>
+      <fj-sticky :customNavHeight="80">
         <u-tabs
           class="yellow-line-tabs"
           :activeStyle="{
@@ -25,9 +25,10 @@
             color: '#a7a7a7',
           }"
           :list="tabs"
+          @change="onChangeTab"
         >
         </u-tabs>
-      </FjSticky>
+      </fj-sticky>
       <list-container
         class="group_7"
         :showEmpty="showEmpty"
@@ -35,19 +36,17 @@
         :finished="finished"
       >
         <view class="flex-col group_6">
-          <CouponItem
+          <coupon-item
             class="list-item group_5"
-            v-for="(item, index) in items"
+            v-for="(item, index) in list"
             :key="index"
-          ></CouponItem>
+            :coupon="item"
+          ></coupon-item>
         </view>
       </list-container>
-      <view class="flex-col justify-start items-center image-wrapper pos_4">
-        <image
-          class="ai-outflow"
-          src="/static/images/17021047432156371229.png"
-        />
-      </view>
+    </view>
+    <view class="flex-col justify-start items-center image-wrapper pos_4">
+      <image class="ai-outflow" src="/static/images/17021047432156371229.png" />
     </view>
   </view>
 </template>
@@ -57,9 +56,10 @@ import CouponItem from "./components/CouponItem.vue";
 import FjSticky from "@/components/FjSticky.vue";
 import ListContainer from "@/components/ListContainer/ListContainer.vue";
 import NavBar from "@/components/NavBar/NavBar.vue";
+import { couponList } from "../../mock/couponList";
 
 export default {
-  components: { CouponItem, FjSticky, ListContainer, NavBar },
+  components: { CouponItem, FjSticky, ListContainer, NavBar, FjSticky, NavBar },
   props: {},
   data() {
     return {
@@ -75,14 +75,33 @@ export default {
           name: "无门槛优惠券",
         },
       ],
+      tab: 0,
       showEmpty: false,
-      showLoading: false,
+      showLoading: true,
       finished: false,
-      items: [null, null, null, null],
+      list: couponList,
+      page: 1,
     };
   },
+  onReachBottom() {
+    if (this.page >= 2) {
+      this.finished = true;
+      return;
+    }
+    this.finished = false;
 
-  methods: {},
+    setTimeout(() => {
+      this.list = this.list.concat(this.list);
+      this.page++;
+    }, 1500);
+  },
+  methods: {
+    onChangeTab(val) {
+      this.tab = val.index;
+      this.list = couponList;
+      this.page = 1;
+    },
+  },
 };
 </script>
 
@@ -93,13 +112,10 @@ export default {
 .page {
   background-color: #ffffff;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   height: 100%;
 }
 .group_11 {
-  padding: 42rpx 0 322rpx;
-  overflow-y: auto;
+  padding: 42rpx 0;
 }
 .ai-background-image_2 {
   margin: 0 32rpx;
@@ -136,9 +152,9 @@ export default {
   width: 108rpx;
 }
 .pos_4 {
-  position: absolute;
+  position: fixed;
   right: 32rpx;
-  top: 1290rpx;
+  bottom: 150rpx;
 }
 .ai-outflow {
   width: 56rpx;
@@ -147,6 +163,7 @@ export default {
 .yellow-line-tabs {
   /deep/ .u-tabs {
     padding: 33rpx 32rpx 33rpx;
+    background-color: #ffffff;
   }
 
   /deep/ .u-tabs__wrapper__nav__item {

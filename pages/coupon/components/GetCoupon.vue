@@ -5,15 +5,19 @@
         <view class="flex-col group_2">
           <view class="flex-col section_2">
             <view class="flex-col self-stretch">
-              <text class="self-stretch font text_2">收纳服务优惠券</text>
-              <text class="self-start text_3 mt-3">10</text>
+              <text class="self-stretch font text_2">{{ coupon.title }}</text>
+              <text class="self-start text_3 mt-3">{{ coupon.amount }}</text>
               <text class="self-end text_5 mt-3">元</text>
             </view>
-            <text class="self-center font_3 text_6 mt-12">满100元使用</text>
+            <text class="self-center font_3 text_6 mt-12"
+              >满{{ coupon.triggerCondition }}元使用</text
+            >
           </view>
           <view class="flex-col items-center section_6">
-            <text class="font_3 text_8">适用部分(商品/服务/课程)</text>
-            <text class="text_9 mt-11">2023.06.01-2023.07.01</text>
+            <text class="font_3 text_8">{{ coupon.applicableTo }}</text>
+            <text class="text_9 mt-11"
+              >{{ coupon.validity.start }}-{{ coupon.validity.end }}</text
+            >
           </view>
         </view>
         <view
@@ -34,7 +38,9 @@
 <script>
 export default {
   components: {},
-  props: {},
+  props: {
+    coupon: Object,
+  },
   data() {
     return {};
   },
