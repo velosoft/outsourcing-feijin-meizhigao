@@ -7,16 +7,16 @@
       :isShow="true"
       background="#ffffff"
     ></nav-bar>
-    <view class="flex-col flex-1 relative group_11">
-      <view class="flex-col justify-start items-center ai-background-image_2">
+    <view class="flex-col flex-1 relative main">
+      <view class="flex-col justify-start items-center banner-image-wrapper">
         <image
-          class="shrink-0 ai-background-image"
+          class="shrink-0 banner-image"
           src="/static/images/17021047433209292544.png"
         />
       </view>
       <fj-sticky :customNavHeight="80">
         <u-tabs
-          class="yellow-line-tabs"
+          class="line-tabs"
           :activeStyle="{
             color: '#030305',
             fontWeight: '700',
@@ -24,20 +24,22 @@
           :inactiveStyle="{
             color: '#a7a7a7',
           }"
+          lineHeight="20rpx"
+          lineWidth="64rpx"
           :list="tabs"
           @change="onChangeTab"
         >
         </u-tabs>
       </fj-sticky>
       <list-container
-        class="group_7"
-        :showEmpty="showEmpty"
+        class="flex-auto mt-12"
+        :showEmpty="!list.length"
         :showLoading="showLoading"
         :finished="finished"
       >
-        <view class="flex-col group_6">
+        <view class="flex-col">
           <coupon-item
-            class="list-item group_5"
+            class="list-item"
             v-for="(item, index) in list"
             :key="index"
             :coupon="item"
@@ -45,7 +47,7 @@
         </view>
       </list-container>
     </view>
-    <view class="flex-col justify-start items-center image-wrapper pos_4">
+    <view class="flex-col justify-start items-center scan-code">
       <image class="ai-outflow" src="/static/images/17021047432156371229.png" />
     </view>
   </view>
@@ -76,12 +78,16 @@ export default {
         },
       ],
       tab: 0,
-      showEmpty: false,
       showLoading: true,
       finished: false,
-      list: couponList,
+      list: [],
       page: 1,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.list = couponList;
+    }, 1500);
   },
   onReachBottom() {
     if (this.page >= 2) {
@@ -111,47 +117,34 @@ export default {
 }
 .page {
   background-color: #ffffff;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
-.group_11 {
+.main {
   padding: 42rpx 0;
 }
-.ai-background-image_2 {
+.banner-image-wrapper {
   margin: 0 32rpx;
   overflow: hidden;
   border-radius: 16rpx;
   height: 232rpx;
 }
-.ai-background-image {
+.banner-image {
   width: 100%;
   height: 100%;
 }
-.font {
-  font-size: 32rpx;
-  font-family: 苹方;
-  line-height: 29.7rpx;
-  color: #a7a7a7;
-}
-.group_7 {
-  margin-top: 24rpx;
-}
-.group_6 {
+.list-item {
   margin: 0 32rpx;
+  margin-top: 20rpx;
 }
 .list-item:first-child {
   margin-top: 0;
 }
-.group_5 {
-  margin-top: 20rpx;
-}
-.image-wrapper {
+.scan-code {
   padding: 26rpx 0;
   background-color: #030305;
   border-radius: 50%;
   width: 108rpx;
-}
-.pos_4 {
   position: fixed;
   right: 32rpx;
   bottom: 150rpx;
@@ -160,37 +153,26 @@ export default {
   width: 56rpx;
   height: 56rpx;
 }
-.yellow-line-tabs {
+
+.line-tabs {
   /deep/ .u-tabs {
-    padding: 33rpx 32rpx 33rpx;
+    padding: 0 14rpx;
     background-color: #ffffff;
   }
 
   /deep/ .u-tabs__wrapper__nav__item {
-    justify-content: flex-start !important;
-    padding-left: 0;
-    padding-right: 30rpx;
-    height: unset !important;
-
-    .u-tabs__wrapper__nav__item__text {
-      font-size: 32rpx !important;
-      line-height: 32rpx !important;
-    }
+    height: 36px;
   }
 
   /deep/ .u-tabs__wrapper__nav__line {
-    opacity: 0.7 !important;
-    background-image: linear-gradient(
+    background: linear-gradient(
       90deg,
       #e9b81b 0%,
       #e9b81b00 97.2%
     ) !important;
-    border-radius: 14rpx !important;
-    height: 20rpx !important;
-    width: 64rpx !important;
-    bottom: 0 !important;
-    // transform: unset!important;
-    background-color: unset !important;
+    opacity: 0.7 !important;
+    border-radius: 10rpx !important;
+    bottom: 12rpx !important;
   }
 }
 </style>
