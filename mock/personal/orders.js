@@ -247,9 +247,6 @@ export const cancelReasons = [
   "其他原因",
 ];
 
-// 商品清单列表
-export const productList = [];
-
 // 物流列表的 mock
 export const shippingPackages = [
   {
@@ -335,7 +332,7 @@ export const shippingPackages = [
 ];
 
 // 物流详情页数据
-export const packageDetails = [
+export const shippingDetails = [
   {
     status: "订单已签收",
     detail: [

@@ -51,3 +51,22 @@ export const invoiceHeaders = [
     isDefault: false,
   },
 ];
+
+// 发票详情页数据
+export const invoceDetail = {
+  invoiceType: "增值税电子专用发票",
+  headerType: "企业",
+  invoiceHeader: "广州飞进信息科技有限公司",
+  taxNumber: "33444093567786900HK",
+  bankName: "广州工商银行明雅支行",
+  bankAccount: "8934990406744-04-008",
+  registrationAddress: "广州车陂南东宏国际广场",
+  enterprisePhone: "2377337938",
+  invoiceContent: "商品及服务类别",
+  invoiceAmount: 66.0,
+  applicationTime: "2023-09-20 14:00:00",
+  invoiceTime: "2023-09-20 14:00:00",
+
+  phone: "13567699045",
+  email: "hjkdfjk@feijin.com",
+};
