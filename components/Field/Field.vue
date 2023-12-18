@@ -4,6 +4,7 @@
     :title="label"
     :isLink="isLink"
     :clickable="clickable"
+    @click="$emit('click')"
   >
     <view :class="inputWrapperClass" slot="value">
       <slot name="input">

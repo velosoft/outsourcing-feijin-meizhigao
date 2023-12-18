@@ -7,6 +7,19 @@
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/tabBar/comps",
+      "style": {
+        "navigationStyle": "default",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/showcase/popup/index",
+      "style": {
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/showcase/field/index",
       "style": {
         "navigationStyle": "default",
@@ -16,13 +29,6 @@
     {
       "path": "pages/showcase/field/case1",
       "style": {
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/tabBar/comps",
-      "style": {
-        "navigationStyle": "default",
         "enablePullDownRefresh": false
       }
     },
