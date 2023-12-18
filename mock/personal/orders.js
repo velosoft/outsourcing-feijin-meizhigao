@@ -85,6 +85,8 @@ export const productOrders = [
     orderMessage: "请尽快发货", // 订单留言
     paymentTime: "2023-06-08 02:30:45", // 支付时间，只有在订单状态不是待付款时才有
     paymentMethod: "微信支付", // 支付方式，可选类型为["微信支付", "支付宝支付", "银行卡支付"]
+
+    // 查看评价页的 Mock 数据
     comment: {
       rating: 5,
       content: "商品收纳位置大，质量妥妥，有需要的朋友可以下单",
