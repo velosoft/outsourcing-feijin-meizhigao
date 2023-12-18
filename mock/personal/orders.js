@@ -1,3 +1,4 @@
+// 商品订单的 tabs
 export const productOrderStatus = [
   "待付款",
   "待发货",
@@ -6,6 +7,8 @@ export const productOrderStatus = [
   "交易关闭",
   "已取消",
 ];
+
+// 商品订单列表及详情页的 mock
 export const productOrders = [
   {
     orderNumber: "2023060801256768",
@@ -194,6 +197,7 @@ export const productOrders = [
   },
 ];
 
+// 取消原因 poup 的 mock
 export const cancelReasons = [
   "不需要了",
   "拍多了",
@@ -205,4 +209,88 @@ export const cancelReasons = [
   "已经购买了同类商品",
   "变更了购买计划",
   "其他原因",
+];
+
+// 物流列表的 mock
+export const shippingPackages = [
+  {
+    package_name: "包裹一",
+    logistics_company: "顺丰快递",
+    contact_phone: "13966907675",
+    driver_name: "张三",
+    tracking_number: "202313966907675",
+    license_plate: "粤A467788",
+  },
+  {
+    package_name: "包裹二",
+    logistics_company: "中通快递",
+    contact_phone: "13888888888",
+    driver_name: "李四",
+    tracking_number: "202313888888888",
+    license_plate: "粤B123456",
+  },
+  {
+    package_name: "包裹三",
+    logistics_company: "圆通快递",
+    contact_phone: "13777777777",
+    driver_name: "王五",
+    tracking_number: "202313777777777",
+    license_plate: "粤C789012",
+  },
+  {
+    package_name: "包裹四",
+    logistics_company: "韵达快递",
+    contact_phone: "13666666666",
+    driver_name: "赵六",
+    tracking_number: "202313666666666",
+    license_plate: "粤D345678",
+  },
+  {
+    package_name: "包裹五",
+    logistics_company: "百世快递",
+    contact_phone: "13555555555",
+    driver_name: "钱七",
+    tracking_number: "202313555555555",
+    license_plate: "粤E901234",
+  },
+  {
+    package_name: "包裹六",
+    logistics_company: "申通快递",
+    contact_phone: "13444444444",
+    driver_name: "孙八",
+    tracking_number: "202313444444444",
+    license_plate: "粤F567890",
+  },
+  {
+    package_name: "包裹七",
+    logistics_company: "京东快递",
+    contact_phone: "13333333333",
+    driver_name: "李九",
+    tracking_number: "202313333333333",
+    license_plate: "粤G123456",
+  },
+  {
+    package_name: "包裹八",
+    logistics_company: "邮政快递",
+    contact_phone: "13222222222",
+    driver_name: "周十",
+    tracking_number: "202313222222222",
+    license_plate: "粤H789012",
+  },
+  {
+    package_name: "包裹九",
+    logistics_company: "天天快递",
+    contact_phone: "13111111111",
+    driver_name: "吴十一",
+    tracking_number: "202313111111111",
+    license_plate: "粤I345678",
+  },
+  {
+    package_name: "包裹十",
+    logistics_company: "中铁快运",
+    contact_phone: "13000000000",
+    driver_name: "郑十二",
+    tracking_number: "202313000000000",
+    license_plate: "粤J901234",
+  },
 ];
