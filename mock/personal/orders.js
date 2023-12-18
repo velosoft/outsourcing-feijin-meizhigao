@@ -85,6 +85,18 @@ export const productOrders = [
     orderMessage: "请尽快发货", // 订单留言
     paymentTime: "2023-06-08 02:30:45", // 支付时间，只有在订单状态不是待付款时才有
     paymentMethod: "微信支付", // 支付方式，可选类型为["微信支付", "支付宝支付", "银行卡支付"]
+    comment: {
+      rating: 5,
+      content: "商品收纳位置大，质量妥妥，有需要的朋友可以下单",
+      images: [
+        "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",
+        "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",
+        "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",
+        "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",
+        "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",
+        "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",
+      ],
+    },
   },
   // 以下是另外 9 条数据，可以根据需要自行修改
   {
