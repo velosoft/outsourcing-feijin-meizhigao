@@ -294,3 +294,100 @@ export const shippingPackages = [
     license_plate: "粤J901234",
   },
 ];
+
+// 物流详情页数据
+export const packageDetails = [
+  {
+    status: "订单已签收",
+    detail: [
+      {
+        date: "04-01",
+        time: "12:23:45",
+        content: "派送成功",
+      },
+    ],
+  },
+  {
+    status: "派送中",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content:
+          "快件交给张三，正在派途中（联系电话：13678933578，顺丰已开启“安全呼叫”保护您的电话隐私，请放心接听！）",
+      },
+    ],
+  },
+  {
+    status: "运输中",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content: "快件到达【广州车陂南哈哈哈店】",
+      },
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content:
+          "快件在【广州车陂南店】完成分练，准备发往【广州车陂南哈哈哈店】",
+      },
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content:
+          "快件在【广州车陂南店】完成分练，准备发往【广州车陂南哈哈哈店】",
+      },
+    ],
+  },
+  {
+    status: "已揽件",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content: "顺丰速运 已收取快件",
+      },
+    ],
+  },
+  {
+    status: "已发货",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content: "包裹正在等候揽收",
+      },
+    ],
+  },
+  {
+    status: "已出库",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content: "包裹已出库",
+      },
+    ],
+  },
+  {
+    status: "仓库已接单",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content: "包裹已出库",
+      },
+    ],
+  },
+  {
+    status: "已下单",
+    detail: [
+      {
+        date: "04-02",
+        time: "12:23:45",
+        content: "商品已经下单",
+      },
+    ],
+  },
+];
