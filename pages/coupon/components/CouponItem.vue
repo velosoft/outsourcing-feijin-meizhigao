@@ -1,17 +1,19 @@
 <template>
-  <view
-    class="flex-col"
-    :class="{ 'sold-out': coupon.status === 'sold-out' }"
-  >
-    <view class="flex-row" v-if="true">
-      <view class="flex-col shrink-0 coupon-left">
+  <view class="flex-col" :class="{ 'sold-out': coupon.status === 'sold-out' }">
+    <coupon-card mode="row" class="coupon-card">
+      <view class="flex-col items-center shrink-0 coupon-left" slot="part-one">
         <view class="flex-col coupon-amount-wrapper">
-          <text class="self-start coupon-amount">{{ coupon.amount }}</text>
-          <text class="self-end coupon-amount-currency mt-2 mt-2">元</text>
+          <text class="coupon-amount">{{ coupon.amount }}</text>
+          <text class="coupon-amount-currency mt-2 mt-2">元</text>
         </view>
-        <text class="coupon-trigger mt-13">满{{ coupon.triggerCondition }}元使用</text>
+        <text class="coupon-trigger mt-13"
+          >满{{ coupon.triggerCondition }}元使用</text
+        >
       </view>
-      <view class="flex-row justify-between flex-1 coupon-right">
+      <view
+        class="flex-row justify-between flex-1 coupon-right"
+        slot="part-two"
+      >
         <view class="flex-col items-start self-center">
           <text class="coupon-title">{{ coupon.title }}</text>
           <text class="coupon-validity mt-10"
@@ -41,7 +43,7 @@
           </view>
         </view>
       </view>
-    </view>
+    </coupon-card>
     <u-popup
       :show="popupVisible"
       @close="onClose"
@@ -56,9 +58,10 @@
 
 <script>
 import GetCoupon from "./GetCoupon.vue";
+import CouponCard from "./CouponCard.vue";
 
 export default {
-  components: { GetCoupon },
+  components: { GetCoupon, CouponCard },
   props: {
     coupon: Object,
   },
@@ -83,6 +86,10 @@ export default {
 .mt-13 {
   margin-top: 26rpx;
 }
+.coupon-card {
+  border-radius: 36rpx;
+  overflow: hidden;
+}
 .coupon-amount-wrapper {
   padding: 0 2rpx;
 }
@@ -99,6 +106,7 @@ export default {
   line-height: 22.28rpx;
   font-weight: 600;
   color: #bb3e0c;
+  margin-left: 100rpx;
 }
 .coupon-trigger {
   font-size: 24rpx;
@@ -142,9 +150,9 @@ export default {
 }
 .coupon-use {
   padding: 12rpx 0;
-  background-image: url("https://dev.ft.velosoft.cn/api/image?token=657c52ccd6bce000114ceb8b&name=cbb0166fa1aecb0f8ccce3e526626e82.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-color: #ffffff;
+  border: 1px solid #bb3e0c;
+  border-radius: 26rpx;
   width: 102rpx;
 }
 .coupon-sold-out {
@@ -155,24 +163,21 @@ export default {
 }
 .coupon-left {
   padding: 8.56rpx 22rpx 55.56rpx;
-  background-image: url("https://dev.ft.velosoft.cn/api/image?token=657c52ccd6bce000114ceb8b&name=519f412acdd4a9a1c65e3760bca04d56.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   height: 200rpx;
+  width: 200rpx;
+  background-color: #fff4ef;
 }
 .coupon-right {
   padding: 29.52rpx 30rpx 41.42rpx;
-  background-image: url("https://dev.ft.velosoft.cn/api/image?token=657c52ccd6bce000114ceb8b&name=5c175cb74a6050335669383126a02cd1.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-color: #fff4ef;
   height: 200rpx;
 }
 .sold-out {
   .coupon-left {
-    background-image: url("https://dev.ft.velosoft.cn/api/image?token=657c52ccd6bce000114ceb8b&name=3d0ae07ddedeb2f9abdaecb69b43ae81.png");
+    background-color: #d2d2d2;
   }
   .coupon-right {
-    background-image: url("https://dev.ft.velosoft.cn/api/image?token=657c52ccd6bce000114ceb8b&name=fddb80c00eeaf6aa531d291fea09ca6f.png");
+    background-color: #f5f5f5;
   }
   .coupon-amount {
     color: #ffffff;
