@@ -1,3 +1,11 @@
+export const productOrderStatus = [
+  "待付款",
+  "待发货",
+  "待收货",
+  "交易完成",
+  "交易关闭",
+  "已取消",
+];
 export const productOrders = [
   {
     orderNumber: "2023060801256768",
