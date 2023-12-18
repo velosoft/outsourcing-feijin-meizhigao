@@ -58,7 +58,8 @@ export const productOrders = [
         priceUnitText: "按重量核算（元/kg)",
         productPrice: 30.0,
         productQuantity: 3,
-        productImageURL: "https://example.com/product3.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: false,
         afterSaleStatus: "售后失败",
       },
@@ -75,7 +76,8 @@ export const productOrders = [
         priceUnitText: "按个数核算（元/个)",
         productPrice: 25.0,
         productQuantity: 1,
-        productImageURL: "https://example.com/product4.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: false,
         afterSaleStatus: "正常",
       },
@@ -92,7 +94,8 @@ export const productOrders = [
         priceUnitText: "按个数核算（元/个)",
         productPrice: 15.0,
         productQuantity: 2,
-        productImageURL: "https://example.com/product5.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: true,
         afterSaleStatus: "售后成功",
       },
@@ -109,7 +112,8 @@ export const productOrders = [
         priceUnitText: "按重量核算（元/kg)",
         productPrice: 35.0,
         productQuantity: 1,
-        productImageURL: "https://example.com/product6.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: false,
         afterSaleStatus: "正常",
       },
@@ -126,7 +130,8 @@ export const productOrders = [
         priceUnitText: "按个数核算（元/个)",
         productPrice: 20.0,
         productQuantity: 3,
-        productImageURL: "https://example.com/product7.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: true,
         afterSaleStatus: "正常",
       },
@@ -143,7 +148,8 @@ export const productOrders = [
         priceUnitText: "按面积核算（元/m)",
         productPrice: 30.0,
         productQuantity: 2,
-        productImageURL: "https://example.com/product8.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: false,
         afterSaleStatus: "售后失败",
       },
@@ -160,7 +166,8 @@ export const productOrders = [
         priceUnitText: "按重量核算（元/kg)",
         productPrice: 40.0,
         productQuantity: 1,
-        productImageURL: "https://example.com/product9.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: true,
         afterSaleStatus: "正常",
       },
@@ -177,7 +184,8 @@ export const productOrders = [
         priceUnitText: "按个数核算（元/个)",
         productPrice: 15.0,
         productQuantity: 2,
-        productImageURL: "https://example.com/product10.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: false,
         afterSaleStatus: "售后成功",
       },
