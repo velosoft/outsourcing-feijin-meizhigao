@@ -5,15 +5,18 @@
     :isLink="isLink"
     :clickable="clickable"
   >
-    <input
-      slot="value"
-      :class="inputClass"
-      :placeholder="placeholder"
-      :value="value"
-      :disabled="readonly"
-      @input="onInput"
-    />
-F  </u-cell>
+    <view :class="inputWrapperClass" slot="value">
+      <slot name="input">
+        <input
+          :class="inputClass"
+          :placeholder="placeholder"
+          :value="value"
+          :disabled="readonly"
+          @input="onInput"
+        />
+      </slot>
+    </view>
+  </u-cell>
 </template>
 
 <script>
@@ -56,12 +59,13 @@ export default {
     return {};
   },
   computed: {
+    inputWrapperClass() {
+      return this.inputAlign == "right"
+        ? "input-wrapper input-wrapper__right"
+        : "input-wrapper";
+    },
     inputClass() {
-      if (this.inputAlign == "right") {
-        return "input-class input-right";
-      } else {
-        return "input-class";
-      }
+      return this.inputAlign == "right" ? "input input__right" : "input";
     },
   },
   methods: {
@@ -80,20 +84,19 @@ export default {
     width: 7em;
   }
 }
-.input-class {
+
+.input-wrapper {
+  flex: 1;
+}
+.input-wrapper__right {
+  display: flex;
+  justify-content: flex-end;
+}
+.input {
   flex: 1;
 }
 
-.input-right {
+.input__right {
   text-align: right;
-}
-
-.picker-view {
-  width: 100%;
-  height: 400rpx;
-}
-.item {
-  line-height: 100rpx;
-  text-align: center;
 }
 </style>

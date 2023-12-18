@@ -17,11 +17,9 @@
           :isLink="true"
         ></CFField>
         <CFField label="详细地址" placeholder="请输入详细地址"></CFField>
-        <CFField
-          label="设为默认地址"
-          :border="false"
-          inputAlign="right"
-        ></CFField>
+        <CFField label="设为默认地址" :border="false" inputAlign="right">
+          <u-switch v-model="v_model" slot="input"></u-switch>
+        </CFField>
       </u-cell-group>
     </view>
     <view class="flex-col justify-start fixed group_4">
@@ -45,6 +43,7 @@ export default {
   data() {
     return {
       title: "",
+      v_model: "",
     };
   },
 
