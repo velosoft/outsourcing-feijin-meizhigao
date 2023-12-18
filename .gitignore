@@ -2,5 +2,5 @@ node_modules
 unpackage
 yarn.lock
 
-./globalStyle.css
-./style/*.css
+globalStyle.css
+style/*.css
