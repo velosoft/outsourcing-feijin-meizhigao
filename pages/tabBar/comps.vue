@@ -1,6 +1,34 @@
 <template>
   <view class="flex-col page">
-    <u-cell-group>
+    <u-cell-group title="高频组件" class="group">
+      <u-cell title="按钮 Button" isLink url="/pages/showcase/button"></u-cell>
+      <u-cell
+        title="吸顶布局 Sticky"
+        isLink
+        url="/pages/showcase/sticky/index"
+      ></u-cell>
+
+      <u-cell
+        title="底部定位 Fixed Bottom"
+        isLink
+        url="/pages/showcase/fixed/fixed"
+      ></u-cell>
+
+      <u-cell
+        title="选择器 Selector"
+        isLink
+        url="/pages/showcase/selector"
+      ></u-cell>
+
+      <u-cell title="单选 Radio" isLink url="/pages/showcase/radio"></u-cell>
+      <u-cell
+        title="数字加减 Number Box"
+        isLink
+        url="/pages/showcase/numberbox/index"
+      ></u-cell>
+    </u-cell-group>
+
+    <u-cell-group title="导航" class="group">
       <u-cell title="标签页 Tabs" isLink url="/pages/showcase/tabs"></u-cell>
 
       <u-cell
@@ -65,4 +93,13 @@ export default {
 };
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.page {
+  background-color: #f2f2f2;
+}
+
+.group {
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+</style>

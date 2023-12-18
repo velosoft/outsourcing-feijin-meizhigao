@@ -7,9 +7,9 @@
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/tabBar/home",
+      "path": "pages/showcase/field",
       "style": {
-        "navigationStyle": "custom",
+        "navigationStyle": "default",
         "enablePullDownRefresh": false
       }
     },
@@ -21,13 +21,26 @@
       }
     },
     {
+      "path": "pages/tabBar/home",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/showcase/fixed/fixed",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "标签页 Tabs"
+      }
+    },
+    {
       "path": "pages/showcase/tabs",
       "style": {
         "navigationStyle": "default",
         "navigationBarTitleText": "标签页 Tabs"
       }
     },
-
     {
       "path": "pages/showcase/selector",
       "style": {
@@ -219,13 +232,13 @@
         "iconPath": "static/images/icon_tab_person_deactive.png",
         "selectedIconPath": "static/images/icon_tab_person_deactive.png",
         "text": "我的"
-      } /*,
+      },
       {
         "pagePath": "pages/tabBar/comps",
         "iconPath": "static/images/icon_tab_person_deactive.png",
         "selectedIconPath": "static/images/icon_tab_person_deactive.png",
         "text": "组件"
-      }*/
+      }
     ]
   }
 }

@@ -1,0 +1,29 @@
+// 提供三种沉底的 class
+// 如果设计师画的图，底部切出来就比较高（含有一个较大的 padding-bottom），就用 fixed-bottom
+// 如果设计师画的图，底部切出来就比较矮，内容明显会被滑动区域挡住，就用 fixed-bottom-safe
+// 如果设计师画的图，底部没有一个色块，元素又需要往下移动一点，就用 fixed-bottom-safe2
+
+.fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.fixed-bottom-safe {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: constant(safe-area-inset-bottom) !important;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
+
+.fixed-bottom-safe2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  padding-bottom: constant(safe-area-inset-bottom) !important;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
