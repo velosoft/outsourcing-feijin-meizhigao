@@ -29,15 +29,51 @@ export const productOrders = [
           "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: false, // 是否是秒杀商品
         afterSaleStatus: "正常", // 可选值：["正常", "售后成功", "售后失败"]
+        productStatus: "正常", // 商品状态，可选值：["正常", "补购商品", "已退回"]
       },
       {
         productName: "示例产品2",
         productDescription: "示例产品2说明文本",
         productPrice: 50.0, // 价格类型是 number
         productQuantity: 1,
-        productImageURL: "https://example.com/product2.jpg",
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: "售后成功",
+        productStatus: "正常", // 商品状态，可选值：["正常", "补购商品", "已退回"]
+      },
+      {
+        productName: "示例产品2.1",
+        productDescription: "示例产品2.1说明文本",
+        productPrice: 50.0,
+        productQuantity: 1,
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
+        isSeckill: true, // 示例秒杀商品
+        afterSaleStatus: "正常",
+        productStatus: "补购商品",
+      },
+      {
+        productName: "示例产品2.2",
+        productDescription: "示例产品2.2说明文本",
+        productPrice: 50.0,
+        productQuantity: 1,
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
+        isSeckill: true, // 示例秒杀商品
+        afterSaleStatus: "正常",
+        productStatus: "已退回",
+      },
+      {
+        productName: "示例产品2.3",
+        productDescription: "示例产品2.3说明文本",
+        productPrice: 50.0,
+        productQuantity: 1,
+        productImageURL:
+          "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png",
+        isSeckill: true, // 示例秒杀商品
+        afterSaleStatus: "正常",
+        productStatus: "正常",
       },
     ],
     shippingFee: 10.0, // 运费金额，类型是 number
@@ -210,6 +246,9 @@ export const cancelReasons = [
   "变更了购买计划",
   "其他原因",
 ];
+
+// 商品清单列表
+export const productList = [];
 
 // 物流列表的 mock
 export const shippingPackages = [
