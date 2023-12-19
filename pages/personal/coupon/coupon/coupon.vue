@@ -31,7 +31,9 @@
     </view>
     <view class="flex-col code-wrap code-pos"><image class="icon-code" src="/static/images/icon_scan_code.png" /></view>
     <view class="fixed-bottom-safe2 flex-col items-center footer-wrap">
-      <u-button class="cf-btn-black" text="领券中心" type="primary" size="large" shape="circle"></u-button>
+      <view class="cf-btn-black flex-col items-center btn-black-wrap">
+        <text class="btn-font btn-text">领券中心</text>
+      </view>
     </view>
   </view>
   </template>
@@ -112,6 +114,22 @@
     }
     .footer-wrap {
       padding: 32rpx 100rpx;
+      .btn-black-wrap {
+        padding: 24rpx 0;
+        background-color: #000000;
+        border-radius: 48rpx;
+        width: 546rpx;
+        .btn-font {
+          font-size: 32rpx;
+          font-family: 'PingFang SC';
+          line-height: 44rpx;
+          font-weight: 500;
+          color: #000000;
+        }
+        .btn-text {
+          color: #ffffff;
+        }
+      }
     }
   }
   </style>

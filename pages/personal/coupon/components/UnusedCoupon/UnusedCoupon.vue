@@ -105,7 +105,6 @@
       font-weight: 500;
     }
     .text-wrapper {
-      padding: 0 4rpx;
       border-radius: 8rpx;
       border: solid 1rpx #9e9ea0;
       .coupon-scope {
