@@ -3,7 +3,7 @@
     <view class="flex-row justify-between header">
       <view class="flex-row left">
         <text class="self-center title">已连续签到</text>
-        <text class="self-start day-num ml-6">2</text>
+        <text class="self-start day-num ml-6">{{ checkinNumber }}</text>
         <text class="self-center title ml-6">天</text>
       </view>
       <view class="flex-col">
@@ -14,16 +14,15 @@
           size="mini"
           shape="circle"
           @click="onClick"
-          v-if="true"
+          v-if="items[checkinNumber].status == 'pending'"
         ></u-button>
         <u-button
           class="button-normal"
-          text="立即签到"
-          type="primary"
+          text="已签到"
           size="mini"
           shape="circle"
           @click="onClick_1"
-          v-if="false"
+          v-else
         ></u-button>
       </view>
     </view>
@@ -35,24 +34,26 @@
       >
         <view
           class="flex-col flex-1 equal-division-item"
-          v-if="signStatus >= signDay"
+          v-if="item.status == 'done'"
         >
           <view class="flex-col items-center section justify-center">
             <view class="flex-col items-center text-wrapper justify-center"
-              ><text class="num-active">100</text></view
+              ><text class="num-active">{{ item.bonus }}</text></view
             >
           </view>
-          <text class="self-center value-active mt-8">1天</text>
+          <text class="self-center value-active mt-8">{{ item.number }}天</text>
         </view>
-        <view class="flex-col flex-1 equal-division-item" v-if="signStatus">
+        <view class="flex-col flex-1 equal-division-item" v-else>
           <view class="flex-col items-center section-inactive justify-center">
             <view
               class="flex-col items-center text-wrapper-inactive justify-center"
             >
-              <text class="num-inactive">50</text>
+              <text class="num-inactive">{{ item.bonus }}</text>
             </view>
           </view>
-          <text class="self-center value-inactive mt-8">3天</text>
+          <text class="self-center value-inactive mt-8"
+            >{{ item.number }}天</text
+          >
         </view>
       </view>
     </view>
@@ -66,22 +67,18 @@ export default {
   props: {},
   data() {
     return {
-      signStatus: true,
-      signDayNum: "2",
+      checkinNumber: 2,
       items: dailyCheckinList,
     };
   },
 
   methods: {
     onClick() {
-      uni.navigateTo({
-        url: "/pages/personal/bonusPoint/signDetial/signDetial",
-      });
+      this.items[this.checkinNumber].status = "done";
+      this.checkinNumber++;
     },
     onClick_1() {
-      uni.navigateTo({
-        url: "/pages/personal/bonusPoint/signDetial/signDetial",
-      });
+      this.checkinNumber--;
     },
   },
 };
