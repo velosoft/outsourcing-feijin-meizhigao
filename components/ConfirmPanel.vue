@@ -185,9 +185,9 @@ export default {
     .dialog-content {
       .dialog-text {
         color: #030305;
-        font-size: 32rpx;
+        font-size: 36rpx;
         font-family: 苹方;
-        line-height: 32rpx;
+        line-height: 36rpx;
       }
     }
     .bottom {
@@ -219,9 +219,9 @@ export default {
         margin-left: 32rpx;
       }
       .dialog-font {
-        font-size: 28rpx;
+        font-size: 32rpx;
         font-family: 苹方;
-        line-height: 28rpx;
+        line-height: 32rpx;
       }
     }
   }
