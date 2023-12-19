@@ -69,12 +69,12 @@ export default {
   }
   .sign-card-top {
     position: relative;
-    margin: -104rpx 32rpx 0;
+    margin: -60rpx 32rpx 0;
   }
   .list-wrapper {
     margin-top: 20rpx;
     /deep/ .scroll-height {
-      height: calc(100vh - 936rpx - env(safe-area-inset-bottom)) !important;
+      height: calc(100vh - 980rpx - env(safe-area-inset-bottom)) !important;
     }
   }
 }
