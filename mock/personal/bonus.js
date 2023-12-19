@@ -186,7 +186,7 @@ export const rewardBonusPoints = [
     orderNumber: "2023000003",
     date: "2023-09-17",
     time: "12:45:18",
-    amount: "+80",
+    amount: 80,
     status: "已到账",
   },
   {
@@ -202,7 +202,7 @@ export const rewardBonusPoints = [
     orderNumber: "2023000005",
     date: "2023-09-19",
     time: "16:55:22",
-    amount: "+90",
+    amount: 90,
     status: "已到账",
   },
   {
