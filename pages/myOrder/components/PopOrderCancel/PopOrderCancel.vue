@@ -29,7 +29,7 @@
 <script>
   export default {
     components: {},
-    props: { reasons: { type: Object, default: () => [] } },
+    props: { reasons: { type: Array, default: () => [] } },
     data() {
       return {
         v_model: '',

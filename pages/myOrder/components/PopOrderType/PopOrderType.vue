@@ -5,7 +5,7 @@
       <template v-slot="{ item }">
         <view class="flex-row justify-between items-center cell">
           <text class="font_normal">{{ item }}</text>
-          <image class="image" src="/static/images/icon_golden_ok.png" />          
+          <image class="image" src="/static/images/icon_golden_ok.png" />
         </view>
       </template>
     </Selector>
@@ -26,8 +26,8 @@ export default {
 
   methods: {
     onChange(i) {
-      console.log(i);
-    }
+      this.$emit("change", this.types[i]);
+    },
   },
 };
 </script>
