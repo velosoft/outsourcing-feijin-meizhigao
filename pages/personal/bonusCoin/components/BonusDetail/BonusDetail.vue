@@ -1,19 +1,19 @@
 <template>
   <view class="flex-col wrap">
-    <u-tabs :list="list">
+    <u-tabs :list="list" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
       <view class="flex-row tabs-right-slot" slot="right">
         <view class="flex-row items-center select-data" @click="onClick">
           <text class="select-label">全部</text>
-          <image class="shrink-0 select-icon ml-4" src="../../../../../static/images/icon_down_arrow.png" />
+          <image class="shrink-0 select-icon ml-4" src="/static/images/icon_down_arrow.png" />
         </view>
         <view class="flex-row items-center select-data ml-8" @click="onClick_1">
           <text class="select-label">日期</text>
-          <image class="shrink-0 select-icon ml-4" src="../../../../../static/images/icon_down_arrow.png" />
+          <image class="shrink-0 select-icon ml-4" src="/static/images/icon_down_arrow.png" />
         </view>
       </view>
     </u-tabs>
-    <view class="flex-col flex-1">
-      <scroll-view :scroll-y="true">
+    <view class="flex-col">
+      <scroll-view :scroll-y="true" class="scroll-height">
         <list-container :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
           <view class="flex-col list">
             <DetialItem :bonusItem="item" v-for="(item, index) in rewardBonusCoins" :key="index"></DetialItem>
@@ -21,20 +21,25 @@
         </list-container>
       </scroll-view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="10" :closeable="true">
-      <DataTimePickerYD></DataTimePickerYD>
-    </u-popup>
-    <u-popup :show="popupVisible_1" @close="onClose_1" mode="bottom" :round="10" :closeable="true">
+    <u-popup
+      :show="popupVisible"
+      @close="onClose"
+      mode="bottom"
+      :round="12"
+      :closeable="true"
+      style="height:20%;"
+    ></u-popup>
+    <u-popup :show="popupVisible_1" @close="onClose_1" mode="bottom" :round="12" :closeable="true">
       <DataTimePickerYD></DataTimePickerYD>
     </u-popup>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   import DataTimePickerYD from '../../../../../pages/components/DataTimePickerYD/DataTimePickerYD.vue';
   import DetialItem from '../../../../../pages/personal/components/DetialItem/DetialItem.vue';
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
-
+  
   export default {
     components: { DataTimePickerYD, DetialItem, ListContainer },
     props: {
@@ -66,7 +71,7 @@
         finished: false,
       };
     },
-
+  
     methods: {
       onClick() {
         this.popupVisible = true;
@@ -82,9 +87,9 @@
       },
     },
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .wrap {
     background-color: #ffffff;
     .tabs-right-slot {
@@ -111,4 +116,4 @@
       padding-top: 8rpx;
     }
   }
-</style>
+  </style>
