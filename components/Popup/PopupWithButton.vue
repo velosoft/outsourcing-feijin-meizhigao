@@ -5,9 +5,10 @@
     </view>
     <slot></slot>
     <u-button
-      class="button"
+      class="cf-btn-black"
       :text="buttonText"
       type="primary"
+      shape="circle"
       :disabled="disabledButton"
     ></u-button>
   </view>
@@ -18,6 +19,9 @@ import DatePickerView from "@/components/PickerView/DatePickerView";
 
 export default {
   components: { DatePickerView },
+  options: {
+    styleIsolation: "shared",
+  },
   props: {
     title: { type: String, default: `标题` },
     buttonText: { type: String, default: `确定` },
@@ -49,9 +53,6 @@ export default {
   }
   .group {
     margin-top: 48rpx;
-  }
-  .button {
-    margin-right: 8rpx;
   }
 }
 </style>

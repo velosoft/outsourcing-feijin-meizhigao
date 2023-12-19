@@ -2,12 +2,12 @@
   <view class="flex-col page">
     <view class="flex-col mt-20">
       <text>主打色 </text>
-      <u-button type="primary" text="立即查看"></u-button>
+      <u-button type="primary" shape="circle" text="立即查看"></u-button>
     </view>
 
     <view class="flex-col mt-20">
       <text>主打色 镂空</text>
-      <u-button type="primary" plain text="返回上一级"></u-button>
+      <u-button type="primary" shape="circle" plain text="返回上一级"></u-button>
     </view>
 
     <view class="flex-col mt-20">
@@ -15,12 +15,14 @@
       <view class="flex-row mt-10">
         <u-button
           type="primary"
+          shape="circle"
           plain
           text="加入购物车"
           class="flex-1"
         ></u-button>
         <u-button
           type="primary"
+          shape="circle"
           text="预约服务"
           class="flex-1 ml-20"
         ></u-button>
@@ -44,13 +46,13 @@
           plain
           text="取消订单"
           size="small"
-          class="cf-black-btn"
+          class="cf-btn-black"
         ></u-button>
         <u-button
           type="primary"
           text="去服务"
           size="small"
-          class="cf-black-btn ml-20"
+          class="cf-btn-black ml-20"
         ></u-button>
       </view>
     </view>
@@ -87,28 +89,5 @@ export default {
   flex: 1 1 0;
 }
 
-.cf-black-btn {
-  /deep/ .u-button {
-    border-radius: 4px;
-    font-weight: 700;
-  }
 
-  /deep/ .u-button--primary {
-    background-color: #000000 !important;
-    border-color: #000000 !important;
-  }
-
-  /deep/ .u-button--small {
-    min-width: 132rpx;
-    height: 52rpx;
-  }
-
-  /deep/ .u-button--info {
-    border-color: solid 2rpx #cecece !important;
-  }
-
-  /deep/ .u-button--plain.u-button--info {
-    color: #9e9ea0;
-  }
-}
 </style>
