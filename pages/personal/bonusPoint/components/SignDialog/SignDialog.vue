@@ -1,6 +1,6 @@
 <template>
-  <view class="flex-col component-B6n6juRH">
-    <image class="shrink-0 bg-header" src="../../../../../static/images/17025195143094865452.png" />
+  <view class="flex-col wrap">
+    <image class="shrink-0 bg-header" src="/static/images/mock_dialog_header_bg.png" />
     <view class="flex-col relative container">
       <view class="flex-col">
         <view class="flex-col items-start self-center">
@@ -16,26 +16,27 @@
           <text class="value label mt-8">连续签到奖励更丰富</text>
         </view>
       </view>
-      <u-button class="mt-24" text="知道了" type="primary" size="mini" shape="circle"></u-button>
+      <view class="flex-col justify-start mt-24">
+        <u-button class="cf-btn-black" text="知道了" type="primary" size="mini" shape="circle"></u-button>
+      </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
-  .component-B6n6juRH {
-    background-image: linear-gradient(90deg, #fcd46b 0%, #fdf3d2 100%);
+  </script>
+  
+  <style scoped lang="less">
+  .wrap {
     border-radius: 20rpx;
     height: 674rpx;
     .bg-header {
@@ -76,4 +77,4 @@
       }
     }
   }
-</style>
+  </style>

@@ -26,7 +26,7 @@
         </view>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="center" style="width:309px"><SignDialog></SignDialog></u-popup>
+    <u-popup :show="popupVisible" @close="onClose" mode="center" style="width:309px" :round="10" :safeAreaInsetBottom="false"><SignDialog></SignDialog></u-popup>
   </view>
   </template>
   
