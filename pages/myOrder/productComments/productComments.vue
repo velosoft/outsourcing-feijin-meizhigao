@@ -1,31 +1,48 @@
 <template>
-<view class="flex-col page">
-  <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
-  <view class="flex-col justify-start flex-1 comments">
-    <list-container class="list-container" :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
-      <view class="flex-col">
-        <view class="flex-col list-item comment mt-12" v-for="(item, index) in orders" :key="index">
-          <OrderProductItem :product="item.products[0]"></OrderProductItem>
-          <u-button
-            class="mt-12 self-end"
-            text="我要评价"
-            type="primary"
-            shape="circle"
-            :plain="true"
-            @click="onClick"
-          ></u-button>
+  <view class="flex-col page">
+    <nav-bar
+      :hasBack="true"
+      :title="title"
+      :fixed="true"
+      :isShow="true"
+      background="#f8f8f8"
+    ></nav-bar>
+    <view class="flex-col justify-start flex-1 comments">
+      <list-container
+        class="list-container"
+        :showEmpty="!orders.length"
+        :showLoading="showLoading"
+        :finished="finished"
+      >
+        <view class="flex-col">
+          <view
+            class="flex-col list-item comment mt-12"
+            v-for="(item, index) in orders"
+            :key="index"
+          >
+            <order-product-item
+              :product="item.products[0]"
+            ></order-product-item>
+            <u-button
+              class="mt-12 self-end"
+              text="我要评价"
+              type="primary"
+              shape="circle"
+              :plain="true"
+              @click="onClick"
+            ></u-button>
+          </view>
         </view>
-      </view>
-    </list-container>
+      </list-container>
+    </view>
   </view>
-</view>
 </template>
 
 <script>
-import ListContainer from '@/components/ListContainer/ListContainer.vue';
-import NavBar from '@/components/NavBar/NavBar.vue';
-import OrderProductItem from '../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
-  import { productOrders } from '../../../mock/personal/orders'
+import ListContainer from "@/components/ListContainer/ListContainer.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import OrderProductItem from "@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue";
+import { productOrders } from "@/mock/personal/orders";
 
 export default {
   components: { ListContainer, NavBar, OrderProductItem },
@@ -33,8 +50,7 @@ export default {
   data() {
     return {
       orders: productOrders,
-      title: '我要评价',
-      showEmpty: false,
+      title: "我要评价",
       showLoading: false,
       finished: false,
     };
@@ -42,13 +58,15 @@ export default {
 
   methods: {
     onClick() {
-      uni.navigateTo({ url: '/pages/myOrder/proudctAddComment/proudctAddComment' });
+      uni.navigateTo({
+        url: "/pages/myOrder/proudctAddComment/proudctAddComment",
+      });
     },
   },
 };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
 .page {
   background-color: #f8f8f8;
   width: 100%;
