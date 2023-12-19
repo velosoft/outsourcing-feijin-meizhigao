@@ -283,7 +283,7 @@
       }
     },
     {
-      "path": "pages/personal/coupon/index/index",
+      "path": "pages/personal/coupon/coupon/coupon",
       "style": {
         "navigationBarTitleText": "优惠券中心",
         "navigationBarTextStyle": "black",

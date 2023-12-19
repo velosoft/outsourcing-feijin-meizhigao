@@ -37,7 +37,7 @@
         uni.navigateTo({ url: '/pages/personal/bonusPoint/bonusPoint/bonusPoint' });
       },
       onClick_2() {
-        uni.navigateTo({ url: '/pages/personal/coupon/index/index' });
+        uni.navigateTo({ url: '/pages/personal/coupon/coupon/coupon' });
       },
     },
   };

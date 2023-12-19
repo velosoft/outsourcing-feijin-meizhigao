@@ -1,8 +1,8 @@
 <template>
   <view class="flex-col justify-start relative">
-    <image class="coup_bg pos" src="../../../../../static/images/bg_coupon_unused.png" />
+    <image class="coup_bg pos" src="/static/images/bg_coupon_unused.png" />
     <view class="flex-row items-center relative">
-      <view class="flex-col shrink-0 price-wrap">
+      <view class="flex-col shrink-0 price-wrap items-center">
         <view class="flex-row items-baseline price-num">
           <text class="price">{{item.amount}}</text>
           <text class="currency currency_text ml-4">元</text>
@@ -26,9 +26,9 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {
@@ -47,12 +47,12 @@
     data() {
       return {};
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .coup_bg {
     width: 702rpx;
     height: 230rpx;
@@ -127,4 +127,4 @@
     font-family: 'PingFang SC';
     line-height: 44rpx;
   }
-</style>
+  </style>

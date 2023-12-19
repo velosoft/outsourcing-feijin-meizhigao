@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col items-center relative">
-    <image class="image" src="../../../../../static/images/983011c5f812b77e1aeef309834f81f8.png" />
+    <image class="image" src="/static/images/bg_coupon_used.png" />
     <view class="flex-row items-center pos">
       <view class="flex-col coupon-left items-center">
         <view class="flex-row items-baseline price-wrap">
@@ -21,9 +21,9 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {
@@ -42,12 +42,12 @@
     data() {
       return {};
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .image {
     width: 702rpx;
     height: 230rpx;
@@ -60,6 +60,7 @@
     bottom: 0;
     .coupon-left {
       padding: 32rpx 36rpx 48rpx;
+      width: 256rpx;
       .price-wrap {
         margin-right: 8rpx;
         padding-left: 4rpx;
@@ -118,4 +119,4 @@
       color: #4c4c4c;
     }
   }
-</style>
+  </style>

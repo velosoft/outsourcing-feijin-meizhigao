@@ -3,35 +3,35 @@
     <text class="title-left">我的服务</text>
     <view class="self-stretch grid mt-8">
       <view class="flex-col items-center grid-item" @click="onClick">
-        <image class="icon" src="../../../../static/images/icon_menu_course.png" />
+        <image class="icon" src="/static/images/icon_menu_course.png" />
         <text class="label mt-8">课程订单</text>
       </view>
       <view class="flex-col items-center grid-item" @click="onClick_1">
-        <image class="icon" src="../../../../static/images/icon_menu_share.png" />
+        <image class="icon" src="/static/images/icon_menu_share.png" />
         <text class="label mt-8">分享有礼</text>
       </view>
       <view class="flex-col items-center grid-item" @click="onClick_2">
-        <image class="icon" src="../../../../static/images/icon_menu_bonus_coin.png" />
+        <image class="icon" src="/static/images/icon_menu_bonus_coin.png" />
         <text class="label mt-8">分销中心</text>
       </view>
       <view class="flex-col items-center grid-item" @click="onClick_3">
-        <image class="icon" src="../../../../static/images/icon_menu_coupon.png" />
+        <image class="icon" src="/static/images/icon_menu_coupon.png" />
         <text class="label mt-8">优惠券</text>
       </view>
       <view class="flex-col items-center grid-item">
-        <image class="icon" src="../../../../static/images/icon_menu_collect.png" />
+        <image class="icon" src="/static/images/icon_menu_collect.png" />
         <text class="label mt-8">我的收藏</text>
       </view>
       <view class="flex-col items-center grid-item" @click="onClick_4">
-        <image class="icon" src="../../../../static/images/icon_menu_address.png" />
+        <image class="icon" src="/static/images/icon_menu_address.png" />
         <text class="label mt-8">我的地址</text>
       </view>
       <view class="flex-col items-center grid-item" @click="onClick_5">
-        <image class="icon" src="../../../../static/images/icon_menu_help.png" />
+        <image class="icon" src="/static/images/icon_menu_help.png" />
         <text class="label mt-8">帮助中心</text>
       </view>
       <view class="flex-col items-center grid-item" @click="onClick_6">
-        <image class="icon" src="../../../../static/images/icon_menu_settings.png" />
+        <image class="icon" src="/static/images/icon_menu_settings.png" />
         <text class="label mt-8">设置中心</text>
       </view>
     </view>
@@ -57,7 +57,7 @@
         uni.navigateTo({ url: '/pages/personal/reseller/reseller/reseller' });
       },
       onClick_3() {
-        uni.navigateTo({ url: '/pages/personal/coupon/index/index' });
+        uni.navigateTo({ url: '/pages/personal/coupon/coupon/coupon' });
       },
       onClick_4() {
         uni.navigateTo({ url: '/pages/personal/address/address/address' });

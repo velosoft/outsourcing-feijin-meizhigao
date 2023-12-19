@@ -17,6 +17,6 @@ export const signStatusResData = [
   { signDay: '第 16 天', icon: '/static/images/icon_sign_coin.png', status: '+50' },
   { signDay: '第 17 天', icon: '/static/images/icon_sign_coin.png', status: '+50' },
   { signDay: '第 18 天', icon: '/static/images/icon_sign_coin.png', status: '+50' },
-  { signDay: '第 19 天', icon: 'static/images/icon_sign_coin.png', status: '+50' },
-  { signDay: '第 20 天', icon: 'static/images/icon_sign_gift.png', status: '+50' },
+  { signDay: '第 19 天', icon: '/static/images/icon_sign_coin.png', status: '+50' },
+  { signDay: '第 20 天', icon: '/static/images/icon_sign_gift.png', status: '+50' },
 ];

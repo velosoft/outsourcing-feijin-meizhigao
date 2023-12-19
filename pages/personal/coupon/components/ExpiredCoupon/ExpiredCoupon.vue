@@ -1,15 +1,15 @@
 <template>
   <view class="flex-col justify-start relative">
-    <image class="image pos" src="../../../../../static/images/bg_coupon_expried.png" />
+    <image class="image pos" src="/static/images/bg_coupon_expried.png" />
     <view class="flex-row items-center relative">
-      <view class="flex-col shrink-0 coupon-left">
+      <view class="flex-col coupon-left items-center">
         <view class="flex-row items-baseline price-wrap">
           <text class="price-num">{{item.amount}}</text>
           <text class="currency ml-4">元</text>
         </view>
         <text class="price-label mt-8">{{"满" + item.triggerCondition +"元使用"}}</text>
       </view>
-      <view class="shrink-0 line"></view>
+      <view class="line"></view>
       <view class="flex-row justify-between items-center flex-1 coupon-right">
         <view class="flex-col">
           <view class="flex-col items-start">
@@ -24,9 +24,9 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {
@@ -45,12 +45,12 @@
     data() {
       return {};
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .image {
     width: 702rpx;
     height: 230rpx;
@@ -64,6 +64,7 @@
   }
   .coupon-left {
     padding: 32rpx 36rpx 48rpx;
+    width: 256rpx;
     .price-wrap {
       padding-left: 4rpx;
       .price-num {
@@ -120,4 +121,4 @@
     line-height: 40rpx;
     color: #4c4c4c;
   }
-</style>
+  </style>
