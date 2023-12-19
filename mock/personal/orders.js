@@ -118,6 +118,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 15.0,
+    totalAmount: 90.0,
   },
   {
     orderNumber: "2023060801256770",
@@ -136,6 +137,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 12.0,
+    totalAmount: 25.0,
   },
   {
     orderNumber: "2023060801256771",
@@ -154,6 +156,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 8.0,
+    totalAmount: 50.0,
   },
   {
     orderNumber: "2023060801256772",
@@ -172,6 +175,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 10.0,
+    totalAmount: 35.0,
   },
   {
     orderNumber: "2023060801256773",
@@ -190,6 +194,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 10.0,
+    totalAmount: 20.0,
   },
   {
     orderNumber: "2023060801256774",
@@ -208,6 +213,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 10.0,
+    totalAmount: 60.0,
   },
   {
     orderNumber: "2023060801256775",
@@ -226,6 +232,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 12.0,
+    totalAmount: 40.0,
   },
   {
     orderNumber: "2023060801256776",
@@ -244,6 +251,7 @@ export const productOrders = [
       },
     ],
     shippingFee: 8.0,
+    totalAmount: 30.0,
   },
 ];
 
