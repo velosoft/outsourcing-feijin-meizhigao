@@ -1,6 +1,6 @@
 <template>
 <view class="flex-col order-item">
-  <view class="flex-row justify-between items-center order-header">
+  <view class="flex-row justify-between items-center self-stretch order-header">
     <text class="total-text">{{`订单号：${order.orderNumber}`}}</text>
     <view class="flex-col">
       <view
@@ -19,7 +19,7 @@
       </view>
     </view>
   </view>
-  <view class="flex-col order-products" @click="onClick">
+  <view class="flex-col self-stretch order-products" @click="onClick">
     <view class="flex-col list-item mt-14" v-for="(item, index) in order.products" :key="index">
       <view class="flex-row self-start order-left">
         <view class="flex-col justify-start items-center shrink-0 relative order-image">
@@ -52,25 +52,25 @@
       </view>
     </view>
   </view>
-  <view class="flex-col justify-start items-end total-wrapper">
+  <view class="flex-col justify-start items-end self-stretch total-wrapper">
     <text class="total-text">
       {{`共 ${order.products.length} 件，合计￥${order.totalAmount}（含运费￥${order.shippingFee}）`}}
     </text>
   </view>
-  <view class="flex-col">
+  <view class="flex-col self-stretch">
     <view class="flex-row justify-end actions" v-if="order.orderStatus === '待收货'">
       <view class="flex-col justify-start items-center button"><text class="product-count-font">申请售后</text></view>
       <view class="flex-col justify-start items-center button ml-8" @click="onClick_1">
         <text class="product-count-font">查看物流</text>
       </view>
-      <view class="flex-col justify-start items-center confirm-receive ml-8" @click="onClick_2">
+      <view class="flex-col justify-start items-center confirm-receive ml-8" @click="onShowConfirm">
         <text class="color-white">确认收货</text>
       </view>
     </view>
     <view class="flex-row justify-between items-center actions" v-if="order.orderStatus === '待付款'">
       <text class="sale-status">支付倒计时：59分钟</text>
       <view class="flex-row">
-        <view class="flex-col justify-start items-center button" @click="onClick_3">
+        <view class="flex-col justify-start items-center button" @click="onClick_2">
           <text class="product-count-font">取消订单</text>
         </view>
         <view class="flex-col justify-start items-center confirm-receive ml-8">
@@ -86,7 +86,7 @@
       v-if="order.orderStatus === '交易完成' || order.orderStatus === '交易关闭'"
     >
       <view class="flex-col justify-start items-center button"><text class="product-count-font">申请开票</text></view>
-      <view class="flex-col justify-start items-center button ml-8">
+      <view class="flex-col justify-start items-center button ml-8" @click="onClick_3">
         <text class="product-count-font">我要评价</text>
       </view>
       <view class="flex-col justify-start items-center button ml-8">
@@ -100,28 +100,24 @@
       </view>
     </view>
   </view>
-  <u-modal
-    :show="dialogVisible"
-    @confirm="onClose"
-    @cancel="onClose"
-    confirmColor="#b09053"
-    cancelColor="#9e9ea0"
-    confirmText="确定"
-    :showCancelButton="true"
-    cancelText="取消"
+  <confirm-panel
+    :isShow="showConfirm"
     content="您确定已收到货了吗？"
-  ></u-modal>
-  <u-popup :show="popupVisible" @close="onClose_1" mode="bottom" :round="10" :closeable="true">
+    @cancel="onCancel"
+    @confirm="onConfirm"
+  ></confirm-panel>
+  <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="10" :closeable="true">
     <PopOrderCancel></PopOrderCancel>
   </u-popup>
 </view>
 </template>
 
 <script>
+import ConfirmPanel from '@/components/ConfirmPanel.vue';
 import PopOrderCancel from '../../../../pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
 
 export default {
-  components: { PopOrderCancel },
+  components: { ConfirmPanel, PopOrderCancel },
   props: {
     order: {
       type: Object,
@@ -205,7 +201,7 @@ export default {
   },
   data() {
     return {
-      dialogVisible: false,
+      showConfirm: false,
       popupVisible: false,
     };
   },
@@ -217,17 +213,23 @@ export default {
     onClick_1() {
       uni.navigateTo({ url: '/pages/chakanwuliu_wuliisong_duogewuliu/chakanwuliu_wuliisong_duogewuliu' });
     },
+    onShowConfirm() {
+      this.showConfirm = true;
+    },
     onClick_2() {
-      this.dialogVisible = true;
-    },
-    onClose() {
-      this.dialogVisible = false;
-    },
-    onClick_3() {
       this.popupVisible = true;
     },
-    onClose_1() {
+    onClose() {
       this.popupVisible = false;
+    },
+    onClick_3() {
+      uni.navigateTo({ url: '/pages/myOrder/proudctAddComment/proudctAddComment' });
+    },
+    onCancel() {
+      this.showConfirm = false;
+    },
+    onConfirm() {
+      this.showConfirm = false;
     },
   },
 };
