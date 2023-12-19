@@ -1,38 +1,43 @@
 <template>
   <view class="flex-col relative page">
-    <image class="bg-header bg-pos" src="../../../../static/images/mock_bonus_coin_bg_header.png" />
+    <image class="bg-header bg-pos" src="/static/images/mock_bonus_coin_bg_header.png" />
     <NavBar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#ffffff00"></NavBar>
-    <view class="flex-col relative flex-1">
+    <view class="flex-col relative">
       <view class="flex-col section"><HeadNumPannel class="num-pannel-margin"></HeadNumPannel></view>
-      <view class="flex-col justify-start flex-1">
-        <BonusDetail class="flex-1" :rewardBonusCoins="rewardBonusCoinsResData"></BonusDetail>
+      <view class="flex-col justify-start">
+        <BonusDetail :rewardBonusCoins="rewardBonusCoinsResData" :tabList="tablist"></BonusDetail>
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   import BonusDetail from '../../../../pages/personal/bonusCoin/components/BonusDetail/BonusDetail.vue';
   import HeadNumPannel from '../../../../pages/personal/components/HeadNumPannel/HeadNumPannel.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import { rewardBonusCoinsResData } from './bonusCoin.data.js';
-
+  
   export default {
     components: { BonusDetail, HeadNumPannel, NavBar },
     props: {},
     data() {
       return {
         rewardBonusCoins: '',
+        tablist: [
+          {
+            name: '收纳币明细',
+          },
+        ],
         title: '我的收纳币',
         rewardBonusCoinsResData: rewardBonusCoinsResData,
       };
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -58,4 +63,4 @@
       }
     }
   }
-</style>
+  </style>

@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col wrap">
-    <u-tabs :list="list" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
+    <u-tabs :list="tabList" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
       <view class="flex-row tabs-right-slot" slot="right">
         <view class="flex-row items-center select-data" @click="onClick">
           <text class="select-label">全部</text>
@@ -56,14 +56,10 @@
           },
         ],
       },
+      tabList: { type: Object, default: () => [{ name: '收纳币明细' }] },
     },
     data() {
       return {
-        list: [
-          {
-            name: '收纳币明细',
-          },
-        ],
         popupVisible: false,
         popupVisible_1: false,
         showEmpty: false,

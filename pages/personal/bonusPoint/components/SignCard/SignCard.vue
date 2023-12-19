@@ -7,7 +7,15 @@
         <text class="self-center title ml-6">天</text>
       </view>
       <view class="flex-col">
-        <u-button text="立即签到" type="primary" size="mini" shape="circle" @click="onClick" v-if="true"></u-button>
+        <u-button
+          class="cf-btn-black"
+          text="立即签到"
+          type="primary"
+          size="mini"
+          shape="circle"
+          @click="onClick"
+          v-if="true"
+        ></u-button>
         <u-button
           class="button-normal"
           text="立即签到"
@@ -21,7 +29,7 @@
     </view>
     <view class="list-wrap mt-20">
       <view class="flex-col list-item" v-for="(item, index) in items" :key="index">
-        <view class="flex-col flex-1 equal-division-item" v-if="signStatus">
+        <view class="flex-col flex-1 equal-division-item" v-if="signStatus >= signDay">
           <view class="flex-col items-center section justify-center">
             <view class="flex-col items-center text-wrapper justify-center"><text class="num-active">100</text></view>
           </view>
@@ -38,19 +46,20 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {},
     data() {
       return {
         signStatus: true,
+        signDayNum: '2',
         items: [null, null, null, null, null, null, null],
       };
     },
-
+  
     methods: {
       onClick() {
         uni.navigateTo({ url: '/pages/personal/bonusPoint/signDetial/signDetial' });
@@ -60,9 +69,9 @@
       },
     },
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .wrap {
     padding: 32rpx 0;
     background-color: #ffffff;
@@ -159,4 +168,4 @@
       }
     }
   }
-</style>
+  </style>
