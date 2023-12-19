@@ -554,10 +554,6 @@ text {
   height: 100vh !important;
 }
 
-.scroll-height {
-  height: calc(100vh - 698rpx);
-}
-
 // 单行文本超出显示省略
 .line-clamp-one {
   overflow: hidden;
