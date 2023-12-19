@@ -108,7 +108,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品3",
-        priceUnitText: "按重量核算（元/kg)",
+        productDescription: "按重量核算（元/kg)",
         productPrice: 30.0,
         productQuantity: 3,
         productImageURL:
@@ -127,7 +127,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品4",
-        priceUnitText: "按个数核算（元/个)",
+        productDescription: "按个数核算（元/个)",
         productPrice: 25.0,
         productQuantity: 1,
         productImageURL:
@@ -146,7 +146,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品5",
-        priceUnitText: "按个数核算（元/个)",
+        productDescription: "按个数核算（元/个)",
         productPrice: 15.0,
         productQuantity: 2,
         productImageURL:
@@ -165,7 +165,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品6",
-        priceUnitText: "按重量核算（元/kg)",
+        productDescription: "按重量核算（元/kg)",
         productPrice: 35.0,
         productQuantity: 1,
         productImageURL:
@@ -184,7 +184,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品7",
-        priceUnitText: "按个数核算（元/个)",
+        productDescription: "按个数核算（元/个)",
         productPrice: 20.0,
         productQuantity: 3,
         productImageURL:
@@ -203,7 +203,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品8",
-        priceUnitText: "按面积核算（元/m)",
+        productDescription: "按面积核算（元/m)",
         productPrice: 30.0,
         productQuantity: 2,
         productImageURL:
@@ -222,7 +222,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品9",
-        priceUnitText: "按重量核算（元/kg)",
+        productDescription: "按重量核算（元/kg)",
         productPrice: 40.0,
         productQuantity: 1,
         productImageURL:
@@ -241,7 +241,7 @@ export const productOrders = [
     products: [
       {
         productName: "示例产品10",
-        priceUnitText: "按个数核算（元/个)",
+        productDescription: "按个数核算（元/个)",
         productPrice: 15.0,
         productQuantity: 2,
         productImageURL:
