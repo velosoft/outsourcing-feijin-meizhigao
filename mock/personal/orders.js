@@ -19,6 +19,7 @@ export const productOrders = [
       receiverPhone: "15212345678",
       receiverAddress: "广东省广州市天河区车陂南东宏国际广场12楼06号",
     },
+    isSeckill: false,
     products: [
       {
         productName: "全屋整理收纳服务（单次）",

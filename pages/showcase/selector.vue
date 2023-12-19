@@ -54,10 +54,7 @@
       <template v-slot="{ item }">
         <view class="flex-row justify-between items-center group_13">
           <text class="font_7 text_13">{{ item }}</text>
-          <image
-            class="image"
-            src="https://dev.ft.velosoft.cn/api/image?token=65806ccad6bce000114d1915&name=ce5f2b164e527ae137be69ba20502ba8.png"
-          />
+          <image class="image" src="/static/images/icon_golden_ok.png" />
         </view>
       </template>
     </Selector>

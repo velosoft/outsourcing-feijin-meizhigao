@@ -1,6 +1,7 @@
 node_modules
 unpackage
 yarn.lock
+.DS_Store
 
 globalStyle.css
 style/*.css

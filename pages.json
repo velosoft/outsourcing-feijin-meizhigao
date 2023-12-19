@@ -14,6 +14,20 @@
       }
     },
     {
+      "path": "pages/myOrder/myOrder/myOrder",
+      "style": {
+        "navigationStyle": "default",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/myOrder/productOrderDetail/productOrderDetail",
+      "style": {
+        "navigationStyle": "default",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/showcase/collapseCard",
       "style": {
         "enablePullDownRefresh": false
