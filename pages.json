@@ -14,6 +14,13 @@
       }
     },
     {
+      "path": "pages/myOrder/productComments/productComments",
+      "style": {
+        "navigationStyle": "default",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/myOrder/myOrder/myOrder",
       "style": {
         "navigationStyle": "default",
