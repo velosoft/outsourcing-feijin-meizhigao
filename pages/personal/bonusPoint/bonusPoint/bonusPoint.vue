@@ -4,19 +4,19 @@
       class="bg-header bg-pos"
       src="/static/images/mock_bonus_point_bg.png"
     />
-    <NavBar
+    <nav-bar
       class="header"
       :hasBack="true"
       :title="title"
       :fixed="true"
       :isShow="true"
       background="#ffffff00"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col relative flex-1">
-      <view class="flex-col section"><BonusBanner></BonusBanner></view>
-      <SignCard class="sign-card-top"></SignCard>
-      <view class="flex-col justify-start bonus-top flex-1">
-        <BonusList class="flex-1" :list="expenseBonusPointsResData"></BonusList>
+      <view class="flex-col section"><bonus-banner></bonus-banner></view>
+      <sign-card class="sign-card-top"></sign-card>
+      <view class="flex-col justify-start list-wrapper flex-1">
+        <bonus-list class="flex-1" :list="list"></bonus-list>
       </view>
     </view>
   </view>
@@ -27,7 +27,10 @@ import BonusList from "@/pages/personal/components/BonusList/BonusList.vue";
 import BonusBanner from "@/pages/personal/components/BonusBanner/BonusBanner.vue";
 import NavBar from "@/components/NavBar/NavBar.vue";
 import SignCard from "@/pages/personal/bonusPoint/components/SignCard/SignCard.vue";
-import { expenseBonusPointsResData } from "./bonusPoint.data.js";
+import {
+  rewardBonusPoints,
+  expenseBonusPoints,
+} from "@/mock/personal/bonus.js";
 
 export default {
   components: { BonusList, BonusBanner, NavBar, SignCard },
@@ -35,7 +38,7 @@ export default {
   data() {
     return {
       title: "我的积分",
-      expenseBonusPointsResData: expenseBonusPointsResData,
+      list: rewardBonusPoints.concat(expenseBonusPoints),
     };
   },
 
@@ -68,8 +71,11 @@ export default {
     position: relative;
     margin: -104rpx 32rpx 0;
   }
-  .bonus-top {
+  .list-wrapper {
     margin-top: 20rpx;
+    /deep/ .scroll-height {
+      height: calc(100vh - 936rpx - env(safe-area-inset-bottom)) !important;
+    }
   }
 }
 </style>
