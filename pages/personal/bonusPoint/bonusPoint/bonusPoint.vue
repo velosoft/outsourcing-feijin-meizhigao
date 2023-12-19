@@ -14,7 +14,7 @@
     ></nav-bar>
     <view class="flex-col relative flex-1">
       <view class="flex-col section"><bonus-banner></bonus-banner></view>
-      <sign-card class="sign-card-top"></sign-card>
+      <daily-checkin-panel class="sign-card-top"></daily-checkin-panel>
       <view class="flex-col justify-start list-wrapper flex-1">
         <bonus-list class="flex-1" :list="list"></bonus-list>
       </view>
@@ -26,14 +26,14 @@
 import BonusList from "@/pages/personal/components/BonusList/BonusList.vue";
 import BonusBanner from "@/pages/personal/components/BonusBanner/BonusBanner.vue";
 import NavBar from "@/components/NavBar/NavBar.vue";
-import SignCard from "@/pages/personal/bonusPoint/components/SignCard/SignCard.vue";
+import DailyCheckinPanel from "@/pages/personal/bonusPoint/components/DailyCheckinPanel/DailyCheckinPanel.vue";
 import {
   rewardBonusPoints,
   expenseBonusPoints,
 } from "@/mock/personal/bonus.js";
 
 export default {
-  components: { BonusList, BonusBanner, NavBar, SignCard },
+  components: { BonusList, BonusBanner, NavBar, DailyCheckinPanel },
   props: {},
   data() {
     return {
