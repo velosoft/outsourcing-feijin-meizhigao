@@ -4,18 +4,18 @@
     <view class="flex-col container flex-1">
       <CenterHeader></CenterHeader>
       <NumberCard class="number-card-top"></NumberCard>
-      <OrderCard class="order-card-top"></OrderCard>
+      <OrderCard class="section_4"></OrderCard>
       <ServiceCard class="service-top"></ServiceCard>
     </view>
   </view>
   </template>
   
   <script>
-  import CenterHeader from '../personal/components/CenterHeader.vue';
+  import CenterHeader from '../personal/components/CenterHeader/CenterHeader.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import NumberCard from '../personal/components/NumberCard.vue';
-  import OrderCard from '../personal/components/OrderCard.vue';
-  import ServiceCard from '../personal/components/ServiceCard.vue';
+  import NumberCard from '../personal/components/NumberCard/NumberCard.vue';
+  import OrderCard from '../personal/components/OrderCard/OrderCard.vue';
+  import ServiceCard from '../personal/components/ServiceCard/ServiceCard.vue';
   
   export default {
     components: { CenterHeader, NavBar, NumberCard, OrderCard, ServiceCard },
@@ -34,14 +34,14 @@
   .page {
     background-color: #f8f8f8;
     width: 100%;
-    height: 100vh;
     overflow-y: hidden;
+    height: 100%;
     .container {
       padding: 32rpx 20rpx;
       .number-card-top {
         margin: 40rpx 24rpx 0;
       }
-      .order-card-top {
+      .section_4 {
         position: relative;
         margin-top: -32rpx;
       }

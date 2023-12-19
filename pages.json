@@ -204,7 +204,174 @@
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
+    },
+    {
+      "path": "pages/personal/bonusPoint/interests/interests",
+      "style": {
+        "navigationBarTitleText": "权益说明",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/member/consumption/consumption",
+      "style": {
+        "navigationBarTitleText": "消费值",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#111111"
+      }
+    },
+    {
+      "path": "pages/personal/profile/profile/profile",
+      "style": {
+        "navigationBarTitleText": "个人信息",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/member/index/index",
+      "style": {
+        "navigationBarTitleText": "会员中心",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#f8f8f8"
+      }
+    },
+    {
+      "path": "pages/personal/bonusCoin/bonusCoin/bonusCoin",
+      "style": {
+        "navigationBarTitleText": "我的收纳币",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#f8f8f8"
+      }
+    },
+    {
+      "path": "pages/personal/bonusPoint/bonusPoint/bonusPoint",
+      "style": {
+        "navigationBarTitleText": "我的积分",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#f8f8f8"
+      }
+    },
+    {
+      "path": "pages/personal/bonusPoint/signDetial/signDetial",
+      "style": {
+        "navigationBarTitleText": "签到详情",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#f8f8f8"
+      }
+    },
+    {
+      "path": "pages/personal/coupon/index/index",
+      "style": {
+        "navigationBarTitleText": "优惠券中心",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },{
+      "path": "pages/personal/course/couresOrder/couresOrder",
+      "style": {
+        "navigationBarTitleText": "课程订单",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/reseller/reseller/reseller",
+      "style": {
+        "navigationBarTitleText": "分销中心",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#f8f8f8"
+      }
+    },
+    {
+      "path": "pages/personal/reseller/profit/profit",
+      "style": {
+        "navigationBarTitleText": "查看收益",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#f8f8f8"
+      }
+    },
+    {
+      "path": "pages/personal/reseller/share/share",
+      "style": {
+        "navigationBarTitleText": "分享收益",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#b09053"
+      }
+    },
+    {
+      "path": "pages/personal/course/courseDetial/courseDetial",
+      "style": {
+        "navigationBarTitleText": "课程详情",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/address/address/address",
+      "style": {
+        "navigationBarTitleText": "收货地址",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/address/addressEditor/addressEditor",
+      "style": {
+        "navigationBarTitleText": "收货地址",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/help/index/index",
+      "style": {
+        "navigationBarTitleText": "帮助中心",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/settings/settings/settings",
+      "style": {
+        "navigationBarTitleText": "设置",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/help/problemDetail/problemDetail",
+      "style": {
+        "navigationBarTitleText": "问题详情",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/settings/aboutUs/aboutUs",
+      "style": {
+        "navigationBarTitleText": "关于我们",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/settings/agreement/agreement",
+      "style": {
+        "navigationBarTitleText": "隐私协议",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/uncollect/collect/collect",
+      "style": {
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
     }
+
   ],
   "globalStyle": {
     /*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/
