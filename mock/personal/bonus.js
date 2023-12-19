@@ -329,3 +329,41 @@ export const expenseBonusPoints = [
     status: "已到账",
   },
 ];
+
+export const dailyCheckinList = [
+  {
+    number: 1,
+    status: "done",
+    bonus: 50,
+  },
+  {
+    number: 2,
+    status: "done",
+    bonus: 50,
+  },
+  {
+    number: 3,
+    status: "pending",
+    bonus: 50,
+  },
+  {
+    number: 4,
+    status: "pending",
+    bonus: 55,
+  },
+  {
+    number: 5,
+    status: "pending",
+    bonus: 55,
+  },
+  {
+    number: 6,
+    status: "pending",
+    bonus: 55,
+  },
+  {
+    number: 7,
+    status: "pending",
+    bonus: 55,
+  },
+];
