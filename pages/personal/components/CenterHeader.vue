@@ -1,9 +1,12 @@
 <template>
   <view class="flex-row justify-between items-center">
-    <view class="flex-row items-center ml-2 ml-4">
+    <view class="flex-row items-center ml-4">
       <image class="avatar" :src="personal.avatar" />
       <view class="flex-col ml-12 justify-center">
-        <text class="self-start nick-name">{{personal.nickname}}</text>
+        <view class="flex-col items-start self-start">
+          <text class="text" v-if="true">{{personal.nickname}}</text>
+          <text class="text" v-if="false">请登录/注册</text>
+        </view>
         <view class="flex-row items-center member-box mt-4 self-end" @click="onClick" v-if="true">
           <image class="icon-member" src="/static/images/icon_member.png" />
           <text class="text-member ml-2">{{personal.memberType}}</text>
@@ -44,12 +47,12 @@
     width: 104rpx;
     height: 104rpx;
   }
-  .nick-name {
-    color: #000000;
+  .text {
     font-size: 32rpx;
     font-family: 'PingFang SC';
-    font-weight: 500;
     line-height: 44rpx;
+    font-weight: 500;
+    color: #000000;
   }
   .member-box {
     background-color: #fff0d4;
