@@ -16,8 +16,8 @@
           <text class="value label mt-8">连续签到奖励更丰富</text>
         </view>
       </view>
-      <view class="flex-col justify-start mt-24">
-        <u-button class="cf-btn-black" text="知道了" type="primary" size="mini" shape="circle"></u-button>
+      <view class="flex-col mt-24">
+        <view class="cf-btn-black flex-col items-center text-wrapper"><text class="value btn-text">知道了</text></view>
       </view>
     </view>
   </view>
@@ -58,12 +58,6 @@
       }
       .box {
         margin-top: 32rpx;
-        .value {
-          font-size: 28rpx;
-          font-family: 'PingFang SC';
-          line-height: 40rpx;
-          color: #000000;
-        }
         .mark {
           color: #b09053;
           font-size: 36rpx;
@@ -74,6 +68,23 @@
         .label {
           color: #adadad;
         }
+      }
+      .text-wrapper {
+        padding: 32rpx 0;
+        background-color: #111111;
+        border-radius: 48rpx;
+        .btn-text {
+          color: #ffffff;
+          font-size: 30rpx;
+          font-weight: 500;
+          line-height: 42rpx;
+        }
+      }
+      .value {
+        font-size: 28rpx;
+        font-family: 'PingFang SC';
+        line-height: 40rpx;
+        color: #000000;
       }
     }
   }
