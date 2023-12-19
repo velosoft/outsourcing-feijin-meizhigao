@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col wrap">
-    <u-tabs :list="tabList" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
+    <u-tabs :list="tabs" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
       <view class="flex-row tabs-right-slot" slot="right">
         <view class="flex-row items-center select-data" @click="onClick">
           <text class="select-label">全部</text>
@@ -21,14 +21,14 @@
     <view class="flex-col">
       <scroll-view :scroll-y="true" class="scroll-height">
         <list-container
-          :showEmpty="!rewardBonusCoins.length"
+          :showEmpty="!list.length"
           :showLoading="showLoading"
           :finished="finished"
         >
           <view class="flex-col list">
             <bonus-Item
               :bonusItem="item"
-              v-for="(item, index) in rewardBonusCoins"
+              v-for="(item, index) in list"
               :key="index"
             ></bonus-Item>
           </view>
@@ -63,8 +63,8 @@ import ListContainer from "@/components/ListContainer/ListContainer.vue";
 export default {
   components: { DataTimePickerYD, BonusItem, ListContainer },
   props: {
-    rewardBonusCoins: {
-      type: Object,
+    list: {
+      type: Array,
       default: () => [
         {
           title: "推广商品销售奖励",
@@ -76,7 +76,7 @@ export default {
         },
       ],
     },
-    tabList: { type: Object, default: () => [{ name: "收纳币明细" }] },
+    tabs: { type: Object, default: () => [{ name: "收纳币明细" }] },
   },
   data() {
     return {

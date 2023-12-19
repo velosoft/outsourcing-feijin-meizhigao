@@ -16,20 +16,17 @@
       <view class="flex-col section"><BonusBanner></BonusBanner></view>
       <SignCard class="sign-card-top"></SignCard>
       <view class="flex-col justify-start bonus-top flex-1">
-        <BonusList
-          class="flex-1"
-          :rewardBonusCoins="expenseBonusPointsResData"
-        ></BonusList>
+        <BonusList class="flex-1" :list="expenseBonusPointsResData"></BonusList>
       </view>
     </view>
   </view>
 </template>
 
 <script>
-import BonusList from "../../../../pages/personal/components/BonusList/BonusList.vue";
-import BonusBanner from "../../../../pages/personal/components/BonusBanner/BonusBanner.vue";
+import BonusList from "@/pages/personal/components/BonusList/BonusList.vue";
+import BonusBanner from "@/pages/personal/components/BonusBanner/BonusBanner.vue";
 import NavBar from "@/components/NavBar/NavBar.vue";
-import SignCard from "../../../../pages/personal/bonusPoint/components/SignCard/SignCard.vue";
+import SignCard from "@/pages/personal/bonusPoint/components/SignCard/SignCard.vue";
 import { expenseBonusPointsResData } from "./bonusPoint.data.js";
 
 export default {

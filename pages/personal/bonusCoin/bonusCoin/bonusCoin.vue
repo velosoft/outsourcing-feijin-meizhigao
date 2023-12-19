@@ -14,13 +14,10 @@
     ></nav-bar>
     <view class="flex-col relative">
       <view class="flex-col section"
-        ><bonus-banner class="num-pannel-margin"></bonus-banner
+        ><bonus-banner class="bonus-banner-margin"></bonus-banner
       ></view>
       <view class="flex-col justify-start">
-        <bonus-list
-          :rewardBonusCoins="rewardBonusCoinsResData"
-          :tabList="tablist"
-        ></bonus-list>
+        <bonus-list :list="list" :tabList="tabs"></bonus-list>
       </view>
     </view>
   </view>
@@ -30,21 +27,20 @@
 import BonusList from "@/pages/personal/components/BonusList/BonusList.vue";
 import BonusBanner from "@/pages/personal/components/BonusBanner/BonusBanner.vue";
 import NavBar from "@/components/NavBar/NavBar.vue";
-import { rewardBonusCoinsResData } from "./bonusCoin.data.js";
+import { rewardBonusCoins, expenseBonusCoins } from "@/mock/personal/bonus.js";
 
 export default {
   components: { BonusList, BonusBanner, NavBar },
   props: {},
   data() {
     return {
-      rewardBonusCoins: "",
-      tablist: [
+      list: expenseBonusCoins.concat(rewardBonusCoins),
+      tabs: [
         {
           name: "收纳币明细",
         },
       ],
       title: "我的收纳币",
-      rewardBonusCoinsResData: rewardBonusCoinsResData,
     };
   },
 
@@ -71,7 +67,7 @@ export default {
   .section {
     padding: 104rpx 0 64rpx;
     overflow: hidden;
-    .num-pannel-margin {
+    .bonus-banner-margin {
       margin: 0 24rpx;
     }
   }
