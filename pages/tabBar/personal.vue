@@ -1,5 +1,5 @@
 <template>
-<view class="page-height flex-col page">
+<view class="height-full flex-col page">
   <NavBar :hasBack="false" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
   <view class="flex-col container flex-1">
     <CenterHeader></CenterHeader>

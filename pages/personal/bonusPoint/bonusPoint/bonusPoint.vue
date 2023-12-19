@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col relative page">
-    <image class="bg-header bg-pos" src="../../../../static/images/mock_bonus_point_bg.png" />
+    <image class="bg-header bg-pos" src="/static/images/mock_bonus_point_bg.png" />
     <NavBar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#ffffff00"></NavBar>
     <view class="flex-col relative flex-1">
       <view class="flex-col section"><HeadNumPannel></HeadNumPannel></view>

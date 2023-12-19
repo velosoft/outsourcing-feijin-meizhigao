@@ -14,7 +14,7 @@
     data() {
       return {
         content:
-          '<view class="flex-col">   <view class="flex-col group_2">     <text class="self-start title text_5">1、会员等级分类</text>     <text class="self-stretch font_3 text_6 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view>   <view class="flex-col group_3 mt-20">     <text class="self-start title text_4">2、会员升级条件</text>     <text class="self-stretch font_3 text_7 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view>   <view class="flex-col group_4 mt-20">     <text class="self-start title text_1">3、会员降级条件</text>     <text class="self-stretch font_3 text_8 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view>   <view class="flex-col group_5 mt-20">     <text class="self-start title text_10">4、会员升级条件</text>     <text class="self-stretch font_3 text_9 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view> </view>',
+          '<view class="flex-col">   <view class="flex-col group_2">     <text class="self-start title title-text">1、会员等级分类</text>     <text class="self-stretch font_3 text_6 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view>   <view class="flex-col mt-20 group_2">     <text class="self-start title text_4">2、会员升级条件</text>     <text class="self-stretch font_3 text_7 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view>   <view class="flex-col mt-20 group_2">     <text class="self-start title text_1">3、会员降级条件</text>     <text class="self-stretch font_3 text_8 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view>   <view class="flex-col mt-20 group_2">     <text class="self-start title text_10">4、会员升级条件</text>     <text class="self-stretch font_3 text_9 mt-8">       内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器     </text>   </view> </view>',
       };
     },
   
@@ -42,7 +42,6 @@
       font-family: 'PingFang SC';
       line-height: 42rpx;
       color: #8c8f95;
-      white-space: pre-line;
     }
   }
   </style>
