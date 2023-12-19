@@ -550,8 +550,8 @@ text {
   margin-top: 200rpx;
 }
 
-.page-full{
-    height: 100vh !important;
+.height-full {
+  height: 100vh !important;
 }
 
 .scroll-height {
