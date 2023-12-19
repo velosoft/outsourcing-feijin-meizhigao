@@ -5,7 +5,7 @@
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_payment.png" />
-          <view class="badge-pos" v-if="Wyw74Xzo">
+          <view class="badge-pos">
             <u-badge :isDot="true" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
@@ -14,7 +14,7 @@
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_delivered.png" />
-          <view class="badge-pos" v-if="Wyw74Xzo">
+          <view class="badge-pos">
             <u-badge :isDot="true" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
@@ -23,7 +23,7 @@
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_recipt.png" />
-          <view class="badge-pos" v-if="Wyw74Xzo">
+          <view class="badge-pos">
             <u-badge :value="0" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
@@ -32,7 +32,7 @@
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_comment.png" />
-          <view class="badge-pos" v-if="Wyw74Xzo">
+          <view class="badge-pos">
             <u-badge :value="0" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
@@ -41,7 +41,7 @@
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_refund.png" />
-          <view class="badge-pos" v-if="Wyw74Xzo">
+          <view class="badge-pos">
             <u-badge class="section" :value="0" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
