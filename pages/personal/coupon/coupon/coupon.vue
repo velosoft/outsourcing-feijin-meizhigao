@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#ffffff"></NavBar>
+    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <FjSticky v-bind:customNavHeight="customNavHeight">
       <u-tabs
         class="default-tabs"
@@ -52,7 +52,7 @@
     props: {},
     data() {
       return {
-        customNavHeight: '88',
+        customNavHeight: 88,
         couponType: '',
         title: '优惠券中心',
         list: [
@@ -86,9 +86,6 @@
   .page {
     background-color: #ffffff;
     width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100%;
     .lsit-container-gap {
       padding: 24rpx 0;
       .list {

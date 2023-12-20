@@ -53,7 +53,7 @@
       </view>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="center" :round="12" style="width:309px" :safeAreaInsetBottom="false">
-    <SignDialog></SignDialog>
+    <SignDialog @closeDialog="closeDialog"></SignDialog>
   </u-popup>
   </view>
 </template>
@@ -79,6 +79,9 @@ export default {
       this.popupVisible = true;
     },
     onClose() {
+      this.popupVisible = false;
+    },
+    closeDialog(){
       this.popupVisible = false;
     },
     onClick_1() {

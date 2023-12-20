@@ -17,7 +17,7 @@
         </view>
       </view>
       <view class="flex-col mt-24">
-        <view class="cf-btn-black flex-col items-center text-wrapper"><text class="value btn-text">知道了</text></view>
+        <view class="cf-btn-black flex-col items-center text-wrapper" @click="onClick"><text class="value btn-text">知道了</text></view>
       </view>
     </view>
   </view>
@@ -31,7 +31,12 @@
       return {};
     },
   
-    methods: {},
+    methods: {
+      onClick() {
+      // 事件处理方法
+      this.$emit('closeDialog');
+    },
+    },
   };
   </script>
   
