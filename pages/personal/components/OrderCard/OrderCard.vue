@@ -4,13 +4,13 @@
       <text class="title">我的订单</text>
       <view class="flex-row items-center">
         <text class="value right-text">查看全部</text>
-        <image class="shrink-0 image ml-4" src="../../../../static/images/icon_right_arrow_03.png" />
+        <image class="shrink-0 image ml-4" src="/static/images/icon_right_arrow_03.png" />
       </view>
     </view>
     <view class="flex-row mt-12 menu-top">
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
-          <image class="icon" src="../../../../static/images/7fe979251f7dafcb530f4b2596d49243.png" />
+          <image class="icon" src="/static/images/icon_order_payment.png" />
           <view class="badge-pos">
             <u-badge :isDot="true" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
@@ -19,7 +19,7 @@
       </view>
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
-          <image class="icon" src="../../../../static/images/12ec1dba19e79d54e31eb6f9d8600722.png" />
+          <image class="icon" src="/static/images/icon_order_delivered.png" />
           <view class="badge-pos">
             <u-badge :isDot="true" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
@@ -28,7 +28,7 @@
       </view>
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
-          <image class="icon" src="../../../../static/images/172e5a93bee3b8835d0b7189ac0fbf39.png" />
+          <image class="icon" src="/static/images/icon_order_recipt.png" />
           <view class="badge-pos">
             <u-badge :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
@@ -37,7 +37,7 @@
       </view>
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
-          <image class="icon" src="../../../../static/images/989c6270b5843d0108306bfb8581a9ce.png" />
+          <image class="icon" src="/static/images/icon_order_comment.png" />
           <view class="badge-pos">
             <u-badge :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
@@ -46,7 +46,7 @@
       </view>
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
-          <image class="icon" src="../../../../static/images/icon_order_refund.png" />
+          <image class="icon" src="/static/images/icon_order_refund.png" />
           <view class="badge-pos">
             <u-badge class="section" :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
@@ -55,9 +55,9 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {},
@@ -66,12 +66,12 @@
         value: 0,
       };
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .wrap {
     padding: 32rpx 0 48rpx;
     background-color: #ffffff;
@@ -131,4 +131,4 @@
       color: #2d2e32;
     }
   }
-</style>
+  </style>
