@@ -66,7 +66,7 @@
   import PopReceiveCoupon from '@/pages/personal/coupon/components/PopReceiveCoupon/PopReceiveCoupon.vue';
 
   export default {
-    components: { ExpiredCoupon, FjSticky, ListContainer, NavBar, UnusedCoupon, UsedCoupon, PopReceiveCoupon },
+    components: { ExpiredCoupon, FjSticky, ListWithEmpty, NavBar, UnusedCoupon, UsedCoupon, CouponEmpty, PopReceiveCoupon },
     props: {},
     data() {
       return {

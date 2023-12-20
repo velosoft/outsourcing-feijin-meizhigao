@@ -2,7 +2,7 @@
   <view class="flex-col wrap">
     <PopCouponItem></PopCouponItem>
     <u-button
-      class="cf-btn-black button mt-72"
+      class="cf-btn-black button"
       text="立即领取"
       type="primary"
       size="large"
@@ -37,7 +37,7 @@
     background-color: #ffffff;
     border-radius: 20rpx;
     .button {
-      margin: 0 40rpx;
+      margin: 144rpx 40rpx 0;
     }
   }
   </style>
