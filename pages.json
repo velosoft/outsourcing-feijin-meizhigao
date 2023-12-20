@@ -42,6 +42,13 @@
       }
     },
     {
+      "path": "pages/showcase/DateTimePickerView",
+      "style": {
+        "navigationStyle": "default",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/showcase/collapseCard",
       "style": {
         "enablePullDownRefresh": false
