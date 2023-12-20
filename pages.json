@@ -21,13 +21,6 @@
       }
     },
     {
-      "path": "pages/myOrder/productComments/productComments",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/myOrder/myOrder/myOrder",
       "style": {
         "navigationStyle": "default",
@@ -36,6 +29,13 @@
     },
     {
       "path": "pages/myOrder/productOrderDetail/productOrderDetail",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/myOrder/productComments/productComments",
       "style": {
         "navigationStyle": "default",
         "enablePullDownRefresh": false
@@ -289,7 +289,8 @@
         "navigationBarTextStyle": "black",
         "navigationBarBackgroundColor": "#ffffff"
       }
-    },{
+    },
+    {
       "path": "pages/personal/course/couresOrder/couresOrder",
       "style": {
         "navigationBarTitleText": "课程订单",
@@ -392,7 +393,6 @@
         "navigationBarBackgroundColor": "#ffffff"
       }
     }
-
   ],
   "globalStyle": {
     /*///---- Pages-Tool --  合并自： pages-config/globalStyle.json ----*/

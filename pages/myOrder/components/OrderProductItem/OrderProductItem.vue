@@ -81,6 +81,7 @@ export default {
 }
 .seckill {
   color: #ffffff;
+  font-size: 24rpx;
 }
 .name {
   color: #2d2e32;
