@@ -30,7 +30,7 @@
       style="height: 20%"
     ></u-popup>
     <u-popup :show="datePopupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <date-time-picker-popup type="year-month" :date="date" @change="onDateChange"></date-time-picker-popup>
+      <date-time-picker-popup type="year-month" :date="date" @click="onDateChange"></date-time-picker-popup>
     </u-popup>
   </view>
 </template>

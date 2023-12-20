@@ -33,10 +33,13 @@
         val: {},
       };
     },
+    mounted() {
+      this.val = this.date;
+    },
 
     methods: {
       onClick() {
-        this.$emit('change', this.val);
+        this.$emit('click', this.val);
       },
       onChange(val) {
         this.val = val;
