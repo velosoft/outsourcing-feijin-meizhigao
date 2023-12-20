@@ -33,12 +33,24 @@
         <coupon-empty slot="customEmpty"></coupon-empty>
       </list-with-empty>
     </view>
-    <view class="flex-col code-wrap code-pos"><image class="icon-code" src="/static/images/icon_scan_code.png" /></view>
+    <view class="flex-col code-wrap code-pos" @click="onOpenDialog"
+      ><image class="icon-code" src="/static/images/icon_scan_code.png"
+    /></view>
     <view class="fixed-bottom-safe2 flex-col items-center footer-wrap">
       <view class="cf-btn-black flex-col items-center btn-black-wrap" @click="onClick">
         <text class="btn-font btn-text">领券中心</text>
       </view>
     </view>
+    <u-popup
+      :show="popupVisible"
+      @close="onClose"
+      mode="center"
+      :round="12"
+      style="width: 327px"
+      :safeAreaInsetBottom="false"
+    >
+      <PopReceiveCoupon @closeDialog="closeDialog"></PopReceiveCoupon>
+    </u-popup>
   </view>
 </template>
 
@@ -51,9 +63,10 @@
   import UsedCoupon from '@/pages/personal/coupon/components/UsedCoupon/UsedCoupon.vue';
   import CouponEmpty from '@/pages/personal/coupon/components/CouponEmpty/CouponEmpty.vue';
   import { couponList } from '@/mock/couponList.js';
+  import PopReceiveCoupon from '@/pages/personal/coupon/components/PopReceiveCoupon/PopReceiveCoupon.vue';
 
   export default {
-    components: { ExpiredCoupon, FjSticky, ListWithEmpty, NavBar, UnusedCoupon, UsedCoupon, CouponEmpty },
+    components: { ExpiredCoupon, FjSticky, ListContainer, NavBar, UnusedCoupon, UsedCoupon, PopReceiveCoupon },
     props: {},
     data() {
       return {
@@ -77,6 +90,7 @@
         showLoading: true,
         finished: false,
         list: [],
+        popupVisible: false,
       };
     },
     watch: {
@@ -107,6 +121,15 @@
       },
       onClick() {
         uni.navigateTo({ url: '/pages/coupon/couponCenter' });
+      },
+      onOpenDialog() {
+        this.popupVisible = true;
+      },
+      onClose() {
+        this.popupVisible = false;
+      },
+      closeDialog() {
+        this.popupVisible = false;
       },
     },
   };
