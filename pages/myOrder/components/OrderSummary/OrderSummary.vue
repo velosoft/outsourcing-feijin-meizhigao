@@ -3,23 +3,23 @@
     <text class="self-start title-text">订单信息</text>
     <view class="flex-row justify-between mt-15 items-center">
       <text class="name">订单编号</text>
-      <text class="value">{{order.orderNumber}}</text>
+      <text class="value-bold">{{ order.orderNumber }}</text>
     </view>
     <view class="flex-row justify-between items-center mt-15">
       <text class="name">订单留言</text>
-      <text class="valud-bold">{{order.orderMessage}}</text>
+      <text class="value-bold">{{ order.orderMessage }}</text>
     </view>
     <view class="flex-row justify-between items-center mt-15">
       <text class="name">提交时间</text>
-      <text class="value">{{order.orderTime}}</text>
+      <text class="value-bold">{{ order.orderTime }}</text>
     </view>
     <view class="flex-row justify-between items-center mt-15">
       <text class="name">支付时间</text>
-      <text class="value">{{order.paymentTime}}</text>
+      <text class="value-bold">{{ order.paymentTime }}</text>
     </view>
     <view class="flex-row justify-between items-center mt-15">
       <text class="name">支付方式</text>
-      <text class="valud-bold">{{order.paymentMethod}}</text>
+      <text class="value-bold">{{ order.paymentMethod }}</text>
     </view>
   </view>
 </template>
@@ -139,18 +139,15 @@
   }
   .title-text {
     font-weight: 500;
+    font-size: 30rpx;
   }
   .name {
     font-size: 28rpx;
     line-height: 40rpx;
     color: #8c8f95;
   }
-  .value {
-    font-size: 28rpx;
-    line-height: 34rpx;
-    color: #3c3d41;
-  }
-  .valud-bold {
+
+  .value-bold {
     font-size: 28rpx;
     line-height: 34rpx;
     font-weight: 600;
