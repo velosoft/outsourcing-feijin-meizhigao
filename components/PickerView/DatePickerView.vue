@@ -21,6 +21,7 @@
 <script>
   export default {
     props: {
+      // 'datetime', 'date', 'year-month', 'month-day', 'datehour', 'time'
       type: {
         type: String,
         default: 'date',
