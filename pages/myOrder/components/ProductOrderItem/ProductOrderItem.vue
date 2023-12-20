@@ -136,7 +136,7 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/myOrder/productOrderDetail/productOrderDetail' });
+        uni.navigateTo({ url: `/pages/myOrder/productOrderDetail/productOrderDetail?id=${this.order.orderNumber}` });
       },
       onClick_1() {
         uni.navigateTo({ url: '/pages/chakanwuliu_wuliisong_duogewuliu/chakanwuliu_wuliisong_duogewuliu' });
@@ -151,7 +151,7 @@
         this.popupVisible = false;
       },
       onClick_3() {
-        uni.navigateTo({ url: '/pages/myOrder/proudctAddComment/proudctAddComment' });
+        uni.navigateTo({ url: '/pages/myOrder/productAddComment/productAddComment' });
       },
       onCancel() {
         this.showConfirm = false;

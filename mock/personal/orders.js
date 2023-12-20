@@ -89,7 +89,7 @@ export const productOrders = [
 
     // 查看评价页的 Mock 数据
     comment: {
-      rating: 5,
+      rating: 3,
       content: "商品收纳位置大，质量妥妥，有需要的朋友可以下单",
       images: [
         "https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=10889394af4d20d34e3cdde10aa54934.png",

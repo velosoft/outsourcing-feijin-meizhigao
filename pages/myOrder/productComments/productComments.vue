@@ -59,7 +59,7 @@ export default {
   methods: {
     onClick() {
       uni.navigateTo({
-        url: "/pages/myOrder/proudctAddComment/proudctAddComment",
+        url: "/pages/myOrder/productAddComment/productAddComment",
       });
     },
   },

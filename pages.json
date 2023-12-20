@@ -28,6 +28,13 @@
       }
     },
     {
+      "path": "pages/myOrder/productComment/productComment",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/myOrder/productComments/productComments",
       "style": {
         "navigationStyle": "custom",
@@ -35,7 +42,7 @@
       }
     },
     {
-      "path": "pages/myOrder/proudctAddComment/proudctAddComment",
+      "path": "pages/myOrder/productAddComment/productAddComment",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
@@ -317,7 +324,7 @@
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
-    },    
+    },
     {
       "path": "pages/personal/collect/collect/collect",
       "style": {
