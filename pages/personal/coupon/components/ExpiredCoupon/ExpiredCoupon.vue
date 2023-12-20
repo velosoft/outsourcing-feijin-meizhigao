@@ -10,17 +10,17 @@
         <text class="price-label mt-8">{{"满" + item.triggerCondition +"元使用"}}</text>
       </view>
       <view class="line"></view>
-      <view class="flex-row justify-between items-center flex-1 coupon-right">
-        <view class="flex-col">
-          <view class="flex-col items-start">
-            <text class="currency title">{{item.title}}</text>
-            <view class="flex-col justify-start text-wrapper mt-8 items-center">
+      <view class="flex-col flex-1 coupon-right">
+        <view class="flex-col self-stretch">
+          <text class="line-clamp-one currency title">{{item.title}}</text>
+          <view class="flex-row justify-between items-center self-stretch mt-8">
+            <view class="flex-col justify-start text-wrapper items-center">
               <text class="time coupon-scope">{{item.applicableTo}}</text>
             </view>
+            <text class="price-label">已过期</text>
           </view>
-          <text class="time time-text mt-20">{{item.validity.start + "-" + item.validity.end}}</text>
         </view>
-        <text class="price-label">已过期</text>
+        <text class="self-start time time-text mt-16">{{item.validity.start + "-" + item.validity.end}}</text>
       </view>
     </view>
   </view>
@@ -87,12 +87,15 @@
     height: 176rpx;
   }
   .coupon-right {
-    padding: 32rpx;
+    padding: 0 32rpx;
     .title {
       font-weight: 500;
+      width: 380rpx;
     }
     .text-wrapper {
+      padding: 0 4rpx;
       border-radius: 8rpx;
+      height: 32rpx;
       border: solid 1rpx #b6b6b6;
       .coupon-scope {
         margin: 0 8rpx;

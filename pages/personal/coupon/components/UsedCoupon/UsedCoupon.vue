@@ -12,7 +12,7 @@
       <view class="lione"></view>
       <view class="flex-col flex-1 coupon-right">
         <view class="flex-col items-start">
-          <text class="currency heavy-text">{{item.title}}</text>
+          <text class="line-clamp-one currency heavy-text">{{item.title}}</text>
           <view class="flex-col justify-start text-wrapper mt-8 items-center">
             <text class="time price-scope">{{item.applicableTo}}</text>
           </view>
@@ -93,8 +93,10 @@
       padding: 32rpx;
       .heavy-text {
         font-weight: 500;
+        width: 380rpx;
       }
       .text-wrapper {
+        padding: 0 4rpx;
         border-radius: 8rpx;
         border: solid 1rpx #b6b6b6;
         .price-scope {
