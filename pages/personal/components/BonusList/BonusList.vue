@@ -2,14 +2,17 @@
   <view class="flex-col wrap">
     <u-tabs :list="tabs" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
       <view class="flex-row tabs-right-slot" slot="right">
-        <view class="flex-row items-center select-data" @click="onClick">
+        <view class="flex-row items-center select-data" @click="onStatusSelect">
           <text class="select-label">全部</text>
           <image
             class="shrink-0 select-icon ml-4"
             src="/static/images/icon_down_arrow.png"
           />
         </view>
-        <view class="flex-row items-center select-data ml-8" @click="onClick_1">
+        <view
+          class="flex-row items-center select-data ml-8"
+          @click="onDateSelect"
+        >
           <text class="select-label">日期</text>
           <image
             class="shrink-0 select-icon ml-4"
@@ -36,7 +39,7 @@
       </scroll-view>
     </view>
     <u-popup
-      :show="popupVisible"
+      :show="statusPopupVisible"
       @close="onClose"
       mode="bottom"
       :round="12"
@@ -44,8 +47,8 @@
       style="height: 20%"
     ></u-popup>
     <u-popup
-      :show="popupVisible_1"
-      @close="onClose_1"
+      :show="datePopupVisible"
+      @close="onClose"
       mode="bottom"
       :round="12"
       :closeable="true"
@@ -80,26 +83,23 @@ export default {
   },
   data() {
     return {
-      popupVisible: false,
-      popupVisible_1: false,
-      showEmpty: false,
+      statusPopupVisible: false,
+      datePopupVisible: false,
       showLoading: false,
       finished: false,
     };
   },
 
   methods: {
-    onClick() {
-      this.popupVisible = true;
+    onStatusSelect() {
+      this.statusPopupVisible = true;
+    },
+    onDateSelect() {
+      this.datePopupVisible = true;
     },
     onClose() {
-      this.popupVisible = false;
-    },
-    onClick_1() {
-      this.popupVisible_1 = true;
-    },
-    onClose_1() {
-      this.popupVisible_1 = false;
+      this.statusPopupVisible = false;
+      this.datePopupVisible = false;
     },
   },
 };
