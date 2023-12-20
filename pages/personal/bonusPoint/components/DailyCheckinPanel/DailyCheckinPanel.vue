@@ -7,23 +7,20 @@
         <text class="self-center title ml-6">天</text>
       </view>
       <view class="flex-col">
-        <u-button
-          class="cf-btn-black"
-          text="立即签到"
-          type="primary"
-          size="mini"
-          shape="circle"
+        <view
+          class="flex-col items-center btn-active justify-center"
           @click="onClick"
           v-if="items[checkinNumber].status == 'pending'"
-        ></u-button>
-        <u-button
-          class="button-normal"
-          text="已签到"
-          size="mini"
-          shape="circle"
+        >
+          <text class="btn-text btn-text-active">立即签到</text>
+        </view>
+        <view
+          class="flex-col items-center btn-inactive justify-center"
           @click="onClick_1"
           v-else
-        ></u-button>
+        >
+          <text class="btn-text btn-text-inactive">已签到</text>
+        </view>
       </view>
     </view>
     <view class="list-wrap mt-20">
@@ -108,11 +105,34 @@ export default {
         line-height: 36rpx;
       }
     }
-    .button-normal {
+    .btn-active {
+      padding: 8rpx 0;
+      background-color: #111111;
+      border-radius: 28rpx;
+      width: 164rpx;
+      height: 56rpx;
+      .btn-text-active {
+        font-size: 26rpx;
+        line-height: 36rpx;
+      }
+    }
+    .btn-inactive {
       padding: 8rpx 0;
       background-color: #979797;
       border-radius: 28rpx;
+      height: 56rpx;
       width: 164rpx;
+      .btn-text-inactive {
+        font-size: 26rpx;
+        line-height: 36rpx;
+      }
+    }
+    .btn-text {
+      font-size: 24rpx;
+      font-family: "PingFang SC";
+      line-height: 34rpx;
+      font-weight: 500;
+      color: #ffffff;
     }
   }
   .list-wrap {

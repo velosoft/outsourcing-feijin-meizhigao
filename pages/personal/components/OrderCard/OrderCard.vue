@@ -30,7 +30,7 @@
         <view class="flex-col self-center relative">
           <image class="icon" src="../../../../static/images/172e5a93bee3b8835d0b7189ac0fbf39.png" />
           <view class="badge-pos">
-            <u-badge :value="0" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
+            <u-badge :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
         <text class="self-center value mt-12_1 mt-12">待收货</text>
@@ -39,7 +39,7 @@
         <view class="flex-col self-center relative">
           <image class="icon" src="../../../../static/images/989c6270b5843d0108306bfb8581a9ce.png" />
           <view class="badge-pos">
-            <u-badge :value="0" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
+            <u-badge :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
         <text class="self-center value mt-12_1 mt-12">待评价</text>
@@ -48,7 +48,7 @@
         <view class="flex-col self-center relative">
           <image class="icon" src="../../../../static/images/icon_order_refund.png" />
           <view class="badge-pos">
-            <u-badge class="section" :value="0" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
+            <u-badge class="section" :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
         <text class="self-center value mt-12_1 mt-12">退款/售后</text>
@@ -62,7 +62,9 @@
     components: {},
     props: {},
     data() {
-      return {};
+      return {
+        value: 0,
+      };
     },
 
     methods: {},
