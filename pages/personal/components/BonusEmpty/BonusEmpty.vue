@@ -1,10 +1,7 @@
 <template>
   <view class="flex-col wrap">
     <view class="flex-col items-center self-stretch">
-      <image
-        class="icon"
-        src="https://dev.ft.velosoft.cn/api/image?token=6581be43d6bce000114d3eb2&name=mock_bonus_coin_icon_empty.png"
-      />
+      <image class="icon" src="/static/images/icon_bonus_empty.png" />
       <text class="empty-label empty-text mt-8">没有更多了~</text>
     </view>
     <view class="flex-col justify-center items-center self-center mt-40 back-btn" @click="onBack">返回</view>
@@ -29,7 +26,7 @@
 
 <style scoped lang="less">
   .wrap {
-    padding: 120rpx 0 336rpx;
+    padding: 120rpx 0 0;
     .icon {
       width: 518rpx;
       height: 274rpx;
