@@ -4,29 +4,29 @@
     <view class="flex-row items-center relative">
       <view class="flex-col coupon-left items-center">
         <view class="flex-row items-baseline price-wrap">
-          <text class="price-num">{{item.amount}}</text>
+          <text class="price-num">{{ item.amount }}</text>
           <text class="currency ml-4">元</text>
         </view>
-        <text class="price-label mt-8">{{"满" + item.triggerCondition +"元使用"}}</text>
+        <text class="price-label mt-8">{{ '满' + item.triggerCondition + '元使用' }}</text>
       </view>
       <view class="line"></view>
       <view class="flex-col flex-1 coupon-right">
         <view class="flex-col self-stretch">
-          <text class="line-clamp-one currency title">{{item.title}}</text>
+          <text class="line-clamp-one currency title">{{ item.title }}</text>
           <view class="flex-row justify-between items-center self-stretch mt-8">
             <view class="flex-col justify-start text-wrapper items-center">
-              <text class="time coupon-scope">{{item.applicableTo}}</text>
+              <text class="time coupon-scope">{{ item.applicableTo }}</text>
             </view>
             <text class="price-label">已过期</text>
           </view>
         </view>
-        <text class="self-start time time-text mt-16">{{item.validity.start + "-" + item.validity.end}}</text>
+        <text class="self-start time time-text mt-16">{{ item.validity.start + '-' + item.validity.end }}</text>
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {
@@ -45,12 +45,12 @@
     data() {
       return {};
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .image {
     width: 702rpx;
     height: 230rpx;
@@ -76,13 +76,7 @@
     }
   }
   .line {
-    background-image: repeating-linear-gradient(
-      0deg,
-      #cccccc,
-      #cccccc 3.4090909090909087%,
-      transparent 3.4090909090909087%,
-      transparent 6.8181818181818175%
-    );
+    background-image: repeating-linear-gradient(0deg, #cccccc, #cccccc 3.4%, transparent 3.4%, transparent 6.8%);
     width: 2rpx;
     height: 176rpx;
   }
@@ -123,4 +117,4 @@
     line-height: 40rpx;
     color: #4c4c4c;
   }
-  </style>
+</style>
