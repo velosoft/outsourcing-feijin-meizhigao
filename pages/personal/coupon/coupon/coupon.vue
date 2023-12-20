@@ -3,11 +3,13 @@
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <fj-sticky v-bind:customNavHeight="customNavHeight">
       <u-tabs
-        class="default-tabs"
+        class="coupon-tabs"
         :list="tabs"
         lineColor="#ff0200"
         :lineWidth="44"
         :lineHeight="3"
+        :activeStyle="{color: '#ff4d1d'}"
+        :scrollable="false"
         @change="onChangeCouponType"
       ></u-tabs>
     </fj-sticky>
