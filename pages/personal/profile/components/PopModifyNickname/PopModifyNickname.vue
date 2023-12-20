@@ -1,11 +1,7 @@
 <template>
   <PopupWithButton title="修改昵称" buttonText="保存">
     <view class="flex-col group view">
-      <u-form>
-        <u-form-item class="flex-row" label="张小鱼">
-          <u-input class="text-wrapper_1" v-model="value"></u-input>
-        </u-form-item>
-      </u-form>
+      <u-input v-model="v_model" placeholder="请输入昵称" border="bottom"></u-input>
       <view class="flex-col tips-wrap">
         <text class="self-start tips title">规范建议：</text>
         <view class="flex-col items-start self-stretch mt-8">
@@ -24,7 +20,9 @@
     components: { PopupWithButton },
     props: { value: { type: String, default: `` } },
     data() {
-      return {};
+      return {
+        v_model: '',
+      };
     },
 
     methods: {},
@@ -34,9 +32,6 @@
 <style scoped lang="less">
   .group {
     align-self: stretch;
-    .text-wrapper_1 {
-      margin-bottom: -24rpx;
-    }
     .tips-wrap {
       margin-top: 56rpx;
       .tips {

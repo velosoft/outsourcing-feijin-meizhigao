@@ -1,18 +1,18 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#ffffff"></NavBar>
+    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col">
-      <u-cell-group>
+      <u-cell-group class="profile-cell-group" :border="false">
         <u-cell title="头像" :value="avatar" :isLink="true">
-          <image class="avatar" src="../../../../static/images/mock_profile_avatar.png" slot="value" />
+          <image class="avatar" src="/static/images/mock_profile_avatar.png" slot="value" />
         </u-cell>
         <u-cell title="昵称" :value="nickname" :isLink="true" @click="onClick"></u-cell>
       </u-cell-group>
       <view class="flex-col justify-start mt-12">
-        <u-cell-group>
+        <u-cell-group class="profile-cell-group">
           <u-cell title="手机号码" :value="tel"></u-cell>
           <u-cell title="性别" :value="gender" :isLink="true" @click="onClick_1"></u-cell>
-          <u-cell :value="birthday" :isLink="true" @click="onClick_2"></u-cell>
+          <u-cell title="生日" :value="birthday" :border="false" :isLink="true" @click="onClick_2"></u-cell>
         </u-cell-group>
       </view>
     </view>
@@ -26,14 +26,14 @@
       <DataTimePickerYYD></DataTimePickerYYD>
     </u-popup>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   import DataTimePickerYYD from '../../../../pages/components/DataTimePickerYYD/DataTimePickerYYD.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import PopModifyGender from '../../../../pages/personal/profile/components/PopModifyGender/PopModifyGender.vue';
   import PopModifyNickname from '../../../../pages/personal/profile/components/PopModifyNickname/PopModifyNickname.vue';
-
+  
   export default {
     components: { DataTimePickerYYD, NavBar, PopModifyGender, PopModifyNickname },
     props: {},
@@ -50,7 +50,7 @@
         popupVisible_2: false,
       };
     },
-
+  
     methods: {
       onClick() {
         this.popupVisible = true;
@@ -72,9 +72,9 @@
       },
     },
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -84,4 +84,4 @@
       height: 84rpx;
     }
   }
-</style>
+  </style>
