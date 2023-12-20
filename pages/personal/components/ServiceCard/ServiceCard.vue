@@ -18,34 +18,34 @@
         <image class="icon" src="/static/images/icon_menu_coupon.png" />
         <text class="label mt-8">优惠券</text>
       </view>
-      <view class="flex-col items-center grid-item">
+      <view class="flex-col items-center grid-item" @click="onClick_4">
         <image class="icon" src="/static/images/icon_menu_collect.png" />
         <text class="label mt-8">我的收藏</text>
       </view>
-      <view class="flex-col items-center grid-item" @click="onClick_4">
+      <view class="flex-col items-center grid-item" @click="onClick_5">
         <image class="icon" src="/static/images/icon_menu_address.png" />
         <text class="label mt-8">我的地址</text>
       </view>
-      <view class="flex-col items-center grid-item" @click="onClick_5">
+      <view class="flex-col items-center grid-item" @click="onClick_6">
         <image class="icon" src="/static/images/icon_menu_help.png" />
         <text class="label mt-8">帮助中心</text>
       </view>
-      <view class="flex-col items-center grid-item" @click="onClick_6">
+      <view class="flex-col items-center grid-item" @click="onClick_7">
         <image class="icon" src="/static/images/icon_menu_settings.png" />
         <text class="label mt-8">设置中心</text>
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-
+  
     methods: {
       onClick() {
         uni.navigateTo({ url: '/pages/personal/course/couresOrder/couresOrder' });
@@ -60,19 +60,22 @@
         uni.navigateTo({ url: '/pages/personal/coupon/coupon/coupon' });
       },
       onClick_4() {
-        uni.navigateTo({ url: '/pages/personal/address/address/address' });
+        uni.navigateTo({ url: '/pages/personal/collect/collect/collect' });
       },
       onClick_5() {
-        uni.navigateTo({ url: '/pages/personal/help/index/index' });
+        uni.navigateTo({ url: '/pages/personal/address/address/address' });
       },
       onClick_6() {
+        uni.navigateTo({ url: '/pages/personal/help/index/index' });
+      },
+      onClick_7() {
         uni.navigateTo({ url: '/pages/personal/settings/settings/settings' });
       },
     },
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .wrap {
     padding: 24rpx 0 8rpx;
     background-color: #ffffff;
@@ -107,4 +110,4 @@
       }
     }
   }
-</style>
+  </style>

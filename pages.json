@@ -6,15 +6,6 @@
   },
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
-    {
-      "path": "pages/personal/coupon/coupon/coupon",
-      "style": {
-        "navigationBarTitleText": "优惠券中心",
-        "navigationBarTextStyle": "black",
-        "navigationBarBackgroundColor": "#ffffff"
-      }
-    },
     {
       "path": "pages/tabBar/personal",
       "style": {
@@ -291,6 +282,13 @@
         "enablePullDownRefresh": false
       }
     },
+    {
+      "path": "pages/personal/coupon/coupon/coupon",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
 
     {
       "path": "pages/personal/reseller/profit/profit",
@@ -308,6 +306,13 @@
     },
     {
       "path": "pages/personal/reseller/share/share",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },    
+    {
+      "path": "pages/personal/collect/collect/collect",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
