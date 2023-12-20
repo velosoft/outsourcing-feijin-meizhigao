@@ -1,7 +1,7 @@
 <template>
-  <PopupWithButton title="修改昵称" buttonText="保存">
+  <popup-with-button title="修改昵称" buttonText="保存" @click="onClick">
     <view class="flex-col group view">
-      <u-input v-model="v_model" placeholder="请输入昵称" border="bottom"></u-input>
+      <u-input v-model="nickName" placeholder="请输入昵称" border="bottom"></u-input>
       <view class="flex-col tips-wrap">
         <text class="self-start tips title">规范建议：</text>
         <view class="flex-col items-start self-stretch mt-8">
@@ -10,7 +10,7 @@
         </view>
       </view>
     </view>
-  </PopupWithButton>
+  </popup-with-button>
 </template>
 
 <script>
@@ -21,11 +21,15 @@
     props: { value: { type: String, default: `` } },
     data() {
       return {
-        v_model: '',
+        nickName: '',
       };
     },
 
-    methods: {},
+    methods: {
+      onClick() {
+        this.$emit('click', this.nickName);
+      },
+    },
   };
 </script>
 
