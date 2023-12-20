@@ -9,18 +9,18 @@
     </view>
     <ProfitList class="mt-31" :profitList="profitListResData"></ProfitList>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <DataTimePickerYD></DataTimePickerYD>
+      <DateTimePickerPopup></DateTimePickerPopup>
     </u-popup>
   </view>
   </template>
   
   <script>
-  import DataTimePickerYD from '../../../../../pages/components/DataTimePickerYD/DataTimePickerYD.vue';
+  import DateTimePickerPopup from '../../../../../pages/components/DateTimePickerPopup/DateTimePickerPopup.vue';
   import ProfitList from '../../../../../pages/personal/reseller/components/ProfitList/ProfitList.vue';
   import { profitListResData } from './PromotionDetial.data.js';
   
   export default {
-    components: { DataTimePickerYD, ProfitList },
+    components: { DateTimePickerPopup, ProfitList },
     props: {},
     data() {
       return {
