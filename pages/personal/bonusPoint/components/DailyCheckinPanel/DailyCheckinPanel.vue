@@ -71,7 +71,7 @@
       onCheckin() {
         this.items[this.checkinNumber].status = 'done';
         this.bonus = this.items[this.checkinNumber].bonus;
-        // this.checkinNumber++;
+        this.checkinNumber++;
         this.popupVisible = true;
       },
       onClose() {
