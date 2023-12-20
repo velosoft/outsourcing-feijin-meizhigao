@@ -86,7 +86,7 @@
     .text_9 {
       color: #ffffff;
       font-size: 28rpx;
-      font-family: 苹方;
+      font-family: PingFang SC;
       font-weight: 700;
       line-height: 28rpx;
     }
@@ -126,7 +126,7 @@
         .mask-text {
           color: #ffffff;
           font-size: 24rpx;
-          font-family: 苹方;
+          font-family: PingFang SC;
           line-height: 24rpx;
         }
       }
@@ -155,7 +155,7 @@
         .mask-text {
           color: #ffffff;
           font-size: 24rpx;
-          font-family: 苹方;
+          font-family: PingFang SC;
           line-height: 24rpx;
         }
       }
@@ -170,7 +170,7 @@
   }
   .title {
     font-size: 28rpx;
-    font-family: 苹方;
+    font-family: PingFang SC;
     line-height: 44rpx;
     color: #030305;
   }
@@ -181,7 +181,7 @@
     border-radius: 4rpx;
     .tag-text {
       font-size: 20rpx;
-      font-family: 苹方;
+      font-family: PingFang SC;
       line-height: 20rpx;
       color: #b1a76e;
     }
@@ -194,7 +194,7 @@
   }
   .price-currency {
     font-size: 20rpx;
-    font-family: 苹方;
+    font-family: PingFang SC;
     line-height: 20rpx;
     font-weight: 700;
     color: #bb3e0c;

@@ -34,7 +34,7 @@
       .empty-text {
         color: #a7a7a7;
         font-size: 28rpx;
-        font-family: 苹方;
+        font-family: PingFang SC;
         line-height: 28rpx;
       }
     }

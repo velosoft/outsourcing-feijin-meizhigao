@@ -11,6 +11,9 @@
         :inactiveStyle="{
           color: '#a7a7a7',
         }"
+        lineHeight="20rpx"
+        lineWidth="64rpx"
+        :scrollable="false"
         :list="list"
       ></u-tabs
     ></FjSticky>

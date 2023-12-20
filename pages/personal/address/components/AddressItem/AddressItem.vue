@@ -59,12 +59,12 @@
       .address {
         color: #2d2e32;
         font-size: 32rpx;
-        font-family: 苹方;
+        font-family: PingFang SC;
         font-weight: 700;
       }
       .value {
         font-size: 24rpx;
-        font-family: 苹方;
+        font-family: PingFang SC;
         color: #8c8f95;
       }
     }
