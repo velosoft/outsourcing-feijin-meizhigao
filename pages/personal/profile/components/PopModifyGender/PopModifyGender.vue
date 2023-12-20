@@ -1,23 +1,12 @@
 <template>
-  <PopupWithButton title="性别" buttonText="保存">
+  <popup-with-button title="性别" buttonText="保存" @click="onClick">
     <view class="flex-col justify-start group view">
-      <u-radio-group v-model="v_model" iconPlacement="right">
-        <u-cell title="男">
-          <u-radio
-            class="input"
-            v-model="v_model_1"
-            name="uYHiEoOe"
-            activeColor="#b09053"
-            inactiveColor="#ffffff"
-            slot="value"
-          ></u-radio>
-        </u-cell>
-        <u-cell class="mt-40" title="女">
-          <u-radio class="input" v-model="v_model_2" name="w78voJPl" slot="value"></u-radio>
-        </u-cell>
+      <u-radio-group v-model="gender" iconPlacement="right" placement="column" activeColor="#b09053">
+        <u-radio class="align-center" label="男" name="男" labelColor="#000000"></u-radio>
+        <u-radio class="align-center mt-38" label="女" name="女" labelColor="#000000"></u-radio>
       </u-radio-group>
     </view>
-  </PopupWithButton>
+  </popup-with-button>
 </template>
 
 <script>
@@ -28,26 +17,26 @@
     props: {},
     data() {
       return {
-        status: '',
-        value: '男',
-        v_model: '',
-        v_model_1: '',
-        v_model_2: '',
+        gender: '男',
       };
     },
 
-    methods: {},
+    methods: {
+      onChange(val) {
+        this.gender = val;
+      },
+      onClick() {
+        this.$emit('click', this.gender);
+      },
+    },
   };
 </script>
 
 <style scoped lang="less">
   .group {
     align-self: stretch;
-    .input {
-      align-self: center;
-    }
   }
   .view {
-    padding: 128rpx 0;
+    padding: 120rpx 0 120rpx 34rpx;
   }
 </style>
