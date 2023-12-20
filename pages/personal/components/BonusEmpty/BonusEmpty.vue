@@ -7,7 +7,7 @@
       />
       <text class="empty-label empty-text mt-8">没有更多了~</text>
     </view>
-    <view class="flex-col justify-center items-center self-center mt-40 back-btn">返回</view>
+    <view class="flex-col justify-center items-center self-center mt-40 back-btn" @click="onBack">返回</view>
   </view>
 </template>
 
@@ -19,7 +19,11 @@
       return {};
     },
 
-    methods: {},
+    methods: {
+      onBack() {
+        uni.navigateBack();
+      },
+    },
   };
 </script>
 
