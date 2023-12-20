@@ -169,7 +169,7 @@ export const couponList = [
     status: 'used',
     amount: 28,
     triggerCondition: 220,
-    title: '家电产品折扣券',
+    title: '家电产品折扣券，就是这么长长长长长长长长长长长',
     validity: {
       start: '2023.06.02',
       end: '2023.06.20',
@@ -225,7 +225,7 @@ export const couponList = [
     status: 'expired',
     amount: 5,
     triggerCondition: 50,
-    title: '过期满减券A',
+    title: '过期满减券A，就是这么长长长长长长长长长长长',
     validity: {
       start: '2023.05.01',
       end: '2023.05.15',
