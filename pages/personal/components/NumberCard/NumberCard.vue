@@ -2,15 +2,15 @@
   <view class="flex-col wrap">
     <view class="flex-row items-center">
       <view class="flex-col items-center item equal-division-item" @click="onClick">
-        <text class="number">{{coinsNum}}</text>
+        <text class="number">{{ coinsNum }}</text>
         <text class="label mt-8">收纳币</text>
       </view>
       <view class="flex-col items-center item ml-32" @click="onClick_1">
-        <text class="number">{{integralNum}}</text>
+        <text class="number">{{ integralNum }}</text>
         <text class="label mt-8">积分</text>
       </view>
       <view class="flex-col items-center item equal-division-item ml-32" @click="onClick_2">
-        <text class="number">{{couponNum}}</text>
+        <text class="number">{{ couponNum }}</text>
         <text class="label mt-8">优惠券</text>
       </view>
     </view>

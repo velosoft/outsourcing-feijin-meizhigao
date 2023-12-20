@@ -48,16 +48,23 @@
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_refund.png" />
           <view class="badge-pos">
-            <u-badge class="section" :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
+            <u-badge
+              class="section"
+              :value="value"
+              :max="99"
+              type="warning"
+              bgColor="#ff0200"
+              color="#ffffff"
+            ></u-badge>
           </view>
         </view>
         <text class="self-center value mt-12_1 mt-12">退款/售后</text>
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {},
@@ -66,12 +73,12 @@
         value: 0,
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 32rpx 0 48rpx;
     background-color: #ffffff;
@@ -131,4 +138,4 @@
       color: #2d2e32;
     }
   }
-  </style>
+</style>
