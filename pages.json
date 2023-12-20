@@ -296,6 +296,30 @@
         "navigationBarTextStyle": "black",
         "navigationBarBackgroundColor": "#ffffff"
       }
+    },
+    {
+      "path": "pages/personal/reseller/profit/profit",
+      "style": {
+        "navigationBarTitleText": "查看收益",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/reseller/reseller/reseller",
+      "style": {
+        "navigationBarTitleText": "分销中心",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/personal/reseller/share/share",
+      "style": {
+        "navigationBarTitleText": "分享收益",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
     }
   ],
   "globalStyle": {

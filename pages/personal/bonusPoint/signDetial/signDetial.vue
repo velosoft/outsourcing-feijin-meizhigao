@@ -26,17 +26,17 @@
         </view>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="center" style="width:309px" :round="10" :safeAreaInsetBottom="false"><SignDialog></SignDialog></u-popup>
+    <u-popup :show="popupVisible" @close="onClose" mode="center" style="width:309px" :round="10" :safeAreaInsetBottom="false"><DailyCheckinDialog></DailyCheckinDialog></u-popup>
   </view>
   </template>
   
   <script>
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import SignDialog from '../../../../pages/personal/bonusPoint/components/SignDialog/SignDialog.vue';
+  import DailyCheckinDialog from '../../../../pages/personal/bonusPoint/components/DailyCheckinDialog/DailyCheckinDialog.vue';
   import { signStatusResData } from './signDetial.data.js';
   
   export default {
-    components: { NavBar, SignDialog },
+    components: { NavBar, DailyCheckinDialog },
     props: {},
     data() {
       return {
