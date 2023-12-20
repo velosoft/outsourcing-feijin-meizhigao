@@ -1,38 +1,38 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col">
       <u-cell-group class="profile-cell-group" :border="false">
         <u-cell title="头像" :value="avatar" :isLink="true">
           <image class="avatar" src="/static/images/mock_profile_avatar.png" slot="value" />
         </u-cell>
-        <u-cell title="昵称" :value="nickname" :isLink="true" @click="onClick"></u-cell>
+        <u-cell title="昵称" :value="nickname" :isLink="true" @click="onShowNicknamePopup"></u-cell>
       </u-cell-group>
       <view class="flex-col justify-start mt-12">
         <u-cell-group class="profile-cell-group">
           <u-cell title="手机号码" :value="tel"></u-cell>
-          <u-cell title="性别" :value="gender" :isLink="true" @click="onClick_1"></u-cell>
-          <u-cell title="生日" :value="birthdayText" :border="false" :isLink="true" @click="onClick_2"></u-cell>
+          <u-cell title="性别" :value="gender" :isLink="true" @click="onShowGenderPopup"></u-cell>
+          <u-cell title="生日" :value="birthdayText" :border="false" :isLink="true" @click="onShowDatePopup"></u-cell>
         </u-cell-group>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <PopModifyNickname></PopModifyNickname>
+    <u-popup :show="nicknamePopupVisible" @close="onClosePopup" mode="bottom" :round="12" :closeable="true">
+      <pop-modify-nickname @click="onNicknameChange"></pop-modify-nickname>
     </u-popup>
-    <u-popup :show="popupVisible_1" @close="onClose_1" mode="bottom" :round="12" :closeable="true">
-      <PopModifyGender></PopModifyGender>
+    <u-popup :show="genderPopupVisible" @close="onClosePopup" mode="bottom" :round="12" :closeable="true">
+      <pop-modify-gender @click="onGenderChange"></pop-modify-gender>
     </u-popup>
-    <u-popup :show="popupVisible_2" @close="onClose_2" mode="bottom" :round="12" :closeable="true">
-      <DateTimePickerPopup type="date" :date="birthday" @change="onDateChange"></DateTimePickerPopup>
+    <u-popup :show="datePopupVisible" @close="onClosePopup" mode="bottom" :round="12" :closeable="true">
+      <date-time-picker-popup type="date" :date="birthday" @click="onDateChange"></date-time-picker-popup>
     </u-popup>
   </view>
 </template>
 
 <script>
-  import DateTimePickerPopup from '../../../../pages/components/DateTimePickerPopup/DateTimePickerPopup.vue';
+  import DateTimePickerPopup from '@/pages/components/DateTimePickerPopup/DateTimePickerPopup.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import PopModifyGender from '../../../../pages/personal/profile/components/PopModifyGender/PopModifyGender.vue';
-  import PopModifyNickname from '../../../../pages/personal/profile/components/PopModifyNickname/PopModifyNickname.vue';
+  import PopModifyGender from '@/pages/personal/profile/components/PopModifyGender/PopModifyGender.vue';
+  import PopModifyNickname from '@/pages/personal/profile/components/PopModifyNickname/PopModifyNickname.vue';
 
   export default {
     components: { DateTimePickerPopup, NavBar, PopModifyGender, PopModifyNickname },
@@ -49,9 +49,9 @@
           day: 6,
         },
         title: '个人信息',
-        popupVisible: false,
-        popupVisible_1: false,
-        popupVisible_2: false,
+        nicknamePopupVisible: false,
+        genderPopupVisible: false,
+        datePopupVisible: false,
       };
     },
     computed: {
@@ -62,30 +62,34 @@
     },
 
     methods: {
-      onClick() {
-        this.popupVisible = true;
+      onShowNicknamePopup() {
+        this.nicknamePopupVisible = true;
       },
-      onClose() {
-        this.popupVisible = false;
+      onShowGenderPopup() {
+        this.genderPopupVisible = true;
       },
-      onClick_1() {
-        this.popupVisible_1 = true;
+      onShowDatePopup() {
+        this.datePopupVisible = true;
       },
-      onClose_1() {
-        this.popupVisible_1 = false;
+      onClosePopup() {
+        this.nicknamePopupVisible = false;
+        this.genderPopupVisible = false;
+        this.datePopupVisible = false;
       },
-      onClick_2() {
-        this.popupVisible_2 = true;
+      onNicknameChange(val) {
+        this.nickname = val;
+        this.nicknamePopupVisible = false;
       },
-      onClose_2() {
-        this.popupVisible_2 = false;
+      onGenderChange(val) {
+        this.gender = val;
+        this.genderPopupVisible = false;
       },
       onDateChange(val) {
         let { year, month, day } = val;
         this.birthday.year = year;
         this.birthday.month = month;
         this.birthday.day = day;
-        this.popupVisible_2 = false;
+        this.datePopupVisible = false;
       },
     },
   };
