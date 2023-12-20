@@ -39,20 +39,20 @@
             <view class="flex-col mt-8">
               <view class="flex-row items-baseline" v-if="!item.isSeckill">
                 <text class="seckill-font">￥</text>
-                <text class="font_19 text_41">200</text>
-                <text class="font_20 text_46">.00</text>
+                <text class="product-price price-text">{{ item.productPrice }}</text>
+                <text class="price-fixed ml-2">.00</text>
               </view>
               <view class="flex-row items-center" v-if="item.isSeckill">
-                <text class="product-count-font text_8">秒杀价</text>
-                <text class="seckill-font text_9">￥</text>
-                <text class="font_19 text_47">200</text>
-                <text class="font_20 text_48">.00</text>
+                <text class="product-count-font price-red">秒杀价</text>
+                <text class="seckill-font price-red">￥</text>
+                <text class="product-price price-red price-text">{{ item.productPrice }}</text>
+                <text class="price-fixed ml-2 price-red">.00</text>
               </view>
             </view>
           </view>
         </view>
         <view class="flex-col items-end self-end mt-28">
-          <text class="product-count-font prodouct-count">{{ `x${item.productQuantity}` }}</text>
+          <text class="product-count-font product-count">{{ `x${item.productQuantity}` }}</text>
           <text class="sale-status mt-12">{{ item.afterSaleStatus }}</text>
         </view>
       </view>
@@ -120,9 +120,10 @@
 <script>
   import ConfirmPanel from '@/components/ConfirmPanel.vue';
   import PopOrderCancel from '../../../../pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
+  import OrderProductItem from '@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
 
   export default {
-    components: { ConfirmPanel, PopOrderCancel },
+    components: { ConfirmPanel, PopOrderCancel, OrderProductItem },
     props: {
       order: Object,
     },
@@ -254,21 +255,18 @@
     line-height: 34rpx;
     color: #9e9ea0;
   }
-  .font_19 {
+  .product-price {
     font-size: 32rpx;
     line-height: 34rpx;
     color: #111111;
   }
-  .text_41 {
+  .price-text {
     line-height: 36rpx;
   }
-  .font_20 {
+  .price-fixed {
     font-size: 20rpx;
     line-height: 24rpx;
     color: #111111;
-  }
-  .text_46 {
-    margin-left: 4rpx;
   }
   .product-count-font {
     font-size: 24rpx;
@@ -276,21 +274,10 @@
     font-weight: 500;
     color: #9e9ea0;
   }
-  .text_8 {
+  .price-red {
     color: #bb3e0c;
   }
-  .text_9 {
-    color: #bb3e0c;
-  }
-  .text_47 {
-    color: #bb3e0c;
-    line-height: 36rpx;
-  }
-  .text_48 {
-    margin-left: 4rpx;
-    color: #bb3e0c;
-  }
-  .prodouct-count {
+  .product-count {
     text-transform: uppercase;
   }
   .sale-status {

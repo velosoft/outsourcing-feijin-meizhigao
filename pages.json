@@ -14,16 +14,9 @@
       }
     },
     {
-      "path": "pages/tabBar/comps",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/myOrder/myOrder/myOrder",
       "style": {
-        "navigationStyle": "default",
+        "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
@@ -36,6 +29,20 @@
     },
     {
       "path": "pages/myOrder/productComments/productComments",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/myOrder/proudctAddComment/proudctAddComment",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/tabBar/comps",
       "style": {
         "navigationStyle": "default",
         "enablePullDownRefresh": false
