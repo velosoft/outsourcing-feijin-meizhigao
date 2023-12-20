@@ -1,7 +1,19 @@
 <template>
   <view class="flex-col page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <FjSticky v-bind:customNavHeight="80"><u-tabs :list="list"></u-tabs></FjSticky>
+    <FjSticky v-bind:customNavHeight="80"
+      ><u-tabs
+        class="line-tabs"
+        :activeStyle="{
+          color: '#030305',
+          fontWeight: '700',
+        }"
+        :inactiveStyle="{
+          color: '#a7a7a7',
+        }"
+        :list="list"
+      ></u-tabs
+    ></FjSticky>
     <view class="flex-col mt-22">
       <scroll-view :scroll-y="true">
         <list-container

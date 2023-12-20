@@ -14,6 +14,13 @@
       }
     },
     {
+      "path": "pages/personal/address/address/address",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/myOrder/myOrder/myOrder",
       "style": {
         "navigationStyle": "custom",
@@ -327,6 +334,13 @@
     },
     {
       "path": "pages/personal/collect/collect/collect",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },    
+    {
+      "path": "pages/personal/address/addressEditor/addressEditor",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

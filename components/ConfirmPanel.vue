@@ -57,8 +57,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    title: String,
-    content: String,
+    title: {
+      type: String,
+      default: "",
+    },
     content: {
       type: String,
       default: "您确定清空历史搜索记录吗？",
