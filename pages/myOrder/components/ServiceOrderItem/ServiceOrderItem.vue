@@ -1,403 +1,285 @@
 <template>
-<view class="flex-col component">
-  <view class="flex-row justify-between items-center">
-    <text class="servier-order-font_9 text_2">订单号：2023060801256768</text>
-    <view class="flex-col">
-      <view class="flex-row items-center self-stretch" v-if="true">
-        <view class="shrink-0 section_4"></view>
-        <text class="font text_11 ml-8">未支付</text>
-      </view>
-      <view class="flex-row items-center self-start" v-if="false">
-        <view class="shrink-0 section_6"></view>
-        <text class="font text_61 ml-8">交易关闭</text>
+  <view class="flex-col order">
+    <view class="flex-row justify-between items-center">
+      <text class="order-no">{{ `订单号：${order.no}` }}</text>
+      <view class="flex-col">
+        <view class="flex-row items-center self-start" v-if="order.status === '交易关闭' || order.status === '已取消'">
+          <view class="shrink-0 icon-status-gray"></view>
+          <text class="status-font status-gray ml-8">{{ order.status }}</text>
+        </view>
+        <view class="flex-row items-center self-stretch" v-else>
+          <view class="shrink-0 icon-status"></view>
+          <text class="status-font status ml-8">{{ order.status }}</text>
+        </view>
       </view>
     </view>
-  </view>
-  <view class="flex-col servier-order-mt-16">
-    <view class="flex-col section_5">
-      <view class="flex-row items-center self-stretch group_14">
-        <image
-          class="servier-order-image"
-          src="https://dev.ft.velosoft.cn/api/image?token=65806dcdd6bce000114d191b&name=mock_5590db0df4.png"
-        />
-        <view class="flex-col items-start flex-1 group_17">
-          <text class="font order-type-font">全屋整理收纳服务（单次）</text>
-          <text class="servier-order-font_7 text_5 servier-order-mt-4">按面积核算（元/m)</text>
-          <view class="flex-row items-center servier-order-mt-4">
-            <view class="flex-row items-baseline self-stretch group_9">
-              <text class="servier-order-font_4">200</text>
-              <text class="servier-order-font_6 text_8">￥</text>
+    <view class="flex-col summary">
+      <view class="flex-row items-center self-stretch top">
+        <image class="order-image" :src="order.image" />
+        <view class="flex-col items-start flex-1 right">
+          <text class="status-font title">{{ order.title }}</text>
+          <text class="desc desc-text order-mt-4">{{ order.desc }}</text>
+          <view class="flex-row items-center order-mt-4">
+            <view class="flex-row items-baseline self-stretch money">
+              <text class="money-number">{{ order.price }}</text>
+              <text class="money-currency currency-text">￥</text>
             </view>
-            <text class="servier-order-font_6">.00</text>
+            <text class="money-currency">.00</text>
           </view>
         </view>
-        <text class="servier-order-font_7 servier-order-text_4">x1</text>
+        <text class="desc quantity">{{ `x${order.quantity}` }}</text>
       </view>
-      <view class="flex-col items-start self-start group_10 servier-order-mt-8">
-        <view class="group_1" v-if="true">
-          <text class="servier-order-font_8">预约上门时间：</text>
-          <text class="servier-order-font_9">2023-08-16 19:14:13</text>
+      <view class="flex-col items-start self-start time-wrapper order-mt-8">
+        <view
+          class="reserve-time"
+          v-if="
+            order.status === '未支付' ||
+            order.status === '等待分配业务员' ||
+            order.status === '等待上门测量' ||
+            order.status === '已取消'
+          "
+        >
+          <text>预约上门时间：</text>
+          <text>{{ order.reserveTime }}</text>
         </view>
-        <text class="servier-order-font_9" v-if="false">领队：张小鱼 1334556688</text>
+        <text class="captain" v-else>{{ `领队：${order.captain.name} ${order.captain.phone}` }}</text>
       </view>
-      <view class="flex-col items-start self-start text_24 servier-order-mt-8">
-        <view class="group_18" v-if="true">
-          <text class="servier-order-font_8">支付倒计时：</text>
-          <text class="servier-order-font_10">59分钟</text>
+      <view class="flex-col items-start self-start stage-wrapper order-mt-8">
+        <view class="count-down" v-if="order.status === '未支付'">
+          <text class="reserve-time">支付倒计时：</text>
+          <text class="count-time">59分钟</text>
         </view>
-        <text class="servier-order-font_10" v-if="false">服务测量阶段</text>
+        <text class="count-time" v-else>{{ order.stage }}</text>
       </view>
     </view>
-    <view class="flex-col">
-      <view class="flex-row justify-end group_20" v-if="true">
-        <view class="flex-col justify-start items-center servier-order-button">
-          <text class="servier-order-font_7">取消订单</text>
-        </view>
-        <view class="flex-col justify-start items-center servier-order-button_1 ml-8">
-          <text class="servier-order-font_11">去付款</text>
-        </view>
+    <view class="flex-row justify-end">
+      <view class="btn btn-gray" v-if="order.status === '未支付'">
+        <text>取消订单</text>
       </view>
-      <view class="group_13 flex-row justify-end group_20" v-if="false">
-        <view class="flex-col justify-start items-center button_3">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
+      <view class="btn btn-yellow" v-if="order.status === '未支付'">
+        <text>去付款</text>
       </view>
-      <view class="flex-row justify-end group_19" v-if="false">
-        <view class="flex-col justify-start items-center button_11">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
-        <view class="flex-col justify-start button_1 ml-8">
-          <text class="servier-order-font_7 text_62">查看测量结果</text>
-        </view>
-        <view class="flex-col justify-start items-center button_6 ml-8">
-          <text class="servier-order-font_11">开始签约</text>
-        </view>
+      <view
+        class="btn btn-gray"
+        v-if="
+          order.status === '等待上门服务' ||
+          order.status === '服务中' ||
+          order.status === '差额支付' ||
+          order.status === '等待客户验收' ||
+          order.status === '交易完成'
+        "
+      >
+        <text>查看商品订单</text>
       </view>
-      <view class="flex-row justify-center group_21" v-if="false">
-        <view class="flex-col justify-start button_1">
-          <text class="servier-order-font_7 text_21">查看商品方案</text>
-        </view>
-        <view class="flex-col justify-start button_1 ml-8">
-          <text class="servier-order-font_7 text_63">查看服务方案</text>
-        </view>
-        <view class="flex-col justify-start items-center button_6 ml-8">
-          <text class="servier-order-font_11">确认方案</text>
-        </view>
+      <view
+        class="btn btn-gray"
+        v-if="
+          order.status === '等待上门测量' ||
+          order.status === '测量中' ||
+          order.status === '等待客户签约' ||
+          order.status === '等待开始设计' ||
+          order.status === '方案设计中' ||
+          order.status === '等待确认报价' ||
+          order.status === '等待上门服务' ||
+          order.status === '服务中' ||
+          order.status === '差额支付' ||
+          order.status === '等待客户验收' ||
+          order.status === '交易完成'
+        "
+      >
+        <text>服务日志</text>
       </view>
-      <view class="flex-row justify-end group_19" v-if="false">
-        <view class="flex-col justify-start items-center button_11">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
-        <view class="flex-col justify-start items-center button_6 ml-8">
-          <text class="servier-order-font_11">查看报价</text>
-        </view>
+      <view class="btn btn-gray" v-if="order.status === '等待客户签约'">
+        <text>查看测量结果</text>
       </view>
-      <view class="flex-row justify-center group_21" v-if="false">
-        <view class="flex-col justify-start button_1">
-          <text class="servier-order-font_7 text_21">查看商品订单</text>
-        </view>
-        <view class="flex-col justify-start items-center button_11 ml-8">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
-        <view class="flex-col justify-start items-center button_7 ml-8">
-          <text class="servier-order-font_11">预约服务时间</text>
-        </view>
+      <view class="btn btn-yellow" v-if="order.status === '等待客户签约'">
+        <text>开始签约</text>
       </view>
-      <view class="flex-row justify-end group_19" v-if="false">
-        <view class="flex-col justify-start button_1">
-          <text class="servier-order-font_7 text_64">查看商品订单</text>
-        </view>
-        <view class="flex-col justify-start items-center button_11 ml-8">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
+      <view class="btn btn-gray" v-if="order.status === '等待确认方案'"><text>查看商品方案</text></view>
+      <view class="btn btn-gray" v-if="order.status === '等待确认方案'"><text>查看服务方案</text></view>
+      <view class="btn btn-yellow" v-if="order.status === '等待确认方案'">
+        <text>确认方案</text>
       </view>
-      <view class="flex-row justify-end group_19" v-if="false">
-        <view class="flex-col justify-start button_1">
-          <text class="servier-order-font_7 text_65">查看商品订单</text>
-        </view>
-        <view class="flex-col justify-start items-center button_11 ml-8">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
-        <view class="flex-col justify-start items-center button_6 ml-8">
-          <text class="servier-order-font_11">确认差额</text>
-        </view>
+      <view class="btn btn-yellow" v-if="order.status === '等待确认报价'">
+        <text>查看报价</text>
       </view>
-      <view class="flex-row justify-end group_19" v-if="false">
-        <view class="flex-col justify-start button_1">
-          <text class="servier-order-font_7 text_66">查看商品订单</text>
-        </view>
-        <view class="flex-col justify-start items-center button_11 ml-8">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
-        <view class="flex-col justify-start items-center button_6 ml-8">
-          <text class="servier-order-font_11">验收服务</text>
-        </view>
+      <view class="btn btn-yellow" v-if="order.status === '等待上门服务'">
+        <text>预约服务时间</text>
       </view>
-      <view class="flex-row justify-end group_19" v-if="false">
-        <view class="flex-col justify-start button_1">
-          <text class="servier-order-font_7 text_67">查看商品订单</text>
-        </view>
-        <view class="flex-col justify-start items-center button_11 ml-8">
-          <text class="servier-order-font_7">服务日志</text>
-        </view>
-        <view class="flex-col justify-start items-center button_6 ml-8">
-          <text class="servier-order-font_11">评价</text>
-        </view>
+      <view class="btn btn-yellow" v-if="order.status === '差额支付'">
+        <text>确认差额</text>
       </view>
-      <view class="flex-col justify-start items-end group_12" v-if="false">
-        <view class="flex-col justify-start items-center button_8">
-          <text class="servier-order-font_7">删除记录</text>
-        </view>
+      <view class="btn btn-yellow" v-if="order.status === '等待客户验收'">
+        <text>验收服务</text>
+      </view>
+      <view class="btn btn-yellow" v-if="order.status === '交易完成'">
+        <text>评价</text>
+      </view>
+      <view class="btn btn-gray" v-if="order.status === '交易关闭' || order.status === '已取消'">
+        <text>删除记录</text>
       </view>
     </view>
   </view>
-</view>
 </template>
 
 <script>
-export default {
-  components: {},
-  props: { order: { type: Object, default: () => ({}) } },
-  data() {
-    return {};
-  },
+  export default {
+    components: {},
+    props: {
+      order: Object,
+    },
+    data() {
+      return {};
+    },
 
-  methods: {},
-};
+    methods: {},
+  };
 </script>
 
 <style scoped lang="css">
-.component {
-  padding: 24rpx;
-  background-color: #ffffff;
-  border-radius: 16rpx;
-}
-.servier-order-font_9 {
-  font-size: 24rpx;
-  line-height: 34rpx;
-  color: #000000;
-}
-.text_2 {
-  color: #6d6d6d;
-}
-.section_4 {
-  background-color: #b09053;
-  border-radius: 50%;
-  width: 12rpx;
-  height: 12rpx;
-}
-.font {
-  font-size: 30rpx;
-  line-height: 42rpx;
-  font-weight: 500;
-}
-.text_11 {
-  color: #b09053;
-}
-.section_6 {
-  background-color: #9c9c9f;
-  border-radius: 50%;
-  width: 12rpx;
-  height: 12rpx;
-}
-.text_61 {
-  color: #9c9c9f;
-}
-.servier-order-mt-16 {
-  margin-top: 32rpx;
-}
-.section_5 {
-  padding-bottom: 16rpx;
-  background-color: #f1f1f1;
-  border-radius: 8rpx;
-}
-.group_14 {
-  padding: 16rpx;
-  border-bottom: solid 2rpx #e4e4e4;
-}
-.servier-order-image {
-  border-radius: 12rpx;
-  width: 128rpx;
-  height: 128rpx;
-}
-.group_17 {
-  margin-left: 20rpx;
-}
-.order-type-font {
-  color: #2d2e32;
-  font-size: 28rpx;
-  line-height: 40rpx;
-}
-.servier-order-font_7 {
-  font-size: 24rpx;
-  line-height: 34rpx;
-  font-weight: 500;
-  color: #9e9ea0;
-}
-.text_5 {
-  font-weight: unset;
-}
-.servier-order-mt-4 {
-  margin-top: 8rpx;
-}
-.group_9 {
-  width: 80rpx;
-}
-.servier-order-font_4 {
-  margin-left: 24rpx;
-  color: #111111;
-  font-size: 32rpx;
-  line-height: 36rpx;
-}
-.servier-order-font_6 {
-  font-size: 24rpx;
-  line-height: 30rpx;
-  color: #111111;
-}
-.text_8 {
-  margin-left: -80rpx;
-  font-weight: 600;
-}
-.servier-order-text_4 {
-  margin-left: 40rpx;
-  margin-right: 8rpx;
-  text-transform: uppercase;
-}
-.group_10 {
-  margin-left: 16rpx;
-}
-.group_1 {
-  line-height: 34rpx;
-}
-.servier-order-font_8 {
-  font-size: 24rpx;
-  line-height: 34rpx;
-  color: #3c3d41;
-}
-.text_24 {
-  margin-left: 16rpx;
-}
-.servier-order-mt-8 {
-  margin-top: 16rpx;
-}
-.group_18 {
-  line-height: 34rpx;
-}
-.servier-order-font_10 {
-  font-size: 24rpx;
-  line-height: 34rpx;
-  color: #b09053;
-}
-.servier-order-button {
-  padding: 8rpx 0;
-  border-radius: 8rpx;
-  width: 132rpx;
-  height: 52rpx;
-  border-left: solid 2rpx #cecece;
-  border-right: solid 2rpx #cecece;
-  border-top: solid 2rpx #cecece;
-  border-bottom: solid 2rpx #cecece;
-}
-.servier-order-button_1 {
-  padding: 8rpx 0;
-  background-color: #b09053;
-  border-radius: 8rpx;
-  width: 132rpx;
-  height: 52rpx;
-}
-.servier-order-font_11 {
-  font-size: 24rpx;
-  line-height: 34rpx;
-  font-weight: 500;
-  color: #ffffff;
-}
-.group_13 {
-  height: 80rpx;
-}
-.group_20 {
-  padding-top: 24rpx;
-}
-.button_3 {
-  padding: 8rpx 0;
-  border-radius: 8rpx;
-  width: 132rpx;
-  border-left: solid 2rpx #cecece;
-  border-right: solid 2rpx #cecece;
-  border-top: solid 2rpx #cecece;
-  border-bottom: solid 2rpx #cecece;
-}
-.group_19 {
-  padding-top: 28rpx;
-}
-.button_11 {
-  padding: 8rpx 0;
-  border-radius: 8rpx;
-  width: 132rpx;
-  height: 52rpx;
-  border-left: solid 2rpx #e8e8e8;
-  border-right: solid 2rpx #e8e8e8;
-  border-top: solid 2rpx #e8e8e8;
-  border-bottom: solid 2rpx #e8e8e8;
-}
-.button_1 {
-  padding: 8rpx 0;
-  border-radius: 8rpx;
-  height: 52rpx;
-  border-left: solid 2rpx #e8e8e8;
-  border-right: solid 2rpx #e8e8e8;
-  border-top: solid 2rpx #e8e8e8;
-  border-bottom: solid 2rpx #e8e8e8;
-}
-.text_62 {
-  margin: 0 16rpx;
-}
-.button_6 {
-  padding: 8rpx 0;
-  background-color: #b09053;
-  border-radius: 8rpx;
-  width: 140rpx;
-  height: 52rpx;
-}
-.group_21 {
-  padding-left: 120rpx;
-  padding-top: 24rpx;
-}
-.text_21 {
-  margin: 0 16rpx;
-}
-.text_63 {
-  margin: 0 16rpx;
-}
-.button_7 {
-  padding: 8rpx 0;
-  background-color: #b09053;
-  border-radius: 8rpx;
-  width: 188rpx;
-  height: 52rpx;
-}
-.text_64 {
-  margin: 0 16rpx;
-}
-.text_65 {
-  margin: 0 16rpx;
-}
-.text_66 {
-  margin: 0 16rpx;
-}
-.text_67 {
-  margin: 0 16rpx;
-}
-.group_12 {
-  padding-top: 28rpx;
-  height: 80rpx;
-}
-.button_8 {
-  padding: 8rpx 0;
-  border-radius: 8rpx;
-  width: 132rpx;
-  border-left: solid 2rpx #e8e8e8;
-  border-right: solid 2rpx #e8e8e8;
-  border-top: solid 2rpx #e8e8e8;
-  border-bottom: solid 2rpx #e8e8e8;
-}
+  .order {
+    padding: 24rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+  }
+  .order-no {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #6d6d6d;
+  }
+  .icon-status {
+    background-color: #b09053;
+    border-radius: 50%;
+    width: 12rpx;
+    height: 12rpx;
+  }
+  .status-font {
+    font-size: 30rpx;
+    line-height: 42rpx;
+    font-weight: 500;
+  }
+  .status {
+    color: #b09053;
+  }
+  .icon-status-gray {
+    background-color: #9c9c9f;
+    border-radius: 50%;
+    width: 12rpx;
+    height: 12rpx;
+  }
+  .status-gray {
+    color: #9c9c9f;
+  }
+  .summary {
+    margin-top: 32rpx;
+    padding-bottom: 16rpx;
+    background-color: #f1f1f1;
+    border-radius: 8rpx;
+  }
+  .top {
+    padding: 16rpx;
+    border-bottom: solid 2rpx #e4e4e4;
+  }
+  .order-image {
+    border-radius: 12rpx;
+    width: 128rpx;
+    height: 128rpx;
+  }
+  .right {
+    margin-left: 20rpx;
+    overflow: hidden;
+  }
+  .title {
+    color: #2d2e32;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .desc {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    font-weight: 500;
+    color: #9e9ea0;
+  }
+  .desc-text {
+    font-weight: unset;
+  }
+  .order-mt-4 {
+    margin-top: 8rpx;
+  }
+  .money {
+    width: 80rpx;
+  }
+  .money-number {
+    margin-left: 24rpx;
+    color: #111111;
+    font-size: 32rpx;
+    line-height: 36rpx;
+  }
+  .money-currency {
+    font-size: 24rpx;
+    line-height: 30rpx;
+    color: #111111;
+  }
+  .currency-text {
+    margin-left: -80rpx;
+    font-weight: 600;
+  }
+  .quantity {
+    margin-left: 40rpx;
+    margin-right: 8rpx;
+    text-transform: uppercase;
+  }
+  .time-wrapper {
+    margin-left: 16rpx;
+  }
+  .reserve-time {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #3c3d41;
+  }
+  .captain {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #000000;
+  }
+  .stage-wrapper {
+    margin-left: 16rpx;
+  }
+  .order-mt-8 {
+    margin-top: 16rpx;
+  }
+  .count-down {
+    line-height: 34rpx;
+  }
+  .count-time {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #b09053;
+  }
+  .btn {
+    padding: 8rpx 20rpx;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    font-weight: 500;
+    margin-top: 24rpx;
+    min-width: 132rpx;
+    display: flex;
+    justify-content: center;
+  }
+  .btn + .btn {
+    margin-left: 16rpx;
+  }
+  .btn-gray {
+    border: 2rpx solid #e8e8e8;
+    color: #9e9ea0;
+  }
+  .btn-yellow {
+    background-color: #b09053;
+    color: #ffffff;
+  }
 </style>

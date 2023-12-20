@@ -8,8 +8,6 @@ export const productOrderStatus = [
   "已取消",
 ];
 
-export const serviceOrderStatus = ["测量阶段", "设计阶段", "服务阶段"];
-
 // 商品订单列表及详情页的 mock
 export const productOrders = [
   {
