@@ -1,19 +1,19 @@
 <template>
   <view class="flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <FjSticky v-bind:customNavHeight="customNavHeight">
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
+    <fj-sticky v-bind:customNavHeight="customNavHeight">
       <u-tabs
         class="default-tabs"
-        :list="list"
+        :list="tabs"
         lineColor="#ff0200"
         :lineWidth="44"
         :lineHeight="3"
         @change="onChangeCouponType"
       ></u-tabs>
-    </FjSticky>
+    </fj-sticky>
     <view class="flex-col justify-start lsit-container-gap">
       <list-container
-        :showEmpty="showEmpty"
+        :showEmpty="!list.length"
         :showLoading="showLoading"
         emptyHint="暂无内容"
         :finished="finished"
@@ -21,10 +21,10 @@
         :emptyPaddingTop="170"
       >
         <view class="flex-col list">
-          <view class="flex-col list-item mt-12" v-for="(item, index) in couponListResData" :key="index">
-            <UnusedCoupon :item="item" v-if="item.status == 'pending-use'"></UnusedCoupon>
-            <UsedCoupon :item="item" v-if="item.status == 'used'"></UsedCoupon>
-            <ExpiredCoupon :item="item" v-if="item.status == 'expired'"></ExpiredCoupon>
+          <view class="flex-col list-item mt-12" v-for="(item, index) in list" :key="index">
+            <unused-coupon :item="item" v-if="item.status == 'pending-use'"></unused-coupon>
+            <used-coupon :item="item" v-if="item.status == 'used'"></used-coupon>
+            <expired-coupon :item="item" v-if="item.status == 'expired'"></expired-coupon>
           </view>
         </view>
       </list-container>
@@ -36,17 +36,17 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
-  import ExpiredCoupon from '../../../../pages/personal/coupon/components/ExpiredCoupon/ExpiredCoupon.vue';
+</template>
+
+<script>
+  import ExpiredCoupon from '@/pages/personal/coupon/components/ExpiredCoupon/ExpiredCoupon.vue';
   import FjSticky from '@/components/FjSticky.vue';
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import UnusedCoupon from '../../../../pages/personal/coupon/components/UnusedCoupon/UnusedCoupon.vue';
-  import UsedCoupon from '../../../../pages/personal/coupon/components/UsedCoupon/UsedCoupon.vue';
-  import { couponListResData } from './coupon.data.js';
-  
+  import UnusedCoupon from '@/pages/personal/coupon/components/UnusedCoupon/UnusedCoupon.vue';
+  import UsedCoupon from '@/pages/personal/coupon/components/UsedCoupon/UsedCoupon.vue';
+  import { couponList } from '@/mock/couponList.js';
+
   export default {
     components: { ExpiredCoupon, FjSticky, ListContainer, NavBar, UnusedCoupon, UsedCoupon },
     props: {},
@@ -55,7 +55,7 @@
         customNavHeight: 88,
         couponType: '',
         title: '优惠券中心',
-        list: [
+        tabs: [
           {
             name: '未使用（2）',
           },
@@ -66,13 +66,17 @@
             name: '已过期（2）',
           },
         ],
-        showEmpty: false,
         showLoading: false,
         finished: false,
-        couponListResData: couponListResData,
+        list: [],
       };
     },
-  
+    mounted() {
+      this.list = couponList.filter(
+        (item) => item.status == 'pending-use' || item.status == 'expired' || item.status == 'used'
+      );
+    },
+
     methods: {
       onChangeCouponType(args) {
         // 事件处理方法
@@ -80,9 +84,9 @@
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #ffffff;
     width: 100%;
@@ -129,4 +133,4 @@
       }
     }
   }
-  </style>
+</style>
