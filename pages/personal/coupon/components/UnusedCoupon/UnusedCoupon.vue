@@ -9,7 +9,7 @@
         </view>
         <text class="font mt-6">{{ '满' + item.triggerCondition + '元使用' }}</text>
       </view>
-      <view class="shrink-0 line"></view>
+      <view class="self-center shrink-0 line"></view>
       <view class="flex-col justify-between items-stretch flex-1 coupon-right">
         <view class="flex-col jusfity-start align-stretch">
           <text class="font-base title line-clamp-one">{{ item.title }}</text>
