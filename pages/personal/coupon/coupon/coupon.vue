@@ -8,13 +8,14 @@
         lineColor="#ff0200"
         :lineWidth="44"
         :lineHeight="3"
-        :activeStyle="{color: '#ff4d1d'}"
+        :activeStyle="{ color: '#ff4d1d' }"
         :scrollable="false"
+        :v-model="couponType"
         @change="onChangeCouponType"
       ></u-tabs>
     </fj-sticky>
     <view class="flex-col justify-start lsit-container-gap">
-      <list-container
+      <list-with-empty
         :showEmpty="!list.length"
         :showLoading="showLoading"
         emptyHint="暂无内容"
@@ -29,11 +30,12 @@
             <expired-coupon :item="item" v-if="item.status == 'expired'"></expired-coupon>
           </view>
         </view>
-      </list-container>
+        <coupon-empty slot="customEmpty"></coupon-empty>
+      </list-with-empty>
     </view>
     <view class="flex-col code-wrap code-pos"><image class="icon-code" src="/static/images/icon_scan_code.png" /></view>
     <view class="fixed-bottom-safe2 flex-col items-center footer-wrap">
-      <view class="cf-btn-black flex-col items-center btn-black-wrap">
+      <view class="cf-btn-black flex-col items-center btn-black-wrap" @click="onClick">
         <text class="btn-font btn-text">领券中心</text>
       </view>
     </view>
@@ -43,14 +45,15 @@
 <script>
   import ExpiredCoupon from '@/pages/personal/coupon/components/ExpiredCoupon/ExpiredCoupon.vue';
   import FjSticky from '@/components/FjSticky.vue';
-  import ListContainer from '@/components/ListContainer/ListContainer.vue';
+  import ListWithEmpty from '@/components/ListContainer/ListWithEmpty.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import UnusedCoupon from '@/pages/personal/coupon/components/UnusedCoupon/UnusedCoupon.vue';
   import UsedCoupon from '@/pages/personal/coupon/components/UsedCoupon/UsedCoupon.vue';
+  import CouponEmpty from '@/pages/personal/coupon/components/CouponEmpty/CouponEmpty.vue';
   import { couponList } from '@/mock/couponList.js';
 
   export default {
-    components: { ExpiredCoupon, FjSticky, ListContainer, NavBar, UnusedCoupon, UsedCoupon },
+    components: { ExpiredCoupon, FjSticky, ListWithEmpty, NavBar, UnusedCoupon, UsedCoupon, CouponEmpty },
     props: {},
     data() {
       return {
@@ -68,21 +71,42 @@
             name: '已过期（2）',
           },
         ],
-        showLoading: false,
+        unusedNumber: 0,
+        usedNumber: 0,
+        expiredNumber: 0,
+        showLoading: true,
         finished: false,
         list: [],
       };
     },
+    watch: {
+      couponType(val) {
+        if (val == 0) {
+          this.list = couponList.filter((item) => item.status == 'pending-use');
+        } else if (val == 1) {
+          this.list = couponList.filter((item) => item.status == 'used');
+        } else {
+          this.list = couponList.filter((item) => item.status == 'expired');
+        }
+      },
+    },
     mounted() {
-      this.list = couponList.filter(
-        (item) => item.status == 'pending-use' || item.status == 'expired' || item.status == 'used'
-      );
+      this.list = [];
+      this.unusedNumber = couponList.filter((item) => item.status == 'pending-use').length;
+      this.usedNumber = couponList.filter((item) => item.status == 'used').length;
+      this.expiredNumber = couponList.filter((item) => item.status == 'expired').length;
+      this.tabs[0].name = `未使用（${this.unusedNumber}）`;
+      this.tabs[1].name = `已使用（${this.usedNumber}）`;
+      this.tabs[2].name = `已过期（${this.expiredNumber}）`;
     },
 
     methods: {
       onChangeCouponType(args) {
         // 事件处理方法
         this.couponType = args.index;
+      },
+      onClick() {
+        uni.navigateTo({ url: '/pages/coupon/couponCenter' });
       },
     },
   };
