@@ -26,10 +26,15 @@
         type: String,
         default: 'date',
       },
+      date: {
+        type: Object,
+        default: () => null,
+      },
     },
     data() {
       const date = new Date();
-      const years = Array.from({ length: date.getFullYear() - 1990 + 1 }, (_, i) => 1990 + i);
+      const startYear = 1990;
+      const years = Array.from({ length: date.getFullYear() - startYear + 1 }, (_, i) => startYear + i);
       const months = Array.from({ length: 12 }, (_, i) => i + 1);
       const days = Array.from({ length: 31 }, (_, i) => i + 1);
       const hours = Array.from({ length: 24 }, (_, i) => i);
@@ -39,6 +44,7 @@
         title: 'datetime-picker-view',
         years,
         year: date.getFullYear(),
+        startYear,
         months,
         month: date.getMonth() + 1,
         days,
@@ -68,6 +74,14 @@
       displayMinute() {
         return ['datetime', 'time'].includes(this.type);
       },
+    },
+    mounted() {
+      this.year = this.date.year;
+      this.month = this.date.month;
+      this.day = this.date.day;
+      this.hour = this.date.hour;
+      this.minute = this.date.minute;
+      this.value = [this.year - this.startYear, this.month - 1, this.day - 1, this.hour - 1, this.minute - 1];
     },
     methods: {
       bindChange(e) {

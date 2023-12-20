@@ -30,18 +30,18 @@
       style="height: 20%"
     ></u-popup>
     <u-popup :show="datePopupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <data-time-picker-y-d></data-time-picker-y-d>
+      <date-time-picker-popup type="year-month" :date="date" @change="onDateChange"></date-time-picker-popup>
     </u-popup>
   </view>
 </template>
 
 <script>
-  import DataTimePickerYD from '@/pages/components/DataTimePickerYD/DataTimePickerYD.vue';
+  import DateTimePickerPopup from '@/pages/components/DateTimePickerPopup/DateTimePickerPopup.vue';
   import BonusItem from './components/BonusItem/BonusItem.vue';
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
 
   export default {
-    components: { DataTimePickerYD, BonusItem, ListContainer },
+    components: { DateTimePickerPopup, BonusItem, ListContainer },
     props: {
       list: {
         type: Array,
@@ -64,6 +64,10 @@
         datePopupVisible: false,
         showLoading: false,
         finished: false,
+        date: {
+          year: 2023,
+          month: 9,
+        },
       };
     },
 
@@ -76,6 +80,11 @@
       },
       onClose() {
         this.statusPopupVisible = false;
+        this.datePopupVisible = false;
+      },
+      onDateChange(val) {
+        this.date.year = val.year;
+        this.date.month = val.month;
         this.datePopupVisible = false;
       },
     },
