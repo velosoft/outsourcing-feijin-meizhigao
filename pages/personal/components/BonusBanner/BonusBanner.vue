@@ -3,18 +3,18 @@
     <view class="flex-col self-stretch header">
       <view class="flex-row items-center self-stretch">
         <text class="title">当前可用收纳币</text>
-        <image class="tips-icon ml-8" src="../../../../static/images/icon_tips.png" @click="onClick" />
+        <image class="tips-icon ml-8" src="/static/images/icon_tips.png" @click="onClick" />
       </view>
-      <text class="num">{{coins.available}}</text>
+      <text class="num">{{ coins.available }}</text>
     </view>
     <view class="flex-row mt-32">
       <view class="flex-col items-center">
         <text class="label">累计获得收纳币</text>
-        <text class="value mt-4">{{coins.total}}</text>
+        <text class="value mt-4">{{ coins.total }}</text>
       </view>
       <view class="flex-col items-center ml-30">
         <text class="label">冻结收纳币</text>
-        <text class="value mt-4">{{coins.freeze}}</text>
+        <text class="value mt-4">{{ coins.freeze }}</text>
       </view>
     </view>
   </view>
@@ -30,7 +30,7 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/personal/bonusPoint/interests/interests' });
+        uni.navigateTo({ url: '/pages/personal/bonusPoint/memberRight/memberRight' });
       },
     },
   };

@@ -234,7 +234,7 @@
       }
     },
     {
-      "path": "pages/personal/bonusPoint/interests/interests",
+      "path": "pages/personal/bonusPoint/memberRight/memberRight",
       "style": {
         "navigationBarTitleText": "权益说明",
         "navigationBarTextStyle": "black",
