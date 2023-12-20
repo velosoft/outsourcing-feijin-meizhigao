@@ -4,43 +4,54 @@
     <view class="flex-col relative container">
       <view class="flex-col">
         <view class="flex-col items-start self-center">
-          <text class="num" v-if="true">已连续签 3 天</text>
-          <text class="num" v-if="false">今日已签到</text>
+          <text class="num" v-if="checkinNumber > 1">已连续签 {{ checkinNumber }} 天</text>
+          <text class="num" v-else>今日已签到</text>
         </view>
         <view class="flex-col items-center self-stretch box">
           <view>
             <text class="value">恭喜您获得</text>
-            <text class="mark">20</text>
+            <text class="mark">{{ bonus }}</text>
             <text class="value">积分</text>
           </view>
           <text class="value label mt-8">连续签到奖励更丰富</text>
         </view>
       </view>
       <view class="flex-col mt-24">
-        <view class="cf-btn-black flex-col items-center text-wrapper" @click="onClick"><text class="value btn-text">知道了</text></view>
+        <view class="cf-btn-black flex-col items-center text-wrapper" @click="onClick"
+          ><text class="value btn-text">知道了</text></view
+        >
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
-    props: {},
+    props: {
+      checkinNumber: {
+        type: Number,
+        default: 0,
+      },
+      bonus: {
+        type: Number,
+        default: 0,
+      },
+    },
     data() {
       return {};
     },
-  
+
     methods: {
       onClick() {
-      // 事件处理方法
-      this.$emit('closeDialog');
-    },
+        // 事件处理方法
+        this.$emit('closeDialog');
+      },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     border-radius: 20rpx;
     height: 674rpx;
@@ -93,4 +104,4 @@
       }
     }
   }
-  </style>
+</style>
