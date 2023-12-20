@@ -1,28 +1,34 @@
 <template>
-<view class="height-full flex-col page">
-  <NavBar :hasBack="false" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
-  <view class="flex-col container flex-1">
-    <CenterHeader></CenterHeader>
-    <NumberCard class="number-card-top"></NumberCard>
-    <OrderCard class="order-card"></OrderCard>
-    <ServiceCard class="service-top"></ServiceCard>
+  <view class="height-full flex-col page">
+    <nav-bar
+      :hasBack="false"
+      :title="title"
+      :fixed="true"
+      :isShow="true"
+      background="#f8f8f8"
+    ></nav-bar>
+    <view class="flex-col container flex-1">
+      <center-header></center-header>
+      <number-card class="number-card-top"></number-card>
+      <order-card class="order-card"></order-card>
+      <service-card class="service-top"></service-card>
+    </view>
   </view>
-</view>
 </template>
 
 <script>
-import CenterHeader from '../personal/components/CenterHeader/CenterHeader.vue';
-import NavBar from '@/components/NavBar/NavBar.vue';
-import NumberCard from '../personal/components/NumberCard/NumberCard.vue';
-import OrderCard from '../personal/components/OrderCard/OrderCard.vue';
-import ServiceCard from '../personal/components/ServiceCard/ServiceCard.vue';
+import CenterHeader from "../personal/components/CenterHeader/CenterHeader.vue";
+import NavBar from "@/components/NavBar/NavBar.vue";
+import NumberCard from "../personal/components/NumberCard/NumberCard.vue";
+import OrderCard from "../personal/components/OrderCard/OrderCard.vue";
+import ServiceCard from "../personal/components/ServiceCard/ServiceCard.vue";
 
 export default {
   components: { CenterHeader, NavBar, NumberCard, OrderCard, ServiceCard },
   props: {},
   data() {
     return {
-      title: '我的',
+      title: "我的",
     };
   },
 
