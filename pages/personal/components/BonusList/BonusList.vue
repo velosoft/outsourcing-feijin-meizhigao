@@ -1,6 +1,12 @@
 <template>
   <view class="flex-col wrap">
-    <u-tabs :list="tabs" lineColor="#b09053" :lineWidth="23" :lineHeight="2">
+    <u-tabs
+      class="u-tabs-border-bottom u-tabs-bg-white"
+      :list="tabs"
+      lineColor="#b09053"
+      :lineWidth="23"
+      :lineHeight="2"
+    >
       <view class="flex-row tabs-right-slot" slot="right">
         <view class="flex-row items-center select-data" @click="onStatusSelect">
           <text class="select-label">全部</text>
@@ -14,11 +20,12 @@
     </u-tabs>
     <view class="flex-col">
       <scroll-view :scroll-y="true" class="scroll-height">
-        <list-container :showEmpty="!list.length" :showLoading="showLoading" :finished="finished">
+        <list-with-empty :showEmpty="!list.length" :showLoading="showLoading" :finished="finished">
           <view class="flex-col list">
             <bonus-Item :bonusItem="item" v-for="(item, index) in list" :key="index"></bonus-Item>
           </view>
-        </list-container>
+          <view slot="customEmpty"> <bonus-empty></bonus-empty></view>
+        </list-with-empty>
       </scroll-view>
     </view>
     <u-popup
@@ -38,10 +45,11 @@
 <script>
   import DateTimePickerPopup from '@/pages/components/DateTimePickerPopup/DateTimePickerPopup.vue';
   import BonusItem from './components/BonusItem/BonusItem.vue';
-  import ListContainer from '@/components/ListContainer/ListContainer.vue';
+  import BonusEmpty from '@/pages/personal/components/BonusEmpty/BonusEmpty.vue';
+  import ListWithEmpty from '@/components/ListContainer/ListWithEmpty.vue';
 
   export default {
-    components: { DateTimePickerPopup, BonusItem, ListContainer },
+    components: { DateTimePickerPopup, BonusItem, ListWithEmpty, BonusEmpty },
     props: {
       list: {
         type: Array,
