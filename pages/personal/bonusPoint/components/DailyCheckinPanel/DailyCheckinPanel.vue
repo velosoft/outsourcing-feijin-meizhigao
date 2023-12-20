@@ -6,17 +6,15 @@
         <text class="self-start day-num ml-6">{{ checkinNumber }}</text>
         <text class="self-center title ml-6">天</text>
       </view>
-      <view class="flex-col">
+      <view class="flex-col" @click="onClick">
         <view
           class="flex-col items-center btn-active justify-center"
-          @click="onClick"
           v-if="items[checkinNumber].status == 'pending'"
         >
           <text class="btn-text btn-text-active">立即签到</text>
         </view>
         <view
           class="flex-col items-center btn-inactive justify-center"
-          @click="onClick_1"
           v-else
         >
           <text class="btn-text btn-text-inactive">已签到</text>
@@ -54,18 +52,23 @@
         </view>
       </view>
     </view>
+    <u-popup :show="popupVisible" @close="onClose" mode="center" :round="12" style="width:309px" :safeAreaInsetBottom="false">
+    <SignDialog></SignDialog>
+  </u-popup>
   </view>
 </template>
 
 <script>
+import SignDialog from '../../../../../pages/personal/bonusPoint/components/SignDialog/SignDialog.vue';
 import { dailyCheckinList } from "@/mock/personal/bonus";
 export default {
-  components: {},
+  components: { SignDialog },
   props: {},
   data() {
     return {
       checkinNumber: 2,
       items: dailyCheckinList,
+      popupVisible: false,
     };
   },
 
@@ -73,6 +76,10 @@ export default {
     onClick() {
       this.items[this.checkinNumber].status = "done";
       this.checkinNumber++;
+      this.popupVisible = true;
+    },
+    onClose() {
+      this.popupVisible = false;
     },
     onClick_1() {
       this.checkinNumber--;
