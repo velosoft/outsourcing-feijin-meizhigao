@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col wrap">
-    <PopCouponItem></PopCouponItem>
+    <pop-coupon-item></pop-coupon-item>
     <u-button
       class="cf-btn-black button"
       text="立即领取"
@@ -10,18 +10,18 @@
       @click="onClick"
     ></u-button>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import PopCouponItem from '@/pages/personal/coupon/components/PopCouponItem/PopCouponItem.vue';
-  
+
   export default {
     components: { PopCouponItem },
     props: {},
     data() {
       return {};
     },
-  
+
     methods: {
       onClick(args) {
         // 事件处理方法
@@ -29,15 +29,15 @@
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
-    padding: 48rpx 32rpx 152rpx;
+    padding: 50rpx 30rpx 152rpx;
     background-color: #ffffff;
     border-radius: 20rpx;
     .button {
-      margin: 144rpx 40rpx 0;
+      margin: 140rpx 36rpx 0;
     }
   }
-  </style>
+</style>

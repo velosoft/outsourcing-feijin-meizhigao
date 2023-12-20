@@ -4,34 +4,48 @@
     <view class="flex-row items-center relative">
       <view class="flex-col coupon-left items-center">
         <view class="flex-row items-baseline">
-          <text class="price-num">10</text>
-          <text class="currency ml-12">元</text>
+          <text class="price-num">{{ item.amount }}</text>
+          <text class="currency ml-8">元</text>
         </view>
-        <text class="price-label mt-4">满100元使用</text>
+        <text class="price-label mt-4">满{{ item.triggerCondition }}元使用</text>
       </view>
       <view class="line"></view>
-      <view class="flex-col items-start flex-1 coupin-right">
-        <text class="line-clamp-one title">收纳服务优惠券</text>
-        <view class="flex-col scope-wrap items-center"><text class="time coupon-scope">部分服务可用</text></view>
-        <text class="time time-text">2023.06.01-2023.07.01</text>
+      <view class="flex-col items-start flex-1 coupon-right">
+        <text class="line-clamp-one title">{{ item.title }}</text>
+        <view class="flex-col scope-wrap items-center">
+          <text class="font-gray coupon-scope">{{ item.applicableTo }}</text>
+        </view>
+        <text class="font-gray mt-14">{{ item.validity.start + '-' + item.validity.end }}</text>
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
-    props: {},
+    props: {
+      item: {
+        type: Object,
+        default: () => ({
+          status: 'pending-use',
+          amount: 22,
+          triggerCondition: 180,
+          title: '餐饮优惠券',
+          validity: { start: '2023.06.25', end: '2023.07.31' },
+          applicableTo: '适用餐饮服务',
+        }),
+      },
+    },
     data() {
       return {};
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .coupon-bg {
     width: 592rpx;
     height: 268rpx;
@@ -75,7 +89,7 @@
     width: 2rpx;
     height: 220rpx;
   }
-  .coupin-right {
+  .coupon-right {
     padding: 55rpx;
     .title {
       color: #000000;
@@ -86,23 +100,21 @@
       width: 224rpx;
     }
     .scope-wrap {
-      margin-top: 16rpx;
+      margin-top: 18rpx;
       padding: 0 4rpx;
       border-radius: 8rpx;
       height: 32rpx;
       border: solid 1rpx #9e9ea0;
+      box-sizing: border-box;
       .coupon-scope {
         margin: 0 8rpx;
       }
     }
-    .time {
+    .font-gray {
       font-size: 20rpx;
       font-family: 'PingFang SC';
       line-height: 28rpx;
       color: #8c8f95;
     }
-    .time-text {
-      margin-top: 32rpx;
-    }
   }
-  </style>
+</style>

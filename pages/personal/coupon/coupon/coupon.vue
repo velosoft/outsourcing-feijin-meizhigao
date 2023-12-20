@@ -49,7 +49,7 @@
       style="width: 327px"
       :safeAreaInsetBottom="false"
     >
-      <PopReceiveCoupon @closeDialog="closeDialog"></PopReceiveCoupon>
+      <pop-receive-coupon @closeDialog="closeDialog"></pop-receive-coupon>
     </u-popup>
   </view>
 </template>
@@ -66,7 +66,16 @@
   import PopReceiveCoupon from '@/pages/personal/coupon/components/PopReceiveCoupon/PopReceiveCoupon.vue';
 
   export default {
-    components: { ExpiredCoupon, FjSticky, ListWithEmpty, NavBar, UnusedCoupon, UsedCoupon, CouponEmpty, PopReceiveCoupon },
+    components: {
+      ExpiredCoupon,
+      FjSticky,
+      ListWithEmpty,
+      NavBar,
+      UnusedCoupon,
+      UsedCoupon,
+      CouponEmpty,
+      PopReceiveCoupon,
+    },
     props: {},
     data() {
       return {
