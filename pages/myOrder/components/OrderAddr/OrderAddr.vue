@@ -1,13 +1,13 @@
 <template>
   <view class="flex-col relative order-addr">
     <view class="flex-row addr">
-      <image class="shrink-0 self-start addr-icon" src="../../../../static/images/icon_addr.png" />
+      <image class="shrink-0 self-start addr-icon" src="/static/images/icon_addr.png" />
       <view class="flex-col items-start flex-1 ml-12">
         <view class="flex-row">
           <text class="name">{{ addr.receiverName }}</text>
           <text class="name ml-4">{{ addr.receiverPhone }}</text>
         </view>
-        <text class="addr mt-8">{{ addr.receiverAddress }}</text>
+        <text class="line-clamp-one addr mt-8">{{ addr.receiverAddress }}</text>
       </view>
     </view>
     <image class="bottom-line" src="@/static/images/icon_addr_line2.png" />
@@ -55,9 +55,9 @@
   }
   .bottom-line {
     position: absolute;
-    left: 24rpx;
+    left: 16rpx;
     bottom: 0;
     height: 4rpx;
-    width: calc(100% - 48rpx);
+    width: calc(100% - 32rpx);
   }
 </style>
