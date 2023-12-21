@@ -2,7 +2,7 @@
   <view class="flex-col wrap">
     <view class="text-wrapper flex-row justify-between items-center">
       <text class="title">我的订单</text>
-      <view class="flex-row items-center">
+      <view class="flex-row items-center" @click="gotoOrders">
         <text class="value right-text">查看全部</text>
         <image class="shrink-0 image ml-4" src="/static/images/icon_right_arrow_03.png" />
       </view>
@@ -35,7 +35,7 @@
         </view>
         <text class="self-center value mt-12_1 mt-12">待收货</text>
       </view>
-      <view class="flex-col item-flex equal-division-item">
+      <view class="flex-col item-flex equal-division-item" @click="gotoComments">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_comment.png" />
           <view class="badge-pos">
@@ -74,7 +74,14 @@
       };
     },
 
-    methods: {},
+    methods: {
+      gotoOrders() {
+        uni.navigateTo({ url: '/pages/myOrder/myOrder/myOrder' });
+      },
+      gotoComments() {
+        uni.navigateTo({ url: '/pages/myOrder/productComments/productComments' });
+      },
+    },
   };
 </script>
 

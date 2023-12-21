@@ -338,7 +338,7 @@
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
-    },    
+    },
     {
       "path": "pages/personal/address/addressEditor/addressEditor",
       "style": {

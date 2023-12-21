@@ -3,25 +3,21 @@
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" :background="navBarColor"></NavBar>
     <view class="flex-col flex-1 body">
       <view class="flex-row items-center status">
-        <view class="flex-col items-start">
-          <image
-            class="icon-status"
-            src="/static/images/icon_status_clock.png"
-            v-if="order.orderStatus === '待付款' || order.orderStatus === '待发货' || order.orderStatus === '待收货'"
-          />
-          <image
-            class="icon-status"
-            src="/static/images/icon_status_close.png"
-            v-if="order.orderStatus === '交易关闭'"
-          />
-          <image class="icon-status" src="/static/images/icon_status_ok.png" v-if="order.orderStatus === '交易完成'" />
-          <image class="icon-status" src="/static/images/icon_status_info.png" v-if="order.orderStatus === '已取消'" />
-        </view>
-        <text class="status-text ml-12">{{ order.orderStatus }}</text>
-        <view class="flex-row items-center ml-12 wait-pay" v-if="order.orderStatus === '待付款'">
-          <text>支付剩余</text>
-          <u-count-down class="ml-4" :time="30 * 60 * 1000" format="mm:ss"> </u-count-down>
-          <text class="ml-4">分钟</text>
+        <image
+          class="icon-status"
+          src="/static/images/icon_status_clock.png"
+          v-if="order.orderStatus === '待付款' || order.orderStatus === '待发货' || order.orderStatus === '待收货'"
+        />
+        <image class="icon-status" src="/static/images/icon_status_close.png" v-if="order.orderStatus === '交易关闭'" />
+        <image class="icon-status" src="/static/images/icon_status_ok.png" v-if="order.orderStatus === '交易完成'" />
+        <image class="icon-status" src="/static/images/icon_status_info.png" v-if="order.orderStatus === '已取消'" />
+        <view class="flex-col">
+          <text class="status-text ml-12">{{ order.orderStatus }}</text>
+          <view class="flex-row items-center ml-12 wait-pay" v-if="order.orderStatus === '待付款'">
+            <text>支付剩余</text>
+            <u-count-down class="ml-4" :time="30 * 60 * 1000" format="mm:ss"> </u-count-down>
+            <text class="ml-4">分钟</text>
+          </view>
         </view>
       </view>
       <view class="flex-col relative detail">
@@ -30,52 +26,59 @@
         <OrderPayment class="mt-12" :order="order"></OrderPayment>
         <OrderSummary class="mt-12" :order="order"></OrderSummary>
       </view>
-      <view class="fixed-bottom-safe flex-col justify-start items-end footer">
-        <view class="flex-col actions">
-          <view class="flex-row self-stretch" v-if="order.orderStatus === '待付款'">
-            <u-button text="取消订单" type="primary" shape="circle" :plain="true"></u-button>
-            <u-button class="ml-10" text="去付款" type="primary" shape="circle" v-if="!order.isSeckill"></u-button>
-            <u-button
-              class="cf-btn-black ml-10"
-              text="去付款"
-              type="primary"
-              shape="circle"
-              v-if="order.isSeckill"
-            ></u-button>
-          </view>
-          <view class="flex-col justify-start self-start" v-if="order.orderStatus === '待发货'">
-            <u-button text="申请售后" type="primary" shape="circle" :plain="true"></u-button>
-          </view>
-          <view class="flex-row self-stretch" v-if="order.orderStatus === '待收货'">
-            <u-button text="申请售后" type="primary" shape="circle" :plain="true"></u-button>
-            <u-button class="ml-10" text="确认收货" type="primary" shape="circle" v-if="!order.isSeckill"></u-button>
-            <u-button
-              class="cf-btn-black ml-10"
-              text="确认收货"
-              type="primary"
-              shape="circle"
-              v-if="order.isSeckill"
-            ></u-button>
-          </view>
+      <view class="fixed-bottom-safe flex-row justify-end footer">
+        <view class="btn btn-plain" v-if="order.orderStatus === '待付款'" @click="onShowCancel">
+          <text>取消订单</text>
+        </view>
+        <view class="btn btn-primary" v-if="order.orderStatus === '待付款'">
+          <text>去付款</text>
+        </view>
+        <view class="btn btn-plain" v-if="order.orderStatus === '待发货' || order.orderStatus === '待收货'">
+          <text>申请售后</text>
+        </view>
+        <view class="btn btn-primary" v-if="order.orderStatus === '待收货'" @click="onShowConfirm">
+          <text>确认收货</text>
+        </view>
+        <view class="btn btn-plain" v-if="order.orderStatus === '交易完成' && !order.hasInvoice">
+          <text>申请开票</text>
+        </view>
+        <view class="btn btn-plain" v-if="order.orderStatus === '交易完成' && order.hasInvoice">
+          <text>查看发票</text>
+        </view>
+        <view class="btn btn-plain" v-if="order.orderStatus === '交易完成'" @click="gotoComment">
+          <text>查看评价</text>
+        </view>
+        <view class="btn btn-plain" v-if="order.orderStatus === '交易关闭' || order.orderStatus === '已取消'">
+          <text>删除记录</text>
+        </view>
+        <view
+          class="btn btn-plain"
+          v-if="order.orderStatus === '交易完成' || order.orderStatus === '交易关闭' || order.orderStatus === '已取消'"
+        >
+          <text>再次购买</text>
+        </view>
+        <view class="flex-col actions" v-if="false">
           <view class="flex-row self-stretch" v-if="order.orderStatus === '已取消' || order.orderStatus === '交易关闭'">
-            <u-button text="删除记录" type="primary" shape="circle" :plain="true"></u-button>
+            <u-button text="" type="primary" shape="circle" :plain="true"></u-button>
             <u-button class="ml-8" text="再次购买" type="primary" shape="circle" :plain="true"></u-button>
           </view>
           <view class="flex-row self-start" v-if="order.orderStatus === '交易完成'">
             <u-button text="申请开票" type="primary" shape="circle" :plain="true"></u-button>
-            <u-button
-              class="ml-8"
-              text="查看评价"
-              type="primary"
-              shape="circle"
-              :plain="true"
-              @click="gotoComment"
-            ></u-button>
+            <u-button class="ml-8" text="查看评价" type="primary" shape="circle" :plain="true"></u-button>
             <u-button class="ml-8" text="再次购买" type="primary" shape="circle" :plain="true"></u-button>
           </view>
         </view>
       </view>
     </view>
+    <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
+      <pop-order-cancel :reasons="reasons" @click="onCloseCancel"></pop-order-cancel>
+    </u-popup>
+    <confirm-panel
+      :isShow="showConfirm"
+      content="您确定已收到货了吗？"
+      @cancel="onCloseConfirm"
+      @confirm="onCloseConfirm"
+    ></confirm-panel>
   </view>
 </template>
 
@@ -86,9 +89,12 @@
   import OrderProducts from '../../../pages/myOrder/components/OrderProducts/OrderProducts.vue';
   import OrderSummary from '../../../pages/myOrder/components/OrderSummary/OrderSummary.vue';
   import { productOrders } from '../../../mock/personal/orders';
+  import { cancelReasons } from '@/mock/personal/orders.js';
+  import ConfirmPanel from '@/components/ConfirmPanel.vue';
+  import PopOrderCancel from '@/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
 
   export default {
-    components: { NavBar, OrderAddr, OrderPayment, OrderProducts, OrderSummary },
+    components: { NavBar, OrderAddr, OrderPayment, OrderProducts, OrderSummary, PopOrderCancel, ConfirmPanel },
     props: {},
     data() {
       return {
@@ -96,6 +102,9 @@
         navBarColor: '#b09053',
         order: productOrders[0],
         title: '订单详情',
+        showCancel: false,
+        showConfirm: false,
+        reasons: cancelReasons,
       };
     },
     onLoad(option) {
@@ -120,6 +129,18 @@
     methods: {
       gotoComment() {
         uni.navigateTo({ url: '/pages/myOrder/productComment/productComment' });
+      },
+      onShowCancel() {
+        this.showCancel = true;
+      },
+      onCloseCancel() {
+        this.showCancel = false;
+      },
+      onShowConfirm() {
+        this.showConfirm = true;
+      },
+      onCloseConfirm() {
+        this.showConfirm = false;
       },
     },
   };
@@ -167,11 +188,31 @@
     border-radius: 16rpx 16rpx 0rpx 0rpx;
   }
   .footer {
-    padding: 32rpx 0 96rpx;
+    padding: 32rpx 48rpx;
     background-color: #ffffff;
-    width: 750rpx;
   }
   .actions {
     margin-right: 48rpx;
+  }
+  .btn {
+    border-radius: 38rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    width: 164rpx;
+    height: 68rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn + .btn {
+    margin-left: 20rpx;
+  }
+  .btn-plain {
+    border: 2px solid #dec9a0;
+    color: #b09053;
+  }
+  .btn-primary {
+    background-color: #b09053;
+    color: #ffffff;
   }
 </style>

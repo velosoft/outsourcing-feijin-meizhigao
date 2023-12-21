@@ -16,6 +16,14 @@
           lineWidth="58rpx"
           lineHeight="18rpx"
           :scrollable="true"
+          :activeStyle="{
+            color: '#000000',
+            fontWeight: 500,
+          }"
+          :inactiveStyle="{
+            color: '#9E9EA0',
+            fontWeight: 500,
+          }"
           @change="onChangeStatus"
         ></u-tabs>
       </FjSticky>
