@@ -2,29 +2,31 @@
   <view class="flex-col wrap">
     <text class="self-start title text">获取消费值</text>
     <view class="flex-row self-stretch mt-12">
-      <image class="image" src="../../../../../static/images/ab5e1562a93e7c3f8a03343d9b76e4c2.png" />
+      <image class="image" src="/static/images/icon_consumption.png" />
       <view class="flex-col items-start flex-1 self-center label-wrap">
         <text class="title title-text">购买更多宝贝</text>
         <text class="line-clamp-one desc mt-4">购买商品、服务、课程可提升消费值</text>
       </view>
-      <u-button class="cf-btn-black button" text="去购买" type="primary" size="mini" shape="circle"></u-button>
+      <view class="flex-col group">
+        <u-button class="cf-btn-black" text="去购买" type="primary" size="mini" shape="circle"></u-button>
+      </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .wrap {
     padding: 32rpx 24rpx;
     background-color: #ffffff;
@@ -56,9 +58,10 @@
         width: 352rpx;
       }
     }
-    .button {
-      align-self: flex-start;
+    .group {
       margin-left: 40rpx;
+      width: 128rpx;
+      height: 56rpx;
     }
   }
-</style>
+  </style>

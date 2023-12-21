@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :title="title" :fixed="true" :isShow="true" background="#111111"></NavBar>
+    <NavBar :title="title" :fixed="true" :isShow="true" background="#111111" titleColor="#ffffff"></NavBar>
     <view class="flex-col flex-1 container">
       <view class="flex-col chart">
         <view class="flex-col items-start">
@@ -11,7 +11,7 @@
       </view>
       <view class="flex-col describe">
         <ConsumptionValue></ConsumptionValue>
-        <ConsumptionExplanation class="group_12"></ConsumptionExplanation>
+        <ConsumptionExplanation class="consum-relative"></ConsumptionExplanation>
       </view>
     </view>
   </view>
@@ -66,7 +66,7 @@
       }
       .describe {
         padding: 24rpx 24rpx 32rpx;
-        .group_12 {
+        .consum-relative {
           position: relative;
         }
       }
