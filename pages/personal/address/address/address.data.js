@@ -1,0 +1,42 @@
+export const addressList = [
+  {
+    aid: '001',
+    address: '东宏国际广场',
+    addressDetial: '广州市天河区天河中山大道190号',
+    nickname: '张三',
+    tel: '15812345678',
+    isNormal: true,
+  },
+  {
+    aid: '002',
+    address: '东宏国际广场',
+    addressDetial: '广州市天河区天河中山大道190号',
+    nickname: '张三',
+    tel: '15812345678',
+    isNormal: true,
+  },
+  {
+    aid: '003',
+    address: '兵希江苏省苏州市昆山市江苏省苏州市昆山市江苏省苏州市昆山市江苏省苏州市昆山市',
+    addressDetial: '江苏省苏州市昆山市江苏省苏州市昆山市江苏省苏州市昆山市江苏省苏州市昆山市江苏省苏州市昆山市',
+    nickname: '张三',
+    tel: '15812345678',
+    isNormal: true,
+  },
+  {
+    aid: '004',
+    address: '东宏国际广场',
+    addressDetial: '广州市天河区天河中山大道190号',
+    nickname: '张三',
+    tel: '15812345678',
+    isNormal: true,
+  },
+  {
+    aid: '005',
+    address: '东宏国际广场',
+    addressDetial: '广州市天河区天河中山大道190号',
+    nickname: '张三',
+    tel: '15812345678',
+    isNormal: true,
+  },
+];

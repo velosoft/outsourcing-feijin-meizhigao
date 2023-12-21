@@ -2,17 +2,23 @@
   <view class="flex-col page height-full">
     <NavBar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col wrap">
-      <scroll-view>
-        <list-container :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
-          <u-cell-group>
+      <scroll-view :scroll-y="true">
+        <list-container
+          :showEmpty="!addressList.length"
+          :showLoading="showLoading"
+          emptyHint="暂无内容~"
+          :finished="finished"
+          imgSrc="/static/images/icon_empty_reseller.png"
+        >
+          <u-cell-group v-model="radiovalue" :border="false">
             <view class="flex-col">
-              <AddressItem class="list-item mt-12" v-for="(item, index) in items" :key="index"></AddressItem>
+              <AddressItem class="list-item mt-12" v-for="(item, index) in addressList" :key="index" :addressItem="item"></AddressItem>
             </view>
           </u-cell-group>
         </list-container>
       </scroll-view>
     </view>
-    <view class="fixed-bottom-safe2 flex-col footer-btn">
+    <view class="fixed-bottom-safe flex-col footer-btn">
       <u-button
         class="cf-btn-black"
         type="primary"
@@ -29,6 +35,7 @@
   import AddressItem from '../../../../pages/personal/address/components/AddressItem/AddressItem.vue';
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
+  import {addressList} from './address.data.js'
 
   export default {
     components: { AddressItem, ListContainer, NavBar },
@@ -39,7 +46,7 @@
         showEmpty: false,
         showLoading: false,
         finished: false,
-        items: [null, null],
+        addressList: addressList,
       };
     },
 
@@ -70,7 +77,8 @@
       }
     }
     .footer-btn {
-      padding: 30rpx;
+      padding: 32rpx;
+      background-color: #f8f8f8;
     }
   }
 </style>

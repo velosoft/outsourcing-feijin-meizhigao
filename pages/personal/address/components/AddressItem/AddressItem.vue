@@ -1,21 +1,28 @@
 <template>
   <view class="flex-col wrap">
     <view class="flex-col group">
-      <text class="line-clamp-one address">东宏国际广场</text>
-      <text class="value mt-12 mt-4">广州市天河区天河中山大道190号</text>
-      <view class="flex-row items-center mt-12 mt-4">
-        <text class="value">张三</text>
-        <text class="value ml-20">15812345678</text>
+      <text class="line-clamp-one address">{{ addressItem.address }}</text>
+      <text class="value mt-12 mt-4">{{ addressItem.addressDetial }}</text>
+      <view class="flex-row address-center mt-12 mt-4">
+        <text class="value">{{ addressItem.nickname }}</text>
+        <text class="value ml-20">{{ addressItem.tel }}</text>
       </view>
     </view>
-    <view class="flex-row justify-between items-center header">
-      <u-radio v-model="v_model" label="设为默认地址" activeColor="#b09053"></u-radio>
+    <view class="flex-row justify-between address-center header">
+      <u-radio v-model="v_model" label="设为默认地址" activeColor="#b09053" @change="radioChange"></u-radio>
       <view class="flex-row right">
         <image class="icon-editor" src="/static/images/icon_edit.png" @click="onClick" />
         <image class="icon-delete ml-28" src="/static/images/icon_delete.png" @click="onOpenDialog" />
       </view>
     </view>
-    <confirm-panel :isShow="showDialog" :isnormal="false" title="删除收获地址" content="您确定删除该收货地址吗？" @cancel="onCancel" @confirm="onConfirm"></confirm-panel>
+    <confirm-panel
+      :isShow="showDialog"
+      :isnormal="false"
+      title="删除收获地址"
+      content="您确定删除该收货地址吗？"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    ></confirm-panel>
   </view>
 </template>
 
@@ -23,25 +30,44 @@
   import ConfirmPanel from '@/components/ConfirmPanel.vue';
   export default {
     components: { ConfirmPanel },
-    props: {},
+    props: {
+      addressItem: {
+        type: Object,
+        default: () => ({
+          aid: '001',
+          address: '东宏国际广场',
+          addressDetial: '广州市天河区天河中山大道190号',
+          nickname: '张三',
+          tel: '15812345678',
+          isNormal: true,
+        }),
+      },
+    },
     data() {
       return {
-        v_model: '',
         showDialog: false,
+        v_model: '',
       };
     },
 
     methods: {
+      radioChange(n) {
+        // 事件处理方法
+        console.log('radioChange', n);
+      },
       onClick() {
         uni.navigateTo({ url: '/pages/personal/address/addressEditor/addressEditor' });
       },
-      onOpenDialog(){
+      onOpenDialog() {
+        // 事件处理方法
         this.showDialog = true;
       },
       onCancel() {
+        // 事件处理方法
         this.showDialog = false;
       },
       onConfirm() {
+        // 事件处理方法
         this.showDialog = false;
       },
     },

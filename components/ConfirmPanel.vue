@@ -25,7 +25,8 @@
           </view>
         </view>
       </view>
-      <view class="flex-col dialog" v-else>
+      <view class="flex-col items-center dialog" v-else>
+        <view class="dialog-title" v-if="title">{{ title }}</view>
         <view class="flex-col self-center dialog-content"
           ><text class="dialog-text">{{ content }}</text></view
         >
@@ -184,11 +185,19 @@ export default {
     padding: 64rpx 48rpx 48rpx;
     background-color: #ffffff;
     border-radius: 16rpx;
+
+    .dialog-title {
+      color: #333333;
+      font-weight: bold;
+      padding: 30upx;
+      line-break: 1em;
+      border-bottom: 1px solid #eaeaea;
+    }
     .dialog-content {
       .dialog-text {
-        color: #030305;
+        color: #8C8F95;
         font-size: 36rpx;
-        font-family: 苹方;
+        font-family: PingFang SC;
         line-height: 36rpx;
       }
     }
@@ -222,7 +231,7 @@ export default {
       }
       .dialog-font {
         font-size: 32rpx;
-        font-family: 苹方;
+        font-family: PingFang SC;
         line-height: 32rpx;
       }
     }
