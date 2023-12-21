@@ -5,7 +5,7 @@
       <view class="flex-row justify-between items-center self-stretch">
         <view class="flex-col items-start" @click="onClick">
           <text class="label-text">累计获得收益(收纳币)</text>
-          <text class="label-num mt-4">{{totalIncome}}</text>
+          <text class="label-num mt-4">{{numShare.totalIncome}}</text>
         </view>
         <view class="flex-row button items-center" @click="onClick_1">
           <image class="shrink-0 self-center icon-share" src="/static/images/icon_share_card.png" />
@@ -15,11 +15,11 @@
       <view class="flex-row mt-32">
         <view class="flex-col items-start">
           <text class="font num-label">推广总人数</text>
-          <text class="num mt-4">{{promotionNum}}</text>
+          <text class="num mt-4">{{numShare.promotionNum}}</text>
         </view>
         <view class="flex-col ml-40">
           <text class="font num-label">分销订单数</text>
-          <text class="num mt-4">{{distributionNum}}</text>
+          <text class="num mt-4">{{numShare.distributionNum}}</text>
         </view>
       </view>
     </view>
@@ -30,9 +30,7 @@
   export default {
     components: {},
     props: {
-      totalIncome: { type: String, default: `2689` },
-      promotionNum: { type: String, default: `150` },
-      distributionNum: { type: String, default: `500` },
+      numShare: { type: Object, default: () => ({ totalIncome: 2689, promotionNum: 150, distributionNum: 500 }) },
     },
     data() {
       return {};

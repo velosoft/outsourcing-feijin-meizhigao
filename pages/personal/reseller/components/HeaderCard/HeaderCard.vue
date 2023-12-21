@@ -2,12 +2,14 @@
   <view class="flex-col relative wrap">
     <image class="bg-card pos" src="/static/images/bg_header_card.png" />
     <view class="flex-row items-center relative container">
-      <view class="flex-col items-center avatar-wrap justify-center"><image class="avatar" :src="avatar" /></view>
+      <view class="flex-col items-center avatar-wrap justify-center">
+        <image class="avatar" :src="personal.avatar" />
+      </view>
       <view class="flex-col flex-1 ml-12">
-        <text class="self-start nick-name">{{nickname}}</text>
+        <text class="line-clamp-one nick-name">{{personal.nickname}}</text>
         <view class="flex-row items-center self-stretch mt-8">
           <text class="profit">累计收益:</text>
-          <text class="profit">{{price}}</text>
+          <text class="profit">{{personal.names}}</text>
         </view>
       </view>
     </view>
@@ -18,9 +20,10 @@
   export default {
     components: {},
     props: {
-      avatar: { type: String, default: `/static/images/mock_avatar_01.png` },
-      nickname: { type: String, default: `今天喝生椰拿铁` },
-      price: { type: String, default: `2689.56` },
+      personal: {
+        type: Object,
+        default: () => ({ avatar: '/static/images/mock_avatar_05.png', nickname: '今天喝生椰拿铁', names: 2689.56 }),
+      },
     },
     data() {
       return {};
@@ -71,6 +74,7 @@
         font-family: 苹方;
         font-weight: 700;
         line-height: 30rpx;
+        width: 400rpx;
       }
       .profit {
         font-size: 24rpx;
