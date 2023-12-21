@@ -24,7 +24,7 @@
         </view>
       </view>
     </view>
-    <view class="flex-col self-stretch order-products" @click="onClick">
+    <view class="flex-col self-stretch order-products" @click="gotoDetail">
       <order-product-item
         class="list-item mt-14"
         v-for="(item, index) in order.products"
@@ -44,7 +44,7 @@
         <u-count-down class="sale-status" :time="30 * 60 * 1000" format="mm"> </u-count-down>
         <text class="sale-status">分钟</text>
       </view>
-      <view class="btn btn-gray" v-if="order.orderStatus === '待付款'" @click="onClick_2">
+      <view class="btn btn-gray" v-if="order.orderStatus === '待付款'" @click="onShowCancel">
         <text>取消订单</text>
       </view>
       <view class="btn btn-black" v-if="order.orderStatus === '待付款'">
@@ -53,7 +53,7 @@
       <view class="btn btn-gray" v-if="order.orderStatus === '待发货' || order.orderStatus === '待收货'">
         <text>申请售后</text>
       </view>
-      <view class="btn btn-gray" v-if="order.orderStatus === '待收货'" @click="onClick_1">
+      <view class="btn btn-gray" v-if="order.orderStatus === '待收货'" @click="gotoShipping">
         <text>查看物流</text>
       </view>
       <view class="btn btn-black" v-if="order.orderStatus === '待收货'" @click="onShowConfirm">
@@ -65,7 +65,7 @@
       <view
         class="btn btn-gray"
         v-if="order.orderStatus === '交易完成' || order.orderStatus === '交易关闭'"
-        @click="onClick_3"
+        @click="gotoAddComment"
       >
         <text>我要评价</text>
       </view>
@@ -82,11 +82,11 @@
     <confirm-panel
       :isShow="showConfirm"
       content="您确定已收到货了吗？"
-      @cancel="onCancel"
-      @confirm="onConfirm"
+      @cancel="onCloseConfirm"
+      @confirm="onCloseConfirm"
     ></confirm-panel>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="10" :closeable="true">
-      <pop-order-cancel :reasons="reasons" @click="onClickReason"></pop-order-cancel>
+    <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
+      <pop-order-cancel :reasons="reasons" @click="onCloseCancel"></pop-order-cancel>
     </u-popup>
   </view>
 </template>
@@ -105,38 +105,32 @@
     data() {
       return {
         showConfirm: false,
-        popupVisible: false,
+        showCancel: false,
         reasons: cancelReasons,
       };
     },
 
     methods: {
-      onClick() {
+      gotoDetail() {
         uni.navigateTo({ url: `/pages/myOrder/productOrderDetail/productOrderDetail?id=${this.order.orderNumber}` });
       },
-      onClick_1() {
-        uni.navigateTo({ url: '/pages/chakanwuliu_wuliisong_duogewuliu/chakanwuliu_wuliisong_duogewuliu' });
+      gotoShipping() {
+        uni.navigateTo({ url: '/pages/myOrder/shippingPackages/shippingPackages' });
       },
       onShowConfirm() {
         this.showConfirm = true;
       },
-      onClick_2() {
-        this.popupVisible = true;
+      onCloseConfirm() {
+        this.showConfirm = false;
       },
-      onClose() {
-        this.popupVisible = false;
+      onShowCancel() {
+        this.showCancel = true;
       },
-      onClick_3() {
+      onCloseCancel() {
+        this.showCancel = false;
+      },
+      gotoAddComment() {
         uni.navigateTo({ url: '/pages/myOrder/productAddComment/productAddComment' });
-      },
-      onCancel() {
-        this.showConfirm = false;
-      },
-      onConfirm() {
-        this.showConfirm = false;
-      },
-      onClickReason(val) {
-        this.popupVisible = false;
       },
     },
   };

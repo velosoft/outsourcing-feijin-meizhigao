@@ -17,10 +17,10 @@ export const productOrders = [
       {
         productName: '全屋整理收纳服务（单次）',
         productDescription: '鎏金岁月三层长45宽30高75',
-        productPrice: 200.0, // 价格类型是 number
+        productPrice: 200, // 价格类型是 number
         productQuantity: 2, // 可随机生成 1 到 3 之间的整数
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: false, // 是否是秒杀商品
         afterSaleStatus: '正常', // 可选值：["正常", "售后成功", "售后失败"]
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
@@ -28,10 +28,10 @@ export const productOrders = [
       {
         productName: '示例产品2',
         productDescription: '示例产品2说明文本',
-        productPrice: 50.0, // 价格类型是 number
+        productPrice: 50, // 价格类型是 number
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '售后成功',
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
@@ -39,10 +39,10 @@ export const productOrders = [
       {
         productName: '示例产品2.1',
         productDescription: '示例产品2.1说明文本',
-        productPrice: 50.0,
+        productPrice: 50,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '补购商品',
@@ -50,10 +50,10 @@ export const productOrders = [
       {
         productName: '示例产品2.2',
         productDescription: '示例产品2.2说明文本',
-        productPrice: 50.0,
+        productPrice: 50,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '已退回',
@@ -61,21 +61,21 @@ export const productOrders = [
       {
         productName: '示例产品2.3',
         productDescription: '示例产品2.3说明文本',
-        productPrice: 50.0,
+        productPrice: 50,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '正常',
       },
     ],
-    shippingFee: 10.0, // 运费金额，类型是 number
-    activityDiscount: 20.0, // 活动优惠，类型是 number
-    couponDiscount: 30.0, // 优惠券减免，类型是 number
-    pointsDeduction: 10.0, // 积分抵扣，类型是 number
-    storageCoinDeduction: 5.0, // 收纳币抵扣，类型是 number
-    totalAmount: 235.0, // 实付款，类型是 number
+    shippingFee: 10, // 运费金额，类型是 number
+    activityDiscount: 20, // 活动优惠，类型是 number
+    couponDiscount: 30, // 优惠券减免，类型是 number
+    pointsDeduction: 10, // 积分抵扣，类型是 number
+    storageCoinDeduction: 5, // 收纳币抵扣，类型是 number
+    totalAmount: 235, // 实付款，类型是 number
     orderMessage: '请尽快发货', // 订单留言
     paymentTime: '2023-06-08 02:30:45', // 支付时间，只有在订单状态不是待付款时才有
     paymentMethod: '微信支付', // 支付方式，可选类型为["微信支付", "支付宝支付", "银行卡支付"]
@@ -103,16 +103,16 @@ export const productOrders = [
       {
         productName: '示例产品3',
         productDescription: '按重量核算（元/kg)',
-        productPrice: 30.0,
+        productPrice: 30,
         productQuantity: 3,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
     ],
-    shippingFee: 15.0,
-    totalAmount: 90.0,
+    shippingFee: 15,
+    totalAmount: 90,
   },
   {
     orderNumber: '2023060801256772',
@@ -122,16 +122,16 @@ export const productOrders = [
       {
         productName: '示例产品6',
         productDescription: '按重量核算（元/kg)',
-        productPrice: 35.0,
+        productPrice: 35,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: false,
         afterSaleStatus: '正常',
       },
     ],
-    shippingFee: 10.0,
-    totalAmount: 35.0,
+    shippingFee: 10,
+    totalAmount: 35,
   },
   {
     orderNumber: '2023060801256770',
@@ -141,17 +141,17 @@ export const productOrders = [
       {
         productName: '示例产品4',
         productDescription: '按个数核算（元/个)',
-        productPrice: 25.0,
+        productPrice: 25,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: false,
         afterSaleStatus: '正常',
       },
     ],
     hasInvoice: false,
-    shippingFee: 12.0,
-    totalAmount: 25.0,
+    shippingFee: 12,
+    totalAmount: 25,
   },
   {
     orderNumber: '2023060801256773',
@@ -161,16 +161,16 @@ export const productOrders = [
       {
         productName: '示例产品7',
         productDescription: '按个数核算（元/个)',
-        productPrice: 20.0,
+        productPrice: 20,
         productQuantity: 3,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
     ],
-    shippingFee: 10.0,
-    totalAmount: 20.0,
+    shippingFee: 10,
+    totalAmount: 20,
   },
   {
     orderNumber: '2023060801256771',
@@ -180,16 +180,16 @@ export const productOrders = [
       {
         productName: '示例产品5',
         productDescription: '按个数核算（元/个)',
-        productPrice: 15.0,
+        productPrice: 15,
         productQuantity: 2,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true,
         afterSaleStatus: '售后成功',
       },
     ],
-    shippingFee: 8.0,
-    totalAmount: 50.0,
+    shippingFee: 8,
+    totalAmount: 50,
   },
 
   {
@@ -200,16 +200,16 @@ export const productOrders = [
       {
         productName: '示例产品8',
         productDescription: '按面积核算（元/m)',
-        productPrice: 30.0,
+        productPrice: 30,
         productQuantity: 2,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
     ],
-    shippingFee: 10.0,
-    totalAmount: 60.0,
+    shippingFee: 10,
+    totalAmount: 60,
   },
   {
     orderNumber: '2023060801256775',
@@ -219,16 +219,16 @@ export const productOrders = [
       {
         productName: '示例产品9',
         productDescription: '按重量核算（元/kg)',
-        productPrice: 40.0,
+        productPrice: 40,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
     ],
-    shippingFee: 12.0,
-    totalAmount: 40.0,
+    shippingFee: 12,
+    totalAmount: 40,
   },
   {
     orderNumber: '2023060801256776',
@@ -238,17 +238,17 @@ export const productOrders = [
       {
         productName: '示例产品10',
         productDescription: '按个数核算（元/个)',
-        productPrice: 15.0,
+        productPrice: 15,
         productQuantity: 2,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=657fa099d6bce000114cff3f&name=d401124e8a6d95e65f47fc1530ce8f28.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
         isSeckill: false,
         afterSaleStatus: '售后成功',
       },
     ],
     hasInvoice: true,
-    shippingFee: 8.0,
-    totalAmount: 30.0,
+    shippingFee: 8,
+    totalAmount: 30,
   },
 ];
 
@@ -279,10 +279,7 @@ export const shippingPackages = [
   {
     package_name: '包裹二',
     logistics_company: '中通快递',
-    contact_phone: '13888888888',
-    driver_name: '李四',
     tracking_number: '202313888888888',
-    license_plate: '粤B123456',
   },
   {
     package_name: '包裹三',
@@ -351,96 +348,154 @@ export const shippingPackages = [
 ];
 
 // 物流详情页数据
-export const shippingDetails = [
-  {
-    status: '订单已签收',
-    detail: [
-      {
-        date: '04-01',
-        time: '12:23:45',
-        content: '派送成功',
-      },
-    ],
-  },
-  {
-    status: '派送中',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content:
-          '快件交给张三，正在派途中（联系电话：13678933578，顺丰已开启“安全呼叫”保护您的电话隐私，请放心接听！）',
-      },
-    ],
-  },
-  {
-    status: '运输中',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '快件到达【广州车陂南哈哈哈店】',
-      },
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '快件在【广州车陂南店】完成分练，准备发往【广州车陂南哈哈哈店】',
-      },
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '快件在【广州车陂南店】完成分练，准备发往【广州车陂南哈哈哈店】',
-      },
-    ],
-  },
-  {
-    status: '已揽件',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '顺丰速运 已收取快件',
-      },
-    ],
-  },
-  {
-    status: '已发货',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '包裹正在等候揽收',
-      },
-    ],
-  },
-  {
-    status: '已出库',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '包裹已出库',
-      },
-    ],
-  },
-  {
-    status: '仓库已接单',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '包裹已出库',
-      },
-    ],
-  },
-  {
-    status: '已下单',
-    detail: [
-      {
-        date: '04-02',
-        time: '12:23:45',
-        content: '商品已经下单',
-      },
-    ],
-  },
-];
+export const shippingDetail = {
+  package_name: '包裹一',
+  logistics_company: '顺丰快递',
+  contact_phone: '13966907675',
+  driver_name: '张三',
+  tracking_number: '202313966907675',
+  license_plate: '粤A467788',
+  products: [
+    {
+      productName: '定制卧室收纳柜新疆包邮卧室床头',
+      productDescription: '中号；白色',
+      productPrice: 200,
+      productQuantity: 2,
+      productImageURL:
+        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    },
+    {
+      productName: '定制卧室收纳柜新疆包邮卧室床头',
+      productDescription: '中号；白色',
+      productPrice: 200,
+      productQuantity: 2,
+      productImageURL:
+        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    },
+    {
+      productName: '定制卧室收纳柜新疆包邮卧室床头',
+      productDescription: '中号；白色',
+      productPrice: 200,
+      productQuantity: 2,
+      productImageURL:
+        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    },
+    {
+      productName: '定制卧室收纳柜新疆包邮卧室床头',
+      productDescription: '中号；白色',
+      productPrice: 200,
+      productQuantity: 2,
+      productImageURL:
+        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    },
+    {
+      productName: '定制卧室收纳柜新疆包邮卧室床头',
+      productDescription: '中号；白色',
+      productPrice: 200,
+      productQuantity: 2,
+      productImageURL:
+        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    },
+    {
+      productName: '定制卧室收纳柜新疆包邮卧室床头',
+      productDescription: '中号；白色',
+      productPrice: 200,
+      productQuantity: 2,
+      productImageURL:
+        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    },
+  ],
+  details: [
+    {
+      status: '订单已签收',
+      detail: [
+        {
+          date: '04-01',
+          time: '12:23:45',
+          content: '派送成功',
+        },
+      ],
+    },
+    {
+      status: '派送中',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content:
+            '快件交给张三，正在派途中（联系电话：13678933578，顺丰已开启“安全呼叫”保护您的电话隐私，请放心接听！）',
+        },
+      ],
+    },
+    {
+      status: '运输中',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '快件到达【广州车陂南哈哈哈店】',
+        },
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '快件在【广州车陂南店】完成分练，准备发往【广州车陂南哈哈哈店】',
+        },
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '快件在【广州车陂南店】完成分练，准备发往【广州车陂南哈哈哈店】',
+        },
+      ],
+    },
+    {
+      status: '已揽件',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '顺丰速运 已收取快件',
+        },
+      ],
+    },
+    {
+      status: '已发货',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '包裹正在等候揽收',
+        },
+      ],
+    },
+    {
+      status: '已出库',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '包裹已出库',
+        },
+      ],
+    },
+    {
+      status: '仓库已接单',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '包裹已出库',
+        },
+      ],
+    },
+    {
+      status: '已下单',
+      detail: [
+        {
+          date: '04-02',
+          time: '12:23:45',
+          content: '商品已经下单',
+        },
+      ],
+    },
+  ],
+};

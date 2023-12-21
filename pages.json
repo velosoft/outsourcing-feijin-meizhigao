@@ -28,6 +28,13 @@
       }
     },
     {
+      "path": "pages/myOrder/shippingPackages/shippingPackages",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/myOrder/productOrderDetail/productOrderDetail",
       "style": {
         "navigationStyle": "custom",
