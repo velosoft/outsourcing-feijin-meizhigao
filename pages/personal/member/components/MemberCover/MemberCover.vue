@@ -1,19 +1,24 @@
 <template>
   <view class="flex-col justify-start relative top">
-    <view class="relative image-wrapper"><image class="image-cover pos" :src="coverImagUrl" /></view>
+    <view class="relative image-wrapper">
+      <image class="image-cover pos" :src="coverImagUrl" />
+    </view>
     <view class="flex-col m-info pos_info">
       <view class="flex-col items-start self-stretch relative">
         <view class="flex-col justify-start items-center level-tag"><text class="font-normal">当前等级</text></view>
         <text class="text-level mt-8">L1</text>
         <text class="font-xl mt-8">普通会员</text>
-        <view class="flex-col justify-center items-center pos-right status-tag">
-          <text class="font-normal">已解锁</text>
+        <view v-if="isUnlock" class="flex-col justify-center items-center pos-right font-normal status-tag">
+          已解锁
+        </view>
+        <view v-else class="flex-col justify-center items-center pos-right font-normal status-tag locking-status"
+          >未解锁
         </view>
       </view>
       <view class="flex-col self-start progress mt-30">
-        <view class="flex-row items-center progress-top">
+        <view class="flex-row items-center progress-top" @click="onProgressClick">
           <text class="progress-text">0/150</text>
-          <image class="arrow ml-4" src="/static/images/icon-arrow-right.png" />
+          <image class="arrow ml-4" src="/static/images/icon_right_arrow_01.png" />
         </view>
         <view class="flex-col justify-start self-start progress-body mt-6">
           <u-line-progress
@@ -32,7 +37,16 @@
 <script>
   export default {
     components: {},
-    props: { vipData: { type: Object, default: () => ({}) } },
+    props: {
+      vipData: {
+        type: Object,
+        default: () => ({}),
+      },
+      isUnlock: {
+        type: Boolean,
+        default: true,
+      },
+    },
     data() {
       return {
         percentage: '30',
@@ -41,7 +55,11 @@
       };
     },
 
-    methods: {},
+    methods: {
+      onProgressClick() {
+        uni.navigateTo({ url: '/pages/personal/member/consumption/consumption' });
+      },
+    },
   };
 </script>
 
@@ -74,7 +92,7 @@
         margin-left: 8rpx;
         color: #111111;
         font-size: 48rpx;
-        font-family: '.AppleSystemUIFont';
+        font-family: 'HarmonyOS_Sans_Bold';
         line-height: 56rpx;
       }
       .font-xl {
@@ -95,6 +113,9 @@
         width: 120rpx;
         height: 48rpx;
       }
+      .locking-status {
+        background: #1111117f;
+      }
       .font-normal {
         font-size: 24rpx;
         font-family: 'PingFang SC';
@@ -109,12 +130,12 @@
           .progress-text {
             color: #111111;
             font-size: 24rpx;
-            font-family: '.AppleSystemUIFont';
+            font-family: 'HarmonyOS_Sans_Bold';
             line-height: 30rpx;
           }
           .arrow {
-            width: 10rpx;
-            height: 16rpx;
+            width: 7rpx;
+            height: 14rpx;
           }
         }
         .progress-body {
