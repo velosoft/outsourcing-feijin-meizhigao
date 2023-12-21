@@ -366,6 +366,35 @@
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
+    },
+
+    {
+      "path": "pages/personal/settings/settings/settings",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/settings/agreement/agreement",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/settings/aboutUs/aboutUs",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/settings/aboutDetial/aboutDetial",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
     }
   ],
   "globalStyle": {
