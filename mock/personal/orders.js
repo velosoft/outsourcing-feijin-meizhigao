@@ -26,8 +26,8 @@ export const productOrders = [
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
       },
       {
-        productName: '示例产品2',
-        productDescription: '示例产品2说明文本',
+        productName: '示例产品2，这是一个非常长的产品名字，很长很长，努力超过两行，马上超过两行！',
+        productDescription: '示例产品2说明文本，说明文本也很长很长很长很长很长很长很长很长很长很长很长很长',
         productPrice: 50, // 价格类型是 number
         productQuantity: 1,
         productImageURL:
