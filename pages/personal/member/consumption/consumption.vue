@@ -46,7 +46,7 @@
     .container {
       overflow-y: auto;
       .chart {
-        padding: 24rpx 20rpx 40rpx;
+        padding: 24rpx 24rpx 40rpx;
         background-color: #111111;
         border-bottom: solid 2rpx #979797;
         .title {
