@@ -1,8 +1,8 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col">
-      <MemberCover class="top-relative" :vipData="benifitInfoData"></MemberCover>
+      <member-cover class="top-relative" :vipData="benifitInfoData"></member-cover>
       <view class="flex-col relative bottom">
         <swiper
           class="top-relative"
@@ -22,12 +22,12 @@
                 iconSize="16rpx"
                 @change="onChange"
               >
-                <MemberBenefitsItem :vipData="benifitInfoData"></MemberBenefitsItem>
+                <member-benefits-item :vipData="benifitInfoData"></member-benefits-item>
               </collapse-card>
             </view>
           </swiper-item>
         </swiper>
-        <LevelDescription class="mt-24" :vipData="benifitInfoData"></LevelDescription>
+        <level-description class="mt-24" :vipData="benifitInfoData"></level-description>
       </view>
     </view>
   </view>
@@ -35,9 +35,9 @@
 
 <script>
   import CollapseCard from '@/components/CollapseCard/CollapseCard';
-  import LevelDescription from '../../../../pages/personal/member/components/LevelDescription/LevelDescription.vue';
-  import MemberBenefitsItem from '../../../../pages/personal/member/components/MemberBenefitsItem/MemberBenefitsItem.vue';
-  import MemberCover from '../../../../pages/personal/member/components/MemberCover/MemberCover.vue';
+  import LevelDescription from '@/pages/personal/member/components/LevelDescription/LevelDescription.vue';
+  import MemberBenefitsItem from '@/pages/personal/member/components/MemberBenefitsItem/MemberBenefitsItem.vue';
+  import MemberCover from '@/pages/personal/member/components/MemberCover/MemberCover.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
 
   export default {
@@ -64,7 +64,6 @@
 
     methods: {
       onChange(e) {
-        console.log(e);
         this.swiperHeight = e.height + 'px';
         this.collapseStatus = e.status;
       },

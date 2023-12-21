@@ -1,33 +1,23 @@
 <template>
   <view class="flex-col wrap">
     <text class="self-start font title">等级说明</text>
-    <view class="flex-col self-stretch mt-20">
-      <view class="flex-col member-cell">
-        <text class="self-start subtitle subtext">1、会员等级分类</text>
-        <text class="self-stretch content content-text mt-8">
-          会员等级内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器生
-        </text>
-      </view>
-      <view class="flex-col member-cell mt-18">
-        <text class="self-start subtitle subtext">2、会员升级条件</text>
-        <text class="self-stretch content mt-8 content-text">
-          会员等级内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器生
-        </text>
-      </view>
-      <view class="flex-col member-cell mt-18">
-        <text class="self-start subtitle subtext">3、会员降级条件</text>
-        <text class="self-stretch content mt-8 content-text">
-          会员等级内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器生
-        </text>
-      </view>
+    <view class="flex-col self-stretch mt-20 mp-wrapper">
+      <mp-html class="content" :content="content"></mp-html>
     </view>
   </view>
 </template>
 
 <script>
+  import mpHtml from '@/components/MpHtml/MpHtml.vue';
   export default {
-    components: {},
-    props: {},
+    components: { mpHtml },
+    props: {
+      content: {
+        type: String,
+        default:
+          '<view><text>1、会员等级分类</br>会员等级内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器生</br></br>2、会员升级条件</br>会员等级内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器生</br></br>3、会员降级条件</br>会员等级内容由后台富文本编辑器生成内容由后台富文本编辑器生成会员升级条件内容由后台富文本编辑器生</text></view>',
+      },
+    },
     data() {
       return {};
     },
@@ -54,31 +44,17 @@
       font-weight: 600;
       line-height: 50rpx;
     }
-    .member-cell {
-      margin-right: 4rpx;
-      padding: 16rpx 36rpx 32rpx;
+    .mp-wrapper {
+      padding: 16rpx 36rpx 108rpx;
       background-color: #1e1f20;
       border-radius: 8rpx;
-      .subtitle {
-        font-size: 24rpx;
-        font-family: 'PingFang SC';
-        line-height: 34rpx;
-        font-weight: 500;
-        color: #ffffff;
-      }
-      .subtext {
-        font-size: 26rpx;
-        line-height: 36rpx;
-      }
-      .content {
-        font-size: 24rpx;
-        font-family: 'PingFang SC';
-        line-height: 48rpx;
-        color: #ffffff;
-      }
-      .content-text {
-        text-align: left;
-      }
+    }
+
+    .content {
+      font-size: 24rpx;
+      font-family: 'PingFang SC';
+      line-height: 48rpx;
+      color: #ffffff;
     }
   }
 </style>
