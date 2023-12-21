@@ -1,26 +1,27 @@
 <template>
-  <view class="flex-col component-gTy43iIr">
+  <view class="flex-col wrapper">
     <view class="flex-col justify-start items-center header">
       <text class="title-font title-text">请选择取消原因</text>
     </view>
     <u-radio-group
       class="radios"
-      v-model="v_model"
+      v-model="reason"
       activeColor="#B09053"
       inactiveColor="#D2D2D2"
       placement="column"
       iconPlacement="right"
     >
-      <u-radio v-model="v_model_1" label="不需要了" name="mNpj9RPd"></u-radio>
-      <u-radio class="mt-25" v-model="v_model_2" label="拍多了" name="cRT6FsDg"></u-radio>
-      <u-radio class="mt-25" v-model="v_model_3" label="商家缺货" name="jKOiHkR9"></u-radio>
-      <u-radio class="mt-25" v-model="v_model_4" label="不需要了" name="eqyvgs7O"></u-radio>
-      <u-radio class="group_8" v-model="v_model_5" label="拍错了" name="LjMuuucO"></u-radio>
-      <u-radio class="group_9" v-model="v_model_6" label="暂时不想要了" name="iV9CvwiE"></u-radio>
-      <u-radio class="group_9" v-model="v_model_7" label="商家缺货" name="tZp2WXOP"></u-radio>
-      <u-radio class="group_8" v-model="v_model_8" label="其他原因" name="gDfgR5Tc"></u-radio>
+      <u-radio
+        class="mt-25"
+        :label="item"
+        :name="item"
+        v-for="(item, index) of reasons"
+        :key="index"
+        labelSize="14"
+        labelColor="#2d2e32"
+      ></u-radio>
     </u-radio-group>
-    <view class="flex-col justify-start items-center button button-wrapper" @onSave="onSave">
+    <view class="flex-col justify-start items-center button button-wrapper" @click="onClick">
       <text class="title-font button-text">确认提交</text>
     </view>
   </view>
@@ -32,31 +33,23 @@
     props: { reasons: { type: Array, default: () => [] } },
     data() {
       return {
-        v_model: '',
-        v_model_1: '',
-        v_model_2: '',
-        v_model_3: '',
-        v_model_4: '',
-        v_model_5: '',
-        v_model_6: '',
-        v_model_7: '',
-        v_model_8: '',
+        reason: '',
       };
     },
 
     methods: {
-      onSave() {
-        this.onClose();
+      onClick() {
+        this.$emit('click', this.reason);
       },
     },
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .mt-25 {
     margin-top: 50rpx;
   }
-  .component-gTy43iIr {
+  .wrapper {
     padding: 0 12rpx 54rpx;
     background-color: #f8f8f8;
     border-radius: 20rpx 20rpx 0rpx 0rpx;
@@ -79,12 +72,6 @@
     padding: 54rpx 24rpx 26rpx;
     background-color: #ffffff;
     border-radius: 16rpx;
-  }
-  .group_8 {
-    margin-top: 52rpx;
-  }
-  .group_9 {
-    margin-top: 48rpx;
   }
   .button {
     margin: 86rpx 28rpx 0;

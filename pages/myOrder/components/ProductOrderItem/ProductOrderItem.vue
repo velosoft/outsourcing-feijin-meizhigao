@@ -112,15 +112,16 @@
       @confirm="onConfirm"
     ></confirm-panel>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="10" :closeable="true">
-      <PopOrderCancel></PopOrderCancel>
+      <pop-order-cancel :reasons="reasons" @click="onClickReason"></pop-order-cancel>
     </u-popup>
   </view>
 </template>
 
 <script>
   import ConfirmPanel from '@/components/ConfirmPanel.vue';
-  import PopOrderCancel from '../../../../pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
+  import PopOrderCancel from '@/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
   import OrderProductItem from '@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
+  import { cancelReasons } from '@/mock/personal/orders.js';
 
   export default {
     components: { ConfirmPanel, PopOrderCancel, OrderProductItem },
@@ -131,6 +132,7 @@
       return {
         showConfirm: false,
         popupVisible: false,
+        reasons: cancelReasons,
       };
     },
 
@@ -158,6 +160,9 @@
       },
       onConfirm() {
         this.showConfirm = false;
+      },
+      onClickReason(val) {
+        this.popupVisible = false;
       },
     },
   };
