@@ -14,20 +14,20 @@
       </view>
     </view>
     <view class="flex-col summary">
-      <view class="flex-row items-center self-stretch top">
+      <view class="flex-row top">
         <image class="order-image" :src="order.image" />
-        <view class="flex-col items-start flex-1 right">
-          <text class="status-font title">{{ order.title }}</text>
-          <text class="desc desc-text order-mt-4">{{ order.desc }}</text>
-          <view class="flex-row items-center order-mt-4">
-            <view class="flex-row items-baseline self-stretch money">
-              <text class="money-number">{{ order.price }}</text>
-              <text class="money-currency currency-text">￥</text>
-            </view>
-            <text class="money-currency">.00</text>
+        <view class="flex-col justify-between flex-1 right">
+          <text class="line-clamp-one status-font title">{{ order.title }}</text>
+          <view class="flex-row justify-between items-center">
+            <text class="line-clamp-one desc desc-text">{{ order.desc }}</text>
+            <text class="desc quantity">{{ `x${order.quantity}` }}</text>
+          </view>
+          <view class="flex-row price-wrapper">
+            <text class="price-currency">￥</text>
+            <text class="price-number">{{ order.price }}</text>
+            <text class="price-currency">.00</text>
           </view>
         </view>
-        <text class="desc quantity">{{ `x${order.quantity}` }}</text>
       </view>
       <view class="flex-col items-start self-start time-wrapper order-mt-8">
         <view
@@ -193,10 +193,6 @@
     color: #2d2e32;
     font-size: 28rpx;
     line-height: 40rpx;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
   }
   .desc {
     font-size: 24rpx;
@@ -207,26 +203,16 @@
   .desc-text {
     font-weight: unset;
   }
-  .order-mt-4 {
-    margin-top: 8rpx;
-  }
-  .money {
-    width: 80rpx;
-  }
-  .money-number {
-    margin-left: 24rpx;
+  .price-wrapper {
+    align-items: center;
     color: #111111;
+    font-weight: 500;
+  }
+  .price-currency {
+    font-size: 20rpx;
+  }
+  .price-number {
     font-size: 32rpx;
-    line-height: 36rpx;
-  }
-  .money-currency {
-    font-size: 24rpx;
-    line-height: 30rpx;
-    color: #111111;
-  }
-  .currency-text {
-    margin-left: -80rpx;
-    font-weight: 600;
   }
   .quantity {
     margin-left: 40rpx;
@@ -270,6 +256,7 @@
     min-width: 132rpx;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .btn + .btn {
     margin-left: 16rpx;

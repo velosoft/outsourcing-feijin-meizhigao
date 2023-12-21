@@ -30,7 +30,7 @@
         v-for="(item, index) in order.products"
         :key="index"
         :product="item"
-        imageSize="144rpx"
+        size="mini"
       ></order-product-item>
     </view>
     <view class="flex-col justify-start items-end self-stretch total-wrapper">
@@ -218,6 +218,7 @@
     min-width: 132rpx;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .btn + .btn {
     margin-left: 16rpx;

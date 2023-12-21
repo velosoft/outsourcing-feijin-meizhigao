@@ -351,6 +351,8 @@ export const shippingPackages = [
 export const shippingDetail = {
   package_name: '包裹一',
   logistics_company: '顺丰快递',
+  company_logo:
+    'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=465e85a3718d288f08003bf33f9735e0.png',
   contact_phone: '13966907675',
   driver_name: '张三',
   tracking_number: '202313966907675',

@@ -1,12 +1,6 @@
 <template>
   <view class="flex-row">
-    <view
-      class="flex-col justify-start items-center shrink-0 relative image-wrapper"
-      :style="{
-        width: imageSize,
-        height: imageSize,
-      }"
-    >
+    <view class="flex-col justify-start items-center shrink-0 relative image-wrapper" :style="[imageStyle]">
       <image class="shrink-0 image" :src="product.productImageURL" />
       <view class="flex-col justify-start items-center seckill-wrapper pos" v-if="product.isSeckill">
         <text class="seckill">秒杀</text>
@@ -15,8 +9,8 @@
     <view class="flex-col flex-1 ml-12 justify-between right">
       <text class="line-clamp-two name">{{ product.productName }}</text>
       <view class="flex-row justify-between items-center">
-        <text class="flex-1 line-clamp-one description">{{ product.productDescription }}</text>
-        <text class="quantity">{{ `x${product.productQuantity}` }}</text>
+        <text class="flex-1 line-clamp-one description" :style="[descStyle]">{{ product.productDescription }}</text>
+        <text class="quantity" :style="[descStyle]">{{ `x${product.productQuantity}` }}</text>
       </view>
       <view class="flex-row items-center justify-between">
         <view class="flex-row price-wrapper seckill" v-if="product.isSeckill">
@@ -44,13 +38,42 @@
     components: {},
     props: {
       product: Object,
-      imageSize: {
+      size: {
         type: String,
-        default: '180rpx',
+        // default,mini
+        default: 'default',
       },
     },
     data() {
       return {};
+    },
+    computed: {
+      imageStyle() {
+        switch (this.size) {
+          case 'mini':
+            return {
+              width: '144rpx',
+              height: '144rpx',
+            };
+          default:
+            return {
+              width: '180rpx',
+              height: '180rpx',
+            };
+        }
+      },
+      descStyle() {
+        switch (this.size) {
+          case 'mini':
+            return {
+              fontSize: '24rpx',
+            };
+          default:
+            return {
+              fontSize: '26rpx',
+            };
+        }
+      },
     },
     methods: {
       getPriceIntergetPart(val) {
@@ -96,11 +119,9 @@
     line-height: 40rpx;
   }
   .description {
-    font-size: 24rpx;
     color: #9e9ea0;
   }
   .quantity {
-    font-size: 24rpx;
     color: #9e9ea0;
     font-weight: 500;
   }

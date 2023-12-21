@@ -55,13 +55,13 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/chakanwuliu_kuaiisong_dangewuliu/chakanwuliu_kuaiisong_dangewuliu' });
+        uni.navigateTo({ url: '/pages/myOrder/shippingPackage/shippingPackage' });
       },
     },
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
