@@ -1,22 +1,22 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col body">
       <order-product-item :product="order.products[0]" class="product"></order-product-item>
       <view class="flex-col input mt-12">
         <view class="flex-row justify-between items-center rate-wrapper">
           <view class="flex-row items-center">
-            <text class="rate-title">商品评分</text>
-            <u-rate class="ml-16" active-color="#C2A05F" size="52rpx" :allowHalf="true" v-model="rateValue"></u-rate>
+            <text class="title-font">商品评分</text>
+            <u-rate class="ml-16" active-color="#C2A05F" size="52rpx" v-model="rateValue"></u-rate>
           </view>
-          <text class="rate-font">{{ rateValue }}分</text>
+          <text class="base-font">{{ rateValue }}分</text>
         </view>
         <u-textarea height="320rpx" v-model="inputValue" placeholder="请输入您的评价"></u-textarea>
       </view>
       <view class="flex-col pic mt-12">
         <view class="flex-row items-center self-stretch pic-top">
-          <text class="rate-title">商品图片</text>
-          <text class="rate-font pic-tip ml-2">（最多上传6张图片）</text>
+          <text class="title-font">商品图片</text>
+          <text class="base-font pic-tip ml-2">（最多上传6张图片）</text>
         </view>
         <u-upload class="upload" :fileList="fileList">
           <view class="flex-col items-center upload-slot">
@@ -28,7 +28,7 @@
     </view>
     <view class="fixed-bottom-safe flex-col justify-start btn-submit">
       <view class="flex-col justify-start items-center button text-wrapper">
-        <text class="rate-title sumbit-text">确认提交</text>
+        <text class="title-font sumbit-text">确认提交</text>
       </view>
     </view>
   </view>
@@ -76,14 +76,14 @@
   .rate-wrapper {
     padding: 24rpx 0 22rpx;
   }
-  .rate-title {
+  .title-font {
     font-size: 30rpx;
     font-family: 'PingFang SC';
     line-height: 40rpx;
     font-weight: 500;
     color: #2d2e32;
   }
-  .rate-font {
+  .base-font {
     font-size: 28rpx;
     font-family: 'PingFang SC';
     line-height: 40rpx;
