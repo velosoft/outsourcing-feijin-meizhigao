@@ -39,21 +39,21 @@
             <view class="flex-col mt-8">
               <view class="flex-row items-baseline" v-if="!item.isSeckill">
                 <text class="seckill-font">￥</text>
-                <text class="product-price price-text">{{ item.productPrice }}</text>
-                <text class="price-fixed ml-2">.00</text>
+                <text class="product-price price-text">{{ getPriceIntergetPart(item.productPrice) }}</text>
+                <text class="price-fixed ml-2">.{{ getPriceDecimalPart(item.productPrice) }}</text>
               </view>
               <view class="flex-row items-center" v-if="item.isSeckill">
                 <text class="product-count-font price-red">秒杀价</text>
                 <text class="seckill-font price-red">￥</text>
-                <text class="product-price price-red price-text">{{ item.productPrice }}</text>
-                <text class="price-fixed ml-2 price-red">.00</text>
+                <text class="product-price price-red price-text">{{ getPriceIntergetPart(item.productPrice) }}</text>
+                <text class="price-fixed ml-2 price-red">.{{ getPriceDecimalPart(item.productPrice) }}</text>
               </view>
             </view>
           </view>
         </view>
         <view class="flex-col items-end self-end mt-28">
           <text class="product-count-font product-count">{{ `x${item.productQuantity}` }}</text>
-          <text class="sale-status mt-12">{{ item.afterSaleStatus }}</text>
+          <text class="sale-status mt-12">{{ item.afterSaleStatus != '正常' ? item.afterSaleStatus : '' }}</text>
         </view>
       </view>
     </view>
@@ -73,7 +73,11 @@
         </view>
       </view>
       <view class="flex-row justify-between items-center actions" v-if="order.orderStatus === '待付款'">
-        <text class="sale-status">支付倒计时：59分钟</text>
+        <view class="flex-row justify-start items-center">
+          <text class="sale-status">支付倒计时：</text>
+          <u-count-down class="sale-status" :time="30 * 60 * 1000" format="mm"> </u-count-down>
+          <text class="sale-status">分钟</text>
+        </view>
         <view class="flex-row">
           <view class="flex-col justify-start items-center button" @click="onClick_2">
             <text class="product-count-font">取消订单</text>
@@ -122,6 +126,7 @@
   import PopOrderCancel from '@/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
   import OrderProductItem from '@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import { cancelReasons } from '@/mock/personal/orders.js';
+  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
 
   export default {
     components: { ConfirmPanel, PopOrderCancel, OrderProductItem },
@@ -137,6 +142,12 @@
     },
 
     methods: {
+      getPriceIntergetPart(val) {
+        return getPriceIntergetPart(val);
+      },
+      getPriceDecimalPart(val) {
+        return getPriceDecimalPart(val);
+      },
       onClick() {
         uni.navigateTo({ url: `/pages/myOrder/productOrderDetail/productOrderDetail?id=${this.order.orderNumber}` });
       },
@@ -168,7 +179,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .order-item {
     background-color: #ffffff;
     border-radius: 16rpx;
@@ -289,6 +300,12 @@
     font-size: 24rpx;
     line-height: 34rpx;
     color: #b09053;
+
+    /deep/ text {
+      font-size: 24rpx !important;
+      line-height: 34rpx !important;
+      color: #b09053 !important;
+    }
   }
   .total-wrapper {
     margin: 32rpx 24rpx 0;
