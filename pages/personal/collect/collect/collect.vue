@@ -25,7 +25,6 @@
           emptyHint="暂无内容~"
           :finished="finished"
           imgSrc="/static/images/icon_empty_reseller.png"
-          :emptyPaddingTop="136"
         >
           <view class="flex-col">
             <CollectItem class="list-item item-top" v-for="(item, index) in items" :key="index"></CollectItem>
@@ -61,7 +60,7 @@
         ],
         showLoading: false,
         finished: false,
-        items: [null, null, null, null],
+        items: [null, null, null, null,null, null, null, null],
       };
     },
 
@@ -81,5 +80,24 @@
     .item-top {
       margin-top: 32rpx;
     }
+
+
+  .line-tabs {
+    /deep/ .u-tabs {
+      padding: 0 14rpx;
+      background-color: #ffffff;
+    }
+
+    /deep/ .u-tabs__wrapper__nav__item {
+      height: 36px;
+    }
+
+    /deep/ .u-tabs__wrapper__nav__line {
+      background: linear-gradient(90deg, #e9b81b 0%, #e9b81b00 97.2%) !important;
+      opacity: 0.7 !important;
+      border-radius: 10rpx !important;
+      bottom: 12rpx !important;
+    }
+  }
   }
 </style>
