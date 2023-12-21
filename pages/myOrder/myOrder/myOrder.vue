@@ -124,7 +124,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .page {
     width: 100vw;
     height: 100vh;

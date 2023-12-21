@@ -136,7 +136,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .order {
     padding: 24rpx;
     background-color: #ffffff;

@@ -62,7 +62,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .page {
     padding-bottom: 468rpx;
     background-color: #f8f8f8;

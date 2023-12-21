@@ -31,7 +31,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .order-addr {
     padding: 24rpx;
     background-color: #ffffff;

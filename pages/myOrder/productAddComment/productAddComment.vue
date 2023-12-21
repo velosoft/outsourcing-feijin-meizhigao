@@ -20,10 +20,7 @@
         </view>
         <u-upload class="upload" :fileList="fileList">
           <view class="flex-col items-center upload-slot">
-            <image
-              class="upload-icon"
-              src="/static/images/icon_upload.png"
-            />
+            <image class="upload-icon" src="/static/images/icon_upload.png" />
             <text class="upload-tip mt-12">上传图片</text>
           </view>
         </u-upload>
@@ -59,7 +56,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .page {
     padding-bottom: 200rpx;
     background-color: #f8f8f8;

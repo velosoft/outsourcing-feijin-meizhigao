@@ -43,7 +43,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .image-wrapper {
     margin: 4rpx 0;
     overflow: hidden;

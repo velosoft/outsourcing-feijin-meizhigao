@@ -23,77 +23,77 @@
 </template>
 
 <script>
-export default {
-  components: {},
-  props: {
-    closedHeight: { type: String, default: "48rpx" },
-    closedText: { type: String, default: "展开" },
-    openText: { type: String, default: "收起" },
-  },
-  data() {
-    return {
-      status: false, // false 表示折叠 ，true 表示展开
-    };
-  },
-
-  computed: {
-    text() {
-      return this.status ? this.openText : this.closedText;
+  export default {
+    components: {},
+    props: {
+      closedHeight: { type: String, default: '48rpx' },
+      closedText: { type: String, default: '展开' },
+      openText: { type: String, default: '收起' },
+    },
+    data() {
+      return {
+        status: false, // false 表示折叠 ，true 表示展开
+      };
     },
 
-    style() {
-      return this.status ? "" : `overflow:hidden; height: ${this.closedHeight}`;
-    },
-  },
+    computed: {
+      text() {
+        return this.status ? this.openText : this.closedText;
+      },
 
-  methods: {
-    onCollpseClick() {
-      this.status = !this.status;
+      style() {
+        return this.status ? '' : `overflow:hidden; height: ${this.closedHeight}`;
+      },
     },
-  },
-};
+
+    methods: {
+      onCollpseClick() {
+        this.status = !this.status;
+      },
+    },
+  };
 </script>
 
-<style scoped lang="css">
-.card-wrapper {
-  display: flex;
-  background-color: #ffffff;
-  border-radius: 24rpx;
-  border: 1px solid #f2f2f2;
-}
+<style scoped lang="less">
+  .card-wrapper {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 24rpx;
+    border: 1px solid #f2f2f2;
+  }
 
-.card-layout {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+  .card-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
-.content {
-  display: flex;
-  width: 100%;
-  height: 200rpx;
-  justify-content: center;
-  align-items: center;
-}
-.collapse-wrapper {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 8rpx 0;
-}
+  .content {
+    display: flex;
+    width: 100%;
+    height: 200rpx;
+    justify-content: center;
+    align-items: center;
+  }
+  .collapse-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 8rpx 0;
+  }
 
-.collapse {
-  display: flex;
-  align-items: center;
-}
+  .collapse {
+    display: flex;
+    align-items: center;
+  }
 
-.icon-wrapper {
-  margin-left: 16rpx;
-  width: 36rpx;
-  height: 36rpx;
-}
+  .icon-wrapper {
+    margin-left: 16rpx;
+    width: 36rpx;
+    height: 36rpx;
+  }
 
-/* .selector-wrapper {
+  /* .selector-wrapper {
 }
 .items-layout {
   display: flex;

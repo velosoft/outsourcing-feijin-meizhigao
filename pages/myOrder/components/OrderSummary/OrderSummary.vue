@@ -128,7 +128,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .mt-15 {
     margin-top: 30rpx;
   }

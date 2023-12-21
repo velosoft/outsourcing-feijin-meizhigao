@@ -141,7 +141,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .order-payment {
     padding-left: 24rpx;
     padding-right: 22rpx;

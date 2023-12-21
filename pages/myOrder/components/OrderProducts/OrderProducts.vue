@@ -13,39 +13,39 @@
 </template>
 
 <script>
-import OrderProductItem from "@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue";
+  import OrderProductItem from '@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
 
-export default {
-  components: {
-    OrderProductItem,
-  },
-  props: {
-    products: {
-      type: Array,
-      default: () => [],
+  export default {
+    components: {
+      OrderProductItem,
     },
-  },
-  data() {
-    return {};
-  },
+    props: {
+      products: {
+        type: Array,
+        default: () => [],
+      },
+    },
+    data() {
+      return {};
+    },
 
-  methods: {},
-};
+    methods: {},
+  };
 </script>
 
-<style scoped lang="css">
-.order-proudcts {
-  padding: 24rpx;
-  background-color: #ffffff;
-  border-radius: 16rpx;
-}
-.title {
-  color: #2d2e32;
-  font-size: 30rpx;
-  font-weight: 500;
-  line-height: 42rpx;
-}
-.list-item:first-child {
-  margin-top: 0;
-}
+<style scoped lang="less">
+  .order-proudcts {
+    padding: 24rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+  }
+  .title {
+    color: #2d2e32;
+    font-size: 30rpx;
+    font-weight: 500;
+    line-height: 42rpx;
+  }
+  .list-item:first-child {
+    margin-top: 0;
+  }
 </style>
