@@ -13,9 +13,9 @@
       </view>
     </view>
     <view class="flex-col flex-1 ml-12 justify-between right">
-      <text class="name">{{ product.productName }}</text>
+      <text class="line-clamp-two name">{{ product.productName }}</text>
       <view class="flex-row justify-between items-center">
-        <text class="description">{{ product.productDescription }}</text>
+        <text class="flex-1 line-clamp-one description">{{ product.productDescription }}</text>
         <text class="quantity">{{ `x${product.productQuantity}` }}</text>
       </view>
       <view class="flex-row items-center justify-between">
@@ -40,7 +40,6 @@
 
 <script>
   import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
-
   export default {
     components: {},
     props: {
@@ -95,9 +94,6 @@
     font-size: 28rpx;
     font-weight: 500;
     line-height: 40rpx;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .description {
     font-size: 24rpx;
