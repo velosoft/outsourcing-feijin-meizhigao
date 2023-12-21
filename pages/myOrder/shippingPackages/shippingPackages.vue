@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <list-container :showEmpty="!list.length" :showLoading="showLoading" :finished="finished">
       <view class="flex-col list">
         <view class="flex-col item list-item mt-12" @click="onClick" v-for="(item, index) in list" :key="index">
@@ -10,10 +10,7 @@
               <text class="field-name">物流公司</text>
               <view class="flex-row items-center">
                 <text class="field-value">{{ item.logistics_company }}</text>
-                <image
-                  class="shrink-0 arrow-right ml-8"
-                  src="/static/images/icon_arrow_right.png"
-                />
+                <image class="shrink-0 arrow-right ml-8" src="/static/images/icon_arrow_right.png" />
               </view>
             </view>
             <view class="flex-row justify-between mt-16" v-if="item.contact_phone">
@@ -42,7 +39,7 @@
 <script>
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import { shippingPackages } from '../../../mock/personal/orders';
+  import { shippingPackages } from '@/mock/personal/orders';
 
   export default {
     components: { ListContainer, NavBar },
@@ -66,7 +63,6 @@
 
 <style scoped lang="css">
   .page {
-    padding-bottom: 232rpx;
     background-color: #f8f8f8;
     width: 100%;
     overflow-y: auto;
@@ -74,7 +70,7 @@
     height: 100vh;
   }
   .list {
-    padding: 32rpx 24rpx 464rpx;
+    padding: 32rpx 24rpx 32rpx;
     overflow-y: auto;
   }
   .item {
