@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col body">
       <order-product-item :product="order.products[0]" class="product"></order-product-item>
       <view class="flex-col rate-wrapper mt-12">
