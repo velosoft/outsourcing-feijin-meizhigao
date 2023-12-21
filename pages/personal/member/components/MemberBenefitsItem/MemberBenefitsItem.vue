@@ -1,12 +1,6 @@
 <template>
   <view class="flex-col wrap">
-    <view class="flex-row justify-between items-center header">
-      <text class="title">L1 普通会员权益</text>
-      <view class="flex-row items-center">
-        <text class="right-text right-label">收起</text>
-        <image class="shrink-0 icon-arrow ml-4" src="../../../../../static/images/icon_down_arrow_02.png" />
-      </view>
-    </view>
+    <view class="flex-col justify-start items-start"> <text class="title">L1 普通会员权益</text></view>
     <view class="grid mt-4">
       <view class="flex-col items-center grid-item" v-for="(item, index) in items" :key="index">
         <image class="icon-benefit" src="../../../../../static/images/icon_product_discounts_active.png" />
@@ -19,7 +13,7 @@
 <script>
   export default {
     components: {},
-    props: {},
+    props: { vipData: { type: Object, default: () => ({}) } },
     data() {
       return {
         items: [null, null, null, null, null, null, null, null],
@@ -34,31 +28,13 @@
   .wrap {
     padding: 24rpx 0 8rpx;
     background-color: #ffffff;
-    border-radius: 8rpx;
-    .header {
-      padding: 0 24rpx;
-      .title {
-        color: #000000;
-        font-size: 28rpx;
-        font-family: 'PingFang SC';
-        font-weight: 600;
-        line-height: 40rpx;
-      }
-      .right-text {
-        font-size: 24rpx;
-        font-family: 'PingFang SC';
-        line-height: 34rpx;
-        color: #9e9ea0;
-      }
-      .right-label {
-        color: #6d6d6d;
-        font-size: 22rpx;
-        line-height: 32rpx;
-      }
-      .icon-arrow {
-        width: 18rpx;
-        height: 12rpx;
-      }
+    .title {
+      margin-left: 28rpx;
+      color: #000000;
+      font-size: 28rpx;
+      font-family: 'PingFang SC';
+      font-weight: 600;
+      line-height: 40rpx;
     }
     .grid {
       height: 348rpx;

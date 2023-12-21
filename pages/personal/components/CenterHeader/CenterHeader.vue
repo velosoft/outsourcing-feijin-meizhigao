@@ -11,7 +11,7 @@
       <view class="flex-col ml-12 justify-center">
         <view class="flex-col items-start self-start">
           <text class="text" v-if="personal.hasLogin">{{ personal.nickname }}</text>
-          <text class="text" v-else="false">请登录/注册</text>
+          <text class="text" v-else>请登录/注册</text>
         </view>
         <view class="flex-row items-center member-box mt-4 self-end" @click="onClick" v-if="personal.hasLogin">
           <image class="icon-member" src="/static/images/icon_member.png" />
@@ -45,7 +45,7 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/personal/member/index/index' });
+        uni.navigateTo({ url: '/pages/personal/member/member/member' });
       },
       onClick_1() {
         uni.navigateTo({ url: '/pages/personal/profile/profile/profile' });
