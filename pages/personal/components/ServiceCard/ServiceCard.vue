@@ -66,7 +66,7 @@
         uni.navigateTo({ url: '/pages/personal/address/address/address' });
       },
       onClick_6() {
-        uni.navigateTo({ url: '/pages/personal/help/index/index' });
+        uni.navigateTo({ url: '/pages/personal/help/help/help' });
       },
       onClick_7() {
         uni.navigateTo({ url: '/pages/personal/settings/settings/settings' });

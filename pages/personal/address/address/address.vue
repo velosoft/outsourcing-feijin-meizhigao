@@ -18,7 +18,7 @@
         </list-container>
       </scroll-view>
     </view>
-    <view class="fixed-bottom-safe flex-col footer-btn">
+    <view class="fixed-bottom-safe2 flex-col footer-btn">
       <u-button
         class="cf-btn-black"
         type="primary"
