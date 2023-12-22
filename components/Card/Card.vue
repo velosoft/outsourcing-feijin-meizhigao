@@ -2,7 +2,7 @@
   <view class="flex-col root">
     <view class="header">
       <view class="flex-row items-center">
-        <view class="deco" v-if="headerTag" />
+        <view class="deco" v-if="useTag" />
         <text class="title">{{ title }}</text>
       </view>
       <slot name="headerRight" />
@@ -17,7 +17,7 @@
     components: {},
     props: {
       title: { type: String, default: `` },
-      headerTag: { type: Boolean, default: false },
+      useTag: { type: Boolean, default: false },
     },
     data() {
       return {};
