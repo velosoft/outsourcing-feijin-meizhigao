@@ -1,14 +1,16 @@
 <template>
   <view class="flex-col shipping-products">
     <view class="flex-col justify-start items-center"><text class="title">商品清单</text></view>
-    <view class="flex-col mt-24">
-      <OrderProductItem
-        class="list-item mt-12"
-        v-for="(item, index) in products"
-        :product="item"
-        :key="index"
-      ></OrderProductItem>
-    </view>
+    <scroll-view class="mt-24 list-wrap" :scroll-y="true">
+      <view class="flex-col">
+        <order-product-item
+          class="list-item mt-12"
+          v-for="(item, index) in products"
+          :product="item"
+          :key="index"
+        ></order-product-item
+      ></view>
+    </scroll-view>
   </view>
 </template>
 
@@ -44,5 +46,10 @@
   }
   .list-item:first-child {
     margin-top: 0;
+  }
+  .list-wrap {
+    max-height: 900rpx;
+    min-height: 400rpx;
+    padding-bottom: 16rpx;
   }
 </style>
