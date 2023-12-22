@@ -35,7 +35,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .order {
     padding: 32rpx;
     background-color: #ffffff;

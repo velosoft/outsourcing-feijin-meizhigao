@@ -8,6 +8,7 @@
         :readonly="true"
         inputAlign="right"
         value="增值税电子专用发票"
+        @click="onShowTypes"
       ></CFField>
       <CFField label="抬头类型" :border="false" inputAlign="right">
         <u-radio-group v-model="v_model" activeColor="#B09053" iconSize="32rpx" slot="input">
@@ -22,6 +23,7 @@
         :isLink="true"
         :readonly="true"
         inputAlign="right"
+        @click="onShowTitles"
       ></CFField>
       <CFField label="单位税号" placeholder="请填写单位税号" :border="false" inputAlign="right"></CFField>
       <CFField label="开户银行" placeholder="请填写开户银行（选填）" :border="false" inputAlign="right"></CFField>
@@ -44,14 +46,22 @@
       <CFField label="开票人手机" :border="false" inputAlign="right" :value="13567699045"></CFField>
       <CFField label="开票人邮箱" placeholder="请填写邮箱号" :border="false" inputAlign="right"></CFField>
     </u-cell-group>
+    <u-popup :show="showTitels" @close="onCloseTitles" mode="bottom" :round="12" :closeable="true">
+      <PopInvoiceTitles @select="onCloseTitles"></PopInvoiceTitles>
+    </u-popup>
+    <u-popup :show="showTypes" @close="onCloseTypes" mode="bottom" :round="12" :closeable="true">
+      <PopInvoiceTypes @select="onCloseTypes"></PopInvoiceTypes>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import CFField from '@/components/Field/Field';
+  import PopInvoiceTitles from '@/pages/myOrder/components/PopInvoiceTitles/PopInvoiceTitles.vue';
+  import PopInvoiceTypes from '@/pages/myOrder/components/PopInvoiceTypes/PopInvoiceTypes.vue';
 
   export default {
-    components: { CFField },
+    components: { CFField, PopInvoiceTitles, PopInvoiceTypes },
     props: {},
     data() {
       return {
@@ -60,14 +70,29 @@
         v_model_2: '',
         v_model_3: '',
         v_model_4: '',
+        showTitels: false,
+        showTypes: false,
       };
     },
 
-    methods: {},
+    methods: {
+      onShowTitles() {
+        this.showTitels = true;
+      },
+      onCloseTitles() {
+        this.showTitels = false;
+      },
+      onShowTypes() {
+        this.showTypes = true;
+      },
+      onCloseTypes() {
+        this.showTypes = false;
+      },
+    },
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .more-wrapper {
     margin: 20rpx 0;
   }
