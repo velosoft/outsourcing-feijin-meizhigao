@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col wrapper">
     <view class="flex-col justify-start items-center header">
-      <text class="title-font title-text">请选择取消原因</text>
+      <text class="title-font title-text">{{ title }}</text>
     </view>
     <u-radio-group
       class="radios"
@@ -28,9 +28,20 @@
 </template>
 
 <script>
+  import { cancelReasons } from '@/mock/personal/orders.js';
+
   export default {
     components: {},
-    props: { reasons: { type: Array, default: () => [] } },
+    props: {
+      title: {
+        type: String,
+        default: '请选择取消原因',
+      },
+      reasons: {
+        type: Array,
+        default: () => cancelReasons,
+      },
+    },
     data() {
       return {
         reason: '',

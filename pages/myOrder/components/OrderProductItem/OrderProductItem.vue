@@ -34,10 +34,15 @@
 
 <script>
   import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
+  import { productOrders } from '@/mock/personal/orders';
+
   export default {
     components: {},
     props: {
-      product: Object,
+      product: {
+        type: Object,
+        default: () => productOrders[0].products[0],
+      },
       size: {
         type: String,
         // default,mini

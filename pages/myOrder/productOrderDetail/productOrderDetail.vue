@@ -33,7 +33,11 @@
         <view class="btn btn-primary" v-if="order.orderStatus === '待付款'">
           <text>去付款</text>
         </view>
-        <view class="btn btn-plain" v-if="order.orderStatus === '待发货' || order.orderStatus === '待收货'">
+        <view
+          class="btn btn-plain"
+          v-if="order.orderStatus === '待发货' || order.orderStatus === '待收货'"
+          @click="gotoAfterSale"
+        >
           <text>申请售后</text>
         </view>
         <view class="btn btn-primary" v-if="order.orderStatus === '待收货'" @click="onShowConfirm">
@@ -56,17 +60,6 @@
           v-if="order.orderStatus === '交易完成' || order.orderStatus === '交易关闭' || order.orderStatus === '已取消'"
         >
           <text>再次购买</text>
-        </view>
-        <view class="flex-col actions" v-if="false">
-          <view class="flex-row self-stretch" v-if="order.orderStatus === '已取消' || order.orderStatus === '交易关闭'">
-            <u-button text="" type="primary" shape="circle" :plain="true"></u-button>
-            <u-button class="ml-8" text="再次购买" type="primary" shape="circle" :plain="true"></u-button>
-          </view>
-          <view class="flex-row self-start" v-if="order.orderStatus === '交易完成'">
-            <u-button text="申请开票" type="primary" shape="circle" :plain="true"></u-button>
-            <u-button class="ml-8" text="查看评价" type="primary" shape="circle" :plain="true"></u-button>
-            <u-button class="ml-8" text="再次购买" type="primary" shape="circle" :plain="true"></u-button>
-          </view>
         </view>
       </view>
     </view>
@@ -129,6 +122,9 @@
     methods: {
       gotoComment() {
         uni.navigateTo({ url: '/pages/myOrder/productComment/productComment' });
+      },
+      gotoAfterSale() {
+        uni.navigateTo({ url: '/pages/myOrder/applyAfterSale/applyAfterSale' });
       },
       onShowCancel() {
         this.showCancel = true;

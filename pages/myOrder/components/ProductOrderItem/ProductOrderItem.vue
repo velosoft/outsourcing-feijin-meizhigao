@@ -50,7 +50,11 @@
       <view class="btn btn-black" v-if="order.orderStatus === '待付款'">
         <text>去付款</text>
       </view>
-      <view class="btn btn-gray" v-if="order.orderStatus === '待发货' || order.orderStatus === '待收货'">
+      <view
+        class="btn btn-gray"
+        v-if="order.orderStatus === '待发货' || order.orderStatus === '待收货'"
+        @click="gotoAfterSale"
+      >
         <text>申请售后</text>
       </view>
       <view class="btn btn-gray" v-if="order.orderStatus === '待收货'" @click="gotoShipping">
@@ -116,6 +120,9 @@
       },
       gotoShipping() {
         uni.navigateTo({ url: '/pages/myOrder/shippingPackages/shippingPackages' });
+      },
+      gotoAfterSale() {
+        uni.navigateTo({ url: '/pages/myOrder/applyAfterSale/applyAfterSale' });
       },
       onShowConfirm() {
         this.showConfirm = true;
