@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col relative page height-full">
     <image class="bg-header pos" src="/static/images/bg_bonus-point.png" />
-    <NavBar
+    <nav-bar
       class="header"
       :hasBack="true"
       :title="title"
@@ -11,24 +11,24 @@
       titleColor="#ffffff"
     >
       <image class="nav-left-icon" src="/static/images/icon_nav_left_arrow.png" slot="left" />
-    </NavBar>
+    </nav-bar>
     <view class="flex-col flex-1 relative container">
       <view class="flex-row items-center">
         <image class="avatar" :src="avatar" />
-        <text class="name-font name-text ml-4">{{nickname}}</text>
+        <text class="name-font name-text ml-4">{{ nickname }}</text>
       </view>
-      <ShareCard class="share-top" :numShare="numShare"></ShareCard>
-      <ResellerPromotionDetial class="detial-top" :resellerList="profitListResData"></ResellerPromotionDetial>
+      <share-card class="share-top" :numShare="numShare"></share-card>
+      <reseller-promotion-detial class="detail-wrapper" :resellerList="profitListResData"></reseller-promotion-detial>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import ResellerPromotionDetial from '../../../../pages/personal/reseller/components/ResellerPromotionDetial/ResellerPromotionDetial.vue';
+  import ResellerPromotionDetial from '@/pages/personal/reseller/components/ResellerPromotionDetial/ResellerPromotionDetial.vue';
   import ShareCard from '@/pages/personal/reseller/components/ShareCard/ShareCard.vue';
   import { profitListResData } from './reseller.data.js';
-  
+
   export default {
     components: { NavBar, ResellerPromotionDetial, ShareCard },
     props: {},
@@ -39,18 +39,18 @@
         numShare: {
           totalIncome: 2689,
           promotionNum: 150,
-          distributionNum: 500,
+          resellOrderNum: 500,
         },
         title: '分销中心',
         profitListResData: profitListResData,
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -96,9 +96,12 @@
         position: relative;
         margin-top: 32rpx;
       }
-      .detial-top {
+      .detail-wrapper {
         margin-top: 16rpx;
+        /deep/ .scroll-height {
+          height: calc(100vh - 726rpx - env(safe-area-inset-bottom));
+        }
       }
     }
   }
-  </style>
+</style>

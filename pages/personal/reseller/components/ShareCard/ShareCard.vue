@@ -5,7 +5,7 @@
       <view class="flex-row justify-between items-center self-stretch">
         <view class="flex-col items-start" @click="onClick">
           <text class="label-text">累计获得收益(收纳币)</text>
-          <text class="label-num mt-4">{{numShare.totalIncome}}</text>
+          <text class="label-num mt-4">{{ numShare.totalIncome }}</text>
         </view>
         <view class="flex-row button items-center" @click="onClick_1">
           <image class="shrink-0 self-center icon-share" src="/static/images/icon_share_card.png" />
@@ -15,27 +15,27 @@
       <view class="flex-row mt-32">
         <view class="flex-col items-start">
           <text class="font num-label">推广总人数</text>
-          <text class="num mt-4">{{numShare.promotionNum}}</text>
+          <text class="num mt-4">{{ numShare.promotionNum }}</text>
         </view>
         <view class="flex-col ml-40">
           <text class="font num-label">分销订单数</text>
-          <text class="num mt-4">{{numShare.distributionNum}}</text>
+          <text class="num mt-4">{{ numShare.resellOrderNum }}</text>
         </view>
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {
-      numShare: { type: Object, default: () => ({ totalIncome: 2689, promotionNum: 150, distributionNum: 500 }) },
+      numShare: { type: Object, default: () => ({ totalIncome: 2689, promotionNum: 150, resellOrderNum: 500 }) },
     },
     data() {
       return {};
     },
-  
+
     methods: {
       onClick() {
         uni.navigateTo({ url: '/pages/personal/reseller/profit/profit' });
@@ -45,15 +45,14 @@
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 36rpx 0;
     background-image: linear-gradient(90deg, #ffffff 0.8%, #f0ede7 100%);
     border-radius: 16rpx;
     height: 310rpx;
-    border: solid 2rpx #ffffff87;
     .bg-share {
       width: 702rpx;
       height: 310rpx;
@@ -110,4 +109,4 @@
       }
     }
   }
-  </style>
+</style>
