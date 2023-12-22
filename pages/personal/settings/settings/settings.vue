@@ -70,7 +70,7 @@
       padding: 32rpx;
       .btn-gray {
         /deep/ .u-button {
-          height: 8rppx;
+          height: 88rpx;
           border-radius: 72rpx;
           border-color: #cbccd4 !important;
           color: #2d2e32 !important;

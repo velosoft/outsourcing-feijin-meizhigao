@@ -52,10 +52,10 @@
         uni.navigateTo({ url: '/pages/personal/settings/aboutDetial/aboutDetial' });
       },
       onClick_1() {
-        uni.navigateTo({ url: '/pages/personal/settings/agreement/agreement' });
+        uni.navigateTo({ url: '/pages/personal/settings/userAgreement/userAgreement' });
       },
       onClick_2() {
-        uni.navigateTo({ url: '/pages/personal/settings/agreement/agreement' });
+        uni.navigateTo({ url: '/pages/personal/settings/CardBindingAgreement/CardBindingAgreement' });
       },
     },
   };

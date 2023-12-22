@@ -383,13 +383,6 @@
       }
     },
     {
-      "path": "pages/personal/settings/agreement/agreement",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/personal/settings/aboutUs/aboutUs",
       "style": {
         "navigationStyle": "custom",
@@ -398,6 +391,27 @@
     },
     {
       "path": "pages/personal/settings/aboutDetial/aboutDetial",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/settings/userAgreement/userAgreement",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/settings/NonDisclosureAgreement/NonDisclosureAgreement",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/personal/settings/CardBindingAgreement/CardBindingAgreement",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
