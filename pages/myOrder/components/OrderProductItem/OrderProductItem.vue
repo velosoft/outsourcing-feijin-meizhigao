@@ -13,16 +13,16 @@
         <text class="quantity" :style="[descStyle]">{{ `x${product.productQuantity}` }}</text>
       </view>
       <view class="flex-row items-center justify-between">
-        <view class="flex-row price-wrapper seckill" v-if="product.isSeckill">
+        <view class="price-wrapper seckill" v-if="product.isSeckill">
           <text class="seckill-price">秒杀价</text>
-          <text class="price-number-small">￥</text>
-          <text class="price-number">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-number-small">.{{ getPriceDecimalPart(product.productPrice) }}</text>
+          <text class="price-number-10">￥</text>
+          <text class="price-number-16">{{ getPriceIntergetPart(product.productPrice) }}</text>
+          <text class="price-number-10">.{{ getPriceDecimalPart(product.productPrice) }}</text>
         </view>
-        <view class="flex-row price-wrapper" v-else>
-          <text class="price-number-small">￥</text>
-          <text class="price-number">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-number-small">.{{ getPriceDecimalPart(product.productPrice) }}</text>
+        <view class="price-wrapper" v-else>
+          <text class="price-number-10">￥</text>
+          <text class="price-number-16">{{ getPriceIntergetPart(product.productPrice) }}</text>
+          <text class="price-number-10">.{{ getPriceDecimalPart(product.productPrice) }}</text>
         </view>
         <text class="sale-status" v-if="product.afterSaleStatus && product.afterSaleStatus !== '正常'">{{
           product.afterSaleStatus
@@ -135,21 +135,10 @@
     line-height: 34rpx;
     color: #b09053;
   }
-  .price-wrapper {
-    align-items: start;
-    color: #111111;
-    font-weight: 500;
-  }
   .price-wrapper.seckill {
     color: #bb3e0c;
   }
   .seckill-price {
     font-size: 24rpx;
-  }
-  .price-number-small {
-    font-size: 20rpx;
-  }
-  .price-number {
-    font-size: 32rpx;
   }
 </style>

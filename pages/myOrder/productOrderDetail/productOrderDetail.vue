@@ -43,7 +43,11 @@
         <view class="btn btn-primary" v-if="order.orderStatus === '待收货'" @click="onShowConfirm">
           <text>确认收货</text>
         </view>
-        <view class="btn btn-plain" v-if="order.orderStatus === '交易完成' && !order.hasInvoice">
+        <view
+          class="btn btn-plain"
+          v-if="order.orderStatus === '交易完成' && !order.hasInvoice"
+          @click="gotoApplyInvoice"
+        >
           <text>申请开票</text>
         </view>
         <view class="btn btn-plain" v-if="order.orderStatus === '交易完成' && order.hasInvoice">
@@ -125,6 +129,9 @@
       },
       gotoAfterSale() {
         uni.navigateTo({ url: '/pages/myOrder/applyAfterSale/applyAfterSale' });
+      },
+      gotoApplyInvoice() {
+        uni.navigateTo({ url: '/pages/myOrder/applyInvoice/applyInvoice' });
       },
       onShowCancel() {
         this.showCancel = true;

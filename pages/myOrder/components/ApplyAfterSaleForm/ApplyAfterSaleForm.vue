@@ -44,7 +44,7 @@
       </u-upload>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="10" :closeable="true">
-      <PopOrderCancel @click="onClose"></PopOrderCancel>
+      <PopOrderCancel title="请选择退款原因" @click="onClose"></PopOrderCancel>
     </u-popup>
   </view>
 </template>

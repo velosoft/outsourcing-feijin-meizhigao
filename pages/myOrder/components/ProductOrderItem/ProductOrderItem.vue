@@ -63,7 +63,11 @@
       <view class="btn btn-black" v-if="order.orderStatus === '待收货'" @click="onShowConfirm">
         <text>确认收货</text>
       </view>
-      <view class="btn btn-gray" v-if="order.orderStatus === '交易完成' || order.orderStatus === '交易关闭'">
+      <view
+        class="btn btn-gray"
+        v-if="order.orderStatus === '交易完成' || order.orderStatus === '交易关闭'"
+        @click="gotoApplyInvoice"
+      >
         <text>申请开票</text>
       </view>
       <view
@@ -121,8 +125,14 @@
       gotoShipping() {
         uni.navigateTo({ url: '/pages/myOrder/shippingPackages/shippingPackages' });
       },
+      gotoAddComment() {
+        uni.navigateTo({ url: '/pages/myOrder/productAddComment/productAddComment' });
+      },
       gotoAfterSale() {
         uni.navigateTo({ url: '/pages/myOrder/applyAfterSale/applyAfterSale' });
+      },
+      gotoApplyInvoice() {
+        uni.navigateTo({ url: '/pages/myOrder/applyInvoice/applyInvoice' });
       },
       onShowConfirm() {
         this.showConfirm = true;
@@ -135,9 +145,6 @@
       },
       onCloseCancel() {
         this.showCancel = false;
-      },
-      gotoAddComment() {
-        uni.navigateTo({ url: '/pages/myOrder/productAddComment/productAddComment' });
       },
     },
   };

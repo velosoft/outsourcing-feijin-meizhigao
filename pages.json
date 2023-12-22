@@ -77,6 +77,13 @@
       }
     },
     {
+      "path": "pages/myOrder/applyInvoice/applyInvoice",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/tabBar/comps",
       "style": {
         "navigationStyle": "default",
