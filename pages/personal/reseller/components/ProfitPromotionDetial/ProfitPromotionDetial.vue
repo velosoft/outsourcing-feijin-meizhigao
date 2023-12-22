@@ -28,7 +28,7 @@
       </scroll-view>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <date-time-picker-popup></date-time-picker-popup>
+      <date-time-picker-popup type="year-month" :date="date" @click="onDateChange"></date-time-picker-popup>
     </u-popup>
   </view>
 </template>
@@ -46,6 +46,10 @@
         popupVisible: false,
         showLoading: false,
         finished: false,
+        date: {
+          year: 2023,
+          month: 9,
+        },
       };
     },
 
@@ -54,6 +58,11 @@
         this.popupVisible = true;
       },
       onClose() {
+        this.popupVisible = false;
+      },
+      onDateChange(val) {
+        this.date.year = val.year;
+        this.date.month = val.month;
         this.popupVisible = false;
       },
     },

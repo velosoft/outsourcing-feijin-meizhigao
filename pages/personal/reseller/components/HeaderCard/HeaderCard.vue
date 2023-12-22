@@ -6,34 +6,34 @@
         <image class="avatar" :src="personal.avatar" />
       </view>
       <view class="flex-col flex-1 ml-12">
-        <text class="line-clamp-one nick-name">{{personal.nickname}}</text>
+        <text class="line-clamp-one nickname">{{ personal.nickname }}</text>
         <view class="flex-row items-center self-stretch mt-8">
           <text class="profit">累计收益:</text>
-          <text class="profit">{{personal.names}}</text>
+          <text class="profit">{{ personal.amount }}</text>
         </view>
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {
       personal: {
         type: Object,
-        default: () => ({ avatar: '/static/images/mock_avatar_05.png', nickname: '今天喝生椰拿铁', names: 2689.56 }),
+        default: () => ({ avatar: '/static/images/mock_avatar_05.png', nickname: '今天喝生椰拿铁', amount: 2689.56 }),
       },
     },
     data() {
       return {};
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 40rpx 0;
     background-image: linear-gradient(90deg, #ffffff 0.8%, #f0ede7 100%);
@@ -68,7 +68,7 @@
           height: 92rpx;
         }
       }
-      .nick-name {
+      .nickname {
         color: #2d2e32;
         font-size: 30rpx;
         font-family: 苹方;
@@ -84,4 +84,4 @@
       }
     }
   }
-  </style>
+</style>
