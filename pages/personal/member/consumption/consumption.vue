@@ -1,26 +1,26 @@
 <template>
   <view class="flex-col page">
-    <NavBar :title="title" :fixed="true" :isShow="true" background="#111111" titleColor="#ffffff"></NavBar>
+    <nav-bar :title="title" :fixed="true" :isShow="true" background="#111111" titleColor="#ffffff"></nav-bar>
     <view class="flex-col flex-1 container">
       <view class="flex-col chart">
         <view class="flex-col items-start">
           <text class="title">消费活跃值</text>
-          <text class="desc mt-8">累计消费值为4500，还差500消费值可升级为黄金会员</text>
+          <text class="desc mt-8">累计消费值为{{ current }}，还差{{ distance }}消费值可升级为黄金会员</text>
         </view>
-        <BarChart></BarChart>
+        <bar-chart></bar-chart>
       </view>
       <view class="flex-col describe">
-        <ConsumptionValue></ConsumptionValue>
-        <ConsumptionExplanation class="consum-relative"></ConsumptionExplanation>
+        <consumption-value></consumption-value>
+        <consumption-explanation class="consum-relative"></consumption-explanation>
       </view>
     </view>
   </view>
 </template>
 
 <script>
-  import BarChart from '../../../../pages/personal/member/components/BarChart/BarChart.vue';
-  import ConsumptionExplanation from '../../../../pages/personal/member/components/ConsumptionExplanation/ConsumptionExplanation.vue';
-  import ConsumptionValue from '../../../../pages/personal/member/components/ConsumptionValue/ConsumptionValue.vue';
+  import BarChart from '@/pages/personal/member/components/BarChart/BarChart.vue';
+  import ConsumptionExplanation from '@/pages/personal/member/components/ConsumptionExplanation/ConsumptionExplanation.vue';
+  import ConsumptionValue from '@/pages/personal/member/components/ConsumptionValue/ConsumptionValue.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
 
   export default {
@@ -29,6 +29,8 @@
     data() {
       return {
         title: '消费值',
+        current: 4500,
+        distance: 500,
       };
     },
 

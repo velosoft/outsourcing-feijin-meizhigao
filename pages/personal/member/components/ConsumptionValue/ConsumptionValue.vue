@@ -12,21 +12,21 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 32rpx 24rpx;
     background-color: #ffffff;
@@ -64,4 +64,4 @@
       height: 56rpx;
     }
   }
-  </style>
+</style>
