@@ -1,61 +1,54 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <FjSticky v-bind:customNavHeight="88">
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
+    <fj-sticky v-bind:customNavHeight="88">
       <u-tabs class="tabs-yellow-wide-eq" :list="tabItems" :activeStyle="activeStyle" :scrollable="false"></u-tabs>
-    </FjSticky>
+    </fj-sticky>
     <view class="flex-col justify-start tabs-body">
-      <list-container :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
+      <list-container :showEmpty="!favoriteItems.length" :showLoading="showLoading" :finished="finished">
         <u-swipe-action class="default-swipe-cell">
           <view class="flex-col">
             <u-swipe-action-item
               class="mt-16 list-item"
               :options="swipeOption"
               @click="onActionItemClick"
-              v-for="(item, index) in items"
+              v-for="(item, index) in favoriteItems"
               :key="index"
             >
-              <view class="flex-row">
+              <view class="flex-row items-stretch">
                 <view class="flex-col justify-start items-center relative cover-wrapper">
-                  <image
-                    class="cover-img"
-                    src="https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=f7d1e1bdc9f9bdfb1f01a27bb69d7896.png"
-                  />
-                  <view class="flex-col justify-start items-center mask pos-mask">
+                  <image class="cover-img" :src="item.imageUrl" />
+                  <view v-if="item.isFail" class="flex-col justify-start items-center mask pos-mask">
                     <view class="flex-col justify-start items-center circle"><text class="text-mask">失效</text></view>
                   </view>
                 </view>
-                <view class="flex-col flex-1 self-start ml-12">
-                  <text class="font-title min-height">{{ itemTitle }}</text>
+                <view class="flex-col flex-1 justify-around ml-12">
+                  <text class="font-title min-height line-clamp-tow">{{ item.name }}</text>
                   <view class="flex-col justify-start items-start mt-10">
                     <view class="flex-row">
                       <view
                         class="flex-col justify-center tag list-item-h"
-                        v-for="(item, index) in items_1"
+                        v-for="(tag, index) in item.tags || []"
                         :key="index"
                       >
-                        <text class="font-tag">新品上市</text>
+                        <text class="font-tag">{{ tag }}</text>
                       </view>
                     </view>
                   </view>
                   <view class="flex-col justify-start items-start mt-10">
                     <view class="flex-col">
-                      <view class="flex-row items-center" v-if="true">
+                      <view class="flex-row items-center" v-if="!item.isSecKill">
                         <text class="font-prefix">￥</text>
-                        <view class="flex-row items-baseline">
-                          <text class="font-price">40</text>
-                          <text class="font-prefix ml-2">.00</text>
+                        <view class="flex-row items-start">
+                          <text class="font-price">{{ getPriceIntergetPart(item.price) }}</text>
+                          <text class="font-prefix ml-2">.{{ getPriceDecimalPart(item.price) }}</text>
                         </view>
                       </view>
-                      <view class="flex-row items-end" v-if="false">
+                      <view class="flex-row items-start" v-else>
                         <text class="text-kill">秒杀价</text>
-                        <view class="flex-row items-center">
-                          <text class="text-kill">￥</text>
-                          <view class="flex-row items-baseline">
-                            <text class="font-price price-red">40</text>
-                            <text class="text-kill ml-2">.00</text>
-                          </view>
-                        </view>
+                        <text class="text-kill">￥</text>
+                        <text class="font-price price-red">{{ getPriceIntergetPart(item.price) }}</text>
+                        <text class="text-kill ml-2">.{{ getPriceDecimalPart(item.price) }}</text>
                       </view>
                     </view>
                   </view>
@@ -73,6 +66,8 @@
   import FjSticky from '@/components/FjSticky.vue';
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
+  import { favoriteItems } from '@/mock/personal/favorites.js';
+  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
 
   export default {
     components: { FjSticky, ListContainer, NavBar },
@@ -99,20 +94,22 @@
           color: '#030305',
           fontWeight: '700',
         },
-        canShowMask: true,
-        itemTitle: '收纳整理师中级认证课收纳整理师中级认证课',
+        favoriteItems: favoriteItems,
         title: '我的收藏',
-        showEmpty: false,
-        showLoading: false,
+        showLoading: true,
         finished: false,
-        items_1: [null, null],
-        items: [null, null, null],
       };
     },
 
     methods: {
       onActionItemClick(args) {
         console.log(args);
+      },
+      getPriceIntergetPart(val) {
+        return getPriceIntergetPart(val);
+      },
+      getPriceDecimalPart(val) {
+        return getPriceDecimalPart(val);
       },
     },
   };
