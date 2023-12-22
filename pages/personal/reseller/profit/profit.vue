@@ -1,22 +1,25 @@
 <template>
   <view class="height-full flex-col relative page height-full">
     <view class="bg-header bg-header-pos"></view>
-    <NavBar class="header" :title="title" :fixed="true" :isShow="true" background="transparent" titleColor="#ffffff">
+    <nav-bar class="header" :title="title" :fixed="true" :isShow="true" background="transparent" titleColor="#ffffff">
       <image class="nav-left-icon" src="/static/images/icon_nav_left_arrow.png" slot="left" />
-    </NavBar>
+    </nav-bar>
     <view class="flex-col flex-1 relative container">
-      <HeaderCard :personal="personal"></HeaderCard>
-      <ProfitPromotionDetial class="mt-8 flex-1" :profitList="rewardBonusCoinsResData"></ProfitPromotionDetial>
+      <header-card :personal="personal"></header-card>
+      <profit-promotion-detial
+        class="detail-wrapper mt-8 flex-1"
+        :profitList="rewardBonusCoinsResData"
+      ></profit-promotion-detial>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import HeaderCard from '@/pages/personal/reseller/components/HeaderCard/HeaderCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import ProfitPromotionDetial from '@/pages/personal/reseller/components/ProfitPromotionDetial/ProfitPromotionDetial.vue';
   import { rewardBonusCoinsResData } from './profit.data.js';
-  
+
   export default {
     components: { HeaderCard, NavBar, ProfitPromotionDetial },
     props: {},
@@ -31,12 +34,12 @@
         rewardBonusCoinsResData: rewardBonusCoinsResData,
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -61,5 +64,10 @@
     .container {
       padding: 40rpx 24rpx;
     }
+    .detail-wrapper {
+      /deep/ .scroll-height {
+        height: calc(100vh - 552rpx - env(safe-area-inset-bottom));
+      }
+    }
   }
-  </style>
+</style>
