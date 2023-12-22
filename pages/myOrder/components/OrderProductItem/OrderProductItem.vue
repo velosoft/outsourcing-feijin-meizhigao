@@ -15,14 +15,14 @@
       <view class="flex-row items-center justify-between">
         <view class="flex-row price-wrapper seckill" v-if="product.isSeckill">
           <text class="seckill-price">秒杀价</text>
-          <text class="price-currency">￥</text>
+          <text class="price-number-small">￥</text>
           <text class="price-number">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-currency">.{{ getPriceDecimalPart(product.productPrice) }}</text>
+          <text class="price-number-small">.{{ getPriceDecimalPart(product.productPrice) }}</text>
         </view>
         <view class="flex-row price-wrapper" v-else>
-          <text class="price-currency">￥</text>
+          <text class="price-number-small">￥</text>
           <text class="price-number">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-currency">.{{ getPriceDecimalPart(product.productPrice) }}</text>
+          <text class="price-number-small">.{{ getPriceDecimalPart(product.productPrice) }}</text>
         </view>
         <text class="sale-status" v-if="product.afterSaleStatus && product.afterSaleStatus !== '正常'">{{
           product.afterSaleStatus
@@ -131,7 +131,7 @@
     color: #b09053;
   }
   .price-wrapper {
-    align-items: center;
+    align-items: start;
     color: #111111;
     font-weight: 500;
   }
@@ -141,7 +141,7 @@
   .seckill-price {
     font-size: 24rpx;
   }
-  .price-currency {
+  .price-number-small {
     font-size: 20rpx;
   }
   .price-number {

@@ -23,9 +23,9 @@
             <text class="desc quantity">{{ `x${order.quantity}` }}</text>
           </view>
           <view class="flex-row price-wrapper">
-            <text class="price-currency">￥</text>
-            <text class="price-number">{{ order.price }}</text>
-            <text class="price-currency">.00</text>
+            <text class="price-number-small">￥</text>
+            <text class="price-number">{{ getPriceIntergetPart(order.price) }}</text>
+            <text class="price-number-small">.{{ getPriceDecimalPart(order.price) }}</text>
           </view>
         </view>
       </view>
@@ -45,9 +45,10 @@
         <text class="captain line-clamp-one" v-else>{{ `领队：${order.captain.name} ${order.captain.phone}` }}</text>
       </view>
       <view class="flex-col items-start self-start stage-wrapper order-mt-8">
-        <view class="count-down" v-if="order.status === '未支付'">
+        <view class="flex-row items-center count-down" v-if="order.status === '未支付'">
           <text class="reserve-time">支付倒计时：</text>
-          <text class="count-time">59分钟</text>
+          <u-count-down class="count-time" :time="30 * 60 * 1000" format="mm"> </u-count-down>
+          <text class="count-time">分钟</text>
         </view>
         <text class="count-time" v-else>{{ order.stage }}</text>
       </view>
@@ -123,6 +124,7 @@
 </template>
 
 <script>
+  import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
   export default {
     components: {},
     props: {
@@ -132,7 +134,14 @@
       return {};
     },
 
-    methods: {},
+    methods: {
+      getPriceIntergetPart(val) {
+        return getPriceIntergetPart(val);
+      },
+      getPriceDecimalPart(val) {
+        return getPriceDecimalPart(val);
+      },
+    },
   };
 </script>
 
@@ -204,12 +213,12 @@
     font-weight: unset;
   }
   .price-wrapper {
-    align-items: center;
+    align-items: start;
     color: #111111;
     font-weight: 500;
   }
-  .price-currency {
-    font-size: 20rpx;
+  .price-number-small {
+    font-size: 24rpx;
   }
   .price-number {
     font-size: 32rpx;
@@ -245,6 +254,12 @@
     font-size: 24rpx;
     line-height: 34rpx;
     color: #b09053;
+
+    /deep/ text {
+      font-size: 24rpx;
+      line-height: 34rpx;
+      color: #b09053;
+    }
   }
   .btn {
     padding: 8rpx 20rpx;
