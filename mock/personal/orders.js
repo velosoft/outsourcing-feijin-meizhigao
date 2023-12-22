@@ -99,6 +99,11 @@ export const productOrders = [
     orderNumber: '2023060801256769',
     orderStatus: '待发货',
     orderTime: '2023-06-08 01:30:00',
+    receiverInfo: {
+      receiverName: '李冰冰',
+      receiverPhone: '15212345678',
+      receiverAddress: '广东省广州市天河区车陂南东宏国际广场A栋B座12楼1203房0023A室',
+    },
     products: [
       {
         productName: '示例产品3',
@@ -110,14 +115,33 @@ export const productOrders = [
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
+      {
+        productName: '示例产品3-秒杀',
+        productDescription: '按重量核算（元/kg)',
+        productPrice: 30,
+        productQuantity: 3,
+        productImageURL:
+          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        isSeckill: true,
+        afterSaleStatus: '正常',
+      },
     ],
     shippingFee: 15,
+    storageCoinDeduction: 10,
     totalAmount: 90,
+    orderMessage: '请尽快发货',
+    paymentTime: '2023-06-08 02:30:45',
+    paymentMethod: '微信支付',
   },
   {
     orderNumber: '2023060801256772',
     orderStatus: '待收货',
     orderTime: '2023-06-08 04:30:00',
+    receiverInfo: {
+      receiverName: '李冰冰',
+      receiverPhone: '15212345678',
+      receiverAddress: '广东省广州市天河区车陂南东宏国际广场A栋B座12楼1203房0023A室',
+    },
     products: [
       {
         productName: '示例产品6',
@@ -132,11 +156,19 @@ export const productOrders = [
     ],
     shippingFee: 10,
     totalAmount: 35,
+    orderMessage: '请尽快发货',
+    paymentTime: '2023-06-08 02:30:45',
+    paymentMethod: '微信支付',
   },
   {
     orderNumber: '2023060801256770',
     orderStatus: '交易完成',
     orderTime: '2023-06-08 02:00:00',
+    receiverInfo: {
+      receiverName: '李冰冰',
+      receiverPhone: '15212345678',
+      receiverAddress: '广东省广州市天河区车陂南东宏国际广场A栋B座12楼1203房0023A室',
+    },
     products: [
       {
         productName: '示例产品4',
@@ -152,11 +184,19 @@ export const productOrders = [
     hasInvoice: false,
     shippingFee: 12,
     totalAmount: 25,
+    orderMessage: '请尽快发货',
+    paymentTime: '2023-06-08 02:30:45',
+    paymentMethod: '微信支付',
   },
   {
     orderNumber: '2023060801256773',
     orderStatus: '交易关闭',
     orderTime: '2023-06-08 05:45:00',
+    receiverInfo: {
+      receiverName: '李冰冰',
+      receiverPhone: '15212345678',
+      receiverAddress: '广东省广州市天河区车陂南东宏国际广场A栋B座12楼1203房0023A室',
+    },
     products: [
       {
         productName: '示例产品7',
@@ -171,6 +211,9 @@ export const productOrders = [
     ],
     shippingFee: 10,
     totalAmount: 20,
+    orderMessage: '请尽快发货',
+    paymentTime: '2023-06-08 02:30:45',
+    paymentMethod: '微信支付',
   },
   {
     orderNumber: '2023060801256771',
