@@ -113,7 +113,7 @@
       }
     }
     .group {
-      padding: 0 28rpx;
+      padding: 0 28rpx 20rpx 28rpx;
     }
   }
 </style>

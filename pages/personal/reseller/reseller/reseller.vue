@@ -99,7 +99,7 @@
       .detail-wrapper {
         margin-top: 16rpx;
         /deep/ .scroll-height {
-          height: calc(100vh - 726rpx - env(safe-area-inset-bottom));
+          height: calc(100vh - 746rpx - env(safe-area-inset-bottom));
         }
       }
     }
