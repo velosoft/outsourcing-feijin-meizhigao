@@ -366,7 +366,7 @@ export default {
 }
 .font_10 {
   font-size: 24rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 24rpx;
   color: #a7a7a7;
 }
@@ -390,7 +390,7 @@ export default {
 }
 .font_4 {
   font-size: 28rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 28rpx;
   font-weight: 600;
   color: #111111;
@@ -413,7 +413,7 @@ export default {
 }
 .font_5 {
   font-size: 20rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 20rpx;
   color: #bb3e0c;
 }
@@ -441,7 +441,7 @@ export default {
 }
 .font_8 {
   font-size: 20rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 20rpx;
   font-weight: 600;
   color: #bb3e0c;
@@ -474,7 +474,7 @@ export default {
 }
 .font_3 {
   font-size: 28rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 40rpx;
   font-weight: 600;
   color: #111111;
@@ -491,7 +491,7 @@ export default {
 }
 .font_6 {
   font-size: 20rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 20rpx;
   color: #b09053;
 }
@@ -532,7 +532,7 @@ export default {
 }
 .font_12 {
   font-size: 20rpx;
-  font-family: 苹方-简;
+  font-family: PingFangSC;
   line-height: 20rpx;
   font-weight: 600;
   color: #030305;
