@@ -27,13 +27,13 @@
             <text class="desc quantity">{{ `x${order.quantity}` }}</text>
           </view>
           <view class="flex-row price-wrapper">
-            <text class="price-currency">￥</text>
-            <text class="price-number">{{ order.price }}</text>
-            <text class="price-currency">.00</text>
+            <text class="price-number-small">￥</text>
+            <text class="price-number">{{ getPriceIntergetPart(order.price) }}</text>
+            <text class="price-number-small">.{{ getPriceDecimalPart(order.price) }}</text>
           </view>
         </view>
       </view>
-      <view class="flex-col items-start self-start time-wrapper order-mt-8">
+      <view class="flex-row justify-between items-start self-stretch time-wrapper order-mt-8">
         <view
           class="reserve-time"
           v-if="
@@ -47,11 +47,27 @@
           <text>{{ order.reserveTime }}</text>
         </view>
         <text class="captain line-clamp-one" v-else>{{ `领队：${order.captain.name} ${order.captain.phone}` }}</text>
+        <view
+          class="flex-row items-center"
+          v-if="
+            order.status !== '定金未支付' &&
+            order.status !== '等待分配业务员' &&
+            order.status !== '交易完成' &&
+            order.status !== '交易关闭' &&
+            order.status !== '已取消'
+          "
+        >
+          <view class="flex-col justify-center items-center phone-icon-wrapper">
+            <img class="phone-icon" src="/static/images/icon_phone.png" />
+          </view>
+          <text class="ml-4 phone-text">联系电话</text>
+        </view>
       </view>
       <view class="flex-col items-start self-start stage-wrapper order-mt-8">
-        <view class="count-down" v-if="order.status === '定金未支付'">
+        <view class="flex-row items-center count-down" v-if="order.status === '定金未支付'">
           <text class="reserve-time">支付倒计时：</text>
-          <text class="count-time">59分钟</text>
+          <u-count-down class="count-time" :time="30 * 60 * 1000" format="mm"> </u-count-down>
+          <text class="count-time">分钟</text>
         </view>
         <text class="count-time" v-else>{{ order.stage }}</text>
       </view>
@@ -90,7 +106,7 @@
       <view class="btn btn-black" v-if="order.status === '交易完成'">
         <text>评价</text>
       </view>
-      <view class="btn btn-gray" v-if="order.status === '交易关闭'">
+      <view class="btn btn-gray" v-if="order.status === '交易关闭' || order.status === '已取消'">
         <text>删除记录</text>
       </view>
     </view>
@@ -98,6 +114,7 @@
 </template>
 
 <script>
+  import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
   export default {
     components: {},
     props: {
@@ -107,7 +124,14 @@
       return {};
     },
 
-    methods: {},
+    methods: {
+      getPriceIntergetPart(val) {
+        return getPriceIntergetPart(val);
+      },
+      getPriceDecimalPart(val) {
+        return getPriceDecimalPart(val);
+      },
+    },
   };
 </script>
 
@@ -188,12 +212,12 @@
     font-weight: unset;
   }
   .price-wrapper {
-    align-items: center;
+    align-items: start;
     color: #111111;
     font-weight: 500;
   }
-  .price-currency {
-    font-size: 20rpx;
+  .price-number-small {
+    font-size: 24rpx;
   }
   .price-number {
     font-size: 32rpx;
@@ -204,12 +228,14 @@
     text-transform: uppercase;
   }
   .time-wrapper {
-    margin-left: 16rpx;
+    padding: 0 16rpx;
   }
   .reserve-time {
     font-size: 24rpx;
     line-height: 34rpx;
     color: #3c3d41;
+    font-weight: 400;
+    font-family: 'PingFangSC';
   }
   .captain {
     font-size: 24rpx;
@@ -229,6 +255,12 @@
     font-size: 24rpx;
     line-height: 34rpx;
     color: #b09053;
+
+    /deep/ text {
+      font-size: 24rpx;
+      line-height: 34rpx;
+      color: #b09053;
+    }
   }
   .btn {
     padding: 8rpx 16rpx;
@@ -252,5 +284,22 @@
   .btn-black {
     background-color: #000000;
     color: #ffffff;
+  }
+  .phone-icon-wrapper {
+    width: 40rpx;
+    height: 40rpx;
+    background: #e5e5e5;
+    border-radius: 50%;
+
+    .phone-icon {
+      width: 22rpx;
+      height: 22rpx;
+    }
+  }
+  .phone-text {
+    font-size: 24rpx;
+    font-family: 'PingFangSC';
+    font-weight: 400;
+    color: #2d2e32;
   }
 </style>
