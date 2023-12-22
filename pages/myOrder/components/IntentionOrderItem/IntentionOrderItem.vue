@@ -46,7 +46,7 @@
           <text>预约上门时间：</text>
           <text>{{ order.reserveTime }}</text>
         </view>
-        <text class="captain" v-else>{{ `领队：${order.captain.name} ${order.captain.phone}` }}</text>
+        <text class="captain line-clamp-one" v-else>{{ `领队：${order.captain.name} ${order.captain.phone}` }}</text>
       </view>
       <view class="flex-col items-start self-start stage-wrapper order-mt-8">
         <view class="count-down" v-if="order.status === '定金未支付'">
