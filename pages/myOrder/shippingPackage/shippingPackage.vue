@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col section-top">
       <view class="flex-row justify-center items-center contact">
         <image class="logo" :src="shipping.company_logo" />
@@ -32,7 +32,7 @@
       src="https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=72e68854fbf691b4d7ab6cc06f2da28f.png"
     />
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <PopShippingProductList :products="shipping.products"></PopShippingProductList>
+      <pop-shipping-product-list :products="shipping.products"></pop-shipping-product-list>
     </u-popup>
   </view>
 </template>
@@ -40,7 +40,7 @@
 <script>
   import NavBar from '@/components/NavBar/NavBar.vue';
   import PopShippingProductList from '../components/PopShippingProductList/PopShippingProductList.vue';
-  import { shippingDetail } from '../../../mock/personal/orders';
+  import { shippingDetail } from '@/mock/personal/orders';
 
   export default {
     components: { NavBar, PopShippingProductList },
