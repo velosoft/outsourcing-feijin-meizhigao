@@ -1,0 +1,24 @@
+.primary-switch {
+  /deep/ .u-switch {
+    height: 28rpx !important;
+    width: 70rpx !important;
+    overflow: visible !important;
+    border: unset !important;
+  }
+  /deep/ .u-switch__bg {
+    height: 28rpx !important;
+    width: 70rpx !important;
+    background-color: #8c8f95 !important;
+    border-radius: 100px !important;
+  }
+  /deep/ .u-switch__node {
+    height: 40rpx !important;
+    width: 40rpx !important;
+  }
+  /deep/ .switch--false .u-switch__node {
+    transform: translateX(-30rpx) !important;
+  }
+  /deep/ .switch--false .u-switch__node--on {
+    transform: translateX(0rpx) !important;
+  }
+}

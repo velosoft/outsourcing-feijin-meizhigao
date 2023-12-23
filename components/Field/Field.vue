@@ -9,7 +9,14 @@
   >
     <view :class="inputWrapperClass" slot="value">
       <slot name="input">
-        <input :class="inputClass" :placeholder="placeholder" :value="value" :disabled="readonly" @input="onInput" />
+        <input
+          :class="inputClass"
+          :placeholder-style="placeholderStyle"
+          :placeholder="placeholder"
+          :value="value"
+          :disabled="readonly"
+          @input="onInput"
+        />
       </slot>
     </view>
   </u-cell>
@@ -49,6 +56,10 @@
       border: {
         type: Boolean,
         default: false,
+      },
+      placeholderStyle: {
+        type: String,
+        default: '',
       },
     },
     options: {
