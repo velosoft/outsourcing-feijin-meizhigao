@@ -14,13 +14,6 @@
       }
     },
     {
-      "path": "pages/myOrder/applyInvoice/applyInvoice",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/tabBar/personal",
       "style": {
         "navigationStyle": "custom",
@@ -85,6 +78,20 @@
     },
     {
       "path": "pages/myOrder/applyAfterSale/applyAfterSale",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/myOrder/applyInvoice/applyInvoice",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/myOrder/editInvoiceTitle/editInvoiceTitle",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

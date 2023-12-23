@@ -15,7 +15,7 @@
         <text class="title-type" @click="onEdit">编辑</text>
       </view>
     </view>
-    <view class="flex-col justify-start items-center button btn-wrapper">
+    <view class="flex-col justify-start items-center button btn-wrapper" @click="onEdit">
       <text class="title-font btn-text">添加新的抬头</text>
     </view>
   </view>
@@ -32,8 +32,8 @@
     },
 
     methods: {
-      onEdit(args) {
-        // 事件处理方法
+      onEdit() {
+        uni.navigateTo({ url: '/pages/myOrder/editInvoiceTitle/editInvoiceTitle' });
       },
       onSelect(item) {
         this.$emit('select', item);
