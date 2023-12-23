@@ -1,6 +1,13 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" :background="navBarColor"></NavBar>
+    <NavBar
+      :hasBack="true"
+      :title="title"
+      :fixed="true"
+      :isShow="true"
+      :background="navBarColor"
+      :titleColor="titleColor"
+    ></NavBar>
     <view class="flex-col flex-1 body">
       <view class="flex-row items-center status">
         <image
@@ -45,12 +52,16 @@
         </view>
         <view
           class="btn btn-plain"
-          v-if="order.orderStatus === '交易完成' && !order.hasInvoice"
+          v-if="order.orderStatus === '交易完成' && !order.invoiced"
           @click="gotoApplyInvoice"
         >
           <text>申请开票</text>
         </view>
-        <view class="btn btn-plain" v-if="order.orderStatus === '交易完成' && order.hasInvoice">
+        <view
+          class="btn btn-plain"
+          v-if="order.orderStatus === '交易完成' && order.invoiced"
+          @click="gotoInvoiceDetail"
+        >
           <text>查看发票</text>
         </view>
         <view class="btn btn-plain" v-if="order.orderStatus === '交易完成'" @click="gotoComment">
@@ -97,6 +108,7 @@
       return {
         isShowNavbar: false,
         navBarColor: '#b09053',
+        titleColor: '#ffffff',
         order: productOrders[0],
         title: '订单详情',
         showCancel: false,
@@ -112,14 +124,14 @@
       if (e.scrollTop > 10) {
         if (!this.isShowNavbar) {
           this.isShowNavbar = true;
-          this.title = '订单详情';
           this.navBarColor = '#ffffff';
+          this.titleColor = '#000000';
         }
       } else {
         if (this.isShowNavbar) {
           this.isShowNavbar = false;
-          this.title = '';
           this.navBarColor = '#b09053';
+          this.titleColor = '#ffffff';
         }
       }
     },
@@ -132,6 +144,9 @@
       },
       gotoApplyInvoice() {
         uni.navigateTo({ url: '/pages/myOrder/applyInvoice/applyInvoice' });
+      },
+      gotoInvoiceDetail() {
+        uni.navigateTo({ url: '/pages/myOrder/invoiceDetail/invoiceDetail' });
       },
       onShowCancel() {
         this.showCancel = true;
@@ -211,7 +226,7 @@
     margin-left: 20rpx;
   }
   .btn-plain {
-    border: 2px solid #dec9a0;
+    border: 2rpx solid #dec9a0;
     color: #b09053;
   }
   .btn-primary {

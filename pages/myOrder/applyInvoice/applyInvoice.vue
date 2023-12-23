@@ -11,7 +11,7 @@
       </text>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start footer-fixed">
-      <view class="flex-col justify-start items-center button text-wrapper">
+      <view class="flex-col justify-start items-center button text-wrapper" @click="gotoInvoiceDetail">
         <text class="font btn-text">确认申请</text>
       </view>
     </view>
@@ -31,8 +31,11 @@
         title: '申请发票',
       };
     },
-
-    methods: {},
+    methods: {
+      gotoInvoiceDetail() {
+        uni.navigateTo({ url: '/pages/myOrder/invoiceDetail/invoiceDetail' });
+      },
+    },
   };
 </script>
 

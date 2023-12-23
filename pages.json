@@ -98,6 +98,13 @@
       }
     },
     {
+      "path": "pages/myOrder/invoiceDetail/invoiceDetail",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/tabBar/comps",
       "style": {
         "navigationStyle": "default",
