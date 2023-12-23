@@ -37,6 +37,7 @@
       background-color: #ffffff;
       border-radius: 16rpx 16rpx 0rpx 0rpx;
       box-shadow: 0rpx -6rpx 10rpx #0000000a;
+      z-index:1000;
       .tatal {
         color: #030305;
         font-size: 24rpx;

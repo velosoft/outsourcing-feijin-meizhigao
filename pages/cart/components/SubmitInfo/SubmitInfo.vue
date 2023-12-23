@@ -23,6 +23,7 @@
           :border="false"
           :center="true"
           :isLink="true"
+          @click="onClick"
         ></u-cell>
         <u-cell
           class="cell-in-white-card-weight mt-18"
@@ -31,6 +32,7 @@
           :border="false"
           :center="true"
           :isLink="true"
+          @click="onClick_1"
         ></u-cell>
       </view>
       <view class="flex-col mt-24">
@@ -41,24 +43,45 @@
         <textarea class="text-area mt-16" placeholder="请输入…"></textarea>
       </view>
     </view>
+    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12"><PopCoupon></PopCoupon></u-popup>
+    <u-popup :show="popupVisible_1" @close="onClose_1" mode="bottom" :round="12">
+      <PopPointsDeduction></PopPointsDeduction>
+    </u-popup>
   </CFCard>
   </template>
   
   <script>
   import CFCard from '@/components/Card/Card';
+  import PopCoupon from '../../../../pages/cart/registerCourse/components/PopCoupon/PopCoupon.vue';
+  import PopPointsDeduction from '../../../../pages/cart/registerCourse/components/PopPointsDeduction/PopPointsDeduction.vue';
   
   export default {
-    components: { CFCard },
-    props: {},
+    components: { CFCard, PopCoupon, PopPointsDeduction },
+    props: { submitData: { type: Object, default: () => ({}) } },
     data() {
       return {
         eventDiscountsNum: '',
         couponNum: '',
         coinsNum: '',
+        popupVisible: false,
+        popupVisible_1: false,
       };
     },
   
-    methods: {},
+    methods: {
+      onClick() {
+        this.popupVisible = true;
+      },
+      onClose() {
+        this.popupVisible = false;
+      },
+      onClick_1() {
+        this.popupVisible_1 = true;
+      },
+      onClose_1() {
+        this.popupVisible_1 = false;
+      },
+    },
   };
   </script>
   

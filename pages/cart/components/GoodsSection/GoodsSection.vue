@@ -1,13 +1,13 @@
 <template>
-  <view class="flex-col justify-start wrap">
+  <view class="flex-col wrap">
     <view class="flex-col justify-start">
-      <u-checkbox-group v-model="v_model">
+      <u-checkbox-group v-model="checkGroupValue">
         <u-swipe-action class="default-swipe-cell">
           <view class="flex-col">
             <view class="flex-col mt-20" v-for="(item, index) in items" :key="index">
               <u-swipe-action-item :options="swipeOption" @click="onActionItemClick">
                 <view class="flex-row items-center group">
-                  <u-checkbox v-model="v_model_1" shape="circle" activeColor="#b09053" :iconSize="18"></u-checkbox>
+                  <u-checkbox v-model="checkValue" shape="circle" activeColor="#b09053" :iconSize="18"></u-checkbox>
                   <view class="flex-row flex-1 ml-12">
                     <image class="shrink-0 thumb" src="/static/images/mock_thumb_003.png" />
                     <view class="flex-col flex-1 ml-12 justify-between">
@@ -22,7 +22,7 @@
                             <text class="decimal decimal-text">.00</text>
                           </view>
                         </view>
-                        <u-number-box v-model="v_model_2"></u-number-box>
+                        <u-number-box v-model="v_model"></u-number-box>
                       </view>
                       <view class="items-center" v-if="true">
                         <text class="tag-right additional-label">附加服务：安装服务</text>
@@ -49,15 +49,19 @@
   <script>
   export default {
     components: {},
-    props: {},
+    props: { CartList: { type: Object, default: () => ({}) } },
     data() {
       return {
         goodsList: {},
-        swipeOption: '',
-        v_model: [],
-        v_model_1: '',
-        v_model_2: '',
-        items: [null, null],
+        swipeOption: [
+          {
+            text: '删除',
+          },
+        ],
+        checkGroupValue: '',
+        checkValue: '',
+        v_model: '',
+        items: [null, null, null, null],
       };
     },
   
@@ -82,7 +86,7 @@
       }
       .title {
         font-size: 28rpx;
-        font-family: PingFangSC;
+        font-family: PingFang SC;
         line-height: 28rpx;
         color: #030305;
       }
@@ -91,7 +95,7 @@
       }
       .size {
         font-size: 24rpx;
-        font-family: PingFangSC;
+        font-family: PingFang SC;
         line-height: 24rpx;
         color: #a7a7a7;
       }
@@ -148,12 +152,12 @@
     }
     .tag-label {
       font-size: 20rpx;
-      font-family: PingFangSC;
+      font-family: PingFang SC;
       line-height: 20rpx;
     }
     .tag-right {
       font-size: 24rpx;
-      font-family: PingFangSC;
+      font-family: PingFang SC;
       line-height: 24rpx;
       color: #bb3e0c;
     }

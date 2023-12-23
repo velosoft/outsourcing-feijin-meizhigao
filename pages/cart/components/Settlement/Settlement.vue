@@ -78,12 +78,12 @@
     background-color: #ffffff;
     box-shadow: 0rpx 0rpx 20rpx #0000000a;
     height: 112rpx;
-    z-index: 11000;
     .wrap {
       padding: 0 32rpx;
       height: 112rpx;
       background-color: #ffffff;
       box-shadow: 0rpx 0rpx 20rpx #0000000a;
+      z-index: 11000;
       .group_2 {
         flex-shrink: 0;
         align-self: center;
