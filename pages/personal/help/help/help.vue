@@ -3,7 +3,7 @@
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <FjSticky v-bind:customNavHeight="customNavHeight"
       ><u-tabs
-        class="line-tabs"
+        class="tabs-yellow-wide"
         :list="list"
         :activeStyle="{'color':'#000000','fontWeight':'700','fontSize': '14'}"
         :inactiveStyle="{'color':'#9e9ea0','fontSize': '14'}"
@@ -100,24 +100,6 @@
   .page {
     background-color: #f8f8f8;
     width: 100%;
-
-    .line-tabs {
-      /deep/ .u-tabs {
-        padding: 0 14rpx;
-        background-color: #ffffff;
-      }
-
-      /deep/ .u-tabs__wrapper__nav__item {
-        height: 36px;
-      }
-
-      /deep/ .u-tabs__wrapper__nav__line {
-        background: linear-gradient(90deg, #e9b81b 0%, #e9b81b00 97.2%) !important;
-        opacity: 0.7 !important;
-        border-radius: 10rpx !important;
-        bottom: 12rpx !important;
-      }
-    }
     .list {
       padding: 16rpx 24rpx;
 
