@@ -1,17 +1,17 @@
 <template>
   <view class="flex-col page height-full">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <FjSticky v-bind:customNavHeight="customNavHeight"
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
+    <fj-sticky v-bind:customNavHeight="customNavHeight"
       ><u-tabs
         class="tabs-yellow-wide"
         :list="list"
-        :activeStyle="{'color':'#000000','fontWeight':'700','fontSize': '14'}"
-        :inactiveStyle="{'color':'#9e9ea0','fontSize': '14'}"
+        :activeStyle="{ color: '#000000', fontWeight: '700', fontSize: '14' }"
+        :inactiveStyle="{ color: '#9e9ea0', fontSize: '14' }"
         :lineWidth="32"
         :lineHeight="10"
         :scrollable="false"
       ></u-tabs
-    ></FjSticky>
+    ></fj-sticky>
     <view class="flex-col justify-start"
       ><scroll-view :scroll-y="true"
         ><list-container :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
