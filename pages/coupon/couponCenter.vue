@@ -7,7 +7,7 @@
       </view>
       <fj-sticky :customNavHeight="80">
         <u-tabs
-          class="line-tabs"
+          class="tabs-yellow-wide tabs"
           :activeStyle="{
             color: '#030305',
             fontWeight: '700',
@@ -29,7 +29,7 @@
       </list-container>
     </view>
     <view class="flex-col justify-start items-center scan-code">
-      <image class="ai-outflow" src="/static/images/17021047432156371229.png" />
+      <image class="ai-outflow" src="/static/images/icon_scan_code.png" />
     </view>
   </view>
 </template>
@@ -135,21 +135,9 @@
     height: 56rpx;
   }
 
-  .line-tabs {
-    /deep/ .u-tabs {
-      padding: 0 14rpx;
-      background-color: #ffffff;
-    }
-
+  .tabs {
     /deep/ .u-tabs__wrapper__nav__item {
-      height: 36px;
-    }
-
-    /deep/ .u-tabs__wrapper__nav__line {
-      background: linear-gradient(90deg, #e9b81b 0%, #e9b81b00 97.2%) !important;
-      opacity: 0.7 !important;
-      border-radius: 10rpx !important;
-      bottom: 12rpx !important;
+      padding: 30rpx;
     }
   }
 </style>
