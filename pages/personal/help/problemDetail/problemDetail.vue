@@ -1,7 +1,9 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <view class="flex-col container"><MpHtml class="html-detail html-margin" :content="content"></MpHtml></view>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
+    <view class="flex-col container">
+      <mp-html class="html-detail html-margin" :content="content"></mp-html>
+    </view>
   </view>
 </template>
 
@@ -15,7 +17,7 @@
     data() {
       return {
         content:
-          '<view>   <image src="https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f994f8347e00b001139c3d4/6579072b740f740012ac4768/17024307159312203750.png" />   <p>     2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。     <br />     <br />   </p>   <p class="font mt-24">     好消息是，你是少数这么早意识到朋友圈文案重要性的。而关于文案的书，其实早就有了很多，文案的本质是相通的。     <br />     <br />   </p>   <p class="font p_6">     文案只是信息的一种呈现形式，多和各种各样的人沟通，多了解患者需求，然后把他们的需求，用朋友圈的内容表达出来，就是最有效的文案。   </p> </view>',
+          '<view>   <img src="/static/mock/home_swiper_image.png" />  <br/> <p>     2015年之前的朋友圈，都是刷屏；朋友圈文案是最近一年大家才开始重视的，可能我是比较早提出“朋友圈文案”和“长文案”这两类不同概念的文案区分，所以，坏消息是，目前应该还没有专业的写朋友圈文案的书。     <br />  </p>   <p class="font mt-24">     好消息是，你是少数这么早意识到朋友圈文案重要性的。而关于文案的书，其实早就有了很多，文案的本质是相通的。     <br />     <br />   </p>   <p class="font p_6">     文案只是信息的一种呈现形式，多和各种各样的人沟通，多了解患者需求，然后把他们的需求，用朋友圈的内容表达出来，就是最有效的文案。   </p> </view>',
         title: '问题详情',
       };
     },
