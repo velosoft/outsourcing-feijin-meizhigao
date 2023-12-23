@@ -69,6 +69,9 @@
         font-weight: bold;
         color: #333444;
       }
+      /deep/ .u-cell__body {
+        border-bottom: 1px solid #eeeeee;
+      }
     }
   }
 </style>
