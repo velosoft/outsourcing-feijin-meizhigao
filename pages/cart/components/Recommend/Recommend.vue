@@ -5,19 +5,20 @@
       <text class="recommend-title">你可能还喜欢</text>
       <image class="icon-recommend" src="/static/images/icon_cart_recommend_right.png" />
     </view>
-    <DoubleList class="mt-10" :items="items"></DoubleList>
+    <DoubleList class="mt-10" :items="list"></DoubleList>
   </view>
   </template>
   
   <script>
   import DoubleList from '@/components/DoubleList/DoubleList.vue';
+  import { productList } from "@/mock/shopList";
   
   export default {
     components: { DoubleList },
-    props: {},
     data() {
       return {
         items: '',
+        list: productList,
       };
     },
   

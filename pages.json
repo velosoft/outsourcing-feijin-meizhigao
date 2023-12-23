@@ -7,6 +7,13 @@
   "pages": [
     /*///---- Pages-Tool --  合并自： pages-config/pages-all.json ----*/ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/tabBar/cart",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/tabBar/personal",
       "style": {
         "navigationStyle": "custom",
@@ -200,13 +207,6 @@
     },
     {
       "path": "pages/tabBar/shop",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/tabBar/cart",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

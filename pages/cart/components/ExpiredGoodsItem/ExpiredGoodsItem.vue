@@ -4,7 +4,7 @@
     <image class="thumb" src="/static/images/mock_thumb_07.png" />
     <view class="flex-col flex-1 good-con justify-between">
       <view class="flex-col items-start">
-        <text class="line-clamp-two goods-title">国风系列置物架碳钢多层储物架</text>
+        <text class="line-clamp-one goods-title">国风系列置物架碳钢多层储物架</text>
         <text class="Specification mt-16">规格：3层80长x40宽x170高</text>
       </view>
       <view class="flex-row mt-28 items-start">
