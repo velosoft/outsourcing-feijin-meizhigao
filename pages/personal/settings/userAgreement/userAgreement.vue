@@ -1,14 +1,16 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col container">
       <view class="flex-col block-size">
         <text class="title">{{ title }}</text>
-        <view class="flex-col justify-start mt-19 mt-16"><MpHtml class="content" :content="aggrementContent"></MpHtml></view>
+        <view class="flex-col justify-start mt-19 mt-16"
+          ><mp-html class="content" :content="aggrementContent"></mp-html
+        ></view>
       </view>
       <view class="flex-col block-size">
         <text class="title">明细说明</text>
-        <MpHtml class="mt-16 content" :content="detialContent"></MpHtml>
+        <mp-html class="mt-16 content" :content="detialContent"></mp-html>
       </view>
     </view>
   </view>

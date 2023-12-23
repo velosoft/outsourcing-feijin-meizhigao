@@ -1,6 +1,6 @@
 <template>
   <view class="height-full flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col container flex-1">
       <view class="flex-col cell-group">
         <view class="flex-row justify-between cell-wrap">
