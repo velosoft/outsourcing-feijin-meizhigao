@@ -439,14 +439,14 @@
       }
     },
     {
-      "path": "pages/cart/bookCustomize/bookCustomize/bookCustomize",
+      "path": "pages/cart/bookCustomize/bookCustomize",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/cart/bookServe/bookServe/bookServe",
+      "path": "pages/cart/bookServe/bookServe",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

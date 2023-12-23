@@ -46,7 +46,7 @@
   <script>
   export default {
     components: {},
-    props: { GoodsCard: { type: Object, default: () => ({}) } },
+    props: { goodsCard: { type: Object, default: () => ({}) } },
     data() {
       return {
         items: [null, null],

@@ -11,11 +11,11 @@
   </template>
   
   <script>
-  import CartBottomPayBtn from '../../../../pages/cart/components/CartBottomPayBtn/CartBottomPayBtn.vue';
-  import GoodsCard from '../../../../pages/cart/components/GoodsCard/GoodsCard.vue';
-  import HeadAddressCard from '../../../../pages/cart/components/HeadAddressCard/HeadAddressCard.vue';
+  import CartBottomPayBtn from '../../../pages/cart/components/CartBottomPayBtn/CartBottomPayBtn.vue';
+  import GoodsCard from '../../../pages/cart/components/GoodsCard/GoodsCard.vue';
+  import HeadAddressCard from '../../../pages/cart/components/HeadAddressCard/HeadAddressCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import SubmitInfo from '../../../../pages/cart/components/SubmitInfo/SubmitInfo.vue';
+  import SubmitInfo from '../../../pages/cart/components/SubmitInfo/SubmitInfo.vue';
   
   export default {
     components: { CartBottomPayBtn, GoodsCard, HeadAddressCard, NavBar, SubmitInfo },

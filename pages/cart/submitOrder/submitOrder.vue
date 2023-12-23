@@ -1,12 +1,12 @@
 <template>
   <view class="flex-col relative page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <view class="flex-col group">
+    <view class="flex-col flex-1 group">
       <HeadAddressCard></HeadAddressCard>
-      <GoodsCard class="mt-10"></GoodsCard>
-      <SubmitInfo class="mt-10"></SubmitInfo>
+      <GoodsCard class="mt-12 mt-10" :goodsCard="goodsCard"></GoodsCard>
+      <SubmitInfo class="mt-12 mt-10" :submitData="submitData"></SubmitInfo>
     </view>
-    <CartBottomPayBtn></CartBottomPayBtn>
+    <CartBottomPayBtn :goodsPrice="goodsPrice"></CartBottomPayBtn>
   </view>
   </template>
   
@@ -22,7 +22,10 @@
     props: {},
     data() {
       return {
-        title: '预约定制',
+        goodsPrice: '',
+        submitData: '',
+        goodsCard: '',
+        title: '提交订单',
       };
     },
   
