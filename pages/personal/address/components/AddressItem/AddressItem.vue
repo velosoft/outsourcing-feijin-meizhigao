@@ -9,7 +9,17 @@
       </view>
     </view>
     <view class="flex-row justify-between address-center header">
-      <u-radio v-model="v_model" label="设为默认地址" activeColor="#b09053" @change="radioChange"></u-radio>
+      <u-checkbox-group activeColor="#b09053" @change="defaultAddrChange">
+        <u-checkbox
+          :checked="addressItem.isDefault"
+          label="设为默认地址"
+          name="设为默认地址"
+          shape="circle"
+          labelSize="28rpx"
+          :labelColor="addressItem.isDefault ? '#b09053' : '#999AAA'"
+        >
+        </u-checkbox>
+      </u-checkbox-group>
       <view class="flex-row right">
         <image class="icon-editor" src="/static/images/icon_edit.png" @click="onClick" />
         <image class="icon-delete ml-28" src="/static/images/icon_delete.png" @click="onOpenDialog" />
@@ -18,7 +28,7 @@
     <confirm-panel
       :isShow="showDialog"
       :isnormal="false"
-      title="删除收获地址"
+      title="删除收货地址"
       content="您确定删除该收货地址吗？"
       @cancel="onCancel"
       @confirm="onConfirm"
@@ -34,26 +44,23 @@
       addressItem: {
         type: Object,
         default: () => ({
-          aid: '001',
           address: '东宏国际广场',
           addressDetial: '广州市天河区天河中山大道190号',
           nickname: '张三',
           tel: '15812345678',
-          isNormal: true,
+          isDefault: false,
         }),
       },
     },
     data() {
       return {
         showDialog: false,
-        v_model: '',
       };
     },
 
     methods: {
-      radioChange(n) {
-        // 事件处理方法
-        console.log('radioChange', n);
+      defaultAddrChange(val) {
+        this.$emit('setDefault', val.length ? true : false);
       },
       onClick() {
         uni.navigateTo({ url: '/pages/personal/address/addressEditor/addressEditor' });

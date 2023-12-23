@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page height-full">
-    <NavBar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col wrap">
       <scroll-view :scroll-y="true">
         <list-container
@@ -12,30 +12,34 @@
         >
           <u-cell-group v-model="radiovalue" :border="false">
             <view class="flex-col">
-              <AddressItem class="list-item mt-12" v-for="(item, index) in addressList" :key="index" :addressItem="item"></AddressItem>
+              <address-item
+                class="list-item mt-12"
+                v-for="(item, index) in addressList"
+                :key="index"
+                :addressItem="item"
+                @setDefault="(val) => setDetaultAddr(index, val)"
+              ></address-item>
             </view>
           </u-cell-group>
         </list-container>
       </scroll-view>
     </view>
-    <view class="fixed-bottom-safe2 flex-col footer-btn">
-      <u-button
-        class="cf-btn-black"
-        type="primary"
-        size="large"
-        shape="circle"
-        text="+ 新增收货地址"
-        @click="onClick"
-      ></u-button>
-    </view>
+    <u-button
+      class="fixed-bottom-safe2 cf-btn-black footer-btn"
+      type="primary"
+      size="large"
+      shape="circle"
+      text="+ 新增收货地址"
+      @click="onClick"
+    ></u-button>
   </view>
 </template>
 
 <script>
-  import AddressItem from '../../../../pages/personal/address/components/AddressItem/AddressItem.vue';
+  import AddressItem from '@/pages/personal/address/components/AddressItem/AddressItem.vue';
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import {addressList} from './address.data.js'
+  import { addressList } from './address.data.js';
 
   export default {
     components: { AddressItem, ListContainer, NavBar },
@@ -54,6 +58,16 @@
       onClick() {
         uni.navigateTo({ url: '/pages/personal/address/addressEditor/addressEditor' });
       },
+
+      setDetaultAddr(index, val) {
+        this.addressList.forEach((address, i) => {
+          if (index === i) {
+            address.isDefault = val;
+          } else {
+            address.isDefault = false;
+          }
+        });
+      },
     },
   };
 </script>
@@ -69,7 +83,9 @@
     }
     .wrap {
       padding: 24rpx;
+      padding-bottom: calc(172rpx + env(safe-area-inset-bottom));
       overflow-y: hidden;
+
       .list-item {
         &:first-child {
           margin-top: 0;
@@ -77,8 +93,7 @@
       }
     }
     .footer-btn {
-      padding: 32rpx;
-      background-color: #f8f8f8;
+      margin: 0 30rpx;
     }
   }
 </style>
