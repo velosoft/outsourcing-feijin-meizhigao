@@ -1,11 +1,11 @@
 <template>
-  <view class="flex-col page">
+  <view class="height-full flex-col page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col group flex-1">
       <view class="flex-col items-center">
         <view class="flex-col items-center">
           <image class="icon" src="/static/images/icon_result_success.png" v-if="status == 0" />
-          <image class="icon" src="/static/images/2e22c89b461c216fbf26aabb2a85d7e8.png" v-if="status == 1" />
+          <image class="icon" src="/static/images/icon_result_fail.png" v-if="status == 1" />
         </view>
         <text class="font result-text mt-8">支付成功</text>
       </view>
@@ -68,7 +68,7 @@
       }
       .font {
         font-size: 30rpx;
-        font-family: 苹方;
+        font-family: PingFangSC;
         line-height: 30rpx;
       }
       .result-text {

@@ -453,7 +453,7 @@
       }
     },
     {
-      "path": "pages/cart/submitOrder/submitOrder/submitOrder",
+      "path": "pages/cart/submitOrder/submitOrder",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

@@ -33,7 +33,7 @@
             </view>
           </view>
         </view>
-        <view class="flex-col items-center btn-wrap ml-12 justify-center">
+        <view class="flex-col items-center btn-wrap ml-12 justify-center" @click="onClick_1">
           <text class="checkbox-label btn-text">去结算(3)</text>
         </view>
       </view>
@@ -65,6 +65,9 @@
       onClose() {
         this.popupVisible = false;
       },
+      onClick_1() {
+      uni.navigateTo({ url: '/pages/cart/submitOrder/submitOrder' });
+    },
     },
   };
   </script>

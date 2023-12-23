@@ -1,5 +1,6 @@
 <template>
-    <view class="flex-row justify-between items-center wrap pos">
+  <view class="flex-col footer-wrap">
+    <view class="fixed-bottom-safe flex-row justify-between items-center wrap">
       <view class="flex-col">
         <view class="flex-row items-center self-stretch">
           <text class="tatal">合计</text>
@@ -7,23 +8,30 @@
         </view>
         <text class="self-start coupon-num mt-8">已优惠￥85.00</text>
       </view>
-      <u-button text="确认提交" type="primary" size="mini" shape="circle"></u-button>
+      <u-button text="确认提交" type="primary" shape="circle" @click="onClick"></u-button>
     </view>
-    </template>
-    
-    <script>
-    export default {
-      components: {},
-      props: {},
-      data() {
-        return {};
+  </view>
+  </template>
+  
+  <script>
+  export default {
+    components: {},
+    props: { goodsPrice: { type: Object, default: () => ({}) } },
+    data() {
+      return {};
+    },
+  
+    methods: {
+      onClick() {
+        uni.navigateTo({ url: '/pages/cart/pay/pay/pay' });
       },
-    
-      methods: {},
-    };
-    </script>
-    
-    <style scoped lang="less">
+    },
+  };
+  </script>
+  
+  <style scoped lang="less">
+  .footer-wrap {
+    height: 112rpx;
     .wrap {
       padding: 16rpx 32rpx;
       background-color: #ffffff;
@@ -49,10 +57,5 @@
         line-height: 22rpx;
       }
     }
-    .pos {
-      position: absolute;
-      left: 0rpx;
-      right: 0rpx;
-      bottom: 0rpx;
-    }
-    </style>
+  }
+  </style>

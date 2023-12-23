@@ -1,5 +1,5 @@
 <template>
-  <view class="flex-col page">
+  <view class="flex-col page height-full">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col flex-1 group">
       <view class="flex-col items-center pay-num-wrap">
@@ -11,7 +11,7 @@
         <PayCard class="section_3 mt-22"></PayCard>
       </view>
       <view class="fixed-bottom-safe2 flex-col footer-btn">
-        <u-button class="button" text="确认付款" type="primary" size="large" shape="circle"></u-button>
+        <u-button class="button" text="确认付款" type="primary" size="large" shape="circle" @click="onClick"></u-button>
       </view>
     </view>
   </view>
@@ -30,7 +30,11 @@
       };
     },
   
-    methods: {},
+    methods: {
+      onClick() {
+        uni.navigateTo({ url: '/pages/cart/pay/payResult/payResult' });
+      },
+    },
   };
   </script>
   
@@ -48,7 +52,7 @@
         margin: 0 24rpx;
         .pay-label {
           font-size: 26rpx;
-          font-family: 苹方;
+          font-family: PingFangSC;
           line-height: 26rpx;
           color: #6c6c6c;
         }
@@ -68,7 +72,7 @@
         margin: 112rpx 24rpx 0;
         .pay-type-title {
           font-size: 26rpx;
-          font-family: 苹方;
+          font-family: PingFangSC;
           line-height: 26rpx;
           color: #a7a7a7;
         }
