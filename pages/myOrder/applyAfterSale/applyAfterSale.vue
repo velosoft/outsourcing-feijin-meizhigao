@@ -1,17 +1,17 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col products">
       <u-checkbox-group placement="column">
-        <view class="flex-col list-item mt-12" v-for="(item, index) in items" :key="index">
-          <OrderProductItem v-if="orderStatus === '未发货' || applyType"></OrderProductItem>
-          <OrderProductNumberBox v-else></OrderProductNumberBox>
+        <view class="flex-col list-item mt-12" v-for="(item, index) in order.products" :key="index">
+          <order-product-item v-if="orderStatus === '未发货' || applyType" :product="item"></order-product-item>
+          <order-product-number-box v-else></order-product-number-box>
         </view>
       </u-checkbox-group>
     </view>
     <view class="flex-col main">
-      <ApplyAfterSaleForm v-if="orderStatus === '未发货' || applyType"></ApplyAfterSaleForm>
-      <ApplyAfterSaleType v-else @type="onChangeType"></ApplyAfterSaleType>
+      <apply-after-sale-form v-if="orderStatus === '未发货' || applyType"></apply-after-sale-form>
+      <apply-after-sale-type v-else @type="onChangeType"></apply-after-sale-type>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start action">
       <view class="flex-col justify-start items-center button btn-wrapper">
@@ -27,16 +27,17 @@
   import NavBar from '@/components/NavBar/NavBar.vue';
   import OrderProductItem from '@/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import OrderProductNumberBox from '@/pages/myOrder/components/OrderProductNumberBox/OrderProductNumberBox.vue';
+  import { productOrders } from '@/mock/personal/orders.js';
 
   export default {
     components: { ApplyAfterSaleForm, ApplyAfterSaleType, NavBar, OrderProductItem, OrderProductNumberBox },
     props: {},
     data() {
       return {
-        orderStatus: '已发货',
-        applyType: '',
+        orderStatus: '未发货',
+        applyType: '', // 记录用户退换货的选择类型
         title: '申请售后',
-        items: [null, null],
+        order: productOrders[0],
       };
     },
     methods: {
