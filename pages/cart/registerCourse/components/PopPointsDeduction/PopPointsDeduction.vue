@@ -1,5 +1,5 @@
 <template>
-  <PopupWithButton title="积分抵扣详情" buttonText="确定">
+  <PopupWithButton title="积分抵扣详情" buttonText="确定" @click="onConfirm">
     <view class="flex-col justify-start button view">
       <u-radio-group v-model="radioValue">
         <view class="flex-col flex-1">
@@ -17,7 +17,7 @@
               iconColor="#030305"
             ></u-radio>
           </view>
-          <view class="flex-row justify-between items-center mt-10 cell-wrap">
+          <view class="flex-row justify-between cell-top mt-10 cell-wrap items-center">
             <text class="label">不使用积分</text>
             <u-radio
               class="text"
@@ -48,7 +48,12 @@
       };
     },
   
-    methods: {},
+    methods: {
+      onConfirm() {
+        // 事件处理方法
+        this.$emit('confirm');
+      },
+    },
   };
   </script>
   
@@ -60,23 +65,26 @@
       height: 104rpx;
       background: #efefef;
       border-radius: 12rpx;
-      .label {
-        font-size: 28rpx;
-        font-family: 苹方;
-        line-height: 26.2rpx;
-        font-weight: 700;
-        color: #030305;
-      }
       .price-num {
-        line-height: 20.78rpx;
+        line-height: 20rpx;
         font-weight: unset;
       }
-      .text {
-        align-self: center;
-      }
+    }
+    .cell-top {
+      padding: 0 30rpx;
+    }
+    .label {
+      font-size: 28rpx;
+      font-family: 苹方;
+      line-height: 26rpx;
+      font-weight: 700;
+      color: #030305;
+    }
+    .text {
+      align-self: center;
     }
   }
   .view {
-    padding: 60.24rpx 0 86rpx;
+    padding: 60rpx 0 86rpx;
   }
   </style>

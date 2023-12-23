@@ -1,5 +1,5 @@
 <template>
-  <PopupWithButton title="优惠券" buttonText="确定">
+  <PopupWithButton title="优惠券" buttonText="确定" @click="onConfirm">
     <view class="flex-col justify-start button view">
       <u-radio-group v-model="radioGroupValue">
         <view class="flex-col">
@@ -9,7 +9,7 @@
               <view class="flex-col relative">
                 <view class="items-center flex-row">
                   <text class="coupon-num">10</text>
-                  <text class="unit mt-2">元</text>
+                  <text class="unit text_13 mt-2">元</text>
                 </view>
                 <text class="condition mt-12">满100元使用</text>
               </view>
@@ -49,7 +49,12 @@
       };
     },
   
-    methods: {},
+    methods: {
+      onConfirm() {
+        // 事件处理方法
+        this.$emit('confirm');
+      },
+    },
   };
   </script>
   
@@ -69,21 +74,24 @@
         .coupon-num {
           font-size: 84rpx;
           font-family: HarmonyOS Sans SC;
-          line-height: 64rpx;
+          line-height: 63.68rpx;
           font-weight: 700;
           color: #bb3e0c;
         }
         .unit {
           font-size: 24rpx;
           font-family: 苹方;
-          line-height: 22rpx;
+          line-height: 22.28rpx;
           font-weight: 600;
           color: #bb3e0c;
+        }
+        .text_13 {
+          line-height: unset;
         }
         .condition {
           font-size: 24rpx;
           font-family: 苹方;
-          line-height: 22rpx;
+          line-height: 22.28rpx;
           color: #bb3e0c;
         }
       }
@@ -111,29 +119,29 @@
           .font {
             font-size: 28rpx;
             font-family: 苹方;
-            line-height: 26rpx;
+            line-height: 26.16rpx;
             color: #030305;
           }
           .time {
             font-size: 24rpx;
             font-family: 苹方;
-            line-height: 18rpx;
+            line-height: 17.8rpx;
             color: #a7a7a7;
           }
           .font_6 {
             font-size: 24rpx;
             font-family: 苹方;
-            line-height: 22rpx;
+            line-height: 22.28rpx;
             color: #a7a7a7;
           }
           .condition-normal {
-            line-height: 22rpx;
+            line-height: 22.42rpx;
           }
         }
       }
     }
   }
   .view {
-    padding: 56rpx 0
+    padding: 56rpx 0;
   }
   </style>
