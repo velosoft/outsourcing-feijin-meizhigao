@@ -38,7 +38,7 @@
         </view>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
+    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :safeAreaInsetBottom="false" bgColor="transparent">
       <PopCartCouponDetial></PopCartCouponDetial>
     </u-popup>
   </view>
@@ -75,6 +75,7 @@
     background-color: #ffffff;
     box-shadow: 0rpx 0rpx 20rpx #0000000a;
     height: 112rpx;
+    z-index: 11000;
     .wrap {
       padding: 0 32rpx;
       height: 112rpx;
