@@ -23,11 +23,11 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import NavBar from '@/components/NavBar/NavBar.vue';
-  
+
   export default {
     components: { NavBar },
     props: {
@@ -41,7 +41,7 @@
         title: '收银台',
       };
     },
-  
+
     methods: {
       onGoOn(args) {
         // 事件处理方法
@@ -50,12 +50,13 @@
       onGoBack() {
         // 事件处理方法
         this.$emit('onGoBack');
+        uni.navigateBack();
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -76,4 +77,4 @@
       }
     }
   }
-  </style>
+</style>
