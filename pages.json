@@ -14,7 +14,7 @@
       }
     },
     {
-      "path": "pages/myOrder/myOrder/myOrder",
+      "path": "pages/tabBar/personal",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false

@@ -128,7 +128,7 @@
 
 <script>
   import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
-  import PopReserve from '@/pages/myOrder/components/PopReserve/PopReserve.vue';
+  import PopReserve from '@/myOrder/pages/myOrder/components/PopReserve/PopReserve.vue';
 
   export default {
     components: { PopReserve },
