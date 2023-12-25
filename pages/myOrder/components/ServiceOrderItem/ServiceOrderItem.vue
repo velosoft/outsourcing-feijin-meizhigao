@@ -13,7 +13,7 @@
         </view>
       </view>
     </view>
-    <view class="flex-col summary">
+    <view class="flex-col summary" @click="onShowReserve">
       <view class="flex-row top">
         <image class="order-image" :src="order.image" />
         <view class="flex-col justify-between flex-1 right">
@@ -104,7 +104,7 @@
       <view class="btn btn-yellow" v-if="order.status === '等待确认报价'">
         <text>查看报价</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '等待上门服务'">
+      <view class="btn btn-yellow" v-if="order.status === '等待上门服务'" @click="onShowReserve">
         <text>预约服务时间</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '差额支付'">
@@ -120,26 +120,38 @@
         <text>删除记录</text>
       </view>
     </view>
+    <u-popup :show="showReserve" @close="onCloseReserve" mode="bottom" :closeable="true" :round="14">
+      <PopReserve @confirm="onCloseReserve"></PopReserve>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
+  import PopReserve from '@/pages/myOrder/components/PopReserve/PopReserve.vue';
+
   export default {
-    components: {},
+    components: { PopReserve },
     props: {
       order: Object,
     },
     data() {
-      return {};
+      return {
+        showReserve: false,
+      };
     },
-
     methods: {
       getPriceIntergetPart(val) {
         return getPriceIntergetPart(val);
       },
       getPriceDecimalPart(val) {
         return getPriceDecimalPart(val);
+      },
+      onShowReserve() {
+        this.showReserve = true;
+      },
+      onCloseReserve() {
+        this.showReserve = false;
       },
     },
   };
