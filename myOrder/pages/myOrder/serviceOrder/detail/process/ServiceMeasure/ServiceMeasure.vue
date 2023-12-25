@@ -16,7 +16,7 @@
               <text class="text-golden">查看结果</text>
               <image
                 class="icon-right-arrow ml-4"
-                src="/myOrder/static/images/icon_golden-right_arrow.png"
+                src="/myOrder/static/images/icon_golden_right_arrow.png"
               />
             </view>
           </u-cell>
@@ -31,7 +31,7 @@
               <text class="text-golden">查看合约</text>
               <image
                 class="icon-right-arrow ml-4"
-                src="/myOrder/static/images/icon_golden-right_arrow.png"
+                src="/myOrder/static/images/icon_golden_right_arrow.png"
               />
             </view>
           </u-cell>

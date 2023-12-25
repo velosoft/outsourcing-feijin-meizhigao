@@ -3,7 +3,7 @@
     <text class="font_2">{{text}}</text>
     <image
       class="shrink-0 image_7 ml-4"
-      src="/myOrder/static/images/icon_golden-right_arrow.png"
+      src="/myOrder/static/images/icon_golden_right_arrow.png"
     />
   </view>
 </template>

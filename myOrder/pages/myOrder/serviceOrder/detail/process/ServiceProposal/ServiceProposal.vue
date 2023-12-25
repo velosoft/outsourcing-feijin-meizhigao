@@ -11,14 +11,14 @@
                 <text class="text-golden">商品方案</text>
                 <image
                   class="shrink-0 icon-golden-right ml-4"
-                  src="/myOrder/static/images/icon_golden-right_arrow.png"
+                  src="/myOrder/static/images/icon_golden_right_arrow.png"
                 />
               </view>
               <view class="flex-row items-center ml-12">
                 <text class="text-golden">服务方案</text>
                 <image
                   class="shrink-0 icon-golden-right ml-4"
-                  src="/myOrder/static/images/icon_golden-right_arrow.png"
+                  src="/myOrder/static/images/icon_golden_right_arrow.png"
                 />
               </view>
             </view>

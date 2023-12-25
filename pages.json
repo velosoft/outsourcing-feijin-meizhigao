@@ -124,6 +124,20 @@
           }
         },
         {
+          "path": "pages/myOrder/serviceOrder/confirmQuote/index/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/myOrder/serviceOrder/submitPayment/index/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
           "path": "pages/myOrder/myOrder/myOrder",
           "style": {
             "navigationStyle": "custom",
