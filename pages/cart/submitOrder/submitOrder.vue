@@ -2,7 +2,7 @@
   <view class="flex-col relative page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col flex-1 group">
-      <HeadAddressCard></HeadAddressCard>
+      <HeadAddressCard :addressDetial="addressDetial"></HeadAddressCard>
       <GoodsCard class="mt-12 mt-10" :goodsCard="goodsCard"></GoodsCard>
       <SubmitInfo class="mt-12 mt-10" :submitData="submitData"></SubmitInfo>
     </view>
@@ -22,9 +22,10 @@
     props: {},
     data() {
       return {
-        goodsPrice: '',
-        submitData: '',
-        goodsCard: '',
+        addressDetial: {},
+        goodsPrice: {},
+        submitData: {},
+        goodsCard: {},
         title: '提交订单',
       };
     },

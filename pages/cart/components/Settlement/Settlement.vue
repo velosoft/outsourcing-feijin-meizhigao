@@ -66,7 +66,10 @@
         this.popupVisible = false;
       },
       onClick_1() {
-      uni.navigateTo({ url: '/pages/cart/submitOrder/submitOrder' });
+      // uni.navigateTo({ url: '/pages/cart/submitOrder/submitOrder' });
+      // uni.navigateTo({ url: '/pages/cart/bookCustomize/bookCustomize' });
+      // uni.navigateTo({ url: '/pages/cart/bookServe/bookServe' });
+      uni.navigateTo({ url: '/pages/cart/registerCourse/registerCourse/registerCourse' });
     },
     },
   };

@@ -2,11 +2,11 @@
   <view class="flex-col relative page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col group">
-      <HeadAddressCard></HeadAddressCard>
-      <GoodsCard class="mt-10"></GoodsCard>
-      <SubmitInfo class="mt-10"></SubmitInfo>
+      <HeadAddressCard :addressDetial="addressDetial"></HeadAddressCard>
+      <GoodsCard class="mt-10" :goodsCard="goodsCard"></GoodsCard>
+      <SubmitInfo class="mt-10" :submitData="submitData"></SubmitInfo>
     </view>
-    <CartBottomPayBtn></CartBottomPayBtn>
+    <CartBottomPayBtn :goodsPrice="goodsPrice"></CartBottomPayBtn>
   </view>
   </template>
   
@@ -22,6 +22,10 @@
     props: {},
     data() {
       return {
+        addressDetial: {},
+        goodsCard: {},
+        submitData: {},
+        goodsPrice: {},
         title: '预约定制',
       };
     },
@@ -36,6 +40,9 @@
     width: 100%;
     .group {
       padding: 20rpx;
+      .mt-10_1 {
+        margin-top: 20rpx;
+      }
     }
   }
   </style>

@@ -23,7 +23,7 @@
   <script>
   export default {
     components: {},
-    props: {},
+    props: { addressDetial: { type: Object, default: () => ({}) } },
     data() {
       return {};
     },

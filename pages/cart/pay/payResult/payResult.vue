@@ -1,6 +1,6 @@
 <template>
   <view class="height-full flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <NavBar :hasBack="true" :title="NavTitle" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col group flex-1">
       <view class="flex-col items-center">
         <view class="flex-col items-center">
@@ -38,7 +38,7 @@
     },
     data() {
       return {
-        title: '收银台',
+        NavTitle: '收银台',
       };
     },
 

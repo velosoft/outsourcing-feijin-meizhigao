@@ -40,7 +40,7 @@
           <text class="title">订单留言</text>
           <text class="title texare-tips ml-8">50字以内（选填）</text>
         </view>
-        <textarea class="text-area mt-16" placeholder="请输入…"></textarea>
+        <textarea class="text-area mt-16 text-area-border" placeholder="请输入…"></textarea>
       </view>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12"><PopCoupon></PopCoupon></u-popup>
