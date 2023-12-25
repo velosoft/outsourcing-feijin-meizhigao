@@ -45,7 +45,7 @@
           <view class="flex-row items-center relative btn-left">
             <text class="btn-price-label">秒杀价</text>
             <view class="flex-row items-start btn-price">
-              <text class="self-center price-symbol btn-psice-symbol">￥</text>
+              <text class="price-symbol btn-psice-symbol">￥</text>
               <text class="price-font btn-price-number">{{ getPriceIntergetPart(item.price) }}</text>
               <text class="price-last">.{{ getPriceDecimalPart(item.price) }}</text>
             </view>
