@@ -8,27 +8,27 @@
         </view>
         <text class="coupon-trigger mt-13">满{{ coupon.triggerCondition }}元使用</text>
       </view>
-      <view class="flex-row justify-between flex-1 coupon-right" slot="part-two">
-        <view class="flex-col items-start self-center">
-          <text class="line-clamp-one coupon-title">{{ coupon.title }}</text>
-          <text class="coupon-validity mt-10">{{ coupon.validity.start }}-{{ coupon.validity.end }}</text>
-          <text class="coupon-applicable mt-20">{{ coupon.applicableTo }}</text>
+      <view class="flex-col justify-between flex-1 coupon-right" slot="part-two">
+        <text class="line-clamp-one coupon-title">{{ coupon.title }}</text>
+        <view class="flex-row justify-between items-start mt-4">
+          <text class="coupon-validity">{{ coupon.validity.start }}-{{ coupon.validity.end }}</text>
+          <view class="flex-col">
+            <view
+              class="flex-col justify-center items-center coupon-receive"
+              @click="onClick"
+              v-if="coupon.status === 'pending-receive'"
+            >
+              <text class="coupon-receive-text">领取</text>
+            </view>
+            <view class="flex-col justify-center items-center coupon-use" v-if="coupon.status === 'pending-use'">
+              <text class="coupon-trigger">使用</text>
+            </view>
+            <view class="flex-col justify-center items-center coupon-sold-out" v-if="coupon.status === 'sold-out'">
+              <text class="coupon-receive-text">已抢光</text>
+            </view>
+          </view>
         </view>
-        <view class="flex-col self-start coupon-action">
-          <view
-            class="flex-col justify-start items-center coupon-receive"
-            @click="onClick"
-            v-if="coupon.status === 'pending-receive'"
-          >
-            <text class="coupon-receive-text">领取</text>
-          </view>
-          <view class="flex-col justify-start items-center coupon-use" v-if="coupon.status === 'pending-use'">
-            <text class="coupon-trigger">使用</text>
-          </view>
-          <view class="flex-col justify-start items-center coupon-sold-out" v-if="coupon.status === 'sold-out'">
-            <text class="coupon-receive-text">已抢光</text>
-          </view>
-        </view>
+        <text class="coupon-applicable">{{ coupon.applicableTo }}</text>
       </view>
     </coupon-card>
     <u-popup :show="popupVisible" @close="onClose" mode="center" style="width: 300px" bgColor="transparent">
@@ -112,10 +112,7 @@
     line-height: 22.28rpx;
     color: #a7a7a7;
   }
-  .coupon-action {
-    margin-right: 4rpx;
-    margin-top: 44.48rpx;
-  }
+
   .coupon-receive-text {
     font-size: 24rpx;
     font-family: 苹方;
@@ -127,6 +124,7 @@
     background-color: #bb3e0c;
     border-radius: 26rpx;
     width: 102rpx;
+    height: 52rpx;
   }
   .coupon-use {
     padding: 12rpx 0;
@@ -134,12 +132,14 @@
     border: 1px solid #bb3e0c;
     border-radius: 26rpx;
     width: 102rpx;
+    height: 52rpx;
   }
   .coupon-sold-out {
     padding: 12rpx 0;
     background-color: #d2d2d2;
     border-radius: 26rpx;
     width: 114rpx;
+    height: 52rpx;
   }
   .coupon-left {
     // padding: 8.56rpx 22rpx 55.56rpx;
@@ -148,7 +148,7 @@
     background-color: #fff4ef;
   }
   .coupon-right {
-    padding: 29.52rpx 30rpx 41.42rpx;
+    padding: 30rpx;
     background-color: #fff4ef;
     height: 200rpx;
   }
