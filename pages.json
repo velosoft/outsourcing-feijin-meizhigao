@@ -20,7 +20,6 @@
         "enablePullDownRefresh": false
       }
     },
-
     {
       "path": "pages/tabBar/comps",
       "style": {
@@ -28,7 +27,6 @@
         "enablePullDownRefresh": false
       }
     },
-
     {
       "path": "pages/tabBar/home",
       "style": {
@@ -160,6 +158,13 @@
     {
       "root": "myOrder",
       "pages": [
+        {
+          "path": "pages/myOrder/serviceOrder/detail/detail/detail",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
         {
           "path": "pages/myOrder/myOrder/myOrder",
           "style": {
@@ -312,7 +317,6 @@
             "enablePullDownRefresh": false
           }
         },
-
         {
           "path": "pages/personal/reseller/profit/profit",
           "style": {
@@ -362,7 +366,6 @@
             "enablePullDownRefresh": false
           }
         },
-
         {
           "path": "pages/personal/settings/settings/settings",
           "style": {

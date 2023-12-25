@@ -16,7 +16,7 @@
         </slot>
       </view>
 
-      <view class="collapse-wrapper" @click="onCollpseClick">
+      <view class="collapse-wrapper" @click="onCollpseClick" v-if="showCollapse">
         <view class="collapse">
           <text>{{ text }}</text>
           <view class="icon-wrapper">
@@ -31,16 +31,21 @@
 
 <script>
   export default {
+    options: {
+      styleIsolation: 'shared',
+    },
     props: {
       status: {
         type: String,
         default: 'closed',
         validator: (value) => ['open', 'closed'].includes(value),
       },
-      closedHeight: { type: String, default: '48rpx' },
+      title: { type: String, default: '标题' },
+      closedHeight: { type: String, default: '200rpx' },
       closedText: { type: String, default: '展开' },
       openText: { type: String, default: '收起' },
-      iconSize: { type: String, default: '32px' },
+      iconSize: { type: String, default: '16rpx' },
+      showCollapse: { type: Boolean, default: true },
     },
     data() {
       return {
@@ -111,6 +116,11 @@
     width: 100%;
   }
 
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
   .content {
     display: flex;
     width: 100%;
@@ -122,6 +132,8 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    font-size: 24rpx;
+    margin-top: 32rpx;
   }
 
   .collapse {
@@ -130,8 +142,8 @@
   }
 
   .icon-wrapper {
-    margin-left: 16rpx;
-    width: 36rpx;
-    height: 36rpx;
+    margin-left: 8rpx;
+    width: 16rpx;
+    height: 16rpx;
   }
 </style>

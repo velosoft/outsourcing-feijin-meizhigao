@@ -1,5 +1,11 @@
 <template>
   <view class="flex-col page">
+    <u-cell-group title="子模块入口" class="group">
+      <u-cell title="服务订单详情页" isLink url="/myOrder/pages/myOrder/serviceOrder/detail/detail/detail"></u-cell>
+      <u-cell title="随便加" isLink url="/showcase/pages/showcase/sticky/index"></u-cell>
+      <u-cell title="随便加" isLink url="/showcase/pages/showcase/fixed/fixed"></u-cell>
+    </u-cell-group>
+
     <u-cell-group title="高频组件" class="group">
       <u-cell title="按钮 Button" isLink url="/showcase/pages/showcase/button"></u-cell>
       <u-cell title="吸顶布局 Sticky" isLink url="/showcase/pages/showcase/sticky/index"></u-cell>
