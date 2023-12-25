@@ -39,7 +39,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .name_font {
     font-size: 28rpx;
     line-height: 36rpx;

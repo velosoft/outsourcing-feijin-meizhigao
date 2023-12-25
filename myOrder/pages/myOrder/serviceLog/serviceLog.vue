@@ -15,13 +15,11 @@
       </view>
       <view class="flex-col flex-auto">
         <u-tabs
-          class="tabs"
+          class="tabs-yellow-line-14"
           :list="list"
           lineWidth="104rpx"
-          lineHeight="4rpx"
-          lineColor="#B09053"
-          :activeStyle="{ fontSize: '28rpx', color: '#111111', fontWeight: 500 }"
-          :inactiveStyle="{ fontSize: '26rpx', color: '#9C9C9F', fontWeight: 500 }"
+          :activeStyle="{ color: '#111111' }"
+          :inactiveStyle="{ color: '#9C9C9F' }"
           @change="onChangeTab"
         ></u-tabs>
         <list-container
@@ -134,13 +132,5 @@
   }
   .list-item:first-child {
     margin-top: 0;
-  }
-  .tabs {
-    background-color: #ffffff;
-
-    /deep/ .u-tabs__wrapper__nav__item {
-      height: 36px !important;
-      flex: 1 1 auto;
-    }
   }
 </style>
