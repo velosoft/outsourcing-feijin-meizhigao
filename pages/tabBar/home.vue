@@ -6,17 +6,8 @@
     <view class="flex-col flex-1 home-con">
       <view class="flex-row items-center search-box">
         <go-search class="flex-1" />
-        <uni-badge
-          :text="notifyCount"
-          absolute="rightTop"
-          :offset="[2, 2]"
-          size="small"
-          @tap="goNotify"
-        >
-          <image
-            class="ml-8 notify-icon"
-            src="/static/images/icon_message.png"
-          />
+        <uni-badge :text="notifyCount" absolute="rightTop" :offset="[2, 2]" size="small" @tap="goNotify">
+          <image class="ml-8 notify-icon" src="/static/images/icon_message.png" />
         </uni-badge>
       </view>
       <banner-swiper :items="bannerImages" />
@@ -44,134 +35,137 @@
 </template>
 
 <script>
-import ClassifyCards from "../home/components/ClassifyCards";
-import CenterPanel from "../home/components/CenterPanel";
-import GridPanel from "../home/components/GridPanel";
-import RecommendedList from "../home/components/RecommendedList";
-import NavBar from "@/components/NavBar/NavBar.vue";
-import GoSearch from "@/components/GoSearch/GoSearch.vue";
-import BannerSwiper from "../home/components/BannerSwiper.vue";
-import MemberBox from "../home/components/MemberBox.vue";
-import FreezeWarning from "../home/components/FreezeWarning.vue";
-import { productList, serviceList, courseList } from "@/mock/shopList";
+  import ClassifyCards from '../home/components/ClassifyCards';
+  import CenterPanel from '../home/components/CenterPanel';
+  import GridPanel from '../home/components/GridPanel';
+  import RecommendedList from '../home/components/RecommendedList';
+  import NavBar from '@/components/NavBar/NavBar.vue';
+  import GoSearch from '@/components/GoSearch/GoSearch.vue';
+  import BannerSwiper from '../home/components/BannerSwiper.vue';
+  import MemberBox from '../home/components/MemberBox.vue';
+  import FreezeWarning from '../home/components/FreezeWarning.vue';
+  import { productList, serviceList, courseList } from '@/mock/shopList';
 
-export default {
-  components: {
-    CenterPanel,
-    ClassifyCards,
-    GridPanel,
-    RecommendedList,
-    NavBar,
-    GoSearch,
-    BannerSwiper,
-    MemberBox,
-    FreezeWarning,
-  },
-  props: {},
-  data() {
-    return {
-      notifyCount: 5,
-      notifyContent: "显示最新一条系统公告的标题，系统公告的标题…",
-      list: productList,
-      type: 0,
-      page: 1,
-      nomore: false,
-      bannerImages: [
-        "/static/mock/home_swiper_image.png",
-        "/static/mock/home_swiper_image.png",
-        "/static/mock/home_swiper_image.png",
-      ],
-    };
-  },
-  onReachBottom() {
-    if (this.page >= 2) {
-      this.nomore = true;
-      return;
-    }
-    this.nomore = false;
-
-    setTimeout(() => {
-      this.list = this.list.concat(this.list);
-      this.page++;
-    }, 1500);
-  },
-  methods: {
-    goNotify() {
-      uni.navigateTo({
-        url: "/pages/notifyPages/notifyList",
-      });
+  export default {
+    components: {
+      CenterPanel,
+      ClassifyCards,
+      GridPanel,
+      RecommendedList,
+      NavBar,
+      GoSearch,
+      BannerSwiper,
+      MemberBox,
+      FreezeWarning,
     },
-    onChangeType(type) {
-      this.type = type;
-      this.page = 1;
-
-      switch (type) {
-        case 0:
-          this.list = productList;
-          break;
-        case 1:
-          this.list = serviceList;
-          break;
-        case 2:
-          this.list = courseList;
-          break;
+    props: {},
+    data() {
+      return {
+        notifyCount: 5,
+        notifyContent: '显示最新一条系统公告的标题，系统公告的标题…',
+        list: productList,
+        type: 0,
+        page: 1,
+        nomore: false,
+        bannerImages: [
+          // "/static/mock/home_swiper_image.png",
+          // "/static/mock/home_swiper_image.png",
+          // "/static/mock/home_swiper_image.png",
+          'https://picsum.photos/375/260',
+          'https://picsum.photos/375/260',
+          'https://picsum.photos/375/260',
+        ],
+      };
+    },
+    onReachBottom() {
+      if (this.page >= 2) {
+        this.nomore = true;
+        return;
       }
+      this.nomore = false;
+
+      setTimeout(() => {
+        this.list = this.list.concat(this.list);
+        this.page++;
+      }, 1500);
     },
-  },
-};
+    methods: {
+      goNotify() {
+        uni.navigateTo({
+          url: '/pages/notifyPages/notifyList',
+        });
+      },
+      onChangeType(type) {
+        this.type = type;
+        this.page = 1;
+
+        switch (type) {
+          case 0:
+            this.list = productList;
+            break;
+          case 1:
+            this.list = serviceList;
+            break;
+          case 2:
+            this.list = courseList;
+            break;
+        }
+      },
+    },
+  };
 </script>
 
 <style scoped lang="less">
-.page {
-  background-color: #ffffff;
-  width: 100%;
-  height: 100%;
+  .page {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
 
-  .logo {
-    width: 154rpx;
-    height: 54rpx;
-  }
-  .home-con {
-    .search-box {
-      padding: 20rpx 30rpx 20rpx;
-
-      .notify-icon {
-        width: 68rpx;
-        height: 68rpx;
-        border-radius: 50%;
-      }
-      /deep/ .uni-badge--error {
-        background-color: #ff4d1d;
-      }
+    .logo {
+      width: 154rpx;
+      height: 54rpx;
     }
+    .home-con {
+      .search-box {
+        padding: 20rpx 30rpx 20rpx;
 
-    .notify-bar {
-      height: 80rpx;
-      /deep/ .u-notice__left-icon {
-        background-image: url("/static/images/icon_notify.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 30rpx;
-        height: 30rpx;
-        margin-right: 18rpx;
-
-        u-icon {
-          display: none;
+        .notify-icon {
+          width: 68rpx;
+          height: 68rpx;
+          border-radius: 50%;
+        }
+        /deep/ .uni-badge--error {
+          background-color: #ff4d1d;
         }
       }
-    }
 
-    .icon-size {
-      width: 30rpx;
-      height: 30rpx;
-    }
-    .box-top {
-      margin: 56rpx 30rpx 0;
-    }
-    .recommended-list {
-      margin-top: 44rpx;
+      .notify-bar {
+        height: 80rpx;
+        /deep/ .u-notice__left-icon {
+          background-image: url('/static/images/icon_notify.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 30rpx;
+          height: 30rpx;
+          margin-right: 18rpx;
+
+          u-icon {
+            display: none;
+          }
+        }
+      }
+
+      .icon-size {
+        width: 30rpx;
+        height: 30rpx;
+      }
+      .box-top {
+        margin: 56rpx 30rpx 0;
+      }
+      .recommended-list {
+        margin-top: 44rpx;
+      }
     }
   }
-}
 </style>

@@ -2,7 +2,7 @@
   <view class="flex-col page">
     <nav-bar :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 container">
-      <image class="banner" src="/static/mock/activity_banner.png" />
+      <image class="banner" :src="bannerUrl" mode="aspectFill" />
       <view class="flex-col line-tabs">
         <multi-card-tabs
           class="card-tabs-wrap"
@@ -126,6 +126,8 @@
         showLoading: true,
         finished: false,
         list: productList,
+        bannerUrl: 'https://picsum.photos/750/550',
+        // bannerUrl: '/static/mock/activity_banner.png',
       };
     },
     onReachBottom() {

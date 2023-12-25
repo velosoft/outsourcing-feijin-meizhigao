@@ -14,12 +14,12 @@
             <view class="flex-col justify-start items-center relative">
               <image
                 class="header-swiper-image"
-                src="/static/images/image_video.png"
+                src="https://picsum.photos/375/375"
                 mode="aspectFill"
               />
               <image
                 class="outflow video-open-btn"
-                src="/static/images/icon_video.png"
+                src="https://picsum.photos/375/375"
               />
             </view>
           </swiper-item>
