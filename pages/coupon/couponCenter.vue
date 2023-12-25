@@ -29,7 +29,7 @@
       </list-container>
     </view>
     <view class="flex-col justify-start items-center scan-code">
-      <image class="ai-outflow" src="/static/images/icon_scan_code.png" />
+      <image class="icon_scan" src="/static/images/icon_scan_code.png" />
     </view>
   </view>
 </template>
@@ -122,17 +122,15 @@
     margin-top: 0;
   }
   .scan-code {
-    padding: 26rpx 0;
     background-color: #030305;
     border-radius: 50%;
-    width: 108rpx;
     position: fixed;
     right: 32rpx;
     bottom: 150rpx;
   }
-  .ai-outflow {
-    width: 56rpx;
-    height: 56rpx;
+  .icon_scan {
+    width: 108rpx;
+    height: 108rpx;
   }
 
   .tabs {

@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col" :class="{ 'sold-out': coupon.status === 'sold-out' }">
-    <coupon-card mode="row" class="coupon-card">
+    <coupon-card mode="row" class="coupon-card" :line="coupon.status !== 'sold-out' ? '2rpx dashed #e8cfc0' : ''">
       <view class="flex-col justify-center items-center shrink-0 coupon-left" slot="part-one">
         <view class="flex-row items-end coupon-amount-wrapper">
           <text class="coupon-amount">{{ coupon.amount }}</text>
@@ -10,7 +10,7 @@
       </view>
       <view class="flex-row justify-between flex-1 coupon-right" slot="part-two">
         <view class="flex-col items-start self-center">
-          <text class="coupon-title">{{ coupon.title }}</text>
+          <text class="line-clamp-one coupon-title">{{ coupon.title }}</text>
           <text class="coupon-validity mt-10">{{ coupon.validity.start }}-{{ coupon.validity.end }}</text>
           <text class="coupon-applicable mt-20">{{ coupon.applicableTo }}</text>
         </view>
@@ -32,7 +32,7 @@
       </view>
     </coupon-card>
     <u-popup :show="popupVisible" @close="onClose" mode="center" style="width: 300px" bgColor="transparent">
-      <GetCoupon :coupon="coupon" @close="onClose"></GetCoupon>
+      <get-coupon :coupon="coupon" @close="onClose"></get-coupon>
     </u-popup>
   </view>
 </template>
