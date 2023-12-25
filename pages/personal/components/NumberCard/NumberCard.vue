@@ -31,13 +31,13 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/personal/bonusCoin/bonusCoin/bonusCoin' });
+        uni.navigateTo({ url: '/personal/pages/personal/bonusCoin/bonusCoin/bonusCoin' });
       },
       onClick_1() {
-        uni.navigateTo({ url: '/pages/personal/bonusPoint/bonusPoint/bonusPoint' });
+        uni.navigateTo({ url: '/personal/pages/personal/bonusPoint/bonusPoint/bonusPoint' });
       },
       onClick_2() {
-        uni.navigateTo({ url: '/pages/personal/coupon/coupon/coupon' });
+        uni.navigateTo({ url: '/personal/pages/personal/coupon/coupon/coupon' });
       },
     },
   };

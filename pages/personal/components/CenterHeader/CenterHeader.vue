@@ -45,10 +45,10 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/personal/member/member/member' });
+        uni.navigateTo({ url: '/personal/pages/personal/member/member/member' });
       },
       onClick_1() {
-        uni.navigateTo({ url: '/pages/personal/profile/profile/profile' });
+        uni.navigateTo({ url: '/personal/pages/personal/profile/profile/profile' });
       },
     },
   };

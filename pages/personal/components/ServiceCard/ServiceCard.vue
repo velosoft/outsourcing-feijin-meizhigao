@@ -36,46 +36,46 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-  
+
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/pages/personal/course/couresOrder/couresOrder' });
+        uni.navigateTo({ url: '/personal/pages/personal/course/couresOrder/couresOrder' });
       },
       onClick_1() {
-        uni.navigateTo({ url: '/pages/personal/reseller/share/share' });
+        uni.navigateTo({ url: '/personal/pages/personal/reseller/share/share' });
       },
       onClick_2() {
-        uni.navigateTo({ url: '/pages/personal/reseller/reseller/reseller' });
+        uni.navigateTo({ url: '/personal/pages/personal/reseller/reseller/reseller' });
       },
       onClick_3() {
-        uni.navigateTo({ url: '/pages/personal/coupon/coupon/coupon' });
+        uni.navigateTo({ url: '/personal/pages/personal/coupon/coupon/coupon' });
       },
       onClick_4() {
-        uni.navigateTo({ url: '/pages/personal/collect/collect/collect' });
+        uni.navigateTo({ url: '/personal/pages/personal/collect/collect/collect' });
       },
       onClick_5() {
-        uni.navigateTo({ url: '/pages/personal/address/address/address' });
+        uni.navigateTo({ url: '/personal/pages/personal/address/address/address' });
       },
       onClick_6() {
-        uni.navigateTo({ url: '/pages/personal/help/help/help' });
+        uni.navigateTo({ url: '/personal/pages/personal/help/help/help' });
       },
       onClick_7() {
-        uni.navigateTo({ url: '/pages/personal/settings/settings/settings' });
+        uni.navigateTo({ url: '/personal/pages/personal/settings/settings/settings' });
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 24rpx 0 8rpx;
     background-color: #ffffff;
@@ -110,4 +110,4 @@
       }
     }
   }
-  </style>
+</style>
