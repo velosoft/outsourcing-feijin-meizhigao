@@ -87,6 +87,7 @@
           order.status === '等待客户验收' ||
           order.status === '交易完成'
         "
+        @click="gotoLog"
       >
         <text>服务日志</text>
       </view>
@@ -152,6 +153,9 @@
       },
       onCloseReserve() {
         this.showReserve = false;
+      },
+      gotoLog() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceLog/serviceLog` });
       },
     },
   };

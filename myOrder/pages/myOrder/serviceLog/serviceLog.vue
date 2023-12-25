@@ -1,0 +1,146 @@
+<template>
+  <view class="flex-col page">
+    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <view class="flex-row flex-auto main">
+      <view class="flex-col stages">
+        <view
+          class="stage"
+          :class="{ 'stage-active': stage === item }"
+          v-for="(item, index) in stages"
+          :key="index"
+          @click="onChangeStage(item)"
+        >
+          <text>{{ item }}</text>
+        </view>
+      </view>
+      <view class="flex-col flex-auto">
+        <u-tabs
+          class="tabs"
+          :list="list"
+          lineWidth="104rpx"
+          lineHeight="4rpx"
+          lineColor="#B09053"
+          :activeStyle="{ fontSize: '28rpx', color: '#111111', fontWeight: 500 }"
+          :inactiveStyle="{ fontSize: '26rpx', color: '#9C9C9F', fontWeight: 500 }"
+          @change="onChangeTab"
+        ></u-tabs>
+        <list-container
+          :showEmpty="!items.length"
+          :showLoading="showLoading"
+          emptyHint="暂无更多~"
+          :emptyPaddingTop="320"
+          :finished="finished"
+          imgSrc="/myOrder/static/images/icon_log_empty.png"
+          class="flex-auto relative list-container"
+        >
+          <view class="flex-col list">
+            <ServiceLogItem class="list-item mt-8" v-for="(item, index) in items" :key="index"></ServiceLogItem>
+          </view>
+        </list-container>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import ListContainer from '@/components/ListContainer/ListContainer.vue';
+  import NavBar from '@/components/NavBar/NavBar.vue';
+  import ServiceLogItem from '@/myOrder/pages/myOrder/components/ServiceLogItem/ServiceLogItem.vue';
+
+  export default {
+    components: { ListContainer, NavBar, ServiceLogItem },
+    props: {},
+    data() {
+      return {
+        title: '服务日志',
+        stages: ['测量阶段', '设计阶段', '服务阶段'],
+        list: [
+          {
+            name: '上门拍照',
+          },
+          {
+            name: '收纳区域',
+          },
+        ],
+        stage: '测量阶段',
+        showLoading: false,
+        finished: false,
+        items: [null, null, null],
+      };
+    },
+
+    methods: {
+      onChangeStage(stage) {
+        this.stage = stage;
+      },
+      onChangeTab(val) {},
+    },
+  };
+</script>
+
+<style scoped lang="less">
+  .page {
+    background-color: #f8f8f8;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .main {
+    padding-bottom: 88rpx;
+    overflow: hidden;
+  }
+  .stages {
+    padding-top: 72rpx;
+    background-color: #ffffff;
+    width: 192rpx;
+  }
+  .stage {
+    height: 110rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #8c8f95;
+
+    &:first-child {
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+  .stage.stage-active {
+    background-color: #f0f0f0;
+    color: #b09053;
+    font-weight: 500;
+  }
+  .list-container {
+    overflow: auto;
+    border-top: 1px solid #e5e5e5;
+
+    /deep/ .emptyComp {
+      min-height: 100rpx;
+
+      image {
+        width: 330rpx !important;
+        height: 184rpx !important;
+      }
+      text {
+        color: #2d2e32;
+      }
+    }
+  }
+  .list {
+    padding: 16rpx 16rpx 0;
+  }
+  .list-item:first-child {
+    margin-top: 0;
+  }
+  .tabs {
+    background-color: #ffffff;
+
+    /deep/ .u-tabs__wrapper__nav__item {
+      height: 36px !important;
+      flex: 1 1 auto;
+    }
+  }
+</style>
