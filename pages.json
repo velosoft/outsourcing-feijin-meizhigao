@@ -117,7 +117,15 @@
       "root": "myOrder",
       "pages": [
         {
-          "path": "pages/myOrder/serviceOrder/detail/detail/detail",
+          "path": "pages/myOrder/courseOrder/courseOrder/courseOrder",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        }
+        ,
+        {
+          "path": "pages/myOrder/courseOrder/courseDetial/courseDetial",
           "style": {
             "navigationStyle": "custom",
             "enablePullDownRefresh": false

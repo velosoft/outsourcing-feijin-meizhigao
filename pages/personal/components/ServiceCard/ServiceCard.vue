@@ -48,7 +48,7 @@
 
     methods: {
       onClick() {
-        uni.navigateTo({ url: '/personal/pages/personal/course/couresOrder/couresOrder' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/courseOrder/courseOrder/courseOrder' });
       },
       onClick_1() {
         uni.navigateTo({ url: '/personal/pages/personal/reseller/share/share' });
