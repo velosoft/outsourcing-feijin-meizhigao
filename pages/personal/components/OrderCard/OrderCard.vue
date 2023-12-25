@@ -76,10 +76,10 @@
 
     methods: {
       gotoOrders() {
-        uni.navigateTo({ url: '/pages/myOrder/myOrder/myOrder' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/myOrder/myOrder' });
       },
       gotoComments() {
-        uni.navigateTo({ url: '/pages/myOrder/productComments/productComments' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/productComments/productComments' });
       },
     },
   };
