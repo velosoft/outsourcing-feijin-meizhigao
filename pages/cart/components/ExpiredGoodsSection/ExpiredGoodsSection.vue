@@ -15,11 +15,11 @@
       ></ExpiredGoodsItem>
     </view>
   </view>
-  </template>
-  
-  <script>
-  import ExpiredGoodsItem from '../../../../pages/cart/components/ExpiredGoodsItem/ExpiredGoodsItem.vue';
-  
+</template>
+
+<script>
+  import ExpiredGoodsItem from '../ExpiredGoodsItem/ExpiredGoodsItem.vue';
+
   export default {
     components: { ExpiredGoodsItem },
     props: {},
@@ -28,12 +28,12 @@
         items: [null, null],
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 32rpx 0;
     background-color: #ffffff;
@@ -71,4 +71,4 @@
       }
     }
   }
-  </style>
+</style>

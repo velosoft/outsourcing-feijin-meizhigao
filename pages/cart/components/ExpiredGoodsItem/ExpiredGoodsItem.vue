@@ -14,21 +14,21 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .item-padding {
     padding: 0 12rpx;
     .expired-status {
@@ -93,4 +93,4 @@
       margin-top: 0;
     }
   }
-  </style>
+</style>

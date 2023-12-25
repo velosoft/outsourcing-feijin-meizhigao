@@ -32,9 +32,9 @@
     </view>
     <Settlement></Settlement>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import ExpiredGoodsSection from '../cart/components/ExpiredGoodsSection/ExpiredGoodsSection.vue';
   import FjSticky from '@/components/FjSticky.vue';
   import GoodsSection from '../cart/components/GoodsSection/GoodsSection.vue';
@@ -42,7 +42,7 @@
   import NavBar from '@/components/NavBar/NavBar.vue';
   import Recommend from '../cart/components/Recommend/Recommend.vue';
   import Settlement from '../cart/components/Settlement/Settlement.vue';
-  
+
   export default {
     components: { ExpiredGoodsSection, FjSticky, GoodsSection, ListWithEmpty, NavBar, Recommend, Settlement },
     props: {},
@@ -65,12 +65,12 @@
         finished: false,
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -109,4 +109,4 @@
       padding: 32rpx 20rpx 0;
     }
   }
-  </style>
+</style>

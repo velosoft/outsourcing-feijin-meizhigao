@@ -44,9 +44,9 @@
       </u-checkbox-group>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: { CartList: { type: Object, default: () => ({}) } },
@@ -64,16 +64,16 @@
         items: [null, null, null, null],
       };
     },
-  
+
     methods: {
       onActionItemClick(args) {
         // 事件处理方法
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     padding: 0 0 28rpx;
     background-color: #ffffff;
@@ -162,4 +162,4 @@
       color: #bb3e0c;
     }
   }
-  </style>
+</style>

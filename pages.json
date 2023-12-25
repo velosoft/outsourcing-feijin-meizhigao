@@ -110,48 +110,6 @@
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
       }
-    },
-    {
-      "path": "pages/cart/bookCustomize/bookCustomize",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/cart/bookServe/bookServe",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/cart/submitOrder/submitOrder",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/cart/registerCourse/registerCourse/registerCourse",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/cart/pay/pay/pay",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/cart/pay/payResult/payResult",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
     }
   ],
   "subPackages": [
@@ -410,6 +368,53 @@
         },
         {
           "path": "pages/personal/settings/CardBindingAgreement/CardBindingAgreement",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "cart",
+      "pages": [
+        {
+          "path": "pages/cart/bookCustomize/bookCustomize",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/cart/bookServe/bookServe",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/cart/submitOrder/submitOrder",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/cart/registerCourse/registerCourse/registerCourse",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/cart/pay/pay/pay",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/cart/pay/payResult/payResult",
           "style": {
             "navigationStyle": "custom",
             "enablePullDownRefresh": false

@@ -7,12 +7,12 @@
     </view>
     <DoubleList class="mt-10" :items="list"></DoubleList>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import DoubleList from '@/components/DoubleList/DoubleList.vue';
-  import { productList } from "@/mock/shopList";
-  
+  import { productList } from '@/mock/shopList';
+
   export default {
     components: { DoubleList },
     data() {
@@ -21,12 +21,12 @@
         list: productList,
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     margin-top: 20rpx;
     .recommend-wrap {
@@ -44,4 +44,4 @@
       }
     }
   }
-  </style>
+</style>

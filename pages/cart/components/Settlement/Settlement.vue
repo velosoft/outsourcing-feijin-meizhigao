@@ -38,15 +38,22 @@
         </view>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :safeAreaInsetBottom="false" bgColor="transparent">
+    <u-popup
+      :show="popupVisible"
+      @close="onClose"
+      mode="bottom"
+      :round="12"
+      :safeAreaInsetBottom="false"
+      bgColor="transparent"
+    >
       <PopCartCouponDetial></PopCartCouponDetial>
     </u-popup>
   </view>
-  </template>
-  
-  <script>
-  import PopCartCouponDetial from '../../../../pages/cart/components/PopCartCouponDetial/PopCartCouponDetial.vue';
-  
+</template>
+
+<script>
+  import PopCartCouponDetial from '../PopCartCouponDetial/PopCartCouponDetial.vue';
+
   export default {
     components: { PopCartCouponDetial },
     props: { selectProduct: { type: Object, default: () => ({}) } },
@@ -57,7 +64,7 @@
         popupVisible: false,
       };
     },
-  
+
     methods: {
       onClick() {
         this.popupVisible = true;
@@ -66,16 +73,16 @@
         this.popupVisible = false;
       },
       onClick_1() {
-      // uni.navigateTo({ url: '/pages/cart/submitOrder/submitOrder' });
-      // uni.navigateTo({ url: '/pages/cart/bookCustomize/bookCustomize' });
-      // uni.navigateTo({ url: '/pages/cart/bookServe/bookServe' });
-      uni.navigateTo({ url: '/pages/cart/registerCourse/registerCourse/registerCourse' });
-    },
+        // uni.navigateTo({ url: '/cart/pages/cart/submitOrder/submitOrder' });
+        // uni.navigateTo({ url: '/cart/pages/cart/bookCustomize/bookCustomize' });
+        // uni.navigateTo({ url: '/cart/pages/cart/bookServe/bookServe' });
+        uni.navigateTo({ url: '/cart/pages/cart/registerCourse/registerCourse/registerCourse' });
+      },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .cart-footer {
     padding-top: 16rpx;
     background-color: #ffffff;
@@ -168,4 +175,4 @@
       bottom: 0rpx;
     }
   }
-  </style>
+</style>
