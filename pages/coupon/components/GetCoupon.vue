@@ -4,7 +4,7 @@
       <view class="flex-col body-wrapper">
         <view class="flex-col coupon-info">
           <view class="flex-col justify-between coupon-header">
-            <text class="self-stretch coupon-title">{{ coupon.title }}</text>
+            <text class="self-stretch line-clamp-two coupon-title">{{ coupon.title }}</text>
             <view class="flex-row justify-center items-end mt-12">
               <text class="coupon-amount">{{ coupon.amount }}</text>
               <text class="coupon-currency ml-2">元</text>
