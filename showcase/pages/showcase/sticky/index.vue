@@ -10,21 +10,21 @@
      -->
     <u-cell-group>
       <!--cf：https://dev.ft.velosoft.cn/projects/65741cd2740f740012ac2996/pages/65782a63740f740012ac4419  -->
-      <u-cell title="case1" isLink url="/pages/showcase/sticky/case1"></u-cell>
+      <u-cell title="case1" isLink url="/showcase/pages/showcase/sticky/case1"></u-cell>
     </u-cell-group>
   </view>
 </template>
 
 <script>
-export default {
-  components: {},
-  props: {},
-  data() {
-    return {};
-  },
+  export default {
+    components: {},
+    props: {},
+    data() {
+      return {};
+    },
 
-  methods: {},
-};
+    methods: {},
+  };
 </script>
 
 <style scoped lang="less"></style>

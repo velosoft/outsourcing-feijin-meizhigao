@@ -28,111 +28,11 @@
         "enablePullDownRefresh": false
       }
     },
-    {
-      "path": "pages/showcase/DateTimePickerView",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/collapseCard",
-      "style": {
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/popup/index",
-      "style": {
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/field/index",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/field/case1",
-      "style": {
-        "enablePullDownRefresh": false
-      }
-    },
+
     {
       "path": "pages/tabBar/home",
       "style": {
         "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/fixed/fixed",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "标签页 Tabs"
-      }
-    },
-    {
-      "path": "pages/showcase/tabs",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "标签页 Tabs"
-      }
-    },
-    {
-      "path": "pages/showcase/selector",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "选择器 Selector"
-      }
-    },
-    {
-      "path": "pages/showcase/button",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "按钮 Button"
-      }
-    },
-    {
-      "path": "pages/showcase/radio",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "Radio"
-      }
-    },
-    {
-      "path": "pages/showcase/numberbox/index",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/numberbox/case1",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/numberbox/case2",
-      "style": {
-        "navigationStyle": "default",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/showcase/sticky/index",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "吸顶布局 Sticky"
-      }
-    },
-    {
-      "path": "pages/showcase/sticky/case1",
-      "style": {
         "enablePullDownRefresh": false
       }
     },
@@ -502,6 +402,112 @@
           "path": "pages/personal/settings/CardBindingAgreement/CardBindingAgreement",
           "style": {
             "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "showcase",
+      "pages": [
+        {
+          "path": "pages/showcase/DateTimePickerView",
+          "style": {
+            "navigationStyle": "default",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/collapseCard",
+          "style": {
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/popup/index",
+          "style": {
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/field/index",
+          "style": {
+            "navigationStyle": "default",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/field/case1",
+          "style": {
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/fixed/fixed",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "标签页 Tabs"
+          }
+        },
+        {
+          "path": "pages/showcase/tabs",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "标签页 Tabs"
+          }
+        },
+        {
+          "path": "pages/showcase/selector",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "选择器 Selector"
+          }
+        },
+        {
+          "path": "pages/showcase/button",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "按钮 Button"
+          }
+        },
+        {
+          "path": "pages/showcase/radio",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "Radio"
+          }
+        },
+        {
+          "path": "pages/showcase/numberbox/index",
+          "style": {
+            "navigationStyle": "default",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/numberbox/case1",
+          "style": {
+            "navigationStyle": "default",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/numberbox/case2",
+          "style": {
+            "navigationStyle": "default",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/showcase/sticky/index",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "吸顶布局 Sticky"
+          }
+        },
+        {
+          "path": "pages/showcase/sticky/case1",
+          "style": {
             "enablePullDownRefresh": false
           }
         }
