@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col justify-start wrap">
     <view class="flex-row justify-end inner">
-      <u-button text="申请售后" type="primary" shape="circle" :plain="true" @click="onClick"></u-button>
+      <u-button text="申请售后" type="primary" shape="circle" :plain="true" @click="onAfterSalesClick"></u-button>
       <u-button text="商品清单" type="primary" shape="circle" :plain="true" @click="onClick_1"></u-button>
       <u-button text="服务日志" type="primary" shape="circle" :plain="true" @click="onClick_2"></u-button>
       <u-button text="验收服务" type="primary" shape="circle" :plain="true" @click="onClick_3"></u-button>
@@ -41,8 +41,8 @@
     },
 
     methods: {
-      onClick() {
-        uni.navigateTo({ url: '/pages/intentionOrder/shouhoushenqing/shouhoushenqing' });
+      onAfterSalesClick() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/afterSalesDetail/afterSalesDetail' });
       },
       onClick_1() {
         uni.navigateTo({ url: '/pages/myOrder/serviceOrder/productList/index/index' });

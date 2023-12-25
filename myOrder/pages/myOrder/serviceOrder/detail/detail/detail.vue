@@ -2,7 +2,7 @@
   <view class="flex-col page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col body">
-      <OrdertStatusCard :orderData="orderData"></OrdertStatusCard>
+      <OrderStatusCard :orderData="orderData"></OrderStatusCard>
       <view class="flex-col relative info-wrap">
         <OrderContactCard :canShowLine="false" :canShowArrow="false" :contactData="orderData"></OrderContactCard>
         <CFCard class="mt-12" title="服务信息">
@@ -35,7 +35,7 @@
   import OrderActionButtonGroup from '../../../../../pages/myOrder/serviceOrder/detail/components/OrderActionButtonGroup/OrderActionButtonGroup.vue';
   import OrderContactCard from '../../../../../pages/myOrder/components/OrderContactCard/OrderContactCard.vue';
   import OrderInfoCard from '../../../../../pages/myOrder/components/OrderInfoCard/OrderInfoCard.vue';
-  import OrdertStatusCard from '../../../../../pages/myOrder/components/OrdertStatusCard/OrdertStatusCard.vue';
+  import OrderStatusCard from '../../../../../pages/myOrder/components/OrderStatusCard/OrderStatusCard.vue';
   import PaymentInfoCard from '../../../../../pages/myOrder/components/PaymentInfoCard/PaymentInfoCard.vue';
   import ServiceExecute from '../../../../../pages/myOrder/serviceOrder/detail/process/ServiceExecute/ServiceExecute.vue';
   import ServiceInfoCard from '../../../../../pages/myOrder/components/ServiceInfoCard/ServiceInfoCard.vue';
@@ -49,7 +49,7 @@
       OrderActionButtonGroup,
       OrderContactCard,
       OrderInfoCard,
-      OrdertStatusCard,
+      OrderStatusCard,
       PaymentInfoCard,
       ServiceExecute,
       ServiceInfoCard,

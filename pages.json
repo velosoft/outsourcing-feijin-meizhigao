@@ -132,6 +132,13 @@
           }
         },
         {
+          "path": "pages/myOrder/serviceOrder/detail/detail/detail",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
           "path": "pages/myOrder/serviceOrder/confirmQuote/index/index",
           "style": {
             "navigationStyle": "custom",
@@ -140,6 +147,13 @@
         },
         {
           "path": "pages/myOrder/serviceOrder/submitPayment/index/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/myOrder/afterSales/afterSalesDetail/afterSalesDetail",
           "style": {
             "navigationStyle": "custom",
             "enablePullDownRefresh": false
