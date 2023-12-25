@@ -14,6 +14,20 @@
       }
     },
     {
+      "path": "pages/myOrder/requotation/requotation",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/myOrder/myOrder/myOrder",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/tabBar/personal",
       "style": {
         "navigationStyle": "custom",
@@ -22,13 +36,6 @@
     },
     {
       "path": "pages/personal/address/address/address",
-      "style": {
-        "navigationStyle": "custom",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/myOrder/myOrder/myOrder",
       "style": {
         "navigationStyle": "custom",
         "enablePullDownRefresh": false
