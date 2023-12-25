@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col relative wrap">
-    <image class="bg-card pos" src="/static/images/bg_header_card.png" />
+    <image class="bg-card pos" src="/personal/static/images/bg_header_card.png" />
     <view class="flex-row items-center relative container">
       <view class="flex-col items-center avatar-wrap justify-center">
         <image class="avatar" :src="personal.avatar" />
@@ -22,7 +22,11 @@
     props: {
       personal: {
         type: Object,
-        default: () => ({ avatar: '/static/images/mock_avatar_05.png', nickname: '今天喝生椰拿铁', amount: 2689.56 }),
+        default: () => ({
+          avatar: '/personal/static/images/mock_avatar_05.png',
+          nickname: '今天喝生椰拿铁',
+          amount: 2689.56,
+        }),
       },
     },
     data() {

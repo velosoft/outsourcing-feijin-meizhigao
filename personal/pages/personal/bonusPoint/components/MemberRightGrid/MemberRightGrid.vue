@@ -1,35 +1,35 @@
 <template>
   <view class="grid">
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_product_discounts_active.png" />
+      <image class="icon" src="/personal/static/images/icon_product_discounts_active.png" />
       <text class="value value-active mt-4">商品折扣</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_service_discount_active.png" />
+      <image class="icon" src="/personal/static/images/icon_service_discount_active.png" />
       <text class="value mt-4">服务折扣</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_distribution_commission_act.png" />
+      <image class="icon" src="/personal/static/images/icon_distribution_commission_act.png" />
       <text class="value mt-4">分销提成</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_other_income_01.png" />
+      <image class="icon" src="/personal/static/images/icon_other_income_01.png" />
       <text class="value mt-4">其他权益</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_other_income_01.png" />
+      <image class="icon" src="/personal/static/images/icon_other_income_01.png" />
       <text class="value mt-4">其他权益</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_other_income_01.png" />
+      <image class="icon" src="/personal/static/images/icon_other_income_01.png" />
       <text class="value mt-4">其他权益</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_other_income_01.png" />
+      <image class="icon" src="/personal/static/images/icon_other_income_01.png" />
       <text class="value mt-4">其他权益</text>
     </view>
     <view class="flex-col items-center grid-item">
-      <image class="icon" src="/static/images/icon_other_income_01.png" />
+      <image class="icon" src="/personal/static/images/icon_other_income_01.png" />
       <text class="value mt-4">其他权益</text>
     </view>
   </view>

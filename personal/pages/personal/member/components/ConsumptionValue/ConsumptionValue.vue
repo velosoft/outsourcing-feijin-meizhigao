@@ -2,7 +2,7 @@
   <view class="flex-col wrap">
     <text class="self-start title text">获取消费值</text>
     <view class="flex-row self-stretch mt-12">
-      <image class="image" src="/static/images/icon_consumption.png" />
+      <image class="image" src="/personal/static/images/icon_consumption.png" />
       <view class="flex-col items-start flex-1 self-center label-wrap">
         <text class="title title-text">购买更多宝贝</text>
         <text class="line-clamp-one desc mt-4">购买商品、服务、课程可提升消费值</text>

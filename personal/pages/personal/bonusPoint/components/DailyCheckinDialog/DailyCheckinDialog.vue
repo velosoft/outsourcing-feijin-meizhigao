@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col wrap">
-    <image class="shrink-0 bg-header" src="/static/images/mock_dialog_header_bg.png" />
+    <image class="shrink-0 bg-header" src="/personal/static/images/mock_dialog_header_bg.png" />
     <view class="flex-col relative container">
       <view class="flex-col">
         <view class="flex-col items-start self-center">

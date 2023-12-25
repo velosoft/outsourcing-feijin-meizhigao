@@ -8,7 +8,7 @@
           :showLoading="showLoading"
           emptyHint="暂无内容~"
           :finished="finished"
-          imgSrc="/static/images/icon_empty_reseller.png"
+          imgSrc="/personal/static/images/icon_empty_reseller.png"
         >
           <u-cell-group v-model="radiovalue" :border="false">
             <view class="flex-col">

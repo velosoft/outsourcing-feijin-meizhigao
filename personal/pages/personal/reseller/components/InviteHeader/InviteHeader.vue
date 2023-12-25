@@ -6,36 +6,36 @@
     </view>
     <view class="flex-row justify-between step-wrap">
       <view class="flex-col items-center">
-        <image class="icon-step" src="/static/images/icon_link.png" />
+        <image class="icon-step" src="/personal/static/images/icon_link.png" />
         <text class="desc desc-opactiy mt-4">分享好友链接</text>
       </view>
-      <image class="self-start icon-arrow" src="/static/images/icon_right_arrow.png" />
+      <image class="self-start icon-arrow" src="/personal/static/images/icon_right_arrow.png" />
       <view class="flex-col items-center">
-        <image class="icon-step" src="/static/images/icon_currency.png" />
+        <image class="icon-step" src="/personal/static/images/icon_currency.png" />
         <text class="desc desc-opactiy mt-4">好友注册消费</text>
       </view>
-      <image class="self-start icon-arrow" src="/static/images/icon_right_arrow.png" />
+      <image class="self-start icon-arrow" src="/personal/static/images/icon_right_arrow.png" />
       <view class="flex-col items-center">
-        <image class="icon-step" src="/static/images/icon_tips_01.png" />
+        <image class="icon-step" src="/personal/static/images/icon_tips_01.png" />
         <text class="desc desc-opactiy mt-4">获得推广奖励</text>
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   export default {
     components: {},
     props: {},
     data() {
       return {};
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .title {
     color: #ffffff;
     font-size: 52rpx;
@@ -96,4 +96,4 @@
   .desc-opactiy {
     opacity: 0.8;
   }
-  </style>
+</style>

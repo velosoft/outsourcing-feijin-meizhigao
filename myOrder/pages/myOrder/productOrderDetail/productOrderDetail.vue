@@ -12,12 +12,24 @@
       <view class="flex-row items-center status">
         <image
           class="icon-status"
-          src="/static/images/icon_status_clock.png"
+          src="/myOrder/static/images/icon_status_clock.png"
           v-if="order.orderStatus === '待付款' || order.orderStatus === '待发货' || order.orderStatus === '待收货'"
         />
-        <image class="icon-status" src="/static/images/icon_status_close.png" v-if="order.orderStatus === '交易关闭'" />
-        <image class="icon-status" src="/static/images/icon_status_ok.png" v-if="order.orderStatus === '交易完成'" />
-        <image class="icon-status" src="/static/images/icon_status_info.png" v-if="order.orderStatus === '已取消'" />
+        <image
+          class="icon-status"
+          src="/myOrder/static/images/icon_status_close.png"
+          v-if="order.orderStatus === '交易关闭'"
+        />
+        <image
+          class="icon-status"
+          src="/myOrder/static/images/icon_status_ok.png"
+          v-if="order.orderStatus === '交易完成'"
+        />
+        <image
+          class="icon-status"
+          src="/myOrder/static/images/icon_status_info.png"
+          v-if="order.orderStatus === '已取消'"
+        />
         <view class="flex-col">
           <text class="status-text ml-12">{{ order.orderStatus }}</text>
           <view class="flex-row items-center ml-12 wait-pay" v-if="order.orderStatus === '待付款'">

@@ -32,7 +32,7 @@
       <CFField label="企业电话" placeholder="请填写企业电话（选填）" :border="false" inputAlign="right"></CFField>
       <view class="flex-row justify-center items-center more-wrapper">
         <text class="more-text">查看更多</text>
-        <image class="arrow-up ml-4" src="/static/images/icon_arrow_up.png" />
+        <image class="arrow-up ml-4" src="/myOrder/static/images/icon_arrow_up.png" />
       </view>
     </u-cell-group>
     <u-cell-group class="white-fields-group mt-12" :border="false">

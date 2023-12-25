@@ -21,7 +21,7 @@
       resellerItem: {
         type: Object,
         default: () => ({
-          avatar: '/static/images/mock_avatar_05',
+          avatar: '/personal/static/images/mock_avatar_05',
           nickname: '今天喝生椰拿铁',
           time: '2022-04-01 09:30:22',
           price: '1800',

@@ -4,7 +4,7 @@
       <text class="font title">推广明细</text>
       <view class="select-wrap flex-row items-center" @click="onClick">
         <text class="label text">日期筛选</text>
-        <image class="icon-select ml-2" src="/static/images/icon_select.png" />
+        <image class="icon-select ml-2" src="/personal/static/images/icon_select.png" />
       </view>
     </view>
     <view class="flex-col group">
@@ -14,7 +14,7 @@
           :showLoading="showLoading"
           emptyHint="暂无内容～"
           :finished="finished"
-          imgSrc="/static/images/icon_empty_reseller.png"
+          imgSrc="/personal/static/images/icon_empty_reseller.png"
         >
           <view class="flex-col justify-start">
             <view class="flex-col" v-if="true">

@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col relative page">
-    <image class="bg-header pos" src="/static/images/bg_share_header.png" />
+    <image class="bg-header pos" src="/personal/static/images/bg_share_header.png" />
     <NavBar
       class="header"
       :hasBack="true"
@@ -10,7 +10,7 @@
       background="transparen"
       titleColor="#ffffff"
     >
-      <image class="nav-left-arrow" src="/static/images/icon_nav_left_arrow.png" slot="left" />
+      <image class="nav-left-arrow" src="/personal/static/images/icon_nav_left_arrow.png" slot="left" />
     </NavBar>
     <view class="flex-col relative container">
       <InviteHeader class="group_8"></InviteHeader>
@@ -27,13 +27,13 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import InviteHeader from '../../../../pages/personal/reseller/components/InviteHeader/InviteHeader.vue';
   import LimePainter from '../../../../pages/personal/reseller/components/limePainter/limePainter.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  
+
   export default {
     components: { InviteHeader, LimePainter, NavBar },
     props: {},
@@ -42,12 +42,12 @@
         title: '分享收益',
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #b09053;
     width: 100%;
@@ -122,4 +122,4 @@
       }
     }
   }
-  </style>
+</style>

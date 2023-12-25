@@ -20,7 +20,7 @@
         :showLoading="showLoading"
         emptyHint="暂无内容"
         :finished="finished"
-        imgSrc="/static/images/icon_empty_coupon.png"
+        imgSrc="/personal/static/images/icon_empty_coupon.png"
         :emptyPaddingTop="170"
       >
         <view class="flex-col list">
@@ -34,7 +34,7 @@
       </list-with-empty>
     </view>
     <view class="flex-col code-wrap code-pos" @click="onOpenDialog"
-      ><image class="icon-code" src="/static/images/icon_scan_code.png"
+      ><image class="icon-code" src="/personal/static/images/icon_scan_code.png"
     /></view>
     <view class="fixed-bottom-safe2 flex-col items-center footer-wrap">
       <view class="cf-btn-black flex-col items-center btn-black-wrap" @click="onClick">

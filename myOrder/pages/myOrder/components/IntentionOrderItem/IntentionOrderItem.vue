@@ -58,7 +58,7 @@
           "
         >
           <view class="flex-col justify-center items-center phone-icon-wrapper">
-            <img class="phone-icon" src="/static/images/icon_phone.png" />
+            <img class="phone-icon" src="/myOrder/static/images/icon_phone.png" />
           </view>
           <text class="ml-4 phone-text">联系电话</text>
         </view>

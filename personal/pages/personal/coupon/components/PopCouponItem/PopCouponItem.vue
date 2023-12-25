@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col justify-start relative">
-    <image class="coupon-bg pos" src="/static/images/bg_pop_coupon.png" />
+    <image class="coupon-bg pos" src="/personal/static/images/bg_pop_coupon.png" />
     <view class="flex-row items-center relative">
       <view class="flex-col coupon-left items-center">
         <view class="flex-row items-baseline">

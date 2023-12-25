@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col justify-start items-center self-stretch wrap">
     <view class="flex-col items-center">
-      <image class="empty-image" src="/static/images/icon_coupon_empty.png" />
+      <image class="empty-image" src="/personal/static/images/icon_coupon_empty.png" />
       <text class="font mt-16">暂无内容~</text>
     </view>
   </view>

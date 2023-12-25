@@ -6,8 +6,8 @@
     </view>
     <view class="flex-col flex-1 detail">
       <view class="flex-col justify-start items-center self-center relative header">
-        <image class="icon-invoice" src="/static/images/icon-invoice.png" />
-        <image class="invoice-type" src="/static/images/icon-invoice-type.png" />
+        <image class="icon-invoice" src="/myOrder/static/images/icon-invoice.png" />
+        <image class="invoice-type" src="/myOrder/static/images/icon-invoice-type.png" />
       </view>
       <view class="flex-col content mt-32">
         <view class="flex-row items-center">

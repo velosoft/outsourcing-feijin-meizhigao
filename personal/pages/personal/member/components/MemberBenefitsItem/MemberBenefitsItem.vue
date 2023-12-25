@@ -3,7 +3,7 @@
     <view class="flex-col justify-start items-start"> <text class="title">L1 普通会员权益</text></view>
     <view class="grid mt-4">
       <view class="flex-col items-center grid-item" v-for="(item, index) in items" :key="index">
-        <image class="icon-benefit" src="/static/images/icon_product_discounts_active.png" />
+        <image class="icon-benefit" src="/personal/static/images/icon_product_discounts_active.png" />
         <text class="text-benefit mt-4">商品折扣</text>
       </view>
     </view>

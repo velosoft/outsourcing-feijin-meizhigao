@@ -5,11 +5,11 @@
       <view class="flex-col cell-group">
         <view class="flex-row justify-between cell-wrap">
           <text class="self-center label">联系客户</text>
-          <image class="self-start icon-arrow" src="/static/images/icon_right_arrow_05.png" />
+          <image class="self-start icon-arrow" src="/personal/static/images/icon_right_arrow_05.png" />
         </view>
         <view class="flex-row justify-between cell-wrap mt-10" @click="onClick">
           <text class="self-center label">关于我们</text>
-          <image class="self-start icon-arrow" src="/static/images/icon_right_arrow_05.png" />
+          <image class="self-start icon-arrow" src="/personal/static/images/icon_right_arrow_05.png" />
         </view>
       </view>
     </view>

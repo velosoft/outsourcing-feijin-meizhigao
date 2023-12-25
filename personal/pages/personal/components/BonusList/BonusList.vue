@@ -10,11 +10,11 @@
       <view class="flex-row tabs-right-slot" slot="right">
         <view class="flex-row items-center select-data" @click="onStatusSelect">
           <text class="select-label">全部</text>
-          <image class="shrink-0 select-icon ml-4" src="/static/images/icon_down_arrow.png" />
+          <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
         </view>
         <view class="flex-row items-center select-data ml-8" @click="onDateSelect">
           <text class="select-label">日期</text>
-          <image class="shrink-0 select-icon ml-4" src="/static/images/icon_down_arrow.png" />
+          <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
         </view>
       </view>
     </u-tabs>

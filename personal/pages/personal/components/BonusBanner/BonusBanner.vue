@@ -3,7 +3,7 @@
     <view class="flex-col self-stretch header">
       <view class="flex-row items-center self-stretch">
         <text class="title">当前可用收纳币</text>
-        <image class="tips-icon ml-8" src="/static/images/icon_tips.png" @click="onClick" />
+        <image class="tips-icon ml-8" src="/personal/static/images/icon_tips.png" @click="onClick" />
       </view>
       <text class="num">{{ coins.available }}</text>
     </view>

@@ -2,7 +2,7 @@
   <view class="flex-col page">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 container">
-      <image class="self-center logo" src="/static/images/pic_logo.png" />
+      <image class="self-center logo" src="/personal/static/images/pic_logo.png" />
       <text class="self-start title mt-18">关于我们</text>
       <mp-html class="content mt-18" :content="content"></mp-html>
     </view>

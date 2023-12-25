@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col justify-start relative wrap">
-    <image class="bg-share bg-pos" src="/static/images/bg_share_card.png" />
+    <image class="bg-share bg-pos" src="/personal/static/images/bg_share_card.png" />
     <view class="flex-col relative container">
       <view class="flex-row justify-between items-center self-stretch">
         <view class="flex-col items-start" @click="onClick">
@@ -8,7 +8,7 @@
           <text class="label-num mt-4">{{ numShare.totalIncome }}</text>
         </view>
         <view class="flex-row button items-center" @click="onClick_1">
-          <image class="shrink-0 self-center icon-share" src="/static/images/icon_share_card.png" />
+          <image class="shrink-0 self-center icon-share" src="/personal/static/images/icon_share_card.png" />
           <text class="font share-text ml-4">分享</text>
         </view>
       </view>

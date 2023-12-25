@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col wrap">
     <view class="flex-col items-center self-stretch">
-      <image class="icon" src="/static/images/icon_bonus_empty.png" />
+      <image class="icon" src="/personal/static/images/icon_bonus_empty.png" />
       <text class="empty-label empty-text mt-8">没有更多了~</text>
     </view>
     <view class="flex-col justify-center items-center self-center mt-40 back-btn" @click="onBack">返回</view>

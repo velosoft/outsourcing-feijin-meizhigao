@@ -4,7 +4,7 @@
     <view class="flex-col">
       <u-cell-group class="profile-cell-group" :border="false">
         <u-cell title="头像" :value="avatar" :isLink="true">
-          <image class="avatar" src="/static/images/mock_profile_avatar.png" slot="value" />
+          <image class="avatar" src="/personal/static/images/mock_profile_avatar.png" slot="value" />
         </u-cell>
         <u-cell title="昵称" :value="nickname" :isLink="true" @click="onShowNicknamePopup"></u-cell>
       </u-cell-group>
@@ -39,7 +39,7 @@
     props: {},
     data() {
       return {
-        avatar: '/static/mock/mock_profile_avatar.png',
+        avatar: '/personal/static/mock/mock_profile_avatar.png',
         nickname: '张小鱼',
         tel: '12345577897',
         gender: '男',

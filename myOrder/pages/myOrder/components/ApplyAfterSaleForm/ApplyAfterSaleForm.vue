@@ -12,7 +12,7 @@
       <text class="name">退款原因</text>
       <view class="flex-row items-center picker" @click="onClick">
         <text class="picker-placeholder">请选择</text>
-        <image class="shrink-0 arrow-right ml-8" src="/static/images/icon_arrow_right.png" />
+        <image class="shrink-0 arrow-right ml-8" src="/myOrder/static/images/icon_arrow_right.png" />
       </view>
     </view>
     <view class="flex-row justify-between items-center mt-36">
@@ -38,7 +38,7 @@
       </view>
       <u-upload :fileList="fileList">
         <view class="flex-col items-center upload-slot">
-          <image class="upload-icon" src="/static/images/icon_upload.png" />
+          <image class="upload-icon" src="/myOrder/static/images/icon_upload.png" />
           <text class="upload-tip mt-12">上传图片</text>
         </view>
       </u-upload>

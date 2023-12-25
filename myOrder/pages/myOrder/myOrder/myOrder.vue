@@ -4,7 +4,7 @@
     <view class="flex-row justify-between items-center search-bar">
       <view class="flex-row items-center" @click="onClick">
         <text class="order-type-font order-type">{{ orderType }}</text>
-        <image class="shrink-0 arrow-down ml-4" src="/static/images/icon_down_arrow_01.png" />
+        <image class="shrink-0 arrow-down ml-4" src="/myOrder/static/images/icon_down_arrow_01.png" />
       </view>
       <SearchBar :value="value" placeholder="商品名称搜索" background="#f8f8f8"></SearchBar>
     </view>
@@ -33,7 +33,7 @@
         :showLoading="showLoading"
         emptyHint="暂无订单~"
         :finished="finished"
-        imgSrc="/static/images/order-empty.png"
+        imgSrc="/myOrder/static/images/order-empty.png"
         :emptyPaddingTop="136"
       >
         <view class="flex-col orders">

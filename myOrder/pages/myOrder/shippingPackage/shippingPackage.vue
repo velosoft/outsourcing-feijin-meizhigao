@@ -15,7 +15,7 @@
         <text class="font product-title">包裹商品</text>
         <view class="flex-row items-center" @click="onClick">
           <text class="number">共 {{ shipping.products.length }} 件</text>
-          <image class="shrink-0 arrow-right ml-8" src="/static/images/icon_arrow_right.png" />
+          <image class="shrink-0 arrow-right ml-8" src="/myOrder/static/images/icon_arrow_right.png" />
         </view>
       </view>
       <view class="flex-row justify-between list">

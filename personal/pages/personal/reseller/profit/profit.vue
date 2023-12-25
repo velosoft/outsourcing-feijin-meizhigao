@@ -2,7 +2,7 @@
   <view class="height-full flex-col relative page height-full">
     <view class="bg-header bg-header-pos"></view>
     <nav-bar class="header" :title="title" :fixed="true" :isShow="true" background="transparent" titleColor="#ffffff">
-      <image class="nav-left-icon" src="/static/images/icon_nav_left_arrow.png" slot="left" />
+      <image class="nav-left-icon" src="/personal/static/images/icon_nav_left_arrow.png" slot="left" />
     </nav-bar>
     <view class="flex-col flex-1 relative container">
       <header-card :personal="personal"></header-card>
@@ -26,7 +26,7 @@
     data() {
       return {
         personal: {
-          avatar: '/static/images/mock_avatar_05.png',
+          avatar: '/personal/static/images/mock_avatar_05.png',
           nickname: '今天喝生椰拿铁',
           names: 2689.56,
         },

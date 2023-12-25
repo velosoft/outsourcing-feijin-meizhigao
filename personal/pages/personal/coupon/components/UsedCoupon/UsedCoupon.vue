@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col items-center relative">
-    <image class="image" src="/static/images/bg_coupon_used.png" />
+    <image class="image" src="/personal/static/images/bg_coupon_used.png" />
     <view class="flex-row items-center pos">
       <view class="flex-col coupon-left items-center">
         <view class="flex-row items-baseline price-wrap">

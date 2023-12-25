@@ -18,7 +18,7 @@
       <view class="flex-col self-start progress mt-30">
         <view class="flex-row items-center progress-top" @click="onProgressClick">
           <text class="progress-text">0/150</text>
-          <image class="arrow ml-4" src="/static/images/icon_right_arrow_01.png" />
+          <image class="arrow ml-4" src="/personal/static/images/icon_right_arrow_01.png" />
         </view>
         <view class="flex-col justify-start self-start progress-body mt-6">
           <u-line-progress

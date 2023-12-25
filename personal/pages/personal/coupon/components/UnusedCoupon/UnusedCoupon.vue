@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col justify-start relative coupon">
-    <image class="coup_bg pos" src="/static/images/bg_coupon_unused.png" />
+    <image class="coup_bg pos" src="/personal/static/images/bg_coupon_unused.png" />
     <view class="flex-row items-stretch relative coupon">
       <view class="flex-col shrink-0 price-wrap items-center">
         <view class="flex-row items-baseline price-num">

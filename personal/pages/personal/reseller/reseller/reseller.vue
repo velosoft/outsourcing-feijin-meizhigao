@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col relative page height-full">
-    <image class="bg-header pos" src="/static/images/bg_bonus-point.png" />
+    <image class="bg-header pos" src="/personal/static/images/bg_bonus-point.png" />
     <nav-bar
       class="header"
       :hasBack="true"
@@ -10,7 +10,7 @@
       background="transparnt"
       titleColor="#ffffff"
     >
-      <image class="nav-left-icon" src="/static/images/icon_nav_left_arrow.png" slot="left" />
+      <image class="nav-left-icon" src="/personal/static/images/icon_nav_left_arrow.png" slot="left" />
     </nav-bar>
     <view class="flex-col flex-1 relative container">
       <view class="flex-row items-center">
@@ -34,7 +34,7 @@
     props: {},
     data() {
       return {
-        avatar: '/static/images/mock_avatar_07.png',
+        avatar: '/personal/static/images/mock_avatar_07.png',
         nickname: '今天喝生椰拿铁',
         numShare: {
           totalIncome: 2689,

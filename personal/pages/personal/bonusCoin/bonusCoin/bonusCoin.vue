@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col relative page">
-    <image class="bg-header bg-pos" src="/static/images/mock_bonus_coin_bg_header.png" />
+    <image class="bg-header bg-pos" src="/personal/static/images/mock_bonus_coin_bg_header.png" />
     <nav-bar
       class="header"
       :hasBack="true"

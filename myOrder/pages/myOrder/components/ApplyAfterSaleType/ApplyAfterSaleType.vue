@@ -4,7 +4,7 @@
     <u-radio-group placement="column">
       <view class="flex-row justify-between items-center group mt-28" @click="onType('退货退款')">
         <view class="flex-row items-center">
-          <image class="icon-type" src="/static/images/icon_currency_1.png" />
+          <image class="icon-type" src="/myOrder/static/images/icon_currency_1.png" />
           <view class="flex-col items-start ml-8">
             <text class="type-title">退货退款</text>
             <text class="type-tip mt-4">商品已发货，需退回已收到的商品</text>
@@ -14,7 +14,7 @@
       </view>
       <view class="flex-row justify-between group mt-28 items-center" @click="onType('换货')">
         <view class="flex-row items-center">
-          <image class="icon-type" src="/static/images/icon_change.png" />
+          <image class="icon-type" src="/myOrder/static/images/icon_change.png" />
           <view class="flex-col items-start ml-8">
             <text class="type-title">换货</text>
             <text class="type-tip mt-4">商品已发货，需退回已收到的商品</text>

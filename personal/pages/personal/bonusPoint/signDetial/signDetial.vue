@@ -1,6 +1,6 @@
 <template>
   <view class="height-full flex-col relative page">
-    <image class="bg-header bg-pos" src="/static/images/mock_sign_detial_bg.png" />
+    <image class="bg-header bg-pos" src="/personal/static/images/mock_sign_detial_bg.png" />
     <NavBar class="header" :title="title" :fixed="true" :isShow="true" background="transparnt"></NavBar>
     <view class="flex-col flex-1 relative">
       <view class="flex-col justify-start section">
@@ -19,22 +19,30 @@
             v-for="(item, index) in signStatusResData"
             :key="index"
           >
-            <text class="day-num">{{item.signDay}}</text>
+            <text class="day-num">{{ item.signDay }}</text>
             <image class="sign-icon mt-4" :src="item.icon" />
-            <text class="value mt-4">{{item.status}}</text>
+            <text class="value mt-4">{{ item.status }}</text>
           </view>
         </view>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="center" style="width:309px" :round="10" :safeAreaInsetBottom="false"><DailyCheckinDialog></DailyCheckinDialog></u-popup>
+    <u-popup
+      :show="popupVisible"
+      @close="onClose"
+      mode="center"
+      style="width: 309px"
+      :round="10"
+      :safeAreaInsetBottom="false"
+      ><DailyCheckinDialog></DailyCheckinDialog
+    ></u-popup>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import NavBar from '@/components/NavBar/NavBar.vue';
   import DailyCheckinDialog from '../../../../pages/personal/bonusPoint/components/DailyCheckinDialog/DailyCheckinDialog.vue';
   import { signStatusResData } from './signDetial.data.js';
-  
+
   export default {
     components: { NavBar, DailyCheckinDialog },
     props: {},
@@ -45,7 +53,7 @@
         signStatusResData: signStatusResData,
       };
     },
-  
+
     methods: {
       onClick() {
         this.popupVisible = true;
@@ -55,9 +63,9 @@
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -146,4 +154,4 @@
       }
     }
   }
-  </style>
+</style>

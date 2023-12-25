@@ -21,8 +21,8 @@
         </u-checkbox>
       </u-checkbox-group>
       <view class="flex-row right">
-        <image class="icon-editor" src="/static/images/icon_edit.png" @click="onClick" />
-        <image class="icon-delete ml-28" src="/static/images/icon_delete.png" @click="onOpenDialog" />
+        <image class="icon-editor" src="/personal/static/images/icon_edit.png" @click="onClick" />
+        <image class="icon-delete ml-28" src="/personal/static/images/icon_delete.png" @click="onOpenDialog" />
       </view>
     </view>
     <confirm-panel

@@ -10,7 +10,7 @@
               <text class="field-name">物流公司</text>
               <view class="flex-row items-center">
                 <text class="field-value">{{ item.logistics_company }}</text>
-                <image class="shrink-0 arrow-right ml-8" src="/static/images/icon_arrow_right.png" />
+                <image class="shrink-0 arrow-right ml-8" src="/myOrder/static/images/icon_arrow_right.png" />
               </view>
             </view>
             <view class="flex-row justify-between mt-16" v-if="item.contact_phone">

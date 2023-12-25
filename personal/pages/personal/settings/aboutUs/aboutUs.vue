@@ -4,32 +4,32 @@
     <view class="flex-col container">
       <view class="flex-col self-center wrap">
         <view class="flex-col items-center self-center">
-          <image class="logo" src="/static/images/icon_logo.png" />
+          <image class="logo" src="/personal/static/images/icon_logo.png" />
           <text class="label mt-8">美之高</text>
         </view>
         <view class="flex-col self-stretch mt-22">
           <view class="flex-col cell-wrap" @click="onClick">
             <view class="flex-row justify-between cell-con">
               <text class="self-center label">关于我们</text>
-              <image class="self-start icon-right" src="/static/images/icon_arrow_arrow_02.png" />
+              <image class="self-start icon-right" src="/personal/static/images/icon_arrow_arrow_02.png" />
             </view>
           </view>
           <view class="flex-col cell-wrap" @click="onClick_1">
             <view class="flex-row justify-between cell-con">
               <text class="self-center label">服务协议</text>
-              <image class="self-start icon-right" src="/static/images/icon_arrow_arrow_02.png" />
+              <image class="self-start icon-right" src="/personal/static/images/icon_arrow_arrow_02.png" />
             </view>
           </view>
           <view class="flex-col cell-wrap" @click="onClick_2">
             <view class="flex-row justify-between cell-con">
               <text class="self-center label">隐私协议</text>
-              <image class="self-start icon-right" src="/static/images/icon_arrow_arrow_02.png" />
+              <image class="self-start icon-right" src="/personal/static/images/icon_arrow_arrow_02.png" />
             </view>
           </view>
           <view class="flex-col cell-wrap" @click="onClick_3">
             <view class="flex-row justify-between cell-con">
               <text class="self-center label">用户绑卡协议</text>
-              <image class="self-start icon-right" src="/static/images/icon_arrow_arrow_02.png" />
+              <image class="self-start icon-right" src="/personal/static/images/icon_arrow_arrow_02.png" />
             </view>
           </view>
         </view>

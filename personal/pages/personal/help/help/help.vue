@@ -22,7 +22,7 @@
               v-for="(item, index) in problemList"
               :key="index"
               ><text class="self-center label">{{ item.title }}</text>
-              <image class="self-start icon-arrow" src="/static/images/icon_right_arrow_05.png" />
+              <image class="self-start icon-arrow" src="/personal/static/images/icon_right_arrow_05.png" />
             </view>
           </view> </list-container></scroll-view
     ></view>
