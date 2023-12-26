@@ -90,7 +90,7 @@
       padding: 32rpx 0;
       border-bottom: 1rpx solid #f0f0f0;
       .address {
-        color: #2d2e32;
+        color: #111111;
         font-size: 32rpx;
         font-family: PingFang SC;
         font-weight: 700;

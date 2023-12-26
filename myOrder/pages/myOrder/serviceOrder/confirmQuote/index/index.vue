@@ -117,7 +117,7 @@
         color: #b09053;
       }
       .title {
-        color: #2d2e32;
+        color: #111111;
         font-size: 30rpx;
       }
       .prod-img {
@@ -134,7 +134,7 @@
         margin-top: 48rpx;
         text-align: left;
         .tip-color {
-          color: #2d2e32;
+          color: #111111;
           font-size: 28rpx;
           line-height: 48rpx;
         }
@@ -160,7 +160,7 @@
             font-size: 28rpx;
             line-height: 40rpx;
             font-weight: 500;
-            color: #2d2e32;
+            color: #111111;
           }
           .text-white {
             color: #ffffff;

@@ -69,7 +69,7 @@
         line-height: 30rpx;
       }
       .pay-type-font {
-        color: #2d2e32;
+        color: #111111;
       }
       .pay-desc {
         color: #a7a7a7;

@@ -22,7 +22,7 @@
         activeColor="#B09053"
         inactiveColor="#D2D2D2"
         size="28rpx"
-        labelColor="#2d2e32"
+        labelColor="#111111"
       >
         <u-radio label="需要" name="1"></u-radio>
         <u-radio label="不需要" name="2" class="ml-24"></u-radio>

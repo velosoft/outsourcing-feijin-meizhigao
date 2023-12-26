@@ -81,7 +81,7 @@
     font-family: 'PingFang SC';
     line-height: 40rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
   }
   .base-font {
     font-size: 28rpx;

@@ -1,9 +1,6 @@
 <template>
   <view class="flex-row">
-    <image
-      class="shrink-0 cover-img"
-      src="/myOrder/static/images/mock_1dae61f5b8b53166.png"
-    />
+    <image class="shrink-0 cover-img" src="/myOrder/static/images/mock_1dae61f5b8b53166.png" />
     <view class="flex-col flex-1 ml-10">
       <text class="font-title">定制卧室收纳柜新疆包邮卧室床头包卧室床头厨房收纳服务</text>
       <view class="flex-row justify-between mt-6">
@@ -42,7 +39,7 @@
     height: 180rpx;
   }
   .font-title {
-    color: #2d2e32;
+    color: #111111;
     font-size: 28rpx;
     font-weight: 500;
     line-height: 40rpx;

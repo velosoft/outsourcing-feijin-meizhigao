@@ -94,7 +94,7 @@
   .number {
     font-size: 26rpx;
     line-height: 36rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .actions {
     line-height: 36rpx;

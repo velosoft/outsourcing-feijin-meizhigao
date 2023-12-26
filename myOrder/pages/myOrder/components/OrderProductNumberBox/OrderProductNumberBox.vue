@@ -59,7 +59,7 @@
     font-weight: 500;
   }
   .title {
-    color: #2d2e32;
+    color: #111111;
     line-height: 40rpx;
     text-align: left;
   }

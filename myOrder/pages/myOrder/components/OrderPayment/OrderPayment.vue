@@ -75,13 +75,13 @@
     font-size: 28rpx;
     line-height: 34rpx;
     font-weight: 600;
-    color: #2d2e32;
+    color: #111111;
   }
   .total-wrapper {
     padding: 30rpx 0 30rpx;
   }
   .total-text {
-    color: #2d2e32;
+    color: #111111;
     font-weight: 500;
   }
 </style>

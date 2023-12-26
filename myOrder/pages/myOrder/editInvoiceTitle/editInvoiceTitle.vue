@@ -108,7 +108,7 @@
     font-size: 28rpx;
     font-family: 'PingFang SC';
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .cell-info {
     margin: 24rpx 24rpx 0;

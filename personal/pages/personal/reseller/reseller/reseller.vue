@@ -84,7 +84,7 @@
         font-size: 26rpx;
         font-family: 苹方;
         line-height: 26rpx;
-        color: #2d2e32;
+        color: #111111;
       }
       .name-text {
         margin-top: 8rpx;

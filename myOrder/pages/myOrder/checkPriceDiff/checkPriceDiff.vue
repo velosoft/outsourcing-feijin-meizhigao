@@ -141,7 +141,6 @@
   import NavBar from '@/components/NavBar/NavBar.vue';
   import PopProductInfo from '@/myOrder/pages/myOrder/components/PopProductInfo/PopProductInfo.vue';
 
-
   export default {
     components: { CFCard, NavBar, PopProductInfo },
     props: {},
@@ -231,7 +230,7 @@
   .sum-title {
     font-size: 26rpx;
     line-height: 26rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .sum-money {
     font-size: 30rpx;

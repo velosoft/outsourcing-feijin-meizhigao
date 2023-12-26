@@ -79,7 +79,7 @@
     font-family: 'PingFang SC';
     line-height: 42rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
   }
   .rate-wrapper {
     padding: 24rpx 22rpx 24rpx 24rpx;
@@ -90,7 +90,7 @@
     font-size: 30rpx;
     font-family: 'PingFang SC';
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .rate-text {
     font-size: 28rpx;

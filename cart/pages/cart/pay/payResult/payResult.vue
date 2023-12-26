@@ -73,7 +73,7 @@
         line-height: 30rpx;
       }
       .result-text {
-        color: #2d2e32;
+        color: #111111;
       }
     }
   }

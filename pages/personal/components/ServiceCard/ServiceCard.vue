@@ -105,7 +105,7 @@
           font-size: 24rpx;
           font-family: 'PingFang SC';
           line-height: 34rpx;
-          color: #2d2e32;
+          color: #111111;
         }
       }
     }

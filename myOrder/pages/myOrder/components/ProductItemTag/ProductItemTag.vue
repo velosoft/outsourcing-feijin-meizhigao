@@ -73,7 +73,7 @@
     line-height: 40rpx;
   }
   .text {
-    color: #2d2e32;
+    color: #111111;
     font-weight: 500;
   }
   .size-label {

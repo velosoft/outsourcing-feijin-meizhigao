@@ -80,7 +80,7 @@
         .font {
           font-size: 24rpx;
           line-height: 34rpx;
-          color: #2d2e32;
+          color: #111111;
         }
         .text_4 {
           margin-top: 24rpx;

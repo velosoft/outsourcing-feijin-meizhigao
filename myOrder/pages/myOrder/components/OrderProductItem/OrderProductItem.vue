@@ -120,7 +120,7 @@
     overflow: hidden;
   }
   .name {
-    color: #2d2e32;
+    color: #111111;
     font-size: 28rpx;
     font-weight: 500;
     line-height: 40rpx;

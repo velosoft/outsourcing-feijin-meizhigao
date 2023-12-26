@@ -123,7 +123,7 @@
         height: 184rpx !important;
       }
       text {
-        color: #2d2e32;
+        color: #111111;
       }
     }
   }

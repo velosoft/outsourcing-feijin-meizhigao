@@ -188,13 +188,13 @@
           color: #8c8f95;
         }
         .text_5 {
-          color: #2d2e32;
+          color: #111111;
           font-weight: 500;
         }
         .font_4 {
           font-size: 24rpx;
           line-height: 34rpx;
-          color: #2d2e32;
+          color: #111111;
         }
         .text_6 {
           color: #8c8f95;

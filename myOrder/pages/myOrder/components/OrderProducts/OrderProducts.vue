@@ -40,7 +40,7 @@
     border-radius: 16rpx;
   }
   .title {
-    color: #2d2e32;
+    color: #111111;
     font-size: 30rpx;
     font-weight: 500;
     line-height: 42rpx;

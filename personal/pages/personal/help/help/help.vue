@@ -116,7 +116,7 @@
           font-size: 28rpx;
           font-family: 苹方;
           line-height: 28rpx;
-          color: #2d2e32;
+          color: #111111;
         }
 
         .icon-arrow {

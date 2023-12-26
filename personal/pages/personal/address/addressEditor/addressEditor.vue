@@ -59,7 +59,7 @@
     }
     .default-fields {
       /deep/ .u-cell__title-text {
-        color: #2d2e32 !important;
+        color: #111111 !important;
         font-size: 28rpx !important;
         font-family: '苹方';
       }

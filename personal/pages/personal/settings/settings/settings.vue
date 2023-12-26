@@ -55,7 +55,7 @@
             font-size: 28rpx;
             font-family: PingFang SC;
             line-height: 28rpx;
-            color: #2d2e32;
+            color: #111111;
           }
           .icon-arrow {
             margin-right: 8rpx;
@@ -73,7 +73,7 @@
           height: 88rpx;
           border-radius: 72rpx;
           border-color: #cbccd4 !important;
-          color: #2d2e32 !important;
+          color: #111111 !important;
           font-weight: 700;
         }
       }

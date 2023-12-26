@@ -43,7 +43,7 @@
   .name_font {
     font-size: 28rpx;
     line-height: 36rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .list-item {
     padding: 24rpx;

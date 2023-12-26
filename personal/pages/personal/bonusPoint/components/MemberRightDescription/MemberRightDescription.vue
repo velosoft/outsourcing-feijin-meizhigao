@@ -31,7 +31,7 @@
       font-family: 'PingFang SC';
       line-height: 42rpx;
       font-weight: 500;
-      color: #2d2e32;
+      color: #111111;
     }
     .text {
       color: #111111;

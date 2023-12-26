@@ -87,7 +87,7 @@
           font-family: 苹方;
           line-height: 30rpx;
           font-weight: 700;
-          color: #2d2e32;
+          color: #111111;
         }
         .cell-wrap {
           padding: 36rpx 0;

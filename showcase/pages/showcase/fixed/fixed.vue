@@ -136,11 +136,11 @@
       </view>
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import NavBar from '@/components/NavBar/NavBar.vue';
-  
+
   export default {
     components: { NavBar },
     props: {},
@@ -149,12 +149,12 @@
         title: '',
       };
     },
-  
+
     methods: {},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .ml-9 {
     margin-left: 18rpx;
   }
@@ -283,7 +283,7 @@
             font-size: 28rpx;
             font-family: 'PingFang SC';
             line-height: 40rpx;
-            color: #2d2e32;
+            color: #111111;
           }
           .font_5 {
             font-size: 24rpx;
@@ -333,8 +333,8 @@
         font-family: 'PingFang SC';
         line-height: 40rpx;
         font-weight: 500;
-        color: #2d2e32;
+        color: #111111;
       }
     }
   }
-  </style>
+</style>

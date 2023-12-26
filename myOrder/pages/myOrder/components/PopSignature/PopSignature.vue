@@ -63,7 +63,7 @@
   }
   .tips {
     margin-left: 16rpx;
-    color: #2d2e32;
+    color: #111111;
     font-weight: unset;
   }
   .tips-text {

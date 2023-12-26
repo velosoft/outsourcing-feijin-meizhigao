@@ -73,7 +73,7 @@
         line-height: 28rpx;
       }
       .label-num {
-        color: #2d2e32;
+        color: #111111;
         font-size: 60rpx;
         font-family: HarmonyOS Sans TC;
         font-weight: 700;
@@ -105,7 +105,7 @@
         font-family: HarmonyOS Sans SC;
         line-height: 40rpx;
         font-weight: 700;
-        color: #2d2e32;
+        color: #111111;
       }
     }
   }

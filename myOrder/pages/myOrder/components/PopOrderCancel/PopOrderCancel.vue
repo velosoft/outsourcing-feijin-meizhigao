@@ -18,7 +18,7 @@
         v-for="(item, index) of reasons"
         :key="index"
         labelSize="14"
-        labelColor="#2d2e32"
+        labelColor="#111111"
       ></u-radio>
     </u-radio-group>
     <view class="flex-col justify-start items-center button button-wrapper" @click="onClick">

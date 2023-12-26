@@ -83,7 +83,7 @@
     font-family: 'PingFang SC';
     line-height: 40rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
   }
   .main {
     margin: 24rpx 24rpx 0;

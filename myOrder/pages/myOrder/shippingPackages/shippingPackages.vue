@@ -85,7 +85,7 @@
     font-size: 28rpx;
     line-height: 40rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
   }
   .title-text {
     font-size: 30rpx;
@@ -99,7 +99,7 @@
   .field-value {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .arrow-right {
     width: 12rpx;

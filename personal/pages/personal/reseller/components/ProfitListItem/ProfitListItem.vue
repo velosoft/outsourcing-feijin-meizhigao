@@ -44,7 +44,7 @@
 
 <style scoped lang="less">
   .title {
-    color: #2d2e32;
+    color: #111111;
     font-size: 26rpx;
     font-family: 苹方;
     line-height: 26rpx;

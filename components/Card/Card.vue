@@ -47,7 +47,7 @@
         font-size: 30rpx;
         line-height: 42rpx;
         font-weight: 600;
-        color: #2d2e32;
+        color: #111111;
       }
     }
   }
