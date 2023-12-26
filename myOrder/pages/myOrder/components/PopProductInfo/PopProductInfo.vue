@@ -5,7 +5,7 @@
       <view class="flex-row mt-12 list-item" v-for="(item, index) in items" :key="index">
         <image
           class="image"
-          src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_1dae61f5b8b53166.png"
+          src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png"
         />
         <view class="flex-col flex-1 ml-10 justify-between">
           <text class="line-clamp-two title">柱子半径2.5cm长度1米</text>

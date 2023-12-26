@@ -29,7 +29,7 @@
     </view>
     <image
       class="timeline"
-      src="https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=72e68854fbf691b4d7ab6cc06f2da28f.png"
+      src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=72e68854fbf691b4d7ab6cc06f2da28f.png"
     />
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
       <pop-shipping-product-list :products="shipping.products"></pop-shipping-product-list>

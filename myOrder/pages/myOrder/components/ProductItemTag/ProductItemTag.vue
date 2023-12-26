@@ -3,7 +3,7 @@
     <view class="relative thumb-size">
       <image
         class="thumb-size"
-        src="https://dev.ft.velosoft.cn/api/image?token=6588d7d6d6bce000114dac75&name=mock_1dae61f5b8b53166.png"
+        src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png"
       />
       <view class="flex-col justify-start items-center text-wrapper pos" v-if="true">
         <text class="tag-label tag-text">已使用</text>

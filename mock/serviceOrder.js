@@ -25,7 +25,7 @@ export const serviceOrders = serviceOrderStatus.map((e, i) => ({
   no: `2023060801256768${i}`,
   status: e,
   image:
-    'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+    'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
   title: '全屋整理收纳服务（单次）',
   desc: '按面积核算（元/m)',
   price: 200,

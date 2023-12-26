@@ -20,7 +20,7 @@ export const productOrders = [
         productPrice: 200, // 价格类型是 number
         productQuantity: 2, // 可随机生成 1 到 3 之间的整数
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false, // 是否是秒杀商品
         afterSaleStatus: '正常', // 可选值：["正常", "售后成功", "售后失败"]
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
@@ -31,7 +31,7 @@ export const productOrders = [
         productPrice: 50, // 价格类型是 number
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '售后成功',
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
@@ -42,7 +42,7 @@ export const productOrders = [
         productPrice: 50,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '补购商品',
@@ -53,7 +53,7 @@ export const productOrders = [
         productPrice: 50,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '已退回',
@@ -64,7 +64,7 @@ export const productOrders = [
         productPrice: 50,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '正常',
@@ -111,7 +111,7 @@ export const productOrders = [
         productPrice: 30,
         productQuantity: 3,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
@@ -121,7 +121,7 @@ export const productOrders = [
         productPrice: 30,
         productQuantity: 3,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
@@ -149,7 +149,7 @@ export const productOrders = [
         productPrice: 35,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '正常',
       },
@@ -176,7 +176,7 @@ export const productOrders = [
         productPrice: 25,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '正常',
       },
@@ -204,7 +204,7 @@ export const productOrders = [
         productPrice: 20,
         productQuantity: 3,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
@@ -226,7 +226,7 @@ export const productOrders = [
         productPrice: 15,
         productQuantity: 2,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '售后成功',
       },
@@ -246,7 +246,7 @@ export const productOrders = [
         productPrice: 30,
         productQuantity: 2,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
@@ -265,7 +265,7 @@ export const productOrders = [
         productPrice: 40,
         productQuantity: 1,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
@@ -284,7 +284,7 @@ export const productOrders = [
         productPrice: 15,
         productQuantity: 2,
         productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '售后成功',
       },
@@ -395,7 +395,7 @@ export const shippingDetail = {
   package_name: '包裹一',
   logistics_company: '顺丰快递',
   company_logo:
-    'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=465e85a3718d288f08003bf33f9735e0.png',
+    'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=465e85a3718d288f08003bf33f9735e0.png',
   contact_phone: '13966907675',
   driver_name: '张三',
   tracking_number: '202313966907675',
@@ -407,7 +407,7 @@ export const shippingDetail = {
       productPrice: 200,
       productQuantity: 2,
       productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
@@ -415,7 +415,7 @@ export const shippingDetail = {
       productPrice: 200,
       productQuantity: 2,
       productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
@@ -423,7 +423,7 @@ export const shippingDetail = {
       productPrice: 200,
       productQuantity: 2,
       productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
@@ -431,7 +431,7 @@ export const shippingDetail = {
       productPrice: 200,
       productQuantity: 2,
       productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
@@ -439,7 +439,7 @@ export const shippingDetail = {
       productPrice: 200,
       productQuantity: 2,
       productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
@@ -447,7 +447,7 @@ export const shippingDetail = {
       productPrice: 200,
       productQuantity: 2,
       productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658311f7d6bce000114d53b2&name=21021fe5e0bfe79f1dae61f5b8b53166.png',
+        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
   ],
   details: [

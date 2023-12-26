@@ -13,7 +13,7 @@
         </view>
       </view>
     </view>
-    <view class="flex-col summary" @click="onShowReserve">
+    <view class="flex-col summary" @click="gotoDetail">
       <view class="flex-row top">
         <image class="order-image" :src="order.image" />
         <view class="flex-col justify-between flex-1 right">
@@ -111,7 +111,7 @@
       <view class="btn btn-yellow" v-if="order.status === '等待上门服务'" @click="onShowReserve">
         <text>预约服务时间</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '差额支付'">
+      <view class="btn btn-yellow" v-if="order.status === '差额支付'" @click="gotoPriceDiff">
         <text>确认差额</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '等待客户验收'">
@@ -162,6 +162,12 @@
       },
       gotoProductList() {
         uni.navigateTo({ url: `/myOrder/pages/myOrder/productList/productList` });
+      },
+      gotoPriceDiff() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff` });
+      },
+      gotoDetail() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceOrder/detail/detail/detail` });
       },
     },
   };

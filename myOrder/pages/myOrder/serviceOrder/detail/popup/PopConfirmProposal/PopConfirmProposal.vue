@@ -2,24 +2,14 @@
   <view class="flex-col component-MTMxKJ29">
     <view class="flex-row justify-center items-center relative group_8">
       <text class="font">确认方案</text>
-      <image
-        class="image_9 pos_2"
-        src="/myOrder/static/images/0710c5a88f04f72ad22112f382e27cdd.png"
-      />
     </view>
     <view class="flex-row justify-between section_7">
       <text class="font_5 text_13">设计方案</text>
       <view class="flex-row items-center">
         <text class="font_4">查看方案</text>
-        <image
-          class="shrink-0 image_10"
-          src="/myOrder/static/images/a0aa90bcefca8a8939ee3247cdc1569c.png"
-        />
+        <image class="shrink-0 image_10" src="/myOrder/static/images/icon_arrow_right_yellow.png" />
         <text class="font_4 text_14">服务方案</text>
-        <image
-          class="shrink-0 image_10"
-          src="/myOrder/static/images/a0aa90bcefca8a8939ee3247cdc1569c.png"
-        />
+        <image class="shrink-0 image_10" src="/myOrder/static/images/icon_arrow_right_yellow.png" />
       </view>
     </view>
     <view class="flex-col group_9">
@@ -34,10 +24,7 @@
         </text>
       </view>
       <view class="flex-row group_11">
-        <image
-          class="image_11"
-          src="/myOrder/static/images/9cc3924ed5649a43c2e2a451962e8c39.png"
-        />
+        <image class="image_11" src="/myOrder/static/images/9cc3924ed5649a43c2e2a451962e8c39.png" />
         <text class="font_4 text_17 ml-8">我已阅读并同意该定制商品设计方案</text>
       </view>
       <view class="flex-col justify-start items-center button text-wrapper_2">
