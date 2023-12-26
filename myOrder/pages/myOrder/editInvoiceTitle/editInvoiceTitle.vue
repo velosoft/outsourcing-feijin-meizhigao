@@ -117,6 +117,7 @@
     padding: 42rpx 0 44rpx;
     background-color: #ffffff;
     width: 750rpx;
+    z-index: 3;
   }
   .button {
     margin: 0 40rpx;
