@@ -17,7 +17,7 @@
           <image class="icon-type" src="/myOrder/static/images/icon_change.png" />
           <view class="flex-col items-start ml-8">
             <text class="type-title">换货</text>
-            <text class="type-tip mt-4">商品已发货，需退回已收到的商品</text>
+            <text class="type-tip cf-gray-font mt-4">商品已发货，需退回已收到的商品</text>
           </view>
         </view>
         <u-radio name="fhaSknym" activeColor="#B09053" size="30rpx" @change="onType('换货')"></u-radio>
@@ -51,7 +51,7 @@
     font-size: 30rpx;
     line-height: 42rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
   }
   .title {
     font-size: 28rpx;

@@ -7,9 +7,11 @@
       </view>
     </view>
     <view class="flex-col flex-1 ml-12 justify-between right">
-      <text class="line-clamp-two name">{{ product.productName }}</text>
+      <text class="line-clamp-two name cf-black-font">{{ product.productName }}</text>
       <view class="flex-row justify-between items-center">
-        <text class="flex-1 line-clamp-one description" :style="[descStyle]">{{ product.productDescription }}</text>
+        <text class="flex-1 line-clamp-one description cf-gray-font" :style="[descStyle]">{{
+          product.productDescription
+        }}</text>
         <text class="quantity" :style="[descStyle]">{{ `x${product.productQuantity}` }}</text>
       </view>
       <view class="flex-row items-center justify-between">

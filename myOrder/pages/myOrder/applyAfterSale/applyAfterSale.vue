@@ -5,12 +5,12 @@
       <u-checkbox-group placement="column">
         <view class="flex-col list-item mt-12" v-for="(item, index) in order.products" :key="index">
           <order-product-item v-if="orderStatus === '未发货' || applyType" :product="item"></order-product-item>
-          <order-product-number-box v-else></order-product-number-box>
+          <order-product-number-box v-else :product="item"></order-product-number-box>
         </view>
       </u-checkbox-group>
     </view>
     <view class="flex-col main">
-      <apply-after-sale-form v-if="orderStatus === '未发货' || applyType"></apply-after-sale-form>
+      <apply-after-sale-form v-if="orderStatus === '未发货' || applyType" :refund="refund"></apply-after-sale-form>
       <apply-after-sale-type v-else @type="onChangeType"></apply-after-sale-type>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start action">
@@ -34,11 +34,23 @@
     props: {},
     data() {
       return {
-        orderStatus: '未发货',
-        applyType: '', // 记录用户退换货的选择类型
+        orderStatus: '已发货',
+        applyType: '', // 记录用户退换货的选择类型，'退货退款'|'换货'
         title: '申请售后',
         order: productOrders[0],
+        refund: '',
       };
+    },
+    computed: {
+      refund() {
+        let price = this.order.totalAmount.toFixed(2);
+        let discount = this.order.storageCoinDeduction || 0;
+        if (discount) {
+          return `￥${price}+${discount}收纳币`;
+        } else {
+          return `￥${price}`;
+        }
+      },
     },
     methods: {
       onChangeType(type) {

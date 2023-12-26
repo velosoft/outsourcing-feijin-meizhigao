@@ -1,37 +1,47 @@
 <template>
   <view class="flex-row items-center">
     <u-checkbox v-model="v_model" name="zef0ZWPc" shape="circle" size="32rpx" activeColor="#B09053"></u-checkbox>
-    <image
-      class="shrink-0 img"
-      src="https://dev.ft.velosoft.cn/api/image?token=6584e6bdd6bce000114d6c84&name=17025198577991178750.png"
-    />
+    <image class="shrink-0 img" :src="product.productImageURL" />
     <view class="flex-col justify-between flex-1 ml-7">
-      <text class="line-clamp-two font title">定制卧室收纳柜新疆包邮卧室床头包卧室床头厨房收纳服务</text>
-      <text class="line-clamp-one desc">三层长45宽30高75</text>
+      <text class="line-clamp-two font title cf-black-font">{{ product.productName }}</text>
+      <text class="line-clamp-one desc cf-gray-font">{{ product.productDescription }}</text>
       <view class="flex-row justify-between items-center">
         <view class="price-wrapper">
           <text class="price-number-10">￥</text>
-          <text class="price-number-16">200</text>
-          <text class="price-number-10">.00</text>
+          <text class="price-number-16">{{ getPriceIntergetPart(product.productPrice) }}</text>
+          <text class="price-number-10">.{{ getPriceDecimalPart(product.productPrice) }}</text>
         </view>
-        <u-number-box v-model="v_model_1"></u-number-box>
+        <u-number-box class="cf-number-box-2" v-model="numVal"></u-number-box>
       </view>
     </view>
   </view>
 </template>
 
 <script>
+  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
   export default {
     components: {},
-    props: {},
+    props: {
+      product: {
+        type: Object,
+        default: {},
+      },
+    },
     data() {
       return {
         v_model: '',
-        v_model_1: '',
+        numVal: 1,
       };
     },
 
-    methods: {},
+    methods: {
+      getPriceIntergetPart(val) {
+        return getPriceIntergetPart(val);
+      },
+      getPriceDecimalPart(val) {
+        return getPriceDecimalPart(val);
+      },
+    },
   };
 </script>
 

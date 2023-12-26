@@ -22,7 +22,7 @@
                             <text class="decimal decimal-text">.00</text>
                           </view>
                         </view>
-                        <u-number-box v-model="v_model"></u-number-box>
+                        <u-number-box class="cf-number-box-1" v-model="v_model"></u-number-box>
                       </view>
                       <view class="items-center" v-if="true">
                         <text class="tag-right additional-label">附加服务：安装服务</text>
