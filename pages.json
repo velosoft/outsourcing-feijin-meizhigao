@@ -256,6 +256,13 @@
             "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
+        },
+        {
+          "path": "pages/myOrder/checkPriceDiff/checkPriceDiff",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
         }
       ]
     },
