@@ -30,7 +30,7 @@
     background-color: #ffffff;
     .title {
       margin-left: 28rpx;
-      color: #000000;
+      color: #111111;
       font-size: 28rpx;
       font-family: 'PingFang SC';
       font-weight: 600;

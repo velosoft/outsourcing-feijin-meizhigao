@@ -64,7 +64,7 @@
     font-family: 'PingFang SC';
     line-height: 44rpx;
     font-weight: 500;
-    color: #000000;
+    color: #111111;
   }
   .member-box {
     background-color: #fff0d4;

@@ -188,7 +188,7 @@
         font-weight: unset;
       }
       .text-black {
-        color: #000000;
+        color: #111111;
         line-height: 34rpx;
       }
       .font-price {

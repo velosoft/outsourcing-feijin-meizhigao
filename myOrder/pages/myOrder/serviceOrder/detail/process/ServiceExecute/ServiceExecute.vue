@@ -66,7 +66,7 @@
   .font-black {
     font-size: 24rpx;
     line-height: 34rpx;
-    color: #000000;
+    color: #111111;
   }
   .text-weight {
     font-weight: 600;

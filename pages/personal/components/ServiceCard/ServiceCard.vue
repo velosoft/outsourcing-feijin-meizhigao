@@ -82,7 +82,7 @@
     border-radius: 16rpx;
     .title-left {
       margin-left: 28rpx;
-      color: #000000;
+      color: #111111;
       font-size: 32rpx;
       font-family: 'PingFang SC';
       font-weight: 500;

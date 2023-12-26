@@ -99,7 +99,7 @@
           font-family: 苹方;
           line-height: 30rpx;
           font-weight: 500;
-          color: #000000;
+          color: #111111;
         }
         .day-num {
           color: #b09053;
@@ -173,7 +173,7 @@
             font-family: 苹方;
             line-height: 34rpx;
             font-weight: 500;
-            color: #000000;
+            color: #111111;
           }
           .section-inactive {
             background-color: #eeeeee;

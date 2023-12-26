@@ -68,7 +68,7 @@
         line-height: 34rpx;
       }
       .text-normal {
-        color: #000000;
+        color: #111111;
       }
       .text-reduce {
         color: #bb3e0c;

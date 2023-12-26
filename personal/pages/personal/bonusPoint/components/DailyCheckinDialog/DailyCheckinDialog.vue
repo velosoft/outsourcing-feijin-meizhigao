@@ -70,7 +70,7 @@
         font-family: 'PingFang SC';
         line-height: 58rpx;
         font-weight: 500;
-        color: #000000;
+        color: #111111;
       }
       .box {
         margin-top: 32rpx;
@@ -100,7 +100,7 @@
         font-size: 28rpx;
         font-family: 'PingFang SC';
         line-height: 40rpx;
-        color: #000000;
+        color: #111111;
       }
     }
   }

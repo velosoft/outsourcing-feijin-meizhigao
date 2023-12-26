@@ -97,7 +97,7 @@
     .text-wrapper {
       margin: 0 28rpx;
       .title {
-        color: #000000;
+        color: #111111;
         font-size: 32rpx;
         font-family: 'PingFang SC';
         font-weight: 500;

@@ -104,7 +104,7 @@
       line-height: 26rpx;
     }
     .font-name {
-      color: #000000;
+      color: #111111;
       font-size: 20rpx;
       line-height: 28rpx;
     }

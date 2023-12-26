@@ -40,7 +40,7 @@
         font-size: 24rpx;
         font-family: 苹方;
         line-height: 24rpx;
-        color: #000000;
+        color: #111111;
       }
       .course-num {
         color: #6d6d6d;

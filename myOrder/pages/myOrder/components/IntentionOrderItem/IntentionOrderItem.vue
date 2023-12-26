@@ -240,7 +240,7 @@
   .captain {
     font-size: 24rpx;
     line-height: 34rpx;
-    color: #000000;
+    color: #111111;
   }
   .stage-wrapper {
     margin-left: 16rpx;

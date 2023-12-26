@@ -75,7 +75,7 @@
   }
   .font {
     font-size: 30rpx;
-    color: #000000;
+    color: #111111;
   }
   .section-top {
     margin: 0 24rpx;

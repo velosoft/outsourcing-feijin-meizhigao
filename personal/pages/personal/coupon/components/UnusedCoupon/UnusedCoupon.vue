@@ -96,7 +96,7 @@
   .coupon-right {
     padding: 36rpx 24rpx 32rpx 34rpx;
     .title {
-      color: #000000;
+      color: #111111;
       font-weight: 500;
       line-height: 44rpx;
     }

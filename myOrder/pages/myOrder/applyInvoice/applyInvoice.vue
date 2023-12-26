@@ -70,7 +70,7 @@
     margin: 24rpx 24rpx 0;
   }
   .tips-title {
-    color: #000000;
+    color: #111111;
     font-size: 30rpx;
     line-height: 42rpx;
   }

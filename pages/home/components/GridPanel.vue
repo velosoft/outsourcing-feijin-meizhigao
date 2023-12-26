@@ -5,22 +5,11 @@
       <text class="ml-4 title-text">探索家具灵感</text>
     </view>
     <view class="mt-12 flex-col relative">
-      <swiper
-        class="nav-swiper"
-        style="height: 184rpx"
-        autoplay="true"
-        @change="change"
-      >
+      <swiper class="nav-swiper" style="height: 184rpx" autoplay="true" @change="change">
         <swiper-item v-for="(item, index) in swiperItems" :key="index">
           <view class="flex-row items-center equal-division">
-            <view
-              class="flex-col items-center equal-division-item"
-              v-for="(item, index) in items"
-              :key="index"
-            >
-              <view
-                class="flex-col items-center justify-center item-image-wraper"
-              >
+            <view class="flex-col items-center equal-division-item" v-for="(item, index) in items" :key="index">
+              <view class="flex-col items-center justify-center item-image-wraper">
                 <image class="item-image" :src="item.icon" />
               </view>
               <text class="item-text">{{ item.text }}</text>
@@ -41,112 +30,112 @@
 </template>
 
 <script>
-export default {
-  components: {},
-  props: {},
-  data() {
-    return {
-      swiperItems: [null, null],
-      current: 0,
-      items: [
-        {
-          icon: "/static/mock/grid_panel_icon_0.png",
-          text: "客厅收纳",
-        },
-        {
-          icon: "/static/mock/grid_panel_icon_1.png",
-          text: "衣柜收纳",
-        },
-        {
-          icon: "/static/mock/grid_panel_icon_2.png",
-          text: "厨房收纳",
-        },
-        {
-          icon: "/static/mock/grid_panel_icon_3.png",
-          text: "卧室收纳",
-        },
-        {
-          icon: "/static/mock/grid_panel_icon_4.png",
-          text: "杂物房收纳",
-        },
-      ],
-    };
-  },
-
-  methods: {
-    change(e) {
-      this.current = e.detail.current;
+  export default {
+    components: {},
+    props: {},
+    data() {
+      return {
+        swiperItems: [null, null],
+        current: 0,
+        items: [
+          {
+            icon: '/static/mock/grid_panel_icon_0.png',
+            text: '客厅收纳',
+          },
+          {
+            icon: '/static/mock/grid_panel_icon_1.png',
+            text: '衣柜收纳',
+          },
+          {
+            icon: '/static/mock/grid_panel_icon_2.png',
+            text: '厨房收纳',
+          },
+          {
+            icon: '/static/mock/grid_panel_icon_3.png',
+            text: '卧室收纳',
+          },
+          {
+            icon: '/static/mock/grid_panel_icon_4.png',
+            text: '杂物房收纳',
+          },
+        ],
+      };
     },
-  },
-};
+
+    methods: {
+      change(e) {
+        this.current = e.detail.current;
+      },
+    },
+  };
 </script>
 
 <style scoped lang="less">
-.title-wrap {
-  .title-font {
-    color: #000000;
-    font-size: 30rpx;
-    font-family: PingFang SC;
-    line-height: 30.24rpx;
+  .title-wrap {
+    .title-font {
+      color: #111111;
+      font-size: 30rpx;
+      font-family: PingFang SC;
+      line-height: 30.24rpx;
+    }
+    .title-text {
+      color: #a7a7a7;
+      font-size: 28rpx;
+      font-family: PingFang SC;
+      line-height: 28rpx;
+    }
   }
-  .title-text {
-    color: #a7a7a7;
-    font-size: 28rpx;
-    font-family: PingFang SC;
-    line-height: 28rpx;
-  }
-}
-.grid-swiper {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  margin-right: -30rpx;
-  background-color: #f6f6f6;
-  border-radius: 4rpx;
-  width: 60rpx;
-  height: 8rpx;
-  .indicator-dots {
+  .grid-swiper {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    margin-right: -30rpx;
+    background-color: #f6f6f6;
     border-radius: 4rpx;
-    width: 30rpx;
+    width: 60rpx;
     height: 8rpx;
-  }
-  .active {
-    background-color: #b09053;
-  }
-}
-.equal-division {
-  padding: 24rpx 0;
-  .equal-division-item {
-    flex: 1 1 146rpx;
-    .item-image-wraper {
-      width: 100rpx;
-      height: 100rpx;
-      border-radius: 50%;
-      background-color: #efe3dd;
+    .indicator-dots {
+      border-radius: 4rpx;
+      width: 30rpx;
+      height: 8rpx;
     }
-    .item-image {
-      max-width: 100rpx;
-      max-height: 100rpx;
-    }
-    .item-text {
-      margin-top: 16rpx;
-      font-size: 24rpx;
-      font-family: 苹方;
-      line-height: 24rpx;
-      color: #030305;
+    .active {
+      background-color: #b09053;
     }
   }
-}
-.section {
-  margin-top: -8rpx;
-  background-color: #f6f6f6;
-  border-radius: 4rpx;
-  width: 60rpx;
-  .section_2 {
-    background-color: #b09053;
+  .equal-division {
+    padding: 24rpx 0;
+    .equal-division-item {
+      flex: 1 1 146rpx;
+      .item-image-wraper {
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+        background-color: #efe3dd;
+      }
+      .item-image {
+        max-width: 100rpx;
+        max-height: 100rpx;
+      }
+      .item-text {
+        margin-top: 16rpx;
+        font-size: 24rpx;
+        font-family: 苹方;
+        line-height: 24rpx;
+        color: #030305;
+      }
+    }
+  }
+  .section {
+    margin-top: -8rpx;
+    background-color: #f6f6f6;
     border-radius: 4rpx;
-    width: 30rpx;
-    height: 8rpx;
+    width: 60rpx;
+    .section_2 {
+      background-color: #b09053;
+      border-radius: 4rpx;
+      width: 30rpx;
+      height: 8rpx;
+    }
   }
-}
 </style>

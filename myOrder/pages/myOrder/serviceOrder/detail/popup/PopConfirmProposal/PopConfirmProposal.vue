@@ -59,7 +59,7 @@
         font-family: 'PingFang SC';
         line-height: 50rpx;
         font-weight: 500;
-        color: #000000;
+        color: #111111;
       }
       .image_9 {
         width: 22rpx;
@@ -94,7 +94,7 @@
         margin-left: 12rpx;
         margin-right: 24rpx;
         .text_15 {
-          color: #000000;
+          color: #111111;
         }
         .text_16 {
           color: #6d6d6d;
