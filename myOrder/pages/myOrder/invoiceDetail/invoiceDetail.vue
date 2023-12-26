@@ -1,30 +1,30 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :hasBack="true"
       :title="title"
       :fixed="true"
       :isShow="true"
       :background="navBarColor"
       :titleColor="titleColor"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col items-start status-wrapper">
       <text class="status-text">{{ invoiced ? '已' : '未' }}开票</text>
-      <text class="mt-4 money-text">开票金额：￥9000.00</text>
+      <text class="mt-4 money-text">开票金额：￥{{ invoice.invoiceAmount.toFixed(2) }}</text>
     </view>
-    <InvoiceCard class="invoice-card"></InvoiceCard>
+    <invoice-card class="invoice-card" :invoice="invoice"></invoice-card>
     <view class="flex-col contact-wrapper">
       <view class="flex-row">
         <text class="field-name">开票人手机</text>
-        <text class="field-name ml-16">13567699045</text>
+        <text class="field-name ml-16">{{ invoice.phone }}</text>
       </view>
       <view class="flex-row mt-36 mt-21">
         <text class="field-name">开票人邮箱</text>
-        <text class="field-name ml-16">hjkdfjk@feijin.com</text>
+        <text class="field-name ml-16">{{ invoice.email }}</text>
       </view>
     </view>
     <view class="flex-col tips-wrapper" v-if="!invoiced">
-      <text>发票须知</text>
+      <text class="cf-black-font">发票须知</text>
       <view class="flex-col mt-12">
         <text class="tips-desc">1、开票金额为用户实际支付金额(不含活动优惠金额、优惠券、积分、收纳币)</text>
         <text class="tips-desc">2、电子发票可在确认收货后申请开票，开票后在“订单详情“查看开票详情</text>
@@ -52,6 +52,7 @@
   import InvoiceCard from '@/myOrder/pages/myOrder/components/InvoiceCard/InvoiceCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import ConfirmPanel from '@/components/ConfirmPanel.vue';
+  import { invoceDetail } from '@/mock/personal/invoice.js';
 
   export default {
     components: { InvoiceCard, NavBar, ConfirmPanel },
@@ -64,6 +65,7 @@
         titleColor: '#ffffff',
         invoiced: false,
         showConfirm: false,
+        invoice: invoceDetail,
       };
     },
     onPageScroll(e) {
@@ -101,12 +103,13 @@
     margin-top: 42rpx;
   }
   .page {
-    padding-bottom: 236rpx;
+    padding-bottom: 180rpx;
     background-color: #f8f8f8;
     height: 100%;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    font-family: '苹方';
   }
   .status-text {
     font-size: 36rpx;
@@ -129,7 +132,7 @@
   .field-name {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .contact-wrapper {
     margin: 24rpx 24rpx 0;
@@ -144,7 +147,7 @@
     border-radius: 16rpx;
   }
   .tips-desc {
-    color: #9c9c9f;
+    color: #6d6d6d;
     font-size: 24rpx;
     line-height: 44rpx;
   }

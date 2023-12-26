@@ -12,51 +12,51 @@
       <view class="flex-col content mt-32">
         <view class="flex-row items-center">
           <text class="field-name">发票类型</text>
-          <text class="field-value ml-16">增值税电子普通发票</text>
+          <text class="field-value ml-16">{{ invoice.invoiceType }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">抬头类型</text>
-          <text class="field-value ml-16">企业</text>
+          <text class="field-value ml-16">{{ invoice.headerType }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">发票抬头</text>
-          <text class="field-value ml-16">广州飞进信息科技有限公司</text>
+          <text class="field-value ml-16">{{ invoice.invoiceHeader }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">单位税号</text>
-          <text class="field-value ml-16">33444093567786900HK</text>
+          <text class="field-value ml-16">{{ invoice.taxNumber }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">开户银行</text>
-          <text class="field-value ml-16">广州工商银行明雅支行</text>
+          <text class="field-value ml-16">{{ invoice.bankName }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">银行账户</text>
-          <text class="field-value ml-16">8934990406744-04-008</text>
+          <text class="field-value ml-16">{{ invoice.bankAccount }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">注册地址</text>
-          <text class="field-value ml-16">广州车陂南东宏国际广场</text>
+          <text class="field-value ml-16">{{ invoice.registrationAddress }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">企业电话</text>
-          <text class="field-value ml-16">2377337938</text>
+          <text class="field-value ml-16">{{ invoice.enterprisePhone }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">发票内容</text>
-          <text class="field-value ml-16">商品及服务类别</text>
+          <text class="field-value ml-16">{{ invoice.invoiceContent }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">开票金额</text>
-          <text class="field-value ml-16">￥66.00</text>
+          <text class="field-value ml-16">￥{{ invoice.invoiceAmount.toFixed(2) }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">申请时间</text>
-          <text class="field-value ml-16">2023-09-20 14:00:00</text>
+          <text class="field-value ml-16">{{ invoice.applicationTime }}</text>
         </view>
-        <view class="flex-row mt-21 items-center">
+        <view class="flex-row mt-20 items-center">
           <text class="field-name">开票时间</text>
-          <text class="field-value ml-16">2023-09-20 14:00:00</text>
+          <text class="field-value ml-16">{{ invoice.invoiceTime }}</text>
         </view>
       </view>
     </view>
@@ -70,7 +70,12 @@
 <script>
   export default {
     components: {},
-    props: {},
+    props: {
+      invoice: {
+        type: Object,
+        default: {},
+      },
+    },
     data() {
       return {};
     },
@@ -80,9 +85,6 @@
 </script>
 
 <style scoped lang="less">
-  .mt-21 {
-    margin-top: 42rpx;
-  }
   .invoice-card {
     background-color: #ffffff;
     box-shadow: 0rpx 4rpx 8rpx 0rpx #eeeeee80;
@@ -130,11 +132,11 @@
   .field-name {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .field-value {
     font-size: 24rpx;
     line-height: 34rpx;
-    color: #8c8f95;
+    color: #6d6d6d;
   }
 </style>
