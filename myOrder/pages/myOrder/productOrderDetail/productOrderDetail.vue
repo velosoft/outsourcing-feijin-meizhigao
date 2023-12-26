@@ -1,13 +1,13 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :hasBack="true"
       :title="title"
       :fixed="true"
       :isShow="true"
       :background="navBarColor"
       :titleColor="titleColor"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col flex-1 body">
       <view class="flex-row items-center status">
         <image
@@ -40,10 +40,10 @@
         </view>
       </view>
       <view class="flex-col relative detail">
-        <OrderAddr class="relative" :addr="order.receiverInfo"></OrderAddr>
-        <OrderProducts class="mt-12" :products="order.products"></OrderProducts>
-        <OrderPayment class="mt-12" :order="order"></OrderPayment>
-        <OrderSummary class="mt-12" :order="order"></OrderSummary>
+        <order-addr class="relative" :addr="order.receiverInfo"></order-addr>
+        <prder-products class="mt-12" :products="order.products"></prder-products>
+        <order-payment class="mt-12" :order="order"></order-payment>
+        <order-summary class="mt-12" :order="order"></order-summary>
       </view>
       <view class="fixed-bottom-safe flex-row justify-end footer">
         <view class="btn btn-plain" v-if="order.orderStatus === '待付款'" @click="onShowCancel">
