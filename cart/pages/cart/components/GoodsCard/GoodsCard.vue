@@ -77,7 +77,6 @@
         }
         .text-wrapper {
           padding: 4rpx 12rpx;
-          padding-bottom: 16rpx;
           background-color: #b09053;
           border-radius: 12rpx 0rpx;
           height: 38rpx;
