@@ -17,9 +17,9 @@
               </view>
             </view>
             <view class="flex-row" v-if="courseItem.status == 1">
-              <text class="currency currency-normal">￥</text>
-              <text class="price-font price-normal">40</text>
-              <text class="decimal-font decimal-normal">.00</text>
+              <text class="currency text-normal">￥</text>
+              <text class="price-font text-normal">40</text>
+              <text class="decimal-font text-normal">.00</text>
             </view>
           </view>
         </view>
@@ -58,7 +58,7 @@
           height: 144rpx;
           .tag {
             padding: 9.62rpx 0;
-            background-color: #000000;
+            background-color: #111111;
             border-radius: 11.75rpx 0rpx 11.75rpx 0rpx;
             width: 64.1rpx;
             .tag-text {
@@ -77,7 +77,7 @@
           height: 144.23rpx;
           margin-left: 16.03rpx;
           .title {
-            color: #2d2e32;
+            color: #111111;
             font-size: 29.91rpx;
             font-family: PingFang SC;
             font-weight: 700;
@@ -101,14 +101,8 @@
           .decimal-active {
             color: #bb3e0c;
           }
-          .currency-normal {
-            color: #030305;
-          }
-          .price-normal {
-            color: #030305;
-          }
-          .decimal-normal {
-            color: #030305;
+          .text-normal {
+            color: #111111;
           }
         }
         .currency {
@@ -132,7 +126,7 @@
             line-height: 25.64rpx;
           }
           .code-label {
-            color: #000000;
+            color: #111111;
           }
           .status-text {
             color: #b09053;

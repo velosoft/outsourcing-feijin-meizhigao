@@ -49,7 +49,7 @@
           color: #6d6d6d;
         }
         .status-dot {
-          background-color: #9e9ea0;
+          background-color: #6d6d6d;
           border-radius: 50%;
           width: 12rpx;
           height: 12rpx;
@@ -61,7 +61,7 @@
           font-weight: 700;
         }
         .status-text {
-          color: #9e9ea0;
+          color: #6d6d6d;
         }
       }
       .con {

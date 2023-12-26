@@ -109,7 +109,7 @@
     font-size: 28rpx;
     font-family: 'PingFang SC';
     line-height: 40rpx;
-    color: #000000;
+    color: #111111;
   }
   .order-norml {
     color: #b09053;
@@ -124,7 +124,7 @@
     color: #b09053;
   }
   .text-normal {
-    color: #9c9c9f;
+    color: #6D6D6D;
   }
   .container {
     margin-top: 24rpx;
@@ -146,11 +146,11 @@
     line-height: 36rpx;
   }
   .size-text {
-    color: #8c8f95;
+    color: #6D6D6D;
     font-size: 26rpx;
   }
   .size-num {
-    color: #828385;
+    color: #6D6D6D;
     font-size: 26rpx;
   }
   .currency {

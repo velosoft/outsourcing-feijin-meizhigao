@@ -206,7 +206,7 @@
           font-size: 28rpx;
           font-family: PingFang SC;
           font-weight: bold;
-          color: #2d2e32;
+          color: #111111;
         }
         .item-value-bold {
           font-size: 36rpx;

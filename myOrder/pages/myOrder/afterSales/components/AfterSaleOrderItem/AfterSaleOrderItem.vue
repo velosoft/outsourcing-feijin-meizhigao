@@ -117,7 +117,7 @@
     height: 144rpx;
   }
   .title-text {
-    color: #2d2e32;
+    color: #111111;
     font-size: 28rpx;
     line-height: 40rpx;
   }
@@ -126,7 +126,7 @@
     font-family: 'PingFang SC';
     line-height: 34rpx;
     font-weight: 500;
-    color: #9e9ea0;
+    color: #6D6D6D;
   }
   .spec {
     font-weight: unset;
@@ -160,14 +160,14 @@
     border-radius: 8rpx;
   }
   .type {
-    color: #000000;
+    color: #111111;
   }
   .refund {
     font-size: 24rpx;
     font-family: '.AppleSystemUIFont';
     line-height: 30rpx;
     font-weight: 600;
-    color: #000000;
+    color: #111111;
   }
   .button {
     align-self: flex-end;
