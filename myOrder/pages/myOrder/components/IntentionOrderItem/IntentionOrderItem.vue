@@ -206,7 +206,7 @@
     font-size: 24rpx;
     line-height: 34rpx;
     font-weight: 500;
-    color: #9e9ea0;
+    color: #6d6d6d;
   }
   .desc-text {
     font-weight: unset;

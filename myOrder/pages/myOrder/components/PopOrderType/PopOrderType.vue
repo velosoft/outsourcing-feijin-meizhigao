@@ -19,10 +19,9 @@
     components: { Selector },
     props: {
       types: {
-        type: Array, 
-        default: ['商品订单', '意向订单', '服务订单']
-      }
-      
+        type: Array,
+        default: ['商品订单', '意向订单', '服务订单'],
+      },
     },
     data() {
       return {
@@ -51,7 +50,7 @@
       color: #111111;
     }
     .title {
-      color: #9e9ea0;
+      color: #6d6d6d;
     }
     .group {
       align-self: stretch;

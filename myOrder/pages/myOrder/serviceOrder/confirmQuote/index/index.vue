@@ -128,7 +128,7 @@
       .font-gray {
         font-size: 24rpx;
         line-height: 34rpx;
-        color: #9e9ea0;
+        color: #6d6d6d;
       }
       .tip-box {
         margin-top: 48rpx;

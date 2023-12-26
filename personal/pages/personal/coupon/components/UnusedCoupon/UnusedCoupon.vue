@@ -102,7 +102,7 @@
     }
     .text-wrapper {
       border-radius: 6rpx;
-      border: solid 1rpx #9e9ea0;
+      border: solid 1rpx #6d6d6d;
       .coupon-scope {
         margin: 0 8rpx;
       }

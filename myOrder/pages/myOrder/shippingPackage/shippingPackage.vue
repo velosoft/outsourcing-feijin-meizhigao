@@ -102,7 +102,7 @@
   }
   .divider {
     margin: 0 16rpx;
-    color: #9e9ea0;
+    color: #6d6d6d;
   }
   .products-section {
     padding: 0 24rpx;

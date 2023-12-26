@@ -137,7 +137,7 @@
             font-family: 'PingFang SC';
             line-height: 34rpx;
             font-weight: 500;
-            color: #9e9ea0;
+            color: #6d6d6d;
           }
           .sign-icon {
             width: 80rpx;
@@ -148,7 +148,7 @@
             font-family: 'PingFang SC';
             line-height: 28rpx;
             font-weight: 500;
-            color: #9e9ea0;
+            color: #6d6d6d;
           }
         }
       }

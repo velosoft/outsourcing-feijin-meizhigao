@@ -104,7 +104,7 @@
       padding: 0 4rpx;
       border-radius: 8rpx;
       height: 32rpx;
-      border: solid 1rpx #9e9ea0;
+      border: solid 1rpx #6d6d6d;
       box-sizing: border-box;
       .coupon-scope {
         margin: 0 8rpx;

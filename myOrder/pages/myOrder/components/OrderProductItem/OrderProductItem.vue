@@ -126,10 +126,10 @@
     line-height: 40rpx;
   }
   .description {
-    color: #9e9ea0;
+    color: #6d6d6d;
   }
   .quantity {
-    color: #9e9ea0;
+    color: #6d6d6d;
     font-weight: 500;
   }
   .sale-status {

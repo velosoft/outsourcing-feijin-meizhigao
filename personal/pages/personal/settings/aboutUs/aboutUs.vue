@@ -110,7 +110,7 @@
         right: 0rpx;
         bottom: 73rpx;
         .copy-right {
-          color: #9e9ea0;
+          color: #6d6d6d;
           font-size: 24rpx;
           font-family: 苹方;
           font-weight: 700;
