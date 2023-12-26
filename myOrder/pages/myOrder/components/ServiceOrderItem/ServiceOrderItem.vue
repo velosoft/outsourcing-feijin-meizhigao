@@ -114,7 +114,7 @@
       <view class="btn btn-yellow" v-if="order.status === '差额支付'" @click="gotoPriceDiff">
         <text>确认差额</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '等待客户验收'">
+      <view class="btn btn-yellow" v-if="order.status === '等待客户验收'" @click="gotoAcceptance">
         <text>验收服务</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '交易完成'">
@@ -168,6 +168,9 @@
       },
       gotoDetail() {
         uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceOrder/detail/detail/detail` });
+      },
+      gotoAcceptance() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/acceptanceService/acceptanceService` });
       },
     },
   };

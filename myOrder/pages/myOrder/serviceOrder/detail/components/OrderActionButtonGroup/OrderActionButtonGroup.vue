@@ -4,7 +4,7 @@
       <u-button text="申请售后" type="primary" shape="circle" :plain="true" @click="onAfterSalesClick"></u-button>
       <u-button text="商品清单" type="primary" shape="circle" :plain="true" @click="gotoProductList"></u-button>
       <u-button text="服务日志" type="primary" shape="circle" :plain="true" @click="gotoLog"></u-button>
-      <u-button text="验收服务" type="primary" shape="circle" :plain="true" @click="onClick_3"></u-button>
+      <u-button text="验收服务" type="primary" shape="circle" :plain="true" @click="gotoAcceptance"></u-button>
       <u-button text="删除记录" type="primary" shape="circle" :plain="true"></u-button>
       <u-button text="确认差额" type="primary" shape="circle" :plain="true" @click="gotoPriceDiff"></u-button>
       <u-button text="确认报价" type="primary" shape="circle" :plain="true" @click="onConfirmQuoteClick"></u-button>
@@ -58,8 +58,8 @@
       onConfirmQuoteClick() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
       },
-      onClick_3() {
-        uni.navigateTo({ url: '/pages/myOrder/serviceOrder/acceptance/index/index' });
+      gotoAcceptance() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/acceptanceService/acceptanceService` });
       },
       onClick_7() {
         this.popupVisible = true;
