@@ -1,22 +1,19 @@
 <template>
   <view class="flex-row items-center order">
     <view class="flex-col justify-start items-center image-wrapper relative">
-      <image
-        class="img"
-        src="https://dev.ft.velosoft.cn/api/image?token=6584e6bdd6bce000114d6c84&name=17025198587353270781.png"
-      />
+      <image class="img" :src="order.products[0].productImageURL" />
       <view class="count">
         <text class="count-text">2件商品</text>
       </view>
     </view>
     <view class="flex-col flex-1 ml-8">
-      <text class="self-start font">订单编号 354447489478957868</text>
+      <text class="self-start font">订单编号 {{ order.orderNumber }}</text>
       <view class="flex-row items-center self-stretch mt-8">
         <text class="font">开票金额</text>
         <view class="price-wrapper ml-8">
           <text class="price-number-10">￥</text>
-          <text class="price-number-16">200</text>
-          <text class="price-number-10">.00</text>
+          <text class="price-number-16">{{ getPriceIntergetPart(order.totalAmount) }}</text>
+          <text class="price-number-10">.{{ getPriceDecimalPart(order.totalAmount) }}</text>
         </view>
       </view>
     </view>
@@ -24,14 +21,27 @@
 </template>
 
 <script>
+  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
   export default {
     components: {},
-    props: {},
+    props: {
+      order: {
+        type: Object,
+        default: {},
+      },
+    },
     data() {
       return {};
     },
 
-    methods: {},
+    methods: {
+      getPriceIntergetPart(val) {
+        return getPriceIntergetPart(val);
+      },
+      getPriceDecimalPart(val) {
+        return getPriceDecimalPart(val);
+      },
+    },
   };
 </script>
 
@@ -71,6 +81,7 @@
   .font {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
+    font-family: '苹方';
   }
 </style>

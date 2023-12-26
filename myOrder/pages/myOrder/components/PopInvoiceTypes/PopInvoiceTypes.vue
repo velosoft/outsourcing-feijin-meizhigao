@@ -10,14 +10,8 @@
       iconPlacement="right"
     >
       <view class="flex-col list-item mt-12" v-for="(item, index) in items" :key="index">
-        <u-radio
-          v-model="v_model_1"
-          label="增值税电子普通发票"
-          :name="index"
-          labelSize="30rpx"
-          labelColor="#000000"
-        ></u-radio>
-        <text class="self-start desc desc-text mt-4">增值税普通发票可作为交易凭证，用于企业报销</text>
+        <u-radio :label="item.title" :name="item.title" labelSize="30rpx" labelColor="#111111"></u-radio>
+        <text class="self-start desc desc-text mt-4">{{ item.desc }}</text>
       </view>
     </u-radio-group>
     <view class="flex-col justify-start items-center button btn-wrapper" @click="onSelect">
@@ -33,8 +27,10 @@
     data() {
       return {
         v_model: '',
-        v_model_1: '',
-        items: [null, null],
+        items: [
+          { title: '增值税电子普通发票', desc: '增值税普通发票可作为交易凭证，用于企业报销' },
+          { title: '增值税电子专用发票', desc: '专用发票在支付成功后可申请电子、纸质发票' },
+        ],
       };
     },
 
@@ -55,7 +51,7 @@
   .title {
     font-size: 30rpx;
     line-height: 42rpx;
-    color: #000000;
+    color: #111111;
   }
   .tiel-text {
     font-size: 32rpx;
@@ -75,7 +71,8 @@
   .desc {
     font-size: 24rpx;
     line-height: 34rpx;
-    color: #9c9c9f;
+    color: #6d6d6d;
+    font-family: 苹方;
   }
   .desc-text {
     margin-left: 4rpx;

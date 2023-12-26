@@ -1,8 +1,8 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
-    <ApplyInvoiceOrder class="order-info"></ApplyInvoiceOrder>
-    <ApplyInvoiceForm class="invoice-form"></ApplyInvoiceForm>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
+    <apply-invoice-order class="order-info" :order="order"></apply-invoice-order>
+    <apply-invoice-form class="invoice-form"></apply-invoice-form>
     <view class="flex-col tips tips-margin">
       <text class="self-start font tips-title">发票须知</text>
       <text class="self-stretch tips-desc mt-12">
@@ -22,12 +22,14 @@
   import ApplyInvoiceForm from '@/myOrder/pages/myOrder/components/ApplyInvoiceForm/ApplyInvoiceForm.vue';
   import ApplyInvoiceOrder from '@/myOrder/pages/myOrder/components/ApplyInvoiceOrder/ApplyInvoiceOrder.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
+  import { productOrders } from '@/mock/personal/orders.js';
 
   export default {
     components: { ApplyInvoiceForm, ApplyInvoiceOrder, NavBar },
     props: {},
     data() {
       return {
+        order: productOrders[0],
         title: '申请发票',
       };
     },
@@ -54,7 +56,7 @@
   .font {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .invoice-form {
     margin: 24rpx 24rpx 0;
@@ -73,7 +75,7 @@
     line-height: 42rpx;
   }
   .tips-desc {
-    color: #9c9c9f;
+    color: #6d6d6d;
     font-size: 24rpx;
     line-height: 44rpx;
     text-align: left;
