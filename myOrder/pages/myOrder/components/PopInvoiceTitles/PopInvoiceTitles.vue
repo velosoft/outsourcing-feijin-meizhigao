@@ -5,12 +5,12 @@
       <view class="flex-row items-center title-wrapper list-item mt-12" v-for="(item, index) in items" :key="index">
         <view class="flex-col flex-auto" @click="onSelect(item)">
           <view class="flex-row items-center self-stretch">
-            <text class="title-font">广州飞进信息科技有限公司</text>
-            <view class="flex-col justify-start items-center shrink-0 text-wrapper ml-6">
+            <text class="title-font">{{ item.name }}</text>
+            <view class="flex-col justify-start items-center shrink-0 text-wrapper ml-6" v-if="item.isDefault">
               <text class="tile-default">默认</text>
             </view>
           </view>
-          <text class="self-start title-type title-type-text mt-4">普通发票-企业抬头</text>
+          <text class="self-start title-type title-type-text mt-4">{{ item.type }}</text>
         </view>
         <text class="title-type" @click="onEdit">编辑</text>
       </view>
@@ -27,7 +27,18 @@
     props: {},
     data() {
       return {
-        items: [null, null],
+        items: [
+          {
+            name: '广州飞进信息科技有限公司',
+            type: '普通发票-企业抬头',
+            isDefault: true,
+          },
+          {
+            name: '谢小姐',
+            type: '普通发票-个人抬头',
+            isDefault: false,
+          },
+        ],
       };
     },
 
@@ -51,7 +62,7 @@
   .title-font {
     font-size: 30rpx;
     line-height: 42rpx;
-    color: #000000;
+    color: #111111;
   }
   .title-text {
     font-size: 32rpx;
@@ -82,7 +93,7 @@
   .title-type {
     font-size: 24rpx;
     line-height: 34rpx;
-    color: #9c9c9f;
+    color: #6d6d6d;
   }
   .title-type-text {
     margin-left: 4rpx;
