@@ -42,13 +42,7 @@
         <text class="name">上传凭证</text>
         <text class="picker-placeholder">（最多上传3张图片）</text>
       </view>
-
-      <u-upload class="cf-upload" :fileList="fileList">
-        <view class="flex-col items-center upload-slot">
-          <image class="upload-icon" src="/myOrder/static/images/icon_upload.png" />
-          <text class="upload-tip mt-12">上传图片</text>
-        </view>
-      </u-upload>
+      <Uploader></Uploader>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="10" :closeable="true">
       <pop-order-cancel title="请选择退款原因" @click="onClose"></pop-order-cancel>
@@ -57,11 +51,12 @@
 </template>
 
 <script>
+  import Uploader from '@/components/Uploader/Uploader.vue';
   import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
 
   export default {
     options: { styleIsolation: 'shared' },
-    components: { PopOrderCancel },
+    components: { PopOrderCancel, Uploader },
     props: {
       refund: {
         type: String,
@@ -72,13 +67,6 @@
       return {
         popupVisible: false,
         v_model: '',
-        fileList: [
-          { url: 'https://picsum.photos/90/90' },
-          { url: 'https://picsum.photos/90/90' },
-          { url: 'https://picsum.photos/90/90' },
-          { url: 'https://picsum.photos/90/90' },
-          { url: 'https://picsum.photos/90/90' },
-        ],
       };
     },
 
@@ -124,23 +112,7 @@
     align-self: stretch;
     margin-right: 8rpx;
   }
-  .upload-tip {
-    font-size: 24rpx;
-    line-height: 34rpx;
-    color: #9e9ea0;
-  }
   .pic-header {
     padding-bottom: 24rpx;
-  }
-  .upload-slot {
-    padding: 32rpx 0;
-    background-color: #fafafa;
-    border-radius: 16rpx;
-    width: 180rpx;
-  }
-  .upload-icon {
-    width: 60rpx;
-    height: 60rpx;
-    border-radius: 16rpx;
   }
 </style>

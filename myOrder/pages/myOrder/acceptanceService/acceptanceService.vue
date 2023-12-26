@@ -29,15 +29,15 @@
             <text>质量保修期自工程竣工验收合格之日起计算</text>
           </view>
         </view>
-        <u-radio-group class="mt-16" v-model="v_model" activeColor="#B09053" iconSize="28rpx">
-          <u-radio
+        <u-checkbox-group class="mt-16" v-model="v_model" activeColor="#B09053" iconSize="28rpx" shape="circle">
+          <u-checkbox
             v-model="v_model_1"
             label="我已阅读并同意验收服务协议"
             name="2DIhLut7"
             labelSize="28rpx"
             labelColor="#6D6D6D"
-          ></u-radio>
-        </u-radio-group>
+          ></u-checkbox>
+        </u-checkbox-group>
       </view>
       <view class="flex-row justify-center sign-wrapper" @click="onShowSign">
         <text class="sign-text">+</text>

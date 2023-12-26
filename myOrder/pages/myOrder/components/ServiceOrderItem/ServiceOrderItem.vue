@@ -117,7 +117,7 @@
       <view class="btn btn-yellow" v-if="order.status === '等待客户验收'" @click="gotoAcceptance">
         <text>验收服务</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '交易完成'">
+      <view class="btn btn-yellow" v-if="order.status === '交易完成'" @click="gotoAddComment">
         <text>评价</text>
       </view>
       <view class="btn btn-gray" v-if="order.status === '交易关闭' || order.status === '已取消'">
@@ -171,6 +171,9 @@
       },
       gotoAcceptance() {
         uni.navigateTo({ url: `/myOrder/pages/myOrder/acceptanceService/acceptanceService` });
+      },
+      gotoAddComment() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceAddComment/serviceAddComment` });
       },
     },
   };

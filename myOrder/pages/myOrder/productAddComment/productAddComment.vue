@@ -18,12 +18,7 @@
           <text class="title-font">商品图片</text>
           <text class="base-font pic-tip ml-2">（最多上传6张图片）</text>
         </view>
-        <u-upload class="upload" :fileList="fileList">
-          <view class="flex-col items-center upload-slot">
-            <image class="upload-icon" src="/myOrder/static/images/icon_upload.png" />
-            <text class="upload-tip mt-12">上传图片</text>
-          </view>
-        </u-upload>
+        <Uploader></Uploader>
       </view>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start btn-submit">
@@ -36,11 +31,12 @@
 
 <script>
   import NavBar from '@/components/NavBar/NavBar.vue';
+  import Uploader from '@/components/Uploader/Uploader.vue';
   import OrderProductItem from '@/myOrder/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import { productOrders } from '@/mock/personal/orders';
 
   export default {
-    components: { NavBar, OrderProductItem },
+    components: { NavBar, OrderProductItem, Uploader },
     props: {},
     data() {
       return {
@@ -48,7 +44,6 @@
         title: '我要评价',
         rateValue: 2,
         inputValue: '',
-        fileList: [],
       };
     },
 
@@ -98,24 +93,6 @@
   }
   .pic-tip {
     color: #9c9c9f;
-  }
-  .upload {
-    align-self: flex-start;
-  }
-  .upload-slot {
-    padding: 28rpx 0;
-    width: 180rpx;
-    background-color: #fafafa;
-  }
-  .upload-icon {
-    width: 60rpx;
-    height: 60rpx;
-  }
-  .upload-tip {
-    color: #9e9ea0;
-    font-size: 24rpx;
-    font-family: 'PingFang SC';
-    line-height: 34rpx;
   }
   .btn-submit {
     padding: 32rpx 0 52rpx;
