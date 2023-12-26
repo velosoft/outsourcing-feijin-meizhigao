@@ -17,7 +17,7 @@
           lineHeight="18rpx"
           :scrollable="true"
           :activeStyle="{
-            color: '#000000',
+            color: '#111111',
             fontWeight: 500,
           }"
           :inactiveStyle="{

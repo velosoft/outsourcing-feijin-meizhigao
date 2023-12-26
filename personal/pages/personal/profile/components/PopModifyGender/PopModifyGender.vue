@@ -2,8 +2,8 @@
   <popup-with-button title="性别" buttonText="保存" @click="onClick">
     <view class="flex-col justify-start group view">
       <u-radio-group v-model="gender" iconPlacement="right" placement="column" activeColor="#b09053">
-        <u-radio class="align-center" label="男" name="男" labelColor="#000000"></u-radio>
-        <u-radio class="align-center mt-38" label="女" name="女" labelColor="#000000"></u-radio>
+        <u-radio class="align-center" label="男" name="男" labelColor="#111111"></u-radio>
+        <u-radio class="align-center mt-38" label="女" name="女" labelColor="#111111"></u-radio>
       </u-radio-group>
     </view>
   </popup-with-button>

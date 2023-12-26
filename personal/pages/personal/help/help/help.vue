@@ -5,7 +5,7 @@
       ><u-tabs
         class="tabs-yellow-wide"
         :list="list"
-        :activeStyle="{ color: '#000000', fontWeight: '700', fontSize: '14' }"
+        :activeStyle="{ color: '#111111', fontWeight: '700', fontSize: '14' }"
         :inactiveStyle="{ color: '#9e9ea0', fontSize: '14' }"
         :lineWidth="32"
         :lineHeight="10"

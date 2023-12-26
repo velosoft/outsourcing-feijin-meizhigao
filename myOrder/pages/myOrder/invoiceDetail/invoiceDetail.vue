@@ -74,7 +74,7 @@
         if (!this.isShowNavbar) {
           this.isShowNavbar = true;
           this.navBarColor = '#ffffff';
-          this.titleColor = '#000000';
+          this.titleColor = '#111111';
         }
       } else {
         if (this.isShowNavbar) {
