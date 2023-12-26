@@ -34,7 +34,7 @@
         class="cf-textarea text-area mt-18"
         v-model="v_model"
         placeholder="请输入您的反馈"
-        placeholderStyle="fontSize:24rpx;color:#9E9EA0:font-family:苹方;font-weight:400;"
+        placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
       ></u-textarea>
     </view>
     <view class="flex-col mt-36">

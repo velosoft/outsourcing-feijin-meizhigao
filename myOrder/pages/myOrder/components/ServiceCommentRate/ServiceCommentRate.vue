@@ -54,7 +54,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .font {
     font-size: 28rpx;
     line-height: 40rpx;

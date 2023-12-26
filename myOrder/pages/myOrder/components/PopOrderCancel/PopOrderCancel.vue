@@ -12,7 +12,7 @@
       iconPlacement="right"
     >
       <u-radio
-        class="mt-25"
+        class="radio"
         :label="item"
         :name="item"
         v-for="(item, index) of reasons"
@@ -80,9 +80,12 @@
     line-height: 42rpx;
   }
   .radios {
-    padding: 54rpx 24rpx 26rpx;
+    padding: 48rpx 24rpx;
     background-color: #ffffff;
     border-radius: 16rpx;
+  }
+  .radio + .radio {
+    margin-top: 48rpx;
   }
   .button {
     margin: 86rpx 28rpx 0;

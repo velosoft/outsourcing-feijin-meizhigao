@@ -12,7 +12,7 @@
             v-model="v_model_3"
             placeholder="请输入您的评价…"
             height="340rpx"
-            placeholderStyle="fontSize:24rpx;color:#9E9EA0:font-family:苹方;font-weight:400;"
+            placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
           ></u-textarea>
         </view>
       </view>
@@ -40,7 +40,7 @@
           v-model="v_model_4"
           placeholder="请输入您的评价…"
           height="230rpx"
-          placeholderStyle="fontSize:24rpx;color:#9E9EA0:font-family:苹方;font-weight:400;"
+          placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
         ></u-textarea>
       </view>
       <view class="flex-col mt-12 section">
@@ -92,7 +92,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .mt-15 {
     margin-top: 30rpx;
   }

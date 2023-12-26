@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col justify-start wrap">
     <view class="flex-row justify-end inner">
-      <u-button text="申请售后" type="primary" shape="circle" :plain="true" @click="onAfterSalesClick"></u-button>
+      <u-button text="申请售后" type="primary" shape="circle" :plain="true" @click="gotoAfterSale"></u-button>
       <u-button text="商品清单" type="primary" shape="circle" :plain="true" @click="gotoProductList"></u-button>
       <u-button text="服务日志" type="primary" shape="circle" :plain="true" @click="gotoLog"></u-button>
       <u-button text="验收服务" type="primary" shape="circle" :plain="true" @click="gotoAcceptance"></u-button>
@@ -43,23 +43,23 @@
     },
 
     methods: {
-      onAfterSalesClick() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/afterSalesDetail/afterSalesDetail' });
+      gotoAfterSale() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceAfterSale/serviceAfterSale' });
       },
       gotoProductList() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/productList/productList` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
       },
       gotoLog() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceLog/serviceLog` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceLog/serviceLog' });
       },
       gotoPriceDiff() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff' });
       },
       onConfirmQuoteClick() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
       },
       gotoAcceptance() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/acceptanceService/acceptanceService` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
       },
       onClick_7() {
         this.popupVisible = true;
