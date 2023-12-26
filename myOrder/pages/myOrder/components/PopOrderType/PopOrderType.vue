@@ -17,10 +17,16 @@
 
   export default {
     components: { Selector },
-    props: {},
+    props: {
+      types: {
+        type: Array, 
+        default: ['商品订单', '意向订单', '服务订单']
+      }
+      
+    },
     data() {
       return {
-        types: ['商品订单', '意向订单', '服务订单'],
+        // types: ['商品订单', '意向订单', '服务订单'],
       };
     },
 

@@ -117,13 +117,19 @@
       "root": "myOrder",
       "pages": [
         {
+          "path": "pages/myOrder/afterSales/afterSalesList/afterSalesList",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
           "path": "pages/myOrder/courseOrder/courseOrder/courseOrder",
           "style": {
             "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
-        }
-        ,
+        },
         {
           "path": "pages/myOrder/courseOrder/courseDetial/courseDetial",
           "style": {

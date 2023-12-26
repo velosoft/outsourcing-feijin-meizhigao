@@ -15,7 +15,7 @@
             <u-badge :isDot="true" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
-        <text class="self-center value mt-12_1 mt-12">待付款</text>
+        <text class="self-center value mt-12">待付款</text>
       </view>
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
@@ -24,7 +24,7 @@
             <u-badge :isDot="true" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
-        <text class="self-center value mt-12_1 mt-12">待发货</text>
+        <text class="self-center value mt-12">待发货</text>
       </view>
       <view class="flex-col item-flex equal-division-item">
         <view class="flex-col self-center relative">
@@ -33,7 +33,7 @@
             <u-badge :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
-        <text class="self-center value mt-12_1 mt-12">待收货</text>
+        <text class="self-center value mt-12">待收货</text>
       </view>
       <view class="flex-col item-flex equal-division-item" @click="gotoComments">
         <view class="flex-col self-center relative">
@@ -42,9 +42,9 @@
             <u-badge :value="value" :max="99" type="warning" bgColor="#ff0200" color="#ffffff"></u-badge>
           </view>
         </view>
-        <text class="self-center value mt-12_1 mt-12">待评价</text>
+        <text class="self-center value mt-12">待评价</text>
       </view>
-      <view class="flex-col item-flex equal-division-item">
+      <view class="flex-col item-flex equal-division-item" @click="gotoAfterSales">
         <view class="flex-col self-center relative">
           <image class="icon" src="/static/images/icon_order_refund.png" />
           <view class="badge-pos">
@@ -81,6 +81,9 @@
       gotoComments() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/productComments/productComments' });
       },
+      gotoAfterSales() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/afterSalesList/afterSalesList' });
+      }
     },
   };
 </script>
