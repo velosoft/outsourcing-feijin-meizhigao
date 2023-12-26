@@ -8,6 +8,10 @@
 @import 'style/swipCell.less';
 @import 'style/price.less';
 @import 'style/switch.less';
+@import 'style/upload.less';
+@import 'style/font.less';
+@import 'style/radio.less';
+@import 'style/textarea.less';
 
 .uni-nav-bar-text {
   color: #030305;
@@ -123,4 +127,105 @@
   font-size: 36rpx;
   font-weight: 500;
   line-height: 50rpx;
+}
+
+.cf-number-box-1 {
+  .u-number-box {
+    /deep/ .u-number-box__minus {
+      margin-right: 8rpx;
+      width: 48rpx;
+      height: 48rpx !important;
+      background-color: unset !important;
+      background-image: url('static/images/icon_number_box_minus.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /deep/ .u-icon {
+      display: none;
+    }
+
+    /deep/ .u-number-box__plus {
+      margin-left: 8rpx;
+      width: 48rpx;
+      height: 48rpx !important;
+      background-color: unset !important;
+      background-image: url('static/images/icon_number_box_plus.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /deep/ .u-number-box__input {
+      padding: 6rpx 12rpx;
+      margin: 0;
+      background-color: #f4f4f4 !important;
+      color: #111111 !important;
+      font-size: 28rpx;
+      line-height: 24rpx;
+      font-family: 苹方;
+      box-sizing: border-box;
+    }
+
+    /deep/ .u-number-box__plus--hover {
+      background-color: unset !important;
+    }
+
+    /deep/ .u-number-box__minus--hover {
+      background-color: unset !important;
+    }
+  }
+}
+
+.cf-number-box-2 {
+  height: 36rpx;
+  border-radius: 6rpx;
+  border: 2rpx solid #e8e8e8;
+  box-sizing: border-box;
+
+  .u-number-box {
+    height: 36rpx !important;
+
+    /deep/ .u-number-box__minus {
+      margin-right: unset;
+      width: 36rpx;
+      height: 100% !important;
+      background-color: unset !important;
+      border-right: 2rpx solid #e8e8e8;
+    }
+
+    /deep/ .u-icon__icon {
+      font-size: 12rpx !important;
+      color: #111111 !important;
+    }
+
+    /deep/ .u-number-box__plus {
+      margin-left: unset;
+      width: 36rpx;
+      height: 100% !important;
+      background-color: unset !important;
+      border-left: 2rpx solid #e8e8e8;
+    }
+
+    /deep/ .u-number-box__input {
+      width: 44rpx !important;
+      height: 100% !important;
+      min-height: 36rpx !important;
+      margin: 0;
+      background-color: unset !important;
+      color: #111111 !important;
+      font-size: 24rpx !important;
+      line-height: 24rpx !important;
+      font-family: 苹方 !important;
+      box-sizing: border-box;
+    }
+
+    /deep/ .u-number-box__plus--hover {
+      background-color: unset !important;
+    }
+
+    /deep/ .u-number-box__minus--hover {
+      background-color: unset !important;
+    }
+  }
 }
