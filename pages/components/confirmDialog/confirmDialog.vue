@@ -36,7 +36,7 @@
       line-height: 34rpx;
     }
     .text_8 {
-      color: #8c8f95;
+      color: #6d6d6d;
       font-size: 30rpx;
       line-height: 30rpx;
       font-weight: unset;

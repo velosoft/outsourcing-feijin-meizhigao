@@ -64,7 +64,7 @@
     text-align: left;
   }
   .desc {
-    color: #8c8f95;
+    color: #6d6d6d;
     font-size: 26rpx;
     line-height: 36rpx;
   }

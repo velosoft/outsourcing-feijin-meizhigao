@@ -58,7 +58,7 @@
       font-size: 20rpx;
       font-family: 'PingFang SC';
       line-height: 28rpx;
-      color: #8c8f95;
+      color: #6d6d6d;
     }
     .right {
       margin-right: 28rpx;

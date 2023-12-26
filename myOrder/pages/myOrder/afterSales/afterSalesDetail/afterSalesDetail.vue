@@ -185,7 +185,7 @@
         .font_3 {
           font-size: 28rpx;
           line-height: 40rpx;
-          color: #8c8f95;
+          color: #6d6d6d;
         }
         .text_5 {
           color: #111111;
@@ -197,7 +197,7 @@
           color: #111111;
         }
         .text_6 {
-          color: #8c8f95;
+          color: #6d6d6d;
           font-size: 26rpx;
           line-height: 36rpx;
         }

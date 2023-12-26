@@ -53,7 +53,7 @@
     font-family: 苹方;
     line-height: 44rpx;
     font-weight: 400;
-    color: #8c8f95;
+    color: #6d6d6d;
   }
 
   .label {

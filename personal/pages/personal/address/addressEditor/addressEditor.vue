@@ -38,7 +38,7 @@
         address: '',
         addressDetial: '',
         title: '收货地址',
-        placeholderStyle: "color:#8C8F95;font-size:28rpx;font-family: '苹方'",
+        placeholderStyle: "color:#9e9ea0;font-size:28rpx;font-family: '苹方'",
       };
     },
 

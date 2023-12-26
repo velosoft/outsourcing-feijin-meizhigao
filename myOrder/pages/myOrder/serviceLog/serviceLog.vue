@@ -100,7 +100,7 @@
     align-items: center;
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #8c8f95;
+    color: #6d6d6d;
 
     &:first-child {
       border-top: 1px solid #e5e5e5;

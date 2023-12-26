@@ -77,7 +77,7 @@
       background-color: #f8f8f8;
       border-radius: 8rpx;
       .text_13 {
-        color: #8c8f95;
+        color: #6d6d6d;
       }
       .image_10 {
         margin-left: 10rpx;

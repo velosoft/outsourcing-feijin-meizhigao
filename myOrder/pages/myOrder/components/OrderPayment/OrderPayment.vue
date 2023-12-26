@@ -65,7 +65,7 @@
   .item-name {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #8c8f95;
+    color: #6d6d6d;
   }
 
   .item {

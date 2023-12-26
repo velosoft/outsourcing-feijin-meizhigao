@@ -51,7 +51,7 @@
         line-height: 40rpx;
       }
       .desc {
-        color: #8c8f95;
+        color: #6d6d6d;
         font-size: 22rpx;
         font-family: 'PingFang SC';
         line-height: 32rpx;

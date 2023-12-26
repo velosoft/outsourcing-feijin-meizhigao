@@ -54,7 +54,7 @@
     font-size: 22rpx;
     font-family: 苹方;
     line-height: 22rpx;
-    color: #8c8f95;
+    color: #6d6d6d;
   }
   .font {
     color: #b09053;

@@ -79,7 +79,7 @@
     font-size: 26rpx;
     font-family: 'PingFang SC';
     line-height: 36rpx;
-    color: #8c8f95;
+    color: #6d6d6d;
   }
   .count {
     font-size: 26rpx;

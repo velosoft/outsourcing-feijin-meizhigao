@@ -189,7 +189,7 @@
     height: 12rpx;
   }
   .text-gray {
-    color: #8c8f95;
+    color: #6d6d6d;
     font-size: 30rpx;
     line-height: 42rpx;
   }

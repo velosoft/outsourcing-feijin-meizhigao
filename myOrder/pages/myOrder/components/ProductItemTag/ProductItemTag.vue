@@ -77,7 +77,7 @@
     font-weight: 500;
   }
   .size-label {
-    color: #8c8f95;
+    color: #6d6d6d;
     font-size: 26rpx;
   }
   .product-size {

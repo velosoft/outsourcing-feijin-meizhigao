@@ -49,7 +49,7 @@
     line-height: 36rpx;
   }
   .text-desp {
-    color: #8c8f95;
+    color: #6d6d6d;
   }
   .text-count {
     color: #828385;
