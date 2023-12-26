@@ -11,12 +11,12 @@
           :list="list"
           activeStyle="{'color':'#000000','fontWeight':500}"
           inactiveStyle="{'color':'#9E9EA0','fontWeight':500}"
-          :lineWidth="58"
-          :lineHeight="18"
+          lineWidth="60rpx"
+          lineHeight="18rpx"
           :scrollable="true"
-          @change="onChangeStatus"
           itemStyle="padding-left: 38rpx; padding-right: 38rpx; height: 86rpx;"
-        ></u-tabs> 
+          @change="onChangeStatus"
+        ></u-tabs>
       </FjSticky
       ><list-container
         :showEmpty="!items.length"

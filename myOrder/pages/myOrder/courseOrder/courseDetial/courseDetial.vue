@@ -120,10 +120,20 @@
     </view>
     <view class="flex-col footer-con">
       <view class="fixed-bottom-safe flex-row footer-btn justify-end">
-        <u-button class="cf-btn-black btn-width" text="取消订单" type="info" shape="circle" :plain="true"></u-button>
+        <u-button class="cf-btn-black btn-width" text="取消订单" type="info" shape="circle" :plain="true" @click="onClick"></u-button>
         <u-button class="cf-btn-black ml-8 btn-width" text="去付款" type="primary" shape="circle"></u-button>
       </view>
     </view>
+    <u-popup
+      :show="popupVisible"
+      @close="onClose"
+      mode="bottom"
+      :round="10"
+      :closeable="true"
+      :safeAreaInsetBottom="false"
+    >
+      <PopOrderCancel title="请选择退款原因" @click="onClose"></PopOrderCancel>
+    </u-popup>
   </view>
 </template>
 
@@ -132,9 +142,10 @@
   import CourseItem from '../components/CourseItem/CourseItem.vue';
   import HeaderStatus from '../components/HeaderStatus/HeaderStatus.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
+  import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
 
   export default {
-    components: { CFCard, CourseItem, HeaderStatus, NavBar },
+    components: { CFCard, CourseItem, HeaderStatus, NavBar, PopOrderCancel },
     props: {},
     data() {
       return {
@@ -142,10 +153,18 @@
         payInfo: {},
         orderInfo: {},
         title: '课程详情',
+        popupVisible: false,
       };
     },
 
-    methods: {},
+    methods: {
+      onClick() {
+        this.popupVisible = true;
+      },
+      onClose() {
+        this.popupVisible = false;
+      },
+    },
   };
 </script>
 
