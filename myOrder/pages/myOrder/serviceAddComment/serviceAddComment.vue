@@ -6,7 +6,7 @@
       <view class="flex-col mt-12 section">
         <ServiceCommentRate></ServiceCommentRate>
         <view class="flex-col self-stretch rate-input">
-          <text class="self-start rate-type">服务最满意的地方</text>
+          <text class="rate-type">服务最满意的地方</text>
           <u-textarea
             class="cf-textarea mt-11"
             v-model="v_model_3"
@@ -17,16 +17,16 @@
         </view>
       </view>
       <view class="flex-col mt-12 section">
-        <text class="self-start title-font visit-text">如若接受回访，请选择回访时间</text>
+        <text class="title-font visit-text">如若接受回访，请选择回访时间</text>
         <view class="flex-row justify-between mt-18">
-          <text class="refund-time">退款时间</text>
+          <text class="visit-time">回访时间</text>
           <view class="flex-row items-center" @click="onShowDate">
             <text class="placeholder-text">请选择</text>
             <image class="shrink-0 icon-arrow ml-8" src="/myOrder/static/images/icon_arrow_right.png" />
           </view>
         </view>
-        <view class="flex-row justify-between self-stretch mt-18">
-          <text class="refund-time">回访</text>
+        <view class="flex-row justify-between mt-18">
+          <text class="visit-time">回访</text>
           <view class="flex-row items-center">
             <text class="placeholder-text">请选择</text>
             <image class="shrink-0 icon-arrow ml-8" src="/myOrder/static/images/icon_arrow_right.png" />
@@ -34,7 +34,7 @@
         </view>
       </view>
       <view class="flex-col mt-12 section">
-        <text class="self-start title-font title-text">改善建议</text>
+        <text class="title-font title-text">改善建议</text>
         <u-textarea
           class="cf-textarea mt-15"
           v-model="v_model_4"
@@ -44,11 +44,11 @@
         ></u-textarea>
       </view>
       <view class="flex-col mt-12 section">
-        <view class="flex-row items-center title-wrapper">
+        <view class="flex-row items-center">
           <text class="title-font title-text">上传图片</text>
           <text class="placeholder-text ml-2">（最多上传6张图片）</text>
         </view>
-        <Uploader></Uploader>
+        <Uploader class="mt-16"></Uploader>
       </view>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start footer-wrapper">
@@ -138,7 +138,7 @@
     font-size: 30rpx;
     line-height: 42rpx;
   }
-  .refund-time {
+  .visit-time {
     font-size: 28rpx;
     line-height: 40rpx;
     color: #3c3d41;
@@ -151,9 +151,6 @@
   .icon-arrow {
     width: 12rpx;
     height: 22rpx;
-  }
-  .title-wrapper {
-    padding: 26rpx 0 32rpx;
   }
   .footer-wrapper {
     padding: 32rpx 0 52rpx;

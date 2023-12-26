@@ -12,21 +12,21 @@
     <view class="flex-row items-center mt-20">
       <view class="flex-row items-center flex-1 justify-between">
         <text class="rate-type">整体满意度</text>
-        <u-rate class="ml-36" v-model="v_model" size="52rpx" activeColor="#C2A05F"></u-rate>
+        <u-rate  v-model="v_model" size="52rpx" activeColor="#C2A05F" :readonly="readonly"></u-rate>
       </view>
       <text class="font rate-text">{{ v_model }}分</text>
     </view>
     <view class="flex-row items-center self-stretch mt-20">
       <view class="flex-row items-center flex-1 justify-between">
         <text class="rate-type">人员专业素养</text>
-        <u-rate class="ml-22" v-model="v_model_1" size="52rpx" activeColor="#C2A05F"></u-rate>
+        <u-rate v-model="v_model_1" size="52rpx" activeColor="#C2A05F" :readonly="readonly"></u-rate>
       </view>
       <text class="font rate-text">{{ v_model_1 }}分</text>
     </view>
     <view class="flex-row items-center mt-20">
       <view class="flex-row justify-between items-center flex-1">
         <text class="rate-type">服务态度</text>
-        <u-rate v-model="v_model_2" size="52rpx" activeColor="#C2A05F"></u-rate>
+        <u-rate v-model="v_model_2" size="52rpx" activeColor="#C2A05F" :readonly="readonly"></u-rate>
       </view>
       <text class="font rate-text">{{ v_model_2 }}分</text>
     </view>
