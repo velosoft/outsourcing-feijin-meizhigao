@@ -1,17 +1,17 @@
 <template>
   <view class="flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col">
-      <FjSticky v-bind:customNavHeight="80">
+      <fj-sticky v-bind:customNavHeight="80">
         <u-tabs class="tabs-yellow-wide" :list="list" lineWidth="64rpx" lineHeight="20rpx">
           <view class="flex-row items-center tabs-slot-right" slot="right">
             <image class="delete-icon" src="/static/images/icon_cart_delete.png" />
             <text class="delete-text ml-8">一键清除</text>
           </view>
         </u-tabs>
-      </FjSticky>
+      </fj-sticky>
       <view class="flex-col justify-start">
-        <list-with-empty :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
+        <list-with-empty :showEmpty="!productList.length" :showLoading="showLoading" :finished="finished">
           <view class="flex-col empty-wrap" slot="customEmpty">
             <view class="flex-col items-center self-stretch enptey-content">
               <image class="ai-background-image_1" src="/static/images/icon_empty_cart.png" />
@@ -23,7 +23,7 @@
             </view>
           </view>
           <view class="flex-col content-padding">
-            <GoodsSection></GoodsSection>
+            <goods-section :list="productList"></goods-section>
             <ExpiredGoodsSection class="mt-10"></ExpiredGoodsSection>
           </view>
         </list-with-empty>
@@ -42,6 +42,7 @@
   import NavBar from '@/components/NavBar/NavBar.vue';
   import Recommend from '../cart/components/Recommend/Recommend.vue';
   import Settlement from '../cart/components/Settlement/Settlement.vue';
+  import { productOrders } from '@/mock/personal/orders.js';
 
   export default {
     components: { ExpiredGoodsSection, FjSticky, GoodsSection, ListWithEmpty, NavBar, Recommend, Settlement },
@@ -60,9 +61,9 @@
             name: '课程',
           },
         ],
-        showEmpty: false,
-        showLoading: false,
+        showLoading: true,
         finished: false,
+        productList: productOrders[0].products,
       };
     },
 

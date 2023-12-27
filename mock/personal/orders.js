@@ -19,55 +19,131 @@ export const productOrders = [
         productDescription: '鎏金岁月三层长45宽30高75',
         productPrice: 200, // 价格类型是 number
         productQuantity: 2, // 可随机生成 1 到 3 之间的整数
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false, // 是否是秒杀商品
         afterSaleStatus: '正常', // 可选值：["正常", "售后成功", "售后失败"]
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
+        isCustomize: true, // 是否为定制产品
+        specsOptions: [
+          {
+            title: '规格',
+            options: ['3层60长*40宽*170高可加高加层', '3层80长*40宽*170高可加高加层', '3层80长*40宽*170高可加高加层'],
+          },
+          {
+            title: '尺寸',
+            options: ['小号', '中号', '大号', '特大'],
+          },
+          {
+            title: '类型',
+            options: ['按延米核算（元/m)', '按面积核算（元/m)', '按小时核算（元/人/h)'],
+          },
+          {
+            title: '颜色',
+            options: ['黄色', '红色', '黑色', '蓝色'],
+          },
+        ],
+        specs: [
+          {
+            title: '规格',
+            options: ['3层80长*40宽*170高可加高加层'],
+          },
+          {
+            title: '尺寸',
+            options: ['中号'],
+          },
+          {
+            title: '类型',
+            options: ['按面积核算（元/m)'],
+          },
+          {
+            title: '颜色',
+            options: ['红色'],
+          },
+        ],
       },
       {
         productName: '示例产品2，这是一个非常长的产品名字，很长很长，努力超过两行，马上超过两行！',
         productDescription: '示例产品2说明文本，说明文本也很长很长很长很长很长很长很长很长很长很长很长很长',
         productPrice: 50, // 价格类型是 number
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '售后成功',
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
+        isCustomize: false,
+        specs: [
+          {
+            title: '规格',
+            options: ['3层60长*40宽*170高可加高加层'],
+          },
+          {
+            title: '颜色',
+            options: ['红色'],
+          },
+        ],
       },
       {
         productName: '示例产品2.1',
         productDescription: '示例产品2.1说明文本',
         productPrice: 50,
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '补购商品',
+        isCustomize: true,
+        specs: [
+          {
+            title: '规格',
+            options: ['3层60长*40宽*170高可加高加层'],
+          },
+          {
+            title: '颜色',
+            options: ['红色'],
+          },
+        ],
       },
       {
         productName: '示例产品2.2',
         productDescription: '示例产品2.2说明文本',
         productPrice: 50,
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '已退回',
+        isCustomize: false,
+        specs: [
+          {
+            title: '规格',
+            options: ['3层60长*40宽*170高可加高加层'],
+          },
+          {
+            title: '颜色',
+            options: ['红色'],
+          },
+        ],
       },
       {
         productName: '示例产品2.3',
         productDescription: '示例产品2.3说明文本',
         productPrice: 50,
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true, // 示例秒杀商品
         afterSaleStatus: '正常',
         productStatus: '正常',
+        isCustomize: false,
+        specs: [
+          {
+            title: '规格',
+            options: ['3层60长*40宽*170高可加高加层'],
+          },
+          {
+            title: '颜色',
+            options: ['红色'],
+          },
+        ],
       },
     ],
     shippingFee: 10, // 运费金额，类型是 number
@@ -110,8 +186,7 @@ export const productOrders = [
         productDescription: '按重量核算（元/kg)',
         productPrice: 30,
         productQuantity: 3,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
@@ -120,8 +195,7 @@ export const productOrders = [
         productDescription: '按重量核算（元/kg)',
         productPrice: 30,
         productQuantity: 3,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
@@ -148,8 +222,7 @@ export const productOrders = [
         productDescription: '按重量核算（元/kg)',
         productPrice: 35,
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '正常',
       },
@@ -175,8 +248,7 @@ export const productOrders = [
         productDescription: '按个数核算（元/个)',
         productPrice: 25,
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '正常',
       },
@@ -203,8 +275,7 @@ export const productOrders = [
         productDescription: '按个数核算（元/个)',
         productPrice: 20,
         productQuantity: 3,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
@@ -225,8 +296,7 @@ export const productOrders = [
         productDescription: '按个数核算（元/个)',
         productPrice: 15,
         productQuantity: 2,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '售后成功',
       },
@@ -245,8 +315,7 @@ export const productOrders = [
         productDescription: '按面积核算（元/m)',
         productPrice: 30,
         productQuantity: 2,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '售后失败',
       },
@@ -264,8 +333,7 @@ export const productOrders = [
         productDescription: '按重量核算（元/kg)',
         productPrice: 40,
         productQuantity: 1,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: true,
         afterSaleStatus: '正常',
       },
@@ -283,8 +351,7 @@ export const productOrders = [
         productDescription: '按个数核算（元/个)',
         productPrice: 15,
         productQuantity: 2,
-        productImageURL:
-          'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+        productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
         isSeckill: false,
         afterSaleStatus: '售后成功',
       },
@@ -406,48 +473,42 @@ export const shippingDetail = {
       productDescription: '中号；白色',
       productPrice: 200,
       productQuantity: 2,
-      productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+      productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
       productDescription: '中号；白色',
       productPrice: 200,
       productQuantity: 2,
-      productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+      productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
       productDescription: '中号；白色',
       productPrice: 200,
       productQuantity: 2,
-      productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+      productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
       productDescription: '中号；白色',
       productPrice: 200,
       productQuantity: 2,
-      productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+      productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
       productDescription: '中号；白色',
       productPrice: 200,
       productQuantity: 2,
-      productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+      productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
     {
       productName: '定制卧室收纳柜新疆包邮卧室床头',
       productDescription: '中号；白色',
       productPrice: 200,
       productQuantity: 2,
-      productImageURL:
-        'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
+      productImageURL: 'https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png',
     },
   ],
   details: [

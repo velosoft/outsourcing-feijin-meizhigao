@@ -4,29 +4,28 @@
       <u-checkbox-group v-model="checkGroupValue">
         <u-swipe-action class="default-swipe-cell">
           <view class="flex-col">
-            <view class="flex-col mt-20" v-for="(item, index) in items" :key="index">
+            <view class="flex-col mt-20" v-for="(item, index) in list" :key="index">
               <u-swipe-action-item :options="swipeOption" @click="onActionItemClick">
                 <view class="flex-row items-center group">
                   <u-checkbox v-model="checkValue" shape="circle" activeColor="#b09053" :iconSize="18"></u-checkbox>
                   <view class="flex-row flex-1 ml-12">
                     <image class="shrink-0 thumb" src="/static/images/mock_thumb_003.png" />
                     <view class="flex-col flex-1 ml-12 justify-between">
-                      <text class="line-clamp-one self-stretch title title-height">定制卧室收纳柜新疆卧室床头柜</text>
-                      <text class="line-clamp-one size">规格：3层80长*40宽*170高</text>
+                      <text class="line-clamp-one self-stretch title title-height">{{ item.productName }}</text>
+                      <text class="line-clamp-one size">{{ item.specs[0].title }}：{{ item.specs[0].options[0] }}</text>
                       <view class="flex-row justify-between items-center">
-                        <view class="flex-row items-center">
-                          <text class="tag-right">定金</text>
-                          <view class="flex-row items-start">
-                            <text class="tag-label currency">￥</text>
-                            <text class="price price-text">40</text>
-                            <text class="decimal decimal-text">.00</text>
-                          </view>
+                        <view v-if="item.isCustomize" class="flex-row items-center">
+                          <text class="red-font">定金</text>
+                          <price class="cf-red-font" :price="item.productPrice" />
+                        </view>
+                        <view v-else class="flex-row items-center">
+                          <price class="cf-black-font" :price="item.productPrice" />
                         </view>
                         <u-number-box class="cf-number-box-1" v-model="v_model"></u-number-box>
                       </view>
                       <view class="items-center" v-if="true">
-                        <text class="tag-right additional-label">附加服务：安装服务</text>
-                        <text class="tag-right additional-num">￥99.00</text>
+                        <text class="red-font additional-label">附加服务：安装服务</text>
+                        <text class="red-font additional-num">￥99.00</text>
                       </view>
                     </view>
                   </view>
@@ -36,7 +35,7 @@
                 <view class="flex-col items-center shrink-0 tag justify-center">
                   <text class="tag-label tag-text">满减</text>
                 </view>
-                <text class="line-clamp-one tag-right tag-right-width ml-8">满100减10优惠</text>
+                <text class="line-clamp-one red-font tag-right-width ml-8">满100减10优惠</text>
               </view>
             </view>
           </view>
@@ -47,12 +46,12 @@
 </template>
 
 <script>
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
-    props: { CartList: { type: Object, default: () => ({}) } },
+    components: { Price },
+    props: { list: { type: Array, default: () => [] } },
     data() {
       return {
-        goodsList: {},
         swipeOption: [
           {
             text: '删除',
@@ -61,7 +60,6 @@
         checkGroupValue: '',
         checkValue: '',
         v_model: '',
-        items: [null, null, null, null],
       };
     },
 
@@ -155,7 +153,7 @@
       font-family: PingFang SC;
       line-height: 20rpx;
     }
-    .tag-right {
+    .red-font {
       font-size: 24rpx;
       font-family: PingFang SC;
       line-height: 24rpx;
