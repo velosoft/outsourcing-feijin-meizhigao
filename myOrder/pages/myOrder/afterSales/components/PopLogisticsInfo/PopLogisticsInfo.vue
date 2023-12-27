@@ -1,5 +1,5 @@
 <template>
-    <PopupWithButton title="填写物流信息" buttonText="确定" bgColor="#f1f1f1" @click="onConfirm"  >
+    <PopupWithButton title="填写物流信息" buttonText="确定" bgColor="#f1f1f1" padding="32rpx 12rpx 72rpx 12rpx" @click="onConfirm"  >
       <view class="flex-col content">
         <CFCard>
           <view class="flex-col">

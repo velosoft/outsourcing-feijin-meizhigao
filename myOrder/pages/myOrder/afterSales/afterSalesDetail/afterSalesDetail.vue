@@ -7,7 +7,7 @@
         <RowStep :showCell="false" :stepData="stepData"></RowStep>
         <CFCard class="mt-12" title="售后信息">
           <view class="flex-col content-info">
-            <OrderProductItem :product="product"></OrderProductItem>
+            <OrderProductItem></OrderProductItem>
             <view class="flex-col mt-24">
               <u-cell class="cell-in-white-card-weight" title="售后类型" value="客服介入" :border="false"></u-cell>
               <u-cell
@@ -125,6 +125,7 @@
   import OrderProcessCard from '@/components/OrderProcessCard';
   import OrderProductItem from '../../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import RowStep from '../../../../pages/myOrder/afterSales/components/RowStep/RowStep.vue';
+  import { productOrders } from '@/mock/personal/orders';
 
   export default {
     components: { CFCard, HeaderStatusCard, NavBar, OrderProcessCard, OrderProductItem, RowStep },
@@ -137,7 +138,7 @@
           descMain: '',
           descSecondary: '',
         },
-        product: {},
+        product: productOrders,
         stepData: {},
         title: '订单详情',
       };

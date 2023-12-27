@@ -61,8 +61,9 @@
 </template>
 
 <script>
+import ConfirmPanel from '@/components/ConfirmPanel.vue';
   export default {
-    components: {},
+    components: {ConfirmPanel},
     props: {
       afterSaleOrder: {
         type: Object,

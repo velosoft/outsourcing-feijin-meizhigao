@@ -1,11 +1,7 @@
 <template>
   <view class="flex-col page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#b09053" titleColor="#ffffff">
-      <image
-        class="icon-nav"
-        src="/myOrder/static/images/icon_nav_left_arrow_01.png"
-        slot="left"
-      />
+      <image class="icon-nav" src="/myOrder/static/images/icon_nav_left_arrow_01.png" slot="left" />
     </NavBar>
     <view class="flex-col">
       <HeaderStatusCard :headerStatus="headerStatus"></HeaderStatusCard>
@@ -35,7 +31,7 @@
         </CFCard>
         <CFCard class="mt-12" title="退款信息">
           <view class="flex-col mt-16">
-            <OrderProductItem :product="product"></OrderProductItem>
+            <OrderProductItem></OrderProductItem>
             <view class="flex-col relative mt-22">
               <u-cell class="cell-in-white-card" title="售后单号" :value="20230488566779433" :border="false"></u-cell>
               <u-cell
@@ -84,20 +80,28 @@
         </view>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true" :safeAreaInsetBottom="false">
-    <PopLogisticsInfo @onConfirm="onConfirm"></PopLogisticsInfo>
-  </u-popup>
+    <u-popup
+      :show="popupVisible"
+      @close="onClose"
+      mode="bottom"
+      :round="12"
+      :closeable="true"
+      :safeAreaInsetBottom="false"
+    >
+      <PopLogisticsInfo @onConfirm="onConfirm"></PopLogisticsInfo>
+    </u-popup>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import CFCard from '@/components/Card/Card';
   import HeaderStatusCard from '../../../../pages/myOrder/afterSales/components/HeaderStatusCard/HeaderStatusCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import OrderProductItem from '../../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import RowStep from '../../../../pages/myOrder/afterSales/components/RowStep/RowStep.vue';
-  import PopLogisticsInfo from '../../../../pages/myOrder/afterSales/components/PopLogisticsInfo/PopLogisticsInfo.vue'
-  
+  import PopLogisticsInfo from '../../../../pages/myOrder/afterSales/components/PopLogisticsInfo/PopLogisticsInfo.vue';
+  import { productOrders } from '@/mock/personal/orders';
+
   export default {
     components: { CFCard, HeaderStatusCard, NavBar, OrderProductItem, RowStep, PopLogisticsInfo },
     props: {},
@@ -106,32 +110,33 @@
         title: '售后详情',
         items: [null, null, null, null],
         popupVisible: false,
-        headerStatus:{
+        headerStatus: {
           status: 0,
           title: '退款成功',
           descMain: '退款金额：￥84',
           descSecondary: '退款时间：2023-09-11 14:14:32',
         },
-        stepData:{},
-        product:{},
+        stepData: {},
+        product: productOrders,
       };
     },
-  
-    methods: {    
+
+    methods: {
       onClick() {
-      this.popupVisible = true;
+        this.popupVisible = true;
+      },
+      onClose() {
+        this.popupVisible = false;
+      },
+      onConfirm(args) {
+        // 事件处理方法
+        this.popupVisible = false;
+      },
     },
-    onClose() {
-      this.popupVisible = false;
-    },
-    onConfirm(args) {
-      // 事件处理方法
-      this.popupVisible = false;
-    },},
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .page {
     background-color: #ffffff;
     width: 100%;
@@ -209,4 +214,4 @@
       color: #111111;
     }
   }
-  </style>
+</style>
