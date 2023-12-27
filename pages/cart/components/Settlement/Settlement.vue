@@ -108,10 +108,10 @@
         this.popupVisible = false;
       },
       onClick_1() {
-        // uni.navigateTo({ url: '/cart/pages/cart/submitOrder/submitOrder' });
+        uni.navigateTo({ url: '/cart/pages/cart/submitOrder/submitOrder' });
         // uni.navigateTo({ url: '/cart/pages/cart/bookCustomize/bookCustomize' });
         // uni.navigateTo({ url: '/cart/pages/cart/bookServe/bookServe' });
-        uni.navigateTo({ url: '/cart/pages/cart/registerCourse/registerCourse/registerCourse' });
+        // uni.navigateTo({ url: '/cart/pages/cart/registerCourse/registerCourse/registerCourse' });
       },
       selectAll(val) {
         this.$emit('selectAll', val);

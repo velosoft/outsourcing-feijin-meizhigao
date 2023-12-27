@@ -1,12 +1,12 @@
 <template>
   <view class="flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 group">
-      <HeadAddressCard :addressDetial="addressDetial"></HeadAddressCard>
-      <GoodsCard class="mt-12 mt-10" :goodsCard="goodsCard"></GoodsCard>
-      <SubmitInfo class="mt-12 mt-10" :submitData="submitData"></SubmitInfo>
+      <head-address-card :addressDetial="addressDetial"></head-address-card>
+      <goods-card class="mt-12 mt-10" :goodsCard="goodsCard"></goods-card>
+      <submit-info class="mt-12 mt-10" :submitData="submitData"></submit-info>
     </view>
-    <CartBottomPayBtn :goodsPrice="goodsPrice"></CartBottomPayBtn>
+    <cart-bottom-pay-btn :goodsPrice="goodsPrice"></cart-bottom-pay-btn>
   </view>
 </template>
 
