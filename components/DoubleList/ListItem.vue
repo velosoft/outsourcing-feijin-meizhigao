@@ -14,13 +14,12 @@
           </view>
         </view>
         <view class="flex-row justify-between items-center self-stretch shop-group">
-          <view class="flex-row items-start self-stretch">
-            <text class="shop-font_01">{{ discount }}</text>
-            <view class="flex-row items-start ml-1">
-              <text class="price-symbol">￥</text>
-              <text class="price-number">{{ priceIntergetPart }}</text>
-              <text class="price-decimal">.{{ priceDecimalPart }}</text>
-            </view>
+          <view v-if="discount" class="flex-row items-start self-stretch">
+            <text class="shop-font_01 no-lineheight">{{ discount }}</text>
+            <price class="cf-red-font ml-1" :price="price" />
+          </view>
+          <view v-else class="flex-row items-start self-stretch">
+            <price class="cf-black-font" :price="price" />
           </view>
           <text class="self-stretch buyers-text">{{ buyers + '人购买' }}</text>
         </view>
@@ -30,8 +29,9 @@
 </template>
 
 <script>
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
+    components: { Price },
     props: {
       itemId: String,
       type: String,
@@ -46,14 +46,6 @@
       return {};
     },
     computed: {
-      priceIntergetPart() {
-        let val = Math.floor(this.price).toString();
-        return val;
-      },
-      priceDecimalPart() {
-        let val = this.price.toFixed(2).split('.')[1];
-        return val;
-      },
       detailUrl() {
         switch (this.type) {
           case 'product':
@@ -124,35 +116,16 @@
     line-height: 24rpx;
     color: #bb3e0c;
   }
+  .no-lineheight {
+    line-height: unset;
+  }
   .shop-tag {
     text-transform: uppercase;
   }
   .shop-group {
     margin-top: 34rpx;
   }
-  .price-symbol {
-    color: #bb3e0c;
-    font-size: 20rpx;
-    font-family: PingFang SC;
-    line-height: 20rpx;
-  }
-  .price-number {
-    margin-left: -4rpx;
-    color: #bb3e0c;
-    font-size: 30rpx;
-    font-family: HarmonyOSSans;
-    font-weight: 700;
-    line-height: 30rpx;
-    letter-spacing: -1rpx;
-  }
-  .price-decimal {
-    margin-left: 4rpx;
-    color: #bb3e0c;
-    font-size: 20rpx;
-    font-family: HarmonyOSSansSC;
-    font-weight: 700;
-    line-height: 20rpx;
-  }
+
   .buyers-text {
     color: #a7a7a7;
     font-size: 24rpx;

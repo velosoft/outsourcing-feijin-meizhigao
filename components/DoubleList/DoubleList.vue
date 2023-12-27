@@ -13,7 +13,7 @@
             :tags="item.tags"
             :discount="item.discount"
             :price="item.price"
-            :buyer="item.buyer"
+            :buyers="item.buyers"
           ></list-item>
         </view>
         <view class="flex-col justify-start right-list ml-15">
@@ -28,7 +28,7 @@
             :tags="item.tags"
             :discount="item.discount"
             :price="item.price"
-            :buyer="item.buyer"
+            :buyers="item.buyers"
           ></list-item>
         </view>
       </view>
@@ -37,67 +37,67 @@
 </template>
 
 <script>
-import ListItem from "./ListItem.vue";
+  import ListItem from './ListItem.vue';
 
-export default {
-  components: { ListItem },
-  props: {
-    items: { type: Array, default: () => [] },
-  },
-  data() {
-    return {
-      itemsLeft: [],
-      itemsRight: [],
-    };
-  },
+  export default {
+    components: { ListItem },
+    props: {
+      items: { type: Array, default: () => [] },
+    },
+    data() {
+      return {
+        itemsLeft: [],
+        itemsRight: [],
+      };
+    },
 
-  watch: {
-    items: {
-      immediata: true,
-      handler(newVal, olderVal) {
-        this.itemsLeft = [];
-        this.itemsRight = [];
-        this.spliceData(newVal);
+    watch: {
+      items: {
+        immediata: true,
+        handler(newVal, olderVal) {
+          this.itemsLeft = [];
+          this.itemsRight = [];
+          this.spliceData(newVal);
+        },
+        deep: true,
       },
-      deep: true,
     },
-  },
 
-  created() {
-    this.spliceData(this.items);
-  },
-
-  methods: {
-    spliceData(val) {
-      val.forEach((item, index) => {
-        if (index % 2 == 1) {
-          this.itemsLeft.push(item);
-        } else {
-          this.itemsRight.push(item);
-        }
-      });
+    created() {
+      this.spliceData(this.items);
     },
-  },
-};
+
+    methods: {
+      spliceData(val) {
+        val.forEach((item, index) => {
+          if (index % 2 == 1) {
+            this.itemsLeft.push(item);
+          } else {
+            this.itemsRight.push(item);
+          }
+        });
+      },
+    },
+  };
 </script>
 
 <style scoped lang="less">
-.ml-15 {
-  margin-left: 30rpx;
-}
-.view {
-  padding: 0 30rpx;
-  .double-list-view {
-    padding: 24rpx 0 0;
-    .left-list {
-      flex: 1 1 330rpx;
-    }
-    .right-list {
-      flex: 1 1 330rpx;
-      .shop-relative {
-        position: relative;
+  .ml-15 {
+    margin-left: 30rpx;
+  }
+  .view {
+    padding: 0 30rpx;
+    .double-list-view {
+      padding: 24rpx 0 0;
+      .left-list {
+        flex: 1 1 330rpx;
+      }
+      .right-list {
+        flex: 1 1 330rpx;
+        .shop-relative {
+          position: relative;
+        }
       }
     }
   }
-}
 </style>
