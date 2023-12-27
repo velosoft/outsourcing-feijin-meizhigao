@@ -7,8 +7,8 @@
           <view class="flex-row justify-between items-center">
             <text class="font-normal title">查看方案</text>
             <view class="flex-row">
-              <TagArrow text="商品方案"></TagArrow>
-              <TagArrow class="ml-8" text="服务方案"></TagArrow>
+              <TagArrow text="商品方案" @click="gotoProductList"></TagArrow>
+              <TagArrow class="ml-8" text="服务方案" @click="gotoPlan"></TagArrow>
             </view>
           </view>
         </CFCard>
@@ -57,19 +57,13 @@
       </view>
       <view class="tip-box">
         <text class="tip-color">温馨提示：</text>
-        <text class="font-tips">
-          1、确认报价前，请和领队确认报价价格
-          <br />
-        </text>
-        <text class="font-tips">
-          2、请确认报价金额和领队口头报价是否一致
-          <br />
-        </text>
+        <text class="font-tips">1、确认报价前，请和领队确认报价价格</text>
+        <text class="font-tips">2、请确认报价金额和领队口头报价是否一致</text>
         <text class="font-tips">3、确认报价并支付后，您可在意向订单中继续了解订单进度</text>
       </view>
       <view class="flex-col action-box">
-        <text class="self-center font-normal text-golden">当前报价有异，我申请重新报价</text>
-        <view class="flex-col justify-start items-center button mt-12" @click="onClick">
+        <text class="self-center font-normal text-golden" @click="gotoRequotation">当前报价有异，我申请重新报价</text>
+        <view class="flex-col justify-start items-center button mt-12" @click="gotoSubmitPayment">
           <text class="font-button text-white">确认并前往支付</text>
         </view>
       </view>
@@ -92,10 +86,18 @@
         items: [null, null, null, null, null],
       };
     },
-
     methods: {
-      onClick() {
+      gotoSubmitPayment() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/submitPayment/index/index' });
+      },
+      gotoRequotation() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/requotation/requotation' });
+      },
+      gotoProductList() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/productList/productList` });
+      },
+      gotoPlan() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/servicePlan/servicePlan` });
       },
     },
   };

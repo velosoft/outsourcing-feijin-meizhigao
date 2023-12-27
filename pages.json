@@ -423,6 +423,13 @@
           }
         },
         {
+          "path": "pages/personal/address/address/address",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
           "path": "pages/personal/address/addressEditor/addressEditor",
           "style": {
             "navigationStyle": "custom",

@@ -1,12 +1,9 @@
 <template>
   <view class="flex-col justify-center relative wrap">
-    <view class="flex-row justify-center">
+    <view class="flex-row justify-center" @click="gotoAddrs">
       <view class="flex-row justify-center flex-1">
         <view class="flex-col justify-center items-center self-start image-wrapper">
-          <image
-            class="loc-icon"
-            src="/myOrder/static/images/icon_addr.png"
-          />
+          <image class="loc-icon" src="/myOrder/static/images/icon_addr.png" />
         </view>
         <view class="flex-col items-start flex-1 arrow-wrap">
           <view class="flex-row">
@@ -17,17 +14,11 @@
         </view>
       </view>
       <view class="flex-col justify-center arrow-wrap" v-if="canShowArrow">
-        <image
-          class="image_8"
-          src="/myOrder/static/images/0cf6051e66d6813e32d5d7fcfa254d92.png"
-        />
+        <image class="image_8" src="/myOrder/static/images/icon_arrow_right.png" />
       </view>
     </view>
     <view class="flex-col justify-start line-wrapper pos" v-if="canShowLine">
-      <image
-        class="line"
-        src="/myOrder/static/images/icon_addr_line2.png"
-      />
+      <image class="line" src="/myOrder/static/images/icon_addr_line2.png" />
     </view>
   </view>
 </template>
@@ -47,7 +38,13 @@
       return {};
     },
 
-    methods: {},
+    methods: {
+      gotoAddrs() {
+        if (this.canShowArrow) {
+          uni.navigateTo({ url: '/personal/pages/personal/address/address/address' });
+        }
+      },
+    },
   };
 </script>
 

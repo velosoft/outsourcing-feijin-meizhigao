@@ -91,9 +91,7 @@
     },
     methods: {
       goNotify() {
-        uni.navigateTo({
-          url: '/pages/notifyPages/notifyList',
-        });
+        uni.navigateTo({ url: '/pages/notifyPages/notifyList' });
       },
       onChangeType(type) {
         this.type = type;

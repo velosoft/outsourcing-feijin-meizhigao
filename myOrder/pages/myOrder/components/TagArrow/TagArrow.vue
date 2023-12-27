@@ -1,10 +1,7 @@
 <template>
-  <view class="flex-row items-center button_1">
-    <text class="font_2">{{text}}</text>
-    <image
-      class="shrink-0 image_7 ml-4"
-      src="/myOrder/static/images/icon_golden_right_arrow.png"
-    />
+  <view class="flex-row items-center button_1" @click="onClick">
+    <text class="font_2">{{ text }}</text>
+    <image class="shrink-0 image_7 ml-4" src="/myOrder/static/images/icon_golden_right_arrow.png" />
   </view>
 </template>
 
@@ -15,8 +12,11 @@
     data() {
       return {};
     },
-
-    methods: {},
+    methods: {
+      onClick() {
+        this.$emit('click');
+      },
+    },
   };
 </script>
 

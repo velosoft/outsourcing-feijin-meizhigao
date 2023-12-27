@@ -103,7 +103,7 @@
       <view class="btn btn-yellow" v-if="order.status === '等待确认方案'" @click="onShowConfirmProposal">
         <text>确认方案</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '等待确认报价'">
+      <view class="btn btn-yellow" v-if="order.status === '等待确认报价'" @click="gotoConfirmQuote">
         <text>查看报价</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '等待上门服务'" @click="onShowReserve">
@@ -183,6 +183,9 @@
       },
       gotoMeasureResult() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/measureResult/measureResult' });
+      },
+      gotoConfirmQuote() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
       },
     },
   };

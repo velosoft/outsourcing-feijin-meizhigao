@@ -36,7 +36,7 @@
           <view class="flex-row justify-between">
             <image
               class="prod-img"
-              src="/myOrder/static/images/a8a76b148769bff31d10cf01926c2c71.png"
+              src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=b7b2f633c35e6036c37d5d570a880cd9.png"
               v-for="(item, index) in items"
               :key="index"
             />
