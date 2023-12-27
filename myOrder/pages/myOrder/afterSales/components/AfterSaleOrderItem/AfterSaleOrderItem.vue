@@ -25,7 +25,7 @@
       </view>
       <view class="flex-row justify-between items-center tips-wrap">
         <text class="label type">{{ afterSaleOrder.refundStatus }}</text>
-        <view class="flex-row" v-if="afterSaleOrder.refundStatus == '换货中'">
+        <view class="flex-row" v-if="afterSaleOrder.refundStatus !== '换货中'">
           <text class="refund">退款金额</text>
           <text class="refund ml-8">{{ '¥' + afterSaleOrder.refundNumber + '.00' }}</text>
         </view>
@@ -71,13 +71,13 @@
 
     methods: {
       gotoAfterSalesDetail() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/afterSalesDetail/afterSalesDetail' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/refund/refund' });
       },
     },
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .wrap {
     padding-bottom: 20rpx;
     background-color: #ffffff;

@@ -115,9 +115,23 @@
   "subPackages": [
     {
       "root": "myOrder",
-      "pages": [
+      "pages": [        
         {
           "path": "pages/myOrder/afterSales/afterSalesList/afterSalesList",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/myOrder/afterSales/refund/refund",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/myOrder/afterSales/recorder/recorder",
           "style": {
             "navigationStyle": "custom",
             "enablePullDownRefresh": false
