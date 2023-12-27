@@ -5,7 +5,7 @@
       <fj-sticky v-bind:customNavHeight="80">
         <u-tabs
           class="tabs-yellow-wide-cart"
-          :list="list"
+          :list="tabs"
           lineWidth="64rpx"
           lineHeight="20rpx"
           activeStyle="font-size:36rpx;color:#111111;margin-bottom:4rpx;"
@@ -57,7 +57,7 @@
     data() {
       return {
         title: '购物车',
-        list: [
+        tabs: [
           {
             name: '商品',
           },
@@ -78,7 +78,6 @@
 
     methods: {
       onSelect(indexs) {
-        console.log('indexs', indexs);
         let selectList = indexs.map((i) => this.productList[i]);
         this.selectedList = selectList;
       },

@@ -12,7 +12,9 @@
                     <image class="shrink-0 thumb" src="/static/images/mock_thumb_003.png" />
                     <view class="flex-col flex-1 ml-12 justify-between">
                       <text class="line-clamp-one self-stretch title title-height">{{ item.productName }}</text>
-                      <text class="line-clamp-one size">{{ item.specs[0].title }}：{{ item.specs[0].options[0] }}</text>
+                      <text v-if="item.type !== '课程'" class="line-clamp-one size"
+                        >{{ item.specs[0].title }}：{{ item.specs[0].options[0] }}</text
+                      >
                       <view class="flex-row justify-between items-center">
                         <view v-if="item.isCustomize" class="flex-row items-center">
                           <text class="red-font">定金</text>
@@ -21,7 +23,11 @@
                         <view v-else class="flex-row items-center">
                           <price class="cf-black-font" :price="item.productPrice" />
                         </view>
-                        <u-number-box class="cf-number-box-1" v-model="item.productQuantity"></u-number-box>
+                        <u-number-box
+                          v-if="item.type === '商品'"
+                          class="cf-number-box-1"
+                          v-model="item.productQuantity"
+                        ></u-number-box>
                       </view>
                       <view class="items-center" v-if="item.specialSpecs">
                         <text class="red-font additional-label"

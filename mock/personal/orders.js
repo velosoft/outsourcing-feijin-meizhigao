@@ -25,6 +25,7 @@ export const productOrders = [
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
         isCustomize: true, // 是否为定制产品
         discount: 5.2,
+        type: '商品', // 商品类型，[商品，服务，课程]
         specsOptions: [
           {
             title: '规格',
@@ -85,6 +86,7 @@ export const productOrders = [
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
         isCustomize: false,
         discount: 0.52,
+        type: '商品',
         specs: [
           {
             title: '规格',
@@ -107,6 +109,7 @@ export const productOrders = [
         productStatus: '补购商品',
         isCustomize: true,
         discount: 0,
+        type: '服务',
         specs: [
           {
             title: '规格',
@@ -134,6 +137,7 @@ export const productOrders = [
         afterSaleStatus: '正常',
         productStatus: '已退回',
         isCustomize: false,
+        type: '服务',
         specs: [
           {
             title: '规格',
@@ -155,6 +159,7 @@ export const productOrders = [
         afterSaleStatus: '正常',
         productStatus: '正常',
         isCustomize: false,
+        type: '课程',
         specs: [
           {
             title: '规格',
