@@ -7,7 +7,13 @@
             <view class="flex-col mt-20" v-for="(item, index) in list" :key="index">
               <u-swipe-action-item :options="swipeOption" @click="onActionItemClick">
                 <view class="flex-row items-center group">
-                  <u-checkbox :name="index" shape="circle" activeColor="#b09053" :iconSize="18"></u-checkbox>
+                  <u-checkbox
+                    :checked="item.isSelected"
+                    :name="index"
+                    shape="circle"
+                    activeColor="#b09053"
+                    :iconSize="18"
+                  ></u-checkbox>
                   <view class="flex-row flex-1 ml-12">
                     <image class="shrink-0 thumb" src="/static/images/mock_thumb_003.png" />
                     <view class="flex-col flex-1 ml-12 justify-between">

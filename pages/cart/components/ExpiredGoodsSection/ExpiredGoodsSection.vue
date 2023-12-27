@@ -25,8 +25,8 @@
     components: { ExpiredGoodsItem },
     props: {
       list: {
-        type: Object,
-        default: {},
+        type: Array,
+        default: () => [],
       },
     },
     data() {

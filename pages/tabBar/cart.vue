@@ -37,7 +37,7 @@
       </view>
       <recommend class="mt-10"></recommend>
     </view>
-    <settlement :list="selectedList"></settlement>
+    <settlement :list="selectedList" @selectAll="onSelectAll"></settlement>
   </view>
 </template>
 
@@ -78,8 +78,24 @@
 
     methods: {
       onSelect(indexs) {
-        let selectList = indexs.map((i) => this.productList[i]);
-        this.selectedList = selectList;
+        let newList = this.productList.map((item, i) => {
+          if (indexs.includes(i)) {
+            item.isSelected = true;
+          } else {
+            item.isSelected = false;
+          }
+          return item;
+        });
+        this.productList = newList;
+        this.selectedList = newList.filter((item) => item.isSelected);
+      },
+      onSelectAll(val) {
+        let newList = this.productList.map((item) => {
+          item.isSelected = val.length > 0;
+          return item;
+        });
+        this.productList = newList;
+        this.selectedList = val.length > 0 ? newList : [];
       },
     },
   };

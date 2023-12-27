@@ -2,7 +2,7 @@
   <view class="flex-col justify-start cart-footer justify-between">
     <view class="flex-row items-center wrap pos justify-between">
       <view class="flex-row items-center">
-        <u-checkbox-group class="checkbox" v-model="v_model">
+        <u-checkbox-group class="checkbox" v-model="v_model" @change="selectAll">
           <u-checkbox
             v-model="v_model_1"
             name="NzKpOYzN"
@@ -46,7 +46,7 @@
       :safeAreaInsetBottom="false"
       bgColor="transparent"
     >
-      <pop-cart-coupon-detial></pop-cart-coupon-detial>
+      <pop-cart-coupon-detial :detail="discounDetail"></pop-cart-coupon-detial>
     </u-popup>
   </view>
 </template>
@@ -76,6 +76,28 @@
       discount() {
         return (this.list || []).reduce((acc, item, i) => acc + (item.discount || 0), 0).toFixed(2);
       },
+      discounDetail() {
+        return {
+          price: this.price,
+          discount: this.discount,
+          list: [
+            {
+              title: '满100减10',
+              price: 500,
+              discount: 50,
+              type: '商品',
+              products: this.list.slice(0, 1),
+            },
+            {
+              title: '双11活动优惠',
+              price: 300,
+              discount: 15,
+              type: '课程',
+              products: this.list.slice(1, 3),
+            },
+          ],
+        };
+      },
     },
 
     methods: {
@@ -90,6 +112,9 @@
         // uni.navigateTo({ url: '/cart/pages/cart/bookCustomize/bookCustomize' });
         // uni.navigateTo({ url: '/cart/pages/cart/bookServe/bookServe' });
         uni.navigateTo({ url: '/cart/pages/cart/registerCourse/registerCourse/registerCourse' });
+      },
+      selectAll(val) {
+        this.$emit('selectAll', val);
       },
     },
   };
