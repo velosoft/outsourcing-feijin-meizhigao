@@ -115,7 +115,7 @@
   "subPackages": [
     {
       "root": "myOrder",
-      "pages": [        
+      "pages": [
         {
           "path": "pages/myOrder/afterSales/afterSalesList/afterSalesList",
           "style": {
@@ -321,6 +321,13 @@
         },
         {
           "path": "pages/myOrder/servicePlan/servicePlan",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/myOrder/measureResult/measureResult",
           "style": {
             "navigationStyle": "custom",
             "enablePullDownRefresh": false

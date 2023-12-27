@@ -92,7 +92,7 @@
       >
         <text>服务日志</text>
       </view>
-      <view class="btn btn-gray" v-if="order.status === '等待客户签约'">
+      <view class="btn btn-gray" v-if="order.status === '等待客户签约'" @click="gotoMeasureResult">
         <text>查看测量结果</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '等待客户签约'">
@@ -190,6 +190,9 @@
       },
       gotoPlan() {
         uni.navigateTo({ url: `/myOrder/pages/myOrder/servicePlan/servicePlan` });
+      },
+      gotoMeasureResult() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/measureResult/measureResult' });
       },
     },
   };
