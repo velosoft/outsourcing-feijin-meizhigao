@@ -8,9 +8,9 @@
       />
     </NavBar>
     <view class="flex-col">
-      <HeaderStatusCard></HeaderStatusCard>
+      <HeaderStatusCard :headerStatus="headerStatus"></HeaderStatusCard>
       <view class="flex-col relative wrap">
-        <RowStep></RowStep>
+        <RowStep :stepData="stepData"></RowStep>
         <CFCard class="mt-12" title="退回地址">
           <view class="flex-col mt-16">
             <view class="flex-row self-stretch">
@@ -35,37 +35,37 @@
         </CFCard>
         <CFCard class="mt-12" title="退款信息">
           <view class="flex-col mt-16">
-            <OrderProductItem></OrderProductItem>
+            <OrderProductItem :product="product"></OrderProductItem>
             <view class="flex-col relative mt-22">
               <u-cell class="cell-in-white-card" title="售后单号" :value="20230488566779433" :border="false"></u-cell>
               <u-cell
-                class="cell-in-white-card mt-12"
+                class="cell-in-white-card mt-16"
                 title="申请时间"
                 value="2023-09-11 14:10:31"
                 :border="false"
               ></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="服务类型" value="退款退货" :border="false"></u-cell>
+              <u-cell class="cell-in-white-card mt-16" title="服务类型" value="退款退货" :border="false"></u-cell>
               <u-cell
-                class="cell-in-white-card-weight mt-12"
+                class="cell-in-white-card-weight mt-16"
                 title="退款金额"
                 value="￥94.00（含运费￥10.00）"
                 :border="false"
               ></u-cell>
               <u-cell
-                class="cell-in-white-card mt-12"
+                class="cell-in-white-card mt-16"
                 title="退回收纳币"
                 value="500收纳币（含运费￥10.00）"
                 :border="false"
               ></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="退回积分" :value="200" :border="false"></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="退款原因" value="货物破损" :border="false"></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="换货原因" value="货物破损" :border="false"></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="是否需要寄回商品" value="需要" :border="false"></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="备注说明" value="货物存在破损" :border="false"></u-cell>
-              <u-cell class="cell-in-white-card mt-12" title="上传凭证" :border="false">
+              <u-cell class="cell-in-white-card mt-16" title="退回积分" :value="200" :border="false"></u-cell>
+              <u-cell class="cell-in-white-card mt-16" title="退款原因" value="货物破损" :border="false"></u-cell>
+              <u-cell class="cell-in-white-card mt-16" title="换货原因" value="货物破损" :border="false"></u-cell>
+              <u-cell class="cell-in-white-card mt-16" title="是否需要寄回商品" value="需要" :border="false"></u-cell>
+              <u-cell class="cell-in-white-card mt-16" title="备注说明" value="货物存在破损" :border="false"></u-cell>
+              <u-cell class="cell-in-white-card mt-16" title="上传凭证" :border="false">
                 <view class="flex-row" slot="value">
                   <image
-                    class="equal-division-item"
+                    class="equal-division-item ml-10"
                     src="/myOrder/static/images/mock_thumb_009.png"
                     v-for="(item, index) in items"
                     :key="index"
@@ -79,11 +79,14 @@
     </view>
     <view class="iPhoneX flex-col footer-btn">
       <view class="fixed-bottom-safe btn-wrap justify-end flex-row">
-        <view class="cf-btn-black flex-col items-center text-wrapper justify-center">
+        <view class="cf-btn-black flex-col items-center text-wrapper justify-center" @click="onClick">
           <text class="copy">填写物流信息</text>
         </view>
       </view>
     </view>
+    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true" :safeAreaInsetBottom="false">
+    <PopLogisticsInfo @onConfirm="onConfirm"></PopLogisticsInfo>
+  </u-popup>
   </view>
   </template>
   
@@ -93,18 +96,38 @@
   import NavBar from '@/components/NavBar/NavBar.vue';
   import OrderProductItem from '../../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import RowStep from '../../../../pages/myOrder/afterSales/components/RowStep/RowStep.vue';
+  import PopLogisticsInfo from '../../../../pages/myOrder/afterSales/components/PopLogisticsInfo/PopLogisticsInfo.vue'
   
   export default {
-    components: { CFCard, HeaderStatusCard, NavBar, OrderProductItem, RowStep },
+    components: { CFCard, HeaderStatusCard, NavBar, OrderProductItem, RowStep, PopLogisticsInfo },
     props: {},
     data() {
       return {
         title: '售后详情',
         items: [null, null, null, null],
+        popupVisible: false,
+        headerStatus:{
+          status: 0,
+          title: '退款成功',
+          descMain: '退款金额：￥84',
+          descSecondary: '退款时间：2023-09-11 14:14:32',
+        },
+        stepData:{},
+        product:{},
       };
     },
   
-    methods: {},
+    methods: {    
+      onClick() {
+      this.popupVisible = true;
+    },
+    onClose() {
+      this.popupVisible = false;
+    },
+    onConfirm(args) {
+      // 事件处理方法
+      this.popupVisible = false;
+    },},
   };
   </script>
   
@@ -117,7 +140,7 @@
       height: 32rpx;
     }
     .wrap {
-      margin: -48rpx 0 24rpx;
+      margin: -48rpx 0 48rpx;
       padding: 24rpx;
       background-color: #f4f4f4;
       border-radius: 16rpx 16rpx 0rpx 0rpx;

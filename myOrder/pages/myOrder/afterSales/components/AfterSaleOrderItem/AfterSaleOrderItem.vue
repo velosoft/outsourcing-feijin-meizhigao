@@ -32,14 +32,31 @@
       </view>
       <u-button
         class="cf-btn-black button"
-        :text="afterSaleOrder.orderStatus == '申请中' ? '撤销申请' : ''"
+        text="撤销申请"
         type="info"
         size="small"
         shape="square"
         :plain="true"
-        v-if="afterSaleOrder.orderStatus == '申请中' && '售后关闭'"
+        v-if="afterSaleOrder.orderStatus == '申请中'"
+        @click="onShowDialog"
+      ></u-button>
+      <u-button
+        class="cf-btn-black button"
+        text="删除记录"
+        type="info"
+        size="small"
+        shape="square"
+        :plain="true"
+        v-if="afterSaleOrder.orderStatus == '售后关闭'"
       ></u-button>
     </view>
+    <confirm-panel
+      :isShow="showDialog"
+      :isnormal="false"
+      content="您确定取消售后吗？"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    ></confirm-panel>
   </view>
 </template>
 
@@ -66,12 +83,22 @@
       },
     },
     data() {
-      return {};
+      return {showDialog: false};
     },
 
     methods: {
       gotoAfterSalesDetail() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/refund/refund' });
+      },
+      onShowDialog() {
+        console.log('弹框');
+        this.showDialog = true;
+      },
+      onCancel() {
+        this.showDialog = false;
+      },
+      onConfirm() {
+        this.showDialog = false;
       },
     },
   };

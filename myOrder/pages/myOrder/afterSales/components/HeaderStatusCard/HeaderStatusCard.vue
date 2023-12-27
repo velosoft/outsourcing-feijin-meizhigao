@@ -17,9 +17,9 @@
         type: Object,
         default: () => ({
           status: 0,
-          title: '退款成功',
-          descMain: '退款金额：￥84',
-          descSecondary: '退款时间：2023-09-11 14:14:32',
+          title: '',
+          descMain: '',
+          descSecondary: '',
         }),
       },
     },

@@ -2,31 +2,12 @@
   <view class="flex-col page">
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col">
-      <OrderStatusCard></OrderStatusCard>
-      <view class="flex-col section_3">
-        <AfterSaleProgressCard class="section_4"></AfterSaleProgressCard>
+      <HeaderStatusCard :headerStatus="headerStatus"></HeaderStatusCard>
+      <view class="flex-col container">
+        <RowStep :showCell="false" :stepData="stepData"></RowStep>
         <CFCard class="mt-12" title="售后信息">
-          <view class="flex-col section_10 mt-8">
-            <view class="flex-row items-start">
-              <view class="flex-col justify-start items-center image-wrapper">
-                <image
-                  class="image_9"
-                  src="https://dev.ft.velosoft.cn/api/image?token=6588d7d6d6bce000114dac75&name=mock_1dae61f5b8b53166.png"
-                />
-              </view>
-              <view class="flex-col flex-1 ml-10">
-                <text class="self-start font_3 text_5">定制卧室收纳柜新疆包邮卧室床头</text>
-                <view class="flex-row justify-between self-stretch mt-12">
-                  <text class="font_4 text_6">按面积核算（元/m)</text>
-                  <text class="font_4 text_7">x1</text>
-                </view>
-                <view class="flex-row items-baseline self-start group_6 mt-12">
-                  <text class="font_1 text_9">￥</text>
-                  <text class="text_8">200</text>
-                  <text class="font_1 text_10">.00</text>
-                </view>
-              </view>
-            </view>
+          <view class="flex-col content-info">
+            <OrderProductItem :product="product"></OrderProductItem>
             <view class="flex-col mt-24">
               <u-cell class="cell-in-white-card-weight" title="售后类型" value="客服介入" :border="false"></u-cell>
               <u-cell
@@ -42,11 +23,11 @@
                 :border="false"
               ></u-cell>
               <u-cell class="cell-in-white-card mt-14" title="原订单" value="查看订单" :border="false">
-                <view class="flex-row items-center group_9" slot="value">
-                  <text class="font_5 text_11 text_15">查看订单</text>
+                <view class="flex-row items-center" slot="value">
+                  <text class="cell-value cell-value-text">查看订单</text>
                   <image
-                    class="ai-outflow ml-6"
-                    src="https://dev.ft.velosoft.cn/api/image?token=6588d7d6d6bce000114dac75&name=icon_golden_right_arrow.png"
+                    class="icon-arrow ml-6"
+                    src="https://dev.ft.velosoft.cn/api/image?token=658b8253d6bce000114dd28c&name=icon_golden_right_arrow.png"
                   />
                 </view>
               </u-cell>
@@ -54,7 +35,7 @@
           </view>
         </CFCard>
         <CFCard class="mt-12" title="售后进度">
-          <view class="flex-col section_10 group_8">
+          <view class="flex-col step-con-top mt-16">
             <u-steps direction="column">
               <view class="flex-col group_14 ml-8">
                 <u-steps-item>
@@ -88,7 +69,7 @@
                           :border="false"
                         ></u-cell>
                         <u-cell
-                          class="cell-in-gray-card group_8"
+                          class="cell-in-gray-card step-con-top"
                           title="审核备注"
                           value="已安排客服介入"
                           :border="false"
@@ -108,13 +89,13 @@
                           :border="false"
                         ></u-cell>
                         <u-cell
-                          class="cell-in-gray-card group_8"
+                          class="cell-in-gray-card step-con-top"
                           title="申请原因"
                           value="需要客服介入"
                           :border="false"
                         ></u-cell>
                         <u-cell
-                          class="cell-in-gray-card group_8"
+                          class="cell-in-gray-card step-con-top"
                           title="申请理由"
                           value="需要客服介入"
                           :border="false"
@@ -125,9 +106,9 @@
                 </u-steps-item>
               </view>
             </u-steps>
-            <view class="flex-col justify-start items-end group_8">
+            <view class="flex-col justify-start items-end step-con-top">
               <view class="flex-col justify-start items-center text-wrapper">
-                <text class="font_5 text_19">取消售后</text>
+                <text class="cell-value btn-text">取消售后</text>
               </view>
             </view>
           </view>
@@ -138,18 +119,27 @@
 </template>
 
 <script>
-  import AfterSaleProgressCard from '../../../../pages/myOrder/afterSales/components/AfterSaleProgressCard/AfterSaleProgressCard.vue';
   import CFCard from '@/components/Card/Card';
+  import HeaderStatusCard from '../../../../pages/myOrder/afterSales/components/HeaderStatusCard/HeaderStatusCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import OrderProcessCard from '@/components/OrderProcessCard';
-  import OrderStatusCard from '../../../../pages/myOrder/components/OrderStatusCard/OrderStatusCard.vue';
+  import OrderProductItem from '../../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
+  import RowStep from '../../../../pages/myOrder/afterSales/components/RowStep/RowStep.vue';
 
   export default {
-    components: { AfterSaleProgressCard, CFCard, NavBar, OrderProcessCard, OrderStatusCard },
+    components: { CFCard, HeaderStatusCard, NavBar, OrderProcessCard, OrderProductItem, RowStep },
     props: {},
     data() {
       return {
-        title: '',
+        headerStatus: {
+          status: 0,
+          title: '售后成功',
+          descMain: '',
+          descSecondary: '',
+        },
+        product: {},
+        stepData: {},
+        title: '订单详情',
       };
     },
 
@@ -164,93 +154,30 @@
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
-    .section_3 {
+    .container {
       margin-top: -48rpx;
       padding: 24rpx;
       background-color: #f4f4f4;
       border-radius: 16rpx 16rpx 0rpx 0rpx;
-      .section_4 {
-        position: relative;
+      .content-info {
+        padding-top: 16rpx;
+        .cell-value-text {
+          font-size: 26rpx;
+          line-height: 36rpx;
+        }
+        .icon-arrow {
+          width: 8rpx;
+          height: 14rpx;
+        }
       }
-      .section_10 {
-        align-self: stretch;
-        .image-wrapper {
-          width: 180rpx;
-          .image_9 {
-            border-radius: 16rpx;
-            width: 180rpx;
-            height: 180rpx;
-          }
-        }
-        .font_3 {
-          font-size: 28rpx;
-          line-height: 40rpx;
-          color: #6d6d6d;
-        }
-        .text_5 {
-          color: #111111;
-          font-weight: 500;
-        }
-        .font_4 {
-          font-size: 24rpx;
-          line-height: 34rpx;
-          color: #111111;
-        }
-        .text_6 {
-          color: #6d6d6d;
-          font-size: 26rpx;
-          line-height: 36rpx;
-        }
-        .text_7 {
-          color: #828385;
-          font-size: 26rpx;
-          line-height: 36rpx;
-        }
-        .group_6 {
-          padding: 0 4rpx;
-          .font_1 {
-            font-size: 20rpx;
-            color: #111111;
-          }
-          .text_9 {
-            font-weight: 500;
-            line-height: 28rpx;
-          }
-          .text_8 {
-            color: #111111;
-            font-size: 32rpx;
-            line-height: 36rpx;
-          }
-          .text_10 {
-            margin-left: 4rpx;
-            line-height: 24rpx;
-          }
-        }
-        .group_9 {
-          margin-right: 16rpx;
-          .text_11 {
-            text-transform: uppercase;
-          }
-          .text_15 {
-            font-size: 26rpx;
-            line-height: 36rpx;
-          }
-          .ai-outflow {
-            width: 8rpx;
-            height: 14rpx;
-          }
-        }
+      .step-con-top {
+        margin-top: 32rpx;
         .group_14 {
           flex: 1 1 0;
+          .section_10 {
+            align-self: stretch;
+          }
         }
-        .font_5 {
-          font-size: 24rpx;
-          line-height: 34rpx;
-          color: #b09053;
-        }
-      }
-      .group_8 {
-        margin-top: 32rpx;
         .text-wrapper {
           padding: 8rpx 0;
           border-radius: 28rpx;
@@ -259,11 +186,16 @@
           border-right: solid 2rpx #e3cea7;
           border-top: solid 2rpx #e3cea7;
           border-bottom: solid 2rpx #e3cea7;
-          .text_19 {
+          .btn-text {
             font-size: 26rpx;
             line-height: 36rpx;
           }
         }
+      }
+      .cell-value {
+        font-size: 24rpx;
+        line-height: 34rpx;
+        color: #b09053;
       }
     }
   }

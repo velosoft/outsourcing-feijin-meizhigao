@@ -45,7 +45,7 @@
     <confirm-panel
       :isShow="showDialog"
       :isnormal="false"
-      title="您确定取消售后吗？"
+      content="您确定取消售后吗？"
       @cancel="onCancel"
       @confirm="onConfirm"
     ></confirm-panel>
@@ -189,5 +189,11 @@
   }
   .btn-end {
     align-self: flex-end;
+    /deep/ .u-button {
+      height: 56rpx !important;
+      border-radius: 28rpx !important;
+      border: 2rpx solid #dec9a0 !important;
+      padding: 0 18rpx !important;
+    }
   }
 </style>

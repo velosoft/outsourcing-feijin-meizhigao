@@ -3,33 +3,30 @@
     <view class="flex-col step-wrap"><CFSteps></CFSteps></view>
     <view class="flex-row justify-between items-center bottom-wrap" @click="onClick" v-if="showCell">
       <text class="cell-title">协商记录</text>
-      <image
-        class="icon-arrow"
-        src="/myOrder/static/images/icon_right_arrow_08.png"
-      />
+      <image class="icon-arrow" src="/myOrder/static/images/icon_right_arrow_08.png" />
     </view>
   </view>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import CFSteps from '../../../../../pages/myOrder/afterSales/components/CFSteps/CFSteps.vue';
-  
+
   export default {
     components: { CFSteps },
-    props: { showCell: { type: Boolean, default: true } },
+    props: { showCell: { type: Boolean, default: true }, stepData: { type: Object, default: () => ({}) } },
     data() {
       return {};
     },
-  
+
     methods: {
       onClick() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/afterSales/recorder/recorder' });
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .wrap {
     background-color: #ffffff;
     border-radius: 16rpx;
@@ -53,4 +50,4 @@
       }
     }
   }
-  </style>
+</style>
