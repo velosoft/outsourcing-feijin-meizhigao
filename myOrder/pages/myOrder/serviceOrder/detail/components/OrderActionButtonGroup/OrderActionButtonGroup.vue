@@ -7,14 +7,14 @@
       <u-button text="验收服务" type="primary" shape="circle" :plain="true" @click="gotoAcceptance"></u-button>
       <u-button text="删除记录" type="primary" shape="circle" :plain="true"></u-button>
       <u-button text="确认差额" type="primary" shape="circle" :plain="true" @click="gotoPriceDiff"></u-button>
-      <u-button text="确认报价" type="primary" shape="circle" :plain="true" @click="onConfirmQuoteClick"></u-button>
+      <u-button text="确认报价" type="primary" shape="circle" :plain="true" @click="gotoConfirmQuote"></u-button>
       <u-button text="商品方案" type="primary" shape="circle" :plain="true" @click="gotoProductList"></u-button>
-      <u-button text="确认方案" type="primary" shape="circle" :plain="true" @click="onClick_7"></u-button>
+      <u-button text="确认方案" type="primary" shape="circle" :plain="true" @click="onShowConfirmProposal"></u-button>
       <u-button text="开始签约" type="primary" shape="circle" :plain="true" @click="onClick_8"></u-button>
       <u-button text="取消订单" type="primary" shape="circle" :plain="false"></u-button>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
-      <PopConfirmProposal></PopConfirmProposal>
+    <u-popup :show="showConfirmProposal" @close="onCloseConfirmProposal" mode="bottom" :round="12" :closeable="true">
+      <PopConfirmProposal @confirm="onCloseConfirmProposal"></PopConfirmProposal>
     </u-popup>
     <u-modal
       :show="dialogVisible"
@@ -30,14 +30,14 @@
 </template>
 
 <script>
-  import PopConfirmProposal from '../../../../../../pages/myOrder/serviceOrder/detail/popup/PopConfirmProposal/PopConfirmProposal.vue';
+  import PopConfirmProposal from '@/myOrder/pages/myOrder/components/PopConfirmProposal/PopConfirmProposal.vue';
 
   export default {
     components: { PopConfirmProposal },
     props: {},
     data() {
       return {
-        popupVisible: false,
+        showConfirmProposal: false,
         dialogVisible: false,
       };
     },
@@ -55,17 +55,17 @@
       gotoPriceDiff() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff' });
       },
-      onConfirmQuoteClick() {
+      gotoConfirmQuote() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
       },
       gotoAcceptance() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
       },
-      onClick_7() {
-        this.popupVisible = true;
+      onShowConfirmProposal() {
+        this.showConfirmProposal = true;
       },
-      onClose() {
-        this.popupVisible = false;
+      onCloseConfirmProposal() {
+        this.showConfirmProposal = false;
       },
       onClick_8() {
         this.dialogVisible = true;

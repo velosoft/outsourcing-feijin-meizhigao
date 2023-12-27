@@ -104,7 +104,7 @@
       <view class="btn btn-gray" v-if="order.status === '等待确认方案'" @click="gotoPlan">
         <text>查看服务方案</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '等待确认方案'">
+      <view class="btn btn-yellow" v-if="order.status === '等待确认方案'" @click="onShowConfirmProposal">
         <text>确认方案</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '等待确认报价'">
@@ -129,21 +129,26 @@
     <u-popup :show="showReserve" @close="onCloseReserve" mode="bottom" :closeable="true" :round="14">
       <PopReserve @confirm="onCloseReserve"></PopReserve>
     </u-popup>
+    <u-popup :show="showConfirmProposal" @close="onCloseConfirmProposal" mode="bottom" :round="12" :closeable="true">
+      <PopConfirmProposal @confirm="onCloseConfirmProposal"></PopConfirmProposal>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
   import PopReserve from '@/myOrder/pages/myOrder/components/PopReserve/PopReserve.vue';
+  import PopConfirmProposal from '@/myOrder/pages/myOrder/components/PopConfirmProposal/PopConfirmProposal.vue';
 
   export default {
-    components: { PopReserve },
+    components: { PopReserve, PopConfirmProposal },
     props: {
       order: Object,
     },
     data() {
       return {
         showReserve: false,
+        showConfirmProposal: false,
       };
     },
     methods: {
@@ -158,6 +163,12 @@
       },
       onCloseReserve() {
         this.showReserve = false;
+      },
+      onShowConfirmProposal() {
+        this.showConfirmProposal = true;
+      },
+      onCloseConfirmProposal() {
+        this.showConfirmProposal = false;
       },
       gotoLog() {
         uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceLog/serviceLog` });

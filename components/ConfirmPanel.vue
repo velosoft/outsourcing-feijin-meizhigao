@@ -183,15 +183,15 @@
       border-radius: 16rpx;
 
       .dialog-title {
-        color: #333333;
+        color: #111111;
         font-weight: bold;
-        padding: 30upx;
+        padding: 30rpx;
         line-break: 1em;
         border-bottom: 1px solid #eaeaea;
       }
       .dialog-content {
         .dialog-text {
-          color: #6d6d6d;
+          color: #111111;
           font-size: 36rpx;
           font-family: PingFang SC;
           line-height: 36rpx;
