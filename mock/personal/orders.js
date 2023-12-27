@@ -24,6 +24,7 @@ export const productOrders = [
         afterSaleStatus: '正常', // 可选值：["正常", "售后成功", "售后失败"]
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
         isCustomize: true, // 是否为定制产品
+        discount: 5.2,
         specsOptions: [
           {
             title: '规格',
@@ -40,6 +41,12 @@ export const productOrders = [
           {
             title: '颜色',
             options: ['黄色', '红色', '黑色', '蓝色'],
+          },
+        ],
+        specialSpecsOptions: [
+          {
+            title: '附加服务',
+            options: ['安装服务  ￥88.00', '安装服务  ￥99.00'],
           },
         ],
         specs: [
@@ -60,6 +67,12 @@ export const productOrders = [
             options: ['红色'],
           },
         ],
+        specialSpecs: [
+          {
+            title: '附加服务',
+            options: ['安装服务  ￥88.00'],
+          },
+        ],
       },
       {
         productName: '示例产品2，这是一个非常长的产品名字，很长很长，努力超过两行，马上超过两行！',
@@ -71,6 +84,7 @@ export const productOrders = [
         afterSaleStatus: '售后成功',
         productStatus: '正常', // 商品状态，可选值：["正常", "补购商品", "已退回"]
         isCustomize: false,
+        discount: 0.52,
         specs: [
           {
             title: '规格',
@@ -92,6 +106,7 @@ export const productOrders = [
         afterSaleStatus: '正常',
         productStatus: '补购商品',
         isCustomize: true,
+        discount: 0,
         specs: [
           {
             title: '规格',
@@ -100,6 +115,12 @@ export const productOrders = [
           {
             title: '颜色',
             options: ['红色'],
+          },
+        ],
+        specialSpecs: [
+          {
+            title: '附加服务',
+            options: ['安装服务  ￥88.00'],
           },
         ],
       },
