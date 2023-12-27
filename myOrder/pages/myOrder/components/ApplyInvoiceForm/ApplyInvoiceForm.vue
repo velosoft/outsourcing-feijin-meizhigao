@@ -117,7 +117,7 @@
         v_model_4: '',
         showTitels: false,
         showTypes: false,
-        placeholderStyle: 'font-size: 14px;font-family:苹方;font-weight: 400;color: #9E9EA0;',
+        placeholderStyle: 'font-size: 28rpx;font-family:苹方;font-weight: 400;color: #9E9EA0;',
       };
     },
 

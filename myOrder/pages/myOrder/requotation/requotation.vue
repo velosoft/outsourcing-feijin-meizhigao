@@ -12,7 +12,7 @@
         placeholder="请输入您的描述……"
         height="534rpx"
         :maxlength="200"
-        :placeholderStyle="{ fontSize: '24rpx' }"
+        placeholderStyle="font-size: 24rpx"
       ></u-textarea>
     </view>
     <view class="flex-col justify-start items-center button text-wrapper">
