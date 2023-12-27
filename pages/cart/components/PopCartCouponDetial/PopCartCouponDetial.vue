@@ -1,23 +1,27 @@
 <template>
   <view class="flex-col wrap">
-    <u-cell class="cell-in-white-card-weight" title="课程总额" value="￥1000.00" :border="false"></u-cell>
-    <u-cell class="cell-in-white-card-weight mt-27" title="活动优惠" value="-￥80.00" :border="false"></u-cell>
+    <u-cell class="cell-in-white-card-weight" title="课程总额" :value="price" :border="false"></u-cell>
+    <u-cell class="cell-in-white-card-weight mt-27" title="活动优惠" :value="discount" :border="false"></u-cell>
     <view class="flex-col mt-20">
-      <view class="flex-col list-item mt-10" v-for="(item, index) in items" :key="index">
-        <view class="flex-row list">
+      <view class="flex-col list-item mt-10" v-for="(item, index) in detail.list" :key="index">
+        <view class="flex-row image-row">
           <image
-            class="thumb ml-12"
-            src="/static/images/mock_thumb_09.png"
-            v-for="(item, index) in items_1"
+            class="product-image"
+            :src="prod.productImageURL"
+            v-for="(prod, index) in item.products"
             :key="index"
           />
         </view>
         <view class="flex-row tag-top items-center">
           <view class="flex-col">
-            <view class="flex-col tag-normal items-center" v-if="true"><text class="tag-text">满100减10</text></view>
-            <view class="flex-col tag-plain" v-if="false"><text class="tag-text">满100减10</text></view>
+            <view class="flex-col tag-normal items-center" v-if="item.type === '商品'"
+              ><text class="tag-text">{{ item.title }}</text></view
+            >
+            <view class="flex-col tag-plain" v-if="item.type === '课程'"
+              ><text class="tag-text">{{ item.title }}</text></view
+            >
           </view>
-          <text class="full-discount-text ml-6">小计:￥600.00，已减￥60.00</text>
+          <text class="full-discount-text ml-6">小计:￥{{ item.price }}，已减￥{{ item.discount }}</text>
         </view>
       </view>
     </view>
@@ -27,12 +31,20 @@
 <script>
   export default {
     components: {},
-    props: { CartCouponDetialList: { type: Object, default: () => ({}) } },
+    props: { detail: { type: Object, default: () => ({}) } },
     data() {
-      return {
-        items_1: [null, null],
-        items: [null, null],
-      };
+      return {};
+    },
+    computed: {
+      price() {
+        return `￥${this.detail.price || 0}`;
+      },
+      discount() {
+        if (this.detail.discount) {
+          return `-￥${this.detail.discount}`;
+        }
+        return '￥0.00';
+      },
     },
 
     methods: {},
@@ -59,9 +71,10 @@
       &:first-child {
         margin-top: 0;
       }
-      .list {
-        margin-left: -24rpx;
-        .thumb {
+      .image-row {
+        flex-wrap: wrap;
+        gap: 24rpx;
+        .product-image {
           width: 120rpx;
           height: 120rpx;
         }
@@ -74,7 +87,7 @@
           border-radius: 8rpx;
         }
         .tag-plain {
-          padding: 4rpx 16rpx;
+          padding: 2rpx 16rpx;
           border-radius: 8rpx;
           border: solid 1rpx #bb3e0c;
         }
@@ -88,8 +101,8 @@
         .full-discount-text {
           font-size: 24rpx;
           font-family: 苹方;
-          line-height: 24.08rpx;
-          color: #030305;
+          line-height: 24rpx;
+          color: #111111;
         }
       }
     }
