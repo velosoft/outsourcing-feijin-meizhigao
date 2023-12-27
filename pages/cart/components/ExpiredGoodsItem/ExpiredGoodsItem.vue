@@ -2,24 +2,26 @@
   <view class="flex-row item-padding list-item items-center">
     <view class="flex-col items-center expired-status justify-center"><text class="expired-text">失效</text></view>
     <image class="thumb" src="/static/images/mock_thumb_07.png" />
-    <view class="flex-col flex-1 good-con justify-between">
-      <view class="flex-col items-start">
-        <text class="line-clamp-one goods-title">国风系列置物架碳钢多层储物架</text>
-        <text class="Specification mt-16">规格：3层80长x40宽x170高</text>
+    <view class="flex-col self-stretch flex-1 justify-between good-con">
+      <view class="flex-col">
+        <text class="line-clamp-one goods-title">{{ item.productName }}</text>
+        <text class="line-clamp-two desc mt-8">{{ item.specs[0].title }}：{{ item.specs[0].options[0] }}</text>
       </view>
-      <view class="flex-row mt-28 items-start">
-        <text class="currency">￥</text>
-        <text class="price">40</text>
-        <text class="decimal decimal-text">.00</text>
-      </view>
+      <price class="cf-black-font" :price="item.productPrice" />
     </view>
   </view>
 </template>
 
 <script>
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
-    props: {},
+    components: { Price },
+    props: {
+      item: {
+        type: Object,
+        default: {},
+      },
+    },
     data() {
       return {};
     },
@@ -57,34 +59,11 @@
         line-height: 28rpx;
         color: #030305;
       }
-      .Specification {
+      .desc {
         font-size: 24rpx;
         font-family: PingFangSC;
         line-height: 24rpx;
         color: #a7a7a7;
-      }
-      .currency {
-        font-size: 20rpx;
-        font-family: PingFangSC;
-        line-height: 20rpx;
-        color: #030305;
-      }
-      .price {
-        font-size: 32rpx;
-        font-family: HarmonyOS Sans SC;
-        line-height: 32rpx;
-        font-weight: 700;
-        color: #030305;
-      }
-      .decimal {
-        font-size: 24rpx;
-        font-family: HarmonyOS Sans SC;
-        line-height: 24rpx;
-        font-weight: 700;
-        color: #030305;
-      }
-      .decimal-text {
-        margin-left: 4rpx;
       }
     }
   }

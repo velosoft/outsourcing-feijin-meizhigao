@@ -3,16 +3,17 @@
     <view class="flex-row justify-between title-wrap items-center">
       <text class="title">以下为失效商品</text>
       <view class="flex-row items-center self-stretch title-wrap-right">
-        <image class="shrink-0 delete-icon" src="/static/images/icon_cart_delete.png" />
+        <image class="shrink-0 delete-icon" src="/static/images/icon_del_03.png" />
         <text class="goods-title delete-text ml-8">一键清除</text>
       </view>
     </view>
     <view class="flex-col mt-20">
-      <ExpiredGoodsItem
+      <expired-goods-item
         class="list-item mt-20 items-center"
-        v-for="(item, index) in items"
+        v-for="(item, index) in list"
+        :item="item"
         :key="index"
-      ></ExpiredGoodsItem>
+      ></expired-goods-item>
     </view>
   </view>
 </template>
@@ -22,11 +23,14 @@
 
   export default {
     components: { ExpiredGoodsItem },
-    props: {},
+    props: {
+      list: {
+        type: Object,
+        default: {},
+      },
+    },
     data() {
-      return {
-        items: [null, null],
-      };
+      return {};
     },
 
     methods: {},
@@ -50,8 +54,8 @@
       .title-wrap-right {
         margin-right: 8rpx;
         .delete-icon {
-          width: 32rpx;
-          height: 35rpx;
+          width: 44rpx;
+          height: 44rpx;
         }
         .goods-title {
           font-size: 28rpx;
