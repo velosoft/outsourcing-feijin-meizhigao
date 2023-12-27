@@ -3,9 +3,16 @@
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col">
       <fj-sticky v-bind:customNavHeight="80">
-        <u-tabs class="tabs-yellow-wide" :list="list" lineWidth="64rpx" lineHeight="20rpx">
+        <u-tabs
+          class="tabs-yellow-wide-cart"
+          :list="list"
+          lineWidth="64rpx"
+          lineHeight="20rpx"
+          activeStyle="font-size:36rpx;color:#111111;margin-bottom:4rpx;"
+          inactiveStyle="font-size:32rpx;color:#9e9ea0;"
+        >
           <view class="flex-row items-center tabs-slot-right" slot="right">
-            <image class="delete-icon" src="/static/images/icon_cart_delete.png" />
+            <image class="delete-icon" src="/static/images/icon_del_03.png" />
             <text class="delete-text ml-8">一键清除</text>
           </view>
         </u-tabs>
@@ -13,24 +20,24 @@
       <view class="flex-col justify-start">
         <list-with-empty :showEmpty="!productList.length" :showLoading="showLoading" :finished="finished">
           <view class="flex-col empty-wrap" slot="customEmpty">
-            <view class="flex-col items-center self-stretch enptey-content">
-              <image class="ai-background-image_1" src="/static/images/icon_empty_cart.png" />
-              <text class="emppty-label empty-text">您的购物空空如也~</text>
+            <view class="flex-col items-center self-stretch empty-content">
+              <image class="bg-empty" src="/static/images/icon_empty_cart.png" />
+              <text class="empty-label empty-text">您的购物空空如也~</text>
             </view>
             <view class="flex-col self-center">
-              <u-button text="去逛逛" type="primary" size="mini" shape="circle" :plain="true"></u-button>
-              <u-button text="去登录" type="primary" size="mini" shape="circle"></u-button>
+              <view v-if="isLogined" class="flex-col items-center justify-center empty-btn-1">去逛逛</view>
+              <view v-else class="flex-col items-center justify-center empty-btn-2">去登陆</view>
             </view>
           </view>
           <view class="flex-col content-padding">
-            <goods-section :list="productList"></goods-section>
-            <ExpiredGoodsSection class="mt-10"></ExpiredGoodsSection>
+            <goods-section :list="productList" @select="onSelect"></goods-section>
+            <expired-goods-section class="mt-10" :list="productList"></expired-goods-section>
           </view>
         </list-with-empty>
       </view>
-      <Recommend class="mt-10"></Recommend>
+      <recommend class="mt-10"></recommend>
     </view>
-    <Settlement></Settlement>
+    <settlement :list="selectedList"></settlement>
   </view>
 </template>
 
@@ -61,13 +68,21 @@
             name: '课程',
           },
         ],
-        showLoading: true,
+        showLoading: false,
         finished: false,
+        isLogined: false,
         productList: productOrders[0].products,
+        selectedList: [],
       };
     },
 
-    methods: {},
+    methods: {
+      onSelect(indexs) {
+        console.log('indexs', indexs);
+        let selectList = indexs.map((i) => this.productList[i]);
+        this.selectedList = selectList;
+      },
+    },
   };
 </script>
 
@@ -78,32 +93,55 @@
     .tabs-slot-right {
       margin-right: 32rpx;
       .delete-icon {
-        width: 32rpx;
-        height: 35rpx;
+        width: 44rpx;
+        height: 44rpx;
       }
       .delete-text {
         font-size: 28rpx;
         font-family: PingFangSC;
         line-height: 28rpx;
-        color: #a7a7a7;
+        color: #9e9ea0;
       }
     }
     .empty-wrap {
       padding: 48rpx 32rpx;
-      .enptey-content {
+      .empty-content {
         padding: 48rpx 0;
-        .ai-background-image_1 {
+        .bg-empty {
           width: 330rpx;
           height: 184rpx;
         }
-        .emppty-label {
+        .empty-label {
           font-size: 28rpx;
           font-family: PingFangSC;
           line-height: 28rpx;
         }
         .empty-text {
-          color: #a7a7a7;
+          color: #9e9ea0;
         }
+      }
+      .empty-btn-1 {
+        width: 188rpx;
+        height: 68rpx;
+        border-radius: 44rpx;
+        border: 1px solid #b09053;
+        box-sizing: border-box;
+
+        font-size: 28rpx;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #b09053;
+      }
+      .empty-btn-2 {
+        width: 188rpx;
+        height: 68rpx;
+        border-radius: 44rpx;
+        background: #b09053;
+
+        font-size: 28rpx;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #ffffff;
       }
     }
     .content-padding {

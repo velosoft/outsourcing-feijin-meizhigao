@@ -1,13 +1,13 @@
 <template>
   <view class="flex-col wrap">
     <view class="flex-col justify-start">
-      <u-checkbox-group v-model="checkGroupValue">
+      <u-checkbox-group v-model="checkGroupValue" @change="onSelect">
         <u-swipe-action class="default-swipe-cell">
           <view class="flex-col">
             <view class="flex-col mt-20" v-for="(item, index) in list" :key="index">
               <u-swipe-action-item :options="swipeOption" @click="onActionItemClick">
                 <view class="flex-row items-center group">
-                  <u-checkbox v-model="checkValue" shape="circle" activeColor="#b09053" :iconSize="18"></u-checkbox>
+                  <u-checkbox :name="index" shape="circle" activeColor="#b09053" :iconSize="18"></u-checkbox>
                   <view class="flex-row flex-1 ml-12">
                     <image class="shrink-0 thumb" src="/static/images/mock_thumb_003.png" />
                     <view class="flex-col flex-1 ml-12 justify-between">
@@ -21,17 +21,18 @@
                         <view v-else class="flex-row items-center">
                           <price class="cf-black-font" :price="item.productPrice" />
                         </view>
-                        <u-number-box class="cf-number-box-1" v-model="v_model"></u-number-box>
+                        <u-number-box class="cf-number-box-1" v-model="item.productQuantity"></u-number-box>
                       </view>
-                      <view class="items-center" v-if="true">
-                        <text class="red-font additional-label">附加服务：安装服务</text>
-                        <text class="red-font additional-num">￥99.00</text>
+                      <view class="items-center" v-if="item.specialSpecs">
+                        <text class="red-font additional-label"
+                          >{{ item.specialSpecs[0].title }}：{{ item.specialSpecs[0].options[0] }}</text
+                        >
                       </view>
                     </view>
                   </view>
                 </view>
               </u-swipe-action-item>
-              <view class="flex-row tip-wrap mt-16 items-center" v-if="true">
+              <view class="flex-row tip-wrap mt-16 items-center" v-if="index == 2">
                 <view class="flex-col items-center shrink-0 tag justify-center">
                   <text class="tag-label tag-text">满减</text>
                 </view>
@@ -67,6 +68,9 @@
       onActionItemClick(args) {
         // 事件处理方法
       },
+      onSelect(vals) {
+        this.$emit('select', vals);
+      },
     },
   };
 </script>
@@ -86,7 +90,7 @@
         font-size: 28rpx;
         font-family: PingFang SC;
         line-height: 28rpx;
-        color: #030305;
+        color: #111111;
       }
       .title-height {
         width: 395rpx;
@@ -95,35 +99,10 @@
         font-size: 24rpx;
         font-family: PingFang SC;
         line-height: 24rpx;
-        color: #a7a7a7;
+        color: #6d6d6d;
       }
-      .currency {
-        color: #bb3e0c;
-      }
-      .price {
-        font-size: 32rpx;
-        font-family: HarmonyOS Sans SC;
-        line-height: 32rpx;
-        font-weight: 700;
-      }
-      .price-text {
-        color: #bb3e0c;
-      }
-      .decimal {
-        font-size: 24rpx;
-        font-family: HarmonyOS Sans SC;
-        line-height: 24rpx;
-        font-weight: 700;
-      }
-      .decimal-text {
-        margin-left: 4rpx;
-        color: #bb3e0c;
-      }
+
       .additional-label {
-        font-size: 22rpx;
-        line-height: 22rpx;
-      }
-      .additional-num {
         font-size: 22rpx;
         line-height: 22rpx;
       }

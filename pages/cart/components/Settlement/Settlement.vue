@@ -2,7 +2,7 @@
   <view class="flex-col justify-start cart-footer justify-between">
     <view class="flex-row items-center wrap pos justify-between">
       <view class="flex-row items-center">
-        <u-checkbox-group class="group_2" v-model="v_model">
+        <u-checkbox-group class="checkbox" v-model="v_model">
           <u-checkbox
             v-model="v_model_1"
             name="NzKpOYzN"
@@ -11,30 +11,30 @@
             :iconSize="18"
           ></u-checkbox>
         </u-checkbox-group>
-        <text class="checkbox-label checkbox-text ml-12">全选</text>
+        <text class="checkbox-label checkbox-text ml-6">全选</text>
       </view>
-      <view class="flex-row ml-28 items-center">
+      <view class="flex-row items-center">
         <view class="flex-col">
-          <view class="flex-row">
-            <text class="self-start label select-text">已选4件，</text>
-            <text class="self-start label total-text">合计</text>
-            <view class="flex-row items-center self-center">
+          <view class="flex-row items-center justify-end">
+            <text class="label select-text">已选{{ list.length }}件，</text>
+            <text class="label total-text">合计</text>
+            <view class="flex-row items-start">
               <text class="checkbox-label currency">￥</text>
-              <text class="price-text">40.00</text>
+              <text class="price-text">{{ price }}</text>
             </view>
           </view>
-          <view class="flex-row coupon-wrap mt-6 items-center">
+          <view class="flex-row items-center justify-end coupon-wrap mt-6">
             <view class="coupon-num items-center">
               <text class="coupon-label">优惠:</text>
-              <text class="label coupon-price">￥30.00</text>
+              <text class="label coupon-price">￥{{ discount }}</text>
             </view>
-            <view class="flex-col items-center coupon-detial justify-center ml-2" @click="onClick">
+            <view class="flex-col items-center coupon-detial justify-center ml-4" @click="onClick">
               <text class="coupon-detial-text">优惠明细</text>
             </view>
           </view>
         </view>
         <view class="flex-col items-center btn-wrap ml-12 justify-center" @click="onClick_1">
-          <text class="checkbox-label btn-text">去结算(3)</text>
+          <text class="checkbox-label btn-text">去结算({{ list.length }})</text>
         </view>
       </view>
     </view>
@@ -46,7 +46,7 @@
       :safeAreaInsetBottom="false"
       bgColor="transparent"
     >
-      <PopCartCouponDetial></PopCartCouponDetial>
+      <pop-cart-coupon-detial></pop-cart-coupon-detial>
     </u-popup>
   </view>
 </template>
@@ -56,13 +56,26 @@
 
   export default {
     components: { PopCartCouponDetial },
-    props: { selectProduct: { type: Object, default: () => ({}) } },
+    props: {
+      list: {
+        type: Array,
+        default: () => [],
+      },
+    },
     data() {
       return {
         v_model: [],
         v_model_1: '',
         popupVisible: false,
       };
+    },
+    computed: {
+      price() {
+        return (this.list || []).reduce((acc, item, i) => acc + item.productPrice * item.productQuantity, 0).toFixed(2);
+      },
+      discount() {
+        return (this.list || []).reduce((acc, item, i) => acc + (item.discount || 0), 0).toFixed(2);
+      },
     },
 
     methods: {
@@ -94,7 +107,7 @@
       background-color: #ffffff;
       box-shadow: 0rpx 0rpx 20rpx #0000000a;
       z-index: 11000;
-      .group_2 {
+      .checkbox {
         flex-shrink: 0;
         align-self: center;
       }
@@ -104,7 +117,7 @@
         line-height: 28rpx;
       }
       .checkbox-text {
-        color: #333444;
+        color: #111111;
       }
       .label {
         font-size: 24rpx;
@@ -112,18 +125,15 @@
         line-height: 24rpx;
       }
       .select-text {
-        margin-top: 8rpx;
-        color: #a7a7a7;
+        color: #6d6d6d;
       }
       .total-text {
-        margin-top: 8rpx;
-        color: #030305;
+        color: #111111;
       }
       .currency {
         color: #bb3e0c;
       }
       .price-text {
-        margin-left: -8rpx;
         color: #bb3e0c;
         font-size: 36rpx;
         font-family: HarmonyOS Sans SC;
