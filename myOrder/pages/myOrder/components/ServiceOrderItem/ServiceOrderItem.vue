@@ -101,7 +101,9 @@
       <view class="btn btn-gray" v-if="order.status === '等待确认方案'" @click="gotoProductList">
         <text>查看商品方案</text>
       </view>
-      <view class="btn btn-gray" v-if="order.status === '等待确认方案'"><text>查看服务方案</text></view>
+      <view class="btn btn-gray" v-if="order.status === '等待确认方案'" @click="gotoPlan">
+        <text>查看服务方案</text>
+      </view>
       <view class="btn btn-yellow" v-if="order.status === '等待确认方案'">
         <text>确认方案</text>
       </view>
@@ -174,6 +176,9 @@
       },
       gotoAddComment() {
         uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceAddComment/serviceAddComment` });
+      },
+      gotoPlan() {
+        uni.navigateTo({ url: `/myOrder/pages/myOrder/servicePlan/servicePlan` });
       },
     },
   };
