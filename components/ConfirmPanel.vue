@@ -187,7 +187,6 @@
         font-weight: bold;
         padding: 30rpx;
         line-break: 1em;
-        border-bottom: 1px solid #eaeaea;
       }
       .dialog-content {
         .dialog-text {

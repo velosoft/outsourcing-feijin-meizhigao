@@ -50,7 +50,7 @@
       </view>
     </view>
     <view class="flex-row justify-end">
-      <view class="btn btn-gray" v-if="order.status === '未支付'">
+      <view class="btn btn-gray" v-if="order.status === '未支付'" @click="onShowCancel">
         <text>取消订单</text>
       </view>
       <view class="btn btn-yellow" v-if="order.status === '未支付'">
@@ -91,7 +91,7 @@
       <view class="btn btn-gray" v-if="order.status === '等待客户签约'" @click="gotoMeasureResult">
         <text>查看测量结果</text>
       </view>
-      <view class="btn btn-yellow" v-if="order.status === '等待客户签约'">
+      <view class="btn btn-yellow" v-if="order.status === '等待客户签约'" @click="onShowVerify">
         <text>开始签约</text>
       </view>
       <view class="btn btn-gray" v-if="order.status === '等待确认方案'" @click="gotoProductList">
@@ -128,6 +128,17 @@
     <u-popup :show="showConfirmProposal" @close="onCloseConfirmProposal" mode="bottom" :round="12" :closeable="true">
       <PopConfirmProposal @confirm="onCloseConfirmProposal"></PopConfirmProposal>
     </u-popup>
+    <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
+      <pop-order-cancel @click="onCloseCancel"></pop-order-cancel>
+    </u-popup>
+    <confirm-panel
+      :isShow="showVerify"
+      title="实名认证"
+      content="签署合约前实名认证"
+      confirmText="前往实名认证"
+      @cancel="onCloseVerify"
+      @confirm="onCloseVerify"
+    ></confirm-panel>
   </view>
 </template>
 
@@ -135,9 +146,11 @@
   import Price from '@/components/Price/Price';
   import PopReserve from '@/myOrder/pages/myOrder/components/PopReserve/PopReserve.vue';
   import PopConfirmProposal from '@/myOrder/pages/myOrder/components/PopConfirmProposal/PopConfirmProposal.vue';
+  import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
+  import ConfirmPanel from '@/components/ConfirmPanel.vue';
 
   export default {
-    components: { PopReserve, PopConfirmProposal, Price },
+    components: { PopReserve, PopConfirmProposal, Price, PopOrderCancel, ConfirmPanel },
     props: {
       order: Object,
     },
@@ -145,9 +158,23 @@
       return {
         showReserve: false,
         showConfirmProposal: false,
+        showCancel: false,
+        showVerify: false,
       };
     },
     methods: {
+      onShowCancel() {
+        this.showCancel = true;
+      },
+      onCloseCancel() {
+        this.showCancel = false;
+      },
+      onShowVerify() {
+        this.showVerify = true;
+      },
+      onCloseVerify() {
+        this.showVerify = false;
+      },
       onShowReserve() {
         this.showReserve = true;
       },
@@ -161,25 +188,25 @@
         this.showConfirmProposal = false;
       },
       gotoLog() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceLog/serviceLog` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceLog/serviceLog' });
       },
       gotoProductList() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/productList/productList` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
       },
       gotoPriceDiff() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff' });
       },
       gotoDetail() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceOrder/detail/detail/detail` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/detail/detail/detail' });
       },
       gotoAcceptance() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/acceptanceService/acceptanceService` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
       },
       gotoAddComment() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/serviceAddComment/serviceAddComment` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceAddComment/serviceAddComment' });
       },
       gotoPlan() {
-        uni.navigateTo({ url: `/myOrder/pages/myOrder/servicePlan/servicePlan` });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/servicePlan/servicePlan' });
       },
       gotoMeasureResult() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/measureResult/measureResult' });

@@ -15,7 +15,7 @@
           >
             <view class="flex-col items-end" slot="value">
               <text class="font-black text-weight">需支付￥100（未支付）</text>
-              <view class="flex-row items-center mt-8">
+              <view class="flex-row items-center mt-8" @click="gotoPriceDiff">
                 <text class="font-golden">查看核对结果</text>
                 <image class="icon-right-arrow ml-4" src="/myOrder/static/images/icon_golden_right_arrow.png" />
               </view>
@@ -36,7 +36,7 @@
         </view>
       </CFCard>
       <CFCard class="gray-card mt-8" title="服务团队">
-        <view class="flex-row items-center" slot="headerRight">
+        <view class="flex-row items-center" slot="headerRight" @click="callCaptain">
           <image class="icon-phone" src="/myOrder/static/images/icon_golden_phone.png" />
           <text class="text-golden ml-4">联系领队</text>
         </view>
@@ -57,8 +57,14 @@
     data() {
       return {};
     },
-
-    methods: {},
+    methods: {
+      gotoPriceDiff() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/checkPriceDiff/checkPriceDiff' });
+      },
+      callCaptain() {
+        this.$emit('call-captain');
+      },
+    },
   };
 </script>
 

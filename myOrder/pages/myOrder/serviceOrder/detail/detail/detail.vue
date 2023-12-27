@@ -11,12 +11,14 @@
         <CFCard class="mt-12" title="流程">
           <u-steps class="mt-8" direction="column">
             <view class="flex-col ml-4">
-              <u-steps-item><ServiceMeasure :orderData="orderData" slot="desc"></ServiceMeasure></u-steps-item>
-              <u-steps-item class="mt-16">
-                <ServiceProposal :orderData="orderData" slot="desc"></ServiceProposal>
+              <u-steps-item>
+                <ServiceMeasure :orderData="orderData" slot="desc" @call-captain="onShowCaptain"></ServiceMeasure>
               </u-steps-item>
               <u-steps-item class="mt-16">
-                <ServiceExecute :orderData="orderData" slot="desc"></ServiceExecute>
+                <ServiceProposal :orderData="orderData" slot="desc" @call-captain="onShowCaptain"></ServiceProposal>
+              </u-steps-item>
+              <u-steps-item class="mt-16">
+                <ServiceExecute :orderData="orderData" slot="desc" @call-captain="onShowCaptain"></ServiceExecute>
               </u-steps-item>
             </view>
           </u-steps>
@@ -26,6 +28,9 @@
       </view>
       <view class="fixed-bottom flex-col justify-start"><OrderActionButtonGroup></OrderActionButtonGroup></view>
     </view>
+    <u-popup :show="showCaptain" @close="onCloseCaptain" mode="bottom" bgColor="transparent">
+      <pop-captain @cancel="onCloseCaptain"></pop-captain>
+    </u-popup>
   </view>
 </template>
 
@@ -41,6 +46,7 @@
   import ServiceInfoCard from '../../../../../pages/myOrder/components/ServiceInfoCard/ServiceInfoCard.vue';
   import ServiceMeasure from '../../../../../pages/myOrder/serviceOrder/detail/process/ServiceMeasure/ServiceMeasure.vue';
   import ServiceProposal from '../../../../../pages/myOrder/serviceOrder/detail/process/ServiceProposal/ServiceProposal.vue';
+  import PopCaptain from '@/myOrder/pages/myOrder/components/PopCaptain/PopCaptain.vue';
 
   export default {
     components: {
@@ -55,16 +61,24 @@
       ServiceInfoCard,
       ServiceMeasure,
       ServiceProposal,
+      PopCaptain,
     },
     props: {},
     data() {
       return {
         orderData: '',
         title: '',
+        showCaptain: false,
       };
     },
-
-    methods: {},
+    methods: {
+      onShowCaptain() {
+        this.showCaptain = true;
+      },
+      onCloseCaptain() {
+        this.showCaptain = false;
+      },
+    },
   };
 </script>
 

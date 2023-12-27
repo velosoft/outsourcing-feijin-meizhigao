@@ -31,7 +31,7 @@
         </view>
       </CFCard>
       <CFCard class="mt-12" title="商品信息">
-        <TextArrow text="共 20 件商品" slot="headerRight"></TextArrow>
+        <TextArrow text="共 20 件商品" slot="headerRight" @click="onShowProducts"></TextArrow>
         <view class="flex-col mt-16">
           <view class="flex-row justify-between">
             <image
@@ -112,6 +112,9 @@
         <text class="font_10 text-white">确认订单</text>
       </view>
     </view>
+    <u-popup :show="showProducts" @close="onCloseProducts" mode="bottom" :round="12" :closeable="true">
+      <PopProductInfo></PopProductInfo>
+    </u-popup>
   </view>
 </template>
 
@@ -120,19 +123,27 @@
   import NavBar from '@/components/NavBar/NavBar.vue';
   import OrderContactCard from '../../../../../pages/myOrder/components/OrderContactCard/OrderContactCard.vue';
   import TextArrow from '../../../../../pages/myOrder/components/TextArrow/TextArrow.vue';
+  import PopProductInfo from '@/myOrder/pages/myOrder/components/PopProductInfo/PopProductInfo.vue';
 
   export default {
-    components: { CFCard, NavBar, OrderContactCard, TextArrow },
+    components: { CFCard, NavBar, OrderContactCard, TextArrow, PopProductInfo },
     props: {},
     data() {
       return {
         title: '提交支付',
         items: [null, null, null, null, null],
         v_model: '',
+        showProducts: false,
       };
     },
-
-    methods: {},
+    methods: {
+      onShowProducts() {
+        this.showProducts = true;
+      },
+      onCloseProducts() {
+        this.showProducts = false;
+      },
+    },
   };
 </script>
 

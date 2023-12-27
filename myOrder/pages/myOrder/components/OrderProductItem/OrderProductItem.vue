@@ -124,10 +124,4 @@
     line-height: 34rpx;
     color: #b09053;
   }
-  .price-wrapper.seckill {
-    color: #bb3e0c;
-  }
-  .seckill-price {
-    font-size: 24rpx;
-  }
 </style>

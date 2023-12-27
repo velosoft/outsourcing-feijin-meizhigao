@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
 .page {
   background-color: #f8f8f8;
   width: 100%;

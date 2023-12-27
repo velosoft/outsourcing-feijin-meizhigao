@@ -7,14 +7,14 @@
           <u-cell class="cell-in-gray-card mt-16" title="服务内容1" value="区域精准测量" :border="false"></u-cell>
           <u-cell class="cell-in-gray-card mt-16" title="方案" label="商品方案" value="服务方案" :border="false">
             <view class="flex-row" slot="value">
-              <view class="flex-row items-center">
+              <view class="flex-row items-center" @click="gotoProductList">
                 <text class="text-golden">商品方案</text>
                 <image
                   class="shrink-0 icon-golden-right ml-4"
                   src="/myOrder/static/images/icon_golden_right_arrow.png"
                 />
               </view>
-              <view class="flex-row items-center ml-12">
+              <view class="flex-row items-center ml-12" @click="gotoPlan">
                 <text class="text-golden">服务方案</text>
                 <image
                   class="shrink-0 icon-golden-right ml-4"
@@ -33,7 +33,7 @@
         </view>
       </CFCard>
       <CFCard class="gray-card mt-8" title="设计团队">
-        <view class="flex-row items-center" slot="headerRight">
+        <view class="flex-row items-center" slot="headerRight" @click="callCaptain">
           <image class="shrink-0 icon-phone" src="/myOrder/static/images/icon_golden_phone.png" />
           <text class="text-golden ml-4">联系领队</text>
         </view>
@@ -54,8 +54,17 @@
     data() {
       return {};
     },
-
-    methods: {},
+    methods: {
+      gotoProductList() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
+      },
+      gotoPlan() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/servicePlan/servicePlan' });
+      },
+      callCaptain() {
+        this.$emit('call-captain');
+      },
+    },
   };
 </script>
 

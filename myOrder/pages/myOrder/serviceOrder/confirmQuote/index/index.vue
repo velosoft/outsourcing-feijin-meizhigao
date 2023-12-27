@@ -13,7 +13,7 @@
           </view>
         </CFCard>
         <CFCard class="mt-12" title="商品信息">
-          <TextArrow text="共20件" slot="headerRight"></TextArrow>
+          <TextArrow text="共20件" slot="headerRight" @click="onShowProducts"></TextArrow>
           <view class="flex-col mt-16">
             <view class="flex-row justify-between">
               <image
@@ -68,25 +68,36 @@
         </view>
       </view>
     </view>
+    <u-popup :show="showProducts" @close="onCloseProducts" mode="bottom" :round="12" :closeable="true">
+      <PopProductInfo></PopProductInfo>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import CFCard from '@/components/Card/Card';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import TagArrow from '../../../../../pages/myOrder/components/TagArrow/TagArrow.vue';
-  import TextArrow from '../../../../../pages/myOrder/components/TextArrow/TextArrow.vue';
+  import TagArrow from '@/myOrder/pages/myOrder/components/TagArrow/TagArrow.vue';
+  import TextArrow from '@/myOrder/pages/myOrder/components/TextArrow/TextArrow.vue';
+  import PopProductInfo from '@/myOrder/pages/myOrder/components/PopProductInfo/PopProductInfo.vue';
 
   export default {
-    components: { CFCard, NavBar, TagArrow, TextArrow },
+    components: { CFCard, NavBar, TagArrow, TextArrow, PopProductInfo },
     props: {},
     data() {
       return {
         title: '确认报价',
         items: [null, null, null, null, null],
+        showProducts: false,
       };
     },
     methods: {
+      onShowProducts() {
+        this.showProducts = true;
+      },
+      onCloseProducts() {
+        this.showProducts = false;
+      },
       gotoSubmitPayment() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/submitPayment/index/index' });
       },

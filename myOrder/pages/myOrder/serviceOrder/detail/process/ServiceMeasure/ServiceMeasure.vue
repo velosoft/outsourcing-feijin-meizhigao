@@ -12,12 +12,9 @@
           ></u-cell>
           <u-cell class="cell-in-gray-card mt-16" title="服务内容1" value="区域精准测量" :border="false"></u-cell>
           <u-cell class="cell-in-gray-card mt-16" title="测量结果" value="查看结果" :border="false">
-            <view class="flex-row items-center" slot="value">
+            <view class="flex-row items-center" slot="value" @click="gotoMeasureResult">
               <text class="text-golden">查看结果</text>
-              <image
-                class="icon-right-arrow ml-4"
-                src="/myOrder/static/images/icon_golden_right_arrow.png"
-              />
+              <image class="icon-right-arrow ml-4" src="/myOrder/static/images/icon_golden_right_arrow.png" />
             </view>
           </u-cell>
           <u-cell
@@ -29,10 +26,7 @@
           <u-cell class="cell-in-gray-card mt-16" title="合约（已签署）" :border="false">
             <view class="flex-row items-center" slot="value">
               <text class="text-golden">查看合约</text>
-              <image
-                class="icon-right-arrow ml-4"
-                src="/myOrder/static/images/icon_golden_right_arrow.png"
-              />
+              <image class="icon-right-arrow ml-4" src="/myOrder/static/images/icon_golden_right_arrow.png" />
             </view>
           </u-cell>
           <u-cell
@@ -51,11 +45,8 @@
         </view>
       </CFCard>
       <CFCard class="gray-card mt-8" title="测量团队">
-        <view class="flex-row items-center" slot="headerRight">
-          <image
-            class="icon-phone"
-            src="/myOrder/static/images/icon_golden_phone.png"
-          />
+        <view class="flex-row items-center" slot="headerRight" @click="callCaptain">
+          <image class="icon-phone" src="/myOrder/static/images/icon_golden_phone.png" />
           <text class="text-golden ml-4">联系领队</text>
         </view>
         <TeamListPanel class="mt-8"></TeamListPanel>
@@ -81,8 +72,14 @@
         collapseStatus: 'closed',
       };
     },
-
-    methods: {},
+    methods: {
+      gotoMeasureResult() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/measureResult/measureResult' });
+      },
+      callCaptain() {
+        this.$emit('call-captain');
+      },
+    },
   };
 </script>
 
