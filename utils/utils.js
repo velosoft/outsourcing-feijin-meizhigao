@@ -1,5 +1,5 @@
 // 取价格的整数部分
-export function getPriceIntergetPart(price) {
+export function getPriceIntergerPart(price) {
   let val = Math.floor(price).toString();
   return val;
 }

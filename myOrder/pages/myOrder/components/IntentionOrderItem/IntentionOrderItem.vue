@@ -26,11 +26,7 @@
             <text class="line-clamp-one desc desc-text">{{ order.desc }}</text>
             <text class="desc quantity">{{ `x${order.quantity}` }}</text>
           </view>
-          <view class="flex-row price-wrapper">
-            <text class="price-number-small">￥</text>
-            <text class="price-number">{{ getPriceIntergetPart(order.price) }}</text>
-            <text class="price-number-small">.{{ getPriceDecimalPart(order.price) }}</text>
-          </view>
+          <price class="cf-black-font" :price="order.price" />
         </view>
       </view>
       <view class="flex-row justify-between items-start self-stretch time-wrapper order-mt-8">
@@ -114,9 +110,9 @@
 </template>
 
 <script>
-  import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
+    components: { Price },
     props: {
       order: Object,
     },
@@ -124,14 +120,7 @@
       return {};
     },
 
-    methods: {
-      getPriceIntergetPart(val) {
-        return getPriceIntergetPart(val);
-      },
-      getPriceDecimalPart(val) {
-        return getPriceDecimalPart(val);
-      },
-    },
+    methods: {},
   };
 </script>
 

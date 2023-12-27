@@ -10,20 +10,16 @@
       <text class="self-start font">订单编号 {{ order.orderNumber }}</text>
       <view class="flex-row items-center self-stretch mt-8">
         <text class="font">开票金额</text>
-        <view class="price-wrapper ml-8">
-          <text class="price-number-10">￥</text>
-          <text class="price-number-16">{{ getPriceIntergetPart(order.totalAmount) }}</text>
-          <text class="price-number-10">.{{ getPriceDecimalPart(order.totalAmount) }}</text>
-        </view>
+        <price class="cf-black-font ml-8" :price="order.totalAmount" />
       </view>
     </view>
   </view>
 </template>
 
 <script>
-  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
+    components: { Price },
     props: {
       order: {
         type: Object,
@@ -34,14 +30,7 @@
       return {};
     },
 
-    methods: {
-      getPriceIntergetPart(val) {
-        return getPriceIntergetPart(val);
-      },
-      getPriceDecimalPart(val) {
-        return getPriceDecimalPart(val);
-      },
-    },
+    methods: {},
   };
 </script>
 

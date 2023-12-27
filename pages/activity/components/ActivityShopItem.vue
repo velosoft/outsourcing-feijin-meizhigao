@@ -13,11 +13,7 @@
       <view class="flex-col">
         <text class="product-price-font price-through mt-4">{{ item.originPrice }}</text>
         <view class="bottom-top flex-row justify-between items-center" v-if="activityStatus == 2">
-          <view class="flex-row items-start price-wraper">
-            <text class="price-symbol symbol-text">￥</text>
-            <text class="price-font price-text">{{ getPriceIntergetPart(item.price) }}</text>
-            <text class="price-last price-last-text">.{{ getPriceDecimalPart(item.price) }}</text>
-          </view>
+          <price class="price-wraper cf-black-font" :price="item.price" />
           <view class="flex-col items-center btn" @click="goDetail"
             ><text class="btn-font btn-text">原价购买</text></view
           >
@@ -44,11 +40,7 @@
           </view>
           <view class="flex-row items-center relative btn-left">
             <text class="btn-price-label">秒杀价</text>
-            <view class="flex-row items-start btn-price">
-              <text class="price-symbol btn-psice-symbol">￥</text>
-              <text class="price-font btn-price-number">{{ getPriceIntergetPart(item.price) }}</text>
-              <text class="price-last">.{{ getPriceDecimalPart(item.price) }}</text>
-            </view>
+            <price class="cf-red-font" :price="item.price" />
           </view>
           <view class="btn-right">
             <text class="relative btn-font" v-if="activityStatus == 0">即将开始</text>
@@ -61,7 +53,9 @@
 </template>
 
 <script>
+  import Price from '@/components/Price/Price';
   export default {
+    components: { Price },
     props: {
       item: { type: Object },
       activityStatus: { type: Number },
@@ -81,14 +75,6 @@
       },
     },
     methods: {
-      getPriceIntergetPart(price) {
-        let val = Math.floor(price).toString();
-        return val;
-      },
-      getPriceDecimalPart(price) {
-        let val = price.toFixed(2).split('.')[1];
-        return val;
-      },
       getPercentage(item) {
         let val = (item.invertory / (item.maxInvertory || 1)) * 100;
         if (val > 100) val = 100;
@@ -156,18 +142,6 @@
         margin-top: 6rpx;
         .price-wraper {
           margin-right: 16rpx;
-
-          .price-text {
-            color: #030305;
-            line-height: 32rpx;
-          }
-          .symbol-text {
-            color: #030305;
-          }
-
-          .price-last-text {
-            color: #030305;
-          }
         }
         .btn {
           padding: 16rpx 0;

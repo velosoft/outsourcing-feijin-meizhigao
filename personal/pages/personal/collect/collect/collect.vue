@@ -38,17 +38,11 @@
                   <view class="flex-col justify-start items-start mt-10">
                     <view class="flex-col">
                       <view class="flex-row items-center" v-if="!item.isSecKill">
-                        <text class="font-prefix">￥</text>
-                        <view class="flex-row items-start">
-                          <text class="font-price">{{ getPriceIntergetPart(item.price) }}</text>
-                          <text class="font-prefix ml-2">.{{ getPriceDecimalPart(item.price) }}</text>
-                        </view>
+                        <price class="cf-black-font" :price="item.price" />
                       </view>
                       <view class="flex-row items-start" v-else>
-                        <text class="text-kill">秒杀价</text>
-                        <text class="text-kill">￥</text>
-                        <text class="font-price price-red">{{ getPriceIntergetPart(item.price) }}</text>
-                        <text class="text-kill ml-2">.{{ getPriceDecimalPart(item.price) }}</text>
+                        <text class="text-kill mt-2">秒杀价</text>
+                        <price class="cf-red-font" :price="item.price" />
                       </view>
                     </view>
                   </view>
@@ -67,10 +61,10 @@
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import { favoriteItems } from '@/mock/personal/favorites.js';
-  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
+  import Price from '@/components/Price/Price';
 
   export default {
-    components: { FjSticky, ListContainer, NavBar },
+    components: { FjSticky, ListContainer, NavBar, Price },
     props: {},
     data() {
       return {
@@ -104,12 +98,6 @@
     methods: {
       onActionItemClick(args) {
         console.log(args);
-      },
-      getPriceIntergetPart(val) {
-        return getPriceIntergetPart(val);
-      },
-      getPriceDecimalPart(val) {
-        return getPriceDecimalPart(val);
       },
     },
   };

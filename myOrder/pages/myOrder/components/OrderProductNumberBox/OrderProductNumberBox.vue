@@ -6,11 +6,7 @@
       <text class="line-clamp-two font title cf-black-font">{{ product.productName }}</text>
       <text class="line-clamp-one desc cf-gray-font">{{ product.productDescription }}</text>
       <view class="flex-row justify-between items-center">
-        <view class="price-wrapper">
-          <text class="price-number-10">￥</text>
-          <text class="price-number-16">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-number-10">.{{ getPriceDecimalPart(product.productPrice) }}</text>
-        </view>
+        <price class="cf-black-font" :price="product.productPrice" />
         <u-number-box class="cf-number-box-2" v-model="numVal"></u-number-box>
       </view>
     </view>
@@ -18,9 +14,9 @@
 </template>
 
 <script>
-  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
+    components: { Price },
     props: {
       product: {
         type: Object,
@@ -34,14 +30,7 @@
       };
     },
 
-    methods: {
-      getPriceIntergetPart(val) {
-        return getPriceIntergetPart(val);
-      },
-      getPriceDecimalPart(val) {
-        return getPriceDecimalPart(val);
-      },
-    },
+    methods: {},
   };
 </script>
 

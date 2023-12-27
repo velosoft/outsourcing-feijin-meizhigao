@@ -22,11 +22,7 @@
             <text class="line-clamp-one desc desc-text">{{ order.desc }}</text>
             <text class="desc quantity">{{ `x${order.quantity}` }}</text>
           </view>
-          <view class="flex-row price-wrapper">
-            <text class="price-number-small">￥</text>
-            <text class="price-number">{{ getPriceIntergetPart(order.price) }}</text>
-            <text class="price-number-small">.{{ getPriceDecimalPart(order.price) }}</text>
-          </view>
+          <price class="cf-black-font" :price="order.price" />
         </view>
       </view>
       <view class="flex-col items-start self-start time-wrapper order-mt-8">
@@ -136,12 +132,12 @@
 </template>
 
 <script>
-  import { getPriceDecimalPart, getPriceIntergetPart } from '@/utils/utils.js';
+  import Price from '@/components/Price/Price';
   import PopReserve from '@/myOrder/pages/myOrder/components/PopReserve/PopReserve.vue';
   import PopConfirmProposal from '@/myOrder/pages/myOrder/components/PopConfirmProposal/PopConfirmProposal.vue';
 
   export default {
-    components: { PopReserve, PopConfirmProposal },
+    components: { PopReserve, PopConfirmProposal, Price },
     props: {
       order: Object,
     },
@@ -152,12 +148,6 @@
       };
     },
     methods: {
-      getPriceIntergetPart(val) {
-        return getPriceIntergetPart(val);
-      },
-      getPriceDecimalPart(val) {
-        return getPriceDecimalPart(val);
-      },
       onShowReserve() {
         this.showReserve = true;
       },

@@ -7,7 +7,7 @@
         <view class="flex-col flex-1 info">
           <activity-card
             v-if="pageData.product.activity"
-            :price="getPriceIntergetPart(pageData.product.price)"
+            :price="getPriceIntergerPart(pageData.product.price)"
             :decimalPrice="getPriceDecimalPart(pageData.product.price)"
             :originPrice="pageData.product.originPrice"
             :time="pageData.product.activity.time"
@@ -17,7 +17,7 @@
             <product-header
               :title="pageData.product.title"
               :content="pageData.product.content"
-              :price="getPriceIntergetPart(pageData.product.price)"
+              :price="getPriceIntergerPart(pageData.product.price)"
               :decimalPrice="getPriceDecimalPart(pageData.product.price)"
               :originPrice="pageData.product.originPrice"
               :discountTags="pageData.product.discountTags"
@@ -209,7 +209,7 @@
         this.showAftersalePopup = false;
       },
       openPop() {},
-      getPriceIntergetPart(price) {
+      getPriceIntergerPart(price) {
         let val = Math.floor(price).toString();
         return val;
       },

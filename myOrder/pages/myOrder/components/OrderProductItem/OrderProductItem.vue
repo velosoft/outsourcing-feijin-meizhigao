@@ -17,15 +17,9 @@
       <view class="flex-row items-center justify-between">
         <view class="price-wrapper seckill" v-if="product.isSeckill">
           <text class="seckill-price">秒杀价</text>
-          <text class="price-number-10">￥</text>
-          <text class="price-number-16">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-number-10">.{{ getPriceDecimalPart(product.productPrice) }}</text>
+          <price :price="product.productPrice" />
         </view>
-        <view class="price-wrapper" v-else>
-          <text class="price-number-10">￥</text>
-          <text class="price-number-16">{{ getPriceIntergetPart(product.productPrice) }}</text>
-          <text class="price-number-10">.{{ getPriceDecimalPart(product.productPrice) }}</text>
-        </view>
+        <price class="cf-black-font" :price="product.productPrice" v-else />
         <text class="sale-status" v-if="product.afterSaleStatus && product.afterSaleStatus !== '正常'">{{
           product.afterSaleStatus
         }}</text>
@@ -35,11 +29,11 @@
 </template>
 
 <script>
-  import { getPriceIntergetPart, getPriceDecimalPart } from '@/utils/utils.js';
+  import Price from '@/components/Price/Price';
   import { productOrders } from '@/mock/personal/orders';
 
   export default {
-    components: {},
+    components: { Price },
     props: {
       product: {
         type: Object,
@@ -82,14 +76,7 @@
         }
       },
     },
-    methods: {
-      getPriceIntergetPart(val) {
-        return getPriceIntergetPart(val);
-      },
-      getPriceDecimalPart(val) {
-        return getPriceDecimalPart(val);
-      },
-    },
+    methods: {},
   };
 </script>
 
