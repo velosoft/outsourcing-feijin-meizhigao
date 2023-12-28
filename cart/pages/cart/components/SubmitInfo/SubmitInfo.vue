@@ -94,7 +94,7 @@
     font-size: 28rpx;
     font-family: 苹方;
     line-height: 28rpx;
-    color: #6c6c6c;
+    color: #6d6d6d;
   }
   .text-area-gap {
     margin-bottom: 32rpx;
@@ -104,7 +104,7 @@
     color: #6d6d6d;
   }
   .textare-tips {
-    color: #a7a7a7;
+    color: #6d6d6d;
     font-size: 26rpx;
     line-height: 26rpx;
   }

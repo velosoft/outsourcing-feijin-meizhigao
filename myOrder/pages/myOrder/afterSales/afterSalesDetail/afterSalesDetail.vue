@@ -7,7 +7,7 @@
         <RowStep :showCell="false" :stepData="stepData"></RowStep>
         <CFCard class="mt-12" title="售后信息">
           <view class="flex-col content-info">
-            <OrderProductItem></OrderProductItem>
+            <OrderProductItem :product="product"></OrderProductItem>
             <view class="flex-col mt-24">
               <u-cell class="cell-in-white-card-weight" title="售后类型" value="客服介入" :border="false"></u-cell>
               <u-cell
@@ -27,7 +27,7 @@
                   <text class="cell-value cell-value-text">查看订单</text>
                   <image
                     class="icon-arrow ml-6"
-                    src="https://dev.ft.velosoft.cn/api/image?token=658b8253d6bce000114dd28c&name=icon_golden_right_arrow.png"
+                    src="https://dev.ft.velosoft.cn/api/image?token=658ccc0bd6bce000114de0dd&name=icon_golden_right_arrow.png"
                   />
                 </view>
               </u-cell>
@@ -36,76 +36,7 @@
         </CFCard>
         <CFCard class="mt-12" title="售后进度">
           <view class="flex-col step-con-top mt-16">
-            <u-steps direction="column">
-              <view class="flex-col group_14 ml-8">
-                <u-steps-item>
-                  <OrderProcessCard title="客服已处理" slot="desc">
-                    <CFCard class="gray-card mt-10">
-                      <view class="flex-col">
-                        <u-cell
-                          class="cell-in-gray-card"
-                          title="订单时间"
-                          value="2024-05-14 12:00:00"
-                          :border="false"
-                        ></u-cell>
-                        <u-cell
-                          class="cell-in-gray-card mt-14"
-                          title="处理结果"
-                          value="更换测试人员，已安排张三继续执行…"
-                          :border="false"
-                        ></u-cell>
-                      </view>
-                    </CFCard>
-                  </OrderProcessCard>
-                </u-steps-item>
-                <u-steps-item class="mt-14">
-                  <OrderProcessCard title="审核通过" slot="desc">
-                    <CFCard class="gray-card section_10 mt-8">
-                      <view class="flex-col">
-                        <u-cell
-                          class="cell-in-gray-card"
-                          title="订单时间"
-                          value="2024-05-14 12:00:00"
-                          :border="false"
-                        ></u-cell>
-                        <u-cell
-                          class="cell-in-gray-card step-con-top"
-                          title="审核备注"
-                          value="已安排客服介入"
-                          :border="false"
-                        ></u-cell>
-                      </view>
-                    </CFCard>
-                  </OrderProcessCard>
-                </u-steps-item>
-                <u-steps-item class="mt-14">
-                  <OrderProcessCard title="提交申请" slot="desc">
-                    <CFCard class="gray-card section_10 mt-8">
-                      <view class="flex-col">
-                        <u-cell
-                          class="cell-in-gray-card"
-                          title="订单时间"
-                          value="2024-05-14 12:00:00"
-                          :border="false"
-                        ></u-cell>
-                        <u-cell
-                          class="cell-in-gray-card step-con-top"
-                          title="申请原因"
-                          value="需要客服介入"
-                          :border="false"
-                        ></u-cell>
-                        <u-cell
-                          class="cell-in-gray-card step-con-top"
-                          title="申请理由"
-                          value="需要客服介入"
-                          :border="false"
-                        ></u-cell>
-                      </view>
-                    </CFCard>
-                  </OrderProcessCard>
-                </u-steps-item>
-              </view>
-            </u-steps>
+            <AfterSaleSteps></AfterSaleSteps>
             <view class="flex-col justify-start items-end step-con-top">
               <view class="flex-col justify-start items-center text-wrapper">
                 <text class="cell-value btn-text">取消售后</text>
@@ -116,19 +47,18 @@
       </view>
     </view>
   </view>
-</template>
-
-<script>
+  </template>
+  
+  <script>
+  import AfterSaleSteps from '../../../../pages/myOrder/afterSales/components/AfterSaleSteps/AfterSaleSteps.vue';
   import CFCard from '@/components/Card/Card';
   import HeaderStatusCard from '../../../../pages/myOrder/afterSales/components/HeaderStatusCard/HeaderStatusCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import OrderProcessCard from '@/components/OrderProcessCard';
   import OrderProductItem from '../../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import RowStep from '../../../../pages/myOrder/afterSales/components/RowStep/RowStep.vue';
-  import { productOrders } from '@/mock/personal/orders';
-
+  
   export default {
-    components: { CFCard, HeaderStatusCard, NavBar, OrderProcessCard, OrderProductItem, RowStep },
+    components: { AfterSaleSteps, CFCard, HeaderStatusCard, NavBar, OrderProductItem, RowStep },
     props: {},
     data() {
       return {
@@ -138,17 +68,17 @@
           descMain: '',
           descSecondary: '',
         },
-        product: productOrders,
+        product: {},
         stepData: {},
         title: '订单详情',
       };
     },
-
+  
     methods: {},
   };
-</script>
-
-<style scoped lang="less">
+  </script>
+  
+  <style scoped lang="less">
   .page {
     background-color: #ffffff;
     width: 100%;
@@ -173,12 +103,6 @@
       }
       .step-con-top {
         margin-top: 32rpx;
-        .group_14 {
-          flex: 1 1 0;
-          .section_10 {
-            align-self: stretch;
-          }
-        }
         .text-wrapper {
           padding: 8rpx 0;
           border-radius: 28rpx;
@@ -200,4 +124,4 @@
       }
     }
   }
-</style>
+  </style>

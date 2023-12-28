@@ -99,7 +99,7 @@
       .size-font {
         font-size: 24rpx;
         font-family: PingFangSC;
-        color: #a7a7a7;
+        color: #6d6d6d;
       }
       .size-text {
         line-height: 34rpx;
@@ -134,16 +134,16 @@
         font-size: 20rpx;
         font-family: PingFangSC;
         line-height: 20rpx;
-        color: #6c6c6c;
+        color: #6d6d6d;
       }
       .currency-normal {
-        color: #030305;
+        color: #111111;
       }
       .price-normal {
-        color: #030305;
+        color: #111111;
       }
       .decimal-noraml {
-        color: #030305;
+        color: #111111;
         font-size: 20rpx;
         font-family: HarmonyOS Sans SC;
         font-weight: 700;
@@ -162,7 +162,7 @@
         line-height: 26rpx;
       }
       .select-time {
-        color: #a7a7a7;
+        color: #6d6d6d;
         line-height: 26rpx;
       }
       .icon-arrow {
@@ -174,7 +174,7 @@
       font-size: 28rpx;
       font-family: PingFangSC;
       line-height: 28rpx;
-      color: #030305;
+      color: #111111;
     }
   }
 </style>
