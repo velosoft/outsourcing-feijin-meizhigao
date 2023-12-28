@@ -9,7 +9,7 @@
               <view class="flex-col relative">
                 <view class="items-end flex-row">
                   <text class="coupon-num">10</text>
-                  <text class="unit condition ml-2">元</text>
+                  <text class="condition unit ml-2">元</text>
                 </view>
                 <text class="condition mt-12">满100元使用</text>
               </view>
