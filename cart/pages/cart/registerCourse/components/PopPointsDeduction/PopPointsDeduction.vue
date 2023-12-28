@@ -1,16 +1,16 @@
 <template>
-  <PopupWithButton title="积分抵扣详情" buttonText="确定" @click="onConfirm">
+  <popup-with-button title="积分抵扣详情" buttonText="确定" @click="onConfirm">
     <view class="flex-col justify-start button view">
-      <u-radio-group v-model="radioValue">
+      <u-radio-group v-model="radioValue" class="cf-radio-group">
         <view class="flex-col flex-1">
           <view class="flex-row justify-between cell-wrap items-center">
             <view class="flex-row items-center">
-              <text class="label">使用350积分抵扣</text>
+              <text class="label">使用积分抵扣</text>
               <text class="label price-num">￥35.00</text>
             </view>
             <u-radio
               class="text"
-              v-model="radioUseValue"
+              name="使用积分抵扣"
               activeColor="#030305"
               inactiveColor="#f8f8f8"
               iconSize="40rpx"
@@ -21,7 +21,7 @@
             <text class="label">不使用积分</text>
             <u-radio
               class="text"
-              v-model="radioUnUseValue"
+              name="不使用积分"
               activeColor="#030305"
               inactiveColor="#f8f8f8"
               iconSize="40rpx"
@@ -31,23 +31,23 @@
         </view>
       </u-radio-group>
     </view>
-  </PopupWithButton>
-  </template>
-  
-  <script>
+  </popup-with-button>
+</template>
+
+<script>
   import PopupWithButton from '@/components/Popup/PopupWithButton';
-  
+
   export default {
     components: { PopupWithButton },
-    props: { pointsDeduction: { type: Object, default: () => ({}) } },
+    props: {
+      pointsDeduction: { type: Object, default: () => ({}) },
+    },
     data() {
       return {
         radioValue: '',
-        radioUseValue: '',
-        radioUnUseValue: '',
       };
     },
-  
+
     methods: {
       onConfirm() {
         // 事件处理方法
@@ -55,9 +55,9 @@
       },
     },
   };
-  </script>
-  
-  <style scoped lang="less">
+</script>
+
+<style scoped lang="less">
   .button {
     align-self: stretch;
     .cell-wrap {
@@ -85,6 +85,6 @@
     }
   }
   .view {
-    padding: 60rpx 0 86rpx;
+    padding: 40rpx 0 86rpx;
   }
-  </style>
+</style>
