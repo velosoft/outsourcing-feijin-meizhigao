@@ -80,7 +80,7 @@
       }
     }
     .price-cell {
-      margin-top: 120rpx;
+      margin-top: 80rpx;
       .discount {
         font-size: 28rpx;
         line-height: 28rpx;
@@ -90,7 +90,7 @@
         font-family: HarmonyOS Sans SC;
         line-height: 26rpx;
         font-weight: 700;
-        color: #030305;
+        color: #111111;
       }
       .total {
         font-size: 28rpx;
@@ -101,7 +101,7 @@
       font-size: 26rpx;
       font-family: PingFangSC;
       line-height: 26rpx;
-      color: #6c6c6c;
+      color: #6d6d6d;
     }
   }
 </style>

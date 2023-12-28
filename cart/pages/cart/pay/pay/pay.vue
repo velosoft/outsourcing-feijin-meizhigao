@@ -1,14 +1,14 @@
 <template>
   <view class="flex-col page height-full">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 group">
       <view class="flex-col items-center pay-num-wrap">
         <text class="pay-label pay-text">需支付金额</text>
-        <text class="pay-num mt-14">￥200.00</text>
+        <text class="pay-num mt-12">￥200.00</text>
       </view>
       <view class="flex-col pay-type-wrap">
         <text class="self-start pay-type-title">请选择支付方式</text>
-        <PayCard class="pay-card mt-22" :payInfo="payInfo"></PayCard>
+        <pay-card class="pay-card mt-16" :payInfo="payInfo"></pay-card>
       </view>
       <view class="fixed-bottom-safe2 flex-col footer-btn">
         <u-button class="button" text="确认付款" type="primary" size="large" shape="circle" @click="onClick"></u-button>
@@ -72,14 +72,14 @@
           font-size: 26rpx;
           font-family: PingFangSC;
           line-height: 26rpx;
-          color: #6c6c6c;
+          color: #6d6d6d;
         }
         .pay-text {
           font-size: 28rpx;
           line-height: 28rpx;
         }
         .pay-num {
-          color: #030305;
+          color: #111111;
           font-size: 52rpx;
           font-family: HarmonyOS Sans SC;
           font-weight: 700;
@@ -87,12 +87,12 @@
         }
       }
       .pay-type-wrap {
-        margin: 112rpx 24rpx 0;
+        margin: 80rpx 24rpx 0;
         .pay-type-title {
           font-size: 26rpx;
           font-family: PingFangSC;
           line-height: 26rpx;
-          color: #a7a7a7;
+          color: #6d6d6d;
         }
         .pay-card {
           align-self: stretch;
