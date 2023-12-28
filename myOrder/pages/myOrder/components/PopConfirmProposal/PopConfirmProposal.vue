@@ -1,5 +1,11 @@
 <template>
-  <PopupWithButton title="确认方案" buttonText="确认方案" @click="onConfirm">
+  <popup-with-button
+    title="确认方案"
+    buttonText="确认方案"
+    :btnStyle="checkbox.length ? '' : disableBtnStyle"
+    padding="40rpx 32rpx 60rpx 32rpx"
+    @click="onConfirm"
+  >
     <view class="flex-col main">
       <view class="flex-row justify-between header">
         <text class="tip-title header-title">设计方案</text>
@@ -22,19 +28,18 @@
           3、支付成功后，系统会为您自动生成组件清单，并创建一张商品订单，商品订单详细信息可前往【我的-我的商品订单】查看
         </text>
       </view>
-      <u-checkbox-group class="checkbox" v-model="v_model" activeColor="#B09053">
+      <u-checkbox-group class="cf-checkbox-group checkbox" v-model="checkbox" activeColor="#B09053">
         <u-checkbox
-          v-model="v_model_1"
           label="我已阅读并同意该定制商品设计方案"
           name="p1g24UBD"
           shape="circle"
-          iconSize="32rpx"
+          iconSize="28rpx"
           labelSize="26rpx"
           labelColor="#b09053"
         ></u-checkbox>
       </u-checkbox-group>
     </view>
-  </PopupWithButton>
+  </popup-with-button>
 </template>
 
 <script>
@@ -44,7 +49,13 @@
     components: { PopupWithButton },
     props: {},
     data() {
-      return {};
+      return {
+        checkbox: [],
+        disableBtnStyle: {
+          backgroundColor: '#c5c5c5 !important',
+          border: 'unset !important',
+        },
+      };
     },
     methods: {
       gotoProductList() {
@@ -54,6 +65,9 @@
         uni.navigateTo({ url: `/myOrder/pages/myOrder/servicePlan/servicePlan` });
       },
       onConfirm() {
+        if (!this.chckbox.length) {
+          return;
+        }
         this.$emit('confirm');
       },
     },
