@@ -33,7 +33,8 @@
     <view class="flex-row justify-between items-center reserve-wrap mt-40" v-if="true">
       <text class="title reserve-text">预约时间</text>
       <view class="flex-row items-center">
-        <text class="self-center title select-time">请选择预约时间</text>
+        <text class="title" v-if="timeSelected">{{ timeSelected }}</text>
+        <text class="title select-time" v-else>请选择预约时间</text>
         <image class="icon-arrow ml-4" src="/cart/static/images/icon_right_arrow_07.png" />
       </view>
     </view>
@@ -48,6 +49,8 @@
     data() {
       return {
         items: [null, null],
+        timeSelected: '2023.09.24',
+        // timeSelected: '',
       };
     },
 
@@ -141,7 +144,6 @@
 
       .select-time {
         color: #6d6d6d;
-        line-height: 26rpx;
       }
       .icon-arrow {
         width: 24rpx;
