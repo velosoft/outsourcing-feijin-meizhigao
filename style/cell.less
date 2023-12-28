@@ -150,12 +150,13 @@
     position: relative;
   }
 
-  /deep/ .required::before {
+  /deep/ .cell-required::before {
     position: absolute;
-    left: 0px;
+    left: 0;
     top: 18px;
     font-size: 28rpx;
     color: #ff1801;
+    content: '*';
   }
 
   /deep/ .u-cell__body {

@@ -1,25 +1,27 @@
 <template>
-  <u-cell
-    class="cell-wrapper"
-    :title="label"
-    :isLink="isLink"
-    :clickable="clickable"
-    :border="border"
-    @click="$emit('click')"
-  >
-    <view :class="inputWrapperClass" slot="value">
-      <slot name="input">
-        <input
-          :class="inputClass"
-          :placeholder-style="placeholderStyle"
-          :placeholder="placeholder"
-          :value="value"
-          :disabled="readonly"
-          @input="onInput"
-        />
-      </slot>
-    </view>
-  </u-cell>
+  <view class="wrapper">
+    <u-cell
+      class="cell-wrapper cell-required"
+      :title="label"
+      :isLink="isLink"
+      :clickable="clickable"
+      :border="border"
+      @click="$emit('click')"
+    >
+      <view :class="inputWrapperClass" slot="value">
+        <slot name="input">
+          <input
+            :class="inputClass"
+            :placeholder-style="placeholderStyle"
+            :placeholder="placeholder"
+            :value="value"
+            :disabled="readonly"
+            @input="onInput"
+          />
+        </slot>
+      </view>
+    </u-cell>
+  </view>
 </template>
 
 <script>
