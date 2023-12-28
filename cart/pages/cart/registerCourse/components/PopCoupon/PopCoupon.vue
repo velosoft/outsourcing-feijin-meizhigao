@@ -43,7 +43,6 @@
     props: { couponLiist: { type: Object, default: () => ({}) } },
     data() {
       return {
-        radioValue: '',
         radioGroupValue: '',
         items: [null, null, null, null, null],
       };
