@@ -16,11 +16,7 @@
             <text class="label spec">{{ afterSaleOrder.goods.desc }}</text>
             <text class="label num">{{ 'x' + afterSaleOrder.goods.quantity }}</text>
           </view>
-          <view class="flex-row">
-            <text class="currency">￥</text>
-            <text class="price">{{ afterSaleOrder.goods.price }}</text>
-            <text class="decimal">.00</text>
-          </view>
+          <price class="cf-black-font" :price="afterSaleOrder.goods.price" />
         </view>
       </view>
       <view class="flex-row justify-between items-center tips-wrap">
@@ -30,25 +26,10 @@
           <text class="refund ml-8">{{ '¥' + afterSaleOrder.refundNumber + '.00' }}</text>
         </view>
       </view>
-      <u-button
-        class="cf-btn-black button"
-        text="撤销申请"
-        type="info"
-        size="small"
-        shape="square"
-        :plain="true"
-        v-if="afterSaleOrder.orderStatus == '申请中'"
-        @click="onShowDialog"
-      ></u-button>
-      <u-button
-        class="cf-btn-black button"
-        text="删除记录"
-        type="info"
-        size="small"
-        shape="square"
-        :plain="true"
-        v-if="afterSaleOrder.orderStatus == '售后关闭'"
-      ></u-button>
+      <view class="flex-col justify-center items-center btn" v-if="afterSaleOrder.orderStatus == '申请中'" @click="onShowDialog"
+        ><text class="btn-text">撤销申请</text></view
+      >
+      <view class="flex-col justify-center items-center btn" v-if="afterSaleOrder.orderStatus == '售后关闭'"><text class="btn-text">删除记录</text></view>
     </view>
     <confirm-panel
       :isShow="showDialog"
@@ -61,9 +42,10 @@
 </template>
 
 <script>
-import ConfirmPanel from '@/components/ConfirmPanel.vue';
+  import ConfirmPanel from '@/components/ConfirmPanel.vue';
+  import Price from '@/components/Price/Price';
   export default {
-    components: {ConfirmPanel},
+    components: { ConfirmPanel, Price },
     props: {
       afterSaleOrder: {
         type: Object,
@@ -84,7 +66,7 @@ import ConfirmPanel from '@/components/ConfirmPanel.vue';
       },
     },
     data() {
-      return {showDialog: false};
+      return { showDialog: false };
     },
 
     methods: {
@@ -110,95 +92,89 @@ import ConfirmPanel from '@/components/ConfirmPanel.vue';
     padding-bottom: 20rpx;
     background-color: #ffffff;
     border-radius: 16rpx;
-  }
-  .header {
-    padding: 24rpx 24rpx 16rpx;
-    border-bottom: solid 2rpx #f0f0f0;
-  }
-  .order-number {
-    color: #6d6d6d;
-    font-size: 24rpx;
-    font-family: 'PingFang SC';
-    line-height: 34rpx;
-  }
-  .dot {
-    background-color: #b09053;
-    border-radius: 50%;
-    width: 12rpx;
-    height: 12rpx;
-  }
-  .title {
-    font-size: 30rpx;
-    font-family: 'PingFang SC';
-    font-weight: 500;
-  }
-  .text {
-    color: #b09053;
-    line-height: 42rpx;
-  }
-  .container {
-    padding: 24rpx 24rpx 0;
-  }
-  .thumb {
-    border-radius: 12rpx;
-    width: 144rpx;
-    height: 144rpx;
-  }
-  .title-text {
-    color: #111111;
-    font-size: 28rpx;
-    line-height: 40rpx;
-  }
-  .label {
-    font-size: 24rpx;
-    font-family: 'PingFang SC';
-    line-height: 34rpx;
-    font-weight: 500;
-    color: #6D6D6D;
-  }
-  .spec {
-    font-weight: unset;
-  }
-  .num {
-    text-transform: uppercase;
-  }
-  .currency {
-    color: #111111;
-    font-size: 20rpx;
-    font-family: 'PingFang SC';
-    font-weight: 500;
-    line-height: 28rpx;
-  }
-  .price {
-    color: #111111;
-    font-size: 32rpx;
-    font-family: '.AppleSystemUIFont';
-    line-height: 36rpx;
-  }
-  .decimal {
-    color: #111111;
-    font-size: 20rpx;
-    font-family: '.AppleSystemUIFont';
-    line-height: 24rpx;
-  }
-  .tips-wrap {
-    margin-top: 24rpx;
-    padding: 8rpx 16rpx;
-    background-color: #f1f1f1b3;
-    border-radius: 8rpx;
-  }
-  .type {
-    color: #111111;
-  }
-  .refund {
-    font-size: 24rpx;
-    font-family: '.AppleSystemUIFont';
-    line-height: 30rpx;
-    font-weight: 600;
-    color: #111111;
-  }
-  .button {
-    align-self: flex-end;
-    margin-top: 24rpx;
+    .header {
+      padding: 24rpx 24rpx 16rpx;
+      border-bottom: solid 2rpx #f0f0f0;
+      .order-number {
+        color: #6d6d6d;
+        font-size: 24rpx;
+        font-family: 'PingFang SC';
+        line-height: 34rpx;
+      }
+      .dot {
+        background-color: #b09053;
+        border-radius: 50%;
+        width: 12rpx;
+        height: 12rpx;
+      }
+      .title {
+        font-size: 30rpx;
+        font-family: 'PingFang SC';
+        font-weight: 500;
+      }
+      .text {
+        color: #b09053;
+        line-height: 42rpx;
+      }
+    }
+
+    .container {
+      padding: 24rpx 24rpx 0;
+
+      .thumb {
+        border-radius: 12rpx;
+        width: 144rpx;
+        height: 144rpx;
+      }
+      .title-text {
+        color: #111111;
+        font-size: 28rpx;
+        line-height: 40rpx;
+      }
+      .label {
+        font-size: 24rpx;
+        font-family: 'PingFang SC';
+        line-height: 34rpx;
+        font-weight: 500;
+        color: #6d6d6d;
+      }
+      .spec {
+        font-weight: unset;
+      }
+      .num {
+        text-transform: uppercase;
+      }
+      .tips-wrap {
+        margin-top: 24rpx;
+        padding: 8rpx 16rpx;
+        background-color: #f1f1f1b3;
+        border-radius: 8rpx;
+      }
+      .type {
+        color: #111111;
+      }
+      .refund {
+        font-size: 24rpx;
+        font-family: '.AppleSystemUIFont';
+        line-height: 30rpx;
+        font-weight: 600;
+        color: #111111;
+      }
+      .btn {
+        align-self: flex-end;
+        margin-top: 24rpx;
+        height: 52rpx;
+        border-radius: 8rpx;
+        border: 2rpx solid #e3e3e3;
+        padding: 0 18rpx;
+        .btn-text {
+          font-size: 24rpx;
+          font-family: PingFangSC;
+          font-weight: 500;
+          color: #6d6d6d;
+          line-height: 52rpx;
+        }
+      }
+    }
   }
 </style>

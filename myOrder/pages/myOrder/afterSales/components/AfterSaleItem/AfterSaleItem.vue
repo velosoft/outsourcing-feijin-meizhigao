@@ -19,11 +19,7 @@
           <text class="size-label size-text">{{ afterSaleItem.goods.desc }}</text>
           <text class="size-label size-num">{{ 'x' + afterSaleItem.goods.quantity }}</text>
         </view>
-        <view class="flex-row items-start">
-          <text class="currency text-active">￥</text>
-          <text class="price text-active">{{ afterSaleItem.goods.price }}</text>
-          <text class="decimal text-active">.00</text>
-        </view>
+        <price class="cf-black-font" :price="afterSaleItem.goods.price" />
       </view>
     </view>
     <view class="flex-row self-stretch tips-wrap">
@@ -32,16 +28,10 @@
         afterSaleItem.customerStatus
       }}</text>
     </view>
-    <u-button
-      class="btn-end"
-      :text="afterSaleItem.btnText"
-      type="primary"
-      size="small"
-      shape="circle"
-      :plain="true"
-      v-if="afterSaleItem.btnText"
-      @click="onShowDialog"
-    ></u-button>
+    <view class="flex-col justify-center items-center btn mt-4" v-if="afterSaleItem.btnText" @click="onShowDialog"
+      ><text class="btn-text">
+        {{ afterSaleItem.btnText }}
+      </text></view>
     <confirm-panel
       :isShow="showDialog"
       :isnormal="false"
@@ -54,8 +44,9 @@
 
 <script>
   import ConfirmPanel from '@/components/ConfirmPanel.vue';
+  import Price from '@/components/Price/Price';
   export default {
-    components: { ConfirmPanel },
+    components: { ConfirmPanel, Price },
     props: {
       afterSaleItem: {
         type: Object,
@@ -104,96 +95,81 @@
     padding: 24rpx;
     background-color: #ffffff;
     border-radius: 20rpx;
-  }
-  .order {
-    font-size: 28rpx;
-    font-family: 'PingFang SC';
-    line-height: 40rpx;
-    color: #111111;
-  }
-  .order-norml {
-    color: #b09053;
-  }
-  .status {
-    font-size: 28rpx;
-    font-family: 'PingFang SC';
-    line-height: 40rpx;
-    font-weight: 500;
-  }
-  .text {
-    color: #b09053;
-  }
-  .text-normal {
-    color: #6D6D6D;
-  }
-  .container {
-    margin-top: 24rpx;
-    padding: 24rpx 20rpx;
-    background-color: #f4f4f4;
-    border-radius: 16rpx;
-  }
-  .thumb {
-    border-radius: 16rpx;
-    width: 180rpx;
-    height: 180rpx;
-  }
-  .title {
-    color: #111111;
-  }
-  .size-label {
-    font-size: 28rpx;
-    font-family: 'PingFang SC';
-    line-height: 36rpx;
-  }
-  .size-text {
-    color: #6D6D6D;
-    font-size: 26rpx;
-  }
-  .size-num {
-    color: #6D6D6D;
-    font-size: 26rpx;
-  }
-  .currency {
-    color: #111111;
-    font-size: 20rpx;
-    font-family: 'PingFang SC';
-    font-weight: 500;
-    line-height: 28rpx;
-  }
-  .price {
-    color: #111111;
-    font-size: 32rpx;
-    font-family: '.AppleSystemUIFont';
-    line-height: 36rpx;
-  }
-  .decimal {
-    margin-left: 4rpx;
-    color: #111111;
-    font-size: 20rpx;
-    font-family: '.AppleSystemUIFont';
-    line-height: 24rpx;
-  }
+    .order {
+      font-size: 28rpx;
+      font-family: 'PingFang SC';
+      line-height: 40rpx;
+      color: #111111;
+    }
+    .order-norml {
+      color: #b09053;
+    }
+    .status {
+      font-size: 28rpx;
+      font-family: 'PingFang SC';
+      line-height: 40rpx;
+      font-weight: 500;
+    }
+    .text {
+      color: #b09053;
+    }
+    .text-normal {
+      color: #6d6d6d;
+    }
+    .container {
+      margin-top: 24rpx;
+      padding: 24rpx 20rpx;
+      background-color: #f4f4f4;
+      border-radius: 16rpx;
+      .thumb {
+        border-radius: 16rpx;
+        width: 180rpx;
+        height: 180rpx;
+      }
+      .title {
+        color: #111111;
+      }
+      .size-label {
+        font-size: 28rpx;
+        font-family: 'PingFang SC';
+        line-height: 36rpx;
+      }
+      .size-text {
+        color: #6d6d6d;
+        font-size: 26rpx;
+      }
+      .size-num {
+        color: #6d6d6d;
+        font-size: 26rpx;
+      }
 
-  .text-active {
-    color: #f13f0c;
-  }
-  .tips-wrap {
-    margin-top: 24rpx;
-    padding: 8rpx 0;
-  }
-  .tips-text {
-    color: #6d6d6d;
-  }
-  .tips-text-active {
-    color: #b09053;
-  }
-  .btn-end {
-    align-self: flex-end;
-    /deep/ .u-button {
-      height: 56rpx !important;
-      border-radius: 28rpx !important;
-      border: 2rpx solid #dec9a0 !important;
-      padding: 0 18rpx !important;
+      .text-active {
+        color: #f13f0c;
+      }
+    }
+
+    .tips-wrap {
+      margin-top: 24rpx;
+      padding: 8rpx 0;
+      .tips-text {
+        color: #6d6d6d;
+      }
+      .tips-text-active {
+        color: #b09053;
+      }
+    }
+    .btn {
+      align-self: flex-end;
+      border-radius: 28rpx;
+      height: 56rpx;
+      border: solid 2rpx #dec9a0;
+      padding: 0 20rpx;
+      .btn-text {
+        font-size: 28rpx;
+        font-family: 'PingFang SC';
+        line-height: 56rpx;
+        color: #b09053;
+      }
     }
   }
 </style>

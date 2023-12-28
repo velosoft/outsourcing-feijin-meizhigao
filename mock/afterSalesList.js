@@ -11,7 +11,7 @@ export const afterSalesList = [
     salesStatus: '申请中',
     customerProgress: '客服介入',
     customerStatus: '申请中',
-    btnText: '取消售后',
+    btnText: '售后申请',
     goods: {
       image:
         'https://project-user-resource-1256085488.cos.ap-guangzhou.myqcloud.com/5f3ddec970d1f400111a4ce0/6579072b740f740012ac4768/17025193857474421503.png',
