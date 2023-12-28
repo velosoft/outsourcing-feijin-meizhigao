@@ -2,7 +2,7 @@
   <view class="flex-col relative page">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 group">
-      <head-address-card :addressDetial="addressDetial"></head-address-card>
+      <head-address-card :addressDetail="addressDetail"></head-address-card>
       <goods-card class="mt-12 mt-10" :goodsCard="goodsCard"></goods-card>
       <submit-info class="mt-12 mt-10" :submitData="submitData"></submit-info>
     </view>
@@ -22,7 +22,12 @@
     props: {},
     data() {
       return {
-        addressDetial: {address: '东红国际广场',},
+        addressDetail: {
+          address: '东红国际广场',
+          detail: '广州市天河区天河中山大道190号',
+          name: '张三',
+          phone: '15812345678',
+        },
         goodsPrice: {},
         submitData: {},
         goodsCard: {},

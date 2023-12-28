@@ -4,14 +4,14 @@
       <view class="flex-col">
         <view class="flex-row items-center">
           <image class="icon-address" src="/cart/static/images/icon_address.png" />
-          <text class="line-clamp-one text address-text ml-8">{{ addressDetial.address || '请选择您的地址' }}</text>
+          <text class="line-clamp-one text address-text ml-8">{{ addressDetail.address || '请选择您的地址' }}</text>
         </view>
-        <view class="flex-col ml-23 mt-4" v-if="addressDetial.address">
-          <text class="line-clamp-two address-detial text">广州市天河区天河中山大道190号</text>
+        <view class="flex-col ml-23 mt-4" v-if="addressDetail.address">
+          <text class="line-clamp-two address-detial text">{{ addressDetail.detail }}</text>
           <view class="flex-row items-center mt-4">
-            <text class="address-detial">张三</text>
+            <text class="address-detial">{{ addressDetail.name }}</text>
             <view class="text-line"></view>
-            <text class="address-detial">15812345678</text>
+            <text class="address-detial">{{ addressDetail.phone }}</text>
           </view>
         </view>
       </view>
@@ -25,11 +25,9 @@
   export default {
     components: {},
     props: {
-      addressDetial: {
+      addressDetail: {
         type: Object,
-        default: () => ({
-          address: '',
-        }),
+        default: () => ({}),
       },
     },
     data() {
