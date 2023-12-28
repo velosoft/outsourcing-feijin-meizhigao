@@ -1,11 +1,5 @@
 <template>
-  <collapse-title-card
-    class="collapse-white-card"
-    title="付款信息"
-    closedText="展开"
-    openText="收起付款信息"
-    :showCollpase="true"
-  >
+  <collapse-title-card class="collapse-white-card" title="付款信息" closedText="展开" openText="收起付款信息">
     <view class="flex-col mt-16">
       <view class="flex-col">
         <u-cell class="cell-in-white-card" title="报价需支付" value="￥899.99" :border="false"></u-cell>

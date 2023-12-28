@@ -1,5 +1,5 @@
 <template>
-  <OrderProcessCard title="服务" :orderStatus="1">
+  <OrderProcessCard title="服务 (进行中)">
     <view class="flex-col mt-20">
       <CFCard class="gray-card">
         <view class="flex-col">

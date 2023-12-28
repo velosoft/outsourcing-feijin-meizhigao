@@ -17,7 +17,7 @@
         </view>
       </view>
     </view>
-    <view class="flex-col summary">
+    <view class="flex-col summary" @click="gotoDetail">
       <view class="flex-row top">
         <image class="order-image" :src="order.image" />
         <view class="flex-col justify-between flex-1 right">
@@ -119,8 +119,11 @@
     data() {
       return {};
     },
-
-    methods: {},
+    methods: {
+      gotoDetail() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionOrderDetail/intentionOrderDetail' });
+      },
+    },
   };
 </script>
 

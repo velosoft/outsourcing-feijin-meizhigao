@@ -1,5 +1,5 @@
 <template>
-  <collapse-title-card class="collapse-white-card" title="订单信息" :showCollpase="false">
+  <collapse-title-card class="collapse-white-card" title="订单信息" :showCollapse="false">
     <view class="flex-col mt-16">
       <u-cell class="cell-in-white-card" title="订单编号" :value="20220401786344763737" :border="false"></u-cell>
       <u-cell class="cell-in-white-card mt-16" title="下单支付" value="￥10" :border="false"></u-cell>

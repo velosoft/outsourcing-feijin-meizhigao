@@ -10,7 +10,7 @@
     >
       <view class="flex-col">
         <view class="flex-col justify-start">
-          <text class="text-title">{{ fullTitle }}</text>
+          <text class="text-title" :class="{ done }">{{ title }}</text>
         </view>
         <view class="flex-col mt-8">
           <slot>订单折叠卡片</slot>
@@ -30,27 +30,12 @@
     },
     props: {
       title: { type: String, default: `标题` },
-      orderStatus: { type: Number, default: 0 },
-    },
-    computed: {
-      statusText() {
-        if (this.orderStatus == 2) {
-          return '已完成';
-        } else if (this.orderStatus == 1) {
-          return '进行中';
-        } else {
-          return '未开始';
-        }
-      },
-
-      fullTitle() {
-        return `${this.title}(${this.statusText})`;
-      },
+      done: Boolean,
     },
     data() {
       return {
-        closedText: '收起',
-        openText: '展开',
+        closedText: '展开',
+        openText: '收起',
         closedHeight: '44rpx',
         collapseStatus: 'closed',
       };
@@ -62,6 +47,17 @@
 
 <style scoped lang="less">
   .order-process-card {
+    .text-title {
+      font-size: 30rpx;
+      font-weight: 500;
+      color: #2d2e32;
+      line-height: 42rpx;
+    }
+
+    .text-title.done {
+      color: #9e9ea0;
+    }
+
     /deep/ .collapse-wrapper {
       position: absolute !important;
       // top: 0 !important;

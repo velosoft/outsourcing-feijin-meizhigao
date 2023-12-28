@@ -120,6 +120,24 @@
     display: flex;
     flex-direction: column;
   }
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .deco {
+      background-color: #b09053;
+      border-radius: 0rpx;
+      width: 6rpx;
+      height: 32rpx;
+      margin-right: 12rpx;
+    }
+    .title {
+      font-size: 30rpx;
+      line-height: 42rpx;
+      font-weight: 600;
+      color: #111111;
+    }
+  }
 
   .content {
     display: flex;
