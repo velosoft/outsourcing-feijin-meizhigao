@@ -1,7 +1,7 @@
 <template>
-  <PopupWithButton title="优惠券" buttonText="确定" @click="onConfirm">
+  <popup-with-button title="优惠券" buttonText="确定" @click="onConfirm">
     <view class="flex-col justify-start wrap">
-      <u-radio-group v-model="radioGroupValue">
+      <u-radio-group class="cf-radio-group" v-model="radioGroupValue">
         <view class="flex-col">
           <view class="flex-row relative list-item mt-12 items-center" v-for="(item, index) in items" :key="index">
             <view class="flex-col items-center relative coupon-left justify-center">
@@ -32,7 +32,7 @@
         </view>
       </u-radio-group>
     </view>
-  </PopupWithButton>
+  </popup-with-button>
 </template>
 
 <script>
@@ -103,7 +103,7 @@
         top: 0;
       }
       .coupon-right-size {
-        padding: 0 32rpx;
+        padding: 0 28rpx;
         width: 502rpx;
         height: 200rpx;
         .font {
