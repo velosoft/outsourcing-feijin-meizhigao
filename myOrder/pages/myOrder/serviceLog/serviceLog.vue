@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-row flex-auto main">
       <view class="flex-col stages">
         <view
@@ -13,7 +13,7 @@
           <text>{{ item }}</text>
         </view>
       </view>
-      <view class="flex-col flex-auto">
+      <view class="flex-col flex-auto list-main">
         <u-tabs
           class="tabs-yellow-line-14"
           :list="list"
@@ -32,7 +32,7 @@
           class="flex-auto relative list-container"
         >
           <view class="flex-col list">
-            <ServiceLogItem class="list-item mt-8" v-for="(item, index) in items" :key="index"></ServiceLogItem>
+            <service-log-item class="list-item mt-8" v-for="(item, index) in items" :key="index"></service-log-item>
           </view>
         </list-container>
       </view>
@@ -63,7 +63,7 @@
         stage: '测量阶段',
         showLoading: false,
         finished: false,
-        items: [null, null, null],
+        items: [null, null, null, null, null, null],
       };
     },
 
@@ -83,10 +83,14 @@
     overflow-y: auto;
     overflow-x: hidden;
     height: 100vh;
+    font-family: 苹方;
   }
   .main {
-    padding-bottom: 88rpx;
     overflow: hidden;
+  }
+
+  .list-main {
+    padding-bottom: 60rpx;
   }
   .stages {
     padding-top: 72rpx;

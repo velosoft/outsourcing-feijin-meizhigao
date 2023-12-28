@@ -14,7 +14,7 @@
       <text>第一步：领队要对整理归位的物品进行最后的陈列调整，保证拍照效果；</text>
       <text>第二步：按照大中小空间，多个角度拍摄整理效果；</text>
     </view>
-    <view class="grid mt-8">
+    <view v-if="items.length" class="grid mt-8">
       <image
         class="grid-item"
         src="https://dev.ft.velosoft.cn/api/image?token=6588d7d6d6bce000114dac75&name=b59bd9483fd17a7f2b233e23bd36d89a.png"
@@ -31,7 +31,7 @@
     props: {},
     data() {
       return {
-        items: [null, null, null, null, null, null],
+        items: [null, null, null, null, null, null, null, null],
       };
     },
 
@@ -72,9 +72,8 @@
     color: #6d6d6d;
   }
   .grid {
-    height: 314rpx;
     display: grid;
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
     grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 16rpx;
     column-gap: 16rpx;
