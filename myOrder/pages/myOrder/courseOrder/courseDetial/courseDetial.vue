@@ -24,7 +24,7 @@
               :border="true"
               :center="true"
             ></u-cell>
-            <view class="flex-col mt-12">
+            <view class="flex-col">
               <text class="line-clamp-one tips">注：报名成功后由平台工作人员联系，请保持电话通畅~</text>
             </view>
           </view>

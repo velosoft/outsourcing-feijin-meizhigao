@@ -14,7 +14,7 @@
           lineWidth="60rpx"
           lineHeight="18rpx"
           :scrollable="true"
-          itemStyle="padding-left: 38rpx; padding-right: 38rpx; height: 86rpx;"
+          itemStyle="padding-left: 39rpx; padding-right: 39rpx; height: 86rpx;"
           @change="onChangeStatus"
         ></u-tabs>
       </FjSticky
