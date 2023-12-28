@@ -10,11 +10,12 @@
           <text class="line-clamp-two address-detial text">广州市天河区天河中山大道190号</text>
           <view class="flex-row items-center mt-4">
             <text class="address-detial">张三</text>
-            <text class="address-detial ml-20">15812345678</text>
+            <view class="text-line"></view>
+            <text class="address-detial">15812345678</text>
           </view>
         </view>
       </view>
-      <image class="icon-arrow" src="/cart/static/images/icon_right_arrow_06.png" />
+      <image class="icon-arrow" src="/cart/static/images/icon_right_arrow.png" />
     </view>
     <image class="line mt-14 justify-center" src="/cart/static/images/line_address_header.png" />
   </view>
@@ -47,7 +48,7 @@
         width: 500rpx;
       }
       .address-text {
-        color: #030305;
+        color: #111111;
         font-size: 32rpx;
         font-family: PingFangSC;
         line-height: 44rpx;
@@ -55,12 +56,18 @@
       .address-detial {
         font-size: 24rpx;
         font-family: PingFangSC;
-        color: #a7a7a7;
+        color: #6d6d6d;
         line-height: 34rpx;
       }
+      .text-line {
+        width: 0px;
+        height: 24rpx;
+        border-right: 2rpx solid #DDDDDD;
+        margin: 0 20rpx;
+      }
       .icon-arrow {
-        width: 20rpx;
-        height: 20rpx;
+        width: 32rpx;
+        height: 32rpx;
       }
     }
     .line {

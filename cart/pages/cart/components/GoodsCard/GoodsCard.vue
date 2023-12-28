@@ -4,39 +4,36 @@
       <view class="list-item mt-40 mt-20 flex-row" v-for="(item, index) in items" :key="index">
         <view class="flex-col items-center relative thumb">
           <image class="image" src="/cart/static/images/mock_thumb_002.png" />
-          <view class="flex-col items-center text-wrapper pos justify-center tab-bg-active">
+          <view class="flex-col items-center text-wrapper pos justify-center" v-if="true">
             <text class="currency tag">满减</text>
+          </view>
+          <view class="flex-col items-center text-wrapper pos justify-center tab-bg-active" v-if="false">
+            <text class="currency tag">秒杀</text>
           </view>
         </view>
         <view class="flex-col justify-between ml-12 flex-1">
-          <text class="line-clamp-one reserve-fpnt text">国风系列置物架碳钢多层储物架</text>
-          <text class="self-start size-font size-text mt-13">规格：小号 | 黑色</text>
-          <view class="relative mt-13 flex-row justify-between">
+          <view class="flex-col">
+            <text class="line-clamp-one title title-text">国风系列置物架碳钢多层储物架</text>
+            <text class="self-start size-font size-text mt-8">规格：小号 | 黑色</text>
+          </view>
+          <view class="relativen flex-row justify-between">
             <view class="flex-col">
-              <view class="flex-row items-center" v-if="true">
+              <view class="flex-row items-start" v-if="true">
                 <text class="tag-text">定金</text>
-                <view class="flex-row items-start">
-                  <text class="currency">￥</text>
-                  <text class="price">40</text>
-                  <text class="decimal">.00</text>
-                </view>
+                <price class="cf-red-font" price="40" />
               </view>
-              <view class="flex-row items-center" v-if="false">
-                <text class="additional currency-normal">￥</text>
-                <text class="price price-normal">40</text>
-                <text class="decimal-noraml">.00</text>
-              </view>
+              <price class="cf-black-font" price="40" v-if="false" />
             </view>
             <text class="size-font">×1</text>
           </view>
-          <text class="self-start additional additional-text mt-13">附加服务：安装服务￥99.00</text>
+          <text class="self-start additional additional-text">附加服务：安装服务￥99.00</text>
         </view>
       </view>
     </view>
     <view class="flex-row justify-between items-center reserve-wrap mt-40" v-if="true">
-      <text class="reserve-fpnt reserve-text">预约时间</text>
+      <text class="title reserve-text">预约时间</text>
       <view class="flex-row items-center">
-        <text class="self-center reserve-fpnt select-time">请选择预约时间</text>
+        <text class="self-center title select-time">请选择预约时间</text>
         <image class="icon-arrow ml-4" src="/cart/static/images/icon_right_arrow_07.png" />
       </view>
     </view>
@@ -44,8 +41,9 @@
 </template>
 
 <script>
+  import Price from '@/components/Price/Price';
   export default {
-    components: {},
+    components: { Price },
     props: { goodsCard: { type: Object, default: () => ({}) } },
     data() {
       return {
@@ -76,13 +74,14 @@
           height: 180rpx;
         }
         .text-wrapper {
-          padding: 4rpx 12rpx;
+          padding: 0 12rpx;
           background-color: #b09053;
           border-radius: 12rpx 0rpx;
           height: 38rpx;
           .tag {
             color: #ffffff;
             font-weight: 700;
+            line-height: 38rpx;
           }
         }
         .pos {
@@ -94,8 +93,8 @@
           background: #bb3e0c;
         }
       }
-      .text {
-        line-height: 26rpx;
+      .title-text {
+        line-height: 40rpx;
       }
       .size-font {
         font-size: 24rpx;
@@ -103,13 +102,14 @@
         color: #a7a7a7;
       }
       .size-text {
-        line-height: 24rpx;
+        line-height: 34rpx;
       }
       .tag-text {
         font-size: 20rpx;
         font-family: PingFangSC;
         font-weight: 700;
         color: #bb3e0c;
+        line-height: 28rpx;
       }
       .currency {
         font-size: 20rpx;
@@ -170,7 +170,7 @@
         height: 24rpx;
       }
     }
-    .reserve-fpnt {
+    .title {
       font-size: 28rpx;
       font-family: PingFangSC;
       line-height: 28rpx;

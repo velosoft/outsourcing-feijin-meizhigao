@@ -36,11 +36,15 @@
         ></u-cell>
       </view>
       <view class="flex-col mt-24">
-        <view class="flex-row items-center">
-          <text class="title">订单留言</text>
-          <text class="title texare-tips ml-8">50字以内（选填）</text>
+        <view class="flex-row items-center text-area-gap">
+          <text class="title textare-tips-label">订单留言</text>
+          <text class="title textare-tips ml-8">50字以内（选填）</text>
         </view>
-        <textarea class="text-area mt-16 text-area-border" placeholder="请输入…"></textarea>
+        <u-textarea
+          class="text-area text-area-border"
+          placeholder="请输入…"
+          placeholderStyle="font-size:24rpx;color:#C3C3C3;font-family:苹方;font-weight:400;"
+        ></u-textarea>
       </view>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12"><PopCoupon></PopCoupon></u-popup>
@@ -92,12 +96,23 @@
     line-height: 28rpx;
     color: #6c6c6c;
   }
-  .texare-tips {
+  .text-area-gap {
+    margin-bottom: 32rpx;
+  }
+  .textare-tips-label{
+    font-family: PingFang SC;
+    color: #6d6d6d;
+  }
+  .textare-tips {
     color: #a7a7a7;
     font-size: 26rpx;
     line-height: 26rpx;
   }
   .text-area {
     margin: 0 8rpx;
+
+    /deep/ .u-textarea .textarea{
+      min-height: 220rpx !important;
+    }
   }
 </style>

@@ -31,7 +31,7 @@
 
 <style scoped lang="less">
   .footer-wrap {
-    height: 112rpx;
+    height: 164rpx;
     .wrap {
       padding: 16rpx 32rpx;
       background-color: #ffffff;
