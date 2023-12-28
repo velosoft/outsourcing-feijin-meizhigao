@@ -76,15 +76,15 @@
           font-weight: 700;
           color: #bb3e0c;
         }
-        .unit {
-          font-weight: 600;
-          line-height: 34rpx;
-        }
         .condition {
           font-size: 24rpx;
           font-family: 苹方;
           line-height: 22rpx;
           color: #bb3e0c;
+        }
+        .unit {
+          font-weight: 600;
+          line-height: 34rpx;
         }
       }
       .line {
