@@ -123,7 +123,7 @@
   }
   .body {
     overflow-y: auto;
-    margin-bottom: 160rpx;
+    margin-bottom: 340rpx;
   }
   .main {
     margin-top: -64rpx;

@@ -55,7 +55,7 @@
           </view>
         </CFCard>
       </view>
-      <view class="tip-box">
+      <view class="tip-box flex-col">
         <text class="tip-color">温馨提示：</text>
         <text class="font-tips">1、确认报价前，请和领队确认报价价格</text>
         <text class="font-tips">2、请确认报价金额和领队口头报价是否一致</text>

@@ -69,13 +69,13 @@
       </view>
     </view>
     <view class="flex-row justify-end">
-      <view class="btn btn-gray" v-if="order.status === '定金未支付'">
+      <view class="btn btn-gray" v-if="order.status === '定金未支付'" @click="onShowCancel">
         <text>取消订单</text>
       </view>
       <view class="btn btn-black" v-if="order.status === '定金未支付'">
         <text>去付款</text>
       </view>
-      <view class="btn btn-black" v-if="order.status === '等待确认方案'">
+      <view class="btn btn-black" v-if="order.status === '等待确认方案'" @click="gotoPlan">
         <text>查看方案</text>
       </view>
       <view
@@ -87,41 +87,81 @@
           order.status === '等待客户验收' ||
           order.status === '交易完成'
         "
+        @click="gotoProductList"
       >
         <text>查看商品清单</text>
       </view>
-      <view class="btn btn-black" v-if="order.status === '等待确认报价'">
+      <view class="btn btn-black" v-if="order.status === '等待确认报价'" @click="gotoConfirmQuote">
         <text>确认报价</text>
       </view>
-      <view class="btn btn-black" v-if="order.status === '等待上门服务'">
+      <view class="btn btn-black" v-if="order.status === '等待上门服务'" @click="onShowReserve">
         <text>预约上门服务</text>
       </view>
-      <view class="btn btn-black" v-if="order.status === '等待客户验收'">
+      <view class="btn btn-black" v-if="order.status === '等待客户验收'" @click="gotoAcceptance">
         <text>验收服务</text>
       </view>
-      <view class="btn btn-black" v-if="order.status === '交易完成'">
+      <view class="btn btn-black" v-if="order.status === '交易完成'" @click="gotoAddComment">
         <text>评价</text>
       </view>
       <view class="btn btn-gray" v-if="order.status === '交易关闭' || order.status === '已取消'">
         <text>删除记录</text>
       </view>
     </view>
+    <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
+      <pop-order-cancel @click="onCloseCancel"></pop-order-cancel>
+    </u-popup>
+    <u-popup :show="showReserve" @close="onCloseReserve" mode="bottom" :closeable="true" :round="14">
+      <PopReserve @confirm="onCloseReserve"></PopReserve>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import Price from '@/components/Price/Price';
+  import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
+  import PopReserve from '@/myOrder/pages/myOrder/components/PopReserve/PopReserve.vue';
+
   export default {
-    components: { Price },
+    components: { Price, PopOrderCancel, PopReserve },
     props: {
       order: Object,
     },
     data() {
-      return {};
+      return {
+        showCancel: false,
+        showReserve: false,
+      };
     },
     methods: {
+      onShowCancel() {
+        this.showCancel = true;
+      },
+      onCloseCancel() {
+        this.showCancel = false;
+      },
+      onShowReserve() {
+        this.showReserve = true;
+      },
+      onCloseReserve() {
+        this.showReserve = false;
+      },
       gotoDetail() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionOrderDetail/intentionOrderDetail' });
+      },
+      gotoPlan() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/servicePlan/servicePlan' });
+      },
+      gotoProductList() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
+      },
+      gotoConfirmQuote() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
+      },
+      gotoAddComment() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionAddComment/intentionAddComment' });
+      },
+      gotoAcceptance() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
       },
     },
   };

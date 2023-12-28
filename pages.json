@@ -339,6 +339,20 @@
             "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
+        },
+        {
+          "path": "pages/myOrder/intentionAddComment/intentionAddComment",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "pages/myOrder/intentionComment/intentionComment",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
         }
       ]
     },

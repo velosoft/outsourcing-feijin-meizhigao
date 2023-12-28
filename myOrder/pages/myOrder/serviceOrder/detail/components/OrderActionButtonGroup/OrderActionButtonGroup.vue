@@ -41,7 +41,6 @@
     data() {
       return {
         showConfirmProposal: false,
-        dialogVisible: false,
         showCancel: false,
         showVerify: false,
       };

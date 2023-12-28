@@ -4,35 +4,76 @@
       <text class="more-text" @click="onToggleMore">更多</text>
       <view class="more-pop" v-if="showMore">
         <view class="arrow"></view>
-        <view class="more-action" @click="onToggleMore">查看评价</view>
+        <view class="more-action" @click="gotoComment">查看评价</view>
       </view>
     </view>
-    <view class="flex-auto flex-row justify-end">
-      <view class="btn btn-plain">
-        <text>组件清单</text>
-      </view>
-      <view class="btn btn-plain">
-        <text>查看商品订单</text>
-      </view>
-      <view class="btn btn-primary">
-        <text>评价</text>
-      </view>
+    <view class="flex-auto flex-row justify-end wrap">
+      <view class="btn btn-plain" @click="gotoAfterSale"><text>申请售后</text></view>
+      <view class="btn btn-plain" @click="onShowConfirmProposal"><text>确认方案</text></view>
+      <view class="btn btn-plain" @click="gotoConfirmQuote"><text>确认报价</text></view>
+      <view class="btn btn-plain"><text>组件清单</text></view>
+      <view class="btn btn-plain" @click="gotoAcceptance"><text>验收服务</text></view>
+      <view class="btn btn-plain" @click="gotoProductList"><text>查看商品订单</text></view>
+      <view class="btn btn-plain" @click="onShowCancel"><text>取消服务</text></view>
+      <view class="btn btn-plain"><text>删除记录</text></view>
+      <view class="btn btn-primary" @click="gotoAddComment"><text>评价</text></view>
     </view>
+    <u-popup :show="showConfirmProposal" @close="onCloseConfirmProposal" mode="bottom" :round="12" :closeable="true">
+      <PopConfirmProposal @confirm="onCloseConfirmProposal"></PopConfirmProposal>
+    </u-popup>
+    <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
+      <pop-order-cancel @click="onCloseCancel"></pop-order-cancel>
+    </u-popup>
   </view>
 </template>
 
 <script>
+  import PopConfirmProposal from '@/myOrder/pages/myOrder/components/PopConfirmProposal/PopConfirmProposal.vue';
+  import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
+
   export default {
-    components: {},
+    components: { PopConfirmProposal, PopOrderCancel },
     props: {},
     data() {
       return {
         showMore: false,
+        showConfirmProposal: false,
+        showCancel: false,
       };
     },
     methods: {
       onToggleMore() {
         this.showMore = !this.showMore;
+      },
+      onShowCancel() {
+        this.showCancel = true;
+      },
+      onCloseCancel() {
+        this.showCancel = false;
+      },
+      onShowConfirmProposal() {
+        this.showConfirmProposal = true;
+      },
+      onCloseConfirmProposal() {
+        this.showConfirmProposal = false;
+      },
+      gotoConfirmQuote() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
+      },
+      gotoProductList() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
+      },
+      gotoAfterSale() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceAfterSale/serviceAfterSale' });
+      },
+      gotoAcceptance() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
+      },
+      gotoAddComment() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionAddComment/intentionAddComment' });
+      },
+      gotoComment() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionComment/intentionComment' });
       },
     },
   };
@@ -40,9 +81,8 @@
 
 <style scoped lang="less">
   .actions-wrapper {
-    padding: 0 24rpx;
+    padding: 24rpx;
     background-color: #ffffff;
-    height: 132rpx;
   }
   .more-text {
     font-size: 24rpx;
@@ -84,9 +124,6 @@
     font-size: 28rpx;
     line-height: 40rpx;
   }
-  .btn + .btn {
-    margin-left: 20rpx;
-  }
   .btn-plain {
     border: 2rpx solid #d4d4d4;
     color: #3c3d41;
@@ -94,5 +131,9 @@
   .btn-primary {
     background-color: #b09053;
     color: #ffffff;
+  }
+  .wrap {
+    flex-wrap: wrap;
+    gap: 20rpx;
   }
 </style>
