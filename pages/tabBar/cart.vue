@@ -70,7 +70,7 @@
         ],
         showLoading: false,
         finished: false,
-        isLogined: false,
+        isLogined: true,
         productList: productOrders[0].products,
         selectedList: [],
       };
@@ -119,9 +119,9 @@
       }
     }
     .empty-wrap {
-      padding: 48rpx 32rpx;
+      padding: 48rpx 32rpx 28rpx;
       .empty-content {
-        padding: 48rpx 0;
+        padding: 48rpx 0 32rpx;
         .bg-empty {
           width: 330rpx;
           height: 184rpx;
