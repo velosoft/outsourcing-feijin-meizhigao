@@ -78,7 +78,7 @@
         }
         .condition {
           font-size: 24rpx;
-          font-family: 苹方;
+          font-family: PingFang SC;
           line-height: 22rpx;
           color: #bb3e0c;
         }
@@ -108,21 +108,21 @@
         height: 200rpx;
         .font {
           font-size: 28rpx;
-          font-family: 苹方;
+          font-family: PingFang SC;
           line-height: 40rpx;
-          color: #030305;
+          color: #111111;
         }
         .time {
           font-size: 24rpx;
-          font-family: 苹方;
+          font-family: PingFang SC;
           line-height: 34rpx;
-          color: #a7a7a7;
+          color: #6d6d6d;
         }
         .condition-normal {
           font-size: 24rpx;
-          font-family: 苹方;
+          font-family: PingFang SC;
           line-height: 34rpx;
-          color: #a7a7a7;
+          color: #6d6d6d;
         }
       }
     }
