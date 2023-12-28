@@ -1,12 +1,12 @@
 <template>
-  <view class="flex-col wrap">
+  <view class="flex-col wrap relative items-center justify-center">
     <view class="flex-row group justify-between items-center">
       <view class="flex-col">
         <view class="flex-row items-center">
           <image class="icon-address" src="/cart/static/images/icon_address.png" />
-          <text class="line-clamp-one text address-text ml-8">东宏国际广场</text>
+          <text class="line-clamp-one text address-text ml-8">{{ addressDetial.address || '请选择您的地址' }}</text>
         </view>
-        <view class="flex-col ml-24 mt-4">
+        <view class="flex-col ml-23 mt-4" v-if="addressDetial.address">
           <text class="line-clamp-two address-detial text">广州市天河区天河中山大道190号</text>
           <view class="flex-row items-center mt-4">
             <text class="address-detial">张三</text>
@@ -24,7 +24,14 @@
 <script>
   export default {
     components: {},
-    props: { addressDetial: { type: Object, default: () => ({}) } },
+    props: {
+      addressDetial: {
+        type: Object,
+        default: () => ({
+          address: '',
+        }),
+      },
+    },
     data() {
       return {};
     },
@@ -35,7 +42,8 @@
 
 <style scoped lang="less">
   .wrap {
-    padding-top: 28rpx;
+    min-height: 140rpx;
+    padding: 28rpx 0;
     background-color: #ffffff;
     border-radius: 12rpx;
     .group {
@@ -53,6 +61,9 @@
         font-family: PingFangSC;
         line-height: 44rpx;
       }
+      .ml-23 {
+        margin-left: 46rpx;
+      }
       .address-detial {
         font-size: 24rpx;
         font-family: PingFangSC;
@@ -62,7 +73,7 @@
       .text-line {
         width: 0px;
         height: 24rpx;
-        border-right: 2rpx solid #DDDDDD;
+        border-right: 2rpx solid #dddddd;
         margin: 0 20rpx;
       }
       .icon-arrow {
@@ -71,9 +82,11 @@
       }
     }
     .line {
+      position: absolute;
+      bottom: 0;
       width: 678rpx;
       height: 4rpx;
-      margin: 28rpx 10rpx 0;
+      margin: 0 10rpx;
     }
   }
 </style>

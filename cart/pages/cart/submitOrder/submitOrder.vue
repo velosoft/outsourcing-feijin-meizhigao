@@ -22,7 +22,7 @@
     props: {},
     data() {
       return {
-        addressDetial: {},
+        addressDetial: {address: '东红国际广场',},
         goodsPrice: {},
         submitData: {},
         goodsCard: {},
