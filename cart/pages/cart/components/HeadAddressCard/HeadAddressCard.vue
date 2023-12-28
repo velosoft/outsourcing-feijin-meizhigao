@@ -1,10 +1,10 @@
 <template>
-  <view class="flex-col wrap relative items-center justify-center">
+  <view class="flex-col items-stretch wrap relative items-center justify-center">
     <view class="flex-row group justify-between items-center">
       <view class="flex-col">
         <view class="flex-row items-center">
           <image class="icon-address" src="/cart/static/images/icon_address.png" />
-          <text class="line-clamp-one text address-text ml-8">{{ addressDetail.address || '请选择您的地址' }}</text>
+          <text class="line-clamp-one text address-text ml-8">{{ addressDetail || '请选择您的地址' }}</text>
         </view>
         <view class="flex-col ml-23 mt-4" v-if="addressDetail.address">
           <text class="line-clamp-two address-detial text">{{ addressDetail.detail }}</text>
@@ -45,9 +45,9 @@
     background-color: #ffffff;
     border-radius: 12rpx;
     .group {
-      margin: 0 22rpx;
+      margin: 0 34rpx;
       .icon-address {
-        width: 28rpx;
+        width: 32rpx;
         height: 32rpx;
       }
       .text {
