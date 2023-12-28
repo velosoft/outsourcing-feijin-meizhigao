@@ -2,7 +2,7 @@
   <popup-with-button title="优惠券" buttonText="确定" @click="onConfirm">
     <view class="flex-col justify-start wrap">
       <u-radio-group class="cf-radio-group" v-model="radioGroupValue">
-        <view class="flex-col">
+        <scroll-view class="flex-col scroll-height" :scroll-y="true">
           <view class="flex-row relative list-item mt-12 items-center" v-for="(item, index) in items" :key="index">
             <view class="flex-col items-center relative coupon-left justify-center">
               <image class="coupon-left pos" src="/cart/static/images/bg_cart_coupon_left.png" />
@@ -29,7 +29,7 @@
               </view>
             </view>
           </view>
-        </view>
+        </scroll-view>
       </u-radio-group>
     </view>
   </popup-with-button>
@@ -45,7 +45,7 @@
       return {
         radioValue: '',
         radioGroupValue: '',
-        items: [null, null, null],
+        items: [null, null, null, null, null],
       };
     },
 
@@ -61,6 +61,10 @@
 <style scoped lang="less">
   .wrap {
     margin: 38rpx 0 58rpx;
+
+    .scroll-height {
+      max-height: 640rpx;
+    }
 
     .list-item {
       &:first-child {
@@ -84,7 +88,7 @@
         }
         .unit {
           font-weight: 600;
-          line-height: 34rpx;
+          line-height: 24rpx;
         }
       }
       .line {
