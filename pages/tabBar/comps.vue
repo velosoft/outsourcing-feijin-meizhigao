@@ -3,7 +3,9 @@
     <u-cell-group title="子模块入口" class="group">
       <u-cell title="服务订单详情页" isLink url="/myOrder/pages/myOrder/serviceOrder/detail/detail/detail"></u-cell>
       <u-cell title="售后" isLink url="/myOrder/pages/myOrder/afterSales/afterSalesDetail/afterSalesDetail"></u-cell>
-      <u-cell title="随便加" isLink url="/showcase/pages/showcase/fixed/fixed"></u-cell>
+      <u-cell title="随便加" isLink url="/myOrder/pages/myOrder/afterSales/refund/refund"></u-cell>
+      <u-cell title="星号问题" isLink url="/cart/pages/cart/registerCourse/registerCourse/registerCourse"></u-cell>
+      
     </u-cell-group>
 
     <u-cell-group title="高频组件" class="group">
