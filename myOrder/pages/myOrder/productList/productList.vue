@@ -1,8 +1,8 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col">
-      <FjSticky v-bind:customNavHeight="80">
+      <fj-sticky v-bind:customNavHeight="80">
         <u-tabs
           class="tabs-yellow-line-14"
           :list="list"
@@ -11,7 +11,7 @@
           :inactiveStyle="{ color: '#9C9C9F' }"
           @change="onChangeTab"
         ></u-tabs>
-      </FjSticky>
+      </fj-sticky>
       <view class="flex-col products-wrapper" :class="{ offline: tab === 1 }">
         <view class="flex-col header">
           <view class="flex-row justify-between items-center shipping">
@@ -30,13 +30,12 @@
           :finished="finished"
         >
           <view class="flex-col">
-            <ProductItemTag
+            <product-item-tag
               class="list-item mt-13"
               v-for="(item, index) in items"
               :key="index"
               :showReturnd="index % 2 === 1"
-            ></ProductItemTag>
-            <text class="self-center more mt-27">加载中</text>
+            ></product-item-tag>
           </view>
         </list-container>
       </view>
@@ -86,10 +85,11 @@
     margin-top: 54rpx;
   }
   .page {
-    padding-bottom: 196rpx;
+    padding-bottom: 60rpx;
     background-color: #f8f8f8;
     width: 100%;
     height: 100%;
+    font-family: 苹方;
   }
   .products-wrapper {
     margin: 20rpx 24rpx 0;
@@ -98,16 +98,13 @@
     border-radius: 16rpx;
   }
   .header {
-    padding: 24rpx 0;
+    padding: 24rpx 24rpx;
     border-bottom: solid 2rpx #efefef;
-  }
-  .shipping {
-    padding-left: 26rpx;
-    padding-right: 24rpx;
   }
   .count {
     font-size: 26rpx;
-    color: #3c3d41;
+    color: #6d6d6d;
+    font-weight: 400;
   }
   .button {
     padding: 6rpx 0 6.8rpx;
@@ -125,8 +122,6 @@
     line-height: 34rpx;
   }
   .sum {
-    padding-left: 26rpx;
-    padding-right: 20rpx;
     margin-top: 28rpx;
   }
   .money {
@@ -144,10 +139,7 @@
   .list-item {
     padding: 0 20rpx;
   }
-  .more {
-    color: #9e9ea0;
-    font-size: 28rpx;
-  }
+
   .offline {
     .header {
       border-bottom: none;
@@ -161,8 +153,8 @@
       }
       .count {
         font-size: 28rpx;
-        font-weight: 500;
-        color: #111111;
+        font-weight: 400;
+        color: #6d6d6d;
       }
     }
     .list-container {
