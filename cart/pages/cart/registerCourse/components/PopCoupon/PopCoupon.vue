@@ -1,15 +1,15 @@
 <template>
   <PopupWithButton title="优惠券" buttonText="确定" @click="onConfirm">
-    <view class="flex-col justify-start button view">
+    <view class="flex-col justify-start wrap">
       <u-radio-group v-model="radioGroupValue">
         <view class="flex-col">
-          <view class="flex-row relative list-item mt-11 items-center" v-for="(item, index) in items" :key="index">
+          <view class="flex-row relative list-item mt-12 items-center" v-for="(item, index) in items" :key="index">
             <view class="flex-col items-center relative coupon-left justify-center">
               <image class="coupon-left pos" src="/cart/static/images/bg_cart_coupon_left.png" />
               <view class="flex-col relative">
-                <view class="items-center flex-row">
+                <view class="items-end flex-row">
                   <text class="coupon-num">10</text>
-                  <text class="unit text_13 mt-2">元</text>
+                  <text class="unit condition ml-2">元</text>
                 </view>
                 <text class="condition mt-12">满100元使用</text>
               </view>
@@ -18,12 +18,12 @@
             <view class="flex-col items-start relative">
               <image class="coupon-right pos" src="/cart/static/images/bg_cart_coupon_right.png" />
               <view class="flex-row items-center relative coupon-right-size justify-between">
-                <view class="flex-col self-center coupon-right-con">
-                  <text class="line-clamp-one font">定制商品满减券</text>
-                  <view class="flex-col items-center self-stretch mt-12">
-                    <text class="time">2023.06.01-2023.07.01</text>
-                    <text class="font_6 condition-normal mt-20">适用全部(商品/服务/课程)</text>
+                <view class="flex-col self-center">
+                  <view class="flex-col">
+                    <text class="line-clamp-one font">定制商品满减券</text>
+                    <text class="time mt-4">2023.06.01-2023.07.01</text>
                   </view>
+                  <text class="condition-normal mt-12">适用全部(商品/服务/课程)</text>
                 </view>
                 <u-radio v-model="index" activeColor="#bb3e0b" :iconSize="20"></u-radio>
               </view>
@@ -59,11 +59,9 @@
 </script>
 
 <style scoped lang="less">
-  .mt-11 {
-    margin-top: 22rpx;
-  }
-  .button {
-    align-self: stretch;
+  .wrap {
+    margin: 38rpx 0 58rpx;
+
     .list-item {
       &:first-child {
         margin-top: 0;
@@ -74,24 +72,18 @@
         .coupon-num {
           font-size: 84rpx;
           font-family: HarmonyOS Sans SC;
-          line-height: 63.68rpx;
+          line-height: 64rpx;
           font-weight: 700;
           color: #bb3e0c;
         }
         .unit {
-          font-size: 24rpx;
-          font-family: 苹方;
-          line-height: 22.28rpx;
           font-weight: 600;
-          color: #bb3e0c;
-        }
-        .text_13 {
-          line-height: unset;
+          line-height: 34rpx;
         }
         .condition {
           font-size: 24rpx;
           font-family: 苹方;
-          line-height: 22.28rpx;
+          line-height: 22rpx;
           color: #bb3e0c;
         }
       }
@@ -114,34 +106,25 @@
         padding: 0 32rpx;
         width: 502rpx;
         height: 200rpx;
-        .coupon-right-con {
-          margin-left: 32rpx;
-          .font {
-            font-size: 28rpx;
-            font-family: 苹方;
-            line-height: 26.16rpx;
-            color: #030305;
-          }
-          .time {
-            font-size: 24rpx;
-            font-family: 苹方;
-            line-height: 17.8rpx;
-            color: #a7a7a7;
-          }
-          .font_6 {
-            font-size: 24rpx;
-            font-family: 苹方;
-            line-height: 22.28rpx;
-            color: #a7a7a7;
-          }
-          .condition-normal {
-            line-height: 22.42rpx;
-          }
+        .font {
+          font-size: 28rpx;
+          font-family: 苹方;
+          line-height: 40rpx;
+          color: #030305;
+        }
+        .time {
+          font-size: 24rpx;
+          font-family: 苹方;
+          line-height: 34rpx;
+          color: #a7a7a7;
+        }
+        .condition-normal {
+          font-size: 24rpx;
+          font-family: 苹方;
+          line-height: 34rpx;
+          color: #a7a7a7;
         }
       }
     }
-  }
-  .view {
-    padding: 56rpx 0;
   }
 </style>
