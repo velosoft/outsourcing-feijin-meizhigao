@@ -16,7 +16,7 @@
   export default {
     components: {},
     props: {
-      imageList: { type: String, default: () => {} },
+      imageList: { type: Array, default: () => [] },
     },
     data() {
       return {
