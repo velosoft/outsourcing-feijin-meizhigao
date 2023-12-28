@@ -5,14 +5,14 @@
       <CFCard title="报名信息">
         <view class="flex-col card-content">
           <CFField
-            class="cell-in-white-card"
+            class="field-required"
             label="姓名"
             placeholder="请输入"
             inputAlign="right"
             :border="true"
           ></CFField>
           <CFField
-            class="cell-in-white-card cell-top"
+            class="field-required"
             label="手机号"
             placeholder="请输入"
             inputAlign="right"
@@ -63,10 +63,7 @@
     .group {
       padding: 20rpx;
       .card-content {
-        padding-top: 56rpx;
-        .cell-top {
-          margin-top: 72rpx;
-        }
+        padding-top: 36rpx;
         .tips-content {
           margin-top: 32rpx;
           padding: 16rpx;

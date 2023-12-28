@@ -144,3 +144,36 @@
     max-width: 70%;
   }
 }
+
+.field-required {
+  /deep/ .wrapper {
+    position: relative;
+  }
+
+  /deep/ .required::before {
+    position: absolute;
+    left: 0px;
+    top: 18px;
+    font-size: 28rpx;
+    color: #ff1801;
+  }
+
+  /deep/ .u-cell__body {
+    height: 100rpx;
+    padding-left: 12rpx !important;
+    padding-right: 12rpx !important;
+  }
+
+  /deep/ .u-cell__title-text {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #030305 !important;
+  }
+
+  /deep/ .u-cell__value {
+    font-size: 13px !important;
+    line-height: 16px !important;
+    color: #111111 !important;
+    max-width: 70%;
+  }
+}
