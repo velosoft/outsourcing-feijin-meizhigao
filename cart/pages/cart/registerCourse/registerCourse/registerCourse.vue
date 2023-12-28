@@ -3,11 +3,12 @@
     <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
     <view class="flex-col group">
       <CFCard title="报名信息">
-        <view class="flex-col card-content">
+        <view class="flex-col card-content mt-10">
           <CFField
             class="field-required"
             label="姓名"
             placeholder="请输入"
+            :placeholderStyle="placeholderStyle"
             inputAlign="right"
             :border="true"
           ></CFField>
@@ -15,6 +16,7 @@
             class="field-required"
             label="手机号"
             placeholder="请输入"
+            :placeholderStyle="placeholderStyle"
             inputAlign="right"
             :border="true"
           ></CFField>
@@ -40,6 +42,9 @@
   import SubmitInfo from '@/cart/pages/cart/components/SubmitInfo/SubmitInfo.vue';
 
   export default {
+    options: {
+      styleIsolation: 'shared',
+    },
     components: { CFCard, CFField, CartBottomPayBtn, GoodsCard, NavBar, SubmitInfo },
     props: {},
     data() {
@@ -48,6 +53,7 @@
         submitData: {},
         goodsPrice: {},
         title: '报名课程',
+        placeholderStyle: 'font-size:26rpx;color:#9E9EA0;font-family:苹方;font-weight:400;',
       };
     },
 
@@ -63,7 +69,6 @@
     .group {
       padding: 20rpx;
       .card-content {
-        padding-top: 36rpx;
         .tips-content {
           margin-top: 32rpx;
           padding: 16rpx;
@@ -76,6 +81,20 @@
             color: #b09053;
           }
         }
+      }
+      /deep/ .root {
+        padding: 32rpx 30rpx 16rpx !important;
+      }
+    }
+    .field-required {
+      /deep/ .u-cell__body {
+        padding: 0 0 0 12rpx !important;
+      }
+      /deep/ .input {
+        color: #111111;
+        font-size: 26rpx;
+        font-family: 苹方;
+        font-weight: 400;
       }
     }
   }
