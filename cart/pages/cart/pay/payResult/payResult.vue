@@ -1,16 +1,22 @@
 <template>
   <view class="height-full flex-col page">
-    <NavBar :hasBack="true" :title="NavTitle" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col group flex-1">
       <view class="flex-col items-center">
         <view class="flex-col items-center">
-          <image class="icon" src="/cart/static/images/icon_result_success.png" v-if="status == 0" />
-          <image class="icon" src="/cart/static/images/icon_result_fail.png" v-if="status == 1" />
+          <image class="icon" src="/cart/static/images/icon_result_success.png" v-if="status" />
+          <image class="icon" src="/cart/static/images/icon_result_fail.png" v-else />
         </view>
-        <text class="font result-text mt-8">支付成功</text>
+        <text class="font result-text mt-8">{{ status ? '支付成功' : '付款失败' }}</text>
       </view>
-      <view class="flex-col mt-96">
-        <u-button text="立即查看" type="primary" size="large" shape="circle" @click="onGoOn"></u-button>
+      <view class="flex-col mt-86">
+        <u-button
+          :text="status ? '立即查看' : '重新支付'"
+          type="primary"
+          size="large"
+          shape="circle"
+          @click="onGoOn"
+        ></u-button>
         <u-button
           class="mt-32"
           text="返回上一级"
@@ -31,14 +37,11 @@
   export default {
     components: { NavBar },
     props: {
-      title: { type: String, default: `支付成功` },
-      successBtnTitle: { type: String, default: `立即查看` },
-      errorBtnTitle: { type: String, default: `返回上一级` },
-      status: { type: String, default: `0` },
+      status: { type: Number, default: 1 },
     },
     data() {
       return {
-        NavTitle: '收银台',
+        title: '收银台',
       };
     },
 
