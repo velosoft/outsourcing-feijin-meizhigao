@@ -2,16 +2,19 @@
   <view class="flex-col page">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-row flex-auto main">
-      <view class="flex-col stages">
-        <view
-          class="stage"
-          :class="{ 'stage-active': stage === item }"
-          v-for="(item, index) in stages"
-          :key="index"
-          @click="onChangeStage(item)"
-        >
-          <text>{{ item }}</text>
-        </view>
+      <view class="scroll-wrapper">
+        <view class="scroll-placeholder" />
+        <scroll-view :scroll-y="true" class="flex-col stages">
+          <view
+            class="stage"
+            :class="{ 'stage-active': stage === item }"
+            v-for="(item, index) in stages"
+            :key="index"
+            @click="onChangeStage(item)"
+          >
+            <text>{{ item }}</text>
+          </view>
+        </scroll-view>
       </view>
       <view class="flex-col flex-auto list-main">
         <u-tabs
@@ -51,7 +54,23 @@
     data() {
       return {
         title: '服务日志',
-        stages: ['测量阶段', '设计阶段', '服务阶段'],
+        stages: [
+          '测量阶段',
+          '设计阶段',
+          '服务阶段',
+          '其他阶段 1',
+          '其他阶段 2',
+          '其他阶段 3',
+          '其他阶段 4',
+          '其他阶段 5',
+          '其他阶段 6',
+          '其他阶段 7',
+          '其他阶段 8',
+          '其他阶段 9',
+          '其他阶段 10',
+          '其他阶段 11',
+          '其他阶段 12',
+        ],
         list: [
           {
             name: '上门拍照',
@@ -92,10 +111,19 @@
   .list-main {
     padding-bottom: 60rpx;
   }
-  .stages {
-    padding-top: 72rpx;
-    background-color: #ffffff;
+  .scroll-wrapper {
     width: 192rpx;
+    background-color: #ffffff;
+    padding-bottom: 60rpx;
+  }
+  .scroll-placeholder {
+    height: 72rpx;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    box-sizing: content-box;
+  }
+  .stages {
+    height: calc(100% - 72rpx);
   }
   .stage {
     height: 110rpx;
@@ -105,10 +133,6 @@
     font-size: 28rpx;
     line-height: 40rpx;
     color: #6d6d6d;
-
-    &:first-child {
-      border-top: 1px solid #e5e5e5;
-    }
   }
   .stage.stage-active {
     background-color: #f0f0f0;
