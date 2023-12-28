@@ -1,41 +1,41 @@
 <template>
   <view class="flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col group">
-      <CFCard title="报名信息">
+      <cf-card title="报名信息">
         <view class="flex-col card-content mt-10">
-          <CFField
+          <cf-field
             class="field-required"
             label="姓名"
             placeholder="请输入"
             :placeholderStyle="placeholderStyle"
             inputAlign="right"
             :border="true"
-          ></CFField>
-          <CFField
+          ></cf-field>
+          <cf-field
             class="field-required"
             label="手机号"
             placeholder="请输入"
             :placeholderStyle="placeholderStyle"
             inputAlign="right"
             :border="true"
-          ></CFField>
+          ></cf-field>
           <view class="flex-row tips-content items-center">
             <text class="tips-label">注：</text>
             <text class="tips-label">报名成功后由平台工作人员联系，请保持电话通畅~</text>
           </view>
         </view>
-      </CFCard>
-      <GoodsCard class="mt-10" :goodsCard="goodsCard"></GoodsCard>
-      <SubmitInfo class="mt-10" :submitData="submitData"></SubmitInfo>
+      </cf-card>
+      <goods-card class="mt-10" :goodsCard="goodsCard"></goods-card>
+      <submit-info class="mt-10" :submitData="submitData"></submit-info>
     </view>
-    <CartBottomPayBtn :goodsPrice="goodsPrice"></CartBottomPayBtn>
+    <cart-bottom-pay-btn :goodsPrice="goodsPrice"></cart-bottom-pay-btn>
   </view>
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
-  import CFField from '@/components/Field/Field';
+  import CfCard from '@/components/Card/Card';
+  import CfField from '@/components/Field/Field';
   import CartBottomPayBtn from '@/cart/pages/cart/components/CartBottomPayBtn/CartBottomPayBtn.vue';
   import GoodsCard from '@/cart/pages/cart/components/GoodsCard/GoodsCard.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
@@ -45,7 +45,7 @@
     options: {
       styleIsolation: 'shared',
     },
-    components: { CFCard, CFField, CartBottomPayBtn, GoodsCard, NavBar, SubmitInfo },
+    components: { CfCard, CfField, CartBottomPayBtn, GoodsCard, NavBar, SubmitInfo },
     props: {},
     data() {
       return {
