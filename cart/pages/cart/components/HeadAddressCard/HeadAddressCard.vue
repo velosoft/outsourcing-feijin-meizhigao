@@ -1,5 +1,5 @@
 <template>
-  <view class="flex-col items-stretch wrap relative items-center justify-center">
+  <view class="flex-col items-stretch wrap relative items-center justify-center" @click="onClick">
     <view class="flex-row group justify-between items-center">
       <view class="flex-col">
         <view class="flex-row items-center">
@@ -36,7 +36,12 @@
       return {};
     },
 
-    methods: {},
+    methods: {
+      onClick() {
+        console.log('click');
+        uni.navigateTo({ url: '/personal/pages/personal/address/address/address' });
+      },
+    },
   };
 </script>
 
