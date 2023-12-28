@@ -30,7 +30,7 @@
         </view>
       </view>
     </view>
-    <view class="flex-row justify-between items-center reserve-wrap mt-40" v-if="true">
+    <view class="flex-row justify-between items-center reserve-wrap mt-20" v-if="true">
       <text class="title reserve-text">预约时间</text>
       <view class="flex-row items-center">
         <text class="title" v-if="timeSelected">{{ timeSelected }}</text>
