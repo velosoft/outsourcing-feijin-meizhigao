@@ -1,5 +1,5 @@
 <template>
-  <view class="flex-col root" :style="{background: bgColor, padding: padding}">
+  <view class="flex-col root" :style="{ background: bgColor, padding: padding }">
     <view class="flex-col justify-start items-center title">
       <text class="font_5 text_13">{{ title }}</text>
     </view>
@@ -10,6 +10,7 @@
       type="primary"
       shape="circle"
       :disabled="disabledButton"
+      :customStyle="btnStyle"
       @click="onClick"
     ></u-button>
   </view>
@@ -28,6 +29,7 @@
       buttonText: { type: String, default: `确定` },
       disabledButton: { type: Boolean, default: false },
       bgColor: { type: String, default: `#ffffff` },
+      btnStyle: { type: Object, default: {} },
       padding: { type: String, default: `32rpx 32rpx 72rpx 40rpx` },
     },
     data() {
