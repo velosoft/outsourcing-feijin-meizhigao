@@ -8,7 +8,7 @@
       </view>
     </view>
     <view class="flex-col list"
-      ><CourseItem class="list-item mt-12" v-for="(item, index) in items" :key="index"></CourseItem
+      ><CourseItem class="list-item mt-20" v-for="(item, index) in items" :key="index"></CourseItem
     ></view>
   </view>
 </template>
