@@ -1,5 +1,5 @@
 <template>
-  <CFCard>
+  <cf-card>
     <view class="flex-col">
       <view class="flex-col">
         <u-cell
@@ -41,26 +41,30 @@
           <text class="title textare-tips ml-8">50字以内（选填）</text>
         </view>
         <u-textarea
-          class="text-area text-area-border"
+          class="text-area"
+          v-model="inputValue"
           placeholder="请输入…"
-          placeholderStyle="font-size:24rpx;color:#C3C3C3;font-family:苹方;font-weight:400;"
+          placeholderStyle="font-size:24rpx;color:#9e9ea0;font-family:苹方;font-weight:400;"
         ></u-textarea>
       </view>
     </view>
-    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12"><PopCoupon></PopCoupon></u-popup>
-    <u-popup :show="popupVisible_1" @close="onClose_1" mode="bottom" :round="12">
-      <PopPointsDeduction></PopPointsDeduction>
+    <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12">
+      <pop-coupon></pop-coupon>
     </u-popup>
-  </CFCard>
+    <u-popup :show="popupVisible_1" @close="onClose_1" mode="bottom" :round="12">
+      <pop-points-deduction></pop-points-deduction>
+    </u-popup>
+  </cf-card>
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
+  import CfCard from '@/components/Card/Card';
   import PopCoupon from '@/cart/pages/cart/registerCourse/components/PopCoupon/PopCoupon.vue';
   import PopPointsDeduction from '@/cart/pages/cart/registerCourse/components/PopPointsDeduction/PopPointsDeduction.vue';
 
   export default {
-    components: { CFCard, PopCoupon, PopPointsDeduction },
+    options: { styleIsolation: 'shared' },
+    components: { CfCard, PopCoupon, PopPointsDeduction },
     props: { submitData: { type: Object, default: () => ({}) } },
     data() {
       return {
@@ -69,6 +73,7 @@
         coinsNum: '',
         popupVisible: false,
         popupVisible_1: false,
+        inputValue: '',
       };
     },
 
@@ -99,7 +104,7 @@
   .text-area-gap {
     margin-bottom: 32rpx;
   }
-  .textare-tips-label{
+  .textare-tips-label {
     font-family: PingFang SC;
     color: #6d6d6d;
   }
@@ -109,10 +114,14 @@
     line-height: 26rpx;
   }
   .text-area {
-    margin: 0 8rpx;
-
-    /deep/ .u-textarea .textarea{
+    /deep/ .u-textarea .textarea {
       min-height: 220rpx !important;
+    }
+
+    /deep/ .u-textarea__field {
+      color: #111111;
+      font-size: 24rpx;
+      font-family: 苹方;
     }
   }
 </style>

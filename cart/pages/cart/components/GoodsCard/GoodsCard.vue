@@ -5,10 +5,10 @@
         <view class="flex-col items-center relative thumb">
           <image class="image" src="/cart/static/images/mock_thumb_002.png" />
           <view class="flex-col items-center text-wrapper pos justify-center" v-if="true">
-            <text class="currency tag">满减</text>
+            <text class="tag">满减</text>
           </view>
           <view class="flex-col items-center text-wrapper pos justify-center tab-bg-active" v-if="false">
-            <text class="currency tag">秒杀</text>
+            <text class="tag">秒杀</text>
           </view>
         </view>
         <view class="flex-col justify-between ml-12 flex-1">
@@ -80,6 +80,8 @@
           height: 38rpx;
           .tag {
             color: #ffffff;
+            font-size: 20rpx;
+            font-family: PingFangSC;
             font-weight: 700;
             line-height: 38rpx;
           }
@@ -111,43 +113,12 @@
         color: #bb3e0c;
         line-height: 28rpx;
       }
-      .currency {
-        font-size: 20rpx;
-        font-family: PingFangSC;
-        line-height: 28rpx;
-        color: #bb3e0c;
-      }
-      .price {
-        font-size: 32rpx;
-        font-family: HarmonyOS Sans SC;
-        line-height: 38rpx;
-        font-weight: 700;
-        color: #bb3e0c;
-      }
-      .decimal {
-        font-size: 24rpx;
-        font-family: HarmonyOS Sans SC;
-        font-weight: 700;
-        color: #bb3e0c;
-      }
+
       .additional {
         font-size: 20rpx;
         font-family: PingFangSC;
         line-height: 20rpx;
         color: #6d6d6d;
-      }
-      .currency-normal {
-        color: #111111;
-      }
-      .price-normal {
-        color: #111111;
-      }
-      .decimal-noraml {
-        color: #111111;
-        font-size: 20rpx;
-        font-family: HarmonyOS Sans SC;
-        font-weight: 700;
-        line-height: 20rpx;
       }
       .additional-text {
         font-size: 22rpx;
@@ -161,6 +132,13 @@
       .reserve-text {
         line-height: 26rpx;
       }
+      .title {
+        font-size: 28rpx;
+        font-family: PingFangSC;
+        line-height: 28rpx;
+        color: #111111;
+      }
+
       .select-time {
         color: #6d6d6d;
         line-height: 26rpx;
@@ -169,12 +147,6 @@
         width: 24rpx;
         height: 24rpx;
       }
-    }
-    .title {
-      font-size: 28rpx;
-      font-family: PingFangSC;
-      line-height: 28rpx;
-      color: #111111;
     }
   }
 </style>
