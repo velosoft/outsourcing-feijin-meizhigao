@@ -4,9 +4,11 @@
       <view class="flex-col">
         <view class="flex-row items-center">
           <image class="icon-address" src="/cart/static/images/icon_address.png" />
-          <text class="line-clamp-one text address-text ml-8">{{ addressDetail || '请选择您的地址' }}</text>
+          <text class="line-clamp-one text address-text ml-8">{{
+            addressDetail ? addressDetail.address : '请选择您的地址'
+          }}</text>
         </view>
-        <view class="flex-col ml-23 mt-4" v-if="addressDetail.address">
+        <view class="flex-col ml-23 mt-4" v-if="addressDetail">
           <text class="line-clamp-two address-detial text">{{ addressDetail.detail }}</text>
           <view class="flex-row items-center mt-4">
             <text class="address-detial">{{ addressDetail.name }}</text>
