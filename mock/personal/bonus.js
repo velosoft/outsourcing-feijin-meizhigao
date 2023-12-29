@@ -366,4 +366,124 @@ export const dailyCheckinList = [
     status: 'pending',
     bonus: 200,
   },
+  {
+    number: 8,
+    status: 'pending',
+    bonus: 50,
+  },
+  {
+    number: 9,
+    status: 'pending',
+    bonus: 50,
+  },
+  {
+    number: 10,
+    status: 'pending',
+    bonus: 50,
+  },
+  {
+    number: 11,
+    status: 'pending',
+    bonus: 55,
+  },
+  {
+    number: 12,
+    status: 'pending',
+    bonus: 55,
+  },
+  {
+    number: 13,
+    status: 'pending',
+    bonus: 100,
+  },
+  {
+    number: 14,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 15,
+    status: 'pending',
+    bonus: 50,
+  },
+  {
+    number: 16,
+    status: 'pending',
+    bonus: 50,
+  },
+  {
+    number: 17,
+    status: 'pending',
+    bonus: 50,
+  },
+  {
+    number: 18,
+    status: 'pending',
+    bonus: 55,
+  },
+  {
+    number: 19,
+    status: 'pending',
+    bonus: 55,
+  },
+  {
+    number: 20,
+    status: 'pending',
+    bonus: 100,
+  },
+  {
+    number: 21,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 22,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 23,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 24,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 25,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 26,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 27,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 28,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 29,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 30,
+    status: 'pending',
+    bonus: 200,
+  },
+  {
+    number: 31,
+    status: 'pending',
+    bonus: 200,
+  },
 ];

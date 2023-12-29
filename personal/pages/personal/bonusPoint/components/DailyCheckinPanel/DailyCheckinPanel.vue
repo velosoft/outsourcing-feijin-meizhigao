@@ -15,7 +15,7 @@
         </view>
       </view>
     </view>
-    <view class="list-wrap mt-20">
+    <scroll-vew class="flex-row list-wrap mt-20" :scroll-x="true">
       <view class="flex-col list-item" v-for="(item, index) in items" :key="index">
         <view class="flex-col flex-1 equal-division-item" v-if="item.status == 'done'">
           <view class="flex-col items-center section justify-center">
@@ -34,7 +34,7 @@
           <text class="self-center value-inactive mt-8">{{ item.number }}天</text>
         </view>
       </view>
-    </view>
+    </scroll-vew>
     <u-popup
       :show="popupVisible"
       @close="onClose"
@@ -139,16 +139,11 @@
       }
     }
     .list-wrap {
-      padding: 0 8rpx;
-      display: grid;
-      grid-template-rows: repeat(1, minmax(0, 1fr));
-      grid-template-columns: repeat(7, minmax(0, 1fr));
-      row-gap: 0;
-      column-gap: 0;
+      padding: 0 6rpx;
       .list-item {
         height: 112rpx;
         .equal-division-item {
-          padding: 0 16rpx;
+          padding: 0 18rpx;
           width: 96.34rpx;
           .section {
             background-color: #dec9a0;
