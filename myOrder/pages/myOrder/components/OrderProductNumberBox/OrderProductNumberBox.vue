@@ -2,7 +2,7 @@
   <view class="flex-row items-center">
     <u-checkbox v-model="v_model" name="zef0ZWPc" shape="circle" size="32rpx" activeColor="#B09053"></u-checkbox>
     <image class="shrink-0 img" :src="product.productImageURL" />
-    <view class="flex-col justify-between flex-1 ml-7">
+    <view class="flex-col justify-between self-stretch flex-1 ml-7">
       <text class="line-clamp-two font title cf-black-font">{{ product.productName }}</text>
       <text class="line-clamp-one desc cf-gray-font">{{ product.productDescription }}</text>
       <view class="flex-row justify-between items-center">
