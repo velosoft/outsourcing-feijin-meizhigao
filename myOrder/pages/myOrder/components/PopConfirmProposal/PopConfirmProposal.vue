@@ -90,7 +90,7 @@
     line-height: 40rpx;
   }
   .header-title {
-    color: #8c8f95;
+    color: #6d6d6d;
   }
   .plan-text {
     font-size: 28rpx;
