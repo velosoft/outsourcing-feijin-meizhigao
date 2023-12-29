@@ -38,7 +38,7 @@
         ],
         title: '我的收纳币',
         isShowNavbar: false,
-        navBarColor: '#ffffff00',
+        navBarColor: 'transparent',
       };
     },
 

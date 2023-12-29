@@ -7,7 +7,8 @@
       :title="title"
       :fixed="true"
       :isShow="true"
-      background="#ffffff00"
+      :background="navBarColor"
+      titleColor="#111111"
     ></nav-bar>
     <view class="flex-col relative flex-1">
       <view class="flex-col section"><bonus-banner></bonus-banner></view>
@@ -33,7 +34,23 @@
       return {
         title: '我的积分',
         list: rewardBonusPoints.concat(expenseBonusPoints),
+        isShowNavbar: false,
+        navBarColor: 'transparent',
       };
+    },
+    onPageScroll(e) {
+      // 页面滚动时执行
+      if (e.scrollTop > 30) {
+        if (!this.isShowNavbar) {
+          this.isShowNavbar = true;
+          this.navBarColor = '#ffffff';
+        }
+      } else {
+        if (this.isShowNavbar) {
+          this.isShowNavbar = false;
+          this.navBarColor = 'transparent';
+        }
+      }
     },
 
     methods: {},
