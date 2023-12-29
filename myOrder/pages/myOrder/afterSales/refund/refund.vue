@@ -23,9 +23,9 @@
               <text class="consignor-value">李小鱼</text>
               <text class="consignor-value tel">15212345678</text>
             </view>
-            <view class="flex-row flex-1 mt-4">
+            <view class="flex-1 mt-4">
               <text class="address address-text">广东省广州市天河区车陂南东宏国际广场12楼06号东宏国际广场12楼06号</text>
-              <text class="copy copy-right">复制</text>
+              <text class="copy copy-right ml-6">复制</text>
             </view>
           </view>
         </CFCard>
@@ -216,7 +216,7 @@
       .copy-right {
         color: #b09053;
         font-size: 24rpx;
-        line-height: 34rpx;
+        line-height: 40rpx;
       }
       .equal-division-item {
         border-radius: 8rpx;
