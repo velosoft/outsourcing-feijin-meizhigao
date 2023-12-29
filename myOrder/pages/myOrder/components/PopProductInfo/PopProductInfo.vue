@@ -1,8 +1,9 @@
 <template>
   <view class="flex-col products-wrapper">
-    <text class="self-center title">商品信息</text>
-    <view class="tabs">
+    <text class="self-center pop-title">商品信息</text>
+    <view class="tabs mt-10">
       <u-tabs
+        v-if="showTabs"
         class="tabs-yellow-wide full-width"
         :list="tabs"
         lineWidth="58rpx"
@@ -18,53 +19,58 @@
         @change="onChangeTab"
       ></u-tabs>
     </view>
-    <view class="flex-col products mt-20">
-      <view class="flex-row mt-12 list-item" v-for="(item, index) in items" :key="index">
-        <image
-          class="image"
-          src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png"
-        />
-        <view class="flex-col flex-1 ml-10 justify-between">
-          <view>
-            <text class="line-clamp-two title">定制卧室收纳柜新疆包邮卧室床头包</text>
-            <view class="count-down mt-2">活动将在12月12日00:00结束</view>
-          </view>
-          <view class="flex-row justify-between">
-            <text class="desc">中号；白色</text>
-            <text class="count" v-if="index % 2 === 0">x1</text>
-            <view class="flex-row" v-else>
-              <text class="count">退回数量</text>
-              <text class="count ml-9">1</text>
+    <scroll-view :scroll-y="true" class="scroll-height">
+      <view class="flex-col products mt-20">
+        <view class="flex-row mt-15 list-item" v-for="(item, index) in items" :key="index">
+          <image
+            class="image"
+            src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=mock_thumb_008.png"
+          />
+          <view class="flex-col flex-1 ml-10 justify-between">
+            <view>
+              <text class="line-clamp-two title">定制卧室收纳柜新疆包邮卧室床头包</text>
+              <view class="count-down mt-2" v-if="index % 2 === 0">活动将在12月12日00:00结束</view>
             </view>
-          </view>
-          <view class="price-wrapper" :class="{ seckill: index % 2 === 0 }">
-            <text class="seckill-price" v-if="index % 2 === 0">秒杀价</text>
-            <text class="price-number-10">￥</text>
-            <text class="price-number-16">100</text>
-            <text class="price-number-10">.00</text>
+            <view class="flex-row justify-between">
+              <text class="desc">中号；白色</text>
+              <text class="count" v-if="index % 2 === 0">x1</text>
+              <view class="flex-row" v-else>
+                <text class="count">退回数量</text>
+                <text class="count ml-9">1</text>
+              </view>
+            </view>
+            <view class="price-wrapper" :class="{ seckill: index % 2 === 0 }">
+              <text class="seckill-price" v-if="index % 2 === 0">秒杀价</text>
+              <price :price="100" />
+            </view>
           </view>
         </view>
       </view>
-    </view>
+    </scroll-view>
   </view>
 </template>
 
 <script>
+  import { Price } from '@/components/Price/Price';
   export default {
-    components: {},
+    options: {
+      styleIsolation: 'shared',
+    },
+    components: { Price },
     props: {},
     data() {
       return {
-        items: [null, null, null, null],
+        items: [null, null, null, null, null, null, null],
         tabs: [
           {
-            name: '常规商品（10）',
+            name: '常规商品（1）',
           },
           {
-            name: '定制清单（10）',
+            name: '定制清单（100）',
           },
         ],
         tab: 0,
+        showTabs: true,
       };
     },
     methods: {
@@ -84,14 +90,13 @@
     background-color: #ffffff;
     border-radius: 24rpx 24rpx 0rpx 0rpx;
   }
-  .title {
+  .pop-title {
     color: #111111;
     font-size: 32rpx;
     font-weight: 500;
     line-height: 44rpx;
   }
   .tabs {
-    margin-top: 10rpx;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 10rpx;
   }
@@ -128,5 +133,17 @@
     color: #b09053;
     line-height: 34rpx;
     font-size: 24rpx;
+  }
+  .scroll-height {
+    height: 800rpx;
+  }
+
+  .tabs-yellow-wide {
+    /deep/ .u-tabs__wrapper__nav__line {
+      margin-left: -24rpx;
+    }
+  }
+  .mt-15 {
+    margin-top: 30rpx;
   }
 </style>
