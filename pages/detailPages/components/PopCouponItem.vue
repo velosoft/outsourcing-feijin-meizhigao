@@ -7,7 +7,7 @@
       <view class="flex-col justify-center items-center flex-1 relative left-con">
         <view class="flex-row">
           <text class="coupon-price">10</text>
-          <text class="self-end unit">元</text>
+          <text class="self-end uni ml-2">元</text>
         </view>
         <text class="label con-text">满100元使用</text>
       </view>
