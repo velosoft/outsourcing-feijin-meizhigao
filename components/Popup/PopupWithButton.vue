@@ -6,6 +6,7 @@
     <slot></slot>
     <u-button
       class="cf-btn-black"
+      :style="{ margin: btnMargin }"
       :text="buttonText"
       type="primary"
       shape="circle"
@@ -31,6 +32,7 @@
       bgColor: { type: String, default: `#ffffff` },
       btnStyle: { type: Object, default: {} },
       padding: { type: String, default: `32rpx 32rpx 72rpx 40rpx` },
+      btnMargin:  { type: String, default: `` },
     },
     data() {
       return {};

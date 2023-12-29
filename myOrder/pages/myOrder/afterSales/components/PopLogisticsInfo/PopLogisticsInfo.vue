@@ -4,6 +4,7 @@
     buttonText="确定"
     bgColor="#f1f1f1"
     padding="32rpx 12rpx 72rpx 12rpx"
+    btnMargin="0 44rpx"
     @click="onConfirm"
   >
     <view class="flex-col content">
