@@ -29,8 +29,8 @@
 
   body {
     margin: 0;
-    font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-      'Droid Sans', 'Helvetica Neue', 'Microsoft Yahei', sans-serif;
+    font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+      'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Microsoft Yahei', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -547,6 +547,30 @@
 
   .mt-100 {
     margin-top: 200rpx;
+  }
+
+  .gap-4 {
+    gap: 8rpx;
+  }
+
+  .gap-6 {
+    gap: 12rpx;
+  }
+
+  .gap-8 {
+    gap: 16rpx;
+  }
+
+  .gap-10 {
+    gap: 20rpx;
+  }
+
+  .hidden-x {
+    overflow-x: hidden;
+  }
+
+  .hidden-y {
+    overflow-y: hidden;
   }
 
   .height-full {
