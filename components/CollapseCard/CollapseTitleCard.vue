@@ -57,7 +57,12 @@
         return this.localStatus === 'open' ? this.openText : this.closedText;
       },
       style() {
-        return this.localStatus === 'open' ? '' : `overflow:hidden; height: ${this.closedHeight}`;
+        if (this.showCollapse) {
+          // 只有展示折叠按钮时，才考虑折叠高度的问题。如果不暂时折叠按钮，则按内容高度即可。
+          return this.localStatus === 'open' ? '' : `overflow:hidden; height: ${this.closedHeight}`;
+        } else {
+          return '';
+        }
       },
     },
     watch: {

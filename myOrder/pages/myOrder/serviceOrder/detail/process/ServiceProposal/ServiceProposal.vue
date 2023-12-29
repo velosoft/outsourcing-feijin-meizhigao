@@ -5,7 +5,7 @@
         <view class="flex-col">
           <u-cell class="cell-in-gray-card" title="设计开始时间" value="2024 -03-25 12:00:00" :border="false"></u-cell>
           <u-cell class="cell-in-gray-card mt-16" title="服务内容1" value="区域精准测量" :border="false"></u-cell>
-          <u-cell class="cell-in-gray-card mt-16" title="方案" label="商品方案" value="服务方案" :border="false">
+          <u-cell class="cell-in-gray-card mt-16" title="方案" :border="false">
             <view class="flex-row" slot="value">
               <view class="flex-row items-center" @click="gotoProductList">
                 <text class="text-golden">商品方案</text>
