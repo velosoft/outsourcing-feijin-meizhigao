@@ -1,6 +1,13 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <NavBar
+      :hasBack="true"
+      :title="title"
+      :fixed="true"
+      :isShow="true"
+      :background="navBarColor"
+      :titleColor="titleColor"
+    ></NavBar>
     <view class="flex-col body">
       <OrderStatusCard :orderData="orderData"></OrderStatusCard>
       <view class="flex-col relative info-wrap">
@@ -66,10 +73,29 @@
     props: {},
     data() {
       return {
-        orderData: '',
-        title: '',
+        orderData: {},
+        title: '订单详情',
+        isShowNavbar: false,
+        navBarColor: '#b09053',
+        titleColor: '#ffffff',
         showCaptain: false,
       };
+    },
+    onPageScroll(e) {
+      // 页面滚动时执行
+      if (e.scrollTop > 10) {
+        if (!this.isShowNavbar) {
+          this.isShowNavbar = true;
+          this.navBarColor = '#ffffff';
+          this.titleColor = '#111111';
+        }
+      } else {
+        if (this.isShowNavbar) {
+          this.isShowNavbar = false;
+          this.navBarColor = '#b09053';
+          this.titleColor = '#ffffff';
+        }
+      }
     },
     methods: {
       onShowCaptain() {
