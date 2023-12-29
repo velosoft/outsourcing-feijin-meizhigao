@@ -2,7 +2,7 @@
   <view class="flex-col relative page">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col">
-      <fj-sticky v-bind:customNavHeight="80">
+      <fj-sticky>
         <u-tabs
           class="tabs-yellow-wide-cart"
           :list="tabs"

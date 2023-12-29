@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col page height-full">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
-    <fj-sticky v-bind:customNavHeight="customNavHeight"
+    <fj-sticky
       ><u-tabs
         class="tabs-yellow-wide"
         :list="list"
@@ -39,7 +39,6 @@
     props: {},
     data() {
       return {
-        customNavHeight: '80',
         problemList: [
           {
             pid: '001',

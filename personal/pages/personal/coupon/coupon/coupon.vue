@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col relative page">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
-    <fj-sticky v-bind:customNavHeight="customNavHeight">
+    <fj-sticky>
       <u-tabs
         class="coupon-tabs"
         :list="tabs"
@@ -79,7 +79,6 @@
     props: {},
     data() {
       return {
-        customNavHeight: 88,
         couponType: '',
         title: '优惠券中心',
         tabs: [

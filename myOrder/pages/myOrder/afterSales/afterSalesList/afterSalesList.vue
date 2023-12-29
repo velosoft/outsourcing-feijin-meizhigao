@@ -9,7 +9,7 @@
       <SearchBar class="search-wrap" :value="value" placeholder="请输入售后订单号" background="#f8f8f8"></SearchBar>
     </view>
     <view class="flex-col">
-      <FjSticky v-bind:customNavHeight="80">
+      <FjSticky>
         <u-tabs
           class="line-tabs u-tabs-border-bottom u-tabs-bg-white"
           :list="tabs"

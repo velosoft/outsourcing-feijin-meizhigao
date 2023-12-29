@@ -5,7 +5,7 @@
       <view class="flex-col search-wrap">
         <SearchBar :value="value" placeholder="请输入课程单号/课程名称搜索"></SearchBar>
       </view>
-      <FjSticky v-bind:customNavHeight="customNavHeight">
+      <FjSticky>
         <u-tabs
           class="tabs-yellow-wide"
           :list="list"
@@ -16,8 +16,7 @@
           :scrollable="true"
           itemStyle="padding-left: 39rpx; padding-right: 39rpx; height: 86rpx;"
           @change="onChangeStatus"
-        ></u-tabs>
-      </FjSticky
+        ></u-tabs> </FjSticky
       ><list-container
         :showEmpty="!items.length"
         :showLoading="showLoading"
@@ -55,7 +54,6 @@
       return {
         value: '',
         orderType: 0,
-        customNavHeight: '80',
         title: '课程订单',
         list: [
           {
@@ -104,7 +102,7 @@
     }
 
     .list {
-        background-color:#f8f8f8;
+      background-color: #f8f8f8;
       .list-item {
         margin: 24rpx 24rpx 0;
       }

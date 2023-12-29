@@ -9,7 +9,7 @@
       <SearchBar :value="value" placeholder="商品名称搜索" background="#f8f8f8"></SearchBar>
     </view>
     <view class="flex-col">
-      <FjSticky v-bind:customNavHeight="80">
+      <FjSticky>
         <u-tabs
           class="tabs-yellow-wide"
           :list="tabs"

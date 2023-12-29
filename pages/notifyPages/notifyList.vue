@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col page">
     <nav-bar :hasBack="true" title="消息"></nav-bar>
-    <fj-sticky :customNavHeight="80">
+    <fj-sticky>
       <tabs
         class="tabs-wrap"
         :tabList="tabList"

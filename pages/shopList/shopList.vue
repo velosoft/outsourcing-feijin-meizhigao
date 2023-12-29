@@ -3,15 +3,11 @@
     <nav-bar :hasBack="true" :title="title"></nav-bar>
     <view class="flex-col justify-start banner">
       <view class="flex-col justify-start items-center banner-image-wrapper">
-        <image
-          class="banner-image"
-          src="/static/mock/shop_list_banner.png"
-          mode="aspectFill"
-        />
+        <image class="banner-image" src="/static/mock/shop_list_banner.png" mode="aspectFill" />
       </view>
     </view>
     <view class="flex-col">
-      <fj-sticky :customNavHeight="80">
+      <fj-sticky>
         <u-tabs
           class="border-tabs"
           lineColor="#b09053"
@@ -50,122 +46,122 @@
 </template>
 
 <script>
-import NavBar from "@/components/NavBar/NavBar.vue";
-import FjSticky from "@/components/FjSticky.vue";
-import ListContainer from "@/components/ListContainer/ListContainer.vue";
-import DoubleList from "@/components/DoubleList/DoubleList.vue";
+  import NavBar from '@/components/NavBar/NavBar.vue';
+  import FjSticky from '@/components/FjSticky.vue';
+  import ListContainer from '@/components/ListContainer/ListContainer.vue';
+  import DoubleList from '@/components/DoubleList/DoubleList.vue';
 
-import { serviceList, courseList } from "@/mock/shopList";
+  import { serviceList, courseList } from '@/mock/shopList';
 
-export default {
-  components: {
-    NavBar,
-    FjSticky,
-    ListContainer,
-    DoubleList,
-  },
-  props: {},
-  data() {
-    return {
-      title: "",
-      status: "loadmore",
-      page: 1,
-      list: [],
-      showLoading: true,
-      finished: false,
-      tabs: [],
-    };
-  },
-  onLoad: function (option) {
-    this.title = option.title;
-    if (this.title == "课程中心") {
-      this.tabs = [
-        {
-          name: "全部",
-        },
-        {
-          name: "体验课程",
-        },
-        {
-          name: "职业课程",
-        },
-        {
-          name: "创业课程",
-        },
-      ];
-      this.list = courseList;
-    } else if (this.title == "服务中心") {
-      this.tabs = [
-        {
-          name: "全部",
-        },
-        {
-          name: "单区收纳",
-        },
-        {
-          name: "全屋收纳",
-        },
-        {
-          name: "卧室收纳",
-        },
-        {
-          name: "衣柜收纳",
-        },
-      ];
-      this.list = serviceList;
-    }
-  },
-  onReachBottom() {
-    if (this.page >= 2) {
-      this.finished = true;
-      return;
-    }
-    this.finished = false;
+  export default {
+    components: {
+      NavBar,
+      FjSticky,
+      ListContainer,
+      DoubleList,
+    },
+    props: {},
+    data() {
+      return {
+        title: '',
+        status: 'loadmore',
+        page: 1,
+        list: [],
+        showLoading: true,
+        finished: false,
+        tabs: [],
+      };
+    },
+    onLoad: function (option) {
+      this.title = option.title;
+      if (this.title == '课程中心') {
+        this.tabs = [
+          {
+            name: '全部',
+          },
+          {
+            name: '体验课程',
+          },
+          {
+            name: '职业课程',
+          },
+          {
+            name: '创业课程',
+          },
+        ];
+        this.list = courseList;
+      } else if (this.title == '服务中心') {
+        this.tabs = [
+          {
+            name: '全部',
+          },
+          {
+            name: '单区收纳',
+          },
+          {
+            name: '全屋收纳',
+          },
+          {
+            name: '卧室收纳',
+          },
+          {
+            name: '衣柜收纳',
+          },
+        ];
+        this.list = serviceList;
+      }
+    },
+    onReachBottom() {
+      if (this.page >= 2) {
+        this.finished = true;
+        return;
+      }
+      this.finished = false;
 
-    setTimeout(() => {
-      this.list = this.list.concat(this.list);
-      this.page++;
-    }, 1500);
-  },
+      setTimeout(() => {
+        this.list = this.list.concat(this.list);
+        this.page++;
+      }, 1500);
+    },
 
-  methods: {
-    onTabClick(val) {},
-  },
-};
+    methods: {
+      onTabClick(val) {},
+    },
+  };
 </script>
 
 <style scoped lang="less">
-.banner {
-  padding-top: 16rpx;
-  background-color: #ffffff;
-}
-
-.banner-image-wrapper {
-  margin: 0 32rpx;
-}
-
-.banner-image {
-  width: 92vw;
-  height: 26vw;
-}
-
-.border-tabs {
-  /deep/ .u-tabs {
+  .banner {
+    padding-top: 16rpx;
     background-color: #ffffff;
   }
-  /deep/ .u-tabs__wrapper__nav__item {
-    height: 80rpx !important;
+
+  .banner-image-wrapper {
+    margin: 0 32rpx;
   }
-}
 
-.left-list {
-  flex: 1 1 330rpx;
-}
+  .banner-image {
+    width: 92vw;
+    height: 26vw;
+  }
 
-.right-list {
-  flex: 1 1 330rpx;
-}
-.list-container-bg {
-  background-color: #f8f8f8;
-}
+  .border-tabs {
+    /deep/ .u-tabs {
+      background-color: #ffffff;
+    }
+    /deep/ .u-tabs__wrapper__nav__item {
+      height: 80rpx !important;
+    }
+  }
+
+  .left-list {
+    flex: 1 1 330rpx;
+  }
+
+  .right-list {
+    flex: 1 1 330rpx;
+  }
+  .list-container-bg {
+    background-color: #f8f8f8;
+  }
 </style>

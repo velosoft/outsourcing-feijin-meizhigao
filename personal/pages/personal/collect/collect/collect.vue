@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col page">
     <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
-    <fj-sticky v-bind:customNavHeight="88">
+    <fj-sticky>
       <u-tabs class="tabs-yellow-wide-eq" :list="tabItems" :activeStyle="activeStyle" :scrollable="false"></u-tabs>
     </fj-sticky>
     <view class="flex-col justify-start tabs-body">

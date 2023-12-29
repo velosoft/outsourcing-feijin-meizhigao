@@ -5,7 +5,7 @@
       <view class="flex-col justify-start items-center banner-image-wrapper">
         <image class="shrink-0 banner-image" src="/static/mock/mock_coupon_banner.png" />
       </view>
-      <fj-sticky :customNavHeight="80">
+      <fj-sticky>
         <u-tabs
           class="tabs-yellow-wide tabs"
           :activeStyle="{
