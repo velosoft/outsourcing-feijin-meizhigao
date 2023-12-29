@@ -1,7 +1,7 @@
 <template>
-  <view class="flex-row items-center button_1" @click="onClick">
-    <text class="font_2">{{ text }}</text>
-    <image class="shrink-0 image_7 ml-4" src="/myOrder/static/images/icon_golden_right_arrow.png" />
+  <view class="flex-row items-center wrapper" @click="onClick">
+    <text class="label">{{ text }}</text>
+    <image class="shrink-0 icon_arrow ml-4" src="/myOrder/static/images/icon_golden_right_arrow.png" />
   </view>
 </template>
 
@@ -21,19 +21,19 @@
 </script>
 
 <style scoped lang="less">
-  .button_1 {
+  .wrapper {
     padding: 8rpx;
     border-radius: 8rpx;
     border-left: solid 1rpx #dec9a0;
     border-right: solid 1rpx #dec9a0;
     border-top: solid 1rpx #dec9a0;
     border-bottom: solid 1rpx #dec9a0;
-    .font_2 {
+    .label {
       color: #b09053;
       font-size: 28rpx;
       line-height: 40rpx;
     }
-    .image_7 {
+    .icon_arrow {
       width: 8rpx;
       height: 14rpx;
     }
