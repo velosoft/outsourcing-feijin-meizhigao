@@ -1,4 +1,4 @@
-export const productAfterSalesTabs = ['全部', '待付款', '待发货', '待收获', '交易完成'];
+export const productAfterSalesTabs = ['全部', '待付款', '待发货', '待收货', '交易完成'];
 export const serviceAfterSalesTabs = ['全部', '申请中', '售后中', '售后成功'];
 export const intentionAfterSalesTabs = ['全部', '申请中', '售后中', '售后成功'];
 

@@ -6,8 +6,8 @@
         <cf-Field label="联系人" placeholder="请输入联系人姓名" :placeholderStyle="placeholderStyle"></cf-Field>
         <cf-field label="联系电话" placeholder="请输入联系电话" :placeholderStyle="placeholderStyle"></cf-field>
         <cf-field
-          label="收获地址"
-          placeholder="请选择收获地址"
+          label="收货地址"
+          placeholder="请选择收货地址"
           :isLink="true"
           :placeholderStyle="placeholderStyle"
         ></cf-field>
