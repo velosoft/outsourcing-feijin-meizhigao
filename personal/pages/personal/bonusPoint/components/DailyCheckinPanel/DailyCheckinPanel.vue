@@ -66,6 +66,9 @@
         bonus: 0,
       };
     },
+    mounted() {
+      console.log('dailyCheckinList', dailyCheckinList);
+    },
 
     methods: {
       onCheckin() {
@@ -140,6 +143,7 @@
     }
     .list-wrap {
       padding: 0 6rpx;
+      overflow-x: auto;
       .list-item {
         height: 112rpx;
         .equal-division-item {
