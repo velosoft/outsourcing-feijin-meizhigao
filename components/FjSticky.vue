@@ -102,7 +102,8 @@
       },
       stickyTop() {
         // 吸顶的top值，因为可能受自定义导航栏影响，最终的吸顶值非offsetTop值
-        return this.statusBarHeight + this.getPx(this.offsetTop || 0) + this.getPx(this.customNavHeight || 0);
+        // 最后 -1px 的作用是避免像素误差带来的边沿内容透出问题，确保 sticky 效果覆盖完整
+        return this.statusBarHeight + this.getPx(this.offsetTop || 0) + this.getPx(this.customNavHeight || 0) - 1;
       },
       stickyContentId() {
         return this.elId + 'Content';
