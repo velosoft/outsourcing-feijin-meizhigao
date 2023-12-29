@@ -1,7 +1,7 @@
 <template>
   <view class="flex-col page">
-    <NavBar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
-    <CFCard class="card" title="订单核对结果" :useTag="true">
+    <nav-bar class="header" :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
+    <cf-card class="card" title="订单核对结果" :useTag="true">
       <view class="flex-col mt-16">
         <u-cell class="cell-in-white-card-weight" title="超额服务费需支付" value="￥100" :border="false"></u-cell>
         <u-cell class="cell-in-white-card-weight mt-16" title="补购商品需支付" value="￥200" :border="false"></u-cell>
@@ -17,16 +17,16 @@
           :border="false"
         ></u-cell>
       </view>
-    </CFCard>
-    <CFCard class="card" title="服务核对结果" :useTag="true">
+    </cf-card>
+    <cf-card class="card" title="服务核对结果" :useTag="true">
       <view class="flex-col mt-16">
         <u-cell class="cell-in-white-card-weight" title="已支付服务费报价" value="￥400" :border="false"></u-cell>
         <u-cell class="cell-in-white-card-weight mt-16" title="实际支付服务费" value="￥500" :border="false"></u-cell>
         <view class="divider"></view>
         <u-cell class="cell-in-white-card-weight mt-16" title="超额服务费支付" value="￥200" :border="false"></u-cell>
       </view>
-    </CFCard>
-    <CFCard class="card" title="商品核对结果" :useTag="true">
+    </cf-card>
+    <cf-card class="card" title="商品核对结果" :useTag="true">
       <view class="product-types" slot="headerRight">
         <view
           v-for="(item, index) in productTypes"
@@ -54,14 +54,14 @@
           :border="false"
         ></u-cell>
       </view>
-    </CFCard>
-    <CFCard class="card" title="需退回商品清单" :useTag="true">
+    </cf-card>
+    <cf-card class="card" title="需退回商品清单" :useTag="true">
       <view class="flex-row items-center" slot="headerRight" @click="onShowProducts">
         <text class="self-center product-count">共 20 件商品</text>
         <image class="icon-arrow-right-yellow ml-4" src="/myOrder/static/images/icon_arrow_right_yellow.png" />
       </view>
-      <view class="flex-col mt-16">
-        <view class="flex-row justify-between">
+      <view class="flex-col mt-12">
+        <view class="flex-row justify-start gap-8 hidden-x">
           <image
             class="equal-division-item"
             src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=b7b2f633c35e6036c37d5d570a880cd9.png"
@@ -74,14 +74,14 @@
           <text class="ml-8 sum-money">￥2000</text>
         </view>
       </view>
-    </CFCard>
-    <CFCard class="card" title="补购商品清单" :useTag="true">
+    </cf-card>
+    <cf-card class="card" title="补购商品清单" :useTag="true">
       <view class="flex-row items-center" slot="headerRight" @click="onShowProducts">
         <text class="self-center product-count">共 20 件商品</text>
         <image class="icon-arrow-right-yellow ml-4" src="/myOrder/static/images/icon_arrow_right_yellow.png" />
       </view>
-      <view class="flex-col mt-16">
-        <view class="flex-row justify-between">
+      <view class="flex-col mt-12">
+        <view class="flex-row justify-start gap-8 hidden-x">
           <image
             class="equal-division-item"
             src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=b7b2f633c35e6036c37d5d570a880cd9.png"
@@ -94,14 +94,14 @@
           <text class="ml-8 sum-money">￥2000</text>
         </view>
       </view>
-    </CFCard>
-    <CFCard class="card" title="已使用商品清单" :useTag="true">
+    </cf-card>
+    <cf-card class="card" title="已使用商品清单" :useTag="true">
       <view class="flex-row items-center" slot="headerRight" @click="onShowProducts">
         <text class="self-center product-count">共 20 件商品</text>
         <image class="icon-arrow-right-yellow ml-4" src="/myOrder/static/images/icon_arrow_right_yellow.png" />
       </view>
-      <view class="flex-col mt-16">
-        <view class="flex-row justify-between">
+      <view class="flex-col mt-12">
+        <view class="flex-row justify-start gap-8 hidden-x">
           <image
             class="equal-division-item"
             src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=b7b2f633c35e6036c37d5d570a880cd9.png"
@@ -110,14 +110,14 @@
           />
         </view>
       </view>
-    </CFCard>
-    <CFCard class="card" title="未使用商品清单" :useTag="true">
+    </cf-card>
+    <cf-card class="card" title="未使用商品清单" :useTag="true">
       <view class="flex-row items-center" slot="headerRight" @click="onShowProducts">
         <text class="self-center product-count">共 20 件商品</text>
         <image class="icon-arrow-right-yellow ml-4" src="/myOrder/static/images/icon_arrow_right_yellow.png" />
       </view>
-      <view class="flex-col mt-16">
-        <view class="flex-row justify-between">
+      <view class="flex-col mt-12">
+        <view class="flex-row justify-start gap-8 hidden-x">
           <image
             class="equal-division-item"
             src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=b7b2f633c35e6036c37d5d570a880cd9.png"
@@ -126,29 +126,32 @@
           />
         </view>
       </view>
-    </CFCard>
+    </cf-card>
     <view class="flex-col justify-start items-center btn-wrapper">
       <text class="btn-text">前往支付差额</text>
     </view>
     <u-popup :show="showProducts" @close="onCloseProducts" mode="bottom" :round="12" :closeable="true">
-      <PopProductInfo></PopProductInfo>
+      <pop-product-info></pop-product-info>
     </u-popup>
   </view>
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
+  import CfCard from '@/components/Card/Card';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import PopProductInfo from '@/myOrder/pages/myOrder/components/PopProductInfo/PopProductInfo.vue';
 
   export default {
-    components: { CFCard, NavBar, PopProductInfo },
+    options: {
+      styleIsolation: 'shared',
+    },
+    components: { CfCard, NavBar, PopProductInfo },
     props: {},
     data() {
       return {
         productTypes: ['平台商品', '线下商品'],
         title: '订单核对结果',
-        items: [null, null, null, null, null],
+        items: [null, null, null, null, null, null, null, null],
         showProducts: false,
         productType: '线下商品',
       };
@@ -204,7 +207,24 @@
   }
   .card {
     margin: 16rpx 24rpx 0;
+
+    /deep/ .root {
+      padding: 28rpx 24rpx !important;
+    }
   }
+
+  .cell-in-white-card-weight {
+    /deep/ .u-cell__title-text {
+      font-size: 24rpx !important;
+      font-family: 苹方;
+      font-weight: 400;
+    }
+    /deep/ .u-cell__value {
+      font-size: 28rpx !important;
+      font-family: HarmonyOS_Sans_Bold;
+    }
+  }
+
   .divider {
     height: 2rpx;
     background-color: #e8e8e8;
