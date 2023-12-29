@@ -647,13 +647,6 @@
     width: 100%;
   }
 
-  .textarea {
-    height: 176rpx;
-    padding: 24rpx;
-    border-radius: 12rpx;
-    /* background-color: @primaryGrey; */
-  }
-
   img,
   image {
     display: block;
