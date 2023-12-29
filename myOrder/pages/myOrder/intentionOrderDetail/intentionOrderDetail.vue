@@ -16,11 +16,15 @@
           <OrderProductItem class="mt-16"></OrderProductItem>
         </CFCard>
         <CFCard class="mt-10" title="业务团队">
-          <view class="flex-row" slot="headerRight" @click="onShowCaptain">
+          <view class="flex-row" slot="headerRight" @click="onShowCaptain" v-if="hasTeamList">
             <image class="icon-phone" src="/myOrder/static/images/icon_phone_gray_bg.png" />
             <text class="call-text ml-4">联系领队</text>
           </view>
-          <TeamListPanel class="mt-16"></TeamListPanel>
+          <TeamListPanel class="mt-16" v-if="hasTeamList"></TeamListPanel>
+          <view class="flex-col items-center mt-16 team-wait" v-else>
+            <image class="icon-clock" src="/myOrder/static/images/icon_clock_yellow.png" />
+            <text class="team-wait-text mt-12">等待分配</text>
+          </view>
         </CFCard>
         <CFCard class="mt-10" title="流程">
           <u-steps class="mt-8" direction="column">
@@ -84,6 +88,7 @@
         navBarColor: '#b09053',
         titleColor: '#ffffff',
         showCaptain: false,
+        hasTeamList: true,
       };
     },
     onPageScroll(e) {
@@ -143,5 +148,18 @@
   }
   .equal-division {
     margin: 0 20rpx;
+  }
+  .team-wait {
+    height: 186rpx;
+    padding-top: 12rpx;
+  }
+  .icon-clock {
+    width: 56rpx;
+    height: 56rpx;
+  }
+  .team-wait-text {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #2d2e32;
   }
 </style>

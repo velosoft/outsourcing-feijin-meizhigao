@@ -2,16 +2,13 @@
   <view class="flex-row items-center actions-wrapper">
     <view class="relative">
       <text class="more-text" @click="onToggleMore">更多</text>
-      <view class="more-pop" v-if="showMore">
-        <view class="arrow"></view>
-        <view class="more-action" @click="gotoComment">查看评价</view>
-      </view>
+      <view class="more-action" @click="gotoComment" v-if="showMore">查看评价</view>
     </view>
     <view class="flex-auto flex-row justify-end wrap">
       <view class="btn btn-plain" @click="gotoAfterSale"><text>申请售后</text></view>
       <view class="btn btn-plain" @click="onShowConfirmProposal"><text>确认方案</text></view>
       <view class="btn btn-plain" @click="gotoConfirmQuote"><text>确认报价</text></view>
-      <view class="btn btn-plain"><text>组件清单</text></view>
+      <view class="btn btn-plain" @click="gotoModuleList"><text>组件清单</text></view>
       <view class="btn btn-plain" @click="onShowAcceptance"><text>验收服务</text></view>
       <view class="btn btn-plain" @click="gotoProductList"><text>查看商品订单</text></view>
       <view class="btn btn-plain" @click="onShowCancel"><text>取消服务</text></view>
@@ -74,6 +71,9 @@
       gotoProductList() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
       },
+      gotoModuleList() {
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/moduleList/moduleList' });
+      },
       gotoAfterSale() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceAfterSale/serviceAfterSale' });
       },
@@ -97,29 +97,30 @@
     color: #9c9c9f;
     line-height: 36rpx;
   }
-  .more-pop {
-    position: absolute;
-    top: -92rpx;
-    left: -4rpx;
-    padding-bottom: 12rpx;
-  }
-  .arrow {
-    border: 12rpx solid transparent;
-    border-top-color: white;
-    position: absolute;
-    left: 20rpx;
-    bottom: -6px;
-  }
   .more-action {
+    position: absolute;
     width: 170rpx;
     height: 72rpx;
+    left: -4rpx;
+    top: -88rpx;
     font-size: 28rpx;
     color: #3c3d41;
     line-height: 72rpx;
     text-align: center;
     background-color: white;
     box-shadow: 0px 0px 2px 1px rgba(224, 224, 224, 0.5);
-    border-radius: 16rpx;
+    border-radius: 8rpx;
+
+    &::after {
+      position: absolute;
+      bottom: -5px;
+      left: 10px;
+      content: '';
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid white;
+      filter: drop-shadow(1px 1px 1px rgba(224, 224, 224, 0.5));
+    }
   }
   .btn {
     height: 72rpx;

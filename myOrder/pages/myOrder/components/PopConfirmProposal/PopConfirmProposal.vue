@@ -67,9 +67,7 @@
         uni.navigateTo({ url: `/myOrder/pages/myOrder/servicePlan/servicePlan` });
       },
       onConfirm() {
-        if (!this.chckbox.length) {
-          return;
-        }
+        if (!this.checkbox.length) return;
         this.$emit('confirm');
       },
     },
