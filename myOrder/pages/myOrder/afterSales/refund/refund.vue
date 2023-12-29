@@ -7,7 +7,7 @@
       <HeaderStatusCard :headerStatus="headerStatus"></HeaderStatusCard>
       <view class="flex-col relative wrap">
         <RowStep :stepData="stepData"></RowStep>
-        <CFCard class="mt-12" title="退回地址">
+        <CFCard class="mt-12" title="退回地址" v-if="true">
           <view class="flex-col mt-16">
             <view class="flex-row self-stretch">
               <text class="consignor-value">李小鱼</text>
@@ -16,7 +16,7 @@
             <text class="self-start copy address-normal mt-6">广东省广州市天河区车陂南东宏国际广场12楼06号</text>
           </view>
         </CFCard>
-        <CFCard class="mt-12">
+        <CFCard class="mt-12" v-if="true">
           <view class="flex-col">
             <view class="flex-row items-center">
               <text class="consignor consignor-text">收货人：</text>

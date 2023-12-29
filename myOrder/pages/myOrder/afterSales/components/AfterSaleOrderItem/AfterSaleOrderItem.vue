@@ -14,7 +14,7 @@
           <text class="line-clamp-two title title-text">{{ afterSaleOrder.goods.title }}</text>
           <view class="flex-row justify-between">
             <text class="label spec">{{ afterSaleOrder.goods.desc }}</text>
-            <text class="label num">{{ 'x' + afterSaleOrder.goods.quantity }}</text>
+            <text class="label">{{ 'x' + afterSaleOrder.goods.quantity }}</text>
           </view>
           <price class="cf-black-font" :price="afterSaleOrder.goods.price" />
         </view>
@@ -140,9 +140,6 @@
       }
       .spec {
         font-weight: unset;
-      }
-      .num {
-        text-transform: uppercase;
       }
       .tips-wrap {
         margin-top: 24rpx;
