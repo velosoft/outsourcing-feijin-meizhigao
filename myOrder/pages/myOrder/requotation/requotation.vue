@@ -1,18 +1,18 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col main">
       <view class="flex-row justify-between items-baseline">
         <text class="title">描述</text>
         <text class="font count">{{ v_model.length }}/200</text>
       </view>
       <u-textarea
-        class="mt-12"
+        class="mt-12 cf-textarea"
         v-model="v_model"
         placeholder="请输入您的描述……"
         height="534rpx"
         :maxlength="200"
-        placeholderStyle="font-size: 24rpx"
+        placeholderStyle="font-size:24rpx;color:#9e9ea0;font-weight:400;font-family: PingFangSC"
       ></u-textarea>
     </view>
     <view class="flex-col justify-start items-center button text-wrapper">
