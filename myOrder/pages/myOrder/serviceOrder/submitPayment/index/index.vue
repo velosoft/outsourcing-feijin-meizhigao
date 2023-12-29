@@ -1,16 +1,16 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col body">
-      <OrderContactCard></OrderContactCard>
-      <CFCard class="mt-12" title="服务信息">
+      <order-contact-card></order-contact-card>
+      <cf-card class="mt-12" title="服务信息">
         <view class="flex-col mt-14">
           <u-cell class="cell-in-white-card-weight" title="服务计费方式" value="按延米" :border="false"></u-cell>
           <u-cell class="cell-in-white-card-weight mt-16" title="计费延米数" value="5延米" :border="false"></u-cell>
           <u-cell class="cell-in-white-card-weight mt-16" title="服务金额" value="￥500" :border="false"></u-cell>
         </view>
-      </CFCard>
-      <CFCard class="mt-12" title="服务信息">
+      </cf-card>
+      <cf-card class="mt-12" title="服务信息">
         <view class="flex-col mt-14">
           <u-cell class="cell-in-white-card-weight" title="服务金额" value="￥500" :border="false"></u-cell>
           <u-cell
@@ -29,11 +29,11 @@
           ></u-cell>
           <u-cell class="cell-in-white-card-weight mt-16" title="服务应付金额" value="￥500" :border="false"></u-cell>
         </view>
-      </CFCard>
-      <CFCard class="mt-12" title="商品信息">
-        <TextArrow text="共 20 件商品" slot="headerRight" @click="onShowProducts"></TextArrow>
+      </cf-card>
+      <cf-card class="mt-12" title="商品信息">
+        <text-arrow text="共 20 件商品" slot="headerRight" @click="onShowProducts"></text-arrow>
         <view class="flex-col mt-16">
-          <view class="flex-row justify-between">
+          <view class="flex-row justify-start gap-8 hidden-x">
             <image
               class="prod-img"
               src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=b7b2f633c35e6036c37d5d570a880cd9.png"
@@ -79,12 +79,17 @@
                 <text class="font-label">留言</text>
                 <text class="font-label text-gray ml-12">50字以内（选填）</text>
               </view>
-              <u-textarea class="mt-12" v-model="v_model" placeholder="请输入…"></u-textarea>
+              <u-textarea
+                class="mt-12 cf-textarea"
+                v-model="v_model"
+                placeholder="请输入…"
+                placeholderStyle="font-size:24rpx;color:#9e9ea0;font-weight:400;font-family: PingFangSC"
+              ></u-textarea>
             </view>
           </view>
         </view>
-      </CFCard>
-      <CFCard class="mt-12" title="支付信息">
+      </cf-card>
+      <cf-card class="mt-12" title="支付信息">
         <view class="flex-col mt-14">
           <view class="flex-col">
             <u-cell
@@ -98,7 +103,7 @@
           <view class="divider mt-28"></view>
           <u-cell class="cell-in-white-card-sum mt-28" title="需付款" value="￥500" :border="false"></u-cell>
         </view>
-      </CFCard>
+      </cf-card>
     </view>
     <view class="fixed-bottom-safe flex-row justify-end items-center fix-wrapper">
       <view class="flex-row items-end">
@@ -113,25 +118,25 @@
       </view>
     </view>
     <u-popup :show="showProducts" @close="onCloseProducts" mode="bottom" :round="12" :closeable="true">
-      <PopProductInfo></PopProductInfo>
+      <pop-product-info></pop-product-info>
     </u-popup>
   </view>
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
+  import CfCard from '@/components/Card/Card';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import OrderContactCard from '../../../../../pages/myOrder/components/OrderContactCard/OrderContactCard.vue';
-  import TextArrow from '../../../../../pages/myOrder/components/TextArrow/TextArrow.vue';
+  import OrderContactCard from '@/myOrder/pages/myOrder/components/OrderContactCard/OrderContactCard.vue';
+  import TextArrow from '@/myOrder/pages/myOrder/components/TextArrow/TextArrow.vue';
   import PopProductInfo from '@/myOrder/pages/myOrder/components/PopProductInfo/PopProductInfo.vue';
 
   export default {
-    components: { CFCard, NavBar, OrderContactCard, TextArrow, PopProductInfo },
+    components: { CfCard, NavBar, OrderContactCard, TextArrow, PopProductInfo },
     props: {},
     data() {
       return {
         title: '提交支付',
-        items: [null, null, null, null, null],
+        items: [null, null, null, null, null, null, null],
         v_model: '',
         showProducts: false,
       };
