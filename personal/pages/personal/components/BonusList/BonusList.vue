@@ -1,32 +1,32 @@
 <template>
   <view class="flex-col wrap">
-    <u-tabs
-      class="u-tabs-border-bottom u-tabs-bg-white"
-      :list="tabs"
-      lineColor="#b09053"
-      :lineWidth="23"
-      :lineHeight="2"
-    >
-      <view class="flex-row tabs-right-slot" slot="right">
-        <view class="flex-row items-center select-data" @click="onStatusSelect">
-          <text class="select-label">全部</text>
-          <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
-        </view>
-        <view class="flex-row items-center select-data ml-8" @click="onDateSelect">
-          <text class="select-label">日期</text>
-          <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
-        </view>
-      </view>
-    </u-tabs>
-    <view class="flex-col">
-      <scroll-view :scroll-y="true" class="scroll-height">
-        <list-with-empty :showEmpty="!list.length" :showLoading="showLoading" :finished="finished">
-          <view class="flex-col list">
-            <bonus-Item :bonusItem="item" v-for="(item, index) in list" :key="index"></bonus-Item>
+    <fj-sticky>
+      <u-tabs
+        class="u-tabs-border-bottom u-tabs-bg-white"
+        :list="tabs"
+        lineColor="#b09053"
+        :lineWidth="23"
+        :lineHeight="2"
+      >
+        <view class="flex-row tabs-right-slot" slot="right">
+          <view class="flex-row items-center select-data" @click="onStatusSelect">
+            <text class="select-label">全部</text>
+            <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
           </view>
-          <view slot="customEmpty"> <bonus-empty></bonus-empty></view>
-        </list-with-empty>
-      </scroll-view>
+          <view class="flex-row items-center select-data ml-8" @click="onDateSelect">
+            <text class="select-label">日期</text>
+            <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
+          </view>
+        </view>
+      </u-tabs>
+    </fj-sticky>
+    <view class="flex-col">
+      <list-with-empty :showEmpty="!list.length" :showLoading="showLoading" :finished="finished">
+        <view class="flex-col list">
+          <bonus-Item :bonusItem="item" v-for="(item, index) in list" :key="index"></bonus-Item>
+        </view>
+        <view slot="customEmpty"> <bonus-empty></bonus-empty></view>
+      </list-with-empty>
     </view>
     <u-popup
       :show="statusPopupVisible"
@@ -47,9 +47,10 @@
   import BonusItem from './components/BonusItem/BonusItem.vue';
   import BonusEmpty from '@/personal/pages/personal/components/BonusEmpty/BonusEmpty.vue';
   import ListWithEmpty from '@/components/ListContainer/ListWithEmpty.vue';
+  import FjSticky from '@/components/FjSticky.vue';
 
   export default {
-    components: { DateTimePickerPopup, BonusItem, ListWithEmpty, BonusEmpty },
+    components: { DateTimePickerPopup, BonusItem, ListWithEmpty, BonusEmpty, FjSticky },
     props: {
       list: {
         type: Array,
@@ -124,10 +125,7 @@
     .list {
       padding-left: 32rpx;
       padding-top: 8rpx;
-    }
-
-    .scroll-height {
-      height: calc(100vh - 650rpx - env(safe-area-inset-bottom));
+      padding-bottom: 40rpx;
     }
   }
 </style>
