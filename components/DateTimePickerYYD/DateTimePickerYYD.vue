@@ -1,7 +1,7 @@
 <template>
-  <PopupWithButton title="选择日期" buttonText="确认" @click="onClick">
-    <DatePickerView class="content" type="date" :date="date" @change="onChange"></DatePickerView>
-  </PopupWithButton>
+  <popup-with-button class="pop-wrapper" title="选择日期" buttonText="确认" @click="onClick">
+    <date-picker-view class="content" type="date" :date="date" @change="onChange"></date-picker-view>
+  </popup-with-button>
 </template>
 
 <script>
@@ -35,5 +35,11 @@
 <style scoped lang="less">
   .content {
     margin-top: 50rpx;
+  }
+
+  .pop-wrapper {
+    /deep/ .root {
+      padding-top: 40rpx !important;
+    }
   }
 </style>
