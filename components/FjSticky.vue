@@ -102,12 +102,7 @@
       },
       stickyTop() {
         // 吸顶的top值，因为可能受自定义导航栏影响，最终的吸顶值非offsetTop值
-        let top = this.statusBarHeight + this.getPx(this.offsetTop || 0) + this.getPx(this.customNavHeight || 0);
-        console.log('this.statusBarHeight', this.statusBarHeight);
-        console.log('this.offsetTop', this.offsetTop);
-        console.log('this.customNavHeight', this.customNavHeight);
-        console.log('top', top);
-        return top;
+        return this.statusBarHeight + this.getPx(this.offsetTop || 0) + this.getPx(this.customNavHeight || 0);
       },
       stickyContentId() {
         return this.elId + 'Content';
