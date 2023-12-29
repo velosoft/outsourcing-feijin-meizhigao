@@ -12,7 +12,7 @@
       <view class="btn btn-plain" @click="onShowConfirmProposal"><text>确认方案</text></view>
       <view class="btn btn-plain" @click="gotoConfirmQuote"><text>确认报价</text></view>
       <view class="btn btn-plain"><text>组件清单</text></view>
-      <view class="btn btn-plain" @click="gotoAcceptance"><text>验收服务</text></view>
+      <view class="btn btn-plain" @click="onShowAcceptance"><text>验收服务</text></view>
       <view class="btn btn-plain" @click="gotoProductList"><text>查看商品订单</text></view>
       <view class="btn btn-plain" @click="onShowCancel"><text>取消服务</text></view>
       <view class="btn btn-plain"><text>删除记录</text></view>
@@ -24,21 +24,26 @@
     <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
       <pop-order-cancel @click="onCloseCancel"></pop-order-cancel>
     </u-popup>
+    <u-popup :show="showAcceptance" @close="onCloseAcceptance" mode="bottom" :closeable="true" :round="12">
+      <PopIntentionAcceptance @confirm="onCloseAcceptance"></PopIntentionAcceptance>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import PopConfirmProposal from '@/myOrder/pages/myOrder/components/PopConfirmProposal/PopConfirmProposal.vue';
   import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
+  import PopIntentionAcceptance from '@/myOrder/pages/myOrder/components/PopIntentionAcceptance/PopIntentionAcceptance.vue';
 
   export default {
-    components: { PopConfirmProposal, PopOrderCancel },
+    components: { PopConfirmProposal, PopOrderCancel, PopIntentionAcceptance },
     props: {},
     data() {
       return {
         showMore: false,
         showConfirmProposal: false,
         showCancel: false,
+        showAcceptance: false,
       };
     },
     methods: {
@@ -57,6 +62,12 @@
       onCloseConfirmProposal() {
         this.showConfirmProposal = false;
       },
+      onShowAcceptance() {
+        this.showAcceptance = true;
+      },
+      onCloseAcceptance() {
+        this.showAcceptance = false;
+      },
       gotoConfirmQuote() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionConfirmQuote/intentionConfirmQuote' });
       },
@@ -65,9 +76,6 @@
       },
       gotoAfterSale() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceAfterSale/serviceAfterSale' });
-      },
-      gotoAcceptance() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
       },
       gotoAddComment() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionAddComment/intentionAddComment' });

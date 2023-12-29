@@ -97,7 +97,7 @@
       <view class="btn btn-black" v-if="order.status === '等待上门服务'" @click="onShowReserve">
         <text>预约上门服务</text>
       </view>
-      <view class="btn btn-black" v-if="order.status === '等待客户验收'" @click="gotoAcceptance">
+      <view class="btn btn-black" v-if="order.status === '等待客户验收'" @click="onShowAcceptance">
         <text>验收服务</text>
       </view>
       <view class="btn btn-black" v-if="order.status === '交易完成'" @click="gotoAddComment">
@@ -113,6 +113,9 @@
     <u-popup :show="showReserve" @close="onCloseReserve" mode="bottom" :closeable="true" :round="14">
       <PopReserve @confirm="onCloseReserve"></PopReserve>
     </u-popup>
+    <u-popup :show="showAcceptance" @close="onCloseAcceptance" mode="bottom" :closeable="true" :round="12">
+      <PopIntentionAcceptance @confirm="onCloseAcceptance"></PopIntentionAcceptance>
+    </u-popup>
   </view>
 </template>
 
@@ -120,9 +123,10 @@
   import Price from '@/components/Price/Price';
   import PopOrderCancel from '@/myOrder/pages/myOrder/components/PopOrderCancel/PopOrderCancel.vue';
   import PopReserve from '@/myOrder/pages/myOrder/components/PopReserve/PopReserve.vue';
+  import PopIntentionAcceptance from '@/myOrder/pages/myOrder/components/PopIntentionAcceptance/PopIntentionAcceptance.vue';
 
   export default {
-    components: { Price, PopOrderCancel, PopReserve },
+    components: { Price, PopOrderCancel, PopReserve, PopIntentionAcceptance },
     props: {
       order: Object,
     },
@@ -130,6 +134,7 @@
       return {
         showCancel: false,
         showReserve: false,
+        showAcceptance: false,
       };
     },
     methods: {
@@ -145,6 +150,12 @@
       onCloseReserve() {
         this.showReserve = false;
       },
+      onShowAcceptance() {
+        this.showAcceptance = true;
+      },
+      onCloseAcceptance() {
+        this.showAcceptance = false;
+      },
       gotoDetail() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionOrderDetail/intentionOrderDetail' });
       },
@@ -159,9 +170,6 @@
       },
       gotoAddComment() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionAddComment/intentionAddComment' });
-      },
-      gotoAcceptance() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/acceptanceService/acceptanceService' });
       },
     },
   };
