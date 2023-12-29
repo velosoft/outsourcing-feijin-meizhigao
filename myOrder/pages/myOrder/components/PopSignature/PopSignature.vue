@@ -43,7 +43,7 @@
 
 <style scoped lang="less">
   .sign-wrapper {
-    padding: 32rpx 24rpx 56rpx;
+    padding: 36rpx 24rpx 56rpx;
     background-color: #ffffff;
     border-radius: 24rpx 24rpx 0rpx 0rpx;
   }

@@ -1,10 +1,10 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true"></nav-bar>
     <view class="flex-col flex-1 body">
       <view class="flex-col service">
         <text class="font title">服务信息</text>
-        <OrderProductItem class="mt-11"></OrderProductItem>
+        <order-product-item class="mt-11"></order-product-item>
       </view>
       <view class="flex-col flex-1 agreement-section">
         <view class="flex-col flex-1 agreement-wrapper">
@@ -29,7 +29,13 @@
             <text>质量保修期自工程竣工验收合格之日起计算</text>
           </view>
         </view>
-        <u-checkbox-group class="mt-16" v-model="v_model" activeColor="#B09053" iconSize="28rpx" shape="circle">
+        <u-checkbox-group
+          class="mt-16 cf-checkbox-group"
+          v-model="v_model"
+          activeColor="#B09053"
+          iconSize="28rpx"
+          shape="circle"
+        >
           <u-checkbox
             v-model="v_model_1"
             label="我已阅读并同意验收服务协议"
@@ -48,7 +54,7 @@
       </view>
     </view>
     <u-popup :show="showSign" @close="onCloseSign" mode="bottom" :round="12" :closeable="true">
-      <PopSignature @confirm="onCloseSign"></PopSignature>
+      <pop-signature @confirm="onCloseSign"></pop-signature>
     </u-popup>
   </view>
 </template>
@@ -97,7 +103,7 @@
     overflow-y: auto;
   }
   .service {
-    padding: 26rpx 18rpx 28rpx 24rpx;
+    padding: 24rpx;
     background-color: #ffffff;
     border-radius: 16rpx;
   }
@@ -156,5 +162,12 @@
   }
   .btn-text {
     color: #ffffff;
+  }
+
+  .cf-checkbox-group {
+    /deep/ .u-checkbox__icon-wrap {
+      width: 28rpx !important;
+      height: 28rpx !important;
+    }
   }
 </style>
