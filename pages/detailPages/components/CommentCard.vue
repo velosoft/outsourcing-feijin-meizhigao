@@ -59,13 +59,13 @@ export default {
     padding: 32rpx 28rpx;
     border-bottom: solid 1.6rpx #efefef;
     .title {
-      color: #030305;
+      color: #111111;
       font-size: 32rpx;
       font-family: 苹方;
       line-height: 32rpx;
     }
     .more-text {
-      color: #a7a7a7;
+      color: #6d6d6d;
     }
     .icon-arrow {
       width: 24rpx;
@@ -91,13 +91,13 @@ export default {
         font-size: 24rpx;
         font-family: 苹方;
         line-height: 46rpx;
-        color: #030305;
+        color: #111111;
       }
       .product-type {
         font-size: 20rpx;
         font-family: 苹方;
         line-height: 20rpx;
-        color: #a7a7a7;
+        color: #6d6d6d;
       }
       .product-type-text {
         margin-top: 24rpx;
@@ -108,7 +108,7 @@ export default {
     font-size: 28rpx;
     font-family: 苹方;
     line-height: 28rpx;
-    color: #030305;
+    color: #111111;
   }
 }
 </style>

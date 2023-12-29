@@ -31,7 +31,7 @@
       disabledButton: { type: Boolean, default: false },
       bgColor: { type: String, default: `#ffffff` },
       btnStyle: { type: Object, default: {} },
-      padding: { type: String, default: `32rpx 32rpx 72rpx 40rpx` },
+      padding: { type: String, default: `32rpx 32rpx 72rpx 32rpx` },
       btnMargin:  { type: String, default: `` },
     },
     data() {
