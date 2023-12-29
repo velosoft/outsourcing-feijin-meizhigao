@@ -1,19 +1,17 @@
 <template>
-  <view class="flex-row">
-    <image class="shrink-0 cover-img" src="/myOrder/static/images/mock_1dae61f5b8b53166.png" />
-    <view class="flex-col flex-1 ml-10">
-      <text class="font-title">定制卧室收纳柜新疆包邮卧室床头包卧室床头厨房收纳服务</text>
+  <view class="flex-row items-stretch">
+    <image class="shrink-0 cover-img" src="https://picsum.photos/90/90" />
+    <view class="flex-col flex-1 justify-between ml-10">
+      <text class="line-clamp-two font-title"
+        >定制卧室收纳柜新疆包邮卧室床头包卧室床头厨房收纳服务,床头包卧室床头厨房收纳服务</text
+      >
       <view class="flex-row justify-between mt-6">
-        <text class="font text-desp">中号；白色</text>
+        <text class="flex-1 line-clamp-one font text-desp">中号；白色,中号；白色,中号；白色,中号；白色</text>
         <text class="font text-count">x1</text>
       </view>
       <view class="flex-col justify-start items-start mt-6">
         <view class="flex-row items-end">
-          <text class="font-xs text-weight">￥</text>
-          <view class="flex-row items-start shrink-0">
-            <text class="text-price">200</text>
-            <text class="font-xs">.00</text>
-          </view>
+          <price class="cf-black-font" :price="200"></price>
         </view>
       </view>
     </view>
@@ -21,8 +19,9 @@
 </template>
 
 <script>
+  import { Price } from '@/components/Price/Price';
   export default {
-    components: {},
+    components: { Price },
     props: { prodInfo: { type: Object, default: () => ({}) } },
     data() {
       return {};
