@@ -1,18 +1,18 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col body">
-      <OrderProductItem class="product-wrapper"></OrderProductItem>
+      <order-product-item class="product-wrapper"></order-product-item>
       <view class="flex-col mt-12 section">
-        <ServiceCommentRate></ServiceCommentRate>
-        <view class="flex-col self-stretch rate-input">
+        <service-comment-rate></service-comment-rate>
+        <view class="flex-col self-stretch mt-28 rate-input">
           <text class="rate-type">服务最满意的地方</text>
           <u-textarea
-            class="cf-textarea mt-11"
+            class="cf-textarea mt-12"
             v-model="v_model_3"
             placeholder="请输入您的评价…"
             height="340rpx"
-            placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
+            :placeholderStyle="placeholderStyle"
           ></u-textarea>
         </view>
       </view>
@@ -36,11 +36,11 @@
       <view class="flex-col mt-12 section">
         <text class="title-font title-text">改善建议</text>
         <u-textarea
-          class="cf-textarea mt-15"
+          class="cf-textarea mt-16"
           v-model="v_model_4"
           placeholder="请输入您的评价…"
           height="230rpx"
-          placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
+          :placeholderStyle="placeholderStyle"
         ></u-textarea>
       </view>
       <view class="flex-col mt-12 section">
@@ -48,7 +48,7 @@
           <text class="title-font title-text">上传图片</text>
           <text class="placeholder-text ml-2">（最多上传6张图片）</text>
         </view>
-        <Uploader class="mt-16"></Uploader>
+        <uploader class="mt-16"></uploader>
       </view>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start footer-wrapper">
@@ -57,7 +57,7 @@
       </view>
     </view>
     <u-popup :show="showDate" @close="onCloseDate" mode="bottom" :round="14" :closeable="true">
-      <DateTimePickerYYD @click="onCloseDate"></DateTimePickerYYD>
+      <date-time-picker-yyd @click="onCloseDate"></date-time-picker-yyd>
     </u-popup>
   </view>
 </template>
@@ -65,12 +65,12 @@
 <script>
   import NavBar from '@/components/NavBar/NavBar.vue';
   import Uploader from '@/components/Uploader/Uploader.vue';
-  import DateTimePickerYYD from '@/components/DateTimePickerYYD/DateTimePickerYYD.vue';
+  import DateTimePickerYyd from '@/components/DateTimePickerYYD/DateTimePickerYYD.vue';
   import OrderProductItem from '@/myOrder/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import ServiceCommentRate from '@/myOrder/pages/myOrder/components/ServiceCommentRate/ServiceCommentRate.vue';
 
   export default {
-    components: { NavBar, OrderProductItem, Uploader, DateTimePickerYYD, ServiceCommentRate },
+    components: { NavBar, OrderProductItem, Uploader, DateTimePickerYyd, ServiceCommentRate },
     props: {},
     data() {
       return {
@@ -79,6 +79,7 @@
         v_model_3: '',
         v_model_4: '',
         showDate: false,
+        placeholderStyle: 'font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;',
       };
     },
     methods: {
@@ -93,12 +94,6 @@
 </script>
 
 <style scoped lang="less">
-  .mt-15 {
-    margin-top: 30rpx;
-  }
-  .mt-11 {
-    margin-top: 22rpx;
-  }
   .page {
     padding-bottom: 180rpx;
     background-color: #f8f8f8;
@@ -111,7 +106,7 @@
     padding: 0 24rpx 32rpx;
   }
   .section {
-    padding: 26rpx 24rpx;
+    padding: 28rpx 24rpx 24rpx;
     background-color: #ffffff;
     border-radius: 16rpx;
   }
@@ -131,7 +126,6 @@
     color: #2d2e32;
   }
   .rate-input {
-    margin-top: 48rpx;
     width: 656rpx;
   }
   .visit-text {
@@ -141,12 +135,12 @@
   .visit-time {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #3c3d41;
+    color: #111111;
   }
   .placeholder-text {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #9c9c9f;
+    color: #9e9ea0;
   }
   .icon-arrow {
     width: 12rpx;
