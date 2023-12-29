@@ -110,7 +110,14 @@
       onChangeType(type) {
         this.orderType = type;
         this.onClose();
-        this.loadOrders();
+        this.orders = [];
+        uni.showLoading();
+        setTimeout(() => {
+          this.loadOrders();
+          this.$nextTick(() => {
+            uni.hideLoading();
+          });
+        }, 200);
       },
       loadOrders() {
         switch (this.orderType) {
