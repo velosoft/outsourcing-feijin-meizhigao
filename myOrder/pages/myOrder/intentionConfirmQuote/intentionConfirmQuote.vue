@@ -78,7 +78,7 @@
         uni.navigateTo({ url: '/myOrder/pages/myOrder/requotation/requotation' });
       },
       gotoSubmitPayment() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionSumbitPayment/intentionSumbitPayment' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionSubmitPayment/intentionSubmitPayment' });
       },
     },
   };
