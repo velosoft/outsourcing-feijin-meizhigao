@@ -58,7 +58,7 @@
         this.showConfirmProposal = false;
       },
       gotoConfirmQuote() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionConfirmQuote/intentionConfirmQuote' });
       },
       gotoProductList() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });

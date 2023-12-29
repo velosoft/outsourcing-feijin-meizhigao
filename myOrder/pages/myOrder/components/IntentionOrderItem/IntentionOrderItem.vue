@@ -155,7 +155,7 @@
         uni.navigateTo({ url: '/myOrder/pages/myOrder/productList/productList' });
       },
       gotoConfirmQuote() {
-        uni.navigateTo({ url: '/myOrder/pages/myOrder/serviceOrder/confirmQuote/index/index' });
+        uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionConfirmQuote/intentionConfirmQuote' });
       },
       gotoAddComment() {
         uni.navigateTo({ url: '/myOrder/pages/myOrder/intentionAddComment/intentionAddComment' });
