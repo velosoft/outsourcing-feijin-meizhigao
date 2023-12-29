@@ -57,6 +57,10 @@
     flex-direction: column;
   }
 
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
   .justify-start {
     justify-content: flex-start;
   }
