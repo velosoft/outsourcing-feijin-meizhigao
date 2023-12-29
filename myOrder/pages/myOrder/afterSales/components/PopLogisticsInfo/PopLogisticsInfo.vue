@@ -50,7 +50,7 @@
     .content {
       padding: 38rpx 0 30rpx;
       .field-top {
-        margin-top: 7.5rpx;
+        margin-top: 8rpx;
       }
       .upload-wrap {
         padding: 38rpx 0;

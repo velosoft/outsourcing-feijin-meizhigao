@@ -19,7 +19,7 @@
         <CFCard class="mt-12">
           <view class="flex-col">
             <view class="flex-row items-center">
-              <text class="consignor text_39">收货人：</text>
+              <text class="consignor consignor-text">收货人：</text>
               <text class="consignor-value">李小鱼</text>
               <text class="consignor-value tel">15212345678</text>
             </view>
@@ -152,7 +152,7 @@
       .consignor-value {
         font-size: 30rpx;
         font-family: 'PingFang SC';
-        color: #000000;
+        color: #111111;
       }
       .address-normal {
         color: #6d6d6d;
@@ -162,9 +162,9 @@
         font-family: 'PingFang SC';
         line-height: 40rpx;
         font-weight: 500;
-        color: #2d2e32;
+        color: #6d6d6d;
       }
-      .text_39 {
+      .consignor-text {
         line-height: unset;
       }
       .tel {
