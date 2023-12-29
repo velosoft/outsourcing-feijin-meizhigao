@@ -11,20 +11,20 @@
         <CFCard title="报名信息">
           <view class="flex-col">
             <u-cell
-              class="cell-in-white-card sign-cell"
+              class="course-register-field sign-cell"
               title="姓名"
               value="黄先生"
               :border="true"
               :center="true"
             ></u-cell>
             <u-cell
-              class="cell-in-white-card sign-cell"
+              class="course-register-field sign-cell"
               title="手机号"
               :value="13654652369"
               :border="true"
               :center="true"
             ></u-cell>
-            <view class="flex-col">
+            <view class="flex-col mt-12">
               <text class="line-clamp-one tips">注：报名成功后由平台工作人员联系，请保持电话通畅~</text>
             </view>
           </view>
@@ -196,9 +196,9 @@
           font-family: PingFang SC;
           line-height: 24rpx;
         }
-        .sign-cell {
-          padding: 36rpx 0;
-        }
+        // .sign-cell {
+        //   padding: 36rpx 0;
+        // }
         .dividing {
           border-bottom: 2rpx solid #ebebeb;
         }
