@@ -106,12 +106,12 @@
       .right {
         margin-right: 8rpx;
         .icon-editor {
-          width: 30rpx;
-          height: 30rpx;
+          width: 32rpx;
+          height: 32rpx;
         }
         .icon-delete {
           width: 32rpx;
-          height: 35rpx;
+          height: 32rpx;
         }
       }
     }
