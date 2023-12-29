@@ -14,6 +14,13 @@
       }
     },
     {
+      "path": "pages/login/login",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/tabBar/cart",
       "style": {
         "navigationStyle": "custom",
