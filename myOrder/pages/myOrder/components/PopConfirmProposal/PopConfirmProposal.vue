@@ -33,7 +33,6 @@
           label="我已阅读并同意该定制商品设计方案"
           name="p1g24UBD"
           shape="circle"
-          iconSize="28rpx"
           labelSize="26rpx"
           labelColor="#b09053"
         ></u-checkbox>
@@ -46,6 +45,9 @@
   import PopupWithButton from '@/components/Popup/PopupWithButton';
 
   export default {
+    options: {
+      styleIsolation: 'shared',
+    },
     components: { PopupWithButton },
     props: {},
     data() {
@@ -116,5 +118,12 @@
   }
   .checkbox {
     margin: 40rpx 8rpx 0;
+  }
+  .cf-checkbox-group {
+    /deep/ .u-checkbox__icon-wrap {
+      border-color: #b09053 !important;
+      width: 28rpx !important;
+      height: 28rpx !important;
+    }
   }
 </style>
