@@ -1,9 +1,9 @@
 <template>
   <view class="flex-row items-center">
     <view class="flex-col justify-center items-center coupon-left relative">
-      <image class="coupon-left coupon-bg-pos" src="/static/images/bg_coupon_left_01.png" v-if="couponType ==0" />
-      <image class="coupon-left coupon-bg-pos" src="/static/images/bg_coupon_left_02.png" v-if="couponType ==1" />
-      <image class="coupon-left coupon-bg-pos" src="/static/images/bg_coupon_left_03.png" v-if="couponType ==2" />
+      <image class="coupon-left coupon-bg-pos" src="/static/images/bg_coupon_left_01.png" v-if="couponType == 0" />
+      <image class="coupon-left coupon-bg-pos" src="/static/images/bg_coupon_left_02.png" v-if="couponType == 1" />
+      <image class="coupon-left coupon-bg-pos" src="/static/images/bg_coupon_left_03.png" v-if="couponType == 2" />
       <view class="flex-col justify-center items-center flex-1 relative left-con">
         <view class="flex-row">
           <text class="coupon-price">10</text>
@@ -14,21 +14,21 @@
     </view>
     <view class="line"></view>
     <view class="flex-col relative coupon-right justify-center">
-      <image class="coupon-right coupon-bg-pos" src="/static/images/bg_coupon_right_01.png" v-if="couponType ==0" />
-      <image class="coupon-right coupon-bg-pos" src="/static/images/bg_coupon_right_02.png" v-if="couponType ==1" />
-      <image class="coupon-right coupon-bg-pos" src="/static/images/bg_coupon_right_03.png" v-if="couponType ==2" />
+      <image class="coupon-right coupon-bg-pos" src="/static/images/bg_coupon_right_01.png" v-if="couponType == 0" />
+      <image class="coupon-right coupon-bg-pos" src="/static/images/bg_coupon_right_02.png" v-if="couponType == 1" />
+      <image class="coupon-right coupon-bg-pos" src="/static/images/bg_coupon_right_03.png" v-if="couponType == 2" />
       <view class="flex-col relative right-con">
         <text class="line-clamp-one title">收纳服务满减券</text>
         <text class="label time">2023.06.01-2023.07.01</text>
         <text class="line-clamp-one label condition">全部服务可用</text>
       </view>
-      <view class="flex-col items-center button text-wrapper justify-center" v-if="couponType ==0">
+      <view class="flex-col items-center button text-wrapper justify-center" v-if="couponType == 0">
         <text class="label btn-text">领取</text>
       </view>
-      <view class="flex-col coupon-status coupon-status-pos" v-if="couponType ==1">
+      <view class="flex-col coupon-status coupon-status-pos" v-if="couponType == 1">
         <image class="image" src="/static/images/icon_coupon_01.png" />
       </view>
-      <view class="flex-col coupon-status coupon-status-pos" v-if="couponType ==2">
+      <view class="flex-col coupon-status coupon-status-pos" v-if="couponType == 2">
         <image class="icon" src="/static/images/icon_coupon_02.png" />
       </view>
     </view>
@@ -41,7 +41,7 @@
     props: { couponItem: { type: Object, default: {} } },
     data() {
       return {
-        couponType: 1,
+        couponType: 2,
       };
     },
 
@@ -54,7 +54,7 @@
     width: 184rpx;
     height: 200rpx;
     .left-con {
-    //   padding: 8rpx 24rpx 56rpx;
+      //   padding: 8rpx 24rpx 56rpx;
       .coupon-price {
         color: #bb3e0c;
         font-size: 84rpx;
@@ -96,6 +96,7 @@
         font-size: 28rpx;
         font-family: PingFang SC;
         line-height: 28rpx;
+        font-weight: 500;
       }
       .time {
         margin-top: 24rpx;
@@ -154,5 +155,6 @@
     font-family: PingFang SC;
     line-height: 24rpx;
     color: #6d6d6d;
+    font-weight: 400;
   }
 </style>

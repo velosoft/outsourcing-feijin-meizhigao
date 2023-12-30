@@ -1,5 +1,5 @@
 <template>
-  <PopupWithButton title="优惠券" buttonText="关闭" @click="onConfirm">
+  <popup-with-button class="pop-wrapper" title="优惠券" buttonText="关闭" @click="onConfirm">
     <view class="flex-col justify-start wrap">
       <scroll-view :scroll-y="true" class="scroll-height">
         <list-container
@@ -9,12 +9,17 @@
           imgSrc="/static/images/icon_empty_coupon.png"
         >
           <view class="flex-col">
-            <PopCouponItem class="list-item mt-12" v-for="(item, index) in items" :key="index" :couponItem="couponItem"></PopCouponItem>
+            <pop-coupon-item
+              class="list-item mt-10"
+              v-for="(item, index) in items"
+              :key="index"
+              :couponItem="couponItem"
+            ></pop-coupon-item>
           </view>
         </list-container>
       </scroll-view>
     </view>
-  </PopupWithButton>
+  </popup-with-button>
 </template>
 
 <script>
@@ -23,14 +28,16 @@
   import PopupWithButton from '@/components/Popup/PopupWithButton';
 
   export default {
+    options: {
+      styleIsolation: 'shared',
+    },
     components: { ListContainer, PopCouponItem, PopupWithButton },
     props: {},
     data() {
       return {
-        showEmpty: '! items.length',
         showLoading: false,
         finished: false,
-        items: [null, null, null],
+        items: [null, null, null, null, null, null],
       };
     },
 
@@ -45,14 +52,24 @@
 
 <style scoped lang="less">
   .wrap {
-    padding: 56rpx 0;
-    .scroll-height{
-        height: 644rpx;
+    padding: 36rpx 0 60rpx;
+    .scroll-height {
+      height: 644rpx;
     }
     .list-item {
       &:first-child {
         margin-top: 0;
       }
+    }
+  }
+
+  .pop-wrapper {
+    /deep/ .text_13 {
+      font-size: 36rpx;
+    }
+
+    /deep/ .root {
+      padding: 36rpx 32rpx 40rpx !important;
     }
   }
 </style>
