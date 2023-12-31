@@ -49,7 +49,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .group {
     margin-top: 60rpx;
   }
