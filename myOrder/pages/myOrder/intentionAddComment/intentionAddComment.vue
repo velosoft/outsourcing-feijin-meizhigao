@@ -1,10 +1,10 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col body">
-      <OrderProductItem class="product-wrapper"></OrderProductItem>
+      <order-product-item class="product-wrapper"></order-product-item>
       <view class="flex-col mt-12 section">
-        <IntentionCommentRate></IntentionCommentRate>
+        <intention-comment-rate></intention-comment-rate>
         <u-textarea
           class="cf-textarea mt-20"
           v-model="v_model_3"
@@ -12,11 +12,11 @@
           height="230rpx"
           placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
         ></u-textarea>
-        <view class="flex-row items-center mt-20">
+        <view class="flex-row items-center mt-18">
           <text class="title-font">上传图片</text>
           <text class="placeholder-text ml-2">（最多上传6张图片）</text>
         </view>
-        <Uploader class="mt-12"></Uploader>
+        <uploader class="mt-12"></uploader>
       </view>
     </view>
     <view class="fixed-bottom-safe flex-col justify-start footer-wrapper">
@@ -39,7 +39,6 @@
     data() {
       return {
         title: '我要评价',
-        items: [null, null, null, null],
         v_model_3: '',
       };
     },
@@ -48,14 +47,8 @@
 </script>
 
 <style scoped lang="less">
-  .mt-15 {
-    margin-top: 30rpx;
-  }
-  .mt-11 {
-    margin-top: 22rpx;
-  }
   .page {
-    padding-bottom: 180rpx;
+    padding-bottom: 200rpx;
     background-color: #f8f8f8;
     width: 100%;
     overflow-y: auto;
@@ -73,25 +66,7 @@
   .title-font {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
-  }
-  .rate-type {
-    font-size: 28rpx;
-    line-height: 40rpx;
-    color: #2d2e32;
-  }
-  .rate-input {
-    margin-top: 48rpx;
-    width: 656rpx;
-  }
-  .visit-text {
-    font-size: 30rpx;
-    line-height: 42rpx;
-  }
-  .visit-time {
-    font-size: 28rpx;
-    line-height: 40rpx;
-    color: #3c3d41;
+    color: #111111;
   }
   .placeholder-text {
     font-size: 24rpx;
