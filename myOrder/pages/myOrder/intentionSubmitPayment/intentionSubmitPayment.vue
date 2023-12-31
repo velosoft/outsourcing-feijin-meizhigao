@@ -1,18 +1,22 @@
 <template>
   <view class="flex-col relative page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col flex-1 body">
-      <OrderContactCard :canShowLine="false"></OrderContactCard>
-      <CFCard class="mt-12" title="商品信息">
+      <order-contact-card :canShowLine="false"></order-contact-card>
+      <cf-card class="cf-card-1 mt-12" title="商品信息">
         <view class="flex-col mt-12">
           <view class="flex-col">
-            <OrderProductItem class="list-item mt-12" v-for="(item, index) in items" :key="index"></OrderProductItem>
+            <order-product-item
+              class="list-item mt-12"
+              v-for="(item, index) in items"
+              :key="index"
+            ></order-product-item>
           </view>
           <text class="self-end product-font product-text mt-16">共2件商品</text>
         </view>
-      </CFCard>
-      <CFCard class="mt-12" title="订单信息">
-        <view class="flex-col mt-8">
+      </cf-card>
+      <cf-card class="cf-card-2 mt-12" title="订单信息">
+        <view class="flex-col mt-10">
           <u-cell class="cell-in-white-card-weight" title="商品金额" value="￥899.00" :border="false"></u-cell>
           <u-cell class="cell-in-white-card-weight mt-16" title="运费" value="￥10" :border="false"></u-cell>
           <u-cell class="cell-in-white-card-weight mt-16" title="人工优惠" value="-￥80" :border="false"></u-cell>
@@ -51,7 +55,7 @@
             ></u-textarea>
           </view>
         </view>
-      </CFCard>
+      </cf-card>
     </view>
     <view class="fixed-bottom-safe flex-row justify-end items-center footer-fixed">
       <view class="flex-row items-center">
@@ -67,13 +71,16 @@
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
+  import CfCard from '@/components/Card/Card';
   import NavBar from '@/components/NavBar/NavBar.vue';
   import OrderContactCard from '@/myOrder/pages/myOrder/components/OrderContactCard/OrderContactCard.vue';
   import OrderProductItem from '@/myOrder/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
 
   export default {
-    components: { CFCard, NavBar, OrderContactCard, OrderProductItem },
+    options: {
+      styleIsolation: 'shared',
+    },
+    components: { CfCard, NavBar, OrderContactCard, OrderProductItem },
     props: {},
     data() {
       return {
@@ -87,7 +94,7 @@
   };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="less">
   .page {
     background-color: #f8f8f8;
     width: 100%;
@@ -96,7 +103,7 @@
     height: 100%;
   }
   .body {
-    padding: 0 24rpx 184rpx;
+    padding: 0 24rpx 200rpx;
     overflow-y: auto;
   }
   .list-item:first-child {
@@ -105,7 +112,7 @@
   .product-font {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #8c8f95;
+    color: #6d6d6d;
   }
   .product-text {
     color: #6d6d6d;
@@ -115,11 +122,12 @@
     line-height: 32rpx;
     font-weight: 600;
     color: #111111;
+    font-family: HarmonyOS_Sans_Bold;
   }
   .msg-tip {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #c5c5c5;
+    color: #9e9ea0;
   }
   .footer-fixed {
     padding: 40rpx 24rpx;
@@ -131,14 +139,17 @@
     font-weight: 500;
   }
   .sum-count {
-    color: #9c9c9f;
+    color: #6d6d6d;
     line-height: 34rpx;
-    font-weight: unset;
+    font-family: 苹方;
+    font-weight: 400;
   }
   .money-name {
     margin-left: 16rpx;
     color: #000000;
     line-height: 34rpx;
+    font-family: 苹方;
+    font-weight: 500;
   }
   .button {
     padding: 16rpx 0;
@@ -150,5 +161,29 @@
   .btn-text {
     color: #ffffff;
     line-height: 34rpx;
+  }
+  .cf-card-1 {
+    /deep/ .root {
+      padding: 28rpx 24rpx 24rpx;
+    }
+  }
+
+  .cf-card-2 {
+    /deep/ .root {
+      padding: 32rpx 24rpx 32rpx;
+    }
+
+    /deep/ .u-cell__title-text {
+      font-weight: 400;
+    }
+    /deep/ .u-cell__value {
+      font-family: HarmonyOS_Sans_Bold;
+    }
+  }
+
+  .cf-textarea {
+    /deep/ .u-textarea__field {
+      font-size: 28rpx !important;
+    }
   }
 </style>
