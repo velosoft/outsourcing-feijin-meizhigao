@@ -1,5 +1,5 @@
 <template>
-  <PopupWithButton title="验收服务" buttonText="验收通过" @click="onConfirm">
+  <popup-with-button class="pop-wrapper" title="验收服务" buttonText="验收通过" @click="onConfirm">
     <view class="flex-col group view">
       <text class="self-start title-font title-text">验收协议</text>
       <view class="flex-col justify-start self-stretch agreement-wrapper">
@@ -26,7 +26,7 @@
         ></u-checkbox>
       </u-checkbox-group>
     </view>
-  </PopupWithButton>
+  </popup-with-button>
 </template>
 
 <script>
@@ -74,5 +74,15 @@
     color: #6d6d6d;
     font-size: 24rpx;
     line-height: 42rpx;
+  }
+
+  .pop-wrapper {
+    /deep/ .root {
+      padding: 40rpx 40rpx 54rpx;
+
+      /deep/ .text_13 {
+        font-size: 36rpx;
+      }
+    }
   }
 </style>
