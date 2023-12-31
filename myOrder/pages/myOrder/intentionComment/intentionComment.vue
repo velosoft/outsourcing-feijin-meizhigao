@@ -1,11 +1,11 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col body">
-      <OrderProductItem class="product-wrapper"></OrderProductItem>
+      <order-product-item class="product-wrapper"></order-product-item>
       <view class="flex-col mt-12 section">
-        <IntentionCommentRate :readonly="true"></IntentionCommentRate>
-        <view class="flex-row mt-20">
+        <intention-comment-rate :readonly="true"></intention-comment-rate>
+        <view class="flex-row mt-24">
           <text class="title-font">评价内容</text>
           <text class="suggest flex-auto ml-20">评价内容商品收纳位置大，质量妥妥，有需要的朋友可以下单</text>
         </view>
@@ -13,7 +13,7 @@
           <text class="title-font">商品图片</text>
           <text class="placeholder-text ml-2">（最多上传6张图片）</text>
         </view>
-        <view class="flex-row images mt-12">
+        <view class="flex-row flex-wrap gap-10 mt-12">
           <image
             class="image"
             src="https://dev.ft.velosoft.cn/api/image?token=658a4231d6bce000114dc6f7&name=17025197093009576704.png"
@@ -37,7 +37,7 @@
     data() {
       return {
         title: '查看评价',
-        items: [null, null, null, null, null],
+        items: [null, null, null, null, null, null],
       };
     },
     methods: {},
@@ -64,7 +64,7 @@
   .title-font {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .visit-text {
     font-size: 30rpx;
@@ -88,12 +88,8 @@
   .suggest {
     font-size: 28rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
     line-height: 40rpx;
-  }
-  .images {
-    flex-wrap: wrap;
-    gap: 20rpx;
   }
   .image {
     border-radius: 16rpx;
