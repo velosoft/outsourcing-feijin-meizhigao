@@ -14,7 +14,7 @@
       <u-button text="取消订单" type="primary" shape="circle" :plain="false" @click="onShowCancel"></u-button>
     </view>
     <u-popup :show="showConfirmProposal" @close="onCloseConfirmProposal" mode="bottom" :round="12" :closeable="true">
-      <PopConfirmProposal @confirm="onCloseConfirmProposal"></PopConfirmProposal>
+      <pop-confirm-proposal @confirm="onCloseConfirmProposal"></pop-confirm-proposal>
     </u-popup>
     <u-popup :show="showCancel" @close="onCloseCancel" mode="bottom" :round="10" :closeable="true">
       <pop-order-cancel @click="onCloseCancel"></pop-order-cancel>

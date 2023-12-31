@@ -1,13 +1,13 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col flex-1 body">
       <view class="flex-col order-info">
         <view class="flex-row justify-between">
           <text class="order-no">订单号：20245566667780878</text>
           <text class="font order-status">定金未支付</text>
         </view>
-        <OrderProductItem class="mt-14"></OrderProductItem>
+        <order-product-item class="mt-14"></order-product-item>
         <view class="flex-row reserve-time">
           <text class="reserve-text">预约上门时间：2023-07-18 19:00</text>
         </view>
@@ -27,7 +27,7 @@
             <image class="icon-arrow ml-4" src="/myOrder/static/images/icon_arrow_right.png" />
           </view>
         </view>
-        <view class="flex-row reason-wrapper items-center">
+        <view class="flex-row items-center mt-24">
           <text class="field-name star">*</text>
           <text class="field-name">申请说明</text>
           <text class="field-name reason-tip">（还可以输入200字）</text>
@@ -39,7 +39,7 @@
           placeholder="必填，请详细描述申请说明"
           placeholderStyle="font-size:24rpx;color:#9E9EA0;font-family:苹方;font-weight:400;"
         ></u-textarea>
-        <view class="flex-col self-stretch tips">
+        <view class="flex-col self-stretch mt-18">
           <text class="self-start field-name tip-title">温馨提示：</text>
           <text class="self-stretch tip-text mt-6">
             1、测量人员上门前申请取消订单，定金全部退回至付款账户，测量人员上门后申请取消订单，则定金金额将被扣除，不做退回
@@ -95,11 +95,11 @@
     height: 100%;
   }
   .body {
-    padding: 0 24rpx 32rpx;
+    padding: 26rpx 24rpx 32rpx;
     overflow-y: auto;
   }
   .order-info {
-    padding: 24rpx;
+    padding: 28rpx 24rpx 24rpx;
     background-color: #ffffff;
     border-radius: 12rpx;
   }
@@ -131,7 +131,7 @@
   }
   .form {
     margin-top: 24rpx;
-    padding: 24rpx 24rpx 64rpx;
+    padding: 24rpx 24rpx 62rpx;
     background-color: #ffffff;
     border-radius: 12rpx;
   }
@@ -143,9 +143,6 @@
   .icon-arrow {
     width: 10rpx;
     height: 16rpx;
-  }
-  .reason-wrapper {
-    margin-top: 48rpx;
   }
   .field-name {
     font-size: 26rpx;
@@ -160,7 +157,6 @@
   }
   .tips {
     margin-right: 8rpx;
-    margin-top: 40rpx;
   }
   .tip-title {
     color: #2d2e32;
