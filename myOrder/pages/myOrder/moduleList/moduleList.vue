@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col flex-1 body">
       <view class="flex-col card">
         <view class="flex-row justify-between items-center">
@@ -18,9 +18,13 @@
       </view>
       <view class="flex-col card mt-14">
         <text class="money-font title-text">商品信息</text>
-        <list-container class="mt-8" :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
+        <list-container class="mt-10" :showEmpty="showEmpty" :showLoading="showLoading" :finished="finished">
           <view class="flex-col">
-            <OrderProductItem class="list-item mt-12" v-for="(item, index) in items" :key="index"></OrderProductItem>
+            <order-product-item
+              class="list-item mt-16"
+              v-for="(item, index) in items"
+              :key="index"
+            ></order-product-item>
           </view>
         </list-container>
       </view>
@@ -31,7 +35,7 @@
 <script>
   import ListContainer from '@/components/ListContainer/ListContainer.vue';
   import NavBar from '@/components/NavBar/NavBar.vue';
-  import OrderProductItem from '../../../pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
+  import OrderProductItem from '@/myOrder/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
 
   export default {
     components: { ListContainer, NavBar, OrderProductItem },
@@ -42,7 +46,7 @@
         showEmpty: false,
         showLoading: true,
         finished: false,
-        items: [null, null, null, null, null, null],
+        items: [null, null, null, null, null, null, null],
       };
     },
     methods: {
@@ -66,14 +70,14 @@
     overflow-y: auto;
   }
   .card {
-    padding: 24rpx;
+    padding: 28rpx 24rpx 24rpx;
     background-color: #f0f0f0;
     border-radius: 8rpx;
   }
   .field-name {
     font-size: 28rpx;
     line-height: 40rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .action-text {
     color: #b09053;
@@ -86,7 +90,8 @@
     font-size: 28rpx;
     line-height: 40rpx;
     font-weight: 500;
-    color: #2d2e32;
+    color: #111111;
+    font-family: HarmonyOS_Sans_Bold;
   }
   .money-text {
     font-weight: 600;
