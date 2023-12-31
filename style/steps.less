@@ -4,3 +4,77 @@
     background-color: #e8e8e8 !important;
   }
 }
+
+// 用于【服务订单详情】、【意向订单详情】和【售后订单详情】的竖向 steper
+.cf-steps-column {
+  /deep/ .u-steps-item__line {
+    display: none !important;
+  }
+
+  /deep/ .u-steps-item__wrapper__dot {
+    background-color: #ffffff !important;
+    border: 2rpx solid #cccccc !important;
+    width: 20rpx !important;
+    height: 20rpx !important;
+    position: relative; /* 为伪元素定位做准备 */
+  }
+
+  /deep/ .u-steps-item--column::after {
+    content: '';
+    position: absolute;
+    left: 20rpx; /* 水平居中 */
+    top: 40rpx; /* 位于元素底部 */
+    transform: translateX(-50%); /* 确保准确居中 */
+    width: 2rpx; /* 线的宽度 */
+    height: calc(100% - 50rpx); /* 父元素的100%高度 */
+    background: repeating-linear-gradient(
+      to bottom,
+      #cccccc,
+      #cccccc 5rpx,
+      transparent 5rpx,
+      transparent 10rpx /* 间隔长度 */
+    );
+  }
+
+  .card-wrapper {
+    /deep/ .text-title {
+      color: #9e9ea0 !important;
+    }
+  }
+
+  .cf-steps-column-current {
+    /deep/ .u-steps-item__wrapper__dot {
+      background-color: #ffffff !important;
+      border: 2rpx solid #b09053 !important;
+    }
+
+    /deep/ .u-steps-item__wrapper__dot::before {
+      content: '';
+      position: absolute;
+      width: 12rpx;
+      height: 12rpx;
+      background-color: #b09053;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /deep/ .u-steps-item--column::after {
+      background: repeating-linear-gradient(
+        to bottom,
+        #b09053,
+        #b09053 5rpx,
+        transparent 5rpx,
+        transparent 10rpx /* 间隔长度 */
+      );
+    }
+
+    // .text-title 为每个 step 的标题所用的 class
+    .card-wrapper {
+      /deep/ .text-title {
+        color: #111111 !important;
+      }
+    }
+  }
+}
