@@ -27,11 +27,23 @@
           </view>
         </cf-card>
         <cf-card class="mt-10" title="流程">
-          <u-steps class="mt-8" direction="column">
+          <u-steps
+            class="cf-steps-column mt-8"
+            direction="column"
+            iconSize="20rpx"
+            activeColor="#B09053"
+            inactiveColor="#cccccc"
+            :dot="true"
+            :current="current"
+          >
             <view class="flex-col">
-              <u-steps-item><intention-measure slot="desc"></intention-measure></u-steps-item>
-              <u-steps-item><intention-design slot="desc"></intention-design></u-steps-item>
-              <u-steps-item>
+              <u-steps-item :class="current == 0 ? 'cf-steps-column-current' : ''">
+                <intention-measure slot="desc"></intention-measure>
+              </u-steps-item>
+              <u-steps-item :class="current == 1 ? 'cf-steps-column-current' : ''">
+                <intention-design slot="desc"></intention-design>
+              </u-steps-item>
+              <u-steps-item :class="current == 2 ? 'cf-steps-column-current' : ''">
                 <intention-service slot="desc" @call-captain="onShowCaptain"></intention-service>
               </u-steps-item>
             </view>
@@ -41,7 +53,9 @@
         <intention-payment-card class="collapse-white-card mt-10"></intention-payment-card>
       </view>
     </view>
-    <view class="fixed-bottom"><intention-order-actions></intention-order-actions></view>
+    <view class="fixed-bottom">
+      <intention-order-actions></intention-order-actions>
+    </view>
     <u-popup :show="showCaptain" @close="onCloseCaptain" mode="bottom" bgColor="transparent">
       <pop-captain @cancel="onCloseCaptain"></pop-captain>
     </u-popup>
@@ -64,6 +78,7 @@
   import PopCaptain from '@/myOrder/pages/myOrder/components/PopCaptain/PopCaptain.vue';
 
   export default {
+    options: { styleIsolation: 'shared' },
     components: {
       CfCard,
       IntentionDesign,
@@ -89,6 +104,7 @@
         titleColor: '#ffffff',
         showCaptain: false,
         hasTeamList: true,
+        current: 2,
       };
     },
     onPageScroll(e) {

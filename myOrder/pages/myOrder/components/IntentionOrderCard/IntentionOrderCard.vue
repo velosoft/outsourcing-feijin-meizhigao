@@ -24,6 +24,7 @@
   import CollapseTitleCard from '@/components/CollapseCard/CollapseTitleCard';
 
   export default {
+    options: { styleIsolation: 'shared' },
     components: { CollapseTitleCard },
     props: {},
     data() {
@@ -33,4 +34,10 @@
   };
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+  .cell-in-white-card-weight {
+    /deep/ .u-cell__value {
+      font-family: HarmonyOS_Sans_Bold;
+    }
+  }
+</style>
