@@ -1,6 +1,6 @@
 <template>
   <view class="flex-col page">
-    <NavBar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></NavBar>
+    <nav-bar :hasBack="true" :title="title" :fixed="true" :isShow="true" background="#f8f8f8"></nav-bar>
     <view class="flex-col flex-1 body">
       <image class="self-center icon-succ" src="/myOrder/static/images/icon_succ.png" />
       <text class="self-center font succ-text">提交成功，请耐心等待平台处理</text>
@@ -61,7 +61,7 @@
   }
   .succ-text {
     margin-top: 84rpx;
-    color: #2d2e32;
+    color: #111111;
   }
   .actions {
     margin-top: 280rpx;
