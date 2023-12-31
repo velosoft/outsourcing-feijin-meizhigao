@@ -1,7 +1,7 @@
 <template>
-  <OrderProcessCard title="服务测量 (未开始)">
-    <view class="flex-col mt-8">
-      <CFCard class="gray-card">
+  <order-process-card title="服务测量 (未开始)">
+    <view class="flex-col">
+      <cf-card class="gray-card">
         <view class="flex-col">
           <u-cell class="cell-in-gray-card" title="预约上门时间" value="2023-08-09 12:00" :border="false"></u-cell>
           <u-cell
@@ -43,25 +43,25 @@
             :border="false"
           ></u-cell>
         </view>
-      </CFCard>
-      <CFCard class="gray-card mt-8" title="测量团队">
+      </cf-card>
+      <cf-card class="gray-card mt-8" title="测量团队">
         <view class="flex-row items-center" slot="headerRight" @click="callCaptain">
           <image class="icon-phone" src="/myOrder/static/images/icon_golden_phone.png" />
           <text class="text-golden ml-4">联系领队</text>
         </view>
-        <TeamListPanel class="mt-8"></TeamListPanel>
-      </CFCard>
+        <team-list-panel class="mt-8"></team-list-panel>
+      </cf-card>
     </view>
-  </OrderProcessCard>
+  </order-process-card>
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
+  import CfCard from '@/components/Card/Card';
   import OrderProcessCard from '@/components/OrderProcessCard';
-  import TeamListPanel from '../../../../../../pages/myOrder/serviceOrder/detail/components/TeamListPanel/TeamListPanel.vue';
+  import TeamListPanel from '@/myOrder/pages/myOrder/serviceOrder/detail/components/TeamListPanel/TeamListPanel.vue';
 
   export default {
-    components: { CFCard, OrderProcessCard, TeamListPanel },
+    components: { CfCard, OrderProcessCard, TeamListPanel },
     props: {
       orderData: { type: Object, default: () => ({}) },
       title: { type: String, default: `` },

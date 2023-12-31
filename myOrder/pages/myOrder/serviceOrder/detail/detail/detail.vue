@@ -16,15 +16,23 @@
           <service-info-card class="mt-16" :prodInfo="orderData"></service-info-card>
         </cf-card>
         <cf-Card class="setcion-wrapper mt-12" title="流程">
-          <u-steps class="mt-8" direction="column">
+          <u-steps
+            class="cf-steps-column mt-8"
+            direction="column"
+            iconSize="20rpx"
+            activeColor="#B09053"
+            inactiveColor="#cccccc"
+            :dot="true"
+            :current="current"
+          >
             <view class="flex-col ml-4">
-              <u-steps-item>
+              <u-steps-item :class="current == 0 ? 'cf-steps-column-current' : ''">
                 <service-measure :orderData="orderData" slot="desc" @call-captain="onShowCaptain"></service-measure>
               </u-steps-item>
-              <u-steps-item class="mt-16">
+              <u-steps-item :class="current == 1 ? 'cf-steps-column-current' : ''">
                 <service-proposal :orderData="orderData" slot="desc" @call-captain="onShowCaptain"></service-proposal>
               </u-steps-item>
-              <u-steps-item class="mt-16">
+              <u-steps-item :class="current == 2 ? 'cf-steps-column-current' : ''">
                 <service-execute :orderData="orderData" slot="desc" @call-captain="onShowCaptain"></service-execute>
               </u-steps-item>
             </view>
@@ -81,6 +89,7 @@
         navBarColor: '#b09053',
         titleColor: '#ffffff',
         showCaptain: false,
+        current: 2,
       };
     },
     onPageScroll(e) {
