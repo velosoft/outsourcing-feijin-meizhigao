@@ -1,47 +1,47 @@
 <template>
   <view class="flex-col page">
-    <NavBar
+    <nav-bar
       :hasBack="true"
       :title="title"
       :fixed="true"
       :isShow="true"
       :background="navBarColor"
       :titleColor="titleColor"
-    ></NavBar>
+    ></nav-bar>
     <view class="flex-col flex-1 body">
-      <OrderStatusCard :orderData="orderData"></OrderStatusCard>
+      <order-status-card :orderData="orderData"></order-status-card>
       <view class="flex-col relative main">
-        <OrderContactCard :canShowLine="false" :canShowArrow="false"></OrderContactCard>
-        <CFCard class="mt-10" title="商品信息">
-          <OrderProductItem class="mt-16"></OrderProductItem>
-        </CFCard>
-        <CFCard class="mt-10" title="业务团队">
+        <order-contact-card :canShowLine="false" :canShowArrow="false"></order-contact-card>
+        <cf-card class="mt-10" title="商品信息">
+          <order-product-item class="mt-16"></order-product-item>
+        </cf-card>
+        <cf-card class="mt-10" title="业务团队">
           <view class="flex-row" slot="headerRight" @click="onShowCaptain" v-if="hasTeamList">
             <image class="icon-phone" src="/myOrder/static/images/icon_phone_gray_bg.png" />
             <text class="call-text ml-4">联系领队</text>
           </view>
-          <TeamListPanel class="mt-16" v-if="hasTeamList"></TeamListPanel>
+          <team-list-panel class="mt-16" v-if="hasTeamList"></team-list-panel>
           <view class="flex-col items-center mt-16 team-wait" v-else>
             <image class="icon-clock" src="/myOrder/static/images/icon_clock_yellow.png" />
             <text class="team-wait-text mt-12">等待分配</text>
           </view>
-        </CFCard>
-        <CFCard class="mt-10" title="流程">
+        </cf-card>
+        <cf-card class="mt-10" title="流程">
           <u-steps class="mt-8" direction="column">
             <view class="flex-col">
-              <u-steps-item><IntentionMeasure slot="desc"></IntentionMeasure></u-steps-item>
-              <u-steps-item><IntentionDesign slot="desc"></IntentionDesign></u-steps-item>
+              <u-steps-item><intention-measure slot="desc"></intention-measure></u-steps-item>
+              <u-steps-item><intention-design slot="desc"></intention-design></u-steps-item>
               <u-steps-item>
-                <IntentionService slot="desc" @call-captain="onShowCaptain"></IntentionService>
+                <intention-service slot="desc" @call-captain="onShowCaptain"></intention-service>
               </u-steps-item>
             </view>
           </u-steps>
-        </CFCard>
-        <IntentionOrderCard class="collapse-white-card mt-10"></IntentionOrderCard>
-        <IntentionPaymentCard class="collapse-white-card mt-10"></IntentionPaymentCard>
+        </cf-card>
+        <intention-order-card class="collapse-white-card mt-10"></intention-order-card>
+        <intention-payment-card class="collapse-white-card mt-10"></intention-payment-card>
       </view>
     </view>
-    <view class="fixed-bottom"><IntentionOrderActions></IntentionOrderActions></view>
+    <view class="fixed-bottom"><intention-order-actions></intention-order-actions></view>
     <u-popup :show="showCaptain" @close="onCloseCaptain" mode="bottom" bgColor="transparent">
       <pop-captain @cancel="onCloseCaptain"></pop-captain>
     </u-popup>
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-  import CFCard from '@/components/Card/Card';
+  import CfCard from '@/components/Card/Card';
   import OrderProductItem from '@/myOrder/pages/myOrder/components/OrderProductItem/OrderProductItem.vue';
   import IntentionDesign from '@/myOrder/pages/myOrder/components/IntentionDesign/IntentionDesign.vue';
   import IntentionMeasure from '@/myOrder/pages/myOrder/components/IntentionMeasure/IntentionMeasure.vue';
@@ -65,7 +65,7 @@
 
   export default {
     components: {
-      CFCard,
+      CfCard,
       IntentionDesign,
       IntentionMeasure,
       IntentionOrderActions,

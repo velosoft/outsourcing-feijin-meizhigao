@@ -111,10 +111,10 @@
       <pop-order-cancel @click="onCloseCancel"></pop-order-cancel>
     </u-popup>
     <u-popup :show="showReserve" @close="onCloseReserve" mode="bottom" :closeable="true" :round="14">
-      <PopReserve @confirm="onCloseReserve"></PopReserve>
+      <pop-reserve @confirm="onCloseReserve"></pop-reserve>
     </u-popup>
     <u-popup :show="showAcceptance" @close="onCloseAcceptance" mode="bottom" :closeable="true" :round="12">
-      <PopIntentionAcceptance @confirm="onCloseAcceptance"></PopIntentionAcceptance>
+      <pop-intention-acceptance @confirm="onCloseAcceptance"></pop-intention-acceptance>
     </u-popup>
   </view>
 </template>
