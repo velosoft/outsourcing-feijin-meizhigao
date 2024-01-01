@@ -1,6 +1,6 @@
 <template>
   <order-process-card title="服务 (进行中)">
-    <view class="flex-col">
+    <view class="flex-col mt-16">
       <cf-card class="gray-card">
         <view class="flex-col">
           <u-cell class="cell-in-gray-card" title="预约上门时间" value="2023-08-09 12:00" :border="false"></u-cell>

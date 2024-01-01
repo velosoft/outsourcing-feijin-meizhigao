@@ -1,6 +1,6 @@
 <template>
   <order-process-card title="服务设计 (未开始)">
-    <view class="flex-col">
+    <view class="flex-col mt-16">
       <cf-card class="gray-card">
         <view class="flex-col">
           <u-cell class="cell-in-gray-card" title="设计开始时间" value="2024 -03-25 12:00:00" :border="false"></u-cell>

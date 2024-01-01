@@ -12,7 +12,7 @@
         <view class="flex-col justify-start">
           <text class="text-title" :class="{ done }">{{ title }}</text>
         </view>
-        <view class="flex-col mt-16">
+        <view class="flex-col">
           <slot>订单折叠卡片</slot>
         </view>
       </view>
