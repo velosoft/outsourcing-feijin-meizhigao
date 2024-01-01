@@ -1,17 +1,72 @@
 <template>
   <view class="flex-col justify-start wrap">
     <view class="flex-row justify-end inner">
-      <u-button text="申请售后" type="primary" shape="circle" :plain="true" @click="gotoAfterSale"></u-button>
-      <u-button text="商品清单" type="primary" shape="circle" :plain="true" @click="gotoProductList"></u-button>
-      <u-button text="服务日志" type="primary" shape="circle" :plain="true" @click="gotoLog"></u-button>
-      <u-button text="验收服务" type="primary" shape="circle" :plain="true" @click="gotoAcceptance"></u-button>
-      <u-button text="删除记录" type="primary" shape="circle" :plain="true"></u-button>
-      <u-button text="确认差额" type="primary" shape="circle" :plain="true" @click="gotoPriceDiff"></u-button>
-      <u-button text="确认报价" type="primary" shape="circle" :plain="true" @click="gotoConfirmQuote"></u-button>
-      <u-button text="服务方案" type="primary" shape="circle" :plain="true" @click="gotoPlan"></u-button>
-      <u-button text="确认方案" type="primary" shape="circle" :plain="true" @click="onShowConfirmProposal"></u-button>
-      <u-button text="开始签约" type="primary" shape="circle" :plain="true" @click="onShowVerify"></u-button>
-      <u-button text="取消订单" type="primary" shape="circle" :plain="false" @click="onShowCancel"></u-button>
+      <u-button
+        class="btn"
+        text="申请售后"
+        shape="circle"
+        :plain="true"
+        @click="gotoAfterSale"
+      ></u-button>
+      <u-button
+        class="btn"
+        text="商品清单"
+        type="primary"
+        shape="circle"
+        :plain="true"
+        @click="gotoProductList"
+      ></u-button>
+      <u-button class="btn" text="服务日志" type="primary" shape="circle" :plain="true" @click="gotoLog"></u-button>
+      <u-button
+        class="btn"
+        text="验收服务"
+        type="primary"
+        shape="circle"
+        :plain="true"
+        @click="gotoAcceptance"
+      ></u-button>
+      <u-button class="btn" text="删除记录" type="primary" shape="circle" :plain="true"></u-button>
+      <u-button
+        class="btn"
+        text="确认差额"
+        type="primary"
+        shape="circle"
+        :plain="true"
+        @click="gotoPriceDiff"
+      ></u-button>
+      <u-button
+        class="btn"
+        text="确认报价"
+        type="primary"
+        shape="circle"
+        :plain="true"
+        @click="gotoConfirmQuote"
+      ></u-button>
+      <u-button class="btn" text="服务方案" type="primary" shape="circle" :plain="true" @click="gotoPlan"></u-button>
+      <u-button
+        class="btn"
+        text="确认方案"
+        type="primary"
+        shape="circle"
+        :plain="true"
+        @click="onShowConfirmProposal"
+      ></u-button>
+      <u-button
+        class="btn"
+        text="开始签约"
+        type="primary"
+        shape="circle"
+        :plain="true"
+        @click="onShowVerify"
+      ></u-button>
+      <u-button
+        class="btn"
+        text="取消订单"
+        type="primary"
+        shape="circle"
+        :plain="false"
+        @click="onShowCancel"
+      ></u-button>
     </view>
     <u-popup :show="showConfirmProposal" @close="onCloseConfirmProposal" mode="bottom" :round="12" :closeable="true">
       <pop-confirm-proposal @confirm="onCloseConfirmProposal"></pop-confirm-proposal>
@@ -37,6 +92,7 @@
 
   export default {
     components: { PopConfirmProposal, PopOrderCancel, ConfirmPanel },
+    options: { styleIsolation: 'shared' },
     props: {},
     data() {
       return {
@@ -97,6 +153,11 @@
       margin: 0 16rpx;
       flex-wrap: wrap;
       gap: 12rpx;
+    }
+  }
+  .btn {
+    /deep/ .u-button {
+      height: 68rpx !important;
     }
   }
 </style>
