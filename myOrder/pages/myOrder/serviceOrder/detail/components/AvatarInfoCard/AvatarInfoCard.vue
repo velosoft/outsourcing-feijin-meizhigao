@@ -38,27 +38,24 @@
 <style scoped lang="less">
   .wrap {
     padding: 8rpx 0;
-    width: 146rpx;
+    width: 140rpx;
     .circle_wrapper {
-      width: 120rpx;
-      height: 120rpx;
+      width: 110rpx;
+      height: 110rpx;
       .outter {
-        width: 120rpx;
-        height: 120rpx;
+        width: 110rpx;
+        height: 110rpx;
         .golden-outter {
           background-color: #ffffff;
           border-radius: 50%;
-          height: 120rpx;
-          border-left: solid 2rpx #d2b682;
-          border-right: solid 2rpx #d2b682;
-          border-top: solid 2rpx #d2b682;
-          border-bottom: solid 2rpx #d2b682;
-          width: 120rpx;
+          height: 110rpx;
+          border: solid 2rpx #d2b682;
+          width: 110rpx;
         }
         .blue-outter {
           border-radius: 50%;
-          width: 120rpx;
-          height: 120rpx;
+          width: 110rpx;
+          height: 110rpx;
         }
       }
       .pos_abs {
@@ -72,10 +69,11 @@
         background-color: #e5ebfb;
         border-radius: 50%;
         overflow: hidden;
-        width: 96rpx;
-        height: 96rpx;
+        width: 88rpx;
+        height: 88rpx;
+        padding-top: 12rpx;
         .avatar-img {
-          width: 60.6rpx;
+          width: 60rpx;
           height: 76rpx;
         }
       }
