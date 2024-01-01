@@ -1,7 +1,15 @@
 <template>
-  <u-steps direction="column">
+  <u-steps
+    class="cf-steps-column"
+    direction="column"
+    iconSize="20rpx"
+    activeColor="#B09053"
+    inactiveColor="#cccccc"
+    :dot="true"
+    :current="current"
+  >
     <view class="flex-col wrap ml-8">
-      <u-steps-item>
+      <u-steps-item :class="current == 0 ? 'cf-steps-column-current' : ''">
         <OrderProcessCard title="客服已处理" slot="desc">
           <CFCard class="gray-card mt-10">
             <view class="flex-col">
@@ -16,7 +24,7 @@
           </CFCard>
         </OrderProcessCard>
       </u-steps-item>
-      <u-steps-item class="mt-14">
+      <u-steps-item :class="current == 1 ? 'cf-steps-column-current' : ''">
         <OrderProcessCard title="审核通过" slot="desc">
           <CFCard class="gray-card mt-8">
             <view class="flex-col">
@@ -31,7 +39,7 @@
           </CFCard>
         </OrderProcessCard>
       </u-steps-item>
-      <u-steps-item class="mt-14">
+      <u-steps-item :class="current == 2 ? 'cf-steps-column-current' : ''">
         <OrderProcessCard title="提交申请" slot="desc">
           <CFCard class="gray-card mt-8">
             <view class="flex-col">
@@ -64,7 +72,9 @@
     components: { CFCard, OrderProcessCard },
     props: { afterSaleStepsData: { type: Object, default: {} } },
     data() {
-      return {};
+      return {
+        current: 2,
+      };
     },
 
     methods: {},
