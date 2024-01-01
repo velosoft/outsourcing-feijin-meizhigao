@@ -1,10 +1,12 @@
 <template>
   <view class="flex-row items-center justify-between">
     <view class="flex-row">
-      <image class="shrink-0 icon-status" src="/myOrder/static/images/icon_header_time.png" />
+      <image class="icon-status" src="/myOrder/static/images/icon_header_time.png" v-if="courseHead.courseType == 0"/>
+      <image class="icon-status" src="/myOrder/static/images/icon_header_ok.png" v-if="courseHead.courseType == 1"/>
+      <image class="icon-status" src="/myOrder/static/images/icon_header_close.png" v-if="courseHead.courseType == 2"/>
       <text class="font ml-10">待付款</text>
     </view>
-    <text class="time-left">支付剩余 29:00 分钟</text>
+    <text class="time-left" v-if="courseHead.remainingTime">支付剩余 29:00 分钟</text>
   </view>
   </template>
   

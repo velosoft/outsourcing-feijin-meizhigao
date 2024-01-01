@@ -9,8 +9,16 @@
         <u-tabs
           class="tabs-yellow-wide"
           :list="list"
-          activeStyle="{'color':'#111111','fontWeight':500}"
-          inactiveStyle="{'color':'#6D6D6D','fontWeight':500}"
+          :activeStyle="{
+            fontSize: '30rpx',
+            color: '#111111',
+            fontWeight: '700',
+          }"
+          :inactiveStyle="{
+            fontSize: '28rpx',
+            color: '#6D6D6D',
+            fontWeight: '400',
+          }"
           lineWidth="60rpx"
           lineHeight="18rpx"
           :scrollable="true"

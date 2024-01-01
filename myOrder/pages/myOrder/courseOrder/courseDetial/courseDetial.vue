@@ -5,7 +5,7 @@
     /></NavBar>
     <view class="flex-col wrap">
       <view class="flex-col header-status"
-        ><HeaderStatus class="status-wrap" :courseHead="courseHead"></HeaderStatus
+        ><HeaderStatus class="status-wrap"></HeaderStatus
       ></view>
       <view class="flex-col relative container">
         <CFCard title="报名信息">
@@ -120,8 +120,11 @@
     </view>
     <view class="flex-col footer-con">
       <view class="fixed-bottom-safe flex-row footer-btn justify-end">
-        <u-button class="cf-btn-black btn-width" text="取消订单" type="info" shape="circle" :plain="true" @click="onClick"></u-button>
-        <u-button class="cf-btn-black ml-8 btn-width" text="去付款" type="primary" shape="circle"></u-button>
+        <u-button class="cf-btn-black btn-width" text="申请开票" type="info" shape="circle" :plain="true" v-if="false"></u-button>
+        <u-button class="cf-btn-black btn-width" text="查看发票" type="info" shape="circle" :plain="true" v-if="false"></u-button>
+        <u-button class="cf-btn-black btn-width" text="删除记录" type="info" shape="circle" :plain="true" v-if="false"></u-button>
+        <u-button class="cf-btn-black btn-width" text="取消订单" type="info" shape="circle" :plain="true" @click="onClick" v-if="true"></u-button>
+        <u-button class="cf-btn-black ml-8 btn-width" text="去付款" type="primary" shape="circle" v-if="true"></u-button>
       </view>
     </view>
     <u-popup
