@@ -8,10 +8,30 @@
         :lineWidth="23"
         :lineHeight="2"
       >
-        <view class="flex-row tabs-right-slot" slot="right">
+        <view class="flex-row relative tabs-right-slot" slot="right">
           <view class="flex-row items-center select-data" @click="onStatusSelect">
-            <text class="select-label">全部</text>
+            <text class="select-label">{{ selectType }}</text>
             <image class="shrink-0 select-icon ml-4" src="/personal/static/images/icon_down_arrow.png" />
+          </view>
+          <view class="flex-col justify-between items-center dropdown-menu" v-if="statusPopupVisible">
+            <view
+              class="dropdown-item"
+              :class="selectType == '全部' ? 'dropdown-item-current' : ''"
+              @click="() => onSelectType('全部')"
+              >全部</view
+            >
+            <view
+              class="dropdown-item"
+              :class="selectType == '收入' ? 'dropdown-item-current' : ''"
+              @click="() => onSelectType('收入')"
+              >收入</view
+            >
+            <view
+              class="dropdown-item"
+              :class="selectType == '支出' ? 'dropdown-item-current' : ''"
+              @click="() => onSelectType('支出')"
+              >支出</view
+            >
           </view>
           <view class="flex-row items-center select-data ml-8" @click="onDateSelect">
             <text class="select-label">日期</text>
@@ -28,14 +48,6 @@
         <view slot="customEmpty"> <bonus-empty></bonus-empty></view>
       </list-with-empty>
     </view>
-    <u-popup
-      :show="statusPopupVisible"
-      @close="onClose"
-      mode="bottom"
-      :round="12"
-      :closeable="true"
-      style="height: 20%"
-    ></u-popup>
     <u-popup :show="datePopupVisible" @close="onClose" mode="bottom" :round="12" :closeable="true">
       <date-time-picker-popup type="year-month" :date="date" @click="onDateChange"></date-time-picker-popup>
     </u-popup>
@@ -77,12 +89,17 @@
           year: 2023,
           month: 9,
         },
+        selectType: '全部',
       };
     },
 
     methods: {
       onStatusSelect() {
         this.statusPopupVisible = true;
+      },
+      onSelectType(val) {
+        this.statusPopupVisible = false;
+        this.selectType = val;
       },
       onDateSelect() {
         this.datePopupVisible = true;
@@ -126,6 +143,32 @@
       padding-left: 32rpx;
       padding-top: 8rpx;
       padding-bottom: 40rpx;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      left: -14rpx;
+      top: 56rpx;
+
+      width: 140rpx;
+      height: 230rpx;
+
+      background: #ffffff;
+      box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.06);
+      border-radius: 4px 4px 4px 4px;
+
+      padding: 32rpx 0;
+    }
+
+    .dropdown-item {
+      font-size: 24rpx;
+      font-family: 苹方;
+      font-weight: 400;
+      color: #111111;
+    }
+
+    .dropdown-item-current {
+      color: #b09053;
     }
   }
 </style>
