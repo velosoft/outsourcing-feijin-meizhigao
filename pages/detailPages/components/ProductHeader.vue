@@ -19,7 +19,7 @@
       <text class="book-number">{{ buyer }}人预约</text>
     </view>
     <view class="flex-row coupon-wraper items-center">
-      <view class="flex-row flex-1 tag-gap">
+      <view class="flex-row flex-1 flex-wrap gap-8">
         <u-tag class="tag-coupon" :text="item" v-for="(item, index) in discountTags" :key="index"></u-tag>
       </view>
       <view class="flex-row button ml-19 items-center" @click="onShowCoupon">
@@ -28,12 +28,12 @@
       </view>
     </view>
     <view class="flex-col feature-wraper">
-      <view class="flex-row tag-gap tag-feature">
+      <view class="flex-row flex-wrap gap-8">
         <u-tag class="tag-feature" :text="item" v-for="(item, index) in tags" :key="index"></u-tag>
       </view>
     </view>
     <u-popup :show="popupVisible" @close="onClose" mode="bottom" :round="12" :safeAreaInsetBottom="false">
-      <PopCouponList @confirm="confirm"></PopCouponList>
+      <pop-coupon-list @confirm="confirm"></pop-coupon-list>
     </u-popup>
   </view>
 </template>
@@ -79,9 +79,9 @@
       onClose() {
         this.popupVisible = false;
       },
-      confirm(){
+      confirm() {
         this.popupVisible = false;
-      }
+      },
     },
   };
 </script>
@@ -187,9 +187,6 @@
           height: 16rpx;
         }
       }
-    }
-    .tag-gap > u-tag:not(:first-child) {
-      margin-left: 16rpx;
     }
     .feature-wraper {
       margin-top: 24rpx;
