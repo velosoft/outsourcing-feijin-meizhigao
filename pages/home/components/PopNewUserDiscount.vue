@@ -1,34 +1,36 @@
 <template>
-  <view class="flex-col group_1">
-    <view class="flex-col self-stretch relative group_5">
-      <image class="image_5" src="/static/images/pic_user_discount_decorator_0.png" />
-      <view class="flex-col section_12"> </view>
-      <view class="ai-background-image_4 pos_3"></view>
-      <view class="ai-background-image_6 pos_5"></view>
-      <image class="ai-background-image_5 pos_7" src="/static/images/pic_user_discount_decorator_1.png" />
-      <image class="ai-background-image_5 pos_9" src="/static/images/pic_user_discount_decorator_2.png" />
-      <image class="ai-background-image_5 pos_4" src="/static/images/pic_user_discount_decorator_3.png" />
-      <view class="flex-col justify-center items-center ai-background-image_3 pos_2">
-        <text class="font_2 text_3">恭喜获得价值100元的优惠</text>
+  <view class="flex-col group-primary">
+    <view class="flex-col self-stretch relative group-secondary">
+      <image class="decorative-image" src="/static/images/pic_user_discount_decorator_0.png" />
+      <view class="flex-col section-main"> </view>
+      <view class="ai-background-image-primary pos-primary"></view>
+      <view class="ai-background-image-secondary pos-secondary"></view>
+      <image class="ai-background-image-tertiary pos-tertiary" src="/static/images/pic_user_discount_decorator_1.png" />
+      <image
+        class="ai-background-image-quaternary pos-quaternary"
+        src="/static/images/pic_user_discount_decorator_2.png"
+      />
+      <image class="ai-background-image-quinary pos-quinary" src="/static/images/pic_user_discount_decorator_3.png" />
+      <view class="flex-col justify-center items-center ai-background-image-senary pos-senary">
+        <text class="font-primary text-primary">恭喜获得价值100元的优惠</text>
       </view>
       <view class="flex-col gap-10 list-container">
         <view class="flex-row justify-start items-center list-item" v-for="(item, index) of items" :key="index">
           <view class="flex-col">
             <view class="flex-row items-baseline">
-              <text class="font_5 text_5">￥</text>
-              <text class="font_3">200</text>
+              <text class="font-secondary text-secondary">￥</text>
+              <text class="font-tertiary">200</text>
             </view>
-            <text class="font_2 text_7 mt-8">满100元使用</text>
+            <text class="font-quaternary text-quaternary mt-8">满100元使用</text>
           </view>
-          <view class="section_7 ml-16"></view>
+          <view class="section-secondary ml-16"></view>
           <view class="flex-col justify-between items-start self-stretch ml-16">
-            <text class="font_4 text_4">新人专享券</text>
-            <text class="font_2 text_6">有效期至2023.07.01</text>
-            <text class="font_6">适用全部（商品/服务/课程）</text>
+            <text class="font-quinary text-quinary">新人专享券</text>
+            <text class="font-senary text-senary">有效期至2023.07.01</text>
+            <text class="font-septenary">适用全部（商品/服务/课程）</text>
           </view>
         </view>
       </view>
-
       <image class="bottom-panel" src="/static/images/pic_user_discount_bottom_panel.png"> </image>
     </view>
     <image class="self-center ai-outflow mt-16" src="/static/images/icon_new_user_pop_close.png" />
@@ -50,20 +52,20 @@
 </script>
 
 <style scoped lang="less">
-  .group_1 {
-    .group_5 {
+  .group-primary {
+    .group-secondary {
       padding: 0 56rpx;
-      .image_5 {
+      .decorative-image {
         margin-right: 22rpx;
         width: 562rpx;
         height: 186rpx;
       }
-      .section_12 {
+      .section-main {
         margin-top: 416rpx;
         width: 564rpx;
         height: 194rpx;
       }
-      .ai-background-image_4 {
+      .ai-background-image-primary {
         opacity: 0.7;
         background-image: linear-gradient(92deg, #f6521c 1.6%, #f9601f 98.5%);
         backdrop-filter: blur(20rpx);
@@ -73,59 +75,67 @@
         border-top: solid 2rpx #fbd882;
         border-bottom: solid 2rpx #fbd882;
       }
-      .pos_3 {
+      .pos-primary {
         position: absolute;
         left: 56rpx;
         right: 78rpx;
         top: 176rpx;
       }
-      .ai-background-image_6 {
+      .ai-background-image-secondary {
         background-image: linear-gradient(180deg, #ff8440 0%, #f05137 100%);
         border-radius: 22rpx;
         height: 514rpx;
       }
-      .pos_5 {
+      .pos-secondary {
         position: absolute;
         left: 80rpx;
         right: 102rpx;
         top: 216rpx;
       }
-      .ai-background-image_5 {
-        width: 114rpx;
+      .ai-background-image-tertiary {
+        width: 114r px;
         height: 114rpx;
       }
-      .pos_7 {
+      .pos-tertiary {
         position: absolute;
         right: 0;
         top: 242rpx;
       }
-      .pos_9 {
+      .ai-background-image-quaternary {
+        width: 114rpx;
+        height: 114rpx;
+      }
+      .pos-quaternary {
         position: absolute;
         left: 0;
         bottom: 196rpx;
       }
-      .pos_4 {
+      .ai-background-image-quinary {
+        width: 114rpx;
+        height: 114rpx;
+      }
+      .pos-quinary {
         position: absolute;
         left: 0;
         top: 202rpx;
       }
-      .ai-background-image_3 {
+      .ai-background-image-senary {
         background-image: linear-gradient(180deg, #fb9f25 0%, #f63229 100%);
         border-radius: 20rpx;
         box-shadow: 0rpx 6rpx 12rpx #0000000f;
         border: solid 1rpx #ffe0ba;
         height: 40rpx;
         width: 292rpx;
-        .text_3 {
+        .text-primary {
           color: #fff7e9;
         }
       }
-      .pos_2 {
+      .pos-senary {
         position: absolute;
         left: 192rpx;
         top: 162rpx;
       }
-      .font_2 {
+      .font-primary {
         font-size: 22rpx;
         font-family: PingFang SC;
         line-height: 18.42rpx;
@@ -138,16 +148,16 @@
         background-image: url('/static/images/pic_user_discount_coupon_bg.png');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        .text_5 {
+        .text-secondary {
           margin-top: 23.2rpx;
         }
-        .text_7 {
+        .text-quaternary {
           font-size: 20rpx;
         }
-        .text_4 {
+        .text-quinary {
           font-size: 28rpx;
         }
-        .text_6 {
+        .text-senary {
           font-size: 20rpx;
         }
       }
@@ -156,38 +166,37 @@
         left: 100rpx;
         top: 234rpx;
       }
-      .font_5 {
+      .font-secondary {
         font-size: 32rpx;
         font-family: PingFang SC;
         font-weight: 700;
         color: #ff1801;
       }
-      .font_3 {
+      .font-tertiary {
         font-size: 52rpx;
         font-family: PingFang SC;
         font-weight: 700;
         color: #ff1801;
       }
-      .section_7 {
+      .section-secondary {
         opacity: 0.16;
-        background-image: repeating-linear-gradient(
-          90deg,
-          #ff740f,
-          #ff740f 4.92%,
-          transparent 4.92%,
-          transparent 9.838000000000001%
-        );
+        background-image: repeating-linear-gradient(90deg, #ff740f, #ff740f 4.92%, transparent 4.92%, transparent 9.8%);
         background-position: -3rpx 0rpx;
         width: 2rpx;
         height: 122rpx;
       }
-      .font_4 {
+      .font-quinary {
         font-size: 26rpx;
         font-family: PingFang SC;
         font-weight: 700;
         color: #030305;
       }
-      .font_6 {
+      .font-senary {
+        font-size: 18rpx;
+        font-family: PingFang SC;
+        color: #a7a7a7;
+      }
+      .font-septenary {
         font-size: 18rpx;
         font-family: PingFang SC;
         color: #a7a7a7;
