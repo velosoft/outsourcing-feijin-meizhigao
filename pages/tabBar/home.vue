@@ -31,11 +31,15 @@
       ></recommended-list>
       <!-- <FreezeWarning /> -->
     </view>
+    <u-popup class="pop-new-user-discount" :show="popupVisible" @close="onClose" mode="center" :round="12">
+      <pop-new-user-discount></pop-new-user-discount>
+    </u-popup>
   </view>
 </template>
 
 <script>
   import ClassifyCards from '../home/components/ClassifyCards';
+  import PopNewUserDiscount from '../home/components/PopNewUserDiscount';
   import CenterPanel from '../home/components/CenterPanel';
   import GridPanel from '../home/components/GridPanel';
   import RecommendedList from '../home/components/RecommendedList';
@@ -47,6 +51,9 @@
   import { productList, serviceList, courseList } from '@/mock/shopList';
 
   export default {
+    options: {
+      styleIsolation: 'shared',
+    },
     components: {
       CenterPanel,
       ClassifyCards,
@@ -57,6 +64,7 @@
       BannerSwiper,
       MemberBox,
       FreezeWarning,
+      PopNewUserDiscount,
     },
     props: {},
     data() {
@@ -75,6 +83,7 @@
           'https://picsum.photos/375/260',
           'https://picsum.photos/375/260',
         ],
+        popupVisible: true,
       };
     },
     onReachBottom() {
@@ -108,6 +117,9 @@
             this.list = courseList;
             break;
         }
+      },
+      onClose() {
+        this.popupVisible = false;
       },
     },
   };
@@ -163,6 +175,11 @@
       }
       .recommended-list {
         margin-top: 44rpx;
+      }
+    }
+    .pop-new-user-discount {
+      /deep/ .u-popup__content {
+        background-color: transparent;
       }
     }
   }
